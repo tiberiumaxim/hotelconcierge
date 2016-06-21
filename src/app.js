@@ -37,6 +37,33 @@ let app = {
 		app.currentStep++;
 		let step = appSteps[app.currentStep];
 
+		if (step.delay) {
+			return setTimeout(() => {
+				app.runDelay(step);
+			}, step.delay);
+		} else if (step.loading) {
+			ui.showLoading();
+			return setTimeout(() => {
+				app.runStep(step);
+			}, step.loading);
+		}
+
+		app.runStep(step);
+	},
+
+	runDelay(step) {
+		if (step.loading) {
+			ui.showLoading();
+			return setTimeout(() => {
+				app.runStep(step);
+			}, step.loading);
+		}
+
+		app.runStep(step);
+	},
+
+	runStep(step) {
+		ui.hideLoading();
 		if (step.input.show) {
 			ui.showInput(step.input.placeholder);
 		} else {

@@ -9,60 +9,60 @@ import servicesData from './servicesData';
 
 const steps = {
 	1: {
+		delay: 1000,
 		input: {
 			show: true,
 			placeholder: 'Any time, like "Next Sunday" or "Tomorrow"'
 		},
 		message: {
 			text: 'Hi! I\'m here to make your trip awesome!<br>Tell me, when would you like to arrive?',
-			delay: 1000
 		},
 		resolveInput(input) {
 			request.checkInDate = input;
-			console.log('request', request);
 			$('#app-wrapper').trigger('nextStep');
 		}
 	},
 
 	2: {
+		delay: 1000,
+		loading: 1000,
 		input: {
 			show: true,
 			placeholder: 'A number, like "3" or "5"'
 		},
 		message: {
 			text: 'How many nights would you like to stay?',
-			delay: 1500
 		},
 		resolveInput(input) {
 			request.checkOutDate = input;
-			console.log('request', request);
 			$('#app-wrapper').trigger('nextStep');
 		}
 	},
 
 	3: {
+		delay: 1000,
+		loading: 1000,
 		input: {
 			show: true,
 			placeholder: 'A number, like "2" or "4"'
 		},
 		message: {
 			text: 'How many persons?',
-			delay: 1500
 		},
 		resolveInput(input) {
 			request.persons = input;
-			console.log('request', request);
 			$('#app-wrapper').trigger('nextStep');
 		}
 	},
 
 	4: {
+		delay: 1000,
+		loading: 1000,
 		input: {
 			show: false
 		},
 		message: {
 			text: 'Ok, this is what we have free for this period:',
-			delay: 2500
 		},
 		template: () => {
 			ui.addSpecialMessage('roomsSlider', {
@@ -80,21 +80,19 @@ const steps = {
 			$('#rooms-slider .booking-button .btn').on('click', function (event) {
 				event.preventDefault();
 				request.chosenRoom = $(this).data('room');
-
-				console.log(request);
-
 				$('#app-wrapper').trigger('nextStep');
 			});
 		}
 	},
 
 	5: {
+		delay: 1000,
+		loading: 1000,
 		input: {
 			show: false
 		},
 		message: {
 			text: 'Nice. Do you want to book other services too?',
-			delay: 2500
 		},
 		template: () => {
 			ui.addSpecialMessage('servicesSlider', {
@@ -125,12 +123,13 @@ const steps = {
 	},
 
 	6: {
+		delay: 1000,
+		loading: 1000,
 		input: {
 			show: false
 		},
 		message: {
 			text: 'Right on! Now all we need is your payment details.',
-			delay: 2500
 		},
 		template: () => {
 			ui.addSpecialMessage('paymentDetails');
@@ -146,6 +145,8 @@ const steps = {
 	},
 
 	7: {
+		delay: 1000,
+		loading: 1000,
 		input: {
 			show: false
 		},
