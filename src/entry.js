@@ -4,6 +4,8 @@
 
 require('expose?$!expose?jQuery!jquery');
 require('bootstrap-webpack!./bootstrap.config.js');
+require('font-awesome-webpack');
+require('slick-carousel');
 require('lodash');
 require('./utils.less');
 require('./style.less');

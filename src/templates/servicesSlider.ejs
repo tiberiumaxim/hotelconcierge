@@ -1,0 +1,18 @@
+<div class="message special">
+	<div id="services-slider">
+		<% for (var i = 0; i < services.length; i++) { %>
+		<div class="service" data-service="<%= i %>">
+			<div class="bg-container" style="background-image: url('/public/images/services/<%= services[i].images[0] %>.jpg');">
+				<span class="title"><%= services[i].title %></span>
+				<div class="details-container clearfix">
+					<span class="description"><%= services[i].description %></span>
+					<span class="price"><%= services[i].price %>€</span>
+				</div>
+			</div>
+			<div class="booking-button">
+				<button class="btn btn-primary" data-service="<%= i %>">Book this service</button>
+			</div>
+		</div>
+		<% } %>
+	</div>
+</div>

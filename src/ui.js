@@ -2,8 +2,11 @@
  * Created by tiberiu on 17/06/16.
  */
 
-export default class UI {
+class UI {
 	constructor() {
+	}
+
+	init() {
 		this.$chatInput = $('#chat-input form input');
 		this.$loadingMessage = $('#message-loading');
 		this.$messages = $('#messages-container');
@@ -18,16 +21,23 @@ export default class UI {
 		let _this = this;
 		let templateName = type === 'user' ? 'userMessage' : 'operatorMessage';
 
-		if (delay) {
-			this.showLoading();
-			return setTimeout(() => {
-				_this.hideLoading();
-				_this.render(templateName, _this.$messages, { message: message });
-				_this.$messages.scrollTop(_this.$messages.prop('scrollHeight'));
-			}, delay);
-		}
+		// if (delay) {
+		// 	this.showLoading();
+		// 	return setTimeout(() => {
+		// 		_this.hideLoading();
+		// 		_this.render(templateName, _this.$messages, { message: message });
+		// 		_this.$messages.scrollTop(_this.$messages.prop('scrollHeight'));
+		// 	}, delay);
+		// }
 
 		this.render(templateName, this.$messages, { message: message });
+		_this.$messages.scrollTop(_this.$messages.prop('scrollHeight'));
+	}
+
+	addSpecialMessage(templateName, data, delay) {
+		let _this = this;
+
+		this.render(templateName, this.$messages, data);
 		_this.$messages.scrollTop(_this.$messages.prop('scrollHeight'));
 	}
 
@@ -55,3 +65,7 @@ export default class UI {
 		this.$loadingMessage.hide();
 	}
 }
+
+const ui = new UI();
+
+export default ui;

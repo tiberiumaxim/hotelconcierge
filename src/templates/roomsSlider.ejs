@@ -1,0 +1,20 @@
+<div class="message special clearfix">
+	<div id="rooms-slider">
+		<!--<span class="arrow left"><i class="fa fa-chevron-left"></i></span>-->
+		<!--<span class="arrow right"><i class="fa fa-chevron-right"></i></span>-->
+		<% for (var i = 0; i < rooms.length; i++) { %>
+			<div class="room" data-room="<%= i %>">
+				<div class="bg-container" style="background-image: url('/public/images/rooms/<%= rooms[i].images[0] %>.jpg');">
+					<span class="title"><%= rooms[i].title %></span>
+					<div class="details-container clearfix">
+						<span class="description"><%= rooms[i].description %></span>
+						<span class="price"><%= rooms[i].price %>€</span>
+					</div>
+				</div>
+				<div class="booking-button">
+					<button class="btn btn-primary" data-room="<%= i %>">Book this room</button>
+				</div>
+			</div>
+		<% } %>
+	</div>
+</div>
