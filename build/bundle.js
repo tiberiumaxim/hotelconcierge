@@ -1,61 +1,66 @@
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
-
+/******/
 /******/ 	// The require function
 /******/ 	function __webpack_require__(moduleId) {
-
+/******/
 /******/ 		// Check if module is in cache
 /******/ 		if(installedModules[moduleId])
 /******/ 			return installedModules[moduleId].exports;
-
+/******/
 /******/ 		// Create a new module (and put it into the cache)
 /******/ 		var module = installedModules[moduleId] = {
 /******/ 			exports: {},
 /******/ 			id: moduleId,
 /******/ 			loaded: false
 /******/ 		};
-
+/******/
 /******/ 		// Execute the module function
 /******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
-
+/******/
 /******/ 		// Flag the module as loaded
 /******/ 		module.loaded = true;
-
+/******/
 /******/ 		// Return the exports of the module
 /******/ 		return module.exports;
 /******/ 	}
-
-
+/******/
+/******/
 /******/ 	// expose the modules object (__webpack_modules__)
 /******/ 	__webpack_require__.m = modules;
-
+/******/
 /******/ 	// expose the module cache
 /******/ 	__webpack_require__.c = installedModules;
-
+/******/
 /******/ 	// __webpack_public_path__
 /******/ 	__webpack_require__.p = "";
-
+/******/
 /******/ 	// Load entry module and return exports
 /******/ 	return __webpack_require__(0);
 /******/ })
 /************************************************************************/
 /******/ ([
 /* 0 */
+/*!**********************!*\
+  !*** ./src/entry.js ***!
+  \**********************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
-
+	
 	/**
 	 * Created by tiberiu on 17/06/16.
 	 */
-
-	__webpack_require__(70);
-	__webpack_require__(73);
-	__webpack_require__(85);
-	__webpack_require__(87);
-	__webpack_require__(89);
-	__webpack_require__(91);
+	
+	__webpack_require__(/*! expose?$!expose?jQuery!jquery */ 83);
+	__webpack_require__(/*! bootstrap-webpack!./bootstrap.config.js */ 86);
+	__webpack_require__(/*! font-awesome-webpack */ 98);
+	__webpack_require__(/*! slick-carousel */ 109);
+	__webpack_require__(/*! lodash */ 110);
+	__webpack_require__(/*! ./utils.less */ 112);
+	__webpack_require__(/*! ./style.less */ 114);
+	__webpack_require__(/*! ./app */ 116);
 
 /***/ },
 /* 1 */,
@@ -127,21 +132,43 @@
 /* 67 */,
 /* 68 */,
 /* 69 */,
-/* 70 */
+/* 70 */,
+/* 71 */,
+/* 72 */,
+/* 73 */,
+/* 74 */,
+/* 75 */,
+/* 76 */,
+/* 77 */,
+/* 78 */,
+/* 79 */,
+/* 80 */,
+/* 81 */,
+/* 82 */,
+/* 83 */
+/*!******************************************************************************!*\
+  !*** ./~/expose-loader?$!./~/expose-loader?jQuery!./~/jquery/dist/jquery.js ***!
+  \******************************************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(global) {module.exports = global["$"] = __webpack_require__(71);
+	/* WEBPACK VAR INJECTION */(function(global) {module.exports = global["$"] = __webpack_require__(/*! -!./~/expose-loader?jQuery!./~/jquery/dist/jquery.js */ 84);
 	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
 
 /***/ },
-/* 71 */
+/* 84 */
+/*!**********************************************************!*\
+  !*** ./~/expose-loader?jQuery!./~/jquery/dist/jquery.js ***!
+  \**********************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(global) {module.exports = global["jQuery"] = __webpack_require__(72);
+	/* WEBPACK VAR INJECTION */(function(global) {module.exports = global["jQuery"] = __webpack_require__(/*! -!./~/jquery/dist/jquery.js */ 85);
 	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
 
 /***/ },
-/* 72 */
+/* 85 */
+/*!*********************************!*\
+  !*** ./~/jquery/dist/jquery.js ***!
+  \*********************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
@@ -158,11 +185,11 @@
 	 * Date: 2016-06-09T18:02Z
 	 */
 	( function( global, factory ) {
-
+	
 		"use strict";
-
+	
 		if ( typeof module === "object" && typeof module.exports === "object" ) {
-
+	
 			// For CommonJS and CommonJS-like environments where a proper `window`
 			// is present, execute the factory and get jQuery.
 			// For environments that do not have a `window` with a `document`
@@ -181,215 +208,215 @@
 		} else {
 			factory( global );
 		}
-
+	
 	// Pass this if window is not defined yet
 	}( typeof window !== "undefined" ? window : this, function( window, noGlobal ) {
-
+	
 	// Edge <= 12 - 13+, Firefox <=18 - 45+, IE 10 - 11, Safari 5.1 - 9+, iOS 6 - 9.1
 	// throw exceptions when non-strict code (e.g., ASP.NET 4.5) accesses strict mode
 	// arguments.callee.caller (trac-13335). But as of jQuery 3.0 (2016), strict mode should be common
 	// enough that all such attempts are guarded in a try block.
 	"use strict";
-
+	
 	var arr = [];
-
+	
 	var document = window.document;
-
+	
 	var getProto = Object.getPrototypeOf;
-
+	
 	var slice = arr.slice;
-
+	
 	var concat = arr.concat;
-
+	
 	var push = arr.push;
-
+	
 	var indexOf = arr.indexOf;
-
+	
 	var class2type = {};
-
+	
 	var toString = class2type.toString;
-
+	
 	var hasOwn = class2type.hasOwnProperty;
-
+	
 	var fnToString = hasOwn.toString;
-
+	
 	var ObjectFunctionString = fnToString.call( Object );
-
+	
 	var support = {};
-
-
-
+	
+	
+	
 		function DOMEval( code, doc ) {
 			doc = doc || document;
-
+	
 			var script = doc.createElement( "script" );
-
+	
 			script.text = code;
 			doc.head.appendChild( script ).parentNode.removeChild( script );
 		}
-
-
+	
+	
 	var
 		version = "3.0.0",
-
+	
 		// Define a local copy of jQuery
 		jQuery = function( selector, context ) {
-
+	
 			// The jQuery object is actually just the init constructor 'enhanced'
 			// Need init if jQuery is called (just allow error to be thrown if not included)
 			return new jQuery.fn.init( selector, context );
 		},
-
+	
 		// Support: Android <=4.0 only
 		// Make sure we trim BOM and NBSP
 		rtrim = /^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g,
-
+	
 		// Matches dashed string for camelizing
 		rmsPrefix = /^-ms-/,
 		rdashAlpha = /-([a-z])/g,
-
+	
 		// Used by jQuery.camelCase as callback to replace()
 		fcamelCase = function( all, letter ) {
 			return letter.toUpperCase();
 		};
-
+	
 	jQuery.fn = jQuery.prototype = {
-
+	
 		// The current version of jQuery being used
 		jquery: version,
-
+	
 		constructor: jQuery,
-
+	
 		// The default length of a jQuery object is 0
 		length: 0,
-
+	
 		toArray: function() {
 			return slice.call( this );
 		},
-
+	
 		// Get the Nth element in the matched element set OR
 		// Get the whole matched element set as a clean array
 		get: function( num ) {
 			return num != null ?
-
+	
 				// Return just the one element from the set
 				( num < 0 ? this[ num + this.length ] : this[ num ] ) :
-
+	
 				// Return all the elements in a clean array
 				slice.call( this );
 		},
-
+	
 		// Take an array of elements and push it onto the stack
 		// (returning the new matched element set)
 		pushStack: function( elems ) {
-
+	
 			// Build a new jQuery matched element set
 			var ret = jQuery.merge( this.constructor(), elems );
-
+	
 			// Add the old object onto the stack (as a reference)
 			ret.prevObject = this;
-
+	
 			// Return the newly-formed element set
 			return ret;
 		},
-
+	
 		// Execute a callback for every element in the matched set.
 		each: function( callback ) {
 			return jQuery.each( this, callback );
 		},
-
+	
 		map: function( callback ) {
 			return this.pushStack( jQuery.map( this, function( elem, i ) {
 				return callback.call( elem, i, elem );
 			} ) );
 		},
-
+	
 		slice: function() {
 			return this.pushStack( slice.apply( this, arguments ) );
 		},
-
+	
 		first: function() {
 			return this.eq( 0 );
 		},
-
+	
 		last: function() {
 			return this.eq( -1 );
 		},
-
+	
 		eq: function( i ) {
 			var len = this.length,
 				j = +i + ( i < 0 ? len : 0 );
 			return this.pushStack( j >= 0 && j < len ? [ this[ j ] ] : [] );
 		},
-
+	
 		end: function() {
 			return this.prevObject || this.constructor();
 		},
-
+	
 		// For internal use only.
 		// Behaves like an Array's method, not like a jQuery method.
 		push: push,
 		sort: arr.sort,
 		splice: arr.splice
 	};
-
+	
 	jQuery.extend = jQuery.fn.extend = function() {
 		var options, name, src, copy, copyIsArray, clone,
 			target = arguments[ 0 ] || {},
 			i = 1,
 			length = arguments.length,
 			deep = false;
-
+	
 		// Handle a deep copy situation
 		if ( typeof target === "boolean" ) {
 			deep = target;
-
+	
 			// Skip the boolean and the target
 			target = arguments[ i ] || {};
 			i++;
 		}
-
+	
 		// Handle case when target is a string or something (possible in deep copy)
 		if ( typeof target !== "object" && !jQuery.isFunction( target ) ) {
 			target = {};
 		}
-
+	
 		// Extend jQuery itself if only one argument is passed
 		if ( i === length ) {
 			target = this;
 			i--;
 		}
-
+	
 		for ( ; i < length; i++ ) {
-
+	
 			// Only deal with non-null/undefined values
 			if ( ( options = arguments[ i ] ) != null ) {
-
+	
 				// Extend the base object
 				for ( name in options ) {
 					src = target[ name ];
 					copy = options[ name ];
-
+	
 					// Prevent never-ending loop
 					if ( target === copy ) {
 						continue;
 					}
-
+	
 					// Recurse if we're merging plain objects or arrays
 					if ( deep && copy && ( jQuery.isPlainObject( copy ) ||
 						( copyIsArray = jQuery.isArray( copy ) ) ) ) {
-
+	
 						if ( copyIsArray ) {
 							copyIsArray = false;
 							clone = src && jQuery.isArray( src ) ? src : [];
-
+	
 						} else {
 							clone = src && jQuery.isPlainObject( src ) ? src : {};
 						}
-
+	
 						// Never move original objects, clone them
 						target[ name ] = jQuery.extend( deep, clone, copy );
-
+	
 					// Don't bring in undefined values
 					} else if ( copy !== undefined ) {
 						target[ name ] = copy;
@@ -397,70 +424,70 @@
 				}
 			}
 		}
-
+	
 		// Return the modified object
 		return target;
 	};
-
+	
 	jQuery.extend( {
-
+	
 		// Unique for each copy of jQuery on the page
 		expando: "jQuery" + ( version + Math.random() ).replace( /\D/g, "" ),
-
+	
 		// Assume jQuery is ready without the ready module
 		isReady: true,
-
+	
 		error: function( msg ) {
 			throw new Error( msg );
 		},
-
+	
 		noop: function() {},
-
+	
 		isFunction: function( obj ) {
 			return jQuery.type( obj ) === "function";
 		},
-
+	
 		isArray: Array.isArray,
-
+	
 		isWindow: function( obj ) {
 			return obj != null && obj === obj.window;
 		},
-
+	
 		isNumeric: function( obj ) {
-
+	
 			// As of jQuery 3.0, isNumeric is limited to
 			// strings and numbers (primitives or objects)
 			// that can be coerced to finite numbers (gh-2662)
 			var type = jQuery.type( obj );
 			return ( type === "number" || type === "string" ) &&
-
+	
 				// parseFloat NaNs numeric-cast false positives ("")
 				// ...but misinterprets leading-number strings, particularly hex literals ("0x...")
 				// subtraction forces infinities to NaN
 				!isNaN( obj - parseFloat( obj ) );
 		},
-
+	
 		isPlainObject: function( obj ) {
 			var proto, Ctor;
-
+	
 			// Detect obvious negatives
 			// Use toString instead of jQuery.type to catch host objects
 			if ( !obj || toString.call( obj ) !== "[object Object]" ) {
 				return false;
 			}
-
+	
 			proto = getProto( obj );
-
+	
 			// Objects with no prototype (e.g., `Object.create( null )`) are plain
 			if ( !proto ) {
 				return true;
 			}
-
+	
 			// Objects with prototype are plain iff they were constructed by a global Object function
 			Ctor = hasOwn.call( proto, "constructor" ) && proto.constructor;
 			return typeof Ctor === "function" && fnToString.call( Ctor ) === ObjectFunctionString;
 		},
-
+	
 		isEmptyObject: function( obj ) {
 			var name;
 			for ( name in obj ) {
@@ -468,37 +495,37 @@
 			}
 			return true;
 		},
-
+	
 		type: function( obj ) {
 			if ( obj == null ) {
 				return obj + "";
 			}
-
+	
 			// Support: Android <=2.3 only (functionish RegExp)
 			return typeof obj === "object" || typeof obj === "function" ?
 				class2type[ toString.call( obj ) ] || "object" :
 				typeof obj;
 		},
-
+	
 		// Evaluates a script in a global context
 		globalEval: function( code ) {
 			DOMEval( code );
 		},
-
+	
 		// Convert dashed to camelCase; used by the css and data modules
 		// Support: IE <=9 - 11, Edge 12 - 13
 		// Microsoft forgot to hump their vendor prefix (#9572)
 		camelCase: function( string ) {
 			return string.replace( rmsPrefix, "ms-" ).replace( rdashAlpha, fcamelCase );
 		},
-
+	
 		nodeName: function( elem, name ) {
 			return elem.nodeName && elem.nodeName.toLowerCase() === name.toLowerCase();
 		},
-
+	
 		each: function( obj, callback ) {
 			var length, i = 0;
-
+	
 			if ( isArrayLike( obj ) ) {
 				length = obj.length;
 				for ( ; i < length; i++ ) {
@@ -513,21 +540,21 @@
 					}
 				}
 			}
-
+	
 			return obj;
 		},
-
+	
 		// Support: Android <=4.0 only
 		trim: function( text ) {
 			return text == null ?
 				"" :
 				( text + "" ).replace( rtrim, "" );
 		},
-
+	
 		// results is for internal usage only
 		makeArray: function( arr, results ) {
 			var ret = results || [];
-
+	
 			if ( arr != null ) {
 				if ( isArrayLike( Object( arr ) ) ) {
 					jQuery.merge( ret,
@@ -538,37 +565,37 @@
 					push.call( ret, arr );
 				}
 			}
-
+	
 			return ret;
 		},
-
+	
 		inArray: function( elem, arr, i ) {
 			return arr == null ? -1 : indexOf.call( arr, elem, i );
 		},
-
+	
 		// Support: Android <=4.0 only, PhantomJS 1 only
 		// push.apply(_, arraylike) throws on ancient WebKit
 		merge: function( first, second ) {
 			var len = +second.length,
 				j = 0,
 				i = first.length;
-
+	
 			for ( ; j < len; j++ ) {
 				first[ i++ ] = second[ j ];
 			}
-
+	
 			first.length = i;
-
+	
 			return first;
 		},
-
+	
 		grep: function( elems, callback, invert ) {
 			var callbackInverse,
 				matches = [],
 				i = 0,
 				length = elems.length,
 				callbackExpect = !invert;
-
+	
 			// Go through the array, only saving the items
 			// that pass the validator function
 			for ( ; i < length; i++ ) {
@@ -577,81 +604,81 @@
 					matches.push( elems[ i ] );
 				}
 			}
-
+	
 			return matches;
 		},
-
+	
 		// arg is for internal usage only
 		map: function( elems, callback, arg ) {
 			var length, value,
 				i = 0,
 				ret = [];
-
+	
 			// Go through the array, translating each of the items to their new values
 			if ( isArrayLike( elems ) ) {
 				length = elems.length;
 				for ( ; i < length; i++ ) {
 					value = callback( elems[ i ], i, arg );
-
+	
 					if ( value != null ) {
 						ret.push( value );
 					}
 				}
-
+	
 			// Go through every key on the object,
 			} else {
 				for ( i in elems ) {
 					value = callback( elems[ i ], i, arg );
-
+	
 					if ( value != null ) {
 						ret.push( value );
 					}
 				}
 			}
-
+	
 			// Flatten any nested arrays
 			return concat.apply( [], ret );
 		},
-
+	
 		// A global GUID counter for objects
 		guid: 1,
-
+	
 		// Bind a function to a context, optionally partially applying any
 		// arguments.
 		proxy: function( fn, context ) {
 			var tmp, args, proxy;
-
+	
 			if ( typeof context === "string" ) {
 				tmp = fn[ context ];
 				context = fn;
 				fn = tmp;
 			}
-
+	
 			// Quick check to determine if target is callable, in the spec
 			// this throws a TypeError, but we will just return undefined.
 			if ( !jQuery.isFunction( fn ) ) {
 				return undefined;
 			}
-
+	
 			// Simulated bind
 			args = slice.call( arguments, 2 );
 			proxy = function() {
 				return fn.apply( context || this, args.concat( slice.call( arguments ) ) );
 			};
-
+	
 			// Set the guid of unique handler to the same of original handler, so it can be removed
 			proxy.guid = fn.guid = fn.guid || jQuery.guid++;
-
+	
 			return proxy;
 		},
-
+	
 		now: Date.now,
-
+	
 		// jQuery.support is not used in Core but other projects attach their
 		// properties to it so it needs to exist.
 		support: support
 	} );
-
+	
 	// JSHint would error on this code due to the Symbol not being defined in ES5.
 	// Defining this global in .jshintrc would create a danger of using the global
 	// unguarded in another place, it seems safer to just disable JSHint for these
@@ -661,26 +688,26 @@
 		jQuery.fn[ Symbol.iterator ] = arr[ Symbol.iterator ];
 	}
 	/* jshint ignore: end */
-
+	
 	// Populate the class2type map
 	jQuery.each( "Boolean Number String Function Array Date RegExp Object Error Symbol".split( " " ),
 	function( i, name ) {
 		class2type[ "[object " + name + "]" ] = name.toLowerCase();
 	} );
-
+	
 	function isArrayLike( obj ) {
-
+	
 		// Support: real iOS 8.2 only (not reproducible in simulator)
 		// `in` check used to prevent JIT error (gh-2145)
 		// hasOwn isn't used here due to false negatives
 		// regarding Nodelist length in IE
 		var length = !!obj && "length" in obj && obj.length,
 			type = jQuery.type( obj );
-
+	
 		if ( type === "function" || jQuery.isWindow( obj ) ) {
 			return false;
 		}
-
+	
 		return type === "array" || length === 0 ||
 			typeof length === "number" && length > 0 && ( length - 1 ) in obj;
 	}
@@ -696,7 +723,7 @@
 	 * Date: 2016-01-04
 	 */
 	(function( window ) {
-
+	
 	var i,
 		support,
 		Expr,
@@ -708,7 +735,7 @@
 		outermostContext,
 		sortInput,
 		hasDuplicate,
-
+	
 		// Local document vars
 		setDocument,
 		document,
@@ -718,7 +745,7 @@
 		rbuggyMatches,
 		matches,
 		contains,
-
+	
 		// Instance-specific data
 		expando = "sizzle" + 1 * new Date(),
 		preferredDoc = window.document,
@@ -733,7 +760,7 @@
 			}
 			return 0;
 		},
-
+	
 		// Instance methods
 		hasOwn = ({}).hasOwnProperty,
 		arr = [],
@@ -753,17 +780,17 @@
 			}
 			return -1;
 		},
-
+	
 		booleans = "checked|selected|async|autofocus|autoplay|controls|defer|disabled|hidden|ismap|loop|multiple|open|readonly|required|scoped",
-
+	
 		// Regular expressions
-
+	
 		// http://www.w3.org/TR/css3-selectors/#whitespace
 		whitespace = "[\\x20\\t\\r\\n\\f]",
-
+	
 		// http://www.w3.org/TR/CSS21/syndata.html#value-def-identifier
 		identifier = "(?:\\\\.|[\\w-]|[^\0-\\xa0])+",
-
+	
 		// Attribute selectors: http://www.w3.org/TR/selectors/#attribute-selectors
 		attributes = "\\[" + whitespace + "*(" + identifier + ")(?:" + whitespace +
 			// Operator (capture 2)
@@ -771,7 +798,7 @@
 			// "Attribute values must be CSS identifiers [capture 5] or strings [capture 3 or capture 4]"
 			"*(?:'((?:\\\\.|[^\\\\'])*)'|\"((?:\\\\.|[^\\\\\"])*)\"|(" + identifier + "))|)" + whitespace +
 			"*\\]",
-
+	
 		pseudos = ":(" + identifier + ")(?:\\((" +
 			// To reduce the number of selectors needing tokenize in the preFilter, prefer arguments:
 			// 1. quoted (capture 3; capture 4 or capture 5)
@@ -781,19 +808,19 @@
 			// 3. anything else (capture 2)
 			".*" +
 			")\\)|)",
-
+	
 		// Leading and non-escaped trailing whitespace, capturing some non-whitespace characters preceding the latter
 		rwhitespace = new RegExp( whitespace + "+", "g" ),
 		rtrim = new RegExp( "^" + whitespace + "+|((?:^|[^\\\\])(?:\\\\.)*)" + whitespace + "+$", "g" ),
-
+	
 		rcomma = new RegExp( "^" + whitespace + "*," + whitespace + "*" ),
 		rcombinators = new RegExp( "^" + whitespace + "*([>+~]|" + whitespace + ")" + whitespace + "*" ),
-
+	
 		rattributeQuotes = new RegExp( "=" + whitespace + "*([^\\]'\"]*?)" + whitespace + "*\\]", "g" ),
-
+	
 		rpseudo = new RegExp( pseudos ),
 		ridentifier = new RegExp( "^" + identifier + "$" ),
-
+	
 		matchExpr = {
 			"ID": new RegExp( "^#(" + identifier + ")" ),
 			"CLASS": new RegExp( "^\\.(" + identifier + ")" ),
@@ -809,17 +836,17 @@
 			"needsContext": new RegExp( "^" + whitespace + "*[>+~]|:(even|odd|eq|gt|lt|nth|first|last)(?:\\(" +
 				whitespace + "*((?:-\\d)?\\d*)" + whitespace + "*\\)|)(?=[^-]|$)", "i" )
 		},
-
+	
 		rinputs = /^(?:input|select|textarea|button)$/i,
 		rheader = /^h\d$/i,
-
+	
 		rnative = /^[^{]+\{\s*\[native \w/,
-
+	
 		// Easily-parseable/retrievable ID or TAG or CLASS selectors
 		rquickExpr = /^(?:#([\w-]+)|(\w+)|\.([\w-]+))$/,
-
+	
 		rsibling = /[+~]/,
-
+	
 		// CSS escapes
 		// http://www.w3.org/TR/CSS21/syndata.html#escaped-characters
 		runescape = new RegExp( "\\\\([\\da-f]{1,6}" + whitespace + "?|(" + whitespace + ")|.)", "ig" ),
@@ -836,26 +863,26 @@
 					// Supplemental Plane codepoint (surrogate pair)
 					String.fromCharCode( high >> 10 | 0xD800, high & 0x3FF | 0xDC00 );
 		},
-
+	
 		// CSS string/identifier serialization
 		// https://drafts.csswg.org/cssom/#common-serializing-idioms
 		rcssescape = /([\0-\x1f\x7f]|^-?\d)|^-$|[^\x80-\uFFFF\w-]/g,
 		fcssescape = function( ch, asCodePoint ) {
 			if ( asCodePoint ) {
-
+	
 				// U+0000 NULL becomes U+FFFD REPLACEMENT CHARACTER
 				if ( ch === "\0" ) {
 					return "\uFFFD";
 				}
-
+	
 				// Control characters and (dependent upon position) numbers get escaped as code points
 				return ch.slice( 0, -1 ) + "\\" + ch.charCodeAt( ch.length - 1 ).toString( 16 ) + " ";
 			}
-
+	
 			// Other potentially-special ASCII characters get backslash-escaped
 			return "\\" + ch;
 		},
-
+	
 		// Used for iframes
 		// See setDocument()
 		// Removing the function wrapper causes a "Permission Denied"
@@ -863,14 +890,14 @@
 		unloadHandler = function() {
 			setDocument();
 		},
-
+	
 		disabledAncestor = addCombinator(
 			function( elem ) {
 				return elem.disabled === true;
 			},
 			{ dir: "parentNode", next: "legend" }
 		);
-
+	
 	// Optimize for push.apply( _, NodeList )
 	try {
 		push.apply(
@@ -882,12 +909,12 @@
 		arr[ preferredDoc.childNodes.length ].nodeType;
 	} catch ( e ) {
 		push = { apply: arr.length ?
-
+	
 			// Leverage slice if possible
 			function( target, els ) {
 				push_native.apply( target, slice.call(els) );
 			} :
-
+	
 			// Support: IE<9
 			// Otherwise append directly
 			function( target, els ) {
@@ -899,44 +926,44 @@
 			}
 		};
 	}
-
+	
 	function Sizzle( selector, context, results, seed ) {
 		var m, i, elem, nid, match, groups, newSelector,
 			newContext = context && context.ownerDocument,
-
+	
 			// nodeType defaults to 9, since context defaults to document
 			nodeType = context ? context.nodeType : 9;
-
+	
 		results = results || [];
-
+	
 		// Return early from calls with invalid selector or context
 		if ( typeof selector !== "string" || !selector ||
 			nodeType !== 1 && nodeType !== 9 && nodeType !== 11 ) {
-
+	
 			return results;
 		}
-
+	
 		// Try to shortcut find operations (as opposed to filters) in HTML documents
 		if ( !seed ) {
-
+	
 			if ( ( context ? context.ownerDocument || context : preferredDoc ) !== document ) {
 				setDocument( context );
 			}
 			context = context || document;
-
+	
 			if ( documentIsHTML ) {
-
+	
 				// If the selector is sufficiently simple, try using a "get*By*" DOM method
 				// (excepting DocumentFragment context, where the methods don't exist)
 				if ( nodeType !== 11 && (match = rquickExpr.exec( selector )) ) {
-
+	
 					// ID selector
 					if ( (m = match[1]) ) {
-
+	
 						// Document context
 						if ( nodeType === 9 ) {
 							if ( (elem = context.getElementById( m )) ) {
-
+	
 								// Support: IE, Opera, Webkit
 								// TODO: identify versions
 								// getElementById can match elements by name instead of ID
@@ -947,58 +974,58 @@
 							} else {
 								return results;
 							}
-
+	
 						// Element context
 						} else {
-
+	
 							// Support: IE, Opera, Webkit
 							// TODO: identify versions
 							// getElementById can match elements by name instead of ID
 							if ( newContext && (elem = newContext.getElementById( m )) &&
 								contains( context, elem ) &&
 								elem.id === m ) {
-
+	
 								results.push( elem );
 								return results;
 							}
 						}
-
+	
 					// Type selector
 					} else if ( match[2] ) {
 						push.apply( results, context.getElementsByTagName( selector ) );
 						return results;
-
+	
 					// Class selector
 					} else if ( (m = match[3]) && support.getElementsByClassName &&
 						context.getElementsByClassName ) {
-
+	
 						push.apply( results, context.getElementsByClassName( m ) );
 						return results;
 					}
 				}
-
+	
 				// Take advantage of querySelectorAll
 				if ( support.qsa &&
 					!compilerCache[ selector + " " ] &&
 					(!rbuggyQSA || !rbuggyQSA.test( selector )) ) {
-
+	
 					if ( nodeType !== 1 ) {
 						newContext = context;
 						newSelector = selector;
-
+	
 					// qSA looks outside Element context, which is not what we want
 					// Thanks to Andrew Dupont for this workaround technique
 					// Support: IE <=8
 					// Exclude object elements
 					} else if ( context.nodeName.toLowerCase() !== "object" ) {
-
+	
 						// Capture the context ID, setting it first if necessary
 						if ( (nid = context.getAttribute( "id" )) ) {
 							nid = nid.replace( rcssescape, fcssescape );
 						} else {
 							context.setAttribute( "id", (nid = expando) );
 						}
-
+	
 						// Prefix every selector in the list
 						groups = tokenize( selector );
 						i = groups.length;
@@ -1006,12 +1033,12 @@
 							groups[i] = "#" + nid + " " + toSelector( groups[i] );
 						}
 						newSelector = groups.join( "," );
-
+	
 						// Expand context for sibling selectors
 						newContext = rsibling.test( selector ) && testContext( context.parentNode ) ||
 							context;
 					}
-
+	
 					if ( newSelector ) {
 						try {
 							push.apply( results,
@@ -1028,11 +1055,11 @@
 				}
 			}
 		}
-
+	
 		// All others
 		return select( selector.replace( rtrim, "$1" ), context, results, seed );
 	}
-
+	
 	/**
 	 * Create key-value caches of limited size
 	 * @returns {function(string, object)} Returns the Object data after storing it on itself with
@@ -1041,7 +1068,7 @@
 	 */
 	function createCache() {
 		var keys = [];
-
+	
 		function cache( key, value ) {
 			// Use (key + " ") to avoid collision with native prototype properties (see Issue #157)
 			if ( keys.push( key + " " ) > Expr.cacheLength ) {
@@ -1052,7 +1079,7 @@
 		}
 		return cache;
 	}
-
+	
 	/**
 	 * Mark a function for special use by Sizzle
 	 * @param {Function} fn The function to mark
@@ -1061,14 +1088,14 @@
 		fn[ expando ] = true;
 		return fn;
 	}
-
+	
 	/**
 	 * Support testing using an element
 	 * @param {Function} fn Passed the created element and returns a boolean result
 	 */
 	function assert( fn ) {
 		var el = document.createElement("fieldset");
-
+	
 		try {
 			return !!fn( el );
 		} catch (e) {
@@ -1082,7 +1109,7 @@
 			el = null;
 		}
 	}
-
+	
 	/**
 	 * Adds the same handler for all of the specified attrs
 	 * @param {String} attrs Pipe-separated list of attributes
@@ -1091,12 +1118,12 @@
 	function addHandle( attrs, handler ) {
 		var arr = attrs.split("|"),
 			i = arr.length;
-
+	
 		while ( i-- ) {
 			Expr.attrHandle[ arr[i] ] = handler;
 		}
 	}
-
+	
 	/**
 	 * Checks document order of two siblings
 	 * @param {Element} a
@@ -1107,12 +1134,12 @@
 		var cur = b && a,
 			diff = cur && a.nodeType === 1 && b.nodeType === 1 &&
 				a.sourceIndex - b.sourceIndex;
-
+	
 		// Use IE sourceIndex if available on both nodes
 		if ( diff ) {
 			return diff;
 		}
-
+	
 		// Check if b follows a
 		if ( cur ) {
 			while ( (cur = cur.nextSibling) ) {
@@ -1121,10 +1148,10 @@
 				}
 			}
 		}
-
+	
 		return a ? 1 : -1;
 	}
-
+	
 	/**
 	 * Returns a function to use in pseudos for input types
 	 * @param {String} type
@@ -1135,7 +1162,7 @@
 			return name === "input" && elem.type === type;
 		};
 	}
-
+	
 	/**
 	 * Returns a function to use in pseudos for buttons
 	 * @param {String} type
@@ -1146,7 +1173,7 @@
 			return (name === "input" || name === "button") && elem.type === type;
 		};
 	}
-
+	
 	/**
 	 * Returns a function to use in pseudos for :enabled/:disabled
 	 * @param {Boolean} disabled true for :disabled; false for :enabled
@@ -1156,17 +1183,17 @@
 		// IE: *[disabled]:not(button, input, select, textarea, optgroup, option, menuitem, fieldset)
 		// not IE: fieldset[disabled] > legend:nth-of-type(n+2) :can-disable
 		return function( elem ) {
-
+	
 			// Check form elements and option elements for explicit disabling
 			return "label" in elem && elem.disabled === disabled ||
 				"form" in elem && elem.disabled === disabled ||
-
+	
 				// Check non-disabled form elements for fieldset[disabled] ancestors
 				"form" in elem && elem.disabled === false && (
 					// Support: IE6-11+
 					// Ancestry is covered for us
 					elem.isDisabled === disabled ||
-
+	
 					// Otherwise, assume any non-<option> under fieldset[disabled] is disabled
 					/* jshint -W018 */
 					elem.isDisabled !== !disabled &&
@@ -1174,7 +1201,7 @@
 				);
 		};
 	}
-
+	
 	/**
 	 * Returns a function to use in pseudos for positionals
 	 * @param {Function} fn
@@ -1186,7 +1213,7 @@
 				var j,
 					matchIndexes = fn( [], seed.length, argument ),
 					i = matchIndexes.length;
-
+	
 				// Match elements found at the specified indexes
 				while ( i-- ) {
 					if ( seed[ (j = matchIndexes[i]) ] ) {
@@ -1196,7 +1223,7 @@
 			});
 		});
 	}
-
+	
 	/**
 	 * Checks a node for validity as a Sizzle context
 	 * @param {Element|Object=} context
@@ -1205,10 +1232,10 @@
 	function testContext( context ) {
 		return context && typeof context.getElementsByTagName !== "undefined" && context;
 	}
-
+	
 	// Expose support vars for convenience
 	support = Sizzle.support = {};
-
+	
 	/**
 	 * Detects XML nodes
 	 * @param {Element|Object} elem An element or a document
@@ -1220,7 +1247,7 @@
 		var documentElement = elem && (elem.ownerDocument || elem).documentElement;
 		return documentElement ? documentElement.nodeName !== "HTML" : false;
 	};
-
+	
 	/**
 	 * Sets document-related variables once based on the current document
 	 * @param {Element|Object} [doc] An element or document object to use to set the document
@@ -1229,35 +1256,35 @@
 	setDocument = Sizzle.setDocument = function( node ) {
 		var hasCompare, subWindow,
 			doc = node ? node.ownerDocument || node : preferredDoc;
-
+	
 		// Return early if doc is invalid or already selected
 		if ( doc === document || doc.nodeType !== 9 || !doc.documentElement ) {
 			return document;
 		}
-
+	
 		// Update global variables
 		document = doc;
 		docElem = document.documentElement;
 		documentIsHTML = !isXML( document );
-
+	
 		// Support: IE 9-11, Edge
 		// Accessing iframe documents after unload throws "permission denied" errors (jQuery #13936)
 		if ( preferredDoc !== document &&
 			(subWindow = document.defaultView) && subWindow.top !== subWindow ) {
-
+	
 			// Support: IE 11, Edge
 			if ( subWindow.addEventListener ) {
 				subWindow.addEventListener( "unload", unloadHandler, false );
-
+	
 			// Support: IE 9 - 10 only
 			} else if ( subWindow.attachEvent ) {
 				subWindow.attachEvent( "onunload", unloadHandler );
 			}
 		}
-
+	
 		/* Attributes
 		---------------------------------------------------------------------- */
-
+	
 		// Support: IE<8
 		// Verify that getAttribute really returns attributes and not properties
 		// (excepting IE8 booleans)
@@ -1265,19 +1292,19 @@
 			el.className = "i";
 			return !el.getAttribute("className");
 		});
-
+	
 		/* getElement(s)By*
 		---------------------------------------------------------------------- */
-
+	
 		// Check if getElementsByTagName("*") returns only elements
 		support.getElementsByTagName = assert(function( el ) {
 			el.appendChild( document.createComment("") );
 			return !el.getElementsByTagName("*").length;
 		});
-
+	
 		// Support: IE<9
 		support.getElementsByClassName = rnative.test( document.getElementsByClassName );
-
+	
 		// Support: IE<10
 		// Check if getElementById returns elements by name
 		// The broken getElementById methods don't pick up programmatically-set names,
@@ -1286,7 +1313,7 @@
 			docElem.appendChild( el ).id = expando;
 			return !document.getElementsByName || !document.getElementsByName( expando ).length;
 		});
-
+	
 		// ID find and filter
 		if ( support.getById ) {
 			Expr.find["ID"] = function( id, context ) {
@@ -1305,7 +1332,7 @@
 			// Support: IE6/7
 			// getElementById is not reliable as a find shortcut
 			delete Expr.find["ID"];
-
+	
 			Expr.filter["ID"] =  function( id ) {
 				var attrId = id.replace( runescape, funescape );
 				return function( elem ) {
@@ -1315,26 +1342,26 @@
 				};
 			};
 		}
-
+	
 		// Tag
 		Expr.find["TAG"] = support.getElementsByTagName ?
 			function( tag, context ) {
 				if ( typeof context.getElementsByTagName !== "undefined" ) {
 					return context.getElementsByTagName( tag );
-
+	
 				// DocumentFragment nodes don't have gEBTN
 				} else if ( support.qsa ) {
 					return context.querySelectorAll( tag );
 				}
 			} :
-
+	
 			function( tag, context ) {
 				var elem,
 					tmp = [],
 					i = 0,
 					// By happy coincidence, a (broken) gEBTN appears on DocumentFragment nodes too
 					results = context.getElementsByTagName( tag );
-
+	
 				// Filter out possible comments
 				if ( tag === "*" ) {
 					while ( (elem = results[i++]) ) {
@@ -1342,34 +1369,34 @@
 							tmp.push( elem );
 						}
 					}
-
+	
 					return tmp;
 				}
 				return results;
 			};
-
+	
 		// Class
 		Expr.find["CLASS"] = support.getElementsByClassName && function( className, context ) {
 			if ( typeof context.getElementsByClassName !== "undefined" && documentIsHTML ) {
 				return context.getElementsByClassName( className );
 			}
 		};
-
+	
 		/* QSA/matchesSelector
 		---------------------------------------------------------------------- */
-
+	
 		// QSA and matchesSelector support
-
+	
 		// matchesSelector(:active) reports false when true (IE9/Opera 11.5)
 		rbuggyMatches = [];
-
+	
 		// qSa(:focus) reports false when true (Chrome 21)
 		// We allow this because of a bug in IE8/9 that throws an error
 		// whenever `document.activeElement` is accessed on an iframe
 		// So, we allow :focus to pass through QSA all the time to avoid the IE error
 		// See https://bugs.jquery.com/ticket/13378
 		rbuggyQSA = [];
-
+	
 		if ( (support.qsa = rnative.test( document.querySelectorAll )) ) {
 			// Build QSA regex
 			// Regex strategy adopted from Diego Perini
@@ -1382,7 +1409,7 @@
 				docElem.appendChild( el ).innerHTML = "<a id='" + expando + "'></a>" +
 					"<select id='" + expando + "-\r\\' msallowcapture=''>" +
 					"<option selected=''></option></select>";
-
+	
 				// Support: IE8, Opera 11-12.16
 				// Nothing should be selected when empty strings follow ^= or $= or *=
 				// The test attribute must be unknown in Opera but "safe" for WinRT
@@ -1390,25 +1417,25 @@
 				if ( el.querySelectorAll("[msallowcapture^='']").length ) {
 					rbuggyQSA.push( "[*^$]=" + whitespace + "*(?:''|\"\")" );
 				}
-
+	
 				// Support: IE8
 				// Boolean attributes and "value" are not treated correctly
 				if ( !el.querySelectorAll("[selected]").length ) {
 					rbuggyQSA.push( "\\[" + whitespace + "*(?:value|" + booleans + ")" );
 				}
-
+	
 				// Support: Chrome<29, Android<4.4, Safari<7.0+, iOS<7.0+, PhantomJS<1.9.8+
 				if ( !el.querySelectorAll( "[id~=" + expando + "-]" ).length ) {
 					rbuggyQSA.push("~=");
 				}
-
+	
 				// Webkit/Opera - :checked should return selected option elements
 				// http://www.w3.org/TR/2011/REC-css3-selectors-20110929/#checked
 				// IE8 throws error here and will not see later tests
 				if ( !el.querySelectorAll(":checked").length ) {
 					rbuggyQSA.push(":checked");
 				}
-
+	
 				// Support: Safari 8+, iOS 8+
 				// https://bugs.webkit.org/show_bug.cgi?id=136851
 				// In-page `selector#id sibling-combinator selector` fails
@@ -1416,67 +1443,67 @@
 					rbuggyQSA.push(".#.+[+~]");
 				}
 			});
-
+	
 			assert(function( el ) {
 				el.innerHTML = "<a href='' disabled='disabled'></a>" +
 					"<select disabled='disabled'><option/></select>";
-
+	
 				// Support: Windows 8 Native Apps
 				// The type and name attributes are restricted during .innerHTML assignment
 				var input = document.createElement("input");
 				input.setAttribute( "type", "hidden" );
 				el.appendChild( input ).setAttribute( "name", "D" );
-
+	
 				// Support: IE8
 				// Enforce case-sensitivity of name attribute
 				if ( el.querySelectorAll("[name=d]").length ) {
 					rbuggyQSA.push( "name" + whitespace + "*[*^$|!~]?=" );
 				}
-
+	
 				// FF 3.5 - :enabled/:disabled and hidden elements (hidden elements are still enabled)
 				// IE8 throws error here and will not see later tests
 				if ( el.querySelectorAll(":enabled").length !== 2 ) {
 					rbuggyQSA.push( ":enabled", ":disabled" );
 				}
-
+	
 				// Support: IE9-11+
 				// IE's :disabled selector does not pick up the children of disabled fieldsets
 				docElem.appendChild( el ).disabled = true;
 				if ( el.querySelectorAll(":disabled").length !== 2 ) {
 					rbuggyQSA.push( ":enabled", ":disabled" );
 				}
-
+	
 				// Opera 10-11 does not throw on post-comma invalid pseudos
 				el.querySelectorAll("*,:x");
 				rbuggyQSA.push(",.*:");
 			});
 		}
-
+	
 		if ( (support.matchesSelector = rnative.test( (matches = docElem.matches ||
 			docElem.webkitMatchesSelector ||
 			docElem.mozMatchesSelector ||
 			docElem.oMatchesSelector ||
 			docElem.msMatchesSelector) )) ) {
-
+	
 			assert(function( el ) {
 				// Check to see if it's possible to do matchesSelector
 				// on a disconnected node (IE 9)
 				support.disconnectedMatch = matches.call( el, "*" );
-
+	
 				// This should fail with an exception
 				// Gecko does not error, returns false instead
 				matches.call( el, "[s!='']:x" );
 				rbuggyMatches.push( "!=", pseudos );
 			});
 		}
-
+	
 		rbuggyQSA = rbuggyQSA.length && new RegExp( rbuggyQSA.join("|") );
 		rbuggyMatches = rbuggyMatches.length && new RegExp( rbuggyMatches.join("|") );
-
+	
 		/* Contains
 		---------------------------------------------------------------------- */
 		hasCompare = rnative.test( docElem.compareDocumentPosition );
-
+	
 		// Element contains another
 		// Purposefully self-exclusive
 		// As in, an element does not contain itself
@@ -1500,37 +1527,37 @@
 				}
 				return false;
 			};
-
+	
 		/* Sorting
 		---------------------------------------------------------------------- */
-
+	
 		// Document order sorting
 		sortOrder = hasCompare ?
 		function( a, b ) {
-
+	
 			// Flag for duplicate removal
 			if ( a === b ) {
 				hasDuplicate = true;
 				return 0;
 			}
-
+	
 			// Sort on method existence if only one input has compareDocumentPosition
 			var compare = !a.compareDocumentPosition - !b.compareDocumentPosition;
 			if ( compare ) {
 				return compare;
 			}
-
+	
 			// Calculate position if both inputs belong to the same document
 			compare = ( a.ownerDocument || a ) === ( b.ownerDocument || b ) ?
 				a.compareDocumentPosition( b ) :
-
+	
 				// Otherwise we know they are disconnected
 				1;
-
+	
 			// Disconnected nodes
 			if ( compare & 1 ||
 				(!support.sortDetached && b.compareDocumentPosition( a ) === compare) ) {
-
+	
 				// Choose the first element that is related to our preferred document
 				if ( a === document || a.ownerDocument === preferredDoc && contains(preferredDoc, a) ) {
 					return -1;
@@ -1538,13 +1565,13 @@
 				if ( b === document || b.ownerDocument === preferredDoc && contains(preferredDoc, b) ) {
 					return 1;
 				}
-
+	
 				// Maintain original order
 				return sortInput ?
 					( indexOf( sortInput, a ) - indexOf( sortInput, b ) ) :
 					0;
 			}
-
+	
 			return compare & 4 ? -1 : 1;
 		} :
 		function( a, b ) {
@@ -1553,14 +1580,14 @@
 				hasDuplicate = true;
 				return 0;
 			}
-
+	
 			var cur,
 				i = 0,
 				aup = a.parentNode,
 				bup = b.parentNode,
 				ap = [ a ],
 				bp = [ b ];
-
+	
 			// Parentless nodes are either documents or disconnected
 			if ( !aup || !bup ) {
 				return a === document ? -1 :
@@ -1570,12 +1597,12 @@
 					sortInput ?
 					( indexOf( sortInput, a ) - indexOf( sortInput, b ) ) :
 					0;
-
+	
 			// If the nodes are siblings, we can do a quick check
 			} else if ( aup === bup ) {
 				return siblingCheck( a, b );
 			}
-
+	
 			// Otherwise we need full lists of their ancestors for comparison
 			cur = a;
 			while ( (cur = cur.parentNode) ) {
@@ -1585,46 +1612,46 @@
 			while ( (cur = cur.parentNode) ) {
 				bp.unshift( cur );
 			}
-
+	
 			// Walk down the tree looking for a discrepancy
 			while ( ap[i] === bp[i] ) {
 				i++;
 			}
-
+	
 			return i ?
 				// Do a sibling check if the nodes have a common ancestor
 				siblingCheck( ap[i], bp[i] ) :
-
+	
 				// Otherwise nodes in our document sort first
 				ap[i] === preferredDoc ? -1 :
 				bp[i] === preferredDoc ? 1 :
 				0;
 		};
-
+	
 		return document;
 	};
-
+	
 	Sizzle.matches = function( expr, elements ) {
 		return Sizzle( expr, null, null, elements );
 	};
-
+	
 	Sizzle.matchesSelector = function( elem, expr ) {
 		// Set document vars if needed
 		if ( ( elem.ownerDocument || elem ) !== document ) {
 			setDocument( elem );
 		}
-
+	
 		// Make sure that attribute selectors are quoted
 		expr = expr.replace( rattributeQuotes, "='$1']" );
-
+	
 		if ( support.matchesSelector && documentIsHTML &&
 			!compilerCache[ expr + " " ] &&
 			( !rbuggyMatches || !rbuggyMatches.test( expr ) ) &&
 			( !rbuggyQSA     || !rbuggyQSA.test( expr ) ) ) {
-
+	
 			try {
 				var ret = matches.call( elem, expr );
-
+	
 				// IE 9's matchesSelector returns false on disconnected nodes
 				if ( ret || support.disconnectedMatch ||
 						// As well, disconnected nodes are said to be in a document
@@ -1634,10 +1661,10 @@
 				}
 			} catch (e) {}
 		}
-
+	
 		return Sizzle( expr, document, null, [ elem ] ).length > 0;
 	};
-
+	
 	Sizzle.contains = function( context, elem ) {
 		// Set document vars if needed
 		if ( ( context.ownerDocument || context ) !== document ) {
@@ -1645,19 +1672,19 @@
 		}
 		return contains( context, elem );
 	};
-
+	
 	Sizzle.attr = function( elem, name ) {
 		// Set document vars if needed
 		if ( ( elem.ownerDocument || elem ) !== document ) {
 			setDocument( elem );
 		}
-
+	
 		var fn = Expr.attrHandle[ name.toLowerCase() ],
 			// Don't get fooled by Object.prototype properties (jQuery #13807)
 			val = fn && hasOwn.call( Expr.attrHandle, name.toLowerCase() ) ?
 				fn( elem, name, !documentIsHTML ) :
 				undefined;
-
+	
 		return val !== undefined ?
 			val :
 			support.attributes || !documentIsHTML ?
@@ -1666,15 +1693,15 @@
 					val.value :
 					null;
 	};
-
+	
 	Sizzle.escape = function( sel ) {
 		return (sel + "").replace( rcssescape, fcssescape );
 	};
-
+	
 	Sizzle.error = function( msg ) {
 		throw new Error( "Syntax error, unrecognized expression: " + msg );
 	};
-
+	
 	/**
 	 * Document sorting and removing duplicates
 	 * @param {ArrayLike} results
@@ -1684,12 +1711,12 @@
 			duplicates = [],
 			j = 0,
 			i = 0;
-
+	
 		// Unless we *know* we can detect duplicates, assume their presence
 		hasDuplicate = !support.detectDuplicates;
 		sortInput = !support.sortStable && results.slice( 0 );
 		results.sort( sortOrder );
-
+	
 		if ( hasDuplicate ) {
 			while ( (elem = results[i++]) ) {
 				if ( elem === results[ i ] ) {
@@ -1700,14 +1727,14 @@
 				results.splice( duplicates[ j ], 1 );
 			}
 		}
-
+	
 		// Clear input after sorting to release objects
 		// See https://github.com/jquery/sizzle/pull/225
 		sortInput = null;
-
+	
 		return results;
 	};
-
+	
 	/**
 	 * Utility function for retrieving the text value of an array of DOM nodes
 	 * @param {Array|Element} elem
@@ -1717,7 +1744,7 @@
 			ret = "",
 			i = 0,
 			nodeType = elem.nodeType;
-
+	
 		if ( !nodeType ) {
 			// If no nodeType, this is expected to be an array
 			while ( (node = elem[i++]) ) {
@@ -1739,44 +1766,44 @@
 			return elem.nodeValue;
 		}
 		// Do not include comment or processing instruction nodes
-
+	
 		return ret;
 	};
-
+	
 	Expr = Sizzle.selectors = {
-
+	
 		// Can be adjusted by the user
 		cacheLength: 50,
-
+	
 		createPseudo: markFunction,
-
+	
 		match: matchExpr,
-
+	
 		attrHandle: {},
-
+	
 		find: {},
-
+	
 		relative: {
 			">": { dir: "parentNode", first: true },
 			" ": { dir: "parentNode" },
 			"+": { dir: "previousSibling", first: true },
 			"~": { dir: "previousSibling" }
 		},
-
+	
 		preFilter: {
 			"ATTR": function( match ) {
 				match[1] = match[1].replace( runescape, funescape );
-
+	
 				// Move the given value to match[3] whether quoted or unquoted
 				match[3] = ( match[3] || match[4] || match[5] || "" ).replace( runescape, funescape );
-
+	
 				if ( match[2] === "~=" ) {
 					match[3] = " " + match[3] + " ";
 				}
-
+	
 				return match.slice( 0, 4 );
 			},
-
+	
 			"CHILD": function( match ) {
 				/* matches from matchExpr["CHILD"]
 					1 type (only|nth|...)
@@ -1789,57 +1816,57 @@
 					8 y of y-component
 				*/
 				match[1] = match[1].toLowerCase();
-
+	
 				if ( match[1].slice( 0, 3 ) === "nth" ) {
 					// nth-* requires argument
 					if ( !match[3] ) {
 						Sizzle.error( match[0] );
 					}
-
+	
 					// numeric x and y parameters for Expr.filter.CHILD
 					// remember that false/true cast respectively to 0/1
 					match[4] = +( match[4] ? match[5] + (match[6] || 1) : 2 * ( match[3] === "even" || match[3] === "odd" ) );
 					match[5] = +( ( match[7] + match[8] ) || match[3] === "odd" );
-
+	
 				// other types prohibit arguments
 				} else if ( match[3] ) {
 					Sizzle.error( match[0] );
 				}
-
+	
 				return match;
 			},
-
+	
 			"PSEUDO": function( match ) {
 				var excess,
 					unquoted = !match[6] && match[2];
-
+	
 				if ( matchExpr["CHILD"].test( match[0] ) ) {
 					return null;
 				}
-
+	
 				// Accept quoted arguments as-is
 				if ( match[3] ) {
 					match[2] = match[4] || match[5] || "";
-
+	
 				// Strip excess characters from unquoted arguments
 				} else if ( unquoted && rpseudo.test( unquoted ) &&
 					// Get excess from tokenize (recursively)
 					(excess = tokenize( unquoted, true )) &&
 					// advance to the next closing parenthesis
 					(excess = unquoted.indexOf( ")", unquoted.length - excess ) - unquoted.length) ) {
-
+	
 					// excess is a negative index
 					match[0] = match[0].slice( 0, excess );
 					match[2] = unquoted.slice( 0, excess );
 				}
-
+	
 				// Return only captures needed by the pseudo filter method (type and argument)
 				return match.slice( 0, 3 );
 			}
 		},
-
+	
 		filter: {
-
+	
 			"TAG": function( nodeNameSelector ) {
 				var nodeName = nodeNameSelector.replace( runescape, funescape ).toLowerCase();
 				return nodeNameSelector === "*" ?
@@ -1848,30 +1875,30 @@
 						return elem.nodeName && elem.nodeName.toLowerCase() === nodeName;
 					};
 			},
-
+	
 			"CLASS": function( className ) {
 				var pattern = classCache[ className + " " ];
-
+	
 				return pattern ||
 					(pattern = new RegExp( "(^|" + whitespace + ")" + className + "(" + whitespace + "|$)" )) &&
 					classCache( className, function( elem ) {
 						return pattern.test( typeof elem.className === "string" && elem.className || typeof elem.getAttribute !== "undefined" && elem.getAttribute("class") || "" );
 					});
 			},
-
+	
 			"ATTR": function( name, operator, check ) {
 				return function( elem ) {
 					var result = Sizzle.attr( elem, name );
-
+	
 					if ( result == null ) {
 						return operator === "!=";
 					}
 					if ( !operator ) {
 						return true;
 					}
-
+	
 					result += "";
-
+	
 					return operator === "=" ? result === check :
 						operator === "!=" ? result !== check :
 						operator === "^=" ? check && result.indexOf( check ) === 0 :
@@ -1882,19 +1909,19 @@
 						false;
 				};
 			},
-
+	
 			"CHILD": function( type, what, argument, first, last ) {
 				var simple = type.slice( 0, 3 ) !== "nth",
 					forward = type.slice( -4 ) !== "last",
 					ofType = what === "of-type";
-
+	
 				return first === 1 && last === 0 ?
-
+	
 					// Shortcut for :nth-*(n)
 					function( elem ) {
 						return !!elem.parentNode;
 					} :
-
+	
 					function( elem, context, xml ) {
 						var cache, uniqueCache, outerCache, node, nodeIndex, start,
 							dir = simple !== forward ? "nextSibling" : "previousSibling",
@@ -1902,9 +1929,9 @@
 							name = ofType && elem.nodeName.toLowerCase(),
 							useCache = !xml && !ofType,
 							diff = false;
-
+	
 						if ( parent ) {
-
+	
 							// :(first|last|only)-(child|of-type)
 							if ( simple ) {
 								while ( dir ) {
@@ -1913,7 +1940,7 @@
 										if ( ofType ?
 											node.nodeName.toLowerCase() === name :
 											node.nodeType === 1 ) {
-
+	
 											return false;
 										}
 									}
@@ -1922,81 +1949,81 @@
 								}
 								return true;
 							}
-
+	
 							start = [ forward ? parent.firstChild : parent.lastChild ];
-
+	
 							// non-xml :nth-child(...) stores cache data on `parent`
 							if ( forward && useCache ) {
-
+	
 								// Seek `elem` from a previously-cached index
-
+	
 								// ...in a gzip-friendly way
 								node = parent;
 								outerCache = node[ expando ] || (node[ expando ] = {});
-
+	
 								// Support: IE <9 only
 								// Defend against cloned attroperties (jQuery gh-1709)
 								uniqueCache = outerCache[ node.uniqueID ] ||
 									(outerCache[ node.uniqueID ] = {});
-
+	
 								cache = uniqueCache[ type ] || [];
 								nodeIndex = cache[ 0 ] === dirruns && cache[ 1 ];
 								diff = nodeIndex && cache[ 2 ];
 								node = nodeIndex && parent.childNodes[ nodeIndex ];
-
+	
 								while ( (node = ++nodeIndex && node && node[ dir ] ||
-
+	
 									// Fallback to seeking `elem` from the start
 									(diff = nodeIndex = 0) || start.pop()) ) {
-
+	
 									// When found, cache indexes on `parent` and break
 									if ( node.nodeType === 1 && ++diff && node === elem ) {
 										uniqueCache[ type ] = [ dirruns, nodeIndex, diff ];
 										break;
 									}
 								}
-
+	
 							} else {
 								// Use previously-cached element index if available
 								if ( useCache ) {
 									// ...in a gzip-friendly way
 									node = elem;
 									outerCache = node[ expando ] || (node[ expando ] = {});
-
+	
 									// Support: IE <9 only
 									// Defend against cloned attroperties (jQuery gh-1709)
 									uniqueCache = outerCache[ node.uniqueID ] ||
 										(outerCache[ node.uniqueID ] = {});
-
+	
 									cache = uniqueCache[ type ] || [];
 									nodeIndex = cache[ 0 ] === dirruns && cache[ 1 ];
 									diff = nodeIndex;
 								}
-
+	
 								// xml :nth-child(...)
 								// or :nth-last-child(...) or :nth(-last)?-of-type(...)
 								if ( diff === false ) {
 									// Use the same loop as above to seek `elem` from the start
 									while ( (node = ++nodeIndex && node && node[ dir ] ||
 										(diff = nodeIndex = 0) || start.pop()) ) {
-
+	
 										if ( ( ofType ?
 											node.nodeName.toLowerCase() === name :
 											node.nodeType === 1 ) &&
 											++diff ) {
-
+	
 											// Cache the index of each encountered element
 											if ( useCache ) {
 												outerCache = node[ expando ] || (node[ expando ] = {});
-
+	
 												// Support: IE <9 only
 												// Defend against cloned attroperties (jQuery gh-1709)
 												uniqueCache = outerCache[ node.uniqueID ] ||
 													(outerCache[ node.uniqueID ] = {});
-
+	
 												uniqueCache[ type ] = [ dirruns, diff ];
 											}
-
+	
 											if ( node === elem ) {
 												break;
 											}
@@ -2004,14 +2031,14 @@
 									}
 								}
 							}
-
+	
 							// Incorporate the offset, then check against cycle size
 							diff -= last;
 							return diff === first || ( diff % first === 0 && diff / first >= 0 );
 						}
 					};
 			},
-
+	
 			"PSEUDO": function( pseudo, argument ) {
 				// pseudo-class names are case-insensitive
 				// http://www.w3.org/TR/selectors/#pseudo-classes
@@ -2020,14 +2047,14 @@
 				var args,
 					fn = Expr.pseudos[ pseudo ] || Expr.setFilters[ pseudo.toLowerCase() ] ||
 						Sizzle.error( "unsupported pseudo: " + pseudo );
-
+	
 				// The user may use createPseudo to indicate that
 				// arguments are needed to create the filter function
 				// just as Sizzle does
 				if ( fn[ expando ] ) {
 					return fn( argument );
 				}
-
+	
 				// But maintain support for old signatures
 				if ( fn.length > 1 ) {
 					args = [ pseudo, pseudo, "", argument ];
@@ -2045,11 +2072,11 @@
 							return fn( elem, 0, args );
 						};
 				}
-
+	
 				return fn;
 			}
 		},
-
+	
 		pseudos: {
 			// Potentially complex pseudos
 			"not": markFunction(function( selector ) {
@@ -2059,13 +2086,13 @@
 				var input = [],
 					results = [],
 					matcher = compile( selector.replace( rtrim, "$1" ) );
-
+	
 				return matcher[ expando ] ?
 					markFunction(function( seed, matches, context, xml ) {
 						var elem,
 							unmatched = matcher( seed, null, xml, [] ),
 							i = seed.length;
-
+	
 						// Match elements unmatched by `matcher`
 						while ( i-- ) {
 							if ( (elem = unmatched[i]) ) {
@@ -2081,20 +2108,20 @@
 						return !results.pop();
 					};
 			}),
-
+	
 			"has": markFunction(function( selector ) {
 				return function( elem ) {
 					return Sizzle( selector, elem ).length > 0;
 				};
 			}),
-
+	
 			"contains": markFunction(function( text ) {
 				text = text.replace( runescape, funescape );
 				return function( elem ) {
 					return ( elem.textContent || elem.innerText || getText( elem ) ).indexOf( text ) > -1;
 				};
 			}),
-
+	
 			// "Whether an element is represented by a :lang() selector
 			// is based solely on the element's language value
 			// being equal to the identifier C,
@@ -2114,7 +2141,7 @@
 						if ( (elemLang = documentIsHTML ?
 							elem.lang :
 							elem.getAttribute("xml:lang") || elem.getAttribute("lang")) ) {
-
+	
 							elemLang = elemLang.toLowerCase();
 							return elemLang === lang || elemLang.indexOf( lang + "-" ) === 0;
 						}
@@ -2122,42 +2149,42 @@
 					return false;
 				};
 			}),
-
+	
 			// Miscellaneous
 			"target": function( elem ) {
 				var hash = window.location && window.location.hash;
 				return hash && hash.slice( 1 ) === elem.id;
 			},
-
+	
 			"root": function( elem ) {
 				return elem === docElem;
 			},
-
+	
 			"focus": function( elem ) {
 				return elem === document.activeElement && (!document.hasFocus || document.hasFocus()) && !!(elem.type || elem.href || ~elem.tabIndex);
 			},
-
+	
 			// Boolean properties
 			"enabled": createDisabledPseudo( false ),
 			"disabled": createDisabledPseudo( true ),
-
+	
 			"checked": function( elem ) {
 				// In CSS3, :checked should return both checked and selected elements
 				// http://www.w3.org/TR/2011/REC-css3-selectors-20110929/#checked
 				var nodeName = elem.nodeName.toLowerCase();
 				return (nodeName === "input" && !!elem.checked) || (nodeName === "option" && !!elem.selected);
 			},
-
+	
 			"selected": function( elem ) {
 				// Accessing this property makes selected-by-default
 				// options in Safari work properly
 				if ( elem.parentNode ) {
 					elem.parentNode.selectedIndex;
 				}
-
+	
 				return elem.selected === true;
 			},
-
+	
 			// Contents
 			"empty": function( elem ) {
 				// http://www.w3.org/TR/selectors/#empty-pseudo
@@ -2171,48 +2198,48 @@
 				}
 				return true;
 			},
-
+	
 			"parent": function( elem ) {
 				return !Expr.pseudos["empty"]( elem );
 			},
-
+	
 			// Element/input types
 			"header": function( elem ) {
 				return rheader.test( elem.nodeName );
 			},
-
+	
 			"input": function( elem ) {
 				return rinputs.test( elem.nodeName );
 			},
-
+	
 			"button": function( elem ) {
 				var name = elem.nodeName.toLowerCase();
 				return name === "input" && elem.type === "button" || name === "button";
 			},
-
+	
 			"text": function( elem ) {
 				var attr;
 				return elem.nodeName.toLowerCase() === "input" &&
 					elem.type === "text" &&
-
+	
 					// Support: IE<8
 					// New HTML5 attribute values (e.g., "search") appear with elem.type === "text"
 					( (attr = elem.getAttribute("type")) == null || attr.toLowerCase() === "text" );
 			},
-
+	
 			// Position-in-collection
 			"first": createPositionalPseudo(function() {
 				return [ 0 ];
 			}),
-
+	
 			"last": createPositionalPseudo(function( matchIndexes, length ) {
 				return [ length - 1 ];
 			}),
-
+	
 			"eq": createPositionalPseudo(function( matchIndexes, length, argument ) {
 				return [ argument < 0 ? argument + length : argument ];
 			}),
-
+	
 			"even": createPositionalPseudo(function( matchIndexes, length ) {
 				var i = 0;
 				for ( ; i < length; i += 2 ) {
@@ -2220,7 +2247,7 @@
 				}
 				return matchIndexes;
 			}),
-
+	
 			"odd": createPositionalPseudo(function( matchIndexes, length ) {
 				var i = 1;
 				for ( ; i < length; i += 2 ) {
@@ -2228,7 +2255,7 @@
 				}
 				return matchIndexes;
 			}),
-
+	
 			"lt": createPositionalPseudo(function( matchIndexes, length, argument ) {
 				var i = argument < 0 ? argument + length : argument;
 				for ( ; --i >= 0; ) {
@@ -2236,7 +2263,7 @@
 				}
 				return matchIndexes;
 			}),
-
+	
 			"gt": createPositionalPseudo(function( matchIndexes, length, argument ) {
 				var i = argument < 0 ? argument + length : argument;
 				for ( ; ++i < length; ) {
@@ -2246,9 +2273,9 @@
 			})
 		}
 	};
-
+	
 	Expr.pseudos["nth"] = Expr.pseudos["eq"];
-
+	
 	// Add button/input type pseudos
 	for ( i in { radio: true, checkbox: true, file: true, password: true, image: true } ) {
 		Expr.pseudos[ i ] = createInputPseudo( i );
@@ -2256,27 +2283,27 @@
 	for ( i in { submit: true, reset: true } ) {
 		Expr.pseudos[ i ] = createButtonPseudo( i );
 	}
-
+	
 	// Easy API for creating new setFilters
 	function setFilters() {}
 	setFilters.prototype = Expr.filters = Expr.pseudos;
 	Expr.setFilters = new setFilters();
-
+	
 	tokenize = Sizzle.tokenize = function( selector, parseOnly ) {
 		var matched, match, tokens, type,
 			soFar, groups, preFilters,
 			cached = tokenCache[ selector + " " ];
-
+	
 		if ( cached ) {
 			return parseOnly ? 0 : cached.slice( 0 );
 		}
-
+	
 		soFar = selector;
 		groups = [];
 		preFilters = Expr.preFilter;
-
+	
 		while ( soFar ) {
-
+	
 			// Comma and first run
 			if ( !matched || (match = rcomma.exec( soFar )) ) {
 				if ( match ) {
@@ -2285,9 +2312,9 @@
 				}
 				groups.push( (tokens = []) );
 			}
-
+	
 			matched = false;
-
+	
 			// Combinators
 			if ( (match = rcombinators.exec( soFar )) ) {
 				matched = match.shift();
@@ -2298,7 +2325,7 @@
 				});
 				soFar = soFar.slice( matched.length );
 			}
-
+	
 			// Filters
 			for ( type in Expr.filter ) {
 				if ( (match = matchExpr[ type ].exec( soFar )) && (!preFilters[ type ] ||
@@ -2312,12 +2339,12 @@
 					soFar = soFar.slice( matched.length );
 				}
 			}
-
+	
 			if ( !matched ) {
 				break;
 			}
 		}
-
+	
 		// Return the length of the invalid excess
 		// if we're just parsing
 		// Otherwise, throw an error or return tokens
@@ -2328,7 +2355,7 @@
 				// Cache the tokens
 				tokenCache( selector, groups ).slice( 0 );
 	};
-
+	
 	function toSelector( tokens ) {
 		var i = 0,
 			len = tokens.length,
@@ -2338,14 +2365,14 @@
 		}
 		return selector;
 	}
-
+	
 	function addCombinator( matcher, combinator, base ) {
 		var dir = combinator.dir,
 			skip = combinator.next,
 			key = skip || dir,
 			checkNonElements = base && key === "parentNode",
 			doneName = done++;
-
+	
 		return combinator.first ?
 			// Check against closest ancestor/preceding element
 			function( elem, context, xml ) {
@@ -2355,12 +2382,12 @@
 					}
 				}
 			} :
-
+	
 			// Check against all ancestor/preceding elements
 			function( elem, context, xml ) {
 				var oldCache, uniqueCache, outerCache,
 					newCache = [ dirruns, doneName ];
-
+	
 				// We can't set arbitrary data on XML nodes, so they don't benefit from combinator caching
 				if ( xml ) {
 					while ( (elem = elem[ dir ]) ) {
@@ -2374,22 +2401,22 @@
 					while ( (elem = elem[ dir ]) ) {
 						if ( elem.nodeType === 1 || checkNonElements ) {
 							outerCache = elem[ expando ] || (elem[ expando ] = {});
-
+	
 							// Support: IE <9 only
 							// Defend against cloned attroperties (jQuery gh-1709)
 							uniqueCache = outerCache[ elem.uniqueID ] || (outerCache[ elem.uniqueID ] = {});
-
+	
 							if ( skip && skip === elem.nodeName.toLowerCase() ) {
 								elem = elem[ dir ] || elem;
 							} else if ( (oldCache = uniqueCache[ key ]) &&
 								oldCache[ 0 ] === dirruns && oldCache[ 1 ] === doneName ) {
-
+	
 								// Assign to newCache so results back-propagate to previous elements
 								return (newCache[ 2 ] = oldCache[ 2 ]);
 							} else {
 								// Reuse newcache so results back-propagate to previous elements
 								uniqueCache[ key ] = newCache;
-
+	
 								// A match means we're done; a fail means we have to keep checking
 								if ( (newCache[ 2 ] = matcher( elem, context, xml )) ) {
 									return true;
@@ -2400,7 +2427,7 @@
 				}
 			};
 	}
-
+	
 	function elementMatcher( matchers ) {
 		return matchers.length > 1 ?
 			function( elem, context, xml ) {
@@ -2414,7 +2441,7 @@
 			} :
 			matchers[0];
 	}
-
+	
 	function multipleContexts( selector, contexts, results ) {
 		var i = 0,
 			len = contexts.length;
@@ -2423,14 +2450,14 @@
 		}
 		return results;
 	}
-
+	
 	function condense( unmatched, map, filter, context, xml ) {
 		var elem,
 			newUnmatched = [],
 			i = 0,
 			len = unmatched.length,
 			mapped = map != null;
-
+	
 		for ( ; i < len; i++ ) {
 			if ( (elem = unmatched[i]) ) {
 				if ( !filter || filter( elem, context, xml ) ) {
@@ -2441,10 +2468,10 @@
 				}
 			}
 		}
-
+	
 		return newUnmatched;
 	}
-
+	
 	function setMatcher( preFilter, selector, matcher, postFilter, postFinder, postSelector ) {
 		if ( postFilter && !postFilter[ expando ] ) {
 			postFilter = setMatcher( postFilter );
@@ -2457,36 +2484,36 @@
 				preMap = [],
 				postMap = [],
 				preexisting = results.length,
-
+	
 				// Get initial elements from seed or context
 				elems = seed || multipleContexts( selector || "*", context.nodeType ? [ context ] : context, [] ),
-
+	
 				// Prefilter to get matcher input, preserving a map for seed-results synchronization
 				matcherIn = preFilter && ( seed || !selector ) ?
 					condense( elems, preMap, preFilter, context, xml ) :
 					elems,
-
+	
 				matcherOut = matcher ?
 					// If we have a postFinder, or filtered seed, or non-seed postFilter or preexisting results,
 					postFinder || ( seed ? preFilter : preexisting || postFilter ) ?
-
+	
 						// ...intermediate processing is necessary
 						[] :
-
+	
 						// ...otherwise use results directly
 						results :
 					matcherIn;
-
+	
 			// Find primary matches
 			if ( matcher ) {
 				matcher( matcherIn, matcherOut, context, xml );
 			}
-
+	
 			// Apply postFilter
 			if ( postFilter ) {
 				temp = condense( matcherOut, postMap );
 				postFilter( temp, [], context, xml );
-
+	
 				// Un-match failing elements by moving them back to matcherIn
 				i = temp.length;
 				while ( i-- ) {
@@ -2495,7 +2522,7 @@
 					}
 				}
 			}
-
+	
 			if ( seed ) {
 				if ( postFinder || preFilter ) {
 					if ( postFinder ) {
@@ -2510,18 +2537,18 @@
 						}
 						postFinder( null, (matcherOut = []), temp, xml );
 					}
-
+	
 					// Move matched elements from seed to results to keep them synchronized
 					i = matcherOut.length;
 					while ( i-- ) {
 						if ( (elem = matcherOut[i]) &&
 							(temp = postFinder ? indexOf( seed, elem ) : preMap[i]) > -1 ) {
-
+	
 							seed[temp] = !(results[temp] = elem);
 						}
 					}
 				}
-
+	
 			// Add elements to results, through postFinder if defined
 			} else {
 				matcherOut = condense(
@@ -2537,14 +2564,14 @@
 			}
 		});
 	}
-
+	
 	function matcherFromTokens( tokens ) {
 		var checkContext, matcher, j,
 			len = tokens.length,
 			leadingRelative = Expr.relative[ tokens[0].type ],
 			implicitRelative = leadingRelative || Expr.relative[" "],
 			i = leadingRelative ? 1 : 0,
-
+	
 			// The foundational matcher ensures that elements are reachable from top-level context(s)
 			matchContext = addCombinator( function( elem ) {
 				return elem === checkContext;
@@ -2561,13 +2588,13 @@
 				checkContext = null;
 				return ret;
 			} ];
-
+	
 		for ( ; i < len; i++ ) {
 			if ( (matcher = Expr.relative[ tokens[i].type ]) ) {
 				matchers = [ addCombinator(elementMatcher( matchers ), matcher) ];
 			} else {
 				matcher = Expr.filter[ tokens[i].type ].apply( null, tokens[i].matches );
-
+	
 				// Return special upon seeing a positional matcher
 				if ( matcher[ expando ] ) {
 					// Find the next relative operator (if any) for proper handling
@@ -2592,10 +2619,10 @@
 				matchers.push( matcher );
 			}
 		}
-
+	
 		return elementMatcher( matchers );
 	}
-
+	
 	function matcherFromGroupMatchers( elementMatchers, setMatchers ) {
 		var bySet = setMatchers.length > 0,
 			byElement = elementMatchers.length > 0,
@@ -2611,11 +2638,11 @@
 					// Use integer dirruns iff this is the outermost matcher
 					dirrunsUnique = (dirruns += contextBackup == null ? 1 : Math.random() || 0.1),
 					len = elems.length;
-
+	
 				if ( outermost ) {
 					outermostContext = context === document || context || outermost;
 				}
-
+	
 				// Add elements passing elementMatchers directly to results
 				// Support: IE<9, Safari
 				// Tolerate NodeList properties (IE: "length"; Safari: <number>) matching elements by id
@@ -2636,25 +2663,25 @@
 							dirruns = dirrunsUnique;
 						}
 					}
-
+	
 					// Track unmatched elements for set filters
 					if ( bySet ) {
 						// They will have gone through all possible matchers
 						if ( (elem = !matcher && elem) ) {
 							matchedCount--;
 						}
-
+	
 						// Lengthen the array for every element, matched or not
 						if ( seed ) {
 							unmatched.push( elem );
 						}
 					}
 				}
-
+	
 				// `i` is now the count of elements visited above, and adding it to `matchedCount`
 				// makes the latter nonnegative.
 				matchedCount += i;
-
+	
 				// Apply set filters to unmatched elements
 				// NOTE: This can be skipped if there are no unmatched elements (i.e., `matchedCount`
 				// equals `i`), unless we didn't visit _any_ elements in the above loop because we have
@@ -2667,7 +2694,7 @@
 					while ( (matcher = setMatchers[j++]) ) {
 						matcher( unmatched, setMatched, context, xml );
 					}
-
+	
 					if ( seed ) {
 						// Reintegrate element matches to eliminate the need for sorting
 						if ( matchedCount > 0 ) {
@@ -2677,42 +2704,42 @@
 								}
 							}
 						}
-
+	
 						// Discard index placeholder values to get only actual matches
 						setMatched = condense( setMatched );
 					}
-
+	
 					// Add matches to results
 					push.apply( results, setMatched );
-
+	
 					// Seedless set matches succeeding multiple successful matchers stipulate sorting
 					if ( outermost && !seed && setMatched.length > 0 &&
 						( matchedCount + setMatchers.length ) > 1 ) {
-
+	
 						Sizzle.uniqueSort( results );
 					}
 				}
-
+	
 				// Override manipulation of globals by nested matchers
 				if ( outermost ) {
 					dirruns = dirrunsUnique;
 					outermostContext = contextBackup;
 				}
-
+	
 				return unmatched;
 			};
-
+	
 		return bySet ?
 			markFunction( superMatcher ) :
 			superMatcher;
 	}
-
+	
 	compile = Sizzle.compile = function( selector, match /* Internal Use Only */ ) {
 		var i,
 			setMatchers = [],
 			elementMatchers = [],
 			cached = compilerCache[ selector + " " ];
-
+	
 		if ( !cached ) {
 			// Generate a function of recursive functions that can be used to check each element
 			if ( !match ) {
@@ -2727,16 +2754,16 @@
 					elementMatchers.push( cached );
 				}
 			}
-
+	
 			// Cache the compiled function
 			cached = compilerCache( selector, matcherFromGroupMatchers( elementMatchers, setMatchers ) );
-
+	
 			// Save selector and tokenization
 			cached.selector = selector;
 		}
 		return cached;
 	};
-
+	
 	/**
 	 * A low-level selection function that works with Sizzle's compiled
 	 *  selector functions
@@ -2750,36 +2777,36 @@
 		var i, tokens, token, type, find,
 			compiled = typeof selector === "function" && selector,
 			match = !seed && tokenize( (selector = compiled.selector || selector) );
-
+	
 		results = results || [];
-
+	
 		// Try to minimize operations if there is only one selector in the list and no seed
 		// (the latter of which guarantees us context)
 		if ( match.length === 1 ) {
-
+	
 			// Reduce context if the leading compound selector is an ID
 			tokens = match[0] = match[0].slice( 0 );
 			if ( tokens.length > 2 && (token = tokens[0]).type === "ID" &&
 					support.getById && context.nodeType === 9 && documentIsHTML &&
 					Expr.relative[ tokens[1].type ] ) {
-
+	
 				context = ( Expr.find["ID"]( token.matches[0].replace(runescape, funescape), context ) || [] )[0];
 				if ( !context ) {
 					return results;
-
+	
 				// Precompiled matchers will still verify ancestry, so step up a level
 				} else if ( compiled ) {
 					context = context.parentNode;
 				}
-
+	
 				selector = selector.slice( tokens.shift().value.length );
 			}
-
+	
 			// Fetch a seed set for right-to-left matching
 			i = matchExpr["needsContext"].test( selector ) ? 0 : tokens.length;
 			while ( i-- ) {
 				token = tokens[i];
-
+	
 				// Abort if we hit a combinator
 				if ( Expr.relative[ (type = token.type) ] ) {
 					break;
@@ -2790,7 +2817,7 @@
 						token.matches[0].replace( runescape, funescape ),
 						rsibling.test( tokens[0].type ) && testContext( context.parentNode ) || context
 					)) ) {
-
+	
 						// If seed is empty or no tokens remain, we can return early
 						tokens.splice( i, 1 );
 						selector = seed.length && toSelector( tokens );
@@ -2798,13 +2825,13 @@
 							push.apply( results, seed );
 							return results;
 						}
-
+	
 						break;
 					}
 				}
 			}
 		}
-
+	
 		// Compile and execute a filtering function if one is not provided
 		// Provide `match` to avoid retokenization if we modified the selector above
 		( compiled || compile( selector, match ) )(
@@ -2816,26 +2843,26 @@
 		);
 		return results;
 	};
-
+	
 	// One-time assignments
-
+	
 	// Sort stability
 	support.sortStable = expando.split("").sort( sortOrder ).join("") === expando;
-
+	
 	// Support: Chrome 14-35+
 	// Always assume duplicates if they aren't passed to the comparison function
 	support.detectDuplicates = !!hasDuplicate;
-
+	
 	// Initialize against the default document
 	setDocument();
-
+	
 	// Support: Webkit<537.32 - Safari 6.0.3/Chrome 25 (fixed in Chrome 27)
 	// Detached nodes confoundingly follow *each other*
 	support.sortDetached = assert(function( el ) {
 		// Should return 1, but returns 4 (following)
 		return el.compareDocumentPosition( document.createElement("fieldset") ) & 1;
 	});
-
+	
 	// Support: IE<8
 	// Prevent attribute/property "interpolation"
 	// https://msdn.microsoft.com/en-us/library/ms536429%28VS.85%29.aspx
@@ -2849,7 +2876,7 @@
 			}
 		});
 	}
-
+	
 	// Support: IE<9
 	// Use defaultValue in place of getAttribute("value")
 	if ( !support.attributes || !assert(function( el ) {
@@ -2863,7 +2890,7 @@
 			}
 		});
 	}
-
+	
 	// Support: IE<9
 	// Use getAttributeNode to fetch booleans when getAttribute lies
 	if ( !assert(function( el ) {
@@ -2879,16 +2906,16 @@
 			}
 		});
 	}
-
+	
 	return Sizzle;
-
+	
 	})( window );
-
-
-
+	
+	
+	
 	jQuery.find = Sizzle;
 	jQuery.expr = Sizzle.selectors;
-
+	
 	// Deprecated
 	jQuery.expr[ ":" ] = jQuery.expr.pseudos;
 	jQuery.uniqueSort = jQuery.unique = Sizzle.uniqueSort;
@@ -2896,13 +2923,13 @@
 	jQuery.isXMLDoc = Sizzle.isXML;
 	jQuery.contains = Sizzle.contains;
 	jQuery.escapeSelector = Sizzle.escape;
-
-
-
+	
+	
+	
 	var dir = function( elem, dir, until ) {
 		var matched = [],
 			truncate = until !== undefined;
-
+	
 		while ( ( elem = elem[ dir ] ) && elem.nodeType !== 9 ) {
 			if ( elem.nodeType === 1 ) {
 				if ( truncate && jQuery( elem ).is( until ) ) {
@@ -2913,29 +2940,29 @@
 		}
 		return matched;
 	};
-
-
+	
+	
 	var siblings = function( n, elem ) {
 		var matched = [];
-
+	
 		for ( ; n; n = n.nextSibling ) {
 			if ( n.nodeType === 1 && n !== elem ) {
 				matched.push( n );
 			}
 		}
-
+	
 		return matched;
 	};
-
-
+	
+	
 	var rneedsContext = jQuery.expr.match.needsContext;
-
+	
 	var rsingleTag = ( /^<([a-z][^\/\0>:\x20\t\r\n\f]*)[\x20\t\r\n\f]*\/?>(?:<\/\1>|)$/i );
-
-
-
+	
+	
+	
 	var risSimple = /^.[^:#\[\.,]*$/;
-
+	
 	// Implement the identical functionality for filter and not
 	function winnow( elements, qualifier, not ) {
 		if ( jQuery.isFunction( qualifier ) ) {
@@ -2943,49 +2970,49 @@
 				/* jshint -W018 */
 				return !!qualifier.call( elem, i, elem ) !== not;
 			} );
-
+	
 		}
-
+	
 		if ( qualifier.nodeType ) {
 			return jQuery.grep( elements, function( elem ) {
 				return ( elem === qualifier ) !== not;
 			} );
-
+	
 		}
-
+	
 		if ( typeof qualifier === "string" ) {
 			if ( risSimple.test( qualifier ) ) {
 				return jQuery.filter( qualifier, elements, not );
 			}
-
+	
 			qualifier = jQuery.filter( qualifier, elements );
 		}
-
+	
 		return jQuery.grep( elements, function( elem ) {
 			return ( indexOf.call( qualifier, elem ) > -1 ) !== not && elem.nodeType === 1;
 		} );
 	}
-
+	
 	jQuery.filter = function( expr, elems, not ) {
 		var elem = elems[ 0 ];
-
+	
 		if ( not ) {
 			expr = ":not(" + expr + ")";
 		}
-
+	
 		return elems.length === 1 && elem.nodeType === 1 ?
 			jQuery.find.matchesSelector( elem, expr ) ? [ elem ] : [] :
 			jQuery.find.matches( expr, jQuery.grep( elems, function( elem ) {
 				return elem.nodeType === 1;
 			} ) );
 	};
-
+	
 	jQuery.fn.extend( {
 		find: function( selector ) {
 			var i, ret,
 				len = this.length,
 				self = this;
-
+	
 			if ( typeof selector !== "string" ) {
 				return this.pushStack( jQuery( selector ).filter( function() {
 					for ( i = 0; i < len; i++ ) {
@@ -2995,13 +3022,13 @@
 					}
 				} ) );
 			}
-
+	
 			ret = this.pushStack( [] );
-
+	
 			for ( i = 0; i < len; i++ ) {
 				jQuery.find( selector, self[ i ], ret );
 			}
-
+	
 			return len > 1 ? jQuery.uniqueSort( ret ) : ret;
 		},
 		filter: function( selector ) {
@@ -3013,7 +3040,7 @@
 		is: function( selector ) {
 			return !!winnow(
 				this,
-
+	
 				// If this is a positional/relative selector, check membership in the returned set
 				// so $("p:first").is("p:last") won't return true for a doc with two "p".
 				typeof selector === "string" && rneedsContext.test( selector ) ?
@@ -3023,52 +3050,52 @@
 			).length;
 		}
 	} );
-
-
+	
+	
 	// Initialize a jQuery object
-
-
+	
+	
 	// A central reference to the root jQuery(document)
 	var rootjQuery,
-
+	
 		// A simple way to check for HTML strings
 		// Prioritize #id over <tag> to avoid XSS via location.hash (#9521)
 		// Strict HTML recognition (#11290: must start with <)
 		// Shortcut simple #id case for speed
 		rquickExpr = /^(?:\s*(<[\w\W]+>)[^>]*|#([\w-]+))$/,
-
+	
 		init = jQuery.fn.init = function( selector, context, root ) {
 			var match, elem;
-
+	
 			// HANDLE: $(""), $(null), $(undefined), $(false)
 			if ( !selector ) {
 				return this;
 			}
-
+	
 			// Method init() accepts an alternate rootjQuery
 			// so migrate can support jQuery.sub (gh-2101)
 			root = root || rootjQuery;
-
+	
 			// Handle HTML strings
 			if ( typeof selector === "string" ) {
 				if ( selector[ 0 ] === "<" &&
 					selector[ selector.length - 1 ] === ">" &&
 					selector.length >= 3 ) {
-
+	
 					// Assume that strings that start and end with <> are HTML and skip the regex check
 					match = [ null, selector, null ];
-
+	
 				} else {
 					match = rquickExpr.exec( selector );
 				}
-
+	
 				// Match html or make sure no context is specified for #id
 				if ( match && ( match[ 1 ] || !context ) ) {
-
+	
 					// HANDLE: $(html) -> $(array)
 					if ( match[ 1 ] ) {
 						context = context instanceof jQuery ? context[ 0 ] : context;
-
+	
 						// Option to run scripts is true for back-compat
 						// Intentionally let the error be thrown if parseHTML is not present
 						jQuery.merge( this, jQuery.parseHTML(
@@ -3076,75 +3103,75 @@
 							context && context.nodeType ? context.ownerDocument || context : document,
 							true
 						) );
-
+	
 						// HANDLE: $(html, props)
 						if ( rsingleTag.test( match[ 1 ] ) && jQuery.isPlainObject( context ) ) {
 							for ( match in context ) {
-
+	
 								// Properties of context are called as methods if possible
 								if ( jQuery.isFunction( this[ match ] ) ) {
 									this[ match ]( context[ match ] );
-
+	
 								// ...and otherwise set as attributes
 								} else {
 									this.attr( match, context[ match ] );
 								}
 							}
 						}
-
+	
 						return this;
-
+	
 					// HANDLE: $(#id)
 					} else {
 						elem = document.getElementById( match[ 2 ] );
-
+	
 						if ( elem ) {
-
+	
 							// Inject the element directly into the jQuery object
 							this[ 0 ] = elem;
 							this.length = 1;
 						}
 						return this;
 					}
-
+	
 				// HANDLE: $(expr, $(...))
 				} else if ( !context || context.jquery ) {
 					return ( context || root ).find( selector );
-
+	
 				// HANDLE: $(expr, context)
 				// (which is just equivalent to: $(context).find(expr)
 				} else {
 					return this.constructor( context ).find( selector );
 				}
-
+	
 			// HANDLE: $(DOMElement)
 			} else if ( selector.nodeType ) {
 				this[ 0 ] = selector;
 				this.length = 1;
 				return this;
-
+	
 			// HANDLE: $(function)
 			// Shortcut for document ready
 			} else if ( jQuery.isFunction( selector ) ) {
 				return root.ready !== undefined ?
 					root.ready( selector ) :
-
+	
 					// Execute immediately if ready is not present
 					selector( jQuery );
 			}
-
+	
 			return jQuery.makeArray( selector, this );
 		};
-
+	
 	// Give the init function the jQuery prototype for later instantiation
 	init.prototype = jQuery.fn;
-
+	
 	// Initialize central reference
 	rootjQuery = jQuery( document );
-
-
+	
+	
 	var rparentsprev = /^(?:parents|prev(?:Until|All))/,
-
+	
 		// Methods guaranteed to produce a unique set when starting from a unique set
 		guaranteedUnique = {
 			children: true,
@@ -3152,12 +3179,12 @@
 			next: true,
 			prev: true
 		};
-
+	
 	jQuery.fn.extend( {
 		has: function( target ) {
 			var targets = jQuery( target, this ),
 				l = targets.length;
-
+	
 			return this.filter( function() {
 				var i = 0;
 				for ( ; i < l; i++ ) {
@@ -3167,58 +3194,58 @@
 				}
 			} );
 		},
-
+	
 		closest: function( selectors, context ) {
 			var cur,
 				i = 0,
 				l = this.length,
 				matched = [],
 				targets = typeof selectors !== "string" && jQuery( selectors );
-
+	
 			// Positional selectors never match, since there's no _selection_ context
 			if ( !rneedsContext.test( selectors ) ) {
 				for ( ; i < l; i++ ) {
 					for ( cur = this[ i ]; cur && cur !== context; cur = cur.parentNode ) {
-
+	
 						// Always skip document fragments
 						if ( cur.nodeType < 11 && ( targets ?
 							targets.index( cur ) > -1 :
-
+	
 							// Don't pass non-elements to Sizzle
 							cur.nodeType === 1 &&
 								jQuery.find.matchesSelector( cur, selectors ) ) ) {
-
+	
 							matched.push( cur );
 							break;
 						}
 					}
 				}
 			}
-
+	
 			return this.pushStack( matched.length > 1 ? jQuery.uniqueSort( matched ) : matched );
 		},
-
+	
 		// Determine the position of an element within the set
 		index: function( elem ) {
-
+	
 			// No argument, return index in parent
 			if ( !elem ) {
 				return ( this[ 0 ] && this[ 0 ].parentNode ) ? this.first().prevAll().length : -1;
 			}
-
+	
 			// Index in selector
 			if ( typeof elem === "string" ) {
 				return indexOf.call( jQuery( elem ), this[ 0 ] );
 			}
-
+	
 			// Locate the position of the desired element
 			return indexOf.call( this,
-
+	
 				// If it receives a jQuery object, the first element is used
 				elem.jquery ? elem[ 0 ] : elem
 			);
 		},
-
+	
 		add: function( selector, context ) {
 			return this.pushStack(
 				jQuery.uniqueSort(
@@ -3226,19 +3253,19 @@
 				)
 			);
 		},
-
+	
 		addBack: function( selector ) {
 			return this.add( selector == null ?
 				this.prevObject : this.prevObject.filter( selector )
 			);
 		}
 	} );
-
+	
 	function sibling( cur, dir ) {
 		while ( ( cur = cur[ dir ] ) && cur.nodeType !== 1 ) {}
 		return cur;
 	}
-
+	
 	jQuery.each( {
 		parent: function( elem ) {
 			var parent = elem.parentNode;
@@ -3280,35 +3307,35 @@
 	}, function( name, fn ) {
 		jQuery.fn[ name ] = function( until, selector ) {
 			var matched = jQuery.map( this, fn, until );
-
+	
 			if ( name.slice( -5 ) !== "Until" ) {
 				selector = until;
 			}
-
+	
 			if ( selector && typeof selector === "string" ) {
 				matched = jQuery.filter( selector, matched );
 			}
-
+	
 			if ( this.length > 1 ) {
-
+	
 				// Remove duplicates
 				if ( !guaranteedUnique[ name ] ) {
 					jQuery.uniqueSort( matched );
 				}
-
+	
 				// Reverse order for parents* and prev-derivatives
 				if ( rparentsprev.test( name ) ) {
 					matched.reverse();
 				}
 			}
-
+	
 			return this.pushStack( matched );
 		};
 	} );
 	var rnotwhite = ( /\S+/g );
-
-
-
+	
+	
+	
 	// Convert String-formatted options into Object-formatted ones
 	function createOptions( options ) {
 		var object = {};
@@ -3317,7 +3344,7 @@
 		} );
 		return object;
 	}
-
+	
 	/*
 	 * Create a callback list using the following parameters:
 	 *
@@ -3341,92 +3368,92 @@
 	 *
 	 */
 	jQuery.Callbacks = function( options ) {
-
+	
 		// Convert options from String-formatted to Object-formatted if needed
 		// (we check in cache first)
 		options = typeof options === "string" ?
 			createOptions( options ) :
 			jQuery.extend( {}, options );
-
+	
 		var // Flag to know if list is currently firing
 			firing,
-
+	
 			// Last fire value for non-forgettable lists
 			memory,
-
+	
 			// Flag to know if list was already fired
 			fired,
-
+	
 			// Flag to prevent firing
 			locked,
-
+	
 			// Actual callback list
 			list = [],
-
+	
 			// Queue of execution data for repeatable lists
 			queue = [],
-
+	
 			// Index of currently firing callback (modified by add/remove as needed)
 			firingIndex = -1,
-
+	
 			// Fire callbacks
 			fire = function() {
-
+	
 				// Enforce single-firing
 				locked = options.once;
-
+	
 				// Execute callbacks for all pending executions,
 				// respecting firingIndex overrides and runtime changes
 				fired = firing = true;
 				for ( ; queue.length; firingIndex = -1 ) {
 					memory = queue.shift();
 					while ( ++firingIndex < list.length ) {
-
+	
 						// Run callback and check for early termination
 						if ( list[ firingIndex ].apply( memory[ 0 ], memory[ 1 ] ) === false &&
 							options.stopOnFalse ) {
-
+	
 							// Jump to end and forget the data so .add doesn't re-fire
 							firingIndex = list.length;
 							memory = false;
 						}
 					}
 				}
-
+	
 				// Forget the data if we're done with it
 				if ( !options.memory ) {
 					memory = false;
 				}
-
+	
 				firing = false;
-
+	
 				// Clean up if we're done firing for good
 				if ( locked ) {
-
+	
 					// Keep an empty list if we have data for future add calls
 					if ( memory ) {
 						list = [];
-
+	
 					// Otherwise, this object is spent
 					} else {
 						list = "";
 					}
 				}
 			},
-
+	
 			// Actual Callbacks object
 			self = {
-
+	
 				// Add a callback or a collection of callbacks to the list
 				add: function() {
 					if ( list ) {
-
+	
 						// If we have memory from a past run, we should fire after adding
 						if ( memory && !firing ) {
 							firingIndex = list.length - 1;
 							queue.push( memory );
 						}
-
+	
 						( function add( args ) {
 							jQuery.each( args, function( _, arg ) {
 								if ( jQuery.isFunction( arg ) ) {
@@ -3434,27 +3461,27 @@
 										list.push( arg );
 									}
 								} else if ( arg && arg.length && jQuery.type( arg ) !== "string" ) {
-
+	
 									// Inspect recursively
 									add( arg );
 								}
 							} );
 						} )( arguments );
-
+	
 						if ( memory && !firing ) {
 							fire();
 						}
 					}
 					return this;
 				},
-
+	
 				// Remove a callback from the list
 				remove: function() {
 					jQuery.each( arguments, function( _, arg ) {
 						var index;
 						while ( ( index = jQuery.inArray( arg, list, index ) ) > -1 ) {
 							list.splice( index, 1 );
-
+	
 							// Handle firing indexes
 							if ( index <= firingIndex ) {
 								firingIndex--;
@@ -3463,7 +3490,7 @@
 					} );
 					return this;
 				},
-
+	
 				// Check if a given callback is in the list.
 				// If no argument is given, return whether or not list has callbacks attached.
 				has: function( fn ) {
@@ -3471,7 +3498,7 @@
 						jQuery.inArray( fn, list ) > -1 :
 						list.length > 0;
 				},
-
+	
 				// Remove all callbacks from the list
 				empty: function() {
 					if ( list ) {
@@ -3479,7 +3506,7 @@
 					}
 					return this;
 				},
-
+	
 				// Disable .fire and .add
 				// Abort any current/pending executions
 				// Clear all callbacks and values
@@ -3491,7 +3518,7 @@
 				disabled: function() {
 					return !list;
 				},
-
+	
 				// Disable .fire
 				// Also disable .add unless we have memory (since it would have no effect)
 				// Abort any pending executions
@@ -3505,7 +3532,7 @@
 				locked: function() {
 					return !!locked;
 				},
-
+	
 				// Call all callbacks with the given context and arguments
 				fireWith: function( context, args ) {
 					if ( !locked ) {
@@ -3518,67 +3545,67 @@
 					}
 					return this;
 				},
-
+	
 				// Call all the callbacks with the given arguments
 				fire: function() {
 					self.fireWith( this, arguments );
 					return this;
 				},
-
+	
 				// To know if the callbacks have already been called at least once
 				fired: function() {
 					return !!fired;
 				}
 			};
-
+	
 		return self;
 	};
-
-
+	
+	
 	function Identity( v ) {
 		return v;
 	}
 	function Thrower( ex ) {
 		throw ex;
 	}
-
+	
 	function adoptValue( value, resolve, reject ) {
 		var method;
-
+	
 		try {
-
+	
 			// Check for promise aspect first to privilege synchronous behavior
 			if ( value && jQuery.isFunction( ( method = value.promise ) ) ) {
 				method.call( value ).done( resolve ).fail( reject );
-
+	
 			// Other thenables
 			} else if ( value && jQuery.isFunction( ( method = value.then ) ) ) {
 				method.call( value, resolve, reject );
-
+	
 			// Other non-thenables
 			} else {
-
+	
 				// Support: Android 4.0 only
 				// Strict mode functions invoked without .call/.apply get global-object context
 				resolve.call( undefined, value );
 			}
-
+	
 		// For Promises/A+, convert exceptions into rejections
 		// Since jQuery.when doesn't unwrap thenables, we can skip the extra checks appearing in
 		// Deferred#then to conditionally suppress rejection.
 		} catch ( /*jshint -W002 */ value ) {
-
+	
 			// Support: Android 4.0 only
 			// Strict mode functions invoked without .call/.apply get global-object context
 			reject.call( undefined, value );
 		}
 	}
-
+	
 	jQuery.extend( {
-
+	
 		Deferred: function( func ) {
 			var tuples = [
-
+	
 					// action, add listener, callbacks,
 					// ... .then handlers, argument index, [final state]
 					[ "notify", "progress", jQuery.Callbacks( "memory" ),
@@ -3600,17 +3627,17 @@
 					"catch": function( fn ) {
 						return promise.then( null, fn );
 					},
-
+	
 					// Keep pipe for back-compat
 					pipe: function( /* fnDone, fnFail, fnProgress */ ) {
 						var fns = arguments;
-
+	
 						return jQuery.Deferred( function( newDefer ) {
 							jQuery.each( tuples, function( i, tuple ) {
-
+	
 								// Map tuples (progress, done, fail) to arguments (done, fail, progress)
 								var fn = jQuery.isFunction( fns[ tuple[ 4 ] ] ) && fns[ tuple[ 4 ] ];
-
+	
 								// deferred.progress(function() { bind to newDefer or newDefer.notify })
 								// deferred.done(function() { bind to newDefer or newDefer.resolve })
 								// deferred.fail(function() { bind to newDefer or newDefer.reject })
@@ -3640,38 +3667,38 @@
 									args = arguments,
 									mightThrow = function() {
 										var returned, then;
-
+	
 										// Support: Promises/A+ section 2.3.3.3.3
 										// https://promisesaplus.com/#point-59
 										// Ignore double-resolution attempts
 										if ( depth < maxDepth ) {
 											return;
 										}
-
+	
 										returned = handler.apply( that, args );
-
+	
 										// Support: Promises/A+ section 2.3.1
 										// https://promisesaplus.com/#point-48
 										if ( returned === deferred.promise() ) {
 											throw new TypeError( "Thenable self-resolution" );
 										}
-
+	
 										// Support: Promises/A+ sections 2.3.3.1, 3.5
 										// https://promisesaplus.com/#point-54
 										// https://promisesaplus.com/#point-75
 										// Retrieve `then` only once
 										then = returned &&
-
+	
 											// Support: Promises/A+ section 2.3.4
 											// https://promisesaplus.com/#point-64
 											// Only check objects and functions for thenability
 											( typeof returned === "object" ||
 												typeof returned === "function" ) &&
 											returned.then;
-
+	
 										// Handle a returned thenable
 										if ( jQuery.isFunction( then ) ) {
-
+	
 											// Special processors (notify) just wait for resolution
 											if ( special ) {
 												then.call(
@@ -3679,13 +3706,13 @@
 													resolve( maxDepth, deferred, Identity, special ),
 													resolve( maxDepth, deferred, Thrower, special )
 												);
-
+	
 											// Normal processors (resolve) also hook into progress
 											} else {
-
+	
 												// ...and disregard older resolution values
 												maxDepth++;
-
+	
 												then.call(
 													returned,
 													resolve( maxDepth, deferred, Identity, special ),
@@ -3694,23 +3721,23 @@
 														deferred.notifyWith )
 												);
 											}
-
+	
 										// Handle all other returned values
 										} else {
-
+	
 											// Only substitute handlers pass on context
 											// and multiple values (non-spec behavior)
 											if ( handler !== Identity ) {
 												that = undefined;
 												args = [ returned ];
 											}
-
+	
 											// Process the value(s)
 											// Default process is resolve
 											( special || deferred.resolveWith )( that, args );
 										}
 									},
-
+	
 									// Only normal processors (resolve) catch and reject exceptions
 									process = special ?
 										mightThrow :
@@ -3718,29 +3745,29 @@
 											try {
 												mightThrow();
 											} catch ( e ) {
-
+	
 												if ( jQuery.Deferred.exceptionHook ) {
 													jQuery.Deferred.exceptionHook( e,
 														process.stackTrace );
 												}
-
+	
 												// Support: Promises/A+ section 2.3.3.3.4.1
 												// https://promisesaplus.com/#point-61
 												// Ignore post-resolution exceptions
 												if ( depth + 1 >= maxDepth ) {
-
+	
 													// Only substitute handlers pass on context
 													// and multiple values (non-spec behavior)
 													if ( handler !== Thrower ) {
 														that = undefined;
 														args = [ e ];
 													}
-
+	
 													deferred.rejectWith( that, args );
 												}
 											}
 										};
-
+	
 								// Support: Promises/A+ section 2.3.3.3.1
 								// https://promisesaplus.com/#point-57
 								// Re-resolve promises immediately to dodge false rejection from
@@ -3748,7 +3775,7 @@
 								if ( depth ) {
 									process();
 								} else {
-
+	
 									// Call an optional hook to record the stack, in case of exception
 									// since it's otherwise lost when execution goes async
 									if ( jQuery.Deferred.getStackHook ) {
@@ -3758,9 +3785,9 @@
 								}
 							};
 						}
-
+	
 						return jQuery.Deferred( function( newDefer ) {
-
+	
 							// progress_handlers.add( ... )
 							tuples[ 0 ][ 3 ].add(
 								resolve(
@@ -3772,7 +3799,7 @@
 									newDefer.notifyWith
 								)
 							);
-
+	
 							// fulfilled_handlers.add( ... )
 							tuples[ 1 ][ 3 ].add(
 								resolve(
@@ -3783,7 +3810,7 @@
 										Identity
 								)
 							);
-
+	
 							// rejected_handlers.add( ... )
 							tuples[ 2 ][ 3 ].add(
 								resolve(
@@ -3796,7 +3823,7 @@
 							);
 						} ).promise();
 					},
-
+	
 					// Get a promise for this deferred
 					// If obj is provided, the promise aspect is added to the object
 					promise: function( obj ) {
@@ -3804,41 +3831,41 @@
 					}
 				},
 				deferred = {};
-
+	
 			// Add list-specific methods
 			jQuery.each( tuples, function( i, tuple ) {
 				var list = tuple[ 2 ],
 					stateString = tuple[ 5 ];
-
+	
 				// promise.progress = list.add
 				// promise.done = list.add
 				// promise.fail = list.add
 				promise[ tuple[ 1 ] ] = list.add;
-
+	
 				// Handle state
 				if ( stateString ) {
 					list.add(
 						function() {
-
+	
 							// state = "resolved" (i.e., fulfilled)
 							// state = "rejected"
 							state = stateString;
 						},
-
+	
 						// rejected_callbacks.disable
 						// fulfilled_callbacks.disable
 						tuples[ 3 - i ][ 2 ].disable,
-
+	
 						// progress_callbacks.lock
 						tuples[ 0 ][ 2 ].lock
 					);
 				}
-
+	
 				// progress_handlers.fire
 				// fulfilled_handlers.fire
 				// rejected_handlers.fire
 				list.add( tuple[ 3 ].fire );
-
+	
 				// deferred.notify = function() { deferred.notifyWith(...) }
 				// deferred.resolve = function() { deferred.resolveWith(...) }
 				// deferred.reject = function() { deferred.rejectWith(...) }
@@ -3846,42 +3873,42 @@
 					deferred[ tuple[ 0 ] + "With" ]( this === deferred ? undefined : this, arguments );
 					return this;
 				};
-
+	
 				// deferred.notifyWith = list.fireWith
 				// deferred.resolveWith = list.fireWith
 				// deferred.rejectWith = list.fireWith
 				deferred[ tuple[ 0 ] + "With" ] = list.fireWith;
 			} );
-
+	
 			// Make the deferred a promise
 			promise.promise( deferred );
-
+	
 			// Call given func if any
 			if ( func ) {
 				func.call( deferred, deferred );
 			}
-
+	
 			// All done!
 			return deferred;
 		},
-
+	
 		// Deferred helper
 		when: function( singleValue ) {
 			var
-
+	
 				// count of uncompleted subordinates
 				remaining = arguments.length,
-
+	
 				// count of unprocessed arguments
 				i = remaining,
-
+	
 				// subordinate fulfillment data
 				resolveContexts = Array( i ),
 				resolveValues = slice.call( arguments ),
-
+	
 				// the master Deferred
 				master = jQuery.Deferred(),
-
+	
 				// subordinate callback factory
 				updateFunc = function( i ) {
 					return function( value ) {
@@ -3892,64 +3919,64 @@
 						}
 					};
 				};
-
+	
 			// Single- and empty arguments are adopted like Promise.resolve
 			if ( remaining <= 1 ) {
 				adoptValue( singleValue, master.done( updateFunc( i ) ).resolve, master.reject );
-
+	
 				// Use .then() to unwrap secondary thenables (cf. gh-3000)
 				if ( master.state() === "pending" ||
 					jQuery.isFunction( resolveValues[ i ] && resolveValues[ i ].then ) ) {
-
+	
 					return master.then();
 				}
 			}
-
+	
 			// Multiple arguments are aggregated like Promise.all array elements
 			while ( i-- ) {
 				adoptValue( resolveValues[ i ], updateFunc( i ), master.reject );
 			}
-
+	
 			return master.promise();
 		}
 	} );
-
-
+	
+	
 	// These usually indicate a programmer mistake during development,
 	// warn about them ASAP rather than swallowing them by default.
 	var rerrorNames = /^(Eval|Internal|Range|Reference|Syntax|Type|URI)Error$/;
-
+	
 	jQuery.Deferred.exceptionHook = function( error, stack ) {
-
+	
 		// Support: IE 8 - 9 only
 		// Console exists when dev tools are open, which can happen at any time
 		if ( window.console && window.console.warn && error && rerrorNames.test( error.name ) ) {
 			window.console.warn( "jQuery.Deferred exception: " + error.message, error.stack, stack );
 		}
 	};
-
-
-
-
+	
+	
+	
+	
 	// The deferred used on DOM ready
 	var readyList = jQuery.Deferred();
-
+	
 	jQuery.fn.ready = function( fn ) {
-
+	
 		readyList.then( fn );
-
+	
 		return this;
 	};
-
+	
 	jQuery.extend( {
-
+	
 		// Is the DOM ready to be used? Set to true once it occurs.
 		isReady: false,
-
+	
 		// A counter to track how many items to wait for before
 		// the ready event fires. See #6781
 		readyWait: 1,
-
+	
 		// Hold (or release) the ready event
 		holdReady: function( hold ) {
 			if ( hold ) {
@@ -3958,88 +3985,88 @@
 				jQuery.ready( true );
 			}
 		},
-
+	
 		// Handle when the DOM is ready
 		ready: function( wait ) {
-
+	
 			// Abort if there are pending holds or we're already ready
 			if ( wait === true ? --jQuery.readyWait : jQuery.isReady ) {
 				return;
 			}
-
+	
 			// Remember that the DOM is ready
 			jQuery.isReady = true;
-
+	
 			// If a normal DOM Ready event fired, decrement, and wait if need be
 			if ( wait !== true && --jQuery.readyWait > 0 ) {
 				return;
 			}
-
+	
 			// If there are functions bound, to execute
 			readyList.resolveWith( document, [ jQuery ] );
 		}
 	} );
-
+	
 	jQuery.ready.then = readyList.then;
-
+	
 	// The ready event handler and self cleanup method
 	function completed() {
 		document.removeEventListener( "DOMContentLoaded", completed );
 		window.removeEventListener( "load", completed );
 		jQuery.ready();
 	}
-
+	
 	// Catch cases where $(document).ready() is called
 	// after the browser event has already occurred.
 	// Support: IE <=9 - 10 only
 	// Older IE sometimes signals "interactive" too soon
 	if ( document.readyState === "complete" ||
 		( document.readyState !== "loading" && !document.documentElement.doScroll ) ) {
-
+	
 		// Handle it asynchronously to allow scripts the opportunity to delay ready
 		window.setTimeout( jQuery.ready );
-
+	
 	} else {
-
+	
 		// Use the handy event callback
 		document.addEventListener( "DOMContentLoaded", completed );
-
+	
 		// A fallback to window.onload, that will always work
 		window.addEventListener( "load", completed );
 	}
-
-
-
-
+	
+	
+	
+	
 	// Multifunctional method to get and set values of a collection
 	// The value/s can optionally be executed if it's a function
 	var access = function( elems, fn, key, value, chainable, emptyGet, raw ) {
 		var i = 0,
 			len = elems.length,
 			bulk = key == null;
-
+	
 		// Sets many values
 		if ( jQuery.type( key ) === "object" ) {
 			chainable = true;
 			for ( i in key ) {
 				access( elems, fn, i, key[ i ], true, emptyGet, raw );
 			}
-
+	
 		// Sets one value
 		} else if ( value !== undefined ) {
 			chainable = true;
-
+	
 			if ( !jQuery.isFunction( value ) ) {
 				raw = true;
 			}
-
+	
 			if ( bulk ) {
-
+	
 				// Bulk operations run against the entire set
 				if ( raw ) {
 					fn.call( elems, value );
 					fn = null;
-
+	
 				// ...except when executing function values
 				} else {
 					bulk = fn;
@@ -4048,7 +4075,7 @@
 					};
 				}
 			}
-
+	
 			if ( fn ) {
 				for ( ; i < len; i++ ) {
 					fn(
@@ -4059,17 +4086,17 @@
 				}
 			}
 		}
-
+	
 		return chainable ?
 			elems :
-
+	
 			// Gets
 			bulk ?
 				fn.call( elems ) :
 				len ? fn( elems[ 0 ], key ) : emptyGet;
 	};
 	var acceptData = function( owner ) {
-
+	
 		// Accepts only:
 		//  - Node
 		//    - Node.ELEMENT_NODE
@@ -4079,37 +4106,37 @@
 		/* jshint -W018 */
 		return owner.nodeType === 1 || owner.nodeType === 9 || !( +owner.nodeType );
 	};
-
-
-
-
+	
+	
+	
+	
 	function Data() {
 		this.expando = jQuery.expando + Data.uid++;
 	}
-
+	
 	Data.uid = 1;
-
+	
 	Data.prototype = {
-
+	
 		cache: function( owner ) {
-
+	
 			// Check if the owner object already has a cache
 			var value = owner[ this.expando ];
-
+	
 			// If not, create one
 			if ( !value ) {
 				value = {};
-
+	
 				// We can accept data for non-element nodes in modern browsers,
 				// but we should not, see #8335.
 				// Always return an empty object.
 				if ( acceptData( owner ) ) {
-
+	
 					// If it is a node unlikely to be stringify-ed or looped over
 					// use plain assignment
 					if ( owner.nodeType ) {
 						owner[ this.expando ] = value;
-
+	
 					// Otherwise secure it in a non-enumerable property
 					// configurable must be true to allow the property to be
 					// deleted when data is removed
@@ -4121,21 +4148,21 @@
 					}
 				}
 			}
-
+	
 			return value;
 		},
 		set: function( owner, data, value ) {
 			var prop,
 				cache = this.cache( owner );
-
+	
 			// Handle: [ owner, key, value ] args
 			// Always use camelCase key (gh-2257)
 			if ( typeof data === "string" ) {
 				cache[ jQuery.camelCase( data ) ] = value;
-
+	
 			// Handle: [ owner, { properties } ] args
 			} else {
-
+	
 				// Copy the properties one-by-one to the cache object
 				for ( prop in data ) {
 					cache[ jQuery.camelCase( prop ) ] = data[ prop ];
@@ -4146,12 +4173,12 @@
 		get: function( owner, key ) {
 			return key === undefined ?
 				this.cache( owner ) :
-
+	
 				// Always use camelCase key (gh-2257)
 				owner[ this.expando ] && owner[ this.expando ][ jQuery.camelCase( key ) ];
 		},
 		access: function( owner, key, value ) {
-
+	
 			// In cases where either:
 			//
 			//   1. No key was specified
@@ -4165,10 +4192,10 @@
 			//
 			if ( key === undefined ||
 					( ( key && typeof key === "string" ) && value === undefined ) ) {
-
+	
 				return this.get( owner, key );
 			}
-
+	
 			// When the key is not a string, or both a key and value
 			// are specified, set or extend (existing objects) with either:
 			//
@@ -4176,7 +4203,7 @@
 			//   2. A key and value
 			//
 			this.set( owner, key, value );
-
+	
 			// Since the "set" path can have two possible entry points
 			// return the expected data based on which path was taken[*]
 			return value !== undefined ? value : key;
@@ -4184,39 +4211,39 @@
 		remove: function( owner, key ) {
 			var i,
 				cache = owner[ this.expando ];
-
+	
 			if ( cache === undefined ) {
 				return;
 			}
-
+	
 			if ( key !== undefined ) {
-
+	
 				// Support array or space separated string of keys
 				if ( jQuery.isArray( key ) ) {
-
+	
 					// If key is an array of keys...
 					// We always set camelCase keys, so remove that.
 					key = key.map( jQuery.camelCase );
 				} else {
 					key = jQuery.camelCase( key );
-
+	
 					// If a key with the spaces exists, use it.
 					// Otherwise, create an array by matching non-whitespace
 					key = key in cache ?
 						[ key ] :
 						( key.match( rnotwhite ) || [] );
 				}
-
+	
 				i = key.length;
-
+	
 				while ( i-- ) {
 					delete cache[ key[ i ] ];
 				}
 			}
-
+	
 			// Remove the expando if there's no more data
 			if ( key === undefined || jQuery.isEmptyObject( cache ) ) {
-
+	
 				// Support: Chrome <=35 - 45
 				// Webkit & Blink performance suffers when deleting properties
 				// from DOM nodes, so set to undefined instead
@@ -4234,11 +4261,11 @@
 		}
 	};
 	var dataPriv = new Data();
-
+	
 	var dataUser = new Data();
-
-
-
+	
+	
+	
 	//	Implementation Summary
 	//
 	//	1. Enforce API surface and semantic compatibility with 1.9.x branch
@@ -4248,31 +4275,31 @@
 	//	4. _Never_ expose "private" data to user code (TODO: Drop _data, _removeData)
 	//	5. Avoid exposing implementation details on user objects (eg. expando properties)
 	//	6. Provide a clear path for implementation upgrade to WeakMap in 2014
-
+	
 	var rbrace = /^(?:\{[\w\W]*\}|\[[\w\W]*\])$/,
 		rmultiDash = /[A-Z]/g;
-
+	
 	function dataAttr( elem, key, data ) {
 		var name;
-
+	
 		// If nothing was found internally, try to fetch any
 		// data from the HTML5 data-* attribute
 		if ( data === undefined && elem.nodeType === 1 ) {
 			name = "data-" + key.replace( rmultiDash, "-$&" ).toLowerCase();
 			data = elem.getAttribute( name );
-
+	
 			if ( typeof data === "string" ) {
 				try {
 					data = data === "true" ? true :
 						data === "false" ? false :
 						data === "null" ? null :
-
+	
 						// Only convert to a number if it doesn't change the string
 						+data + "" === data ? +data :
 						rbrace.test( data ) ? JSON.parse( data ) :
 						data;
 				} catch ( e ) {}
-
+	
 				// Make sure we set the data so it isn't changed later
 				dataUser.set( elem, key, data );
 			} else {
@@ -4281,46 +4308,46 @@
 		}
 		return data;
 	}
-
+	
 	jQuery.extend( {
 		hasData: function( elem ) {
 			return dataUser.hasData( elem ) || dataPriv.hasData( elem );
 		},
-
+	
 		data: function( elem, name, data ) {
 			return dataUser.access( elem, name, data );
 		},
-
+	
 		removeData: function( elem, name ) {
 			dataUser.remove( elem, name );
 		},
-
+	
 		// TODO: Now that all calls to _data and _removeData have been replaced
 		// with direct calls to dataPriv methods, these can be deprecated.
 		_data: function( elem, name, data ) {
 			return dataPriv.access( elem, name, data );
 		},
-
+	
 		_removeData: function( elem, name ) {
 			dataPriv.remove( elem, name );
 		}
 	} );
-
+	
 	jQuery.fn.extend( {
 		data: function( key, value ) {
 			var i, name, data,
 				elem = this[ 0 ],
 				attrs = elem && elem.attributes;
-
+	
 			// Gets all values
 			if ( key === undefined ) {
 				if ( this.length ) {
 					data = dataUser.get( elem );
-
+	
 					if ( elem.nodeType === 1 && !dataPriv.get( elem, "hasDataAttrs" ) ) {
 						i = attrs.length;
 						while ( i-- ) {
-
+	
 							// Support: IE 11 only
 							// The attrs elements can be null (#14894)
 							if ( attrs[ i ] ) {
@@ -4334,70 +4361,70 @@
 						dataPriv.set( elem, "hasDataAttrs", true );
 					}
 				}
-
+	
 				return data;
 			}
-
+	
 			// Sets multiple values
 			if ( typeof key === "object" ) {
 				return this.each( function() {
 					dataUser.set( this, key );
 				} );
 			}
-
+	
 			return access( this, function( value ) {
 				var data;
-
+	
 				// The calling jQuery object (element matches) is not empty
 				// (and therefore has an element appears at this[ 0 ]) and the
 				// `value` parameter was not undefined. An empty jQuery object
 				// will result in `undefined` for elem = this[ 0 ] which will
 				// throw an exception if an attempt to read a data cache is made.
 				if ( elem && value === undefined ) {
-
+	
 					// Attempt to get data from the cache
 					// The key will always be camelCased in Data
 					data = dataUser.get( elem, key );
 					if ( data !== undefined ) {
 						return data;
 					}
-
+	
 					// Attempt to "discover" the data in
 					// HTML5 custom data-* attrs
 					data = dataAttr( elem, key );
 					if ( data !== undefined ) {
 						return data;
 					}
-
+	
 					// We tried really hard, but the data doesn't exist.
 					return;
 				}
-
+	
 				// Set the data...
 				this.each( function() {
-
+	
 					// We always store the camelCased key
 					dataUser.set( this, key, value );
 				} );
 			}, null, value, arguments.length > 1, null, true );
 		},
-
+	
 		removeData: function( key ) {
 			return this.each( function() {
 				dataUser.remove( this, key );
 			} );
 		}
 	} );
-
-
+	
+	
 	jQuery.extend( {
 		queue: function( elem, type, data ) {
 			var queue;
-
+	
 			if ( elem ) {
 				type = ( type || "fx" ) + "queue";
 				queue = dataPriv.get( elem, type );
-
+	
 				// Speed up dequeue by getting out quickly if this is just a lookup
 				if ( data ) {
 					if ( !queue || jQuery.isArray( data ) ) {
@@ -4409,10 +4436,10 @@
 				return queue || [];
 			}
 		},
-
+	
 		dequeue: function( elem, type ) {
 			type = type || "fx";
-
+	
 			var queue = jQuery.queue( elem, type ),
 				startLength = queue.length,
 				fn = queue.shift(),
@@ -4420,31 +4447,31 @@
 				next = function() {
 					jQuery.dequeue( elem, type );
 				};
-
+	
 			// If the fx queue is dequeued, always remove the progress sentinel
 			if ( fn === "inprogress" ) {
 				fn = queue.shift();
 				startLength--;
 			}
-
+	
 			if ( fn ) {
-
+	
 				// Add a progress sentinel to prevent the fx queue from being
 				// automatically dequeued
 				if ( type === "fx" ) {
 					queue.unshift( "inprogress" );
 				}
-
+	
 				// Clear up the last queue stop function
 				delete hooks.stop;
 				fn.call( elem, next, hooks );
 			}
-
+	
 			if ( !startLength && hooks ) {
 				hooks.empty.fire();
 			}
 		},
-
+	
 		// Not public - generate a queueHooks object, or return the current one
 		_queueHooks: function( elem, type ) {
 			var key = type + "queueHooks";
@@ -4455,29 +4482,29 @@
 			} );
 		}
 	} );
-
+	
 	jQuery.fn.extend( {
 		queue: function( type, data ) {
 			var setter = 2;
-
+	
 			if ( typeof type !== "string" ) {
 				data = type;
 				type = "fx";
 				setter--;
 			}
-
+	
 			if ( arguments.length < setter ) {
 				return jQuery.queue( this[ 0 ], type );
 			}
-
+	
 			return data === undefined ?
 				this :
 				this.each( function() {
 					var queue = jQuery.queue( this, type, data );
-
+	
 					// Ensure a hooks for this queue
 					jQuery._queueHooks( this, type );
-
+	
 					if ( type === "fx" && queue[ 0 ] !== "inprogress" ) {
 						jQuery.dequeue( this, type );
 					}
@@ -4491,7 +4518,7 @@
 		clearQueue: function( type ) {
 			return this.queue( type || "fx", [] );
 		},
-
+	
 		// Get a promise resolved when queues of a certain type
 		// are emptied (fx is the type by default)
 		promise: function( type, obj ) {
@@ -4505,13 +4532,13 @@
 						defer.resolveWith( elements, [ elements ] );
 					}
 				};
-
+	
 			if ( typeof type !== "string" ) {
 				obj = type;
 				type = undefined;
 			}
 			type = type || "fx";
-
+	
 			while ( i-- ) {
 				tmp = dataPriv.get( elements[ i ], type + "queueHooks" );
 				if ( tmp && tmp.empty ) {
@@ -4524,54 +4551,54 @@
 		}
 	} );
 	var pnum = ( /[+-]?(?:\d*\.|)\d+(?:[eE][+-]?\d+|)/ ).source;
-
+	
 	var rcssNum = new RegExp( "^(?:([+-])=|)(" + pnum + ")([a-z%]*)$", "i" );
-
-
+	
+	
 	var cssExpand = [ "Top", "Right", "Bottom", "Left" ];
-
+	
 	var isHiddenWithinTree = function( elem, el ) {
-
+	
 			// isHiddenWithinTree might be called from jQuery#filter function;
 			// in that case, element will be second argument
 			elem = el || elem;
-
+	
 			// Inline style trumps all
 			return elem.style.display === "none" ||
 				elem.style.display === "" &&
-
+	
 				// Otherwise, check computed style
 				// Support: Firefox <=43 - 45
 				// Disconnected elements can have computed display: none, so first confirm that elem is
 				// in the document.
 				jQuery.contains( elem.ownerDocument, elem ) &&
-
+	
 				jQuery.css( elem, "display" ) === "none";
 		};
-
+	
 	var swap = function( elem, options, callback, args ) {
 		var ret, name,
 			old = {};
-
+	
 		// Remember the old values, and insert the new ones
 		for ( name in options ) {
 			old[ name ] = elem.style[ name ];
 			elem.style[ name ] = options[ name ];
 		}
-
+	
 		ret = callback.apply( elem, args || [] );
-
+	
 		// Revert the old values
 		for ( name in options ) {
 			elem.style[ name ] = old[ name ];
 		}
-
+	
 		return ret;
 	};
-
-
-
-
+	
+	
+	
+	
 	function adjustCSS( elem, prop, valueParts, tween ) {
 		var adjusted,
 			scale = 1,
@@ -4581,42 +4608,42 @@
 				function() { return jQuery.css( elem, prop, "" ); },
 			initial = currentValue(),
 			unit = valueParts && valueParts[ 3 ] || ( jQuery.cssNumber[ prop ] ? "" : "px" ),
-
+	
 			// Starting value computation is required for potential unit mismatches
 			initialInUnit = ( jQuery.cssNumber[ prop ] || unit !== "px" && +initial ) &&
 				rcssNum.exec( jQuery.css( elem, prop ) );
-
+	
 		if ( initialInUnit && initialInUnit[ 3 ] !== unit ) {
-
+	
 			// Trust units reported by jQuery.css
 			unit = unit || initialInUnit[ 3 ];
-
+	
 			// Make sure we update the tween properties later on
 			valueParts = valueParts || [];
-
+	
 			// Iteratively approximate from a nonzero starting point
 			initialInUnit = +initial || 1;
-
+	
 			do {
-
+	
 				// If previous iteration zeroed out, double until we get *something*.
 				// Use string for doubling so we don't accidentally see scale as unchanged below
 				scale = scale || ".5";
-
+	
 				// Adjust and apply
 				initialInUnit = initialInUnit / scale;
 				jQuery.style( elem, prop, initialInUnit + unit );
-
+	
 			// Update scale, tolerating zero or NaN from tween.cur()
 			// Break the loop if scale is unchanged or perfect, or if we've just had enough.
 			} while (
 				scale !== ( scale = currentValue() / initial ) && scale !== 1 && --maxIterations
 			);
 		}
-
+	
 		if ( valueParts ) {
 			initialInUnit = +initialInUnit || +initial || 0;
-
+	
 			// Apply relative offset (+=/-=) if specified
 			adjusted = valueParts[ 1 ] ?
 				initialInUnit + ( valueParts[ 1 ] + 1 ) * valueParts[ 2 ] :
@@ -4629,49 +4656,49 @@
 		}
 		return adjusted;
 	}
-
-
+	
+	
 	var defaultDisplayMap = {};
-
+	
 	function getDefaultDisplay( elem ) {
 		var temp,
 			doc = elem.ownerDocument,
 			nodeName = elem.nodeName,
 			display = defaultDisplayMap[ nodeName ];
-
+	
 		if ( display ) {
 			return display;
 		}
-
+	
 		temp = doc.body.appendChild( doc.createElement( nodeName ) ),
 		display = jQuery.css( temp, "display" );
-
+	
 		temp.parentNode.removeChild( temp );
-
+	
 		if ( display === "none" ) {
 			display = "block";
 		}
 		defaultDisplayMap[ nodeName ] = display;
-
+	
 		return display;
 	}
-
+	
 	function showHide( elements, show ) {
 		var display, elem,
 			values = [],
 			index = 0,
 			length = elements.length;
-
+	
 		// Determine new display value for elements that need to change
 		for ( ; index < length; index++ ) {
 			elem = elements[ index ];
 			if ( !elem.style ) {
 				continue;
 			}
-
+	
 			display = elem.style.display;
 			if ( show ) {
-
+	
 				// Since we force visibility upon cascade-hidden elements, an immediate (and slow)
 				// check is required in this first loop unless we have a nonempty display value (either
 				// inline or about-to-be-restored)
@@ -4687,23 +4714,23 @@
 			} else {
 				if ( display !== "none" ) {
 					values[ index ] = "none";
-
+	
 					// Remember what we're overwriting
 					dataPriv.set( elem, "display", display );
 				}
 			}
 		}
-
+	
 		// Set the display of the elements in a second loop to avoid constant reflow
 		for ( index = 0; index < length; index++ ) {
 			if ( values[ index ] != null ) {
 				elements[ index ].style.display = values[ index ];
 			}
 		}
-
+	
 		return elements;
 	}
-
+	
 	jQuery.fn.extend( {
 		show: function() {
 			return showHide( this, true );
@@ -4715,7 +4742,7 @@
 			if ( typeof state === "boolean" ) {
 				return state ? this.show() : this.hide();
 			}
-
+	
 			return this.each( function() {
 				if ( isHiddenWithinTree( this ) ) {
 					jQuery( this ).show();
@@ -4726,19 +4753,19 @@
 		}
 	} );
 	var rcheckableType = ( /^(?:checkbox|radio)$/i );
-
+	
 	var rtagName = ( /<([a-z][^\/\0>\x20\t\r\n\f]+)/i );
-
+	
 	var rscriptType = ( /^$|\/(?:java|ecma)script/i );
-
-
-
+	
+	
+	
 	// We have to close these tags to support XHTML (#13200)
 	var wrapMap = {
-
+	
 		// Support: IE <=9 only
 		option: [ 1, "<select multiple='multiple'>", "</select>" ],
-
+	
 		// XHTML parsers do not magically insert elements in the
 		// same way that tag soup parsers do. So we cannot shorten
 		// this by omitting <tbody> or other required elements.
@@ -4746,19 +4773,19 @@
 		col: [ 2, "<table><colgroup>", "</colgroup></table>" ],
 		tr: [ 2, "<table><tbody>", "</tbody></table>" ],
 		td: [ 3, "<table><tbody><tr>", "</tr></tbody></table>" ],
-
+	
 		_default: [ 0, "", "" ]
 	};
-
+	
 	// Support: IE <=9 only
 	wrapMap.optgroup = wrapMap.option;
-
+	
 	wrapMap.tbody = wrapMap.tfoot = wrapMap.colgroup = wrapMap.caption = wrapMap.thead;
 	wrapMap.th = wrapMap.td;
-
-
+	
+	
 	function getAll( context, tag ) {
-
+	
 		// Support: IE <=9 - 11 only
 		// Use typeof to avoid zero-argument method invocation on host objects (#15151)
 		var ret = typeof context.getElementsByTagName !== "undefined" ?
@@ -4766,18 +4793,18 @@
 				typeof context.querySelectorAll !== "undefined" ?
 					context.querySelectorAll( tag || "*" ) :
 				[];
-
+	
 		return tag === undefined || tag && jQuery.nodeName( context, tag ) ?
 			jQuery.merge( [ context ], ret ) :
 			ret;
 	}
-
-
+	
+	
 	// Mark scripts as having already been evaluated
 	function setGlobalEval( elems, refElements ) {
 		var i = 0,
 			l = elems.length;
-
+	
 		for ( ; i < l; i++ ) {
 			dataPriv.set(
 				elems[ i ],
@@ -4786,67 +4813,67 @@
 			);
 		}
 	}
-
-
+	
+	
 	var rhtml = /<|&#?\w+;/;
-
+	
 	function buildFragment( elems, context, scripts, selection, ignored ) {
 		var elem, tmp, tag, wrap, contains, j,
 			fragment = context.createDocumentFragment(),
 			nodes = [],
 			i = 0,
 			l = elems.length;
-
+	
 		for ( ; i < l; i++ ) {
 			elem = elems[ i ];
-
+	
 			if ( elem || elem === 0 ) {
-
+	
 				// Add nodes directly
 				if ( jQuery.type( elem ) === "object" ) {
-
+	
 					// Support: Android <=4.0 only, PhantomJS 1 only
 					// push.apply(_, arraylike) throws on ancient WebKit
 					jQuery.merge( nodes, elem.nodeType ? [ elem ] : elem );
-
+	
 				// Convert non-html into a text node
 				} else if ( !rhtml.test( elem ) ) {
 					nodes.push( context.createTextNode( elem ) );
-
+	
 				// Convert html into DOM nodes
 				} else {
 					tmp = tmp || fragment.appendChild( context.createElement( "div" ) );
-
+	
 					// Deserialize a standard representation
 					tag = ( rtagName.exec( elem ) || [ "", "" ] )[ 1 ].toLowerCase();
 					wrap = wrapMap[ tag ] || wrapMap._default;
 					tmp.innerHTML = wrap[ 1 ] + jQuery.htmlPrefilter( elem ) + wrap[ 2 ];
-
+	
 					// Descend through wrappers to the right content
 					j = wrap[ 0 ];
 					while ( j-- ) {
 						tmp = tmp.lastChild;
 					}
-
+	
 					// Support: Android <=4.0 only, PhantomJS 1 only
 					// push.apply(_, arraylike) throws on ancient WebKit
 					jQuery.merge( nodes, tmp.childNodes );
-
+	
 					// Remember the top-level container
 					tmp = fragment.firstChild;
-
+	
 					// Ensure the created nodes are orphaned (#12392)
 					tmp.textContent = "";
 				}
 			}
 		}
-
+	
 		// Remove wrapper from fragment
 		fragment.textContent = "";
-
+	
 		i = 0;
 		while ( ( elem = nodes[ i++ ] ) ) {
-
+	
 			// Skip elements already in the context collection (trac-4087)
 			if ( selection && jQuery.inArray( elem, selection ) > -1 ) {
 				if ( ignored ) {
@@ -4854,17 +4881,17 @@
 				}
 				continue;
 			}
-
+	
 			contains = jQuery.contains( elem.ownerDocument, elem );
-
+	
 			// Append to fragment
 			tmp = getAll( fragment.appendChild( elem ), "script" );
-
+	
 			// Preserve script evaluation history
 			if ( contains ) {
 				setGlobalEval( tmp );
 			}
-
+	
 			// Capture executables
 			if ( scripts ) {
 				j = 0;
@@ -4875,16 +4902,16 @@
 				}
 			}
 		}
-
+	
 		return fragment;
 	}
-
-
+	
+	
 	( function() {
 		var fragment = document.createDocumentFragment(),
 			div = fragment.appendChild( document.createElement( "div" ) ),
 			input = document.createElement( "input" );
-
+	
 		// Support: Android 4.0 - 4.3 only
 		// Check state lost if the name is set (#11217)
 		// Support: Windows Web Apps (WWA)
@@ -4892,35 +4919,35 @@
 		input.setAttribute( "type", "radio" );
 		input.setAttribute( "checked", "checked" );
 		input.setAttribute( "name", "t" );
-
+	
 		div.appendChild( input );
-
+	
 		// Support: Android <=4.1 only
 		// Older WebKit doesn't clone checked state correctly in fragments
 		support.checkClone = div.cloneNode( true ).cloneNode( true ).lastChild.checked;
-
+	
 		// Support: IE <=11 only
 		// Make sure textarea (and checkbox) defaultValue is properly cloned
 		div.innerHTML = "<textarea>x</textarea>";
 		support.noCloneChecked = !!div.cloneNode( true ).lastChild.defaultValue;
 	} )();
 	var documentElement = document.documentElement;
-
-
-
+	
+	
+	
 	var
 		rkeyEvent = /^key/,
 		rmouseEvent = /^(?:mouse|pointer|contextmenu|drag|drop)|click/,
 		rtypenamespace = /^([^.]*)(?:\.(.+)|)/;
-
+	
 	function returnTrue() {
 		return true;
 	}
-
+	
 	function returnFalse() {
 		return false;
 	}
-
+	
 	// Support: IE <=9 only
 	// See #13393 for more info
 	function safeActiveElement() {
@@ -4928,16 +4955,16 @@
 			return document.activeElement;
 		} catch ( err ) { }
 	}
-
+	
 	function on( elem, types, selector, data, fn, one ) {
 		var origFn, type;
-
+	
 		// Types can be a map of types/handlers
 		if ( typeof types === "object" ) {
-
+	
 			// ( types-Object, selector, data )
 			if ( typeof selector !== "string" ) {
-
+	
 				// ( types-Object, data )
 				data = data || selector;
 				selector = undefined;
@@ -4947,20 +4974,20 @@
 			}
 			return elem;
 		}
-
+	
 		if ( data == null && fn == null ) {
-
+	
 			// ( types, fn )
 			fn = selector;
 			data = selector = undefined;
 		} else if ( fn == null ) {
 			if ( typeof selector === "string" ) {
-
+	
 				// ( types, selector, fn )
 				fn = data;
 				data = undefined;
 			} else {
-
+	
 				// ( types, data, fn )
 				fn = data;
 				data = selector;
@@ -4972,16 +4999,16 @@
 		} else if ( !fn ) {
 			return elem;
 		}
-
+	
 		if ( one === 1 ) {
 			origFn = fn;
 			fn = function( event ) {
-
+	
 				// Can use an empty set, since event contains the info
 				jQuery().off( event );
 				return origFn.apply( this, arguments );
 			};
-
+	
 			// Use same guid so caller can remove using origFn
 			fn.guid = origFn.guid || ( origFn.guid = jQuery.guid++ );
 		}
@@ -4989,59 +5016,59 @@
 			jQuery.event.add( this, types, fn, data, selector );
 		} );
 	}
-
+	
 	/*
 	 * Helper functions for managing events -- not part of the public interface.
 	 * Props to Dean Edwards' addEvent library for many of the ideas.
 	 */
 	jQuery.event = {
-
+	
 		global: {},
-
+	
 		add: function( elem, types, handler, data, selector ) {
-
+	
 			var handleObjIn, eventHandle, tmp,
 				events, t, handleObj,
 				special, handlers, type, namespaces, origType,
 				elemData = dataPriv.get( elem );
-
+	
 			// Don't attach events to noData or text/comment nodes (but allow plain objects)
 			if ( !elemData ) {
 				return;
 			}
-
+	
 			// Caller can pass in an object of custom data in lieu of the handler
 			if ( handler.handler ) {
 				handleObjIn = handler;
 				handler = handleObjIn.handler;
 				selector = handleObjIn.selector;
 			}
-
+	
 			// Ensure that invalid selectors throw exceptions at attach time
 			// Evaluate against documentElement in case elem is a non-element node (e.g., document)
 			if ( selector ) {
 				jQuery.find.matchesSelector( documentElement, selector );
 			}
-
+	
 			// Make sure that the handler has a unique ID, used to find/remove it later
 			if ( !handler.guid ) {
 				handler.guid = jQuery.guid++;
 			}
-
+	
 			// Init the element's event structure and main handler, if this is the first
 			if ( !( events = elemData.events ) ) {
 				events = elemData.events = {};
 			}
 			if ( !( eventHandle = elemData.handle ) ) {
 				eventHandle = elemData.handle = function( e ) {
-
+	
 					// Discard the second event of a jQuery.event.trigger() and
 					// when an event is called after a page has unloaded
 					return typeof jQuery !== "undefined" && jQuery.event.triggered !== e.type ?
 						jQuery.event.dispatch.apply( elem, arguments ) : undefined;
 				};
 			}
-
+	
 			// Handle multiple events separated by a space
 			types = ( types || "" ).match( rnotwhite ) || [ "" ];
 			t = types.length;
@@ -5049,21 +5076,21 @@
 				tmp = rtypenamespace.exec( types[ t ] ) || [];
 				type = origType = tmp[ 1 ];
 				namespaces = ( tmp[ 2 ] || "" ).split( "." ).sort();
-
+	
 				// There *must* be a type, no attaching namespace-only handlers
 				if ( !type ) {
 					continue;
 				}
-
+	
 				// If event changes its type, use the special event handlers for the changed type
 				special = jQuery.event.special[ type ] || {};
-
+	
 				// If selector defined, determine special event api type, otherwise given type
 				type = ( selector ? special.delegateType : special.bindType ) || type;
-
+	
 				// Update special based on newly reset type
 				special = jQuery.event.special[ type ] || {};
-
+	
 				// handleObj is passed to all event handlers
 				handleObj = jQuery.extend( {
 					type: type,
@@ -5075,55 +5102,55 @@
 					needsContext: selector && jQuery.expr.match.needsContext.test( selector ),
 					namespace: namespaces.join( "." )
 				}, handleObjIn );
-
+	
 				// Init the event handler queue if we're the first
 				if ( !( handlers = events[ type ] ) ) {
 					handlers = events[ type ] = [];
 					handlers.delegateCount = 0;
-
+	
 					// Only use addEventListener if the special events handler returns false
 					if ( !special.setup ||
 						special.setup.call( elem, data, namespaces, eventHandle ) === false ) {
-
+	
 						if ( elem.addEventListener ) {
 							elem.addEventListener( type, eventHandle );
 						}
 					}
 				}
-
+	
 				if ( special.add ) {
 					special.add.call( elem, handleObj );
-
+	
 					if ( !handleObj.handler.guid ) {
 						handleObj.handler.guid = handler.guid;
 					}
 				}
-
+	
 				// Add to the element's handler list, delegates in front
 				if ( selector ) {
 					handlers.splice( handlers.delegateCount++, 0, handleObj );
 				} else {
 					handlers.push( handleObj );
 				}
-
+	
 				// Keep track of which events have ever been used, for event optimization
 				jQuery.event.global[ type ] = true;
 			}
-
+	
 		},
-
+	
 		// Detach an event or set of events from an element
 		remove: function( elem, types, handler, selector, mappedTypes ) {
-
+	
 			var j, origCount, tmp,
 				events, t, handleObj,
 				special, handlers, type, namespaces, origType,
 				elemData = dataPriv.hasData( elem ) && dataPriv.get( elem );
-
+	
 			if ( !elemData || !( events = elemData.events ) ) {
 				return;
 			}
-
+	
 			// Once for each type.namespace in types; type may be omitted
 			types = ( types || "" ).match( rnotwhite ) || [ "" ];
 			t = types.length;
@@ -5131,7 +5158,7 @@
 				tmp = rtypenamespace.exec( types[ t ] ) || [];
 				type = origType = tmp[ 1 ];
 				namespaces = ( tmp[ 2 ] || "" ).split( "." ).sort();
-
+	
 				// Unbind all events (on this namespace, if provided) for the element
 				if ( !type ) {
 					for ( type in events ) {
@@ -5139,25 +5166,25 @@
 					}
 					continue;
 				}
-
+	
 				special = jQuery.event.special[ type ] || {};
 				type = ( selector ? special.delegateType : special.bindType ) || type;
 				handlers = events[ type ] || [];
 				tmp = tmp[ 2 ] &&
 					new RegExp( "(^|\\.)" + namespaces.join( "\\.(?:.*\\.|)" ) + "(\\.|$)" );
-
+	
 				// Remove matching events
 				origCount = j = handlers.length;
 				while ( j-- ) {
 					handleObj = handlers[ j ];
-
+	
 					if ( ( mappedTypes || origType === handleObj.origType ) &&
 						( !handler || handler.guid === handleObj.guid ) &&
 						( !tmp || tmp.test( handleObj.namespace ) ) &&
 						( !selector || selector === handleObj.selector ||
 							selector === "**" && handleObj.selector ) ) {
 						handlers.splice( j, 1 );
-
+	
 						if ( handleObj.selector ) {
 							handlers.delegateCount--;
 						}
@@ -5166,72 +5193,72 @@
 						}
 					}
 				}
-
+	
 				// Remove generic event handler if we removed something and no more handlers exist
 				// (avoids potential for endless recursion during removal of special event handlers)
 				if ( origCount && !handlers.length ) {
 					if ( !special.teardown ||
 						special.teardown.call( elem, namespaces, elemData.handle ) === false ) {
-
+	
 						jQuery.removeEvent( elem, type, elemData.handle );
 					}
-
+	
 					delete events[ type ];
 				}
 			}
-
+	
 			// Remove data and the expando if it's no longer used
 			if ( jQuery.isEmptyObject( events ) ) {
 				dataPriv.remove( elem, "handle events" );
 			}
 		},
-
+	
 		dispatch: function( nativeEvent ) {
-
+	
 			// Make a writable jQuery.Event from the native event object
 			var event = jQuery.event.fix( nativeEvent );
-
+	
 			var i, j, ret, matched, handleObj, handlerQueue,
 				args = new Array( arguments.length ),
 				handlers = ( dataPriv.get( this, "events" ) || {} )[ event.type ] || [],
 				special = jQuery.event.special[ event.type ] || {};
-
+	
 			// Use the fix-ed jQuery.Event rather than the (read-only) native event
 			args[ 0 ] = event;
-
+	
 			for ( i = 1; i < arguments.length; i++ ) {
 				args[ i ] = arguments[ i ];
 			}
-
+	
 			event.delegateTarget = this;
-
+	
 			// Call the preDispatch hook for the mapped type, and let it bail if desired
 			if ( special.preDispatch && special.preDispatch.call( this, event ) === false ) {
 				return;
 			}
-
+	
 			// Determine handlers
 			handlerQueue = jQuery.event.handlers.call( this, event, handlers );
-
+	
 			// Run delegates first; they may want to stop propagation beneath us
 			i = 0;
 			while ( ( matched = handlerQueue[ i++ ] ) && !event.isPropagationStopped() ) {
 				event.currentTarget = matched.elem;
-
+	
 				j = 0;
 				while ( ( handleObj = matched.handlers[ j++ ] ) &&
 					!event.isImmediatePropagationStopped() ) {
-
+	
 					// Triggered event must either 1) have no namespace, or 2) have namespace(s)
 					// a subset or equal to those in the bound event (both can have no namespace).
 					if ( !event.rnamespace || event.rnamespace.test( handleObj.namespace ) ) {
-
+	
 						event.handleObj = handleObj;
 						event.data = handleObj.data;
-
+	
 						ret = ( ( jQuery.event.special[ handleObj.origType ] || {} ).handle ||
 							handleObj.handler ).apply( matched.elem, args );
-
+	
 						if ( ret !== undefined ) {
 							if ( ( event.result = ret ) === false ) {
 								event.preventDefault();
@@ -5241,21 +5268,21 @@
 					}
 				}
 			}
-
+	
 			// Call the postDispatch hook for the mapped type
 			if ( special.postDispatch ) {
 				special.postDispatch.call( this, event );
 			}
-
+	
 			return event.result;
 		},
-
+	
 		handlers: function( event, handlers ) {
 			var i, matches, sel, handleObj,
 				handlerQueue = [],
 				delegateCount = handlers.delegateCount,
 				cur = event.target;
-
+	
 			// Support: IE <=9
 			// Find delegate handlers
 			// Black-hole SVG <use> instance trees (#13180)
@@ -5264,19 +5291,19 @@
 			// Avoid non-left-click in FF but don't block IE radio events (#3861, gh-2343)
 			if ( delegateCount && cur.nodeType &&
 				( event.type !== "click" || isNaN( event.button ) || event.button < 1 ) ) {
-
+	
 				for ( ; cur !== this; cur = cur.parentNode || this ) {
-
+	
 					// Don't check non-elements (#13208)
 					// Don't process clicks on disabled elements (#6911, #8165, #11382, #11764)
 					if ( cur.nodeType === 1 && ( cur.disabled !== true || event.type !== "click" ) ) {
 						matches = [];
 						for ( i = 0; i < delegateCount; i++ ) {
 							handleObj = handlers[ i ];
-
+	
 							// Don't conflict with Object.prototype properties (#13203)
 							sel = handleObj.selector + " ";
-
+	
 							if ( matches[ sel ] === undefined ) {
 								matches[ sel ] = handleObj.needsContext ?
 									jQuery( sel, this ).index( cur ) > -1 :
@@ -5292,20 +5319,20 @@
 					}
 				}
 			}
-
+	
 			// Add the remaining (directly-bound) handlers
 			if ( delegateCount < handlers.length ) {
 				handlerQueue.push( { elem: this, handlers: handlers.slice( delegateCount ) } );
 			}
-
+	
 			return handlerQueue;
 		},
-
+	
 		addProp: function( name, hook ) {
 			Object.defineProperty( jQuery.Event.prototype, name, {
 				enumerable: true,
 				configurable: true,
-
+	
 				get: jQuery.isFunction( hook ) ?
 					function() {
 						if ( this.originalEvent ) {
@@ -5317,7 +5344,7 @@
 								return this.originalEvent[ name ];
 						}
 					},
-
+	
 				set: function( value ) {
 					Object.defineProperty( this, name, {
 						enumerable: true,
@@ -5328,21 +5355,21 @@
 				}
 			} );
 		},
-
+	
 		fix: function( originalEvent ) {
 			return originalEvent[ jQuery.expando ] ?
 				originalEvent :
 				new jQuery.Event( originalEvent );
 		},
-
+	
 		special: {
 			load: {
-
+	
 				// Prevent triggered image.load events from bubbling to window.load
 				noBubble: true
 			},
 			focus: {
-
+	
 				// Fire native event if possible so blur/focus sequence is correct
 				trigger: function() {
 					if ( this !== safeActiveElement() && this.focus ) {
@@ -5362,7 +5389,7 @@
 				delegateType: "focusout"
 			},
 			click: {
-
+	
 				// For checkbox, fire native event so checked state will be right
 				trigger: function() {
 					if ( this.type === "checkbox" && this.click && jQuery.nodeName( this, "input" ) ) {
@@ -5370,16 +5397,16 @@
 						return false;
 					}
 				},
-
+	
 				// For cross-browser consistency, don't fire native .click() on links
 				_default: function( event ) {
 					return jQuery.nodeName( event.target, "a" );
 				}
 			},
-
+	
 			beforeunload: {
 				postDispatch: function( event ) {
-
+	
 					// Support: Firefox 20+
 					// Firefox doesn't alert if the returnValue field is not set.
 					if ( event.result !== undefined && event.originalEvent ) {
@@ -5389,64 +5416,64 @@
 			}
 		}
 	};
-
+	
 	jQuery.removeEvent = function( elem, type, handle ) {
-
+	
 		// This "if" is needed for plain objects
 		if ( elem.removeEventListener ) {
 			elem.removeEventListener( type, handle );
 		}
 	};
-
+	
 	jQuery.Event = function( src, props ) {
-
+	
 		// Allow instantiation without the 'new' keyword
 		if ( !( this instanceof jQuery.Event ) ) {
 			return new jQuery.Event( src, props );
 		}
-
+	
 		// Event object
 		if ( src && src.type ) {
 			this.originalEvent = src;
 			this.type = src.type;
-
+	
 			// Events bubbling up the document may have been marked as prevented
 			// by a handler lower down the tree; reflect the correct value.
 			this.isDefaultPrevented = src.defaultPrevented ||
 					src.defaultPrevented === undefined &&
-
+	
 					// Support: Android <=2.3 only
 					src.returnValue === false ?
 				returnTrue :
 				returnFalse;
-
+	
 			// Create target properties
 			// Support: Safari <=6 - 7 only
 			// Target should not be a text node (#504, #13143)
 			this.target = ( src.target && src.target.nodeType === 3 ) ?
 				src.target.parentNode :
 				src.target;
-
+	
 			this.currentTarget = src.currentTarget;
 			this.relatedTarget = src.relatedTarget;
-
+	
 		// Event type
 		} else {
 			this.type = src;
 		}
-
+	
 		// Put explicitly provided properties onto the event object
 		if ( props ) {
 			jQuery.extend( this, props );
 		}
-
+	
 		// Create a timestamp if incoming event doesn't have one
 		this.timeStamp = src && src.timeStamp || jQuery.now();
-
+	
 		// Mark it as fixed
 		this[ jQuery.expando ] = true;
 	};
-
+	
 	// jQuery.Event is based on DOM3 Events as specified by the ECMAScript Language Binding
 	// https://www.w3.org/TR/2003/WD-DOM-Level-3-Events-20030331/ecma-script-binding.html
 	jQuery.Event.prototype = {
@@ -5455,38 +5482,38 @@
 		isPropagationStopped: returnFalse,
 		isImmediatePropagationStopped: returnFalse,
 		isSimulated: false,
-
+	
 		preventDefault: function() {
 			var e = this.originalEvent;
-
+	
 			this.isDefaultPrevented = returnTrue;
-
+	
 			if ( e && !this.isSimulated ) {
 				e.preventDefault();
 			}
 		},
 		stopPropagation: function() {
 			var e = this.originalEvent;
-
+	
 			this.isPropagationStopped = returnTrue;
-
+	
 			if ( e && !this.isSimulated ) {
 				e.stopPropagation();
 			}
 		},
 		stopImmediatePropagation: function() {
 			var e = this.originalEvent;
-
+	
 			this.isImmediatePropagationStopped = returnTrue;
-
+	
 			if ( e && !this.isSimulated ) {
 				e.stopImmediatePropagation();
 			}
-
+	
 			this.stopPropagation();
 		}
 	};
-
+	
 	// Includes all common event props including KeyEvent and MouseEvent specific props
 	jQuery.each( {
 		altKey: true,
@@ -5518,24 +5545,24 @@
 		targetTouches: true,
 		toElement: true,
 		touches: true,
-
+	
 		which: function( event ) {
 			var button = event.button;
-
+	
 			// Add which for key events
 			if ( event.which == null && rkeyEvent.test( event.type ) ) {
 				return event.charCode != null ? event.charCode : event.keyCode;
 			}
-
+	
 			// Add which for click: 1 === left; 2 === middle; 3 === right
 			if ( !event.which && button !== undefined && rmouseEvent.test( event.type ) ) {
 				return ( button & 1 ? 1 : ( button & 2 ? 3 : ( button & 4 ? 2 : 0 ) ) );
 			}
-
+	
 			return event.which;
 		}
 	}, jQuery.event.addProp );
-
+	
 	// Create mouseenter/leave events using mouseover/out and event-time checks
 	// so that event delegation works in jQuery.
 	// Do the same for pointerenter/pointerleave and pointerover/pointerout
@@ -5553,13 +5580,13 @@
 		jQuery.event.special[ orig ] = {
 			delegateType: fix,
 			bindType: fix,
-
+	
 			handle: function( event ) {
 				var ret,
 					target = this,
 					related = event.relatedTarget,
 					handleObj = event.handleObj;
-
+	
 				// For mouseenter/leave call the handler if related is outside the target.
 				// NB: No relatedTarget if the mouse left/entered the browser window
 				if ( !related || ( related !== target && !jQuery.contains( target, related ) ) ) {
@@ -5571,9 +5598,9 @@
 			}
 		};
 	} );
-
+	
 	jQuery.fn.extend( {
-
+	
 		on: function( types, selector, data, fn ) {
 			return on( this, types, selector, data, fn );
 		},
@@ -5583,7 +5610,7 @@
 		off: function( types, selector, fn ) {
 			var handleObj, type;
 			if ( types && types.preventDefault && types.handleObj ) {
-
+	
 				// ( event )  dispatched jQuery.Event
 				handleObj = types.handleObj;
 				jQuery( types.delegateTarget ).off(
@@ -5596,7 +5623,7 @@
 				return this;
 			}
 			if ( typeof types === "object" ) {
-
+	
 				// ( types-object [, selector] )
 				for ( type in types ) {
 					this.off( type, selector, types[ type ] );
@@ -5604,7 +5631,7 @@
 				return this;
 			}
 			if ( selector === false || typeof selector === "function" ) {
-
+	
 				// ( types [, fn] )
 				fn = selector;
 				selector = undefined;
@@ -5617,31 +5644,31 @@
 			} );
 		}
 	} );
-
-
+	
+	
 	var
 		rxhtmlTag = /<(?!area|br|col|embed|hr|img|input|link|meta|param)(([a-z][^\/\0>\x20\t\r\n\f]*)[^>]*)\/>/gi,
-
+	
 		// Support: IE <=10 - 11, Edge 12 - 13
 		// In IE/Edge using regex groups here causes severe slowdowns.
 		// See https://connect.microsoft.com/IE/feedback/details/1736512/
 		rnoInnerhtml = /<script|<style|<link/i,
-
+	
 		// checked="checked" or checked
 		rchecked = /checked\s*(?:[^=]|=\s*.checked.)/i,
 		rscriptTypeMasked = /^true\/(.*)/,
 		rcleanScript = /^\s*<!(?:\[CDATA\[|--)|(?:\]\]|--)>\s*$/g;
-
+	
 	function manipulationTarget( elem, content ) {
 		if ( jQuery.nodeName( elem, "table" ) &&
 			jQuery.nodeName( content.nodeType !== 11 ? content : content.firstChild, "tr" ) ) {
-
+	
 			return elem.getElementsByTagName( "tbody" )[ 0 ] || elem;
 		}
-
+	
 		return elem;
 	}
-
+	
 	// Replace/restore the type attribute of script elements for safe DOM manipulation
 	function disableScript( elem ) {
 		elem.type = ( elem.getAttribute( "type" ) !== null ) + "/" + elem.type;
@@ -5649,33 +5676,33 @@
 	}
 	function restoreScript( elem ) {
 		var match = rscriptTypeMasked.exec( elem.type );
-
+	
 		if ( match ) {
 			elem.type = match[ 1 ];
 		} else {
 			elem.removeAttribute( "type" );
 		}
-
+	
 		return elem;
 	}
-
+	
 	function cloneCopyEvent( src, dest ) {
 		var i, l, type, pdataOld, pdataCur, udataOld, udataCur, events;
-
+	
 		if ( dest.nodeType !== 1 ) {
 			return;
 		}
-
+	
 		// 1. Copy private data: events, handlers, etc.
 		if ( dataPriv.hasData( src ) ) {
 			pdataOld = dataPriv.access( src );
 			pdataCur = dataPriv.set( dest, pdataOld );
 			events = pdataOld.events;
-
+	
 			if ( events ) {
 				delete pdataCur.handle;
 				pdataCur.events = {};
-
+	
 				for ( type in events ) {
 					for ( i = 0, l = events[ type ].length; i < l; i++ ) {
 						jQuery.event.add( dest, type, events[ type ][ i ] );
@@ -5683,42 +5710,42 @@
 				}
 			}
 		}
-
+	
 		// 2. Copy user data
 		if ( dataUser.hasData( src ) ) {
 			udataOld = dataUser.access( src );
 			udataCur = jQuery.extend( {}, udataOld );
-
+	
 			dataUser.set( dest, udataCur );
 		}
 	}
-
+	
 	// Fix IE bugs, see support tests
 	function fixInput( src, dest ) {
 		var nodeName = dest.nodeName.toLowerCase();
-
+	
 		// Fails to persist the checked state of a cloned checkbox or radio button.
 		if ( nodeName === "input" && rcheckableType.test( src.type ) ) {
 			dest.checked = src.checked;
-
+	
 		// Fails to return the selected option to the default selected state when cloning options
 		} else if ( nodeName === "input" || nodeName === "textarea" ) {
 			dest.defaultValue = src.defaultValue;
 		}
 	}
-
+	
 	function domManip( collection, args, callback, ignored ) {
-
+	
 		// Flatten any nested arrays
 		args = concat.apply( [], args );
-
+	
 		var fragment, first, scripts, hasScripts, node, doc,
 			i = 0,
 			l = collection.length,
 			iNoClone = l - 1,
 			value = args[ 0 ],
 			isFunction = jQuery.isFunction( value );
-
+	
 		// We can't cloneNode fragments that contain checked, in WebKit
 		if ( isFunction ||
 				( l > 1 && typeof value === "string" &&
@@ -5731,56 +5758,56 @@
 				domManip( self, args, callback, ignored );
 			} );
 		}
-
+	
 		if ( l ) {
 			fragment = buildFragment( args, collection[ 0 ].ownerDocument, false, collection, ignored );
 			first = fragment.firstChild;
-
+	
 			if ( fragment.childNodes.length === 1 ) {
 				fragment = first;
 			}
-
+	
 			// Require either new content or an interest in ignored elements to invoke the callback
 			if ( first || ignored ) {
 				scripts = jQuery.map( getAll( fragment, "script" ), disableScript );
 				hasScripts = scripts.length;
-
+	
 				// Use the original fragment for the last item
 				// instead of the first because it can end up
 				// being emptied incorrectly in certain situations (#8070).
 				for ( ; i < l; i++ ) {
 					node = fragment;
-
+	
 					if ( i !== iNoClone ) {
 						node = jQuery.clone( node, true, true );
-
+	
 						// Keep references to cloned scripts for later restoration
 						if ( hasScripts ) {
-
+	
 							// Support: Android <=4.0 only, PhantomJS 1 only
 							// push.apply(_, arraylike) throws on ancient WebKit
 							jQuery.merge( scripts, getAll( node, "script" ) );
 						}
 					}
-
+	
 					callback.call( collection[ i ], node, i );
 				}
-
+	
 				if ( hasScripts ) {
 					doc = scripts[ scripts.length - 1 ].ownerDocument;
-
+	
 					// Reenable scripts
 					jQuery.map( scripts, restoreScript );
-
+	
 					// Evaluate executable scripts on first document insertion
 					for ( i = 0; i < hasScripts; i++ ) {
 						node = scripts[ i ];
 						if ( rscriptType.test( node.type || "" ) &&
 							!dataPriv.access( node, "globalEval" ) &&
 							jQuery.contains( doc, node ) ) {
-
+	
 							if ( node.src ) {
-
+	
 								// Optional AJAX dependency, but won't run scripts if not present
 								if ( jQuery._evalUrl ) {
 									jQuery._evalUrl( node.src );
@@ -5793,20 +5820,20 @@
 				}
 			}
 		}
-
+	
 		return collection;
 	}
-
+	
 	function remove( elem, selector, keepData ) {
 		var node,
 			nodes = selector ? jQuery.filter( selector, elem ) : elem,
 			i = 0;
-
+	
 		for ( ; ( node = nodes[ i ] ) != null; i++ ) {
 			if ( !keepData && node.nodeType === 1 ) {
 				jQuery.cleanData( getAll( node ) );
 			}
-
+	
 			if ( node.parentNode ) {
 				if ( keepData && jQuery.contains( node.ownerDocument, node ) ) {
 					setGlobalEval( getAll( node, "script" ) );
@@ -5814,39 +5841,39 @@
 				node.parentNode.removeChild( node );
 			}
 		}
-
+	
 		return elem;
 	}
-
+	
 	jQuery.extend( {
 		htmlPrefilter: function( html ) {
 			return html.replace( rxhtmlTag, "<$1></$2>" );
 		},
-
+	
 		clone: function( elem, dataAndEvents, deepDataAndEvents ) {
 			var i, l, srcElements, destElements,
 				clone = elem.cloneNode( true ),
 				inPage = jQuery.contains( elem.ownerDocument, elem );
-
+	
 			// Fix IE cloning issues
 			if ( !support.noCloneChecked && ( elem.nodeType === 1 || elem.nodeType === 11 ) &&
 					!jQuery.isXMLDoc( elem ) ) {
-
+	
 				// We eschew Sizzle here for performance reasons: https://jsperf.com/getall-vs-sizzle/2
 				destElements = getAll( clone );
 				srcElements = getAll( elem );
-
+	
 				for ( i = 0, l = srcElements.length; i < l; i++ ) {
 					fixInput( srcElements[ i ], destElements[ i ] );
 				}
 			}
-
+	
 			// Copy the events from the original to the clone
 			if ( dataAndEvents ) {
 				if ( deepDataAndEvents ) {
 					srcElements = srcElements || getAll( elem );
 					destElements = destElements || getAll( clone );
-
+	
 					for ( i = 0, l = srcElements.length; i < l; i++ ) {
 						cloneCopyEvent( srcElements[ i ], destElements[ i ] );
 					}
@@ -5854,22 +5881,22 @@
 					cloneCopyEvent( elem, clone );
 				}
 			}
-
+	
 			// Preserve script evaluation history
 			destElements = getAll( clone, "script" );
 			if ( destElements.length > 0 ) {
 				setGlobalEval( destElements, !inPage && getAll( elem, "script" ) );
 			}
-
+	
 			// Return the cloned set
 			return clone;
 		},
-
+	
 		cleanData: function( elems ) {
 			var data, elem, type,
 				special = jQuery.event.special,
 				i = 0;
-
+	
 			for ( ; ( elem = elems[ i ] ) !== undefined; i++ ) {
 				if ( acceptData( elem ) ) {
 					if ( ( data = elem[ dataPriv.expando ] ) ) {
@@ -5877,20 +5904,20 @@
 							for ( type in data.events ) {
 								if ( special[ type ] ) {
 									jQuery.event.remove( elem, type );
-
+	
 								// This is a shortcut to avoid jQuery.event.remove's overhead
 								} else {
 									jQuery.removeEvent( elem, type, data.handle );
 								}
 							}
 						}
-
+	
 						// Support: Chrome <=35 - 45+
 						// Assign undefined instead of using delete, see Data#remove
 						elem[ dataPriv.expando ] = undefined;
 					}
 					if ( elem[ dataUser.expando ] ) {
-
+	
 						// Support: Chrome <=35 - 45+
 						// Assign undefined instead of using delete, see Data#remove
 						elem[ dataUser.expando ] = undefined;
@@ -5899,16 +5926,16 @@
 			}
 		}
 	} );
-
+	
 	jQuery.fn.extend( {
 		detach: function( selector ) {
 			return remove( this, selector, true );
 		},
-
+	
 		remove: function( selector ) {
 			return remove( this, selector );
 		},
-
+	
 		text: function( value ) {
 			return access( this, function( value ) {
 				return value === undefined ?
@@ -5920,7 +5947,7 @@
 					} );
 			}, null, value, arguments.length );
 		},
-
+	
 		append: function() {
 			return domManip( this, arguments, function( elem ) {
 				if ( this.nodeType === 1 || this.nodeType === 11 || this.nodeType === 9 ) {
@@ -5929,7 +5956,7 @@
 				}
 			} );
 		},
-
+	
 		prepend: function() {
 			return domManip( this, arguments, function( elem ) {
 				if ( this.nodeType === 1 || this.nodeType === 11 || this.nodeType === 9 ) {
@@ -5938,7 +5965,7 @@
 				}
 			} );
 		},
-
+	
 		before: function() {
 			return domManip( this, arguments, function( elem ) {
 				if ( this.parentNode ) {
@@ -5946,7 +5973,7 @@
 				}
 			} );
 		},
-
+	
 		after: function() {
 			return domManip( this, arguments, function( elem ) {
 				if ( this.parentNode ) {
@@ -5954,92 +5981,92 @@
 				}
 			} );
 		},
-
+	
 		empty: function() {
 			var elem,
 				i = 0;
-
+	
 			for ( ; ( elem = this[ i ] ) != null; i++ ) {
 				if ( elem.nodeType === 1 ) {
-
+	
 					// Prevent memory leaks
 					jQuery.cleanData( getAll( elem, false ) );
-
+	
 					// Remove any remaining nodes
 					elem.textContent = "";
 				}
 			}
-
+	
 			return this;
 		},
-
+	
 		clone: function( dataAndEvents, deepDataAndEvents ) {
 			dataAndEvents = dataAndEvents == null ? false : dataAndEvents;
 			deepDataAndEvents = deepDataAndEvents == null ? dataAndEvents : deepDataAndEvents;
-
+	
 			return this.map( function() {
 				return jQuery.clone( this, dataAndEvents, deepDataAndEvents );
 			} );
 		},
-
+	
 		html: function( value ) {
 			return access( this, function( value ) {
 				var elem = this[ 0 ] || {},
 					i = 0,
 					l = this.length;
-
+	
 				if ( value === undefined && elem.nodeType === 1 ) {
 					return elem.innerHTML;
 				}
-
+	
 				// See if we can take a shortcut and just use innerHTML
 				if ( typeof value === "string" && !rnoInnerhtml.test( value ) &&
 					!wrapMap[ ( rtagName.exec( value ) || [ "", "" ] )[ 1 ].toLowerCase() ] ) {
-
+	
 					value = jQuery.htmlPrefilter( value );
-
+	
 					try {
 						for ( ; i < l; i++ ) {
 							elem = this[ i ] || {};
-
+	
 							// Remove element nodes and prevent memory leaks
 							if ( elem.nodeType === 1 ) {
 								jQuery.cleanData( getAll( elem, false ) );
 								elem.innerHTML = value;
 							}
 						}
-
+	
 						elem = 0;
-
+	
 					// If using innerHTML throws an exception, use the fallback method
 					} catch ( e ) {}
 				}
-
+	
 				if ( elem ) {
 					this.empty().append( value );
 				}
 			}, null, value, arguments.length );
 		},
-
+	
 		replaceWith: function() {
 			var ignored = [];
-
+	
 			// Make the changes, replacing each non-ignored context element with the new content
 			return domManip( this, arguments, function( elem ) {
 				var parent = this.parentNode;
-
+	
 				if ( jQuery.inArray( this, ignored ) < 0 ) {
 					jQuery.cleanData( getAll( this ) );
 					if ( parent ) {
 						parent.replaceChild( elem, this );
 					}
 				}
-
+	
 			// Force callback invocation
 			}, ignored );
 		}
 	} );
-
+	
 	jQuery.each( {
 		appendTo: "append",
 		prependTo: "prepend",
@@ -6053,50 +6080,50 @@
 				insert = jQuery( selector ),
 				last = insert.length - 1,
 				i = 0;
-
+	
 			for ( ; i <= last; i++ ) {
 				elems = i === last ? this : this.clone( true );
 				jQuery( insert[ i ] )[ original ]( elems );
-
+	
 				// Support: Android <=4.0 only, PhantomJS 1 only
 				// .get() because push.apply(_, arraylike) throws on ancient WebKit
 				push.apply( ret, elems.get() );
 			}
-
+	
 			return this.pushStack( ret );
 		};
 	} );
 	var rmargin = ( /^margin/ );
-
+	
 	var rnumnonpx = new RegExp( "^(" + pnum + ")(?!px)[a-z%]+$", "i" );
-
+	
 	var getStyles = function( elem ) {
-
+	
 			// Support: IE <=11 only, Firefox <=30 (#15098, #14150)
 			// IE throws on elements created in popups
 			// FF meanwhile throws on frame elements through "defaultView.getComputedStyle"
 			var view = elem.ownerDocument.defaultView;
-
+	
 			if ( !view || !view.opener ) {
 				view = window;
 			}
-
+	
 			return view.getComputedStyle( elem );
 		};
-
-
-
+	
+	
+	
 	( function() {
-
+	
 		// Executing both pixelPosition & boxSizingReliable tests require only one layout
 		// so they're executed at the same time to save the second computation.
 		function computeStyleTests() {
-
+	
 			// This is a singleton, we need to execute it only once
 			if ( !div ) {
 				return;
 			}
-
+	
 			div.style.cssText =
 				"box-sizing:border-box;" +
 				"position:relative;display:block;" +
@@ -6104,45 +6131,45 @@
 				"top:1%;width:50%";
 			div.innerHTML = "";
 			documentElement.appendChild( container );
-
+	
 			var divStyle = window.getComputedStyle( div );
 			pixelPositionVal = divStyle.top !== "1%";
-
+	
 			// Support: Android 4.0 - 4.3 only, Firefox <=3 - 44
 			reliableMarginLeftVal = divStyle.marginLeft === "2px";
 			boxSizingReliableVal = divStyle.width === "4px";
-
+	
 			// Support: Android 4.0 - 4.3 only
 			// Some styles come back with percentage values, even though they shouldn't
 			div.style.marginRight = "50%";
 			pixelMarginRightVal = divStyle.marginRight === "4px";
-
+	
 			documentElement.removeChild( container );
-
+	
 			// Nullify the div so it wouldn't be stored in the memory and
 			// it will also be a sign that checks already performed
 			div = null;
 		}
-
+	
 		var pixelPositionVal, boxSizingReliableVal, pixelMarginRightVal, reliableMarginLeftVal,
 			container = document.createElement( "div" ),
 			div = document.createElement( "div" );
-
+	
 		// Finish early in limited (non-browser) environments
 		if ( !div.style ) {
 			return;
 		}
-
+	
 		// Support: IE <=9 - 11 only
 		// Style of cloned element affects source element cloned (#8908)
 		div.style.backgroundClip = "content-box";
 		div.cloneNode( true ).style.backgroundClip = "";
 		support.clearCloneStyle = div.style.backgroundClip === "content-box";
-
+	
 		container.style.cssText = "border:0;width:8px;height:0;top:0;left:-9999px;" +
 			"padding:0;margin-top:1px;position:absolute";
 		container.appendChild( div );
-
+	
 		jQuery.extend( support, {
 			pixelPosition: function() {
 				computeStyleTests();
@@ -6162,77 +6189,77 @@
 			}
 		} );
 	} )();
-
-
+	
+	
 	function curCSS( elem, name, computed ) {
 		var width, minWidth, maxWidth, ret,
 			style = elem.style;
-
+	
 		computed = computed || getStyles( elem );
-
+	
 		// Support: IE <=9 only
 		// getPropertyValue is only needed for .css('filter') (#12537)
 		if ( computed ) {
 			ret = computed.getPropertyValue( name ) || computed[ name ];
-
+	
 			if ( ret === "" && !jQuery.contains( elem.ownerDocument, elem ) ) {
 				ret = jQuery.style( elem, name );
 			}
-
+	
 			// A tribute to the "awesome hack by Dean Edwards"
 			// Android Browser returns percentage for some values,
 			// but width seems to be reliably pixels.
 			// This is against the CSSOM draft spec:
 			// https://drafts.csswg.org/cssom/#resolved-values
 			if ( !support.pixelMarginRight() && rnumnonpx.test( ret ) && rmargin.test( name ) ) {
-
+	
 				// Remember the original values
 				width = style.width;
 				minWidth = style.minWidth;
 				maxWidth = style.maxWidth;
-
+	
 				// Put in the new values to get a computed value out
 				style.minWidth = style.maxWidth = style.width = ret;
 				ret = computed.width;
-
+	
 				// Revert the changed values
 				style.width = width;
 				style.minWidth = minWidth;
 				style.maxWidth = maxWidth;
 			}
 		}
-
+	
 		return ret !== undefined ?
-
+	
 			// Support: IE <=9 - 11 only
 			// IE returns zIndex value as an integer.
 			ret + "" :
 			ret;
 	}
-
-
+	
+	
 	function addGetHookIf( conditionFn, hookFn ) {
-
+	
 		// Define the hook, we'll check on the first run if it's really needed.
 		return {
 			get: function() {
 				if ( conditionFn() ) {
-
+	
 					// Hook not needed (or it's not possible to use it due
 					// to missing dependency), remove it.
 					delete this.get;
 					return;
 				}
-
+	
 				// Hook needed; redefine it so that the support test is not executed again.
 				return ( this.get = hookFn ).apply( this, arguments );
 			}
 		};
 	}
-
-
+	
+	
 	var
-
+	
 		// Swappable if display is none or starts with table
 		// except "table", "table-cell", or "table-caption"
 		// See here for display values: https://developer.mozilla.org/en-US/docs/CSS/display
@@ -6242,22 +6269,22 @@
 			letterSpacing: "0",
 			fontWeight: "400"
 		},
-
+	
 		cssPrefixes = [ "Webkit", "Moz", "ms" ],
 		emptyStyle = document.createElement( "div" ).style;
-
+	
 	// Return a css property mapped to a potentially vendor prefixed property
 	function vendorPropName( name ) {
-
+	
 		// Shortcut for names that are not vendor prefixed
 		if ( name in emptyStyle ) {
 			return name;
 		}
-
+	
 		// Check for vendor prefixed names
 		var capName = name[ 0 ].toUpperCase() + name.slice( 1 ),
 			i = cssPrefixes.length;
-
+	
 		while ( i-- ) {
 			name = cssPrefixes[ i ] + capName;
 			if ( name in emptyStyle ) {
@@ -6265,103 +6292,103 @@
 			}
 		}
 	}
-
+	
 	function setPositiveNumber( elem, value, subtract ) {
-
+	
 		// Any relative (+/-) values have already been
 		// normalized at this point
 		var matches = rcssNum.exec( value );
 		return matches ?
-
+	
 			// Guard against undefined "subtract", e.g., when used as in cssHooks
 			Math.max( 0, matches[ 2 ] - ( subtract || 0 ) ) + ( matches[ 3 ] || "px" ) :
 			value;
 	}
-
+	
 	function augmentWidthOrHeight( elem, name, extra, isBorderBox, styles ) {
 		var i = extra === ( isBorderBox ? "border" : "content" ) ?
-
+	
 			// If we already have the right measurement, avoid augmentation
 			4 :
-
+	
 			// Otherwise initialize for horizontal or vertical properties
 			name === "width" ? 1 : 0,
-
+	
 			val = 0;
-
+	
 		for ( ; i < 4; i += 2 ) {
-
+	
 			// Both box models exclude margin, so add it if we want it
 			if ( extra === "margin" ) {
 				val += jQuery.css( elem, extra + cssExpand[ i ], true, styles );
 			}
-
+	
 			if ( isBorderBox ) {
-
+	
 				// border-box includes padding, so remove it if we want content
 				if ( extra === "content" ) {
 					val -= jQuery.css( elem, "padding" + cssExpand[ i ], true, styles );
 				}
-
+	
 				// At this point, extra isn't border nor margin, so remove border
 				if ( extra !== "margin" ) {
 					val -= jQuery.css( elem, "border" + cssExpand[ i ] + "Width", true, styles );
 				}
 			} else {
-
+	
 				// At this point, extra isn't content, so add padding
 				val += jQuery.css( elem, "padding" + cssExpand[ i ], true, styles );
-
+	
 				// At this point, extra isn't content nor padding, so add border
 				if ( extra !== "padding" ) {
 					val += jQuery.css( elem, "border" + cssExpand[ i ] + "Width", true, styles );
 				}
 			}
 		}
-
+	
 		return val;
 	}
-
+	
 	function getWidthOrHeight( elem, name, extra ) {
-
+	
 		// Start with offset property, which is equivalent to the border-box value
 		var val,
 			valueIsBorderBox = true,
 			styles = getStyles( elem ),
 			isBorderBox = jQuery.css( elem, "boxSizing", false, styles ) === "border-box";
-
+	
 		// Support: IE <=11 only
 		// Running getBoundingClientRect on a disconnected node
 		// in IE throws an error.
 		if ( elem.getClientRects().length ) {
 			val = elem.getBoundingClientRect()[ name ];
 		}
-
+	
 		// Some non-html elements return undefined for offsetWidth, so check for null/undefined
 		// svg - https://bugzilla.mozilla.org/show_bug.cgi?id=649285
 		// MathML - https://bugzilla.mozilla.org/show_bug.cgi?id=491668
 		if ( val <= 0 || val == null ) {
-
+	
 			// Fall back to computed then uncomputed css if necessary
 			val = curCSS( elem, name, styles );
 			if ( val < 0 || val == null ) {
 				val = elem.style[ name ];
 			}
-
+	
 			// Computed unit is not pixels. Stop here and return.
 			if ( rnumnonpx.test( val ) ) {
 				return val;
 			}
-
+	
 			// Check for style in case a browser which returns unreliable values
 			// for getComputedStyle silently falls back to the reliable elem.style
 			valueIsBorderBox = isBorderBox &&
 				( support.boxSizingReliable() || val === elem.style[ name ] );
-
+	
 			// Normalize "", auto, and prepare for extra
 			val = parseFloat( val ) || 0;
 		}
-
+	
 		// Use the active box-sizing model to add/subtract irrelevant styles
 		return ( val +
 			augmentWidthOrHeight(
@@ -6373,16 +6400,16 @@
 			)
 		) + "px";
 	}
-
+	
 	jQuery.extend( {
-
+	
 		// Add in style property hooks for overriding the default
 		// behavior of getting and setting a style property
 		cssHooks: {
 			opacity: {
 				get: function( elem, computed ) {
 					if ( computed ) {
-
+	
 						// We should always get a number back from opacity
 						var ret = curCSS( elem, "opacity" );
 						return ret === "" ? "1" : ret;
@@ -6390,7 +6417,7 @@
 				}
 			}
 		},
-
+	
 		// Don't automatically add "px" to these possibly-unitless properties
 		cssNumber: {
 			"animationIterationCount": true,
@@ -6407,106 +6434,106 @@
 			"zIndex": true,
 			"zoom": true
 		},
-
+	
 		// Add in properties whose names you wish to fix before
 		// setting or getting the value
 		cssProps: {
 			"float": "cssFloat"
 		},
-
+	
 		// Get and set the style property on a DOM Node
 		style: function( elem, name, value, extra ) {
-
+	
 			// Don't set styles on text and comment nodes
 			if ( !elem || elem.nodeType === 3 || elem.nodeType === 8 || !elem.style ) {
 				return;
 			}
-
+	
 			// Make sure that we're working with the right name
 			var ret, type, hooks,
 				origName = jQuery.camelCase( name ),
 				style = elem.style;
-
+	
 			name = jQuery.cssProps[ origName ] ||
 				( jQuery.cssProps[ origName ] = vendorPropName( origName ) || origName );
-
+	
 			// Gets hook for the prefixed version, then unprefixed version
 			hooks = jQuery.cssHooks[ name ] || jQuery.cssHooks[ origName ];
-
+	
 			// Check if we're setting a value
 			if ( value !== undefined ) {
 				type = typeof value;
-
+	
 				// Convert "+=" or "-=" to relative numbers (#7345)
 				if ( type === "string" && ( ret = rcssNum.exec( value ) ) && ret[ 1 ] ) {
 					value = adjustCSS( elem, name, ret );
-
+	
 					// Fixes bug #9237
 					type = "number";
 				}
-
+	
 				// Make sure that null and NaN values aren't set (#7116)
 				if ( value == null || value !== value ) {
 					return;
 				}
-
+	
 				// If a number was passed in, add the unit (except for certain CSS properties)
 				if ( type === "number" ) {
 					value += ret && ret[ 3 ] || ( jQuery.cssNumber[ origName ] ? "" : "px" );
 				}
-
+	
 				// background-* props affect original clone's values
 				if ( !support.clearCloneStyle && value === "" && name.indexOf( "background" ) === 0 ) {
 					style[ name ] = "inherit";
 				}
-
+	
 				// If a hook was provided, use that value, otherwise just set the specified value
 				if ( !hooks || !( "set" in hooks ) ||
 					( value = hooks.set( elem, value, extra ) ) !== undefined ) {
-
+	
 					style[ name ] = value;
 				}
-
+	
 			} else {
-
+	
 				// If a hook was provided get the non-computed value from there
 				if ( hooks && "get" in hooks &&
 					( ret = hooks.get( elem, false, extra ) ) !== undefined ) {
-
+	
 					return ret;
 				}
-
+	
 				// Otherwise just get the value from the style object
 				return style[ name ];
 			}
 		},
-
+	
 		css: function( elem, name, extra, styles ) {
 			var val, num, hooks,
 				origName = jQuery.camelCase( name );
-
+	
 			// Make sure that we're working with the right name
 			name = jQuery.cssProps[ origName ] ||
 				( jQuery.cssProps[ origName ] = vendorPropName( origName ) || origName );
-
+	
 			// Try prefixed name followed by the unprefixed name
 			hooks = jQuery.cssHooks[ name ] || jQuery.cssHooks[ origName ];
-
+	
 			// If a hook was provided get the computed value from there
 			if ( hooks && "get" in hooks ) {
 				val = hooks.get( elem, true, extra );
 			}
-
+	
 			// Otherwise, if a way to get the computed value exists, use that
 			if ( val === undefined ) {
 				val = curCSS( elem, name, styles );
 			}
-
+	
 			// Convert "normal" to computed value
 			if ( val === "normal" && name in cssNormalTransform ) {
 				val = cssNormalTransform[ name ];
 			}
-
+	
 			// Make numeric if forced or a qualifier was provided and val looks numeric
 			if ( extra === "" || extra ) {
 				num = parseFloat( val );
@@ -6515,16 +6542,16 @@
 			return val;
 		}
 	} );
-
+	
 	jQuery.each( [ "height", "width" ], function( i, name ) {
 		jQuery.cssHooks[ name ] = {
 			get: function( elem, computed, extra ) {
 				if ( computed ) {
-
+	
 					// Certain elements can have dimension info if we invisibly show them
 					// but it must have a current display style that would benefit
 					return rdisplayswap.test( jQuery.css( elem, "display" ) ) &&
-
+	
 						// Support: Safari 8+
 						// Table columns in Safari have non-zero offsetWidth & zero
 						// getBoundingClientRect().width unless display is changed.
@@ -6538,7 +6565,7 @@
 							getWidthOrHeight( elem, name, extra );
 				}
 			},
-
+	
 			set: function( elem, value, extra ) {
 				var matches,
 					styles = extra && getStyles( elem ),
@@ -6549,20 +6576,20 @@
 						jQuery.css( elem, "boxSizing", false, styles ) === "border-box",
 						styles
 					);
-
+	
 				// Convert to pixels if value adjustment is needed
 				if ( subtract && ( matches = rcssNum.exec( value ) ) &&
 					( matches[ 3 ] || "px" ) !== "px" ) {
-
+	
 					elem.style[ name ] = value;
 					value = jQuery.css( elem, name );
 				}
-
+	
 				return setPositiveNumber( elem, value, subtract );
 			}
 		};
 	} );
-
+	
 	jQuery.cssHooks.marginLeft = addGetHookIf( support.reliableMarginLeft,
 		function( elem, computed ) {
 			if ( computed ) {
@@ -6575,7 +6602,7 @@
 			}
 		}
 	);
-
+	
 	// These hooks are used by animate to expand properties
 	jQuery.each( {
 		margin: "",
@@ -6586,55 +6613,55 @@
 			expand: function( value ) {
 				var i = 0,
 					expanded = {},
-
+	
 					// Assumes a single number if not a string
 					parts = typeof value === "string" ? value.split( " " ) : [ value ];
-
+	
 				for ( ; i < 4; i++ ) {
 					expanded[ prefix + cssExpand[ i ] + suffix ] =
 						parts[ i ] || parts[ i - 2 ] || parts[ 0 ];
 				}
-
+	
 				return expanded;
 			}
 		};
-
+	
 		if ( !rmargin.test( prefix ) ) {
 			jQuery.cssHooks[ prefix + suffix ].set = setPositiveNumber;
 		}
 	} );
-
+	
 	jQuery.fn.extend( {
 		css: function( name, value ) {
 			return access( this, function( elem, name, value ) {
 				var styles, len,
 					map = {},
 					i = 0;
-
+	
 				if ( jQuery.isArray( name ) ) {
 					styles = getStyles( elem );
 					len = name.length;
-
+	
 					for ( ; i < len; i++ ) {
 						map[ name[ i ] ] = jQuery.css( elem, name[ i ], false, styles );
 					}
-
+	
 					return map;
 				}
-
+	
 				return value !== undefined ?
 					jQuery.style( elem, name, value ) :
 					jQuery.css( elem, name );
 			}, name, value, arguments.length > 1 );
 		}
 	} );
-
-
+	
+	
 	function Tween( elem, options, prop, end, easing ) {
 		return new Tween.prototype.init( elem, options, prop, end, easing );
 	}
 	jQuery.Tween = Tween;
-
+	
 	Tween.prototype = {
 		constructor: Tween,
 		init: function( elem, options, prop, end, easing, unit ) {
@@ -6648,7 +6675,7 @@
 		},
 		cur: function() {
 			var hooks = Tween.propHooks[ this.prop ];
-
+	
 			return hooks && hooks.get ?
 				hooks.get( this ) :
 				Tween.propHooks._default.get( this );
@@ -6656,7 +6683,7 @@
 		run: function( percent ) {
 			var eased,
 				hooks = Tween.propHooks[ this.prop ];
-
+	
 			if ( this.options.duration ) {
 				this.pos = eased = jQuery.easing[ this.easing ](
 					percent, this.options.duration * percent, 0, 1, this.options.duration
@@ -6665,11 +6692,11 @@
 				this.pos = eased = percent;
 			}
 			this.now = ( this.end - this.start ) * eased + this.start;
-
+	
 			if ( this.options.step ) {
 				this.options.step.call( this.elem, this.now, this );
 			}
-
+	
 			if ( hooks && hooks.set ) {
 				hooks.set( this );
 			} else {
@@ -6678,32 +6705,32 @@
 			return this;
 		}
 	};
-
+	
 	Tween.prototype.init.prototype = Tween.prototype;
-
+	
 	Tween.propHooks = {
 		_default: {
 			get: function( tween ) {
 				var result;
-
+	
 				// Use a property on the element directly when it is not a DOM element,
 				// or when there is no matching style property that exists.
 				if ( tween.elem.nodeType !== 1 ||
 					tween.elem[ tween.prop ] != null && tween.elem.style[ tween.prop ] == null ) {
 					return tween.elem[ tween.prop ];
 				}
-
+	
 				// Passing an empty string as a 3rd parameter to .css will automatically
 				// attempt a parseFloat and fallback to a string if the parse fails.
 				// Simple values such as "10px" are parsed to Float;
 				// complex values such as "rotate(1rad)" are returned as-is.
 				result = jQuery.css( tween.elem, tween.prop, "" );
-
+	
 				// Empty strings, null, undefined and "auto" are converted to 0.
 				return !result || result === "auto" ? 0 : result;
 			},
 			set: function( tween ) {
-
+	
 				// Use step hook for back compat.
 				// Use cssHook if its there.
 				// Use .style if available and use plain properties where available.
@@ -6719,7 +6746,7 @@
 			}
 		}
 	};
-
+	
 	// Support: IE <=9 only
 	// Panic based approach to setting things on disconnected nodes
 	Tween.propHooks.scrollTop = Tween.propHooks.scrollLeft = {
@@ -6729,7 +6756,7 @@
 			}
 		}
 	};
-
+	
 	jQuery.easing = {
 		linear: function( p ) {
 			return p;
@@ -6739,27 +6766,27 @@
 		},
 		_default: "swing"
 	};
-
+	
 	jQuery.fx = Tween.prototype.init;
-
+	
 	// Back compat <1.8 extension point
 	jQuery.fx.step = {};
-
-
-
-
+	
+	
+	
+	
 	var
 		fxNow, timerId,
 		rfxtypes = /^(?:toggle|show|hide)$/,
 		rrun = /queueHooks$/;
-
+	
 	function raf() {
 		if ( timerId ) {
 			window.requestAnimationFrame( raf );
 			jQuery.fx.tick();
 		}
 	}
-
+	
 	// Animations created synchronously will run synchronously
 	function createFxNow() {
 		window.setTimeout( function() {
@@ -6767,13 +6794,13 @@
 		} );
 		return ( fxNow = jQuery.now() );
 	}
-
+	
 	// Generate parameters to create a standard animation
 	function genFx( type, includeWidth ) {
 		var which,
 			i = 0,
 			attrs = { height: type };
-
+	
 		// If we include width, step value is 1 to do all cssExpand values,
 		// otherwise step value is 2 to skip over Left and Right
 		includeWidth = includeWidth ? 1 : 0;
@@ -6781,14 +6808,14 @@
 			which = cssExpand[ i ];
 			attrs[ "margin" + which ] = attrs[ "padding" + which ] = type;
 		}
-
+	
 		if ( includeWidth ) {
 			attrs.opacity = attrs.width = type;
 		}
-
+	
 		return attrs;
 	}
-
+	
 	function createTween( value, prop, animation ) {
 		var tween,
 			collection = ( Animation.tweeners[ prop ] || [] ).concat( Animation.tweeners[ "*" ] ),
@@ -6796,13 +6823,13 @@
 			length = collection.length;
 		for ( ; index < length; index++ ) {
 			if ( ( tween = collection[ index ].call( animation, prop, value ) ) ) {
-
+	
 				// We're done with this property
 				return tween;
 			}
 		}
 	}
-
+	
 	function defaultPrefilter( elem, props, opts ) {
 		/* jshint validthis: true */
 		var prop, value, toggle, hooks, oldfire, propTween, restoreDisplay, display,
@@ -6812,7 +6839,7 @@
 			style = elem.style,
 			hidden = elem.nodeType && isHiddenWithinTree( elem ),
 			dataShow = dataPriv.get( elem, "fxshow" );
-
+	
 		// Queue-skipping animations hijack the fx hooks
 		if ( !opts.queue ) {
 			hooks = jQuery._queueHooks( elem, "fx" );
@@ -6826,9 +6853,9 @@
 				};
 			}
 			hooks.unqueued++;
-
+	
 			anim.always( function() {
-
+	
 				// Ensure the complete handler is called before this completes
 				anim.always( function() {
 					hooks.unqueued--;
@@ -6838,7 +6865,7 @@
 				} );
 			} );
 		}
-
+	
 		// Detect show/hide animations
 		for ( prop in props ) {
 			value = props[ prop ];
@@ -6846,12 +6873,12 @@
 				delete props[ prop ];
 				toggle = toggle || value === "toggle";
 				if ( value === ( hidden ? "hide" : "show" ) ) {
-
+	
 					// Pretend to be hidden if this is a "show" and
 					// there is still data from a stopped show/hide
 					if ( value === "show" && dataShow && dataShow[ prop ] !== undefined ) {
 						hidden = true;
-
+	
 					// Ignore all other no-op show/hide data
 					} else {
 						continue;
@@ -6860,21 +6887,21 @@
 				orig[ prop ] = dataShow && dataShow[ prop ] || jQuery.style( elem, prop );
 			}
 		}
-
+	
 		// Bail out if this is a no-op like .hide().hide()
 		propTween = !jQuery.isEmptyObject( props );
 		if ( !propTween && jQuery.isEmptyObject( orig ) ) {
 			return;
 		}
-
+	
 		// Restrict "overflow" and "display" styles during box animations
 		if ( isBox && elem.nodeType === 1 ) {
-
+	
 			// Support: IE <=9 - 11, Edge 12 - 13
 			// Record all 3 overflow attributes because IE does not infer the shorthand
 			// from identically-valued overflowX and overflowY
 			opts.overflow = [ style.overflow, style.overflowX, style.overflowY ];
-
+	
 			// Identify a display type, preferring old show/hide data over the CSS cascade
 			restoreDisplay = dataShow && dataShow.display;
 			if ( restoreDisplay == null ) {
@@ -6885,7 +6912,7 @@
 				if ( restoreDisplay ) {
 					display = restoreDisplay;
 				} else {
-
+	
 					// Get nonempty value(s) by temporarily forcing visibility
 					showHide( [ elem ], true );
 					restoreDisplay = elem.style.display || restoreDisplay;
@@ -6893,11 +6920,11 @@
 					showHide( [ elem ] );
 				}
 			}
-
+	
 			// Animate inline elements as inline-block
 			if ( display === "inline" || display === "inline-block" && restoreDisplay != null ) {
 				if ( jQuery.css( elem, "float" ) === "none" ) {
-
+	
 					// Restore the original display value at the end of pure show/hide animations
 					if ( !propTween ) {
 						anim.done( function() {
@@ -6912,7 +6939,7 @@
 				}
 			}
 		}
-
+	
 		if ( opts.overflow ) {
 			style.overflow = "hidden";
 			anim.always( function() {
@@ -6921,11 +6948,11 @@
 				style.overflowY = opts.overflow[ 2 ];
 			} );
 		}
-
+	
 		// Implement show/hide animations
 		propTween = false;
 		for ( prop in orig ) {
-
+	
 			// General show/hide setup for this element animation
 			if ( !propTween ) {
 				if ( dataShow ) {
@@ -6935,20 +6962,20 @@
 				} else {
 					dataShow = dataPriv.access( elem, "fxshow", { display: restoreDisplay } );
 				}
-
+	
 				// Store hidden/visible for toggle so `.stop().toggle()` "reverses"
 				if ( toggle ) {
 					dataShow.hidden = !hidden;
 				}
-
+	
 				// Show elements before animating them
 				if ( hidden ) {
 					showHide( [ elem ], true );
 				}
-
+	
 				/* jshint -W083 */
 				anim.done( function() {
-
+	
 					// The final step of a "hide" animation is actually hiding the element
 					if ( !hidden ) {
 						showHide( [ elem ] );
@@ -6959,7 +6986,7 @@
 					}
 				} );
 			}
-
+	
 			// Per-property setup
 			propTween = createTween( hidden ? dataShow[ prop ] : 0, prop, anim );
 			if ( !( prop in dataShow ) ) {
@@ -6971,10 +6998,10 @@
 			}
 		}
 	}
-
+	
 	function propFilter( props, specialEasing ) {
 		var index, name, easing, value, hooks;
-
+	
 		// camelCase, specialEasing and expand cssHook pass
 		for ( index in props ) {
 			name = jQuery.camelCase( index );
@@ -6984,17 +7011,17 @@
 				easing = value[ 1 ];
 				value = props[ index ] = value[ 0 ];
 			}
-
+	
 			if ( index !== name ) {
 				props[ name ] = value;
 				delete props[ index ];
 			}
-
+	
 			hooks = jQuery.cssHooks[ name ];
 			if ( hooks && "expand" in hooks ) {
 				value = hooks.expand( value );
 				delete props[ name ];
-
+	
 				// Not quite $.extend, this won't overwrite existing keys.
 				// Reusing 'index' because we have the correct "name"
 				for ( index in value ) {
@@ -7008,14 +7035,14 @@
 			}
 		}
 	}
-
+	
 	function Animation( elem, properties, options ) {
 		var result,
 			stopped,
 			index = 0,
 			length = Animation.prefilters.length,
 			deferred = jQuery.Deferred().always( function() {
-
+	
 				// Don't match elem in the :animated selector
 				delete tick.elem;
 			} ),
@@ -7025,20 +7052,20 @@
 				}
 				var currentTime = fxNow || createFxNow(),
 					remaining = Math.max( 0, animation.startTime + animation.duration - currentTime ),
-
+	
 					// Support: Android 2.3 only
 					// Archaic crash bug won't allow us to use `1 - ( 0.5 || 0 )` (#12497)
 					temp = remaining / animation.duration || 0,
 					percent = 1 - temp,
 					index = 0,
 					length = animation.tweens.length;
-
+	
 				for ( ; index < length ; index++ ) {
 					animation.tweens[ index ].run( percent );
 				}
-
+	
 				deferred.notifyWith( elem, [ animation, percent, remaining ] );
-
+	
 				if ( percent < 1 && length ) {
 					return remaining;
 				} else {
@@ -7066,7 +7093,7 @@
 				},
 				stop: function( gotoEnd ) {
 					var index = 0,
-
+	
 						// If we are going to the end, we want to run all the tweens
 						// otherwise we skip this part
 						length = gotoEnd ? animation.tweens.length : 0;
@@ -7077,7 +7104,7 @@
 					for ( ; index < length ; index++ ) {
 						animation.tweens[ index ].run( 1 );
 					}
-
+	
 					// Resolve when we played the last frame; otherwise, reject
 					if ( gotoEnd ) {
 						deferred.notifyWith( elem, [ animation, 1, 0 ] );
@@ -7089,9 +7116,9 @@
 				}
 			} ),
 			props = animation.props;
-
+	
 		propFilter( props, animation.opts.specialEasing );
-
+	
 		for ( ; index < length ; index++ ) {
 			result = Animation.prefilters[ index ].call( animation, elem, props, animation.opts );
 			if ( result ) {
@@ -7102,13 +7129,13 @@
 				return result;
 			}
 		}
-
+	
 		jQuery.map( props, createTween, animation );
-
+	
 		if ( jQuery.isFunction( animation.opts.start ) ) {
 			animation.opts.start.call( elem, animation );
 		}
-
+	
 		jQuery.fx.timer(
 			jQuery.extend( tick, {
 				elem: elem,
@@ -7116,16 +7143,16 @@
 				queue: animation.opts.queue
 			} )
 		);
-
+	
 		// attach callbacks from options
 		return animation.progress( animation.opts.progress )
 			.done( animation.opts.done, animation.opts.complete )
 			.fail( animation.opts.fail )
 			.always( animation.opts.always );
 	}
-
+	
 	jQuery.Animation = jQuery.extend( Animation, {
-
+	
 		tweeners: {
 			"*": [ function( prop, value ) {
 				var tween = this.createTween( prop, value );
@@ -7133,7 +7160,7 @@
 				return tween;
 			} ]
 		},
-
+	
 		tweener: function( props, callback ) {
 			if ( jQuery.isFunction( props ) ) {
 				callback = props;
@@ -7141,20 +7168,20 @@
 			} else {
 				props = props.match( rnotwhite );
 			}
-
+	
 			var prop,
 				index = 0,
 				length = props.length;
-
+	
 			for ( ; index < length ; index++ ) {
 				prop = props[ index ];
 				Animation.tweeners[ prop ] = Animation.tweeners[ prop ] || [];
 				Animation.tweeners[ prop ].unshift( callback );
 			}
 		},
-
+	
 		prefilters: [ defaultPrefilter ],
-
+	
 		prefilter: function( callback, prepend ) {
 			if ( prepend ) {
 				Animation.prefilters.unshift( callback );
@@ -7163,7 +7190,7 @@
 			}
 		}
 	} );
-
+	
 	jQuery.speed = function( speed, easing, fn ) {
 		var opt = speed && typeof speed === "object" ? jQuery.extend( {}, speed ) : {
 			complete: fn || !fn && easing ||
@@ -7171,44 +7198,44 @@
 			duration: speed,
 			easing: fn && easing || easing && !jQuery.isFunction( easing ) && easing
 		};
-
+	
 		// Go to the end state if fx are off or if document is hidden
 		if ( jQuery.fx.off || document.hidden ) {
 			opt.duration = 0;
-
+	
 		} else {
 			opt.duration = typeof opt.duration === "number" ?
 				opt.duration : opt.duration in jQuery.fx.speeds ?
 					jQuery.fx.speeds[ opt.duration ] : jQuery.fx.speeds._default;
 		}
-
+	
 		// Normalize opt.queue - true/undefined/null -> "fx"
 		if ( opt.queue == null || opt.queue === true ) {
 			opt.queue = "fx";
 		}
-
+	
 		// Queueing
 		opt.old = opt.complete;
-
+	
 		opt.complete = function() {
 			if ( jQuery.isFunction( opt.old ) ) {
 				opt.old.call( this );
 			}
-
+	
 			if ( opt.queue ) {
 				jQuery.dequeue( this, opt.queue );
 			}
 		};
-
+	
 		return opt;
 	};
-
+	
 	jQuery.fn.extend( {
 		fadeTo: function( speed, to, easing, callback ) {
-
+	
 			// Show any hidden elements after setting opacity to 0
 			return this.filter( isHiddenWithinTree ).css( "opacity", 0 ).show()
-
+	
 				// Animate to the value specified
 				.end().animate( { opacity: to }, speed, easing, callback );
 		},
@@ -7216,17 +7243,17 @@
 			var empty = jQuery.isEmptyObject( prop ),
 				optall = jQuery.speed( speed, easing, callback ),
 				doAnimation = function() {
-
+	
 					// Operate on a copy of prop so per-property easing won't be lost
 					var anim = Animation( this, jQuery.extend( {}, prop ), optall );
-
+	
 					// Empty animations, or finishing resolves immediately
 					if ( empty || dataPriv.get( this, "finish" ) ) {
 						anim.stop( true );
 					}
 				};
 				doAnimation.finish = doAnimation;
-
+	
 			return empty || optall.queue === false ?
 				this.each( doAnimation ) :
 				this.queue( optall.queue, doAnimation );
@@ -7237,7 +7264,7 @@
 				delete hooks.stop;
 				stop( gotoEnd );
 			};
-
+	
 			if ( typeof type !== "string" ) {
 				gotoEnd = clearQueue;
 				clearQueue = type;
@@ -7246,13 +7273,13 @@
 			if ( clearQueue && type !== false ) {
 				this.queue( type || "fx", [] );
 			}
-
+	
 			return this.each( function() {
 				var dequeue = true,
 					index = type != null && type + "queueHooks",
 					timers = jQuery.timers,
 					data = dataPriv.get( this );
-
+	
 				if ( index ) {
 					if ( data[ index ] && data[ index ].stop ) {
 						stopQueue( data[ index ] );
@@ -7264,17 +7291,17 @@
 						}
 					}
 				}
-
+	
 				for ( index = timers.length; index--; ) {
 					if ( timers[ index ].elem === this &&
 						( type == null || timers[ index ].queue === type ) ) {
-
+	
 						timers[ index ].anim.stop( gotoEnd );
 						dequeue = false;
 						timers.splice( index, 1 );
 					}
 				}
-
+	
 				// Start the next in the queue if the last step wasn't forced.
 				// Timers currently will call their complete callbacks, which
 				// will dequeue but only if they were gotoEnd.
@@ -7294,17 +7321,17 @@
 					hooks = data[ type + "queueHooks" ],
 					timers = jQuery.timers,
 					length = queue ? queue.length : 0;
-
+	
 				// Enable finishing flag on private data
 				data.finish = true;
-
+	
 				// Empty the queue first
 				jQuery.queue( this, type, [] );
-
+	
 				if ( hooks && hooks.stop ) {
 					hooks.stop.call( this, true );
 				}
-
+	
 				// Look for any active animations, and finish them
 				for ( index = timers.length; index--; ) {
 					if ( timers[ index ].elem === this && timers[ index ].queue === type ) {
@@ -7312,20 +7339,20 @@
 						timers.splice( index, 1 );
 					}
 				}
-
+	
 				// Look for any animations in the old queue and finish them
 				for ( index = 0; index < length; index++ ) {
 					if ( queue[ index ] && queue[ index ].finish ) {
 						queue[ index ].finish.call( this );
 					}
 				}
-
+	
 				// Turn off finishing flag
 				delete data.finish;
 			} );
 		}
 	} );
-
+	
 	jQuery.each( [ "toggle", "show", "hide" ], function( i, name ) {
 		var cssFn = jQuery.fn[ name ];
 		jQuery.fn[ name ] = function( speed, easing, callback ) {
@@ -7334,7 +7361,7 @@
 				this.animate( genFx( name, true ), speed, easing, callback );
 		};
 	} );
-
+	
 	// Generate shortcuts for custom animations
 	jQuery.each( {
 		slideDown: genFx( "show" ),
@@ -7348,30 +7375,30 @@
 			return this.animate( props, speed, easing, callback );
 		};
 	} );
-
+	
 	jQuery.timers = [];
 	jQuery.fx.tick = function() {
 		var timer,
 			i = 0,
 			timers = jQuery.timers;
-
+	
 		fxNow = jQuery.now();
-
+	
 		for ( ; i < timers.length; i++ ) {
 			timer = timers[ i ];
-
+	
 			// Checks the timer has not already been removed
 			if ( !timer() && timers[ i ] === timer ) {
 				timers.splice( i--, 1 );
 			}
 		}
-
+	
 		if ( !timers.length ) {
 			jQuery.fx.stop();
 		}
 		fxNow = undefined;
 	};
-
+	
 	jQuery.fx.timer = function( timer ) {
 		jQuery.timers.push( timer );
 		if ( timer() ) {
@@ -7380,7 +7407,7 @@
 			jQuery.timers.pop();
 		}
 	};
-
+	
 	jQuery.fx.interval = 13;
 	jQuery.fx.start = function() {
 		if ( !timerId ) {
@@ -7389,32 +7416,32 @@
 				window.setInterval( jQuery.fx.tick, jQuery.fx.interval );
 		}
 	};
-
+	
 	jQuery.fx.stop = function() {
 		if ( window.cancelAnimationFrame ) {
 			window.cancelAnimationFrame( timerId );
 		} else {
 			window.clearInterval( timerId );
 		}
-
+	
 		timerId = null;
 	};
-
+	
 	jQuery.fx.speeds = {
 		slow: 600,
 		fast: 200,
-
+	
 		// Default speed
 		_default: 400
 	};
-
-
+	
+	
 	// Based off of the plugin by Clint Helfers, with permission.
 	// https://web.archive.org/web/20100324014747/http://blindsignals.com/index.php/2009/07/jquery-delay/
 	jQuery.fn.delay = function( time, type ) {
 		time = jQuery.fx ? jQuery.fx.speeds[ time ] || time : time;
 		type = type || "fx";
-
+	
 		return this.queue( type, function( next, hooks ) {
 			var timeout = window.setTimeout( next, time );
 			hooks.stop = function() {
@@ -7422,23 +7449,23 @@
 			};
 		} );
 	};
-
-
+	
+	
 	( function() {
 		var input = document.createElement( "input" ),
 			select = document.createElement( "select" ),
 			opt = select.appendChild( document.createElement( "option" ) );
-
+	
 		input.type = "checkbox";
-
+	
 		// Support: Android <=4.3 only
 		// Default value for a checkbox should be "on"
 		support.checkOn = input.value !== "";
-
+	
 		// Support: IE <=11 only
 		// Must access selectedIndex to make default options select
 		support.optSelected = opt.selected;
-
+	
 		// Support: IE <=11 only
 		// An input loses its value after becoming a radio
 		input = document.createElement( "input" );
@@ -7446,70 +7473,70 @@
 		input.type = "radio";
 		support.radioValue = input.value === "t";
 	} )();
-
-
+	
+	
 	var boolHook,
 		attrHandle = jQuery.expr.attrHandle;
-
+	
 	jQuery.fn.extend( {
 		attr: function( name, value ) {
 			return access( this, jQuery.attr, name, value, arguments.length > 1 );
 		},
-
+	
 		removeAttr: function( name ) {
 			return this.each( function() {
 				jQuery.removeAttr( this, name );
 			} );
 		}
 	} );
-
+	
 	jQuery.extend( {
 		attr: function( elem, name, value ) {
 			var ret, hooks,
 				nType = elem.nodeType;
-
+	
 			// Don't get/set attributes on text, comment and attribute nodes
 			if ( nType === 3 || nType === 8 || nType === 2 ) {
 				return;
 			}
-
+	
 			// Fallback to prop when attributes are not supported
 			if ( typeof elem.getAttribute === "undefined" ) {
 				return jQuery.prop( elem, name, value );
 			}
-
+	
 			// Attribute hooks are determined by the lowercase version
 			// Grab necessary hook if one is defined
 			if ( nType !== 1 || !jQuery.isXMLDoc( elem ) ) {
 				hooks = jQuery.attrHooks[ name.toLowerCase() ] ||
 					( jQuery.expr.match.bool.test( name ) ? boolHook : undefined );
 			}
-
+	
 			if ( value !== undefined ) {
 				if ( value === null ) {
 					jQuery.removeAttr( elem, name );
 					return;
 				}
-
+	
 				if ( hooks && "set" in hooks &&
 					( ret = hooks.set( elem, value, name ) ) !== undefined ) {
 					return ret;
 				}
-
+	
 				elem.setAttribute( name, value + "" );
 				return value;
 			}
-
+	
 			if ( hooks && "get" in hooks && ( ret = hooks.get( elem, name ) ) !== null ) {
 				return ret;
 			}
-
+	
 			ret = jQuery.find.attr( elem, name );
-
+	
 			// Non-existent attributes return null, we normalize to undefined
 			return ret == null ? undefined : ret;
 		},
-
+	
 		attrHooks: {
 			type: {
 				set: function( elem, value ) {
@@ -7525,12 +7552,12 @@
 				}
 			}
 		},
-
+	
 		removeAttr: function( elem, value ) {
 			var name,
 				i = 0,
 				attrNames = value && value.match( rnotwhite );
-
+	
 			if ( attrNames && elem.nodeType === 1 ) {
 				while ( ( name = attrNames[ i++ ] ) ) {
 					elem.removeAttribute( name );
@@ -7538,12 +7565,12 @@
 			}
 		}
 	} );
-
+	
 	// Hooks for boolean attributes
 	boolHook = {
 		set: function( elem, value, name ) {
 			if ( value === false ) {
-
+	
 				// Remove boolean attributes when set to false
 				jQuery.removeAttr( elem, name );
 			} else {
@@ -7552,16 +7579,16 @@
 			return name;
 		}
 	};
-
+	
 	jQuery.each( jQuery.expr.match.bool.source.match( /\w+/g ), function( i, name ) {
 		var getter = attrHandle[ name ] || jQuery.find.attr;
-
+	
 		attrHandle[ name ] = function( elem, name, isXML ) {
 			var ret, handle,
 				lowercaseName = name.toLowerCase();
-
+	
 			if ( !isXML ) {
-
+	
 				// Avoid an infinite loop by temporarily removing this function from the getter
 				handle = attrHandle[ lowercaseName ];
 				attrHandle[ lowercaseName ] = ret;
@@ -7573,69 +7600,69 @@
 			return ret;
 		};
 	} );
-
-
-
-
+	
+	
+	
+	
 	var rfocusable = /^(?:input|select|textarea|button)$/i,
 		rclickable = /^(?:a|area)$/i;
-
+	
 	jQuery.fn.extend( {
 		prop: function( name, value ) {
 			return access( this, jQuery.prop, name, value, arguments.length > 1 );
 		},
-
+	
 		removeProp: function( name ) {
 			return this.each( function() {
 				delete this[ jQuery.propFix[ name ] || name ];
 			} );
 		}
 	} );
-
+	
 	jQuery.extend( {
 		prop: function( elem, name, value ) {
 			var ret, hooks,
 				nType = elem.nodeType;
-
+	
 			// Don't get/set properties on text, comment and attribute nodes
 			if ( nType === 3 || nType === 8 || nType === 2 ) {
 				return;
 			}
-
+	
 			if ( nType !== 1 || !jQuery.isXMLDoc( elem ) ) {
-
+	
 				// Fix name and attach hooks
 				name = jQuery.propFix[ name ] || name;
 				hooks = jQuery.propHooks[ name ];
 			}
-
+	
 			if ( value !== undefined ) {
 				if ( hooks && "set" in hooks &&
 					( ret = hooks.set( elem, value, name ) ) !== undefined ) {
 					return ret;
 				}
-
+	
 				return ( elem[ name ] = value );
 			}
-
+	
 			if ( hooks && "get" in hooks && ( ret = hooks.get( elem, name ) ) !== null ) {
 				return ret;
 			}
-
+	
 			return elem[ name ];
 		},
-
+	
 		propHooks: {
 			tabIndex: {
 				get: function( elem ) {
-
+	
 					// Support: IE <=9 - 11 only
 					// elem.tabIndex doesn't always return the
 					// correct value when it hasn't been explicitly set
 					// https://web.archive.org/web/20141116233347/http://fluidproject.org/blog/2008/01/09/getting-setting-and-removing-tabindex-values-with-javascript/
 					// Use proper attribute retrieval(#12072)
 					var tabindex = jQuery.find.attr( elem, "tabindex" );
-
+	
 					return tabindex ?
 						parseInt( tabindex, 10 ) :
 						rfocusable.test( elem.nodeName ) ||
@@ -7645,13 +7672,13 @@
 				}
 			}
 		},
-
+	
 		propFix: {
 			"for": "htmlFor",
 			"class": "className"
 		}
 	} );
-
+	
 	// Support: IE <=11 only
 	// Accessing the selectedIndex property
 	// forces the browser to respect setting selected
@@ -7671,7 +7698,7 @@
 				var parent = elem.parentNode;
 				if ( parent ) {
 					parent.selectedIndex;
-
+	
 					if ( parent.parentNode ) {
 						parent.parentNode.selectedIndex;
 					}
@@ -7679,7 +7706,7 @@
 			}
 		};
 	}
-
+	
 	jQuery.each( [
 		"tabIndex",
 		"readOnly",
@@ -7694,35 +7721,35 @@
 	], function() {
 		jQuery.propFix[ this.toLowerCase() ] = this;
 	} );
-
-
-
-
+	
+	
+	
+	
 	var rclass = /[\t\r\n\f]/g;
-
+	
 	function getClass( elem ) {
 		return elem.getAttribute && elem.getAttribute( "class" ) || "";
 	}
-
+	
 	jQuery.fn.extend( {
 		addClass: function( value ) {
 			var classes, elem, cur, curValue, clazz, j, finalValue,
 				i = 0;
-
+	
 			if ( jQuery.isFunction( value ) ) {
 				return this.each( function( j ) {
 					jQuery( this ).addClass( value.call( this, j, getClass( this ) ) );
 				} );
 			}
-
+	
 			if ( typeof value === "string" && value ) {
 				classes = value.match( rnotwhite ) || [];
-
+	
 				while ( ( elem = this[ i++ ] ) ) {
 					curValue = getClass( elem );
 					cur = elem.nodeType === 1 &&
 						( " " + curValue + " " ).replace( rclass, " " );
-
+	
 					if ( cur ) {
 						j = 0;
 						while ( ( clazz = classes[ j++ ] ) ) {
@@ -7730,7 +7757,7 @@
 								cur += clazz + " ";
 							}
 						}
-
+	
 						// Only assign if different to avoid unneeded rendering.
 						finalValue = jQuery.trim( cur );
 						if ( curValue !== finalValue ) {
@@ -7739,44 +7766,44 @@
 					}
 				}
 			}
-
+	
 			return this;
 		},
-
+	
 		removeClass: function( value ) {
 			var classes, elem, cur, curValue, clazz, j, finalValue,
 				i = 0;
-
+	
 			if ( jQuery.isFunction( value ) ) {
 				return this.each( function( j ) {
 					jQuery( this ).removeClass( value.call( this, j, getClass( this ) ) );
 				} );
 			}
-
+	
 			if ( !arguments.length ) {
 				return this.attr( "class", "" );
 			}
-
+	
 			if ( typeof value === "string" && value ) {
 				classes = value.match( rnotwhite ) || [];
-
+	
 				while ( ( elem = this[ i++ ] ) ) {
 					curValue = getClass( elem );
-
+	
 					// This expression is here for better compressibility (see addClass)
 					cur = elem.nodeType === 1 &&
 						( " " + curValue + " " ).replace( rclass, " " );
-
+	
 					if ( cur ) {
 						j = 0;
 						while ( ( clazz = classes[ j++ ] ) ) {
-
+	
 							// Remove *all* instances
 							while ( cur.indexOf( " " + clazz + " " ) > -1 ) {
 								cur = cur.replace( " " + clazz + " ", " " );
 							}
 						}
-
+	
 						// Only assign if different to avoid unneeded rendering.
 						finalValue = jQuery.trim( cur );
 						if ( curValue !== finalValue ) {
@@ -7785,17 +7812,17 @@
 					}
 				}
 			}
-
+	
 			return this;
 		},
-
+	
 		toggleClass: function( value, stateVal ) {
 			var type = typeof value;
-
+	
 			if ( typeof stateVal === "boolean" && type === "string" ) {
 				return stateVal ? this.addClass( value ) : this.removeClass( value );
 			}
-
+	
 			if ( jQuery.isFunction( value ) ) {
 				return this.each( function( i ) {
 					jQuery( this ).toggleClass(
@@ -7804,19 +7831,19 @@
 					);
 				} );
 			}
-
+	
 			return this.each( function() {
 				var className, i, self, classNames;
-
+	
 				if ( type === "string" ) {
-
+	
 					// Toggle individual class names
 					i = 0;
 					self = jQuery( this );
 					classNames = value.match( rnotwhite ) || [];
-
+	
 					while ( ( className = classNames[ i++ ] ) ) {
-
+	
 						// Check each className given, space separated list
 						if ( self.hasClass( className ) ) {
 							self.removeClass( className );
@@ -7824,16 +7851,16 @@
 							self.addClass( className );
 						}
 					}
-
+	
 				// Toggle whole class name
 				} else if ( value === undefined || type === "boolean" ) {
 					className = getClass( this );
 					if ( className ) {
-
+	
 						// Store className if set
 						dataPriv.set( this, "__className__", className );
 					}
-
+	
 					// If the element has a class name or if we're passed `false`,
 					// then remove the whole classname (if there was one, the above saved it).
 					// Otherwise bring back whatever was previously saved (if anything),
@@ -7848,11 +7875,11 @@
 				}
 			} );
 		},
-
+	
 		hasClass: function( selector ) {
 			var className, elem,
 				i = 0;
-
+	
 			className = " " + selector + " ";
 			while ( ( elem = this[ i++ ] ) ) {
 				if ( elem.nodeType === 1 &&
@@ -7862,78 +7889,78 @@
 					return true;
 				}
 			}
-
+	
 			return false;
 		}
 	} );
-
-
-
-
+	
+	
+	
+	
 	var rreturn = /\r/g,
 		rspaces = /[\x20\t\r\n\f]+/g;
-
+	
 	jQuery.fn.extend( {
 		val: function( value ) {
 			var hooks, ret, isFunction,
 				elem = this[ 0 ];
-
+	
 			if ( !arguments.length ) {
 				if ( elem ) {
 					hooks = jQuery.valHooks[ elem.type ] ||
 						jQuery.valHooks[ elem.nodeName.toLowerCase() ];
-
+	
 					if ( hooks &&
 						"get" in hooks &&
 						( ret = hooks.get( elem, "value" ) ) !== undefined
 					) {
 						return ret;
 					}
-
+	
 					ret = elem.value;
-
+	
 					return typeof ret === "string" ?
-
+	
 						// Handle most common string cases
 						ret.replace( rreturn, "" ) :
-
+	
 						// Handle cases where value is null/undef or number
 						ret == null ? "" : ret;
 				}
-
+	
 				return;
 			}
-
+	
 			isFunction = jQuery.isFunction( value );
-
+	
 			return this.each( function( i ) {
 				var val;
-
+	
 				if ( this.nodeType !== 1 ) {
 					return;
 				}
-
+	
 				if ( isFunction ) {
 					val = value.call( this, i, jQuery( this ).val() );
 				} else {
 					val = value;
 				}
-
+	
 				// Treat null/undefined as ""; convert numbers to string
 				if ( val == null ) {
 					val = "";
-
+	
 				} else if ( typeof val === "number" ) {
 					val += "";
-
+	
 				} else if ( jQuery.isArray( val ) ) {
 					val = jQuery.map( val, function( value ) {
 						return value == null ? "" : value + "";
 					} );
 				}
-
+	
 				hooks = jQuery.valHooks[ this.type ] || jQuery.valHooks[ this.nodeName.toLowerCase() ];
-
+	
 				// If set returns undefined, fall back to normal setting
 				if ( !hooks || !( "set" in hooks ) || hooks.set( this, val, "value" ) === undefined ) {
 					this.value = val;
@@ -7941,16 +7968,16 @@
 			} );
 		}
 	} );
-
+	
 	jQuery.extend( {
 		valHooks: {
 			option: {
 				get: function( elem ) {
-
+	
 					var val = jQuery.find.attr( elem, "value" );
 					return val != null ?
 						val :
-
+	
 						// Support: IE <=10 - 11 only
 						// option.text throws exceptions (#14686, #14858)
 						// Strip and collapse whitespace
@@ -7969,42 +7996,42 @@
 						i = index < 0 ?
 							max :
 							one ? index : 0;
-
+	
 					// Loop through all the selected options
 					for ( ; i < max; i++ ) {
 						option = options[ i ];
-
+	
 						// Support: IE <=9 only
 						// IE8-9 doesn't update selected after form reset (#2551)
 						if ( ( option.selected || i === index ) &&
-
+	
 								// Don't return options that are disabled or in a disabled optgroup
 								!option.disabled &&
 								( !option.parentNode.disabled ||
 									!jQuery.nodeName( option.parentNode, "optgroup" ) ) ) {
-
+	
 							// Get the specific value for the option
 							value = jQuery( option ).val();
-
+	
 							// We don't need an array for one selects
 							if ( one ) {
 								return value;
 							}
-
+	
 							// Multi-Selects return an array
 							values.push( value );
 						}
 					}
-
+	
 					return values;
 				},
-
+	
 				set: function( elem, value ) {
 					var optionSet, option,
 						options = elem.options,
 						values = jQuery.makeArray( value ),
 						i = options.length;
-
+	
 					while ( i-- ) {
 						option = options[ i ];
 						if ( option.selected =
@@ -8013,7 +8040,7 @@
 							optionSet = true;
 						}
 					}
-
+	
 					// Force browsers to behave consistently when non-matching value is set
 					if ( !optionSet ) {
 						elem.selectedIndex = -1;
@@ -8023,7 +8050,7 @@
 			}
 		}
 	} );
-
+	
 	// Radios and checkboxes getter/setter
 	jQuery.each( [ "radio", "checkbox" ], function() {
 		jQuery.valHooks[ this ] = {
@@ -8039,78 +8066,78 @@
 			};
 		}
 	} );
-
-
-
-
+	
+	
+	
+	
 	// Return jQuery for attributes-only inclusion
-
-
+	
+	
 	var rfocusMorph = /^(?:focusinfocus|focusoutblur)$/;
-
+	
 	jQuery.extend( jQuery.event, {
-
+	
 		trigger: function( event, data, elem, onlyHandlers ) {
-
+	
 			var i, cur, tmp, bubbleType, ontype, handle, special,
 				eventPath = [ elem || document ],
 				type = hasOwn.call( event, "type" ) ? event.type : event,
 				namespaces = hasOwn.call( event, "namespace" ) ? event.namespace.split( "." ) : [];
-
+	
 			cur = tmp = elem = elem || document;
-
+	
 			// Don't do events on text and comment nodes
 			if ( elem.nodeType === 3 || elem.nodeType === 8 ) {
 				return;
 			}
-
+	
 			// focus/blur morphs to focusin/out; ensure we're not firing them right now
 			if ( rfocusMorph.test( type + jQuery.event.triggered ) ) {
 				return;
 			}
-
+	
 			if ( type.indexOf( "." ) > -1 ) {
-
+	
 				// Namespaced trigger; create a regexp to match event type in handle()
 				namespaces = type.split( "." );
 				type = namespaces.shift();
 				namespaces.sort();
 			}
 			ontype = type.indexOf( ":" ) < 0 && "on" + type;
-
+	
 			// Caller can pass in a jQuery.Event object, Object, or just an event type string
 			event = event[ jQuery.expando ] ?
 				event :
 				new jQuery.Event( type, typeof event === "object" && event );
-
+	
 			// Trigger bitmask: & 1 for native handlers; & 2 for jQuery (always true)
 			event.isTrigger = onlyHandlers ? 2 : 3;
 			event.namespace = namespaces.join( "." );
 			event.rnamespace = event.namespace ?
 				new RegExp( "(^|\\.)" + namespaces.join( "\\.(?:.*\\.|)" ) + "(\\.|$)" ) :
 				null;
-
+	
 			// Clean up the event in case it is being reused
 			event.result = undefined;
 			if ( !event.target ) {
 				event.target = elem;
 			}
-
+	
 			// Clone any incoming data and prepend the event, creating the handler arg list
 			data = data == null ?
 				[ event ] :
 				jQuery.makeArray( data, [ event ] );
-
+	
 			// Allow special events to draw outside the lines
 			special = jQuery.event.special[ type ] || {};
 			if ( !onlyHandlers && special.trigger && special.trigger.apply( elem, data ) === false ) {
 				return;
 			}
-
+	
 			// Determine event propagation path in advance, per W3C events spec (#9951)
 			// Bubble up to document, then to window; watch for a global ownerDocument var (#9724)
 			if ( !onlyHandlers && !special.noBubble && !jQuery.isWindow( elem ) ) {
-
+	
 				bubbleType = special.delegateType || type;
 				if ( !rfocusMorph.test( bubbleType + type ) ) {
 					cur = cur.parentNode;
@@ -8119,28 +8146,28 @@
 					eventPath.push( cur );
 					tmp = cur;
 				}
-
+	
 				// Only add window if we got to document (e.g., not plain obj or detached DOM)
 				if ( tmp === ( elem.ownerDocument || document ) ) {
 					eventPath.push( tmp.defaultView || tmp.parentWindow || window );
 				}
 			}
-
+	
 			// Fire handlers on the event path
 			i = 0;
 			while ( ( cur = eventPath[ i++ ] ) && !event.isPropagationStopped() ) {
-
+	
 				event.type = i > 1 ?
 					bubbleType :
 					special.bindType || type;
-
+	
 				// jQuery handler
 				handle = ( dataPriv.get( cur, "events" ) || {} )[ event.type ] &&
 					dataPriv.get( cur, "handle" );
 				if ( handle ) {
 					handle.apply( cur, data );
 				}
-
+	
 				// Native handler
 				handle = ontype && cur[ ontype ];
 				if ( handle && handle.apply && acceptData( cur ) ) {
@@ -8151,40 +8178,40 @@
 				}
 			}
 			event.type = type;
-
+	
 			// If nobody prevented the default action, do it now
 			if ( !onlyHandlers && !event.isDefaultPrevented() ) {
-
+	
 				if ( ( !special._default ||
 					special._default.apply( eventPath.pop(), data ) === false ) &&
 					acceptData( elem ) ) {
-
+	
 					// Call a native DOM method on the target with the same name as the event.
 					// Don't do default actions on window, that's where global variables be (#6170)
 					if ( ontype && jQuery.isFunction( elem[ type ] ) && !jQuery.isWindow( elem ) ) {
-
+	
 						// Don't re-trigger an onFOO event when we call its FOO() method
 						tmp = elem[ ontype ];
-
+	
 						if ( tmp ) {
 							elem[ ontype ] = null;
 						}
-
+	
 						// Prevent re-triggering of the same event, since we already bubbled it above
 						jQuery.event.triggered = type;
 						elem[ type ]();
 						jQuery.event.triggered = undefined;
-
+	
 						if ( tmp ) {
 							elem[ ontype ] = tmp;
 						}
 					}
 				}
 			}
-
+	
 			return event.result;
 		},
-
+	
 		// Piggyback on a donor event to simulate a different one
 		// Used only for `focus(in | out)` events
 		simulate: function( type, elem, event ) {
@@ -8196,14 +8223,14 @@
 					isSimulated: true
 				}
 			);
-
+	
 			jQuery.event.trigger( e, null, elem );
 		}
-
+	
 	} );
-
+	
 	jQuery.fn.extend( {
-
+	
 		trigger: function( type, data ) {
 			return this.each( function() {
 				jQuery.event.trigger( type, data, this );
@@ -8216,13 +8243,13 @@
 			}
 		}
 	} );
-
-
+	
+	
 	jQuery.each( ( "blur focus focusin focusout resize scroll click dblclick " +
 		"mousedown mouseup mousemove mouseover mouseout mouseenter mouseleave " +
 		"change select submit keydown keypress keyup contextmenu" ).split( " " ),
 		function( i, name ) {
-
+	
 		// Handle event binding
 		jQuery.fn[ name ] = function( data, fn ) {
 			return arguments.length > 0 ?
@@ -8230,19 +8257,19 @@
 				this.trigger( name );
 		};
 	} );
-
+	
 	jQuery.fn.extend( {
 		hover: function( fnOver, fnOut ) {
 			return this.mouseenter( fnOver ).mouseleave( fnOut || fnOver );
 		}
 	} );
-
-
-
-
+	
+	
+	
+	
 	support.focusin = "onfocusin" in window;
-
-
+	
+	
 	// Support: Firefox <=44
 	// Firefox doesn't have focus(in | out) events
 	// Related ticket - https://bugzilla.mozilla.org/show_bug.cgi?id=687787
@@ -8253,17 +8280,17 @@
 	// Related ticket - https://bugs.chromium.org/p/chromium/issues/detail?id=449857
 	if ( !support.focusin ) {
 		jQuery.each( { focus: "focusin", blur: "focusout" }, function( orig, fix ) {
-
+	
 			// Attach a single capturing handler on the document while someone wants focusin/focusout
 			var handler = function( event ) {
 				jQuery.event.simulate( fix, event.target, jQuery.event.fix( event ) );
 			};
-
+	
 			jQuery.event.special[ fix ] = {
 				setup: function() {
 					var doc = this.ownerDocument || this,
 						attaches = dataPriv.access( doc, fix );
-
+	
 					if ( !attaches ) {
 						doc.addEventListener( orig, handler, true );
 					}
@@ -8272,11 +8299,11 @@
 				teardown: function() {
 					var doc = this.ownerDocument || this,
 						attaches = dataPriv.access( doc, fix ) - 1;
-
+	
 					if ( !attaches ) {
 						doc.removeEventListener( orig, handler, true );
 						dataPriv.remove( doc, fix );
-
+	
 					} else {
 						dataPriv.access( doc, fix, attaches );
 					}
@@ -8285,20 +8312,20 @@
 		} );
 	}
 	var location = window.location;
-
+	
 	var nonce = jQuery.now();
-
+	
 	var rquery = ( /\?/ );
-
-
-
+	
+	
+	
 	// Cross-browser xml parsing
 	jQuery.parseXML = function( data ) {
 		var xml;
 		if ( !data || typeof data !== "string" ) {
 			return null;
 		}
-
+	
 		// Support: IE 9 - 11 only
 		// IE throws on parseFromString with invalid input.
 		try {
@@ -8306,34 +8333,34 @@
 		} catch ( e ) {
 			xml = undefined;
 		}
-
+	
 		if ( !xml || xml.getElementsByTagName( "parsererror" ).length ) {
 			jQuery.error( "Invalid XML: " + data );
 		}
 		return xml;
 	};
-
-
+	
+	
 	var
 		rbracket = /\[\]$/,
 		rCRLF = /\r?\n/g,
 		rsubmitterTypes = /^(?:submit|button|image|reset|file)$/i,
 		rsubmittable = /^(?:input|select|textarea|keygen)/i;
-
+	
 	function buildParams( prefix, obj, traditional, add ) {
 		var name;
-
+	
 		if ( jQuery.isArray( obj ) ) {
-
+	
 			// Serialize array item.
 			jQuery.each( obj, function( i, v ) {
 				if ( traditional || rbracket.test( prefix ) ) {
-
+	
 					// Treat each array item as a scalar.
 					add( prefix, v );
-
+	
 				} else {
-
+	
 					// Item is non-scalar (array or object), encode its numeric index.
 					buildParams(
 						prefix + "[" + ( typeof v === "object" && v != null ? i : "" ) + "]",
@@ -8343,72 +8370,72 @@
 					);
 				}
 			} );
-
+	
 		} else if ( !traditional && jQuery.type( obj ) === "object" ) {
-
+	
 			// Serialize object item.
 			for ( name in obj ) {
 				buildParams( prefix + "[" + name + "]", obj[ name ], traditional, add );
 			}
-
+	
 		} else {
-
+	
 			// Serialize scalar item.
 			add( prefix, obj );
 		}
 	}
-
+	
 	// Serialize an array of form elements or a set of
 	// key/values into a query string
 	jQuery.param = function( a, traditional ) {
 		var prefix,
 			s = [],
 			add = function( key, valueOrFunction ) {
-
+	
 				// If value is a function, invoke it and use its return value
 				var value = jQuery.isFunction( valueOrFunction ) ?
 					valueOrFunction() :
 					valueOrFunction;
-
+	
 				s[ s.length ] = encodeURIComponent( key ) + "=" +
 					encodeURIComponent( value == null ? "" : value );
 			};
-
+	
 		// If an array was passed in, assume that it is an array of form elements.
 		if ( jQuery.isArray( a ) || ( a.jquery && !jQuery.isPlainObject( a ) ) ) {
-
+	
 			// Serialize the form elements
 			jQuery.each( a, function() {
 				add( this.name, this.value );
 			} );
-
+	
 		} else {
-
+	
 			// If traditional, encode the "old" way (the way 1.3.2 or older
 			// did it), otherwise encode params recursively.
 			for ( prefix in a ) {
 				buildParams( prefix, a[ prefix ], traditional, add );
 			}
 		}
-
+	
 		// Return the resulting serialization
 		return s.join( "&" );
 	};
-
+	
 	jQuery.fn.extend( {
 		serialize: function() {
 			return jQuery.param( this.serializeArray() );
 		},
 		serializeArray: function() {
 			return this.map( function() {
-
+	
 				// Can add propHook for "elements" to filter or add form elements
 				var elements = jQuery.prop( this, "elements" );
 				return elements ? jQuery.makeArray( elements ) : this;
 			} )
 			.filter( function() {
 				var type = this.type;
-
+	
 				// Use .is( ":disabled" ) so that fieldset[disabled] works
 				return this.name && !jQuery( this ).is( ":disabled" ) &&
 					rsubmittable.test( this.nodeName ) && !rsubmitterTypes.test( type ) &&
@@ -8416,7 +8443,7 @@
 			} )
 			.map( function( i, elem ) {
 				var val = jQuery( this ).val();
-
+	
 				return val == null ?
 					null :
 					jQuery.isArray( val ) ?
@@ -8427,19 +8454,19 @@
 			} ).get();
 		}
 	} );
-
-
+	
+	
 	var
 		r20 = /%20/g,
 		rhash = /#.*$/,
 		rts = /([?&])_=[^&]*/,
 		rheaders = /^(.*?):[ \t]*([^\r\n]*)$/mg,
-
+	
 		// #7653, #8125, #8152: local protocol detection
 		rlocalProtocol = /^(?:about|app|app-storage|.+-extension|file|res|widget):$/,
 		rnoContent = /^(?:GET|HEAD)$/,
 		rprotocol = /^\/\//,
-
+	
 		/* Prefilters
 		 * 1) They are useful to introduce custom dataTypes (see ajax/jsonp.js for an example)
 		 * 2) These are called:
@@ -8450,46 +8477,46 @@
 		 * 5) execution will start with transport dataType and THEN continue down to "*" if needed
 		 */
 		prefilters = {},
-
+	
 		/* Transports bindings
 		 * 1) key is the dataType
 		 * 2) the catchall symbol "*" can be used
 		 * 3) selection will start with transport dataType and THEN go to "*" if needed
 		 */
 		transports = {},
-
+	
 		// Avoid comment-prolog char sequence (#10098); must appease lint and evade compression
 		allTypes = "*/".concat( "*" ),
-
+	
 		// Anchor tag for parsing the document origin
 		originAnchor = document.createElement( "a" );
 		originAnchor.href = location.href;
-
+	
 	// Base "constructor" for jQuery.ajaxPrefilter and jQuery.ajaxTransport
 	function addToPrefiltersOrTransports( structure ) {
-
+	
 		// dataTypeExpression is optional and defaults to "*"
 		return function( dataTypeExpression, func ) {
-
+	
 			if ( typeof dataTypeExpression !== "string" ) {
 				func = dataTypeExpression;
 				dataTypeExpression = "*";
 			}
-
+	
 			var dataType,
 				i = 0,
 				dataTypes = dataTypeExpression.toLowerCase().match( rnotwhite ) || [];
-
+	
 			if ( jQuery.isFunction( func ) ) {
-
+	
 				// For each dataType in the dataTypeExpression
 				while ( ( dataType = dataTypes[ i++ ] ) ) {
-
+	
 					// Prepend if requested
 					if ( dataType[ 0 ] === "+" ) {
 						dataType = dataType.slice( 1 ) || "*";
 						( structure[ dataType ] = structure[ dataType ] || [] ).unshift( func );
-
+	
 					// Otherwise append
 					} else {
 						( structure[ dataType ] = structure[ dataType ] || [] ).push( func );
@@ -8498,13 +8525,13 @@
 			}
 		};
 	}
-
+	
 	// Base inspection function for prefilters and transports
 	function inspectPrefiltersOrTransports( structure, options, originalOptions, jqXHR ) {
-
+	
 		var inspected = {},
 			seekingTransport = ( structure === transports );
-
+	
 		function inspect( dataType ) {
 			var selected;
 			inspected[ dataType ] = true;
@@ -8512,7 +8539,7 @@
 				var dataTypeOrTransport = prefilterOrFactory( options, originalOptions, jqXHR );
 				if ( typeof dataTypeOrTransport === "string" &&
 					!seekingTransport && !inspected[ dataTypeOrTransport ] ) {
-
+	
 					options.dataTypes.unshift( dataTypeOrTransport );
 					inspect( dataTypeOrTransport );
 					return false;
@@ -8522,17 +8549,17 @@
 			} );
 			return selected;
 		}
-
+	
 		return inspect( options.dataTypes[ 0 ] ) || !inspected[ "*" ] && inspect( "*" );
 	}
-
+	
 	// A special extend for ajax options
 	// that takes "flat" options (not to be deep extended)
 	// Fixes #9887
 	function ajaxExtend( target, src ) {
 		var key, deep,
 			flatOptions = jQuery.ajaxSettings.flatOptions || {};
-
+	
 		for ( key in src ) {
 			if ( src[ key ] !== undefined ) {
 				( flatOptions[ key ] ? target : ( deep || ( deep = {} ) ) )[ key ] = src[ key ];
@@ -8541,20 +8568,20 @@
 		if ( deep ) {
 			jQuery.extend( true, target, deep );
 		}
-
+	
 		return target;
 	}
-
+	
 	/* Handles responses to an ajax request:
 	 * - finds the right dataType (mediates between content-type and expected dataType)
 	 * - returns the corresponding response
 	 */
 	function ajaxHandleResponses( s, jqXHR, responses ) {
-
+	
 		var ct, type, finalDataType, firstDataType,
 			contents = s.contents,
 			dataTypes = s.dataTypes;
-
+	
 		// Remove auto dataType and get content-type in the process
 		while ( dataTypes[ 0 ] === "*" ) {
 			dataTypes.shift();
@@ -8562,7 +8589,7 @@
 				ct = s.mimeType || jqXHR.getResponseHeader( "Content-Type" );
 			}
 		}
-
+	
 		// Check if we're dealing with a known content-type
 		if ( ct ) {
 			for ( type in contents ) {
@@ -8572,12 +8599,12 @@
 				}
 			}
 		}
-
+	
 		// Check to see if we have a response for the expected dataType
 		if ( dataTypes[ 0 ] in responses ) {
 			finalDataType = dataTypes[ 0 ];
 		} else {
-
+	
 			// Try convertible dataTypes
 			for ( type in responses ) {
 				if ( !dataTypes[ 0 ] || s.converters[ type + " " + dataTypes[ 0 ] ] ) {
@@ -8588,11 +8615,11 @@
 					firstDataType = type;
 				}
 			}
-
+	
 			// Or just use first one
 			finalDataType = finalDataType || firstDataType;
 		}
-
+	
 		// If we found a dataType
 		// We add the dataType to the list if needed
 		// and return the corresponding response
@@ -8603,71 +8630,71 @@
 			return responses[ finalDataType ];
 		}
 	}
-
+	
 	/* Chain conversions given the request and the original response
 	 * Also sets the responseXXX fields on the jqXHR instance
 	 */
 	function ajaxConvert( s, response, jqXHR, isSuccess ) {
 		var conv2, current, conv, tmp, prev,
 			converters = {},
-
+	
 			// Work with a copy of dataTypes in case we need to modify it for conversion
 			dataTypes = s.dataTypes.slice();
-
+	
 		// Create converters map with lowercased keys
 		if ( dataTypes[ 1 ] ) {
 			for ( conv in s.converters ) {
 				converters[ conv.toLowerCase() ] = s.converters[ conv ];
 			}
 		}
-
+	
 		current = dataTypes.shift();
-
+	
 		// Convert to each sequential dataType
 		while ( current ) {
-
+	
 			if ( s.responseFields[ current ] ) {
 				jqXHR[ s.responseFields[ current ] ] = response;
 			}
-
+	
 			// Apply the dataFilter if provided
 			if ( !prev && isSuccess && s.dataFilter ) {
 				response = s.dataFilter( response, s.dataType );
 			}
-
+	
 			prev = current;
 			current = dataTypes.shift();
-
+	
 			if ( current ) {
-
+	
 				// There's only work to do if current dataType is non-auto
 				if ( current === "*" ) {
-
+	
 					current = prev;
-
+	
 				// Convert response if prev dataType is non-auto and differs from current
 				} else if ( prev !== "*" && prev !== current ) {
-
+	
 					// Seek a direct converter
 					conv = converters[ prev + " " + current ] || converters[ "* " + current ];
-
+	
 					// If none found, seek a pair
 					if ( !conv ) {
 						for ( conv2 in converters ) {
-
+	
 							// If conv2 outputs current
 							tmp = conv2.split( " " );
 							if ( tmp[ 1 ] === current ) {
-
+	
 								// If prev can be converted to accepted input
 								conv = converters[ prev + " " + tmp[ 0 ] ] ||
 									converters[ "* " + tmp[ 0 ] ];
 								if ( conv ) {
-
+	
 									// Condense equivalence converters
 									if ( conv === true ) {
 										conv = converters[ conv2 ];
-
+	
 									// Otherwise, insert the intermediate dataType
 									} else if ( converters[ conv2 ] !== true ) {
 										current = tmp[ 0 ];
@@ -8678,10 +8705,10 @@
 							}
 						}
 					}
-
+	
 					// Apply converter (if not an equivalence)
 					if ( conv !== true ) {
-
+	
 						// Unless errors are allowed to bubble, catch and return them
 						if ( conv && s.throws ) {
 							response = conv( response );
@@ -8699,19 +8726,19 @@
 				}
 			}
 		}
-
+	
 		return { state: "success", data: response };
 	}
-
+	
 	jQuery.extend( {
-
+	
 		// Counter for holding the number of active queries
 		active: 0,
-
+	
 		// Last-Modified header cache for next request
 		lastModified: {},
 		etag: {},
-
+	
 		ajaxSettings: {
 			url: location.href,
 			type: "GET",
@@ -8731,7 +8758,7 @@
 			traditional: false,
 			headers: {},
 			*/
-
+	
 			accepts: {
 				"*": allTypes,
 				text: "text/plain",
@@ -8739,36 +8766,36 @@
 				xml: "application/xml, text/xml",
 				json: "application/json, text/javascript"
 			},
-
+	
 			contents: {
 				xml: /\bxml\b/,
 				html: /\bhtml/,
 				json: /\bjson\b/
 			},
-
+	
 			responseFields: {
 				xml: "responseXML",
 				text: "responseText",
 				json: "responseJSON"
 			},
-
+	
 			// Data converters
 			// Keys separate source (or catchall "*") and destination types with a single space
 			converters: {
-
+	
 				// Convert anything to text
 				"* text": String,
-
+	
 				// Text to html (true = no transformation)
 				"text html": true,
-
+	
 				// Evaluate text as a json expression
 				"text json": JSON.parse,
-
+	
 				// Parse text as xml
 				"text xml": jQuery.parseXML
 			},
-
+	
 			// For options that shouldn't be deep extended:
 			// you can add your own custom options here if
 			// and when you create one that shouldn't be
@@ -8778,92 +8805,92 @@
 				context: true
 			}
 		},
-
+	
 		// Creates a full fledged settings object into target
 		// with both ajaxSettings and settings fields.
 		// If target is omitted, writes into ajaxSettings.
 		ajaxSetup: function( target, settings ) {
 			return settings ?
-
+	
 				// Building a settings object
 				ajaxExtend( ajaxExtend( target, jQuery.ajaxSettings ), settings ) :
-
+	
 				// Extending ajaxSettings
 				ajaxExtend( jQuery.ajaxSettings, target );
 		},
-
+	
 		ajaxPrefilter: addToPrefiltersOrTransports( prefilters ),
 		ajaxTransport: addToPrefiltersOrTransports( transports ),
-
+	
 		// Main method
 		ajax: function( url, options ) {
-
+	
 			// If url is an object, simulate pre-1.5 signature
 			if ( typeof url === "object" ) {
 				options = url;
 				url = undefined;
 			}
-
+	
 			// Force options to be an object
 			options = options || {};
-
+	
 			var transport,
-
+	
 				// URL without anti-cache param
 				cacheURL,
-
+	
 				// Response headers
 				responseHeadersString,
 				responseHeaders,
-
+	
 				// timeout handle
 				timeoutTimer,
-
+	
 				// Url cleanup var
 				urlAnchor,
-
+	
 				// Request state (becomes false upon send and true upon completion)
 				completed,
-
+	
 				// To know if global events are to be dispatched
 				fireGlobals,
-
+	
 				// Loop variable
 				i,
-
+	
 				// uncached part of the url
 				uncached,
-
+	
 				// Create the final options object
 				s = jQuery.ajaxSetup( {}, options ),
-
+	
 				// Callbacks context
 				callbackContext = s.context || s,
-
+	
 				// Context for global events is callbackContext if it is a DOM node or jQuery collection
 				globalEventContext = s.context &&
 					( callbackContext.nodeType || callbackContext.jquery ) ?
 						jQuery( callbackContext ) :
 						jQuery.event,
-
+	
 				// Deferreds
 				deferred = jQuery.Deferred(),
 				completeDeferred = jQuery.Callbacks( "once memory" ),
-
+	
 				// Status-dependent callbacks
 				statusCode = s.statusCode || {},
-
+	
 				// Headers (they are sent all at once)
 				requestHeaders = {},
 				requestHeadersNames = {},
-
+	
 				// Default abort message
 				strAbort = "canceled",
-
+	
 				// Fake xhr
 				jqXHR = {
 					readyState: 0,
-
+	
 					// Builds headers hashtable if needed
 					getResponseHeader: function( key ) {
 						var match;
@@ -8878,12 +8905,12 @@
 						}
 						return match == null ? null : match;
 					},
-
+	
 					// Raw string
 					getAllResponseHeaders: function() {
 						return completed ? responseHeadersString : null;
 					},
-
+	
 					// Caches the header
 					setRequestHeader: function( name, value ) {
 						if ( completed == null ) {
@@ -8893,7 +8920,7 @@
 						}
 						return this;
 					},
-
+	
 					// Overrides response content-type header
 					overrideMimeType: function( type ) {
 						if ( completed == null ) {
@@ -8901,17 +8928,17 @@
 						}
 						return this;
 					},
-
+	
 					// Status-dependent callbacks
 					statusCode: function( map ) {
 						var code;
 						if ( map ) {
 							if ( completed ) {
-
+	
 								// Execute the appropriate callbacks
 								jqXHR.always( map[ jqXHR.status ] );
 							} else {
-
+	
 								// Lazy-add the new callbacks in a way that preserves old ones
 								for ( code in map ) {
 									statusCode[ code ] = [ statusCode[ code ], map[ code ] ];
@@ -8920,7 +8947,7 @@
 						}
 						return this;
 					},
-
+	
 					// Cancel the request
 					abort: function( statusText ) {
 						var finalText = statusText || strAbort;
@@ -8931,107 +8958,107 @@
 						return this;
 					}
 				};
-
+	
 			// Attach deferreds
 			deferred.promise( jqXHR );
-
+	
 			// Add protocol if not provided (prefilters might expect it)
 			// Handle falsy url in the settings object (#10093: consistency with old signature)
 			// We also use the url parameter if available
 			s.url = ( ( url || s.url || location.href ) + "" )
 				.replace( rprotocol, location.protocol + "//" );
-
+	
 			// Alias method option to type as per ticket #12004
 			s.type = options.method || options.type || s.method || s.type;
-
+	
 			// Extract dataTypes list
 			s.dataTypes = ( s.dataType || "*" ).toLowerCase().match( rnotwhite ) || [ "" ];
-
+	
 			// A cross-domain request is in order when the origin doesn't match the current origin.
 			if ( s.crossDomain == null ) {
 				urlAnchor = document.createElement( "a" );
-
+	
 				// Support: IE <=8 - 11, Edge 12 - 13
 				// IE throws exception on accessing the href property if url is malformed,
 				// e.g. http://example.com:80x/
 				try {
 					urlAnchor.href = s.url;
-
+	
 					// Support: IE <=8 - 11 only
 					// Anchor's host property isn't correctly set when s.url is relative
 					urlAnchor.href = urlAnchor.href;
 					s.crossDomain = originAnchor.protocol + "//" + originAnchor.host !==
 						urlAnchor.protocol + "//" + urlAnchor.host;
 				} catch ( e ) {
-
+	
 					// If there is an error parsing the URL, assume it is crossDomain,
 					// it can be rejected by the transport if it is invalid
 					s.crossDomain = true;
 				}
 			}
-
+	
 			// Convert data if not already a string
 			if ( s.data && s.processData && typeof s.data !== "string" ) {
 				s.data = jQuery.param( s.data, s.traditional );
 			}
-
+	
 			// Apply prefilters
 			inspectPrefiltersOrTransports( prefilters, s, options, jqXHR );
-
+	
 			// If request was aborted inside a prefilter, stop there
 			if ( completed ) {
 				return jqXHR;
 			}
-
+	
 			// We can fire global events as of now if asked to
 			// Don't fire events if jQuery.event is undefined in an AMD-usage scenario (#15118)
 			fireGlobals = jQuery.event && s.global;
-
+	
 			// Watch for a new set of requests
 			if ( fireGlobals && jQuery.active++ === 0 ) {
 				jQuery.event.trigger( "ajaxStart" );
 			}
-
+	
 			// Uppercase the type
 			s.type = s.type.toUpperCase();
-
+	
 			// Determine if request has content
 			s.hasContent = !rnoContent.test( s.type );
-
+	
 			// Save the URL in case we're toying with the If-Modified-Since
 			// and/or If-None-Match header later on
 			// Remove hash to simplify url manipulation
 			cacheURL = s.url.replace( rhash, "" );
-
+	
 			// More options handling for requests with no content
 			if ( !s.hasContent ) {
-
+	
 				// Remember the hash so we can put it back
 				uncached = s.url.slice( cacheURL.length );
-
+	
 				// If data is available, append data to url
 				if ( s.data ) {
 					cacheURL += ( rquery.test( cacheURL ) ? "&" : "?" ) + s.data;
-
+	
 					// #9682: remove data so that it's not used in an eventual retry
 					delete s.data;
 				}
-
+	
 				// Add anti-cache in uncached url if needed
 				if ( s.cache === false ) {
 					cacheURL = cacheURL.replace( rts, "" );
 					uncached = ( rquery.test( cacheURL ) ? "&" : "?" ) + "_=" + ( nonce++ ) + uncached;
 				}
-
+	
 				// Put hash and anti-cache on the URL that will be requested (gh-1732)
 				s.url = cacheURL + uncached;
-
+	
 			// Change '%20' to '+' if this is encoded form body content (gh-2658)
 			} else if ( s.data && s.processData &&
 				( s.contentType || "" ).indexOf( "application/x-www-form-urlencoded" ) === 0 ) {
 				s.data = s.data.replace( r20, "+" );
 			}
-
+	
 			// Set the If-Modified-Since and/or If-None-Match header, if in ifModified mode.
 			if ( s.ifModified ) {
 				if ( jQuery.lastModified[ cacheURL ] ) {
@@ -9041,12 +9068,12 @@
 					jqXHR.setRequestHeader( "If-None-Match", jQuery.etag[ cacheURL ] );
 				}
 			}
-
+	
 			// Set the correct header, if data is being sent
 			if ( s.data && s.hasContent && s.contentType !== false || options.contentType ) {
 				jqXHR.setRequestHeader( "Content-Type", s.contentType );
 			}
-
+	
 			// Set the Accepts header for the server, depending on the dataType
 			jqXHR.setRequestHeader(
 				"Accept",
@@ -9055,110 +9082,110 @@
 						( s.dataTypes[ 0 ] !== "*" ? ", " + allTypes + "; q=0.01" : "" ) :
 					s.accepts[ "*" ]
 			);
-
+	
 			// Check for headers option
 			for ( i in s.headers ) {
 				jqXHR.setRequestHeader( i, s.headers[ i ] );
 			}
-
+	
 			// Allow custom headers/mimetypes and early abort
 			if ( s.beforeSend &&
 				( s.beforeSend.call( callbackContext, jqXHR, s ) === false || completed ) ) {
-
+	
 				// Abort if not done already and return
 				return jqXHR.abort();
 			}
-
+	
 			// Aborting is no longer a cancellation
 			strAbort = "abort";
-
+	
 			// Install callbacks on deferreds
 			completeDeferred.add( s.complete );
 			jqXHR.done( s.success );
 			jqXHR.fail( s.error );
-
+	
 			// Get transport
 			transport = inspectPrefiltersOrTransports( transports, s, options, jqXHR );
-
+	
 			// If no transport, we auto-abort
 			if ( !transport ) {
 				done( -1, "No Transport" );
 			} else {
 				jqXHR.readyState = 1;
-
+	
 				// Send global event
 				if ( fireGlobals ) {
 					globalEventContext.trigger( "ajaxSend", [ jqXHR, s ] );
 				}
-
+	
 				// If request was aborted inside ajaxSend, stop there
 				if ( completed ) {
 					return jqXHR;
 				}
-
+	
 				// Timeout
 				if ( s.async && s.timeout > 0 ) {
 					timeoutTimer = window.setTimeout( function() {
 						jqXHR.abort( "timeout" );
 					}, s.timeout );
 				}
-
+	
 				try {
 					completed = false;
 					transport.send( requestHeaders, done );
 				} catch ( e ) {
-
+	
 					// Rethrow post-completion exceptions
 					if ( completed ) {
 						throw e;
 					}
-
+	
 					// Propagate others as results
 					done( -1, e );
 				}
 			}
-
+	
 			// Callback for when everything is done
 			function done( status, nativeStatusText, responses, headers ) {
 				var isSuccess, success, error, response, modified,
 					statusText = nativeStatusText;
-
+	
 				// Ignore repeat invocations
 				if ( completed ) {
 					return;
 				}
-
+	
 				completed = true;
-
+	
 				// Clear timeout if it exists
 				if ( timeoutTimer ) {
 					window.clearTimeout( timeoutTimer );
 				}
-
+	
 				// Dereference transport for early garbage collection
 				// (no matter how long the jqXHR object will be used)
 				transport = undefined;
-
+	
 				// Cache response headers
 				responseHeadersString = headers || "";
-
+	
 				// Set readyState
 				jqXHR.readyState = status > 0 ? 4 : 0;
-
+	
 				// Determine if successful
 				isSuccess = status >= 200 && status < 300 || status === 304;
-
+	
 				// Get response data
 				if ( responses ) {
 					response = ajaxHandleResponses( s, jqXHR, responses );
 				}
-
+	
 				// Convert no matter what (that way responseXXX fields are always set)
 				response = ajaxConvert( s, response, jqXHR, isSuccess );
-
+	
 				// If successful, handle type chaining
 				if ( isSuccess ) {
-
+	
 					// Set the If-Modified-Since and/or If-None-Match header, if in ifModified mode.
 					if ( s.ifModified ) {
 						modified = jqXHR.getResponseHeader( "Last-Modified" );
@@ -9170,15 +9197,15 @@
 							jQuery.etag[ cacheURL ] = modified;
 						}
 					}
-
+	
 					// if no content
 					if ( status === 204 || s.type === "HEAD" ) {
 						statusText = "nocontent";
-
+	
 					// if not modified
 					} else if ( status === 304 ) {
 						statusText = "notmodified";
-
+	
 					// If we have data, let's convert it
 					} else {
 						statusText = response.state;
@@ -9187,7 +9214,7 @@
 						isSuccess = !error;
 					}
 				} else {
-
+	
 					// Extract error from statusText and normalize for non-aborts
 					error = statusText;
 					if ( status || !statusText ) {
@@ -9197,62 +9224,62 @@
 						}
 					}
 				}
-
+	
 				// Set data for the fake xhr object
 				jqXHR.status = status;
 				jqXHR.statusText = ( nativeStatusText || statusText ) + "";
-
+	
 				// Success/Error
 				if ( isSuccess ) {
 					deferred.resolveWith( callbackContext, [ success, statusText, jqXHR ] );
 				} else {
 					deferred.rejectWith( callbackContext, [ jqXHR, statusText, error ] );
 				}
-
+	
 				// Status-dependent callbacks
 				jqXHR.statusCode( statusCode );
 				statusCode = undefined;
-
+	
 				if ( fireGlobals ) {
 					globalEventContext.trigger( isSuccess ? "ajaxSuccess" : "ajaxError",
 						[ jqXHR, s, isSuccess ? success : error ] );
 				}
-
+	
 				// Complete
 				completeDeferred.fireWith( callbackContext, [ jqXHR, statusText ] );
-
+	
 				if ( fireGlobals ) {
 					globalEventContext.trigger( "ajaxComplete", [ jqXHR, s ] );
-
+	
 					// Handle the global AJAX counter
 					if ( !( --jQuery.active ) ) {
 						jQuery.event.trigger( "ajaxStop" );
 					}
 				}
 			}
-
+	
 			return jqXHR;
 		},
-
+	
 		getJSON: function( url, data, callback ) {
 			return jQuery.get( url, data, callback, "json" );
 		},
-
+	
 		getScript: function( url, callback ) {
 			return jQuery.get( url, undefined, callback, "script" );
 		}
 	} );
-
+	
 	jQuery.each( [ "get", "post" ], function( i, method ) {
 		jQuery[ method ] = function( url, data, callback, type ) {
-
+	
 			// Shift arguments if data argument was omitted
 			if ( jQuery.isFunction( data ) ) {
 				type = type || callback;
 				callback = data;
 				data = undefined;
 			}
-
+	
 			// The url can be an options object (which then must have .url)
 			return jQuery.ajax( jQuery.extend( {
 				url: url,
@@ -9263,12 +9290,12 @@
 			}, jQuery.isPlainObject( url ) && url ) );
 		};
 	} );
-
-
+	
+	
 	jQuery._evalUrl = function( url ) {
 		return jQuery.ajax( {
 			url: url,
-
+	
 			// Make this explicit, since user can override this through ajaxSetup (#11264)
 			type: "GET",
 			dataType: "script",
@@ -9278,66 +9305,66 @@
 			"throws": true
 		} );
 	};
-
-
+	
+	
 	jQuery.fn.extend( {
 		wrapAll: function( html ) {
 			var wrap;
-
+	
 			if ( this[ 0 ] ) {
 				if ( jQuery.isFunction( html ) ) {
 					html = html.call( this[ 0 ] );
 				}
-
+	
 				// The elements to wrap the target around
 				wrap = jQuery( html, this[ 0 ].ownerDocument ).eq( 0 ).clone( true );
-
+	
 				if ( this[ 0 ].parentNode ) {
 					wrap.insertBefore( this[ 0 ] );
 				}
-
+	
 				wrap.map( function() {
 					var elem = this;
-
+	
 					while ( elem.firstElementChild ) {
 						elem = elem.firstElementChild;
 					}
-
+	
 					return elem;
 				} ).append( this );
 			}
-
+	
 			return this;
 		},
-
+	
 		wrapInner: function( html ) {
 			if ( jQuery.isFunction( html ) ) {
 				return this.each( function( i ) {
 					jQuery( this ).wrapInner( html.call( this, i ) );
 				} );
 			}
-
+	
 			return this.each( function() {
 				var self = jQuery( this ),
 					contents = self.contents();
-
+	
 				if ( contents.length ) {
 					contents.wrapAll( html );
-
+	
 				} else {
 					self.append( html );
 				}
 			} );
 		},
-
+	
 		wrap: function( html ) {
 			var isFunction = jQuery.isFunction( html );
-
+	
 			return this.each( function( i ) {
 				jQuery( this ).wrapAll( isFunction ? html.call( this, i ) : html );
 			} );
 		},
-
+	
 		unwrap: function( selector ) {
 			this.parent( selector ).not( "body" ).each( function() {
 				jQuery( this ).replaceWith( this.childNodes );
@@ -9345,48 +9372,48 @@
 			return this;
 		}
 	} );
-
-
+	
+	
 	jQuery.expr.pseudos.hidden = function( elem ) {
 		return !jQuery.expr.pseudos.visible( elem );
 	};
 	jQuery.expr.pseudos.visible = function( elem ) {
 		return !!( elem.offsetWidth || elem.offsetHeight || elem.getClientRects().length );
 	};
-
-
-
-
+	
+	
+	
+	
 	jQuery.ajaxSettings.xhr = function() {
 		try {
 			return new window.XMLHttpRequest();
 		} catch ( e ) {}
 	};
-
+	
 	var xhrSuccessStatus = {
-
+	
 			// File protocol always yields status code 0, assume 200
 			0: 200,
-
+	
 			// Support: IE <=9 only
 			// #1450: sometimes IE returns 1223 when it should be 204
 			1223: 204
 		},
 		xhrSupported = jQuery.ajaxSettings.xhr();
-
+	
 	support.cors = !!xhrSupported && ( "withCredentials" in xhrSupported );
 	support.ajax = xhrSupported = !!xhrSupported;
-
+	
 	jQuery.ajaxTransport( function( options ) {
 		var callback, errorCallback;
-
+	
 		// Cross domain only allowed if supported through XMLHttpRequest
 		if ( support.cors || xhrSupported && !options.crossDomain ) {
 			return {
 				send: function( headers, complete ) {
 					var i,
 						xhr = options.xhr();
-
+	
 					xhr.open(
 						options.type,
 						options.url,
@@ -9394,19 +9421,19 @@
 						options.username,
 						options.password
 					);
-
+	
 					// Apply custom fields if provided
 					if ( options.xhrFields ) {
 						for ( i in options.xhrFields ) {
 							xhr[ i ] = options.xhrFields[ i ];
 						}
 					}
-
+	
 					// Override mime type if needed
 					if ( options.mimeType && xhr.overrideMimeType ) {
 						xhr.overrideMimeType( options.mimeType );
 					}
-
+	
 					// X-Requested-With header
 					// For cross-domain requests, seeing as conditions for a preflight are
 					// akin to a jigsaw puzzle, we simply never set it to be sure.
@@ -9415,23 +9442,23 @@
 					if ( !options.crossDomain && !headers[ "X-Requested-With" ] ) {
 						headers[ "X-Requested-With" ] = "XMLHttpRequest";
 					}
-
+	
 					// Set headers
 					for ( i in headers ) {
 						xhr.setRequestHeader( i, headers[ i ] );
 					}
-
+	
 					// Callback
 					callback = function( type ) {
 						return function() {
 							if ( callback ) {
 								callback = errorCallback = xhr.onload =
 									xhr.onerror = xhr.onabort = xhr.onreadystatechange = null;
-
+	
 								if ( type === "abort" ) {
 									xhr.abort();
 								} else if ( type === "error" ) {
-
+	
 									// Support: IE <=9 only
 									// On a manual native abort, IE9 throws
 									// errors on any property access that is not readyState
@@ -9439,7 +9466,7 @@
 										complete( 0, "error" );
 									} else {
 										complete(
-
+	
 											// File: protocol always yields status 0; see #8605, #14207
 											xhr.status,
 											xhr.statusText
@@ -9449,7 +9476,7 @@
 									complete(
 										xhrSuccessStatus[ xhr.status ] || xhr.status,
 										xhr.statusText,
-
+	
 										// Support: IE <=9 only
 										// IE9 has no XHR2 but throws on binary (trac-11426)
 										// For XHR2 non-text, let the caller handle it (gh-2498)
@@ -9463,11 +9490,11 @@
 							}
 						};
 					};
-
+	
 					// Listen to events
 					xhr.onload = callback();
 					errorCallback = xhr.onerror = callback( "error" );
-
+	
 					// Support: IE 9 only
 					// Use onreadystatechange to replace onabort
 					// to handle uncaught aborts
@@ -9475,10 +9502,10 @@
 						xhr.onabort = errorCallback;
 					} else {
 						xhr.onreadystatechange = function() {
-
+	
 							// Check readyState before timeout as it changes
 							if ( xhr.readyState === 4 ) {
-
+	
 								// Allow onerror to be called first,
 								// but that will not handle a native abort
 								// Also, save errorCallback to a variable
@@ -9491,23 +9518,23 @@
 							}
 						};
 					}
-
+	
 					// Create the abort callback
 					callback = callback( "abort" );
-
+	
 					try {
-
+	
 						// Do send the request (this may raise an exception)
 						xhr.send( options.hasContent && options.data || null );
 					} catch ( e ) {
-
+	
 						// #14683: Only rethrow if this hasn't been notified as an error yet
 						if ( callback ) {
 							throw e;
 						}
 					}
 				},
-
+	
 				abort: function() {
 					if ( callback ) {
 						callback();
@@ -9516,17 +9543,17 @@
 			};
 		}
 	} );
-
-
-
-
+	
+	
+	
+	
 	// Prevent auto-execution of scripts when no explicit dataType was provided (See gh-2432)
 	jQuery.ajaxPrefilter( function( s ) {
 		if ( s.crossDomain ) {
 			s.contents.script = false;
 		}
 	} );
-
+	
 	// Install script dataType
 	jQuery.ajaxSetup( {
 		accepts: {
@@ -9543,7 +9570,7 @@
 			}
 		}
 	} );
-
+	
 	// Handle cache's special case and crossDomain
 	jQuery.ajaxPrefilter( "script", function( s ) {
 		if ( s.cache === undefined ) {
@@ -9553,10 +9580,10 @@
 			s.type = "GET";
 		}
 	} );
-
+	
 	// Bind script tag hack transport
 	jQuery.ajaxTransport( "script", function( s ) {
-
+	
 		// This transport only deals with cross domain requests
 		if ( s.crossDomain ) {
 			var script, callback;
@@ -9575,7 +9602,7 @@
 							}
 						}
 					);
-
+	
 					// Use native DOM manipulation to avoid our domManip AJAX trickery
 					document.head.appendChild( script[ 0 ] );
 				},
@@ -9587,13 +9614,13 @@
 			};
 		}
 	} );
-
-
-
-
+	
+	
+	
+	
 	var oldCallbacks = [],
 		rjsonp = /(=)\?(?=&|$)|\?\?/;
-
+	
 	// Default jsonp settings
 	jQuery.ajaxSetup( {
 		jsonp: "callback",
@@ -9603,10 +9630,10 @@
 			return callback;
 		}
 	} );
-
+	
 	// Detect, normalize options and install callbacks for jsonp requests
 	jQuery.ajaxPrefilter( "json jsonp", function( s, originalSettings, jqXHR ) {
-
+	
 		var callbackName, overwritten, responseContainer,
 			jsonProp = s.jsonp !== false && ( rjsonp.test( s.url ) ?
 				"url" :
@@ -9615,22 +9642,22 @@
 						.indexOf( "application/x-www-form-urlencoded" ) === 0 &&
 					rjsonp.test( s.data ) && "data"
 			);
-
+	
 		// Handle iff the expected data type is "jsonp" or we have a parameter to set
 		if ( jsonProp || s.dataTypes[ 0 ] === "jsonp" ) {
-
+	
 			// Get callback name, remembering preexisting value associated with it
 			callbackName = s.jsonpCallback = jQuery.isFunction( s.jsonpCallback ) ?
 				s.jsonpCallback() :
 				s.jsonpCallback;
-
+	
 			// Insert callback into url or form data
 			if ( jsonProp ) {
 				s[ jsonProp ] = s[ jsonProp ].replace( rjsonp, "$1" + callbackName );
 			} else if ( s.jsonp !== false ) {
 				s.url += ( rquery.test( s.url ) ? "&" : "?" ) + s.jsonp + "=" + callbackName;
 			}
-
+	
 			// Use data converter to retrieve json after script execution
 			s.converters[ "script json" ] = function() {
 				if ( !responseContainer ) {
@@ -9638,54 +9665,54 @@
 				}
 				return responseContainer[ 0 ];
 			};
-
+	
 			// Force json dataType
 			s.dataTypes[ 0 ] = "json";
-
+	
 			// Install callback
 			overwritten = window[ callbackName ];
 			window[ callbackName ] = function() {
 				responseContainer = arguments;
 			};
-
+	
 			// Clean-up function (fires after converters)
 			jqXHR.always( function() {
-
+	
 				// If previous value didn't exist - remove it
 				if ( overwritten === undefined ) {
 					jQuery( window ).removeProp( callbackName );
-
+	
 				// Otherwise restore preexisting value
 				} else {
 					window[ callbackName ] = overwritten;
 				}
-
+	
 				// Save back as free
 				if ( s[ callbackName ] ) {
-
+	
 					// Make sure that re-using the options doesn't screw things around
 					s.jsonpCallback = originalSettings.jsonpCallback;
-
+	
 					// Save the callback name for future use
 					oldCallbacks.push( callbackName );
 				}
-
+	
 				// Call if it was a function and we have a response
 				if ( responseContainer && jQuery.isFunction( overwritten ) ) {
 					overwritten( responseContainer[ 0 ] );
 				}
-
+	
 				responseContainer = overwritten = undefined;
 			} );
-
+	
 			// Delegate to script
 			return "script";
 		}
 	} );
-
-
-
-
+	
+	
+	
+	
 	// Support: Safari 8 only
 	// In Safari 8 documents created via document.implementation.createHTMLDocument
 	// collapse sibling forms: the second one becomes a child of the first one.
@@ -9696,8 +9723,8 @@
 		body.innerHTML = "<form></form><form></form>";
 		return body.childNodes.length === 2;
 	} )();
-
-
+	
+	
 	// Argument "data" should be string of html
 	// context (optional): If specified, the fragment will be created in this context,
 	// defaults to document
@@ -9710,16 +9737,16 @@
 			keepScripts = context;
 			context = false;
 		}
-
+	
 		var base, parsed, scripts;
-
+	
 		if ( !context ) {
-
+	
 			// Stop scripts or inline event handlers from being executed immediately
 			// by using document.implementation
 			if ( support.createHTMLDocument ) {
 				context = document.implementation.createHTMLDocument( "" );
-
+	
 				// Set the base href for the created document
 				// so any parsed elements with URLs
 				// are based on the document's URL (gh-2965)
@@ -9730,25 +9757,25 @@
 				context = document;
 			}
 		}
-
+	
 		parsed = rsingleTag.exec( data );
 		scripts = !keepScripts && [];
-
+	
 		// Single tag
 		if ( parsed ) {
 			return [ context.createElement( parsed[ 1 ] ) ];
 		}
-
+	
 		parsed = buildFragment( [ data ], context, scripts );
-
+	
 		if ( scripts && scripts.length ) {
 			jQuery( scripts ).remove();
 		}
-
+	
 		return jQuery.merge( [], parsed.childNodes );
 	};
-
-
+	
+	
 	/**
 	 * Load a url into a page
 	 */
@@ -9756,29 +9783,29 @@
 		var selector, type, response,
 			self = this,
 			off = url.indexOf( " " );
-
+	
 		if ( off > -1 ) {
 			selector = jQuery.trim( url.slice( off ) );
 			url = url.slice( 0, off );
 		}
-
+	
 		// If it's a function
 		if ( jQuery.isFunction( params ) ) {
-
+	
 			// We assume that it's the callback
 			callback = params;
 			params = undefined;
-
+	
 		// Otherwise, build a param string
 		} else if ( params && typeof params === "object" ) {
 			type = "POST";
 		}
-
+	
 		// If we have elements to modify, make the request
 		if ( self.length > 0 ) {
 			jQuery.ajax( {
 				url: url,
-
+	
 				// If "type" variable is undefined, then "GET" method will be used.
 				// Make value of this field explicit since
 				// user can override it through ajaxSetup method
@@ -9786,19 +9813,19 @@
 				dataType: "html",
 				data: params
 			} ).done( function( responseText ) {
-
+	
 				// Save response for use in complete callback
 				response = arguments;
-
+	
 				self.html( selector ?
-
+	
 					// If a selector was specified, locate the right elements in a dummy div
 					// Exclude scripts to avoid IE 'Permission Denied' errors
 					jQuery( "<div>" ).append( jQuery.parseHTML( responseText ) ).find( selector ) :
-
+	
 					// Otherwise use the full result
 					responseText );
-
+	
 			// If the request succeeds, this function gets "data", "status", "jqXHR"
 			// but they are ignored because response was set above.
 			// If it fails, this function gets "jqXHR", "status", "error"
@@ -9808,13 +9835,13 @@
 				} );
 			} );
 		}
-
+	
 		return this;
 	};
-
-
-
-
+	
+	
+	
+	
 	// Attach a bunch of functions for handling common AJAX events
 	jQuery.each( [
 		"ajaxStart",
@@ -9828,81 +9855,81 @@
 			return this.on( type, fn );
 		};
 	} );
-
-
-
-
+	
+	
+	
+	
 	jQuery.expr.pseudos.animated = function( elem ) {
 		return jQuery.grep( jQuery.timers, function( fn ) {
 			return elem === fn.elem;
 		} ).length;
 	};
-
-
-
-
+	
+	
+	
+	
 	/**
 	 * Gets a window from an element
 	 */
 	function getWindow( elem ) {
 		return jQuery.isWindow( elem ) ? elem : elem.nodeType === 9 && elem.defaultView;
 	}
-
+	
 	jQuery.offset = {
 		setOffset: function( elem, options, i ) {
 			var curPosition, curLeft, curCSSTop, curTop, curOffset, curCSSLeft, calculatePosition,
 				position = jQuery.css( elem, "position" ),
 				curElem = jQuery( elem ),
 				props = {};
-
+	
 			// Set position first, in-case top/left are set even on static elem
 			if ( position === "static" ) {
 				elem.style.position = "relative";
 			}
-
+	
 			curOffset = curElem.offset();
 			curCSSTop = jQuery.css( elem, "top" );
 			curCSSLeft = jQuery.css( elem, "left" );
 			calculatePosition = ( position === "absolute" || position === "fixed" ) &&
 				( curCSSTop + curCSSLeft ).indexOf( "auto" ) > -1;
-
+	
 			// Need to be able to calculate position if either
 			// top or left is auto and position is either absolute or fixed
 			if ( calculatePosition ) {
 				curPosition = curElem.position();
 				curTop = curPosition.top;
 				curLeft = curPosition.left;
-
+	
 			} else {
 				curTop = parseFloat( curCSSTop ) || 0;
 				curLeft = parseFloat( curCSSLeft ) || 0;
 			}
-
+	
 			if ( jQuery.isFunction( options ) ) {
-
+	
 				// Use jQuery.extend here to allow modification of coordinates argument (gh-1848)
 				options = options.call( elem, i, jQuery.extend( {}, curOffset ) );
 			}
-
+	
 			if ( options.top != null ) {
 				props.top = ( options.top - curOffset.top ) + curTop;
 			}
 			if ( options.left != null ) {
 				props.left = ( options.left - curOffset.left ) + curLeft;
 			}
-
+	
 			if ( "using" in options ) {
 				options.using.call( elem, props );
-
+	
 			} else {
 				curElem.css( props );
 			}
 		}
 	};
-
+	
 	jQuery.fn.extend( {
 		offset: function( options ) {
-
+	
 			// Preserve chaining for setter
 			if ( arguments.length ) {
 				return options === undefined ?
@@ -9911,80 +9938,80 @@
 						jQuery.offset.setOffset( this, options, i );
 					} );
 			}
-
+	
 			var docElem, win, rect, doc,
 				elem = this[ 0 ];
-
+	
 			if ( !elem ) {
 				return;
 			}
-
+	
 			// Support: IE <=11 only
 			// Running getBoundingClientRect on a
 			// disconnected node in IE throws an error
 			if ( !elem.getClientRects().length ) {
 				return { top: 0, left: 0 };
 			}
-
+	
 			rect = elem.getBoundingClientRect();
-
+	
 			// Make sure element is not hidden (display: none)
 			if ( rect.width || rect.height ) {
 				doc = elem.ownerDocument;
 				win = getWindow( doc );
 				docElem = doc.documentElement;
-
+	
 				return {
 					top: rect.top + win.pageYOffset - docElem.clientTop,
 					left: rect.left + win.pageXOffset - docElem.clientLeft
 				};
 			}
-
+	
 			// Return zeros for disconnected and hidden elements (gh-2310)
 			return rect;
 		},
-
+	
 		position: function() {
 			if ( !this[ 0 ] ) {
 				return;
 			}
-
+	
 			var offsetParent, offset,
 				elem = this[ 0 ],
 				parentOffset = { top: 0, left: 0 };
-
+	
 			// Fixed elements are offset from window (parentOffset = {top:0, left: 0},
 			// because it is its only offset parent
 			if ( jQuery.css( elem, "position" ) === "fixed" ) {
-
+	
 				// Assume getBoundingClientRect is there when computed position is fixed
 				offset = elem.getBoundingClientRect();
-
+	
 			} else {
-
+	
 				// Get *real* offsetParent
 				offsetParent = this.offsetParent();
-
+	
 				// Get correct offsets
 				offset = this.offset();
 				if ( !jQuery.nodeName( offsetParent[ 0 ], "html" ) ) {
 					parentOffset = offsetParent.offset();
 				}
-
+	
 				// Add offsetParent borders
 				parentOffset = {
 					top: parentOffset.top + jQuery.css( offsetParent[ 0 ], "borderTopWidth", true ),
 					left: parentOffset.left + jQuery.css( offsetParent[ 0 ], "borderLeftWidth", true )
 				};
 			}
-
+	
 			// Subtract parent offsets and element margins
 			return {
 				top: offset.top - parentOffset.top - jQuery.css( elem, "marginTop", true ),
 				left: offset.left - parentOffset.left - jQuery.css( elem, "marginLeft", true )
 			};
 		},
-
+	
 		// This method will return documentElement in the following cases:
 		// 1) For the element inside the iframe without offsetParent, this method will return
 		//    documentElement of the parent window
@@ -9998,41 +10025,41 @@
 		offsetParent: function() {
 			return this.map( function() {
 				var offsetParent = this.offsetParent;
-
+	
 				while ( offsetParent && jQuery.css( offsetParent, "position" ) === "static" ) {
 					offsetParent = offsetParent.offsetParent;
 				}
-
+	
 				return offsetParent || documentElement;
 			} );
 		}
 	} );
-
+	
 	// Create scrollLeft and scrollTop methods
 	jQuery.each( { scrollLeft: "pageXOffset", scrollTop: "pageYOffset" }, function( method, prop ) {
 		var top = "pageYOffset" === prop;
-
+	
 		jQuery.fn[ method ] = function( val ) {
 			return access( this, function( elem, method, val ) {
 				var win = getWindow( elem );
-
+	
 				if ( val === undefined ) {
 					return win ? win[ prop ] : elem[ method ];
 				}
-
+	
 				if ( win ) {
 					win.scrollTo(
 						!top ? val : win.pageXOffset,
 						top ? val : win.pageYOffset
 					);
-
+	
 				} else {
 					elem[ method ] = val;
 				}
 			}, method, val, arguments.length );
 		};
 	} );
-
+	
 	// Support: Safari <=7 - 9.1, Chrome <=37 - 49
 	// Add the top/left cssHooks using jQuery.fn.position
 	// Webkit bug: https://bugs.webkit.org/show_bug.cgi?id=29084
@@ -10044,7 +10071,7 @@
 			function( elem, computed ) {
 				if ( computed ) {
 					computed = curCSS( elem, prop );
-
+	
 					// If curCSS returns percentage, fallback to offset
 					return rnumnonpx.test( computed ) ?
 						jQuery( elem ).position()[ prop ] + "px" :
@@ -10053,33 +10080,33 @@
 			}
 		);
 	} );
-
-
+	
+	
 	// Create innerHeight, innerWidth, height, width, outerHeight and outerWidth methods
 	jQuery.each( { Height: "height", Width: "width" }, function( name, type ) {
 		jQuery.each( { padding: "inner" + name, content: type, "": "outer" + name },
 			function( defaultExtra, funcName ) {
-
+	
 			// Margin is only for outerHeight, outerWidth
 			jQuery.fn[ funcName ] = function( margin, value ) {
 				var chainable = arguments.length && ( defaultExtra || typeof margin !== "boolean" ),
 					extra = defaultExtra || ( margin === true || value === true ? "margin" : "border" );
-
+	
 				return access( this, function( elem, type, value ) {
 					var doc;
-
+	
 					if ( jQuery.isWindow( elem ) ) {
-
+	
 						// $( window ).outerWidth/Height return w/h including scrollbars (gh-1729)
 						return funcName.indexOf( "outer" ) === 0 ?
 							elem[ "inner" + name ] :
 							elem.document.documentElement[ "client" + name ];
 					}
-
+	
 					// Get document width or height
 					if ( elem.nodeType === 9 ) {
 						doc = elem.documentElement;
-
+	
 						// Either scroll[Width/Height] or offset[Width/Height] or client[Width/Height],
 						// whichever is greatest
 						return Math.max(
@@ -10088,46 +10115,46 @@
 							doc[ "client" + name ]
 						);
 					}
-
+	
 					return value === undefined ?
-
+	
 						// Get width or height on the element, requesting but not forcing parseFloat
 						jQuery.css( elem, type, extra ) :
-
+	
 						// Set width or height on the element
 						jQuery.style( elem, type, value, extra );
 				}, type, chainable ? margin : undefined, chainable );
 			};
 		} );
 	} );
-
-
+	
+	
 	jQuery.fn.extend( {
-
+	
 		bind: function( types, data, fn ) {
 			return this.on( types, null, data, fn );
 		},
 		unbind: function( types, fn ) {
 			return this.off( types, null, fn );
 		},
-
+	
 		delegate: function( selector, types, data, fn ) {
 			return this.on( types, selector, data, fn );
 		},
 		undelegate: function( selector, types, fn ) {
-
+	
 			// ( namespace ) or ( selector, types [, fn] )
 			return arguments.length === 1 ?
 				this.off( selector, "**" ) :
 				this.off( types, selector || "**", fn );
 		}
 	} );
-
+	
 	jQuery.parseJSON = JSON.parse;
-
-
-
-
+	
+	
+	
+	
 	// Register as a named AMD module, since jQuery can be concatenated with other
 	// files that may use define, but not via a proper concatenation script that
 	// understands anonymous AMD modules. A named AMD is safest and most robust
@@ -10135,72 +10162,78 @@
 	// derived from file names, and jQuery is normally delivered in a lowercase
 	// file name. Do this after creating the global so that if an AMD module wants
 	// to call noConflict to hide this version of jQuery, it will work.
-
+	
 	// Note that for maximum portability, libraries that are not jQuery should
 	// declare themselves as anonymous modules, and avoid setting a global if an
 	// AMD loader is present. jQuery is a special case. For more information, see
 	// https://github.com/jrburke/requirejs/wiki/Updating-existing-libraries#wiki-anon
-
+	
 	if ( true ) {
 		!(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_RESULT__ = function() {
 			return jQuery;
 		}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
 	}
-
-
-
-
-
+	
+	
+	
+	
+	
 	var
-
+	
 		// Map over jQuery in case of overwrite
 		_jQuery = window.jQuery,
-
+	
 		// Map over the $ in case of overwrite
 		_$ = window.$;
-
+	
 	jQuery.noConflict = function( deep ) {
 		if ( window.$ === jQuery ) {
 			window.$ = _$;
 		}
-
+	
 		if ( deep && window.jQuery === jQuery ) {
 			window.jQuery = _jQuery;
 		}
-
+	
 		return jQuery;
 	};
-
+	
 	// Expose jQuery and $ identifiers, even in AMD
 	// (#7102#comment:10, https://github.com/jquery/jquery/pull/557)
 	// and CommonJS for browser emulators (#13566)
 	if ( !noGlobal ) {
 		window.jQuery = window.$ = jQuery;
 	}
-
-
+	
+	
 	return jQuery;
 	} ) );
 
 
 /***/ },
-/* 73 */
+/* 86 */
+/*!***********************************************************************!*\
+  !*** ./~/bootstrap-webpack/index.loader.js!./src/bootstrap.config.js ***!
+  \***********************************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(74);
-	__webpack_require__(83);
+	__webpack_require__(/*! -!style-loader!css-loader!less-loader!./~/bootstrap-webpack/bootstrap-styles.loader.js!./src/bootstrap.config.js */ 87);
+	__webpack_require__(/*! -!./~/bootstrap-webpack/bootstrap-scripts.loader.js!./src/bootstrap.config.js */ 96);
 
 /***/ },
-/* 74 */
+/* 87 */
+/*!**********************************************************************************************************************************!*\
+  !*** ./~/style-loader!./~/css-loader!./~/less-loader!./~/bootstrap-webpack/bootstrap-styles.loader.js!./src/bootstrap.config.js ***!
+  \**********************************************************************************************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
-
+	
 	// load the styles
-	var content = __webpack_require__(75);
+	var content = __webpack_require__(/*! !./../~/css-loader!./../~/less-loader!./../~/bootstrap-webpack/bootstrap-styles.loader.js!./bootstrap.config.js */ 88);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(82)(content, {});
+	var update = __webpack_require__(/*! ./../~/style-loader/addStyles.js */ 95)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -10217,21 +10250,27 @@
 	}
 
 /***/ },
-/* 75 */
+/* 88 */
+/*!*****************************************************************************************************************!*\
+  !*** ./~/css-loader!./~/less-loader!./~/bootstrap-webpack/bootstrap-styles.loader.js!./src/bootstrap.config.js ***!
+  \*****************************************************************************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(76)();
+	exports = module.exports = __webpack_require__(/*! ./../~/css-loader/lib/css-base.js */ 89)();
 	// imports
-
-
+	
+	
 	// module
-	exports.push([module.id, "/*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */\nhtml {\n  font-family: sans-serif;\n  -ms-text-size-adjust: 100%;\n  -webkit-text-size-adjust: 100%;\n}\nbody {\n  margin: 0;\n}\narticle,\naside,\ndetails,\nfigcaption,\nfigure,\nfooter,\nheader,\nhgroup,\nmain,\nmenu,\nnav,\nsection,\nsummary {\n  display: block;\n}\naudio,\ncanvas,\nprogress,\nvideo {\n  display: inline-block;\n  vertical-align: baseline;\n}\naudio:not([controls]) {\n  display: none;\n  height: 0;\n}\n[hidden],\ntemplate {\n  display: none;\n}\na {\n  background-color: transparent;\n}\na:active,\na:hover {\n  outline: 0;\n}\nabbr[title] {\n  border-bottom: 1px dotted;\n}\nb,\nstrong {\n  font-weight: bold;\n}\ndfn {\n  font-style: italic;\n}\nh1 {\n  font-size: 2em;\n  margin: 0.67em 0;\n}\nmark {\n  background: #ff0;\n  color: #000;\n}\nsmall {\n  font-size: 80%;\n}\nsub,\nsup {\n  font-size: 75%;\n  line-height: 0;\n  position: relative;\n  vertical-align: baseline;\n}\nsup {\n  top: -0.5em;\n}\nsub {\n  bottom: -0.25em;\n}\nimg {\n  border: 0;\n}\nsvg:not(:root) {\n  overflow: hidden;\n}\nfigure {\n  margin: 1em 40px;\n}\nhr {\n  box-sizing: content-box;\n  height: 0;\n}\npre {\n  overflow: auto;\n}\ncode,\nkbd,\npre,\nsamp {\n  font-family: monospace, monospace;\n  font-size: 1em;\n}\nbutton,\ninput,\noptgroup,\nselect,\ntextarea {\n  color: inherit;\n  font: inherit;\n  margin: 0;\n}\nbutton {\n  overflow: visible;\n}\nbutton,\nselect {\n  text-transform: none;\n}\nbutton,\nhtml input[type=\"button\"],\ninput[type=\"reset\"],\ninput[type=\"submit\"] {\n  -webkit-appearance: button;\n  cursor: pointer;\n}\nbutton[disabled],\nhtml input[disabled] {\n  cursor: default;\n}\nbutton::-moz-focus-inner,\ninput::-moz-focus-inner {\n  border: 0;\n  padding: 0;\n}\ninput {\n  line-height: normal;\n}\ninput[type=\"checkbox\"],\ninput[type=\"radio\"] {\n  box-sizing: border-box;\n  padding: 0;\n}\ninput[type=\"number\"]::-webkit-inner-spin-button,\ninput[type=\"number\"]::-webkit-outer-spin-button {\n  height: auto;\n}\ninput[type=\"search\"] {\n  -webkit-appearance: textfield;\n  box-sizing: content-box;\n}\ninput[type=\"search\"]::-webkit-search-cancel-button,\ninput[type=\"search\"]::-webkit-search-decoration {\n  -webkit-appearance: none;\n}\nfieldset {\n  border: 1px solid #c0c0c0;\n  margin: 0 2px;\n  padding: 0.35em 0.625em 0.75em;\n}\nlegend {\n  border: 0;\n  padding: 0;\n}\ntextarea {\n  overflow: auto;\n}\noptgroup {\n  font-weight: bold;\n}\ntable {\n  border-collapse: collapse;\n  border-spacing: 0;\n}\ntd,\nth {\n  padding: 0;\n}\n/*! Source: https://github.com/h5bp/html5-boilerplate/blob/master/src/css/main.css */\n@media print {\n  *,\n  *:before,\n  *:after {\n    background: transparent !important;\n    color: #000 !important;\n    box-shadow: none !important;\n    text-shadow: none !important;\n  }\n  a,\n  a:visited {\n    text-decoration: underline;\n  }\n  a[href]:after {\n    content: \" (\" attr(href) \")\";\n  }\n  abbr[title]:after {\n    content: \" (\" attr(title) \")\";\n  }\n  a[href^=\"#\"]:after,\n  a[href^=\"javascript:\"]:after {\n    content: \"\";\n  }\n  pre,\n  blockquote {\n    border: 1px solid #999;\n    page-break-inside: avoid;\n  }\n  thead {\n    display: table-header-group;\n  }\n  tr,\n  img {\n    page-break-inside: avoid;\n  }\n  img {\n    max-width: 100% !important;\n  }\n  p,\n  h2,\n  h3 {\n    orphans: 3;\n    widows: 3;\n  }\n  h2,\n  h3 {\n    page-break-after: avoid;\n  }\n  .navbar {\n    display: none;\n  }\n  .btn > .caret,\n  .dropup > .btn > .caret {\n    border-top-color: #000 !important;\n  }\n  .label {\n    border: 1px solid #000;\n  }\n  .table {\n    border-collapse: collapse !important;\n  }\n  .table td,\n  .table th {\n    background-color: #fff !important;\n  }\n  .table-bordered th,\n  .table-bordered td {\n    border: 1px solid #ddd !important;\n  }\n}\n* {\n  -webkit-box-sizing: border-box;\n  -moz-box-sizing: border-box;\n  box-sizing: border-box;\n}\n*:before,\n*:after {\n  -webkit-box-sizing: border-box;\n  -moz-box-sizing: border-box;\n  box-sizing: border-box;\n}\nhtml {\n  font-size: 10px;\n  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);\n}\nbody {\n  font-family: \"Helvetica Neue\", Helvetica, Arial, sans-serif;\n  font-size: 14px;\n  line-height: 1.42857143;\n  color: #333333;\n  background-color: #fff;\n}\ninput,\nbutton,\nselect,\ntextarea {\n  font-family: inherit;\n  font-size: inherit;\n  line-height: inherit;\n}\na {\n  color: #337ab7;\n  text-decoration: none;\n}\na:hover,\na:focus {\n  color: #23527c;\n  text-decoration: underline;\n}\na:focus {\n  outline: thin dotted;\n  outline: 5px auto -webkit-focus-ring-color;\n  outline-offset: -2px;\n}\nfigure {\n  margin: 0;\n}\nimg {\n  vertical-align: middle;\n}\n.img-responsive,\n.thumbnail > img,\n.thumbnail a > img,\n.carousel-inner > .item > img,\n.carousel-inner > .item > a > img {\n  display: block;\n  max-width: 100%;\n  height: auto;\n}\n.img-rounded {\n  border-radius: 6px;\n}\n.img-thumbnail {\n  padding: 4px;\n  line-height: 1.42857143;\n  background-color: #fff;\n  border: 1px solid #ddd;\n  border-radius: 4px;\n  -webkit-transition: all 0.2s ease-in-out;\n  -o-transition: all 0.2s ease-in-out;\n  transition: all 0.2s ease-in-out;\n  display: inline-block;\n  max-width: 100%;\n  height: auto;\n}\n.img-circle {\n  border-radius: 50%;\n}\nhr {\n  margin-top: 20px;\n  margin-bottom: 20px;\n  border: 0;\n  border-top: 1px solid #eeeeee;\n}\n.sr-only {\n  position: absolute;\n  width: 1px;\n  height: 1px;\n  margin: -1px;\n  padding: 0;\n  overflow: hidden;\n  clip: rect(0, 0, 0, 0);\n  border: 0;\n}\n.sr-only-focusable:active,\n.sr-only-focusable:focus {\n  position: static;\n  width: auto;\n  height: auto;\n  margin: 0;\n  overflow: visible;\n  clip: auto;\n}\n[role=\"button\"] {\n  cursor: pointer;\n}\nh1,\nh2,\nh3,\nh4,\nh5,\nh6,\n.h1,\n.h2,\n.h3,\n.h4,\n.h5,\n.h6 {\n  font-family: inherit;\n  font-weight: 500;\n  line-height: 1.1;\n  color: inherit;\n}\nh1 small,\nh2 small,\nh3 small,\nh4 small,\nh5 small,\nh6 small,\n.h1 small,\n.h2 small,\n.h3 small,\n.h4 small,\n.h5 small,\n.h6 small,\nh1 .small,\nh2 .small,\nh3 .small,\nh4 .small,\nh5 .small,\nh6 .small,\n.h1 .small,\n.h2 .small,\n.h3 .small,\n.h4 .small,\n.h5 .small,\n.h6 .small {\n  font-weight: normal;\n  line-height: 1;\n  color: #777777;\n}\nh1,\n.h1,\nh2,\n.h2,\nh3,\n.h3 {\n  margin-top: 20px;\n  margin-bottom: 10px;\n}\nh1 small,\n.h1 small,\nh2 small,\n.h2 small,\nh3 small,\n.h3 small,\nh1 .small,\n.h1 .small,\nh2 .small,\n.h2 .small,\nh3 .small,\n.h3 .small {\n  font-size: 65%;\n}\nh4,\n.h4,\nh5,\n.h5,\nh6,\n.h6 {\n  margin-top: 10px;\n  margin-bottom: 10px;\n}\nh4 small,\n.h4 small,\nh5 small,\n.h5 small,\nh6 small,\n.h6 small,\nh4 .small,\n.h4 .small,\nh5 .small,\n.h5 .small,\nh6 .small,\n.h6 .small {\n  font-size: 75%;\n}\nh1,\n.h1 {\n  font-size: 36px;\n}\nh2,\n.h2 {\n  font-size: 30px;\n}\nh3,\n.h3 {\n  font-size: 24px;\n}\nh4,\n.h4 {\n  font-size: 18px;\n}\nh5,\n.h5 {\n  font-size: 14px;\n}\nh6,\n.h6 {\n  font-size: 12px;\n}\np {\n  margin: 0 0 10px;\n}\n.lead {\n  margin-bottom: 20px;\n  font-size: 16px;\n  font-weight: 300;\n  line-height: 1.4;\n}\n@media (min-width: 768px) {\n  .lead {\n    font-size: 21px;\n  }\n}\nsmall,\n.small {\n  font-size: 85%;\n}\nmark,\n.mark {\n  background-color: #fcf8e3;\n  padding: .2em;\n}\n.text-left {\n  text-align: left;\n}\n.text-right {\n  text-align: right;\n}\n.text-center {\n  text-align: center;\n}\n.text-justify {\n  text-align: justify;\n}\n.text-nowrap {\n  white-space: nowrap;\n}\n.text-lowercase {\n  text-transform: lowercase;\n}\n.text-uppercase {\n  text-transform: uppercase;\n}\n.text-capitalize {\n  text-transform: capitalize;\n}\n.text-muted {\n  color: #777777;\n}\n.text-primary {\n  color: #337ab7;\n}\na.text-primary:hover,\na.text-primary:focus {\n  color: #286090;\n}\n.text-success {\n  color: #3c763d;\n}\na.text-success:hover,\na.text-success:focus {\n  color: #2b542c;\n}\n.text-info {\n  color: #31708f;\n}\na.text-info:hover,\na.text-info:focus {\n  color: #245269;\n}\n.text-warning {\n  color: #8a6d3b;\n}\na.text-warning:hover,\na.text-warning:focus {\n  color: #66512c;\n}\n.text-danger {\n  color: #a94442;\n}\na.text-danger:hover,\na.text-danger:focus {\n  color: #843534;\n}\n.bg-primary {\n  color: #fff;\n  background-color: #337ab7;\n}\na.bg-primary:hover,\na.bg-primary:focus {\n  background-color: #286090;\n}\n.bg-success {\n  background-color: #dff0d8;\n}\na.bg-success:hover,\na.bg-success:focus {\n  background-color: #c1e2b3;\n}\n.bg-info {\n  background-color: #d9edf7;\n}\na.bg-info:hover,\na.bg-info:focus {\n  background-color: #afd9ee;\n}\n.bg-warning {\n  background-color: #fcf8e3;\n}\na.bg-warning:hover,\na.bg-warning:focus {\n  background-color: #f7ecb5;\n}\n.bg-danger {\n  background-color: #f2dede;\n}\na.bg-danger:hover,\na.bg-danger:focus {\n  background-color: #e4b9b9;\n}\n.page-header {\n  padding-bottom: 9px;\n  margin: 40px 0 20px;\n  border-bottom: 1px solid #eeeeee;\n}\nul,\nol {\n  margin-top: 0;\n  margin-bottom: 10px;\n}\nul ul,\nol ul,\nul ol,\nol ol {\n  margin-bottom: 0;\n}\n.list-unstyled {\n  padding-left: 0;\n  list-style: none;\n}\n.list-inline {\n  padding-left: 0;\n  list-style: none;\n  margin-left: -5px;\n}\n.list-inline > li {\n  display: inline-block;\n  padding-left: 5px;\n  padding-right: 5px;\n}\ndl {\n  margin-top: 0;\n  margin-bottom: 20px;\n}\ndt,\ndd {\n  line-height: 1.42857143;\n}\ndt {\n  font-weight: bold;\n}\ndd {\n  margin-left: 0;\n}\n@media (min-width: 768px) {\n  .dl-horizontal dt {\n    float: left;\n    width: 160px;\n    clear: left;\n    text-align: right;\n    overflow: hidden;\n    text-overflow: ellipsis;\n    white-space: nowrap;\n  }\n  .dl-horizontal dd {\n    margin-left: 180px;\n  }\n}\nabbr[title],\nabbr[data-original-title] {\n  cursor: help;\n  border-bottom: 1px dotted #777777;\n}\n.initialism {\n  font-size: 90%;\n  text-transform: uppercase;\n}\nblockquote {\n  padding: 10px 20px;\n  margin: 0 0 20px;\n  font-size: 17.5px;\n  border-left: 5px solid #eeeeee;\n}\nblockquote p:last-child,\nblockquote ul:last-child,\nblockquote ol:last-child {\n  margin-bottom: 0;\n}\nblockquote footer,\nblockquote small,\nblockquote .small {\n  display: block;\n  font-size: 80%;\n  line-height: 1.42857143;\n  color: #777777;\n}\nblockquote footer:before,\nblockquote small:before,\nblockquote .small:before {\n  content: '\\2014   \\A0';\n}\n.blockquote-reverse,\nblockquote.pull-right {\n  padding-right: 15px;\n  padding-left: 0;\n  border-right: 5px solid #eeeeee;\n  border-left: 0;\n  text-align: right;\n}\n.blockquote-reverse footer:before,\nblockquote.pull-right footer:before,\n.blockquote-reverse small:before,\nblockquote.pull-right small:before,\n.blockquote-reverse .small:before,\nblockquote.pull-right .small:before {\n  content: '';\n}\n.blockquote-reverse footer:after,\nblockquote.pull-right footer:after,\n.blockquote-reverse small:after,\nblockquote.pull-right small:after,\n.blockquote-reverse .small:after,\nblockquote.pull-right .small:after {\n  content: '\\A0   \\2014';\n}\naddress {\n  margin-bottom: 20px;\n  font-style: normal;\n  line-height: 1.42857143;\n}\ncode,\nkbd,\npre,\nsamp {\n  font-family: Menlo, Monaco, Consolas, \"Courier New\", monospace;\n}\ncode {\n  padding: 2px 4px;\n  font-size: 90%;\n  color: #c7254e;\n  background-color: #f9f2f4;\n  border-radius: 4px;\n}\nkbd {\n  padding: 2px 4px;\n  font-size: 90%;\n  color: #fff;\n  background-color: #333;\n  border-radius: 3px;\n  box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.25);\n}\nkbd kbd {\n  padding: 0;\n  font-size: 100%;\n  font-weight: bold;\n  box-shadow: none;\n}\npre {\n  display: block;\n  padding: 9.5px;\n  margin: 0 0 10px;\n  font-size: 13px;\n  line-height: 1.42857143;\n  word-break: break-all;\n  word-wrap: break-word;\n  color: #333333;\n  background-color: #f5f5f5;\n  border: 1px solid #ccc;\n  border-radius: 4px;\n}\npre code {\n  padding: 0;\n  font-size: inherit;\n  color: inherit;\n  white-space: pre-wrap;\n  background-color: transparent;\n  border-radius: 0;\n}\n.pre-scrollable {\n  max-height: 340px;\n  overflow-y: scroll;\n}\n.container {\n  margin-right: auto;\n  margin-left: auto;\n  padding-left: 15px;\n  padding-right: 15px;\n}\n@media (min-width: 768px) {\n  .container {\n    width: 750px;\n  }\n}\n@media (min-width: 992px) {\n  .container {\n    width: 970px;\n  }\n}\n@media (min-width: 1200px) {\n  .container {\n    width: 1170px;\n  }\n}\n.container-fluid {\n  margin-right: auto;\n  margin-left: auto;\n  padding-left: 15px;\n  padding-right: 15px;\n}\n.row {\n  margin-left: -15px;\n  margin-right: -15px;\n}\n.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {\n  position: relative;\n  min-height: 1px;\n  padding-left: 15px;\n  padding-right: 15px;\n}\n.col-xs-1, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9, .col-xs-10, .col-xs-11, .col-xs-12 {\n  float: left;\n}\n.col-xs-12 {\n  width: 100%;\n}\n.col-xs-11 {\n  width: 91.66666667%;\n}\n.col-xs-10 {\n  width: 83.33333333%;\n}\n.col-xs-9 {\n  width: 75%;\n}\n.col-xs-8 {\n  width: 66.66666667%;\n}\n.col-xs-7 {\n  width: 58.33333333%;\n}\n.col-xs-6 {\n  width: 50%;\n}\n.col-xs-5 {\n  width: 41.66666667%;\n}\n.col-xs-4 {\n  width: 33.33333333%;\n}\n.col-xs-3 {\n  width: 25%;\n}\n.col-xs-2 {\n  width: 16.66666667%;\n}\n.col-xs-1 {\n  width: 8.33333333%;\n}\n.col-xs-pull-12 {\n  right: 100%;\n}\n.col-xs-pull-11 {\n  right: 91.66666667%;\n}\n.col-xs-pull-10 {\n  right: 83.33333333%;\n}\n.col-xs-pull-9 {\n  right: 75%;\n}\n.col-xs-pull-8 {\n  right: 66.66666667%;\n}\n.col-xs-pull-7 {\n  right: 58.33333333%;\n}\n.col-xs-pull-6 {\n  right: 50%;\n}\n.col-xs-pull-5 {\n  right: 41.66666667%;\n}\n.col-xs-pull-4 {\n  right: 33.33333333%;\n}\n.col-xs-pull-3 {\n  right: 25%;\n}\n.col-xs-pull-2 {\n  right: 16.66666667%;\n}\n.col-xs-pull-1 {\n  right: 8.33333333%;\n}\n.col-xs-pull-0 {\n  right: auto;\n}\n.col-xs-push-12 {\n  left: 100%;\n}\n.col-xs-push-11 {\n  left: 91.66666667%;\n}\n.col-xs-push-10 {\n  left: 83.33333333%;\n}\n.col-xs-push-9 {\n  left: 75%;\n}\n.col-xs-push-8 {\n  left: 66.66666667%;\n}\n.col-xs-push-7 {\n  left: 58.33333333%;\n}\n.col-xs-push-6 {\n  left: 50%;\n}\n.col-xs-push-5 {\n  left: 41.66666667%;\n}\n.col-xs-push-4 {\n  left: 33.33333333%;\n}\n.col-xs-push-3 {\n  left: 25%;\n}\n.col-xs-push-2 {\n  left: 16.66666667%;\n}\n.col-xs-push-1 {\n  left: 8.33333333%;\n}\n.col-xs-push-0 {\n  left: auto;\n}\n.col-xs-offset-12 {\n  margin-left: 100%;\n}\n.col-xs-offset-11 {\n  margin-left: 91.66666667%;\n}\n.col-xs-offset-10 {\n  margin-left: 83.33333333%;\n}\n.col-xs-offset-9 {\n  margin-left: 75%;\n}\n.col-xs-offset-8 {\n  margin-left: 66.66666667%;\n}\n.col-xs-offset-7 {\n  margin-left: 58.33333333%;\n}\n.col-xs-offset-6 {\n  margin-left: 50%;\n}\n.col-xs-offset-5 {\n  margin-left: 41.66666667%;\n}\n.col-xs-offset-4 {\n  margin-left: 33.33333333%;\n}\n.col-xs-offset-3 {\n  margin-left: 25%;\n}\n.col-xs-offset-2 {\n  margin-left: 16.66666667%;\n}\n.col-xs-offset-1 {\n  margin-left: 8.33333333%;\n}\n.col-xs-offset-0 {\n  margin-left: 0%;\n}\n@media (min-width: 768px) {\n  .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12 {\n    float: left;\n  }\n  .col-sm-12 {\n    width: 100%;\n  }\n  .col-sm-11 {\n    width: 91.66666667%;\n  }\n  .col-sm-10 {\n    width: 83.33333333%;\n  }\n  .col-sm-9 {\n    width: 75%;\n  }\n  .col-sm-8 {\n    width: 66.66666667%;\n  }\n  .col-sm-7 {\n    width: 58.33333333%;\n  }\n  .col-sm-6 {\n    width: 50%;\n  }\n  .col-sm-5 {\n    width: 41.66666667%;\n  }\n  .col-sm-4 {\n    width: 33.33333333%;\n  }\n  .col-sm-3 {\n    width: 25%;\n  }\n  .col-sm-2 {\n    width: 16.66666667%;\n  }\n  .col-sm-1 {\n    width: 8.33333333%;\n  }\n  .col-sm-pull-12 {\n    right: 100%;\n  }\n  .col-sm-pull-11 {\n    right: 91.66666667%;\n  }\n  .col-sm-pull-10 {\n    right: 83.33333333%;\n  }\n  .col-sm-pull-9 {\n    right: 75%;\n  }\n  .col-sm-pull-8 {\n    right: 66.66666667%;\n  }\n  .col-sm-pull-7 {\n    right: 58.33333333%;\n  }\n  .col-sm-pull-6 {\n    right: 50%;\n  }\n  .col-sm-pull-5 {\n    right: 41.66666667%;\n  }\n  .col-sm-pull-4 {\n    right: 33.33333333%;\n  }\n  .col-sm-pull-3 {\n    right: 25%;\n  }\n  .col-sm-pull-2 {\n    right: 16.66666667%;\n  }\n  .col-sm-pull-1 {\n    right: 8.33333333%;\n  }\n  .col-sm-pull-0 {\n    right: auto;\n  }\n  .col-sm-push-12 {\n    left: 100%;\n  }\n  .col-sm-push-11 {\n    left: 91.66666667%;\n  }\n  .col-sm-push-10 {\n    left: 83.33333333%;\n  }\n  .col-sm-push-9 {\n    left: 75%;\n  }\n  .col-sm-push-8 {\n    left: 66.66666667%;\n  }\n  .col-sm-push-7 {\n    left: 58.33333333%;\n  }\n  .col-sm-push-6 {\n    left: 50%;\n  }\n  .col-sm-push-5 {\n    left: 41.66666667%;\n  }\n  .col-sm-push-4 {\n    left: 33.33333333%;\n  }\n  .col-sm-push-3 {\n    left: 25%;\n  }\n  .col-sm-push-2 {\n    left: 16.66666667%;\n  }\n  .col-sm-push-1 {\n    left: 8.33333333%;\n  }\n  .col-sm-push-0 {\n    left: auto;\n  }\n  .col-sm-offset-12 {\n    margin-left: 100%;\n  }\n  .col-sm-offset-11 {\n    margin-left: 91.66666667%;\n  }\n  .col-sm-offset-10 {\n    margin-left: 83.33333333%;\n  }\n  .col-sm-offset-9 {\n    margin-left: 75%;\n  }\n  .col-sm-offset-8 {\n    margin-left: 66.66666667%;\n  }\n  .col-sm-offset-7 {\n    margin-left: 58.33333333%;\n  }\n  .col-sm-offset-6 {\n    margin-left: 50%;\n  }\n  .col-sm-offset-5 {\n    margin-left: 41.66666667%;\n  }\n  .col-sm-offset-4 {\n    margin-left: 33.33333333%;\n  }\n  .col-sm-offset-3 {\n    margin-left: 25%;\n  }\n  .col-sm-offset-2 {\n    margin-left: 16.66666667%;\n  }\n  .col-sm-offset-1 {\n    margin-left: 8.33333333%;\n  }\n  .col-sm-offset-0 {\n    margin-left: 0%;\n  }\n}\n@media (min-width: 992px) {\n  .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12 {\n    float: left;\n  }\n  .col-md-12 {\n    width: 100%;\n  }\n  .col-md-11 {\n    width: 91.66666667%;\n  }\n  .col-md-10 {\n    width: 83.33333333%;\n  }\n  .col-md-9 {\n    width: 75%;\n  }\n  .col-md-8 {\n    width: 66.66666667%;\n  }\n  .col-md-7 {\n    width: 58.33333333%;\n  }\n  .col-md-6 {\n    width: 50%;\n  }\n  .col-md-5 {\n    width: 41.66666667%;\n  }\n  .col-md-4 {\n    width: 33.33333333%;\n  }\n  .col-md-3 {\n    width: 25%;\n  }\n  .col-md-2 {\n    width: 16.66666667%;\n  }\n  .col-md-1 {\n    width: 8.33333333%;\n  }\n  .col-md-pull-12 {\n    right: 100%;\n  }\n  .col-md-pull-11 {\n    right: 91.66666667%;\n  }\n  .col-md-pull-10 {\n    right: 83.33333333%;\n  }\n  .col-md-pull-9 {\n    right: 75%;\n  }\n  .col-md-pull-8 {\n    right: 66.66666667%;\n  }\n  .col-md-pull-7 {\n    right: 58.33333333%;\n  }\n  .col-md-pull-6 {\n    right: 50%;\n  }\n  .col-md-pull-5 {\n    right: 41.66666667%;\n  }\n  .col-md-pull-4 {\n    right: 33.33333333%;\n  }\n  .col-md-pull-3 {\n    right: 25%;\n  }\n  .col-md-pull-2 {\n    right: 16.66666667%;\n  }\n  .col-md-pull-1 {\n    right: 8.33333333%;\n  }\n  .col-md-pull-0 {\n    right: auto;\n  }\n  .col-md-push-12 {\n    left: 100%;\n  }\n  .col-md-push-11 {\n    left: 91.66666667%;\n  }\n  .col-md-push-10 {\n    left: 83.33333333%;\n  }\n  .col-md-push-9 {\n    left: 75%;\n  }\n  .col-md-push-8 {\n    left: 66.66666667%;\n  }\n  .col-md-push-7 {\n    left: 58.33333333%;\n  }\n  .col-md-push-6 {\n    left: 50%;\n  }\n  .col-md-push-5 {\n    left: 41.66666667%;\n  }\n  .col-md-push-4 {\n    left: 33.33333333%;\n  }\n  .col-md-push-3 {\n    left: 25%;\n  }\n  .col-md-push-2 {\n    left: 16.66666667%;\n  }\n  .col-md-push-1 {\n    left: 8.33333333%;\n  }\n  .col-md-push-0 {\n    left: auto;\n  }\n  .col-md-offset-12 {\n    margin-left: 100%;\n  }\n  .col-md-offset-11 {\n    margin-left: 91.66666667%;\n  }\n  .col-md-offset-10 {\n    margin-left: 83.33333333%;\n  }\n  .col-md-offset-9 {\n    margin-left: 75%;\n  }\n  .col-md-offset-8 {\n    margin-left: 66.66666667%;\n  }\n  .col-md-offset-7 {\n    margin-left: 58.33333333%;\n  }\n  .col-md-offset-6 {\n    margin-left: 50%;\n  }\n  .col-md-offset-5 {\n    margin-left: 41.66666667%;\n  }\n  .col-md-offset-4 {\n    margin-left: 33.33333333%;\n  }\n  .col-md-offset-3 {\n    margin-left: 25%;\n  }\n  .col-md-offset-2 {\n    margin-left: 16.66666667%;\n  }\n  .col-md-offset-1 {\n    margin-left: 8.33333333%;\n  }\n  .col-md-offset-0 {\n    margin-left: 0%;\n  }\n}\n@media (min-width: 1200px) {\n  .col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12 {\n    float: left;\n  }\n  .col-lg-12 {\n    width: 100%;\n  }\n  .col-lg-11 {\n    width: 91.66666667%;\n  }\n  .col-lg-10 {\n    width: 83.33333333%;\n  }\n  .col-lg-9 {\n    width: 75%;\n  }\n  .col-lg-8 {\n    width: 66.66666667%;\n  }\n  .col-lg-7 {\n    width: 58.33333333%;\n  }\n  .col-lg-6 {\n    width: 50%;\n  }\n  .col-lg-5 {\n    width: 41.66666667%;\n  }\n  .col-lg-4 {\n    width: 33.33333333%;\n  }\n  .col-lg-3 {\n    width: 25%;\n  }\n  .col-lg-2 {\n    width: 16.66666667%;\n  }\n  .col-lg-1 {\n    width: 8.33333333%;\n  }\n  .col-lg-pull-12 {\n    right: 100%;\n  }\n  .col-lg-pull-11 {\n    right: 91.66666667%;\n  }\n  .col-lg-pull-10 {\n    right: 83.33333333%;\n  }\n  .col-lg-pull-9 {\n    right: 75%;\n  }\n  .col-lg-pull-8 {\n    right: 66.66666667%;\n  }\n  .col-lg-pull-7 {\n    right: 58.33333333%;\n  }\n  .col-lg-pull-6 {\n    right: 50%;\n  }\n  .col-lg-pull-5 {\n    right: 41.66666667%;\n  }\n  .col-lg-pull-4 {\n    right: 33.33333333%;\n  }\n  .col-lg-pull-3 {\n    right: 25%;\n  }\n  .col-lg-pull-2 {\n    right: 16.66666667%;\n  }\n  .col-lg-pull-1 {\n    right: 8.33333333%;\n  }\n  .col-lg-pull-0 {\n    right: auto;\n  }\n  .col-lg-push-12 {\n    left: 100%;\n  }\n  .col-lg-push-11 {\n    left: 91.66666667%;\n  }\n  .col-lg-push-10 {\n    left: 83.33333333%;\n  }\n  .col-lg-push-9 {\n    left: 75%;\n  }\n  .col-lg-push-8 {\n    left: 66.66666667%;\n  }\n  .col-lg-push-7 {\n    left: 58.33333333%;\n  }\n  .col-lg-push-6 {\n    left: 50%;\n  }\n  .col-lg-push-5 {\n    left: 41.66666667%;\n  }\n  .col-lg-push-4 {\n    left: 33.33333333%;\n  }\n  .col-lg-push-3 {\n    left: 25%;\n  }\n  .col-lg-push-2 {\n    left: 16.66666667%;\n  }\n  .col-lg-push-1 {\n    left: 8.33333333%;\n  }\n  .col-lg-push-0 {\n    left: auto;\n  }\n  .col-lg-offset-12 {\n    margin-left: 100%;\n  }\n  .col-lg-offset-11 {\n    margin-left: 91.66666667%;\n  }\n  .col-lg-offset-10 {\n    margin-left: 83.33333333%;\n  }\n  .col-lg-offset-9 {\n    margin-left: 75%;\n  }\n  .col-lg-offset-8 {\n    margin-left: 66.66666667%;\n  }\n  .col-lg-offset-7 {\n    margin-left: 58.33333333%;\n  }\n  .col-lg-offset-6 {\n    margin-left: 50%;\n  }\n  .col-lg-offset-5 {\n    margin-left: 41.66666667%;\n  }\n  .col-lg-offset-4 {\n    margin-left: 33.33333333%;\n  }\n  .col-lg-offset-3 {\n    margin-left: 25%;\n  }\n  .col-lg-offset-2 {\n    margin-left: 16.66666667%;\n  }\n  .col-lg-offset-1 {\n    margin-left: 8.33333333%;\n  }\n  .col-lg-offset-0 {\n    margin-left: 0%;\n  }\n}\ntable {\n  background-color: transparent;\n}\ncaption {\n  padding-top: 8px;\n  padding-bottom: 8px;\n  color: #777777;\n  text-align: left;\n}\nth {\n  text-align: left;\n}\n.table {\n  width: 100%;\n  max-width: 100%;\n  margin-bottom: 20px;\n}\n.table > thead > tr > th,\n.table > tbody > tr > th,\n.table > tfoot > tr > th,\n.table > thead > tr > td,\n.table > tbody > tr > td,\n.table > tfoot > tr > td {\n  padding: 8px;\n  line-height: 1.42857143;\n  vertical-align: top;\n  border-top: 1px solid #ddd;\n}\n.table > thead > tr > th {\n  vertical-align: bottom;\n  border-bottom: 2px solid #ddd;\n}\n.table > caption + thead > tr:first-child > th,\n.table > colgroup + thead > tr:first-child > th,\n.table > thead:first-child > tr:first-child > th,\n.table > caption + thead > tr:first-child > td,\n.table > colgroup + thead > tr:first-child > td,\n.table > thead:first-child > tr:first-child > td {\n  border-top: 0;\n}\n.table > tbody + tbody {\n  border-top: 2px solid #ddd;\n}\n.table .table {\n  background-color: #fff;\n}\n.table-condensed > thead > tr > th,\n.table-condensed > tbody > tr > th,\n.table-condensed > tfoot > tr > th,\n.table-condensed > thead > tr > td,\n.table-condensed > tbody > tr > td,\n.table-condensed > tfoot > tr > td {\n  padding: 5px;\n}\n.table-bordered {\n  border: 1px solid #ddd;\n}\n.table-bordered > thead > tr > th,\n.table-bordered > tbody > tr > th,\n.table-bordered > tfoot > tr > th,\n.table-bordered > thead > tr > td,\n.table-bordered > tbody > tr > td,\n.table-bordered > tfoot > tr > td {\n  border: 1px solid #ddd;\n}\n.table-bordered > thead > tr > th,\n.table-bordered > thead > tr > td {\n  border-bottom-width: 2px;\n}\n.table-striped > tbody > tr:nth-of-type(odd) {\n  background-color: #f9f9f9;\n}\n.table-hover > tbody > tr:hover {\n  background-color: #f5f5f5;\n}\ntable col[class*=\"col-\"] {\n  position: static;\n  float: none;\n  display: table-column;\n}\ntable td[class*=\"col-\"],\ntable th[class*=\"col-\"] {\n  position: static;\n  float: none;\n  display: table-cell;\n}\n.table > thead > tr > td.active,\n.table > tbody > tr > td.active,\n.table > tfoot > tr > td.active,\n.table > thead > tr > th.active,\n.table > tbody > tr > th.active,\n.table > tfoot > tr > th.active,\n.table > thead > tr.active > td,\n.table > tbody > tr.active > td,\n.table > tfoot > tr.active > td,\n.table > thead > tr.active > th,\n.table > tbody > tr.active > th,\n.table > tfoot > tr.active > th {\n  background-color: #f5f5f5;\n}\n.table-hover > tbody > tr > td.active:hover,\n.table-hover > tbody > tr > th.active:hover,\n.table-hover > tbody > tr.active:hover > td,\n.table-hover > tbody > tr:hover > .active,\n.table-hover > tbody > tr.active:hover > th {\n  background-color: #e8e8e8;\n}\n.table > thead > tr > td.success,\n.table > tbody > tr > td.success,\n.table > tfoot > tr > td.success,\n.table > thead > tr > th.success,\n.table > tbody > tr > th.success,\n.table > tfoot > tr > th.success,\n.table > thead > tr.success > td,\n.table > tbody > tr.success > td,\n.table > tfoot > tr.success > td,\n.table > thead > tr.success > th,\n.table > tbody > tr.success > th,\n.table > tfoot > tr.success > th {\n  background-color: #dff0d8;\n}\n.table-hover > tbody > tr > td.success:hover,\n.table-hover > tbody > tr > th.success:hover,\n.table-hover > tbody > tr.success:hover > td,\n.table-hover > tbody > tr:hover > .success,\n.table-hover > tbody > tr.success:hover > th {\n  background-color: #d0e9c6;\n}\n.table > thead > tr > td.info,\n.table > tbody > tr > td.info,\n.table > tfoot > tr > td.info,\n.table > thead > tr > th.info,\n.table > tbody > tr > th.info,\n.table > tfoot > tr > th.info,\n.table > thead > tr.info > td,\n.table > tbody > tr.info > td,\n.table > tfoot > tr.info > td,\n.table > thead > tr.info > th,\n.table > tbody > tr.info > th,\n.table > tfoot > tr.info > th {\n  background-color: #d9edf7;\n}\n.table-hover > tbody > tr > td.info:hover,\n.table-hover > tbody > tr > th.info:hover,\n.table-hover > tbody > tr.info:hover > td,\n.table-hover > tbody > tr:hover > .info,\n.table-hover > tbody > tr.info:hover > th {\n  background-color: #c4e3f3;\n}\n.table > thead > tr > td.warning,\n.table > tbody > tr > td.warning,\n.table > tfoot > tr > td.warning,\n.table > thead > tr > th.warning,\n.table > tbody > tr > th.warning,\n.table > tfoot > tr > th.warning,\n.table > thead > tr.warning > td,\n.table > tbody > tr.warning > td,\n.table > tfoot > tr.warning > td,\n.table > thead > tr.warning > th,\n.table > tbody > tr.warning > th,\n.table > tfoot > tr.warning > th {\n  background-color: #fcf8e3;\n}\n.table-hover > tbody > tr > td.warning:hover,\n.table-hover > tbody > tr > th.warning:hover,\n.table-hover > tbody > tr.warning:hover > td,\n.table-hover > tbody > tr:hover > .warning,\n.table-hover > tbody > tr.warning:hover > th {\n  background-color: #faf2cc;\n}\n.table > thead > tr > td.danger,\n.table > tbody > tr > td.danger,\n.table > tfoot > tr > td.danger,\n.table > thead > tr > th.danger,\n.table > tbody > tr > th.danger,\n.table > tfoot > tr > th.danger,\n.table > thead > tr.danger > td,\n.table > tbody > tr.danger > td,\n.table > tfoot > tr.danger > td,\n.table > thead > tr.danger > th,\n.table > tbody > tr.danger > th,\n.table > tfoot > tr.danger > th {\n  background-color: #f2dede;\n}\n.table-hover > tbody > tr > td.danger:hover,\n.table-hover > tbody > tr > th.danger:hover,\n.table-hover > tbody > tr.danger:hover > td,\n.table-hover > tbody > tr:hover > .danger,\n.table-hover > tbody > tr.danger:hover > th {\n  background-color: #ebcccc;\n}\n.table-responsive {\n  overflow-x: auto;\n  min-height: 0.01%;\n}\n@media screen and (max-width: 767px) {\n  .table-responsive {\n    width: 100%;\n    margin-bottom: 15px;\n    overflow-y: hidden;\n    -ms-overflow-style: -ms-autohiding-scrollbar;\n    border: 1px solid #ddd;\n  }\n  .table-responsive > .table {\n    margin-bottom: 0;\n  }\n  .table-responsive > .table > thead > tr > th,\n  .table-responsive > .table > tbody > tr > th,\n  .table-responsive > .table > tfoot > tr > th,\n  .table-responsive > .table > thead > tr > td,\n  .table-responsive > .table > tbody > tr > td,\n  .table-responsive > .table > tfoot > tr > td {\n    white-space: nowrap;\n  }\n  .table-responsive > .table-bordered {\n    border: 0;\n  }\n  .table-responsive > .table-bordered > thead > tr > th:first-child,\n  .table-responsive > .table-bordered > tbody > tr > th:first-child,\n  .table-responsive > .table-bordered > tfoot > tr > th:first-child,\n  .table-responsive > .table-bordered > thead > tr > td:first-child,\n  .table-responsive > .table-bordered > tbody > tr > td:first-child,\n  .table-responsive > .table-bordered > tfoot > tr > td:first-child {\n    border-left: 0;\n  }\n  .table-responsive > .table-bordered > thead > tr > th:last-child,\n  .table-responsive > .table-bordered > tbody > tr > th:last-child,\n  .table-responsive > .table-bordered > tfoot > tr > th:last-child,\n  .table-responsive > .table-bordered > thead > tr > td:last-child,\n  .table-responsive > .table-bordered > tbody > tr > td:last-child,\n  .table-responsive > .table-bordered > tfoot > tr > td:last-child {\n    border-right: 0;\n  }\n  .table-responsive > .table-bordered > tbody > tr:last-child > th,\n  .table-responsive > .table-bordered > tfoot > tr:last-child > th,\n  .table-responsive > .table-bordered > tbody > tr:last-child > td,\n  .table-responsive > .table-bordered > tfoot > tr:last-child > td {\n    border-bottom: 0;\n  }\n}\nfieldset {\n  padding: 0;\n  margin: 0;\n  border: 0;\n  min-width: 0;\n}\nlegend {\n  display: block;\n  width: 100%;\n  padding: 0;\n  margin-bottom: 20px;\n  font-size: 21px;\n  line-height: inherit;\n  color: #333333;\n  border: 0;\n  border-bottom: 1px solid #e5e5e5;\n}\nlabel {\n  display: inline-block;\n  max-width: 100%;\n  margin-bottom: 5px;\n  font-weight: bold;\n}\ninput[type=\"search\"] {\n  -webkit-box-sizing: border-box;\n  -moz-box-sizing: border-box;\n  box-sizing: border-box;\n}\ninput[type=\"radio\"],\ninput[type=\"checkbox\"] {\n  margin: 4px 0 0;\n  margin-top: 1px \\9;\n  line-height: normal;\n}\ninput[type=\"file\"] {\n  display: block;\n}\ninput[type=\"range\"] {\n  display: block;\n  width: 100%;\n}\nselect[multiple],\nselect[size] {\n  height: auto;\n}\ninput[type=\"file\"]:focus,\ninput[type=\"radio\"]:focus,\ninput[type=\"checkbox\"]:focus {\n  outline: thin dotted;\n  outline: 5px auto -webkit-focus-ring-color;\n  outline-offset: -2px;\n}\noutput {\n  display: block;\n  padding-top: 7px;\n  font-size: 14px;\n  line-height: 1.42857143;\n  color: #555555;\n}\n.form-control {\n  display: block;\n  width: 100%;\n  height: 34px;\n  padding: 6px 12px;\n  font-size: 14px;\n  line-height: 1.42857143;\n  color: #555555;\n  background-color: #fff;\n  background-image: none;\n  border: 1px solid #ccc;\n  border-radius: 4px;\n  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);\n  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);\n  -webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;\n  -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;\n  transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;\n}\n.form-control:focus {\n  border-color: #66afe9;\n  outline: 0;\n  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);\n  box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);\n}\n.form-control::-moz-placeholder {\n  color: #999;\n  opacity: 1;\n}\n.form-control:-ms-input-placeholder {\n  color: #999;\n}\n.form-control::-webkit-input-placeholder {\n  color: #999;\n}\n.form-control::-ms-expand {\n  border: 0;\n  background-color: transparent;\n}\n.form-control[disabled],\n.form-control[readonly],\nfieldset[disabled] .form-control {\n  background-color: #eeeeee;\n  opacity: 1;\n}\n.form-control[disabled],\nfieldset[disabled] .form-control {\n  cursor: not-allowed;\n}\ntextarea.form-control {\n  height: auto;\n}\ninput[type=\"search\"] {\n  -webkit-appearance: none;\n}\n@media screen and (-webkit-min-device-pixel-ratio: 0) {\n  input[type=\"date\"].form-control,\n  input[type=\"time\"].form-control,\n  input[type=\"datetime-local\"].form-control,\n  input[type=\"month\"].form-control {\n    line-height: 34px;\n  }\n  input[type=\"date\"].input-sm,\n  input[type=\"time\"].input-sm,\n  input[type=\"datetime-local\"].input-sm,\n  input[type=\"month\"].input-sm,\n  .input-group-sm input[type=\"date\"],\n  .input-group-sm input[type=\"time\"],\n  .input-group-sm input[type=\"datetime-local\"],\n  .input-group-sm input[type=\"month\"] {\n    line-height: 30px;\n  }\n  input[type=\"date\"].input-lg,\n  input[type=\"time\"].input-lg,\n  input[type=\"datetime-local\"].input-lg,\n  input[type=\"month\"].input-lg,\n  .input-group-lg input[type=\"date\"],\n  .input-group-lg input[type=\"time\"],\n  .input-group-lg input[type=\"datetime-local\"],\n  .input-group-lg input[type=\"month\"] {\n    line-height: 46px;\n  }\n}\n.form-group {\n  margin-bottom: 15px;\n}\n.radio,\n.checkbox {\n  position: relative;\n  display: block;\n  margin-top: 10px;\n  margin-bottom: 10px;\n}\n.radio label,\n.checkbox label {\n  min-height: 20px;\n  padding-left: 20px;\n  margin-bottom: 0;\n  font-weight: normal;\n  cursor: pointer;\n}\n.radio input[type=\"radio\"],\n.radio-inline input[type=\"radio\"],\n.checkbox input[type=\"checkbox\"],\n.checkbox-inline input[type=\"checkbox\"] {\n  position: absolute;\n  margin-left: -20px;\n  margin-top: 4px \\9;\n}\n.radio + .radio,\n.checkbox + .checkbox {\n  margin-top: -5px;\n}\n.radio-inline,\n.checkbox-inline {\n  position: relative;\n  display: inline-block;\n  padding-left: 20px;\n  margin-bottom: 0;\n  vertical-align: middle;\n  font-weight: normal;\n  cursor: pointer;\n}\n.radio-inline + .radio-inline,\n.checkbox-inline + .checkbox-inline {\n  margin-top: 0;\n  margin-left: 10px;\n}\ninput[type=\"radio\"][disabled],\ninput[type=\"checkbox\"][disabled],\ninput[type=\"radio\"].disabled,\ninput[type=\"checkbox\"].disabled,\nfieldset[disabled] input[type=\"radio\"],\nfieldset[disabled] input[type=\"checkbox\"] {\n  cursor: not-allowed;\n}\n.radio-inline.disabled,\n.checkbox-inline.disabled,\nfieldset[disabled] .radio-inline,\nfieldset[disabled] .checkbox-inline {\n  cursor: not-allowed;\n}\n.radio.disabled label,\n.checkbox.disabled label,\nfieldset[disabled] .radio label,\nfieldset[disabled] .checkbox label {\n  cursor: not-allowed;\n}\n.form-control-static {\n  padding-top: 7px;\n  padding-bottom: 7px;\n  margin-bottom: 0;\n  min-height: 34px;\n}\n.form-control-static.input-lg,\n.form-control-static.input-sm {\n  padding-left: 0;\n  padding-right: 0;\n}\n.input-sm {\n  height: 30px;\n  padding: 5px 10px;\n  font-size: 12px;\n  line-height: 1.5;\n  border-radius: 3px;\n}\nselect.input-sm {\n  height: 30px;\n  line-height: 30px;\n}\ntextarea.input-sm,\nselect[multiple].input-sm {\n  height: auto;\n}\n.form-group-sm .form-control {\n  height: 30px;\n  padding: 5px 10px;\n  font-size: 12px;\n  line-height: 1.5;\n  border-radius: 3px;\n}\n.form-group-sm select.form-control {\n  height: 30px;\n  line-height: 30px;\n}\n.form-group-sm textarea.form-control,\n.form-group-sm select[multiple].form-control {\n  height: auto;\n}\n.form-group-sm .form-control-static {\n  height: 30px;\n  min-height: 32px;\n  padding: 6px 10px;\n  font-size: 12px;\n  line-height: 1.5;\n}\n.input-lg {\n  height: 46px;\n  padding: 10px 16px;\n  font-size: 18px;\n  line-height: 1.3333333;\n  border-radius: 6px;\n}\nselect.input-lg {\n  height: 46px;\n  line-height: 46px;\n}\ntextarea.input-lg,\nselect[multiple].input-lg {\n  height: auto;\n}\n.form-group-lg .form-control {\n  height: 46px;\n  padding: 10px 16px;\n  font-size: 18px;\n  line-height: 1.3333333;\n  border-radius: 6px;\n}\n.form-group-lg select.form-control {\n  height: 46px;\n  line-height: 46px;\n}\n.form-group-lg textarea.form-control,\n.form-group-lg select[multiple].form-control {\n  height: auto;\n}\n.form-group-lg .form-control-static {\n  height: 46px;\n  min-height: 38px;\n  padding: 11px 16px;\n  font-size: 18px;\n  line-height: 1.3333333;\n}\n.has-feedback {\n  position: relative;\n}\n.has-feedback .form-control {\n  padding-right: 42.5px;\n}\n.form-control-feedback {\n  position: absolute;\n  top: 0;\n  right: 0;\n  z-index: 2;\n  display: block;\n  width: 34px;\n  height: 34px;\n  line-height: 34px;\n  text-align: center;\n  pointer-events: none;\n}\n.input-lg + .form-control-feedback,\n.input-group-lg + .form-control-feedback,\n.form-group-lg .form-control + .form-control-feedback {\n  width: 46px;\n  height: 46px;\n  line-height: 46px;\n}\n.input-sm + .form-control-feedback,\n.input-group-sm + .form-control-feedback,\n.form-group-sm .form-control + .form-control-feedback {\n  width: 30px;\n  height: 30px;\n  line-height: 30px;\n}\n.has-success .help-block,\n.has-success .control-label,\n.has-success .radio,\n.has-success .checkbox,\n.has-success .radio-inline,\n.has-success .checkbox-inline,\n.has-success.radio label,\n.has-success.checkbox label,\n.has-success.radio-inline label,\n.has-success.checkbox-inline label {\n  color: #3c763d;\n}\n.has-success .form-control {\n  border-color: #3c763d;\n  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);\n  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);\n}\n.has-success .form-control:focus {\n  border-color: #2b542c;\n  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #67b168;\n  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #67b168;\n}\n.has-success .input-group-addon {\n  color: #3c763d;\n  border-color: #3c763d;\n  background-color: #dff0d8;\n}\n.has-success .form-control-feedback {\n  color: #3c763d;\n}\n.has-warning .help-block,\n.has-warning .control-label,\n.has-warning .radio,\n.has-warning .checkbox,\n.has-warning .radio-inline,\n.has-warning .checkbox-inline,\n.has-warning.radio label,\n.has-warning.checkbox label,\n.has-warning.radio-inline label,\n.has-warning.checkbox-inline label {\n  color: #8a6d3b;\n}\n.has-warning .form-control {\n  border-color: #8a6d3b;\n  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);\n  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);\n}\n.has-warning .form-control:focus {\n  border-color: #66512c;\n  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #c0a16b;\n  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #c0a16b;\n}\n.has-warning .input-group-addon {\n  color: #8a6d3b;\n  border-color: #8a6d3b;\n  background-color: #fcf8e3;\n}\n.has-warning .form-control-feedback {\n  color: #8a6d3b;\n}\n.has-error .help-block,\n.has-error .control-label,\n.has-error .radio,\n.has-error .checkbox,\n.has-error .radio-inline,\n.has-error .checkbox-inline,\n.has-error.radio label,\n.has-error.checkbox label,\n.has-error.radio-inline label,\n.has-error.checkbox-inline label {\n  color: #a94442;\n}\n.has-error .form-control {\n  border-color: #a94442;\n  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);\n  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);\n}\n.has-error .form-control:focus {\n  border-color: #843534;\n  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #ce8483;\n  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #ce8483;\n}\n.has-error .input-group-addon {\n  color: #a94442;\n  border-color: #a94442;\n  background-color: #f2dede;\n}\n.has-error .form-control-feedback {\n  color: #a94442;\n}\n.has-feedback label ~ .form-control-feedback {\n  top: 25px;\n}\n.has-feedback label.sr-only ~ .form-control-feedback {\n  top: 0;\n}\n.help-block {\n  display: block;\n  margin-top: 5px;\n  margin-bottom: 10px;\n  color: #737373;\n}\n@media (min-width: 768px) {\n  .form-inline .form-group {\n    display: inline-block;\n    margin-bottom: 0;\n    vertical-align: middle;\n  }\n  .form-inline .form-control {\n    display: inline-block;\n    width: auto;\n    vertical-align: middle;\n  }\n  .form-inline .form-control-static {\n    display: inline-block;\n  }\n  .form-inline .input-group {\n    display: inline-table;\n    vertical-align: middle;\n  }\n  .form-inline .input-group .input-group-addon,\n  .form-inline .input-group .input-group-btn,\n  .form-inline .input-group .form-control {\n    width: auto;\n  }\n  .form-inline .input-group > .form-control {\n    width: 100%;\n  }\n  .form-inline .control-label {\n    margin-bottom: 0;\n    vertical-align: middle;\n  }\n  .form-inline .radio,\n  .form-inline .checkbox {\n    display: inline-block;\n    margin-top: 0;\n    margin-bottom: 0;\n    vertical-align: middle;\n  }\n  .form-inline .radio label,\n  .form-inline .checkbox label {\n    padding-left: 0;\n  }\n  .form-inline .radio input[type=\"radio\"],\n  .form-inline .checkbox input[type=\"checkbox\"] {\n    position: relative;\n    margin-left: 0;\n  }\n  .form-inline .has-feedback .form-control-feedback {\n    top: 0;\n  }\n}\n.form-horizontal .radio,\n.form-horizontal .checkbox,\n.form-horizontal .radio-inline,\n.form-horizontal .checkbox-inline {\n  margin-top: 0;\n  margin-bottom: 0;\n  padding-top: 7px;\n}\n.form-horizontal .radio,\n.form-horizontal .checkbox {\n  min-height: 27px;\n}\n.form-horizontal .form-group {\n  margin-left: -15px;\n  margin-right: -15px;\n}\n@media (min-width: 768px) {\n  .form-horizontal .control-label {\n    text-align: right;\n    margin-bottom: 0;\n    padding-top: 7px;\n  }\n}\n.form-horizontal .has-feedback .form-control-feedback {\n  right: 15px;\n}\n@media (min-width: 768px) {\n  .form-horizontal .form-group-lg .control-label {\n    padding-top: 11px;\n    font-size: 18px;\n  }\n}\n@media (min-width: 768px) {\n  .form-horizontal .form-group-sm .control-label {\n    padding-top: 6px;\n    font-size: 12px;\n  }\n}\n.btn {\n  display: inline-block;\n  margin-bottom: 0;\n  font-weight: normal;\n  text-align: center;\n  vertical-align: middle;\n  touch-action: manipulation;\n  cursor: pointer;\n  background-image: none;\n  border: 1px solid transparent;\n  white-space: nowrap;\n  padding: 6px 12px;\n  font-size: 14px;\n  line-height: 1.42857143;\n  border-radius: 4px;\n  -webkit-user-select: none;\n  -moz-user-select: none;\n  -ms-user-select: none;\n  user-select: none;\n}\n.btn:focus,\n.btn:active:focus,\n.btn.active:focus,\n.btn.focus,\n.btn:active.focus,\n.btn.active.focus {\n  outline: thin dotted;\n  outline: 5px auto -webkit-focus-ring-color;\n  outline-offset: -2px;\n}\n.btn:hover,\n.btn:focus,\n.btn.focus {\n  color: #333;\n  text-decoration: none;\n}\n.btn:active,\n.btn.active {\n  outline: 0;\n  background-image: none;\n  -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);\n  box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);\n}\n.btn.disabled,\n.btn[disabled],\nfieldset[disabled] .btn {\n  cursor: not-allowed;\n  opacity: 0.65;\n  filter: alpha(opacity=65);\n  -webkit-box-shadow: none;\n  box-shadow: none;\n}\na.btn.disabled,\nfieldset[disabled] a.btn {\n  pointer-events: none;\n}\n.btn-default {\n  color: #333;\n  background-color: #fff;\n  border-color: #ccc;\n}\n.btn-default:focus,\n.btn-default.focus {\n  color: #333;\n  background-color: #e6e6e6;\n  border-color: #8c8c8c;\n}\n.btn-default:hover {\n  color: #333;\n  background-color: #e6e6e6;\n  border-color: #adadad;\n}\n.btn-default:active,\n.btn-default.active,\n.open > .dropdown-toggle.btn-default {\n  color: #333;\n  background-color: #e6e6e6;\n  border-color: #adadad;\n}\n.btn-default:active:hover,\n.btn-default.active:hover,\n.open > .dropdown-toggle.btn-default:hover,\n.btn-default:active:focus,\n.btn-default.active:focus,\n.open > .dropdown-toggle.btn-default:focus,\n.btn-default:active.focus,\n.btn-default.active.focus,\n.open > .dropdown-toggle.btn-default.focus {\n  color: #333;\n  background-color: #d4d4d4;\n  border-color: #8c8c8c;\n}\n.btn-default:active,\n.btn-default.active,\n.open > .dropdown-toggle.btn-default {\n  background-image: none;\n}\n.btn-default.disabled:hover,\n.btn-default[disabled]:hover,\nfieldset[disabled] .btn-default:hover,\n.btn-default.disabled:focus,\n.btn-default[disabled]:focus,\nfieldset[disabled] .btn-default:focus,\n.btn-default.disabled.focus,\n.btn-default[disabled].focus,\nfieldset[disabled] .btn-default.focus {\n  background-color: #fff;\n  border-color: #ccc;\n}\n.btn-default .badge {\n  color: #fff;\n  background-color: #333;\n}\n.btn-primary {\n  color: #fff;\n  background-color: #337ab7;\n  border-color: #2e6da4;\n}\n.btn-primary:focus,\n.btn-primary.focus {\n  color: #fff;\n  background-color: #286090;\n  border-color: #122b40;\n}\n.btn-primary:hover {\n  color: #fff;\n  background-color: #286090;\n  border-color: #204d74;\n}\n.btn-primary:active,\n.btn-primary.active,\n.open > .dropdown-toggle.btn-primary {\n  color: #fff;\n  background-color: #286090;\n  border-color: #204d74;\n}\n.btn-primary:active:hover,\n.btn-primary.active:hover,\n.open > .dropdown-toggle.btn-primary:hover,\n.btn-primary:active:focus,\n.btn-primary.active:focus,\n.open > .dropdown-toggle.btn-primary:focus,\n.btn-primary:active.focus,\n.btn-primary.active.focus,\n.open > .dropdown-toggle.btn-primary.focus {\n  color: #fff;\n  background-color: #204d74;\n  border-color: #122b40;\n}\n.btn-primary:active,\n.btn-primary.active,\n.open > .dropdown-toggle.btn-primary {\n  background-image: none;\n}\n.btn-primary.disabled:hover,\n.btn-primary[disabled]:hover,\nfieldset[disabled] .btn-primary:hover,\n.btn-primary.disabled:focus,\n.btn-primary[disabled]:focus,\nfieldset[disabled] .btn-primary:focus,\n.btn-primary.disabled.focus,\n.btn-primary[disabled].focus,\nfieldset[disabled] .btn-primary.focus {\n  background-color: #337ab7;\n  border-color: #2e6da4;\n}\n.btn-primary .badge {\n  color: #337ab7;\n  background-color: #fff;\n}\n.btn-success {\n  color: #fff;\n  background-color: #5cb85c;\n  border-color: #4cae4c;\n}\n.btn-success:focus,\n.btn-success.focus {\n  color: #fff;\n  background-color: #449d44;\n  border-color: #255625;\n}\n.btn-success:hover {\n  color: #fff;\n  background-color: #449d44;\n  border-color: #398439;\n}\n.btn-success:active,\n.btn-success.active,\n.open > .dropdown-toggle.btn-success {\n  color: #fff;\n  background-color: #449d44;\n  border-color: #398439;\n}\n.btn-success:active:hover,\n.btn-success.active:hover,\n.open > .dropdown-toggle.btn-success:hover,\n.btn-success:active:focus,\n.btn-success.active:focus,\n.open > .dropdown-toggle.btn-success:focus,\n.btn-success:active.focus,\n.btn-success.active.focus,\n.open > .dropdown-toggle.btn-success.focus {\n  color: #fff;\n  background-color: #398439;\n  border-color: #255625;\n}\n.btn-success:active,\n.btn-success.active,\n.open > .dropdown-toggle.btn-success {\n  background-image: none;\n}\n.btn-success.disabled:hover,\n.btn-success[disabled]:hover,\nfieldset[disabled] .btn-success:hover,\n.btn-success.disabled:focus,\n.btn-success[disabled]:focus,\nfieldset[disabled] .btn-success:focus,\n.btn-success.disabled.focus,\n.btn-success[disabled].focus,\nfieldset[disabled] .btn-success.focus {\n  background-color: #5cb85c;\n  border-color: #4cae4c;\n}\n.btn-success .badge {\n  color: #5cb85c;\n  background-color: #fff;\n}\n.btn-info {\n  color: #fff;\n  background-color: #5bc0de;\n  border-color: #46b8da;\n}\n.btn-info:focus,\n.btn-info.focus {\n  color: #fff;\n  background-color: #31b0d5;\n  border-color: #1b6d85;\n}\n.btn-info:hover {\n  color: #fff;\n  background-color: #31b0d5;\n  border-color: #269abc;\n}\n.btn-info:active,\n.btn-info.active,\n.open > .dropdown-toggle.btn-info {\n  color: #fff;\n  background-color: #31b0d5;\n  border-color: #269abc;\n}\n.btn-info:active:hover,\n.btn-info.active:hover,\n.open > .dropdown-toggle.btn-info:hover,\n.btn-info:active:focus,\n.btn-info.active:focus,\n.open > .dropdown-toggle.btn-info:focus,\n.btn-info:active.focus,\n.btn-info.active.focus,\n.open > .dropdown-toggle.btn-info.focus {\n  color: #fff;\n  background-color: #269abc;\n  border-color: #1b6d85;\n}\n.btn-info:active,\n.btn-info.active,\n.open > .dropdown-toggle.btn-info {\n  background-image: none;\n}\n.btn-info.disabled:hover,\n.btn-info[disabled]:hover,\nfieldset[disabled] .btn-info:hover,\n.btn-info.disabled:focus,\n.btn-info[disabled]:focus,\nfieldset[disabled] .btn-info:focus,\n.btn-info.disabled.focus,\n.btn-info[disabled].focus,\nfieldset[disabled] .btn-info.focus {\n  background-color: #5bc0de;\n  border-color: #46b8da;\n}\n.btn-info .badge {\n  color: #5bc0de;\n  background-color: #fff;\n}\n.btn-warning {\n  color: #fff;\n  background-color: #f0ad4e;\n  border-color: #eea236;\n}\n.btn-warning:focus,\n.btn-warning.focus {\n  color: #fff;\n  background-color: #ec971f;\n  border-color: #985f0d;\n}\n.btn-warning:hover {\n  color: #fff;\n  background-color: #ec971f;\n  border-color: #d58512;\n}\n.btn-warning:active,\n.btn-warning.active,\n.open > .dropdown-toggle.btn-warning {\n  color: #fff;\n  background-color: #ec971f;\n  border-color: #d58512;\n}\n.btn-warning:active:hover,\n.btn-warning.active:hover,\n.open > .dropdown-toggle.btn-warning:hover,\n.btn-warning:active:focus,\n.btn-warning.active:focus,\n.open > .dropdown-toggle.btn-warning:focus,\n.btn-warning:active.focus,\n.btn-warning.active.focus,\n.open > .dropdown-toggle.btn-warning.focus {\n  color: #fff;\n  background-color: #d58512;\n  border-color: #985f0d;\n}\n.btn-warning:active,\n.btn-warning.active,\n.open > .dropdown-toggle.btn-warning {\n  background-image: none;\n}\n.btn-warning.disabled:hover,\n.btn-warning[disabled]:hover,\nfieldset[disabled] .btn-warning:hover,\n.btn-warning.disabled:focus,\n.btn-warning[disabled]:focus,\nfieldset[disabled] .btn-warning:focus,\n.btn-warning.disabled.focus,\n.btn-warning[disabled].focus,\nfieldset[disabled] .btn-warning.focus {\n  background-color: #f0ad4e;\n  border-color: #eea236;\n}\n.btn-warning .badge {\n  color: #f0ad4e;\n  background-color: #fff;\n}\n.btn-danger {\n  color: #fff;\n  background-color: #d9534f;\n  border-color: #d43f3a;\n}\n.btn-danger:focus,\n.btn-danger.focus {\n  color: #fff;\n  background-color: #c9302c;\n  border-color: #761c19;\n}\n.btn-danger:hover {\n  color: #fff;\n  background-color: #c9302c;\n  border-color: #ac2925;\n}\n.btn-danger:active,\n.btn-danger.active,\n.open > .dropdown-toggle.btn-danger {\n  color: #fff;\n  background-color: #c9302c;\n  border-color: #ac2925;\n}\n.btn-danger:active:hover,\n.btn-danger.active:hover,\n.open > .dropdown-toggle.btn-danger:hover,\n.btn-danger:active:focus,\n.btn-danger.active:focus,\n.open > .dropdown-toggle.btn-danger:focus,\n.btn-danger:active.focus,\n.btn-danger.active.focus,\n.open > .dropdown-toggle.btn-danger.focus {\n  color: #fff;\n  background-color: #ac2925;\n  border-color: #761c19;\n}\n.btn-danger:active,\n.btn-danger.active,\n.open > .dropdown-toggle.btn-danger {\n  background-image: none;\n}\n.btn-danger.disabled:hover,\n.btn-danger[disabled]:hover,\nfieldset[disabled] .btn-danger:hover,\n.btn-danger.disabled:focus,\n.btn-danger[disabled]:focus,\nfieldset[disabled] .btn-danger:focus,\n.btn-danger.disabled.focus,\n.btn-danger[disabled].focus,\nfieldset[disabled] .btn-danger.focus {\n  background-color: #d9534f;\n  border-color: #d43f3a;\n}\n.btn-danger .badge {\n  color: #d9534f;\n  background-color: #fff;\n}\n.btn-link {\n  color: #337ab7;\n  font-weight: normal;\n  border-radius: 0;\n}\n.btn-link,\n.btn-link:active,\n.btn-link.active,\n.btn-link[disabled],\nfieldset[disabled] .btn-link {\n  background-color: transparent;\n  -webkit-box-shadow: none;\n  box-shadow: none;\n}\n.btn-link,\n.btn-link:hover,\n.btn-link:focus,\n.btn-link:active {\n  border-color: transparent;\n}\n.btn-link:hover,\n.btn-link:focus {\n  color: #23527c;\n  text-decoration: underline;\n  background-color: transparent;\n}\n.btn-link[disabled]:hover,\nfieldset[disabled] .btn-link:hover,\n.btn-link[disabled]:focus,\nfieldset[disabled] .btn-link:focus {\n  color: #777777;\n  text-decoration: none;\n}\n.btn-lg,\n.btn-group-lg > .btn {\n  padding: 10px 16px;\n  font-size: 18px;\n  line-height: 1.3333333;\n  border-radius: 6px;\n}\n.btn-sm,\n.btn-group-sm > .btn {\n  padding: 5px 10px;\n  font-size: 12px;\n  line-height: 1.5;\n  border-radius: 3px;\n}\n.btn-xs,\n.btn-group-xs > .btn {\n  padding: 1px 5px;\n  font-size: 12px;\n  line-height: 1.5;\n  border-radius: 3px;\n}\n.btn-block {\n  display: block;\n  width: 100%;\n}\n.btn-block + .btn-block {\n  margin-top: 5px;\n}\ninput[type=\"submit\"].btn-block,\ninput[type=\"reset\"].btn-block,\ninput[type=\"button\"].btn-block {\n  width: 100%;\n}\n.fade {\n  opacity: 0;\n  -webkit-transition: opacity 0.15s linear;\n  -o-transition: opacity 0.15s linear;\n  transition: opacity 0.15s linear;\n}\n.fade.in {\n  opacity: 1;\n}\n.collapse {\n  display: none;\n}\n.collapse.in {\n  display: block;\n}\ntr.collapse.in {\n  display: table-row;\n}\ntbody.collapse.in {\n  display: table-row-group;\n}\n.collapsing {\n  position: relative;\n  height: 0;\n  overflow: hidden;\n  -webkit-transition-property: height, visibility;\n  transition-property: height, visibility;\n  -webkit-transition-duration: 0.35s;\n  transition-duration: 0.35s;\n  -webkit-transition-timing-function: ease;\n  transition-timing-function: ease;\n}\n@font-face {\n  font-family: 'Glyphicons Halflings';\n  src: url(" + __webpack_require__(77) + ");\n  src: url(" + __webpack_require__(77) + "?#iefix) format('embedded-opentype'), url(" + __webpack_require__(78) + ") format('woff2'), url(" + __webpack_require__(79) + ") format('woff'), url(" + __webpack_require__(80) + ") format('truetype'), url(" + __webpack_require__(81) + "#glyphicons_halflingsregular) format('svg');\n}\n.glyphicon {\n  position: relative;\n  top: 1px;\n  display: inline-block;\n  font-family: 'Glyphicons Halflings';\n  font-style: normal;\n  font-weight: normal;\n  line-height: 1;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n}\n.glyphicon-asterisk:before {\n  content: \"*\";\n}\n.glyphicon-plus:before {\n  content: \"+\";\n}\n.glyphicon-euro:before,\n.glyphicon-eur:before {\n  content: \"\\20AC\";\n}\n.glyphicon-minus:before {\n  content: \"\\2212\";\n}\n.glyphicon-cloud:before {\n  content: \"\\2601\";\n}\n.glyphicon-envelope:before {\n  content: \"\\2709\";\n}\n.glyphicon-pencil:before {\n  content: \"\\270F\";\n}\n.glyphicon-glass:before {\n  content: \"\\E001\";\n}\n.glyphicon-music:before {\n  content: \"\\E002\";\n}\n.glyphicon-search:before {\n  content: \"\\E003\";\n}\n.glyphicon-heart:before {\n  content: \"\\E005\";\n}\n.glyphicon-star:before {\n  content: \"\\E006\";\n}\n.glyphicon-star-empty:before {\n  content: \"\\E007\";\n}\n.glyphicon-user:before {\n  content: \"\\E008\";\n}\n.glyphicon-film:before {\n  content: \"\\E009\";\n}\n.glyphicon-th-large:before {\n  content: \"\\E010\";\n}\n.glyphicon-th:before {\n  content: \"\\E011\";\n}\n.glyphicon-th-list:before {\n  content: \"\\E012\";\n}\n.glyphicon-ok:before {\n  content: \"\\E013\";\n}\n.glyphicon-remove:before {\n  content: \"\\E014\";\n}\n.glyphicon-zoom-in:before {\n  content: \"\\E015\";\n}\n.glyphicon-zoom-out:before {\n  content: \"\\E016\";\n}\n.glyphicon-off:before {\n  content: \"\\E017\";\n}\n.glyphicon-signal:before {\n  content: \"\\E018\";\n}\n.glyphicon-cog:before {\n  content: \"\\E019\";\n}\n.glyphicon-trash:before {\n  content: \"\\E020\";\n}\n.glyphicon-home:before {\n  content: \"\\E021\";\n}\n.glyphicon-file:before {\n  content: \"\\E022\";\n}\n.glyphicon-time:before {\n  content: \"\\E023\";\n}\n.glyphicon-road:before {\n  content: \"\\E024\";\n}\n.glyphicon-download-alt:before {\n  content: \"\\E025\";\n}\n.glyphicon-download:before {\n  content: \"\\E026\";\n}\n.glyphicon-upload:before {\n  content: \"\\E027\";\n}\n.glyphicon-inbox:before {\n  content: \"\\E028\";\n}\n.glyphicon-play-circle:before {\n  content: \"\\E029\";\n}\n.glyphicon-repeat:before {\n  content: \"\\E030\";\n}\n.glyphicon-refresh:before {\n  content: \"\\E031\";\n}\n.glyphicon-list-alt:before {\n  content: \"\\E032\";\n}\n.glyphicon-lock:before {\n  content: \"\\E033\";\n}\n.glyphicon-flag:before {\n  content: \"\\E034\";\n}\n.glyphicon-headphones:before {\n  content: \"\\E035\";\n}\n.glyphicon-volume-off:before {\n  content: \"\\E036\";\n}\n.glyphicon-volume-down:before {\n  content: \"\\E037\";\n}\n.glyphicon-volume-up:before {\n  content: \"\\E038\";\n}\n.glyphicon-qrcode:before {\n  content: \"\\E039\";\n}\n.glyphicon-barcode:before {\n  content: \"\\E040\";\n}\n.glyphicon-tag:before {\n  content: \"\\E041\";\n}\n.glyphicon-tags:before {\n  content: \"\\E042\";\n}\n.glyphicon-book:before {\n  content: \"\\E043\";\n}\n.glyphicon-bookmark:before {\n  content: \"\\E044\";\n}\n.glyphicon-print:before {\n  content: \"\\E045\";\n}\n.glyphicon-camera:before {\n  content: \"\\E046\";\n}\n.glyphicon-font:before {\n  content: \"\\E047\";\n}\n.glyphicon-bold:before {\n  content: \"\\E048\";\n}\n.glyphicon-italic:before {\n  content: \"\\E049\";\n}\n.glyphicon-text-height:before {\n  content: \"\\E050\";\n}\n.glyphicon-text-width:before {\n  content: \"\\E051\";\n}\n.glyphicon-align-left:before {\n  content: \"\\E052\";\n}\n.glyphicon-align-center:before {\n  content: \"\\E053\";\n}\n.glyphicon-align-right:before {\n  content: \"\\E054\";\n}\n.glyphicon-align-justify:before {\n  content: \"\\E055\";\n}\n.glyphicon-list:before {\n  content: \"\\E056\";\n}\n.glyphicon-indent-left:before {\n  content: \"\\E057\";\n}\n.glyphicon-indent-right:before {\n  content: \"\\E058\";\n}\n.glyphicon-facetime-video:before {\n  content: \"\\E059\";\n}\n.glyphicon-picture:before {\n  content: \"\\E060\";\n}\n.glyphicon-map-marker:before {\n  content: \"\\E062\";\n}\n.glyphicon-adjust:before {\n  content: \"\\E063\";\n}\n.glyphicon-tint:before {\n  content: \"\\E064\";\n}\n.glyphicon-edit:before {\n  content: \"\\E065\";\n}\n.glyphicon-share:before {\n  content: \"\\E066\";\n}\n.glyphicon-check:before {\n  content: \"\\E067\";\n}\n.glyphicon-move:before {\n  content: \"\\E068\";\n}\n.glyphicon-step-backward:before {\n  content: \"\\E069\";\n}\n.glyphicon-fast-backward:before {\n  content: \"\\E070\";\n}\n.glyphicon-backward:before {\n  content: \"\\E071\";\n}\n.glyphicon-play:before {\n  content: \"\\E072\";\n}\n.glyphicon-pause:before {\n  content: \"\\E073\";\n}\n.glyphicon-stop:before {\n  content: \"\\E074\";\n}\n.glyphicon-forward:before {\n  content: \"\\E075\";\n}\n.glyphicon-fast-forward:before {\n  content: \"\\E076\";\n}\n.glyphicon-step-forward:before {\n  content: \"\\E077\";\n}\n.glyphicon-eject:before {\n  content: \"\\E078\";\n}\n.glyphicon-chevron-left:before {\n  content: \"\\E079\";\n}\n.glyphicon-chevron-right:before {\n  content: \"\\E080\";\n}\n.glyphicon-plus-sign:before {\n  content: \"\\E081\";\n}\n.glyphicon-minus-sign:before {\n  content: \"\\E082\";\n}\n.glyphicon-remove-sign:before {\n  content: \"\\E083\";\n}\n.glyphicon-ok-sign:before {\n  content: \"\\E084\";\n}\n.glyphicon-question-sign:before {\n  content: \"\\E085\";\n}\n.glyphicon-info-sign:before {\n  content: \"\\E086\";\n}\n.glyphicon-screenshot:before {\n  content: \"\\E087\";\n}\n.glyphicon-remove-circle:before {\n  content: \"\\E088\";\n}\n.glyphicon-ok-circle:before {\n  content: \"\\E089\";\n}\n.glyphicon-ban-circle:before {\n  content: \"\\E090\";\n}\n.glyphicon-arrow-left:before {\n  content: \"\\E091\";\n}\n.glyphicon-arrow-right:before {\n  content: \"\\E092\";\n}\n.glyphicon-arrow-up:before {\n  content: \"\\E093\";\n}\n.glyphicon-arrow-down:before {\n  content: \"\\E094\";\n}\n.glyphicon-share-alt:before {\n  content: \"\\E095\";\n}\n.glyphicon-resize-full:before {\n  content: \"\\E096\";\n}\n.glyphicon-resize-small:before {\n  content: \"\\E097\";\n}\n.glyphicon-exclamation-sign:before {\n  content: \"\\E101\";\n}\n.glyphicon-gift:before {\n  content: \"\\E102\";\n}\n.glyphicon-leaf:before {\n  content: \"\\E103\";\n}\n.glyphicon-fire:before {\n  content: \"\\E104\";\n}\n.glyphicon-eye-open:before {\n  content: \"\\E105\";\n}\n.glyphicon-eye-close:before {\n  content: \"\\E106\";\n}\n.glyphicon-warning-sign:before {\n  content: \"\\E107\";\n}\n.glyphicon-plane:before {\n  content: \"\\E108\";\n}\n.glyphicon-calendar:before {\n  content: \"\\E109\";\n}\n.glyphicon-random:before {\n  content: \"\\E110\";\n}\n.glyphicon-comment:before {\n  content: \"\\E111\";\n}\n.glyphicon-magnet:before {\n  content: \"\\E112\";\n}\n.glyphicon-chevron-up:before {\n  content: \"\\E113\";\n}\n.glyphicon-chevron-down:before {\n  content: \"\\E114\";\n}\n.glyphicon-retweet:before {\n  content: \"\\E115\";\n}\n.glyphicon-shopping-cart:before {\n  content: \"\\E116\";\n}\n.glyphicon-folder-close:before {\n  content: \"\\E117\";\n}\n.glyphicon-folder-open:before {\n  content: \"\\E118\";\n}\n.glyphicon-resize-vertical:before {\n  content: \"\\E119\";\n}\n.glyphicon-resize-horizontal:before {\n  content: \"\\E120\";\n}\n.glyphicon-hdd:before {\n  content: \"\\E121\";\n}\n.glyphicon-bullhorn:before {\n  content: \"\\E122\";\n}\n.glyphicon-bell:before {\n  content: \"\\E123\";\n}\n.glyphicon-certificate:before {\n  content: \"\\E124\";\n}\n.glyphicon-thumbs-up:before {\n  content: \"\\E125\";\n}\n.glyphicon-thumbs-down:before {\n  content: \"\\E126\";\n}\n.glyphicon-hand-right:before {\n  content: \"\\E127\";\n}\n.glyphicon-hand-left:before {\n  content: \"\\E128\";\n}\n.glyphicon-hand-up:before {\n  content: \"\\E129\";\n}\n.glyphicon-hand-down:before {\n  content: \"\\E130\";\n}\n.glyphicon-circle-arrow-right:before {\n  content: \"\\E131\";\n}\n.glyphicon-circle-arrow-left:before {\n  content: \"\\E132\";\n}\n.glyphicon-circle-arrow-up:before {\n  content: \"\\E133\";\n}\n.glyphicon-circle-arrow-down:before {\n  content: \"\\E134\";\n}\n.glyphicon-globe:before {\n  content: \"\\E135\";\n}\n.glyphicon-wrench:before {\n  content: \"\\E136\";\n}\n.glyphicon-tasks:before {\n  content: \"\\E137\";\n}\n.glyphicon-filter:before {\n  content: \"\\E138\";\n}\n.glyphicon-briefcase:before {\n  content: \"\\E139\";\n}\n.glyphicon-fullscreen:before {\n  content: \"\\E140\";\n}\n.glyphicon-dashboard:before {\n  content: \"\\E141\";\n}\n.glyphicon-paperclip:before {\n  content: \"\\E142\";\n}\n.glyphicon-heart-empty:before {\n  content: \"\\E143\";\n}\n.glyphicon-link:before {\n  content: \"\\E144\";\n}\n.glyphicon-phone:before {\n  content: \"\\E145\";\n}\n.glyphicon-pushpin:before {\n  content: \"\\E146\";\n}\n.glyphicon-usd:before {\n  content: \"\\E148\";\n}\n.glyphicon-gbp:before {\n  content: \"\\E149\";\n}\n.glyphicon-sort:before {\n  content: \"\\E150\";\n}\n.glyphicon-sort-by-alphabet:before {\n  content: \"\\E151\";\n}\n.glyphicon-sort-by-alphabet-alt:before {\n  content: \"\\E152\";\n}\n.glyphicon-sort-by-order:before {\n  content: \"\\E153\";\n}\n.glyphicon-sort-by-order-alt:before {\n  content: \"\\E154\";\n}\n.glyphicon-sort-by-attributes:before {\n  content: \"\\E155\";\n}\n.glyphicon-sort-by-attributes-alt:before {\n  content: \"\\E156\";\n}\n.glyphicon-unchecked:before {\n  content: \"\\E157\";\n}\n.glyphicon-expand:before {\n  content: \"\\E158\";\n}\n.glyphicon-collapse-down:before {\n  content: \"\\E159\";\n}\n.glyphicon-collapse-up:before {\n  content: \"\\E160\";\n}\n.glyphicon-log-in:before {\n  content: \"\\E161\";\n}\n.glyphicon-flash:before {\n  content: \"\\E162\";\n}\n.glyphicon-log-out:before {\n  content: \"\\E163\";\n}\n.glyphicon-new-window:before {\n  content: \"\\E164\";\n}\n.glyphicon-record:before {\n  content: \"\\E165\";\n}\n.glyphicon-save:before {\n  content: \"\\E166\";\n}\n.glyphicon-open:before {\n  content: \"\\E167\";\n}\n.glyphicon-saved:before {\n  content: \"\\E168\";\n}\n.glyphicon-import:before {\n  content: \"\\E169\";\n}\n.glyphicon-export:before {\n  content: \"\\E170\";\n}\n.glyphicon-send:before {\n  content: \"\\E171\";\n}\n.glyphicon-floppy-disk:before {\n  content: \"\\E172\";\n}\n.glyphicon-floppy-saved:before {\n  content: \"\\E173\";\n}\n.glyphicon-floppy-remove:before {\n  content: \"\\E174\";\n}\n.glyphicon-floppy-save:before {\n  content: \"\\E175\";\n}\n.glyphicon-floppy-open:before {\n  content: \"\\E176\";\n}\n.glyphicon-credit-card:before {\n  content: \"\\E177\";\n}\n.glyphicon-transfer:before {\n  content: \"\\E178\";\n}\n.glyphicon-cutlery:before {\n  content: \"\\E179\";\n}\n.glyphicon-header:before {\n  content: \"\\E180\";\n}\n.glyphicon-compressed:before {\n  content: \"\\E181\";\n}\n.glyphicon-earphone:before {\n  content: \"\\E182\";\n}\n.glyphicon-phone-alt:before {\n  content: \"\\E183\";\n}\n.glyphicon-tower:before {\n  content: \"\\E184\";\n}\n.glyphicon-stats:before {\n  content: \"\\E185\";\n}\n.glyphicon-sd-video:before {\n  content: \"\\E186\";\n}\n.glyphicon-hd-video:before {\n  content: \"\\E187\";\n}\n.glyphicon-subtitles:before {\n  content: \"\\E188\";\n}\n.glyphicon-sound-stereo:before {\n  content: \"\\E189\";\n}\n.glyphicon-sound-dolby:before {\n  content: \"\\E190\";\n}\n.glyphicon-sound-5-1:before {\n  content: \"\\E191\";\n}\n.glyphicon-sound-6-1:before {\n  content: \"\\E192\";\n}\n.glyphicon-sound-7-1:before {\n  content: \"\\E193\";\n}\n.glyphicon-copyright-mark:before {\n  content: \"\\E194\";\n}\n.glyphicon-registration-mark:before {\n  content: \"\\E195\";\n}\n.glyphicon-cloud-download:before {\n  content: \"\\E197\";\n}\n.glyphicon-cloud-upload:before {\n  content: \"\\E198\";\n}\n.glyphicon-tree-conifer:before {\n  content: \"\\E199\";\n}\n.glyphicon-tree-deciduous:before {\n  content: \"\\E200\";\n}\n.glyphicon-cd:before {\n  content: \"\\E201\";\n}\n.glyphicon-save-file:before {\n  content: \"\\E202\";\n}\n.glyphicon-open-file:before {\n  content: \"\\E203\";\n}\n.glyphicon-level-up:before {\n  content: \"\\E204\";\n}\n.glyphicon-copy:before {\n  content: \"\\E205\";\n}\n.glyphicon-paste:before {\n  content: \"\\E206\";\n}\n.glyphicon-alert:before {\n  content: \"\\E209\";\n}\n.glyphicon-equalizer:before {\n  content: \"\\E210\";\n}\n.glyphicon-king:before {\n  content: \"\\E211\";\n}\n.glyphicon-queen:before {\n  content: \"\\E212\";\n}\n.glyphicon-pawn:before {\n  content: \"\\E213\";\n}\n.glyphicon-bishop:before {\n  content: \"\\E214\";\n}\n.glyphicon-knight:before {\n  content: \"\\E215\";\n}\n.glyphicon-baby-formula:before {\n  content: \"\\E216\";\n}\n.glyphicon-tent:before {\n  content: \"\\26FA\";\n}\n.glyphicon-blackboard:before {\n  content: \"\\E218\";\n}\n.glyphicon-bed:before {\n  content: \"\\E219\";\n}\n.glyphicon-apple:before {\n  content: \"\\F8FF\";\n}\n.glyphicon-erase:before {\n  content: \"\\E221\";\n}\n.glyphicon-hourglass:before {\n  content: \"\\231B\";\n}\n.glyphicon-lamp:before {\n  content: \"\\E223\";\n}\n.glyphicon-duplicate:before {\n  content: \"\\E224\";\n}\n.glyphicon-piggy-bank:before {\n  content: \"\\E225\";\n}\n.glyphicon-scissors:before {\n  content: \"\\E226\";\n}\n.glyphicon-bitcoin:before {\n  content: \"\\E227\";\n}\n.glyphicon-btc:before {\n  content: \"\\E227\";\n}\n.glyphicon-xbt:before {\n  content: \"\\E227\";\n}\n.glyphicon-yen:before {\n  content: \"\\A5\";\n}\n.glyphicon-jpy:before {\n  content: \"\\A5\";\n}\n.glyphicon-ruble:before {\n  content: \"\\20BD\";\n}\n.glyphicon-rub:before {\n  content: \"\\20BD\";\n}\n.glyphicon-scale:before {\n  content: \"\\E230\";\n}\n.glyphicon-ice-lolly:before {\n  content: \"\\E231\";\n}\n.glyphicon-ice-lolly-tasted:before {\n  content: \"\\E232\";\n}\n.glyphicon-education:before {\n  content: \"\\E233\";\n}\n.glyphicon-option-horizontal:before {\n  content: \"\\E234\";\n}\n.glyphicon-option-vertical:before {\n  content: \"\\E235\";\n}\n.glyphicon-menu-hamburger:before {\n  content: \"\\E236\";\n}\n.glyphicon-modal-window:before {\n  content: \"\\E237\";\n}\n.glyphicon-oil:before {\n  content: \"\\E238\";\n}\n.glyphicon-grain:before {\n  content: \"\\E239\";\n}\n.glyphicon-sunglasses:before {\n  content: \"\\E240\";\n}\n.glyphicon-text-size:before {\n  content: \"\\E241\";\n}\n.glyphicon-text-color:before {\n  content: \"\\E242\";\n}\n.glyphicon-text-background:before {\n  content: \"\\E243\";\n}\n.glyphicon-object-align-top:before {\n  content: \"\\E244\";\n}\n.glyphicon-object-align-bottom:before {\n  content: \"\\E245\";\n}\n.glyphicon-object-align-horizontal:before {\n  content: \"\\E246\";\n}\n.glyphicon-object-align-left:before {\n  content: \"\\E247\";\n}\n.glyphicon-object-align-vertical:before {\n  content: \"\\E248\";\n}\n.glyphicon-object-align-right:before {\n  content: \"\\E249\";\n}\n.glyphicon-triangle-right:before {\n  content: \"\\E250\";\n}\n.glyphicon-triangle-left:before {\n  content: \"\\E251\";\n}\n.glyphicon-triangle-bottom:before {\n  content: \"\\E252\";\n}\n.glyphicon-triangle-top:before {\n  content: \"\\E253\";\n}\n.glyphicon-console:before {\n  content: \"\\E254\";\n}\n.glyphicon-superscript:before {\n  content: \"\\E255\";\n}\n.glyphicon-subscript:before {\n  content: \"\\E256\";\n}\n.glyphicon-menu-left:before {\n  content: \"\\E257\";\n}\n.glyphicon-menu-right:before {\n  content: \"\\E258\";\n}\n.glyphicon-menu-down:before {\n  content: \"\\E259\";\n}\n.glyphicon-menu-up:before {\n  content: \"\\E260\";\n}\n.caret {\n  display: inline-block;\n  width: 0;\n  height: 0;\n  margin-left: 2px;\n  vertical-align: middle;\n  border-top: 4px dashed;\n  border-top: 4px solid \\9;\n  border-right: 4px solid transparent;\n  border-left: 4px solid transparent;\n}\n.dropup,\n.dropdown {\n  position: relative;\n}\n.dropdown-toggle:focus {\n  outline: 0;\n}\n.dropdown-menu {\n  position: absolute;\n  top: 100%;\n  left: 0;\n  z-index: 1000;\n  display: none;\n  float: left;\n  min-width: 160px;\n  padding: 5px 0;\n  margin: 2px 0 0;\n  list-style: none;\n  font-size: 14px;\n  text-align: left;\n  background-color: #fff;\n  border: 1px solid #ccc;\n  border: 1px solid rgba(0, 0, 0, 0.15);\n  border-radius: 4px;\n  -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);\n  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);\n  background-clip: padding-box;\n}\n.dropdown-menu.pull-right {\n  right: 0;\n  left: auto;\n}\n.dropdown-menu .divider {\n  height: 1px;\n  margin: 9px 0;\n  overflow: hidden;\n  background-color: #e5e5e5;\n}\n.dropdown-menu > li > a {\n  display: block;\n  padding: 3px 20px;\n  clear: both;\n  font-weight: normal;\n  line-height: 1.42857143;\n  color: #333333;\n  white-space: nowrap;\n}\n.dropdown-menu > li > a:hover,\n.dropdown-menu > li > a:focus {\n  text-decoration: none;\n  color: #262626;\n  background-color: #f5f5f5;\n}\n.dropdown-menu > .active > a,\n.dropdown-menu > .active > a:hover,\n.dropdown-menu > .active > a:focus {\n  color: #fff;\n  text-decoration: none;\n  outline: 0;\n  background-color: #337ab7;\n}\n.dropdown-menu > .disabled > a,\n.dropdown-menu > .disabled > a:hover,\n.dropdown-menu > .disabled > a:focus {\n  color: #777777;\n}\n.dropdown-menu > .disabled > a:hover,\n.dropdown-menu > .disabled > a:focus {\n  text-decoration: none;\n  background-color: transparent;\n  background-image: none;\n  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);\n  cursor: not-allowed;\n}\n.open > .dropdown-menu {\n  display: block;\n}\n.open > a {\n  outline: 0;\n}\n.dropdown-menu-right {\n  left: auto;\n  right: 0;\n}\n.dropdown-menu-left {\n  left: 0;\n  right: auto;\n}\n.dropdown-header {\n  display: block;\n  padding: 3px 20px;\n  font-size: 12px;\n  line-height: 1.42857143;\n  color: #777777;\n  white-space: nowrap;\n}\n.dropdown-backdrop {\n  position: fixed;\n  left: 0;\n  right: 0;\n  bottom: 0;\n  top: 0;\n  z-index: 990;\n}\n.pull-right > .dropdown-menu {\n  right: 0;\n  left: auto;\n}\n.dropup .caret,\n.navbar-fixed-bottom .dropdown .caret {\n  border-top: 0;\n  border-bottom: 4px dashed;\n  border-bottom: 4px solid \\9;\n  content: \"\";\n}\n.dropup .dropdown-menu,\n.navbar-fixed-bottom .dropdown .dropdown-menu {\n  top: auto;\n  bottom: 100%;\n  margin-bottom: 2px;\n}\n@media (min-width: 768px) {\n  .navbar-right .dropdown-menu {\n    left: auto;\n    right: 0;\n  }\n  .navbar-right .dropdown-menu-left {\n    left: 0;\n    right: auto;\n  }\n}\n.btn-group,\n.btn-group-vertical {\n  position: relative;\n  display: inline-block;\n  vertical-align: middle;\n}\n.btn-group > .btn,\n.btn-group-vertical > .btn {\n  position: relative;\n  float: left;\n}\n.btn-group > .btn:hover,\n.btn-group-vertical > .btn:hover,\n.btn-group > .btn:focus,\n.btn-group-vertical > .btn:focus,\n.btn-group > .btn:active,\n.btn-group-vertical > .btn:active,\n.btn-group > .btn.active,\n.btn-group-vertical > .btn.active {\n  z-index: 2;\n}\n.btn-group .btn + .btn,\n.btn-group .btn + .btn-group,\n.btn-group .btn-group + .btn,\n.btn-group .btn-group + .btn-group {\n  margin-left: -1px;\n}\n.btn-toolbar {\n  margin-left: -5px;\n}\n.btn-toolbar .btn,\n.btn-toolbar .btn-group,\n.btn-toolbar .input-group {\n  float: left;\n}\n.btn-toolbar > .btn,\n.btn-toolbar > .btn-group,\n.btn-toolbar > .input-group {\n  margin-left: 5px;\n}\n.btn-group > .btn:not(:first-child):not(:last-child):not(.dropdown-toggle) {\n  border-radius: 0;\n}\n.btn-group > .btn:first-child {\n  margin-left: 0;\n}\n.btn-group > .btn:first-child:not(:last-child):not(.dropdown-toggle) {\n  border-bottom-right-radius: 0;\n  border-top-right-radius: 0;\n}\n.btn-group > .btn:last-child:not(:first-child),\n.btn-group > .dropdown-toggle:not(:first-child) {\n  border-bottom-left-radius: 0;\n  border-top-left-radius: 0;\n}\n.btn-group > .btn-group {\n  float: left;\n}\n.btn-group > .btn-group:not(:first-child):not(:last-child) > .btn {\n  border-radius: 0;\n}\n.btn-group > .btn-group:first-child:not(:last-child) > .btn:last-child,\n.btn-group > .btn-group:first-child:not(:last-child) > .dropdown-toggle {\n  border-bottom-right-radius: 0;\n  border-top-right-radius: 0;\n}\n.btn-group > .btn-group:last-child:not(:first-child) > .btn:first-child {\n  border-bottom-left-radius: 0;\n  border-top-left-radius: 0;\n}\n.btn-group .dropdown-toggle:active,\n.btn-group.open .dropdown-toggle {\n  outline: 0;\n}\n.btn-group > .btn + .dropdown-toggle {\n  padding-left: 8px;\n  padding-right: 8px;\n}\n.btn-group > .btn-lg + .dropdown-toggle {\n  padding-left: 12px;\n  padding-right: 12px;\n}\n.btn-group.open .dropdown-toggle {\n  -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);\n  box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);\n}\n.btn-group.open .dropdown-toggle.btn-link {\n  -webkit-box-shadow: none;\n  box-shadow: none;\n}\n.btn .caret {\n  margin-left: 0;\n}\n.btn-lg .caret {\n  border-width: 5px 5px 0;\n  border-bottom-width: 0;\n}\n.dropup .btn-lg .caret {\n  border-width: 0 5px 5px;\n}\n.btn-group-vertical > .btn,\n.btn-group-vertical > .btn-group,\n.btn-group-vertical > .btn-group > .btn {\n  display: block;\n  float: none;\n  width: 100%;\n  max-width: 100%;\n}\n.btn-group-vertical > .btn-group > .btn {\n  float: none;\n}\n.btn-group-vertical > .btn + .btn,\n.btn-group-vertical > .btn + .btn-group,\n.btn-group-vertical > .btn-group + .btn,\n.btn-group-vertical > .btn-group + .btn-group {\n  margin-top: -1px;\n  margin-left: 0;\n}\n.btn-group-vertical > .btn:not(:first-child):not(:last-child) {\n  border-radius: 0;\n}\n.btn-group-vertical > .btn:first-child:not(:last-child) {\n  border-top-right-radius: 4px;\n  border-top-left-radius: 4px;\n  border-bottom-right-radius: 0;\n  border-bottom-left-radius: 0;\n}\n.btn-group-vertical > .btn:last-child:not(:first-child) {\n  border-top-right-radius: 0;\n  border-top-left-radius: 0;\n  border-bottom-right-radius: 4px;\n  border-bottom-left-radius: 4px;\n}\n.btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > .btn {\n  border-radius: 0;\n}\n.btn-group-vertical > .btn-group:first-child:not(:last-child) > .btn:last-child,\n.btn-group-vertical > .btn-group:first-child:not(:last-child) > .dropdown-toggle {\n  border-bottom-right-radius: 0;\n  border-bottom-left-radius: 0;\n}\n.btn-group-vertical > .btn-group:last-child:not(:first-child) > .btn:first-child {\n  border-top-right-radius: 0;\n  border-top-left-radius: 0;\n}\n.btn-group-justified {\n  display: table;\n  width: 100%;\n  table-layout: fixed;\n  border-collapse: separate;\n}\n.btn-group-justified > .btn,\n.btn-group-justified > .btn-group {\n  float: none;\n  display: table-cell;\n  width: 1%;\n}\n.btn-group-justified > .btn-group .btn {\n  width: 100%;\n}\n.btn-group-justified > .btn-group .dropdown-menu {\n  left: auto;\n}\n[data-toggle=\"buttons\"] > .btn input[type=\"radio\"],\n[data-toggle=\"buttons\"] > .btn-group > .btn input[type=\"radio\"],\n[data-toggle=\"buttons\"] > .btn input[type=\"checkbox\"],\n[data-toggle=\"buttons\"] > .btn-group > .btn input[type=\"checkbox\"] {\n  position: absolute;\n  clip: rect(0, 0, 0, 0);\n  pointer-events: none;\n}\n.input-group {\n  position: relative;\n  display: table;\n  border-collapse: separate;\n}\n.input-group[class*=\"col-\"] {\n  float: none;\n  padding-left: 0;\n  padding-right: 0;\n}\n.input-group .form-control {\n  position: relative;\n  z-index: 2;\n  float: left;\n  width: 100%;\n  margin-bottom: 0;\n}\n.input-group .form-control:focus {\n  z-index: 3;\n}\n.input-group-lg > .form-control,\n.input-group-lg > .input-group-addon,\n.input-group-lg > .input-group-btn > .btn {\n  height: 46px;\n  padding: 10px 16px;\n  font-size: 18px;\n  line-height: 1.3333333;\n  border-radius: 6px;\n}\nselect.input-group-lg > .form-control,\nselect.input-group-lg > .input-group-addon,\nselect.input-group-lg > .input-group-btn > .btn {\n  height: 46px;\n  line-height: 46px;\n}\ntextarea.input-group-lg > .form-control,\ntextarea.input-group-lg > .input-group-addon,\ntextarea.input-group-lg > .input-group-btn > .btn,\nselect[multiple].input-group-lg > .form-control,\nselect[multiple].input-group-lg > .input-group-addon,\nselect[multiple].input-group-lg > .input-group-btn > .btn {\n  height: auto;\n}\n.input-group-sm > .form-control,\n.input-group-sm > .input-group-addon,\n.input-group-sm > .input-group-btn > .btn {\n  height: 30px;\n  padding: 5px 10px;\n  font-size: 12px;\n  line-height: 1.5;\n  border-radius: 3px;\n}\nselect.input-group-sm > .form-control,\nselect.input-group-sm > .input-group-addon,\nselect.input-group-sm > .input-group-btn > .btn {\n  height: 30px;\n  line-height: 30px;\n}\ntextarea.input-group-sm > .form-control,\ntextarea.input-group-sm > .input-group-addon,\ntextarea.input-group-sm > .input-group-btn > .btn,\nselect[multiple].input-group-sm > .form-control,\nselect[multiple].input-group-sm > .input-group-addon,\nselect[multiple].input-group-sm > .input-group-btn > .btn {\n  height: auto;\n}\n.input-group-addon,\n.input-group-btn,\n.input-group .form-control {\n  display: table-cell;\n}\n.input-group-addon:not(:first-child):not(:last-child),\n.input-group-btn:not(:first-child):not(:last-child),\n.input-group .form-control:not(:first-child):not(:last-child) {\n  border-radius: 0;\n}\n.input-group-addon,\n.input-group-btn {\n  width: 1%;\n  white-space: nowrap;\n  vertical-align: middle;\n}\n.input-group-addon {\n  padding: 6px 12px;\n  font-size: 14px;\n  font-weight: normal;\n  line-height: 1;\n  color: #555555;\n  text-align: center;\n  background-color: #eeeeee;\n  border: 1px solid #ccc;\n  border-radius: 4px;\n}\n.input-group-addon.input-sm {\n  padding: 5px 10px;\n  font-size: 12px;\n  border-radius: 3px;\n}\n.input-group-addon.input-lg {\n  padding: 10px 16px;\n  font-size: 18px;\n  border-radius: 6px;\n}\n.input-group-addon input[type=\"radio\"],\n.input-group-addon input[type=\"checkbox\"] {\n  margin-top: 0;\n}\n.input-group .form-control:first-child,\n.input-group-addon:first-child,\n.input-group-btn:first-child > .btn,\n.input-group-btn:first-child > .btn-group > .btn,\n.input-group-btn:first-child > .dropdown-toggle,\n.input-group-btn:last-child > .btn:not(:last-child):not(.dropdown-toggle),\n.input-group-btn:last-child > .btn-group:not(:last-child) > .btn {\n  border-bottom-right-radius: 0;\n  border-top-right-radius: 0;\n}\n.input-group-addon:first-child {\n  border-right: 0;\n}\n.input-group .form-control:last-child,\n.input-group-addon:last-child,\n.input-group-btn:last-child > .btn,\n.input-group-btn:last-child > .btn-group > .btn,\n.input-group-btn:last-child > .dropdown-toggle,\n.input-group-btn:first-child > .btn:not(:first-child),\n.input-group-btn:first-child > .btn-group:not(:first-child) > .btn {\n  border-bottom-left-radius: 0;\n  border-top-left-radius: 0;\n}\n.input-group-addon:last-child {\n  border-left: 0;\n}\n.input-group-btn {\n  position: relative;\n  font-size: 0;\n  white-space: nowrap;\n}\n.input-group-btn > .btn {\n  position: relative;\n}\n.input-group-btn > .btn + .btn {\n  margin-left: -1px;\n}\n.input-group-btn > .btn:hover,\n.input-group-btn > .btn:focus,\n.input-group-btn > .btn:active {\n  z-index: 2;\n}\n.input-group-btn:first-child > .btn,\n.input-group-btn:first-child > .btn-group {\n  margin-right: -1px;\n}\n.input-group-btn:last-child > .btn,\n.input-group-btn:last-child > .btn-group {\n  z-index: 2;\n  margin-left: -1px;\n}\n.nav {\n  margin-bottom: 0;\n  padding-left: 0;\n  list-style: none;\n}\n.nav > li {\n  position: relative;\n  display: block;\n}\n.nav > li > a {\n  position: relative;\n  display: block;\n  padding: 10px 15px;\n}\n.nav > li > a:hover,\n.nav > li > a:focus {\n  text-decoration: none;\n  background-color: #eeeeee;\n}\n.nav > li.disabled > a {\n  color: #777777;\n}\n.nav > li.disabled > a:hover,\n.nav > li.disabled > a:focus {\n  color: #777777;\n  text-decoration: none;\n  background-color: transparent;\n  cursor: not-allowed;\n}\n.nav .open > a,\n.nav .open > a:hover,\n.nav .open > a:focus {\n  background-color: #eeeeee;\n  border-color: #337ab7;\n}\n.nav .nav-divider {\n  height: 1px;\n  margin: 9px 0;\n  overflow: hidden;\n  background-color: #e5e5e5;\n}\n.nav > li > a > img {\n  max-width: none;\n}\n.nav-tabs {\n  border-bottom: 1px solid #ddd;\n}\n.nav-tabs > li {\n  float: left;\n  margin-bottom: -1px;\n}\n.nav-tabs > li > a {\n  margin-right: 2px;\n  line-height: 1.42857143;\n  border: 1px solid transparent;\n  border-radius: 4px 4px 0 0;\n}\n.nav-tabs > li > a:hover {\n  border-color: #eeeeee #eeeeee #ddd;\n}\n.nav-tabs > li.active > a,\n.nav-tabs > li.active > a:hover,\n.nav-tabs > li.active > a:focus {\n  color: #555555;\n  background-color: #fff;\n  border: 1px solid #ddd;\n  border-bottom-color: transparent;\n  cursor: default;\n}\n.nav-tabs.nav-justified {\n  width: 100%;\n  border-bottom: 0;\n}\n.nav-tabs.nav-justified > li {\n  float: none;\n}\n.nav-tabs.nav-justified > li > a {\n  text-align: center;\n  margin-bottom: 5px;\n}\n.nav-tabs.nav-justified > .dropdown .dropdown-menu {\n  top: auto;\n  left: auto;\n}\n@media (min-width: 768px) {\n  .nav-tabs.nav-justified > li {\n    display: table-cell;\n    width: 1%;\n  }\n  .nav-tabs.nav-justified > li > a {\n    margin-bottom: 0;\n  }\n}\n.nav-tabs.nav-justified > li > a {\n  margin-right: 0;\n  border-radius: 4px;\n}\n.nav-tabs.nav-justified > .active > a,\n.nav-tabs.nav-justified > .active > a:hover,\n.nav-tabs.nav-justified > .active > a:focus {\n  border: 1px solid #ddd;\n}\n@media (min-width: 768px) {\n  .nav-tabs.nav-justified > li > a {\n    border-bottom: 1px solid #ddd;\n    border-radius: 4px 4px 0 0;\n  }\n  .nav-tabs.nav-justified > .active > a,\n  .nav-tabs.nav-justified > .active > a:hover,\n  .nav-tabs.nav-justified > .active > a:focus {\n    border-bottom-color: #fff;\n  }\n}\n.nav-pills > li {\n  float: left;\n}\n.nav-pills > li > a {\n  border-radius: 4px;\n}\n.nav-pills > li + li {\n  margin-left: 2px;\n}\n.nav-pills > li.active > a,\n.nav-pills > li.active > a:hover,\n.nav-pills > li.active > a:focus {\n  color: #fff;\n  background-color: #337ab7;\n}\n.nav-stacked > li {\n  float: none;\n}\n.nav-stacked > li + li {\n  margin-top: 2px;\n  margin-left: 0;\n}\n.nav-justified {\n  width: 100%;\n}\n.nav-justified > li {\n  float: none;\n}\n.nav-justified > li > a {\n  text-align: center;\n  margin-bottom: 5px;\n}\n.nav-justified > .dropdown .dropdown-menu {\n  top: auto;\n  left: auto;\n}\n@media (min-width: 768px) {\n  .nav-justified > li {\n    display: table-cell;\n    width: 1%;\n  }\n  .nav-justified > li > a {\n    margin-bottom: 0;\n  }\n}\n.nav-tabs-justified {\n  border-bottom: 0;\n}\n.nav-tabs-justified > li > a {\n  margin-right: 0;\n  border-radius: 4px;\n}\n.nav-tabs-justified > .active > a,\n.nav-tabs-justified > .active > a:hover,\n.nav-tabs-justified > .active > a:focus {\n  border: 1px solid #ddd;\n}\n@media (min-width: 768px) {\n  .nav-tabs-justified > li > a {\n    border-bottom: 1px solid #ddd;\n    border-radius: 4px 4px 0 0;\n  }\n  .nav-tabs-justified > .active > a,\n  .nav-tabs-justified > .active > a:hover,\n  .nav-tabs-justified > .active > a:focus {\n    border-bottom-color: #fff;\n  }\n}\n.tab-content > .tab-pane {\n  display: none;\n}\n.tab-content > .active {\n  display: block;\n}\n.nav-tabs .dropdown-menu {\n  margin-top: -1px;\n  border-top-right-radius: 0;\n  border-top-left-radius: 0;\n}\n.navbar {\n  position: relative;\n  min-height: 50px;\n  margin-bottom: 20px;\n  border: 1px solid transparent;\n}\n@media (min-width: 768px) {\n  .navbar {\n    border-radius: 4px;\n  }\n}\n@media (min-width: 768px) {\n  .navbar-header {\n    float: left;\n  }\n}\n.navbar-collapse {\n  overflow-x: visible;\n  padding-right: 15px;\n  padding-left: 15px;\n  border-top: 1px solid transparent;\n  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);\n  -webkit-overflow-scrolling: touch;\n}\n.navbar-collapse.in {\n  overflow-y: auto;\n}\n@media (min-width: 768px) {\n  .navbar-collapse {\n    width: auto;\n    border-top: 0;\n    box-shadow: none;\n  }\n  .navbar-collapse.collapse {\n    display: block !important;\n    height: auto !important;\n    padding-bottom: 0;\n    overflow: visible !important;\n  }\n  .navbar-collapse.in {\n    overflow-y: visible;\n  }\n  .navbar-fixed-top .navbar-collapse,\n  .navbar-static-top .navbar-collapse,\n  .navbar-fixed-bottom .navbar-collapse {\n    padding-left: 0;\n    padding-right: 0;\n  }\n}\n.navbar-fixed-top .navbar-collapse,\n.navbar-fixed-bottom .navbar-collapse {\n  max-height: 340px;\n}\n@media (max-device-width: 480px) and (orientation: landscape) {\n  .navbar-fixed-top .navbar-collapse,\n  .navbar-fixed-bottom .navbar-collapse {\n    max-height: 200px;\n  }\n}\n.container > .navbar-header,\n.container-fluid > .navbar-header,\n.container > .navbar-collapse,\n.container-fluid > .navbar-collapse {\n  margin-right: -15px;\n  margin-left: -15px;\n}\n@media (min-width: 768px) {\n  .container > .navbar-header,\n  .container-fluid > .navbar-header,\n  .container > .navbar-collapse,\n  .container-fluid > .navbar-collapse {\n    margin-right: 0;\n    margin-left: 0;\n  }\n}\n.navbar-static-top {\n  z-index: 1000;\n  border-width: 0 0 1px;\n}\n@media (min-width: 768px) {\n  .navbar-static-top {\n    border-radius: 0;\n  }\n}\n.navbar-fixed-top,\n.navbar-fixed-bottom {\n  position: fixed;\n  right: 0;\n  left: 0;\n  z-index: 1030;\n}\n@media (min-width: 768px) {\n  .navbar-fixed-top,\n  .navbar-fixed-bottom {\n    border-radius: 0;\n  }\n}\n.navbar-fixed-top {\n  top: 0;\n  border-width: 0 0 1px;\n}\n.navbar-fixed-bottom {\n  bottom: 0;\n  margin-bottom: 0;\n  border-width: 1px 0 0;\n}\n.navbar-brand {\n  float: left;\n  padding: 15px 15px;\n  font-size: 18px;\n  line-height: 20px;\n  height: 50px;\n}\n.navbar-brand:hover,\n.navbar-brand:focus {\n  text-decoration: none;\n}\n.navbar-brand > img {\n  display: block;\n}\n@media (min-width: 768px) {\n  .navbar > .container .navbar-brand,\n  .navbar > .container-fluid .navbar-brand {\n    margin-left: -15px;\n  }\n}\n.navbar-toggle {\n  position: relative;\n  float: right;\n  margin-right: 15px;\n  padding: 9px 10px;\n  margin-top: 8px;\n  margin-bottom: 8px;\n  background-color: transparent;\n  background-image: none;\n  border: 1px solid transparent;\n  border-radius: 4px;\n}\n.navbar-toggle:focus {\n  outline: 0;\n}\n.navbar-toggle .icon-bar {\n  display: block;\n  width: 22px;\n  height: 2px;\n  border-radius: 1px;\n}\n.navbar-toggle .icon-bar + .icon-bar {\n  margin-top: 4px;\n}\n@media (min-width: 768px) {\n  .navbar-toggle {\n    display: none;\n  }\n}\n.navbar-nav {\n  margin: 7.5px -15px;\n}\n.navbar-nav > li > a {\n  padding-top: 10px;\n  padding-bottom: 10px;\n  line-height: 20px;\n}\n@media (max-width: 767px) {\n  .navbar-nav .open .dropdown-menu {\n    position: static;\n    float: none;\n    width: auto;\n    margin-top: 0;\n    background-color: transparent;\n    border: 0;\n    box-shadow: none;\n  }\n  .navbar-nav .open .dropdown-menu > li > a,\n  .navbar-nav .open .dropdown-menu .dropdown-header {\n    padding: 5px 15px 5px 25px;\n  }\n  .navbar-nav .open .dropdown-menu > li > a {\n    line-height: 20px;\n  }\n  .navbar-nav .open .dropdown-menu > li > a:hover,\n  .navbar-nav .open .dropdown-menu > li > a:focus {\n    background-image: none;\n  }\n}\n@media (min-width: 768px) {\n  .navbar-nav {\n    float: left;\n    margin: 0;\n  }\n  .navbar-nav > li {\n    float: left;\n  }\n  .navbar-nav > li > a {\n    padding-top: 15px;\n    padding-bottom: 15px;\n  }\n}\n.navbar-form {\n  margin-left: -15px;\n  margin-right: -15px;\n  padding: 10px 15px;\n  border-top: 1px solid transparent;\n  border-bottom: 1px solid transparent;\n  -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 0 rgba(255, 255, 255, 0.1);\n  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 0 rgba(255, 255, 255, 0.1);\n  margin-top: 8px;\n  margin-bottom: 8px;\n}\n@media (min-width: 768px) {\n  .navbar-form .form-group {\n    display: inline-block;\n    margin-bottom: 0;\n    vertical-align: middle;\n  }\n  .navbar-form .form-control {\n    display: inline-block;\n    width: auto;\n    vertical-align: middle;\n  }\n  .navbar-form .form-control-static {\n    display: inline-block;\n  }\n  .navbar-form .input-group {\n    display: inline-table;\n    vertical-align: middle;\n  }\n  .navbar-form .input-group .input-group-addon,\n  .navbar-form .input-group .input-group-btn,\n  .navbar-form .input-group .form-control {\n    width: auto;\n  }\n  .navbar-form .input-group > .form-control {\n    width: 100%;\n  }\n  .navbar-form .control-label {\n    margin-bottom: 0;\n    vertical-align: middle;\n  }\n  .navbar-form .radio,\n  .navbar-form .checkbox {\n    display: inline-block;\n    margin-top: 0;\n    margin-bottom: 0;\n    vertical-align: middle;\n  }\n  .navbar-form .radio label,\n  .navbar-form .checkbox label {\n    padding-left: 0;\n  }\n  .navbar-form .radio input[type=\"radio\"],\n  .navbar-form .checkbox input[type=\"checkbox\"] {\n    position: relative;\n    margin-left: 0;\n  }\n  .navbar-form .has-feedback .form-control-feedback {\n    top: 0;\n  }\n}\n@media (max-width: 767px) {\n  .navbar-form .form-group {\n    margin-bottom: 5px;\n  }\n  .navbar-form .form-group:last-child {\n    margin-bottom: 0;\n  }\n}\n@media (min-width: 768px) {\n  .navbar-form {\n    width: auto;\n    border: 0;\n    margin-left: 0;\n    margin-right: 0;\n    padding-top: 0;\n    padding-bottom: 0;\n    -webkit-box-shadow: none;\n    box-shadow: none;\n  }\n}\n.navbar-nav > li > .dropdown-menu {\n  margin-top: 0;\n  border-top-right-radius: 0;\n  border-top-left-radius: 0;\n}\n.navbar-fixed-bottom .navbar-nav > li > .dropdown-menu {\n  margin-bottom: 0;\n  border-top-right-radius: 4px;\n  border-top-left-radius: 4px;\n  border-bottom-right-radius: 0;\n  border-bottom-left-radius: 0;\n}\n.navbar-btn {\n  margin-top: 8px;\n  margin-bottom: 8px;\n}\n.navbar-btn.btn-sm {\n  margin-top: 10px;\n  margin-bottom: 10px;\n}\n.navbar-btn.btn-xs {\n  margin-top: 14px;\n  margin-bottom: 14px;\n}\n.navbar-text {\n  margin-top: 15px;\n  margin-bottom: 15px;\n}\n@media (min-width: 768px) {\n  .navbar-text {\n    float: left;\n    margin-left: 15px;\n    margin-right: 15px;\n  }\n}\n@media (min-width: 768px) {\n  .navbar-left {\n    float: left !important;\n  }\n  .navbar-right {\n    float: right !important;\n    margin-right: -15px;\n  }\n  .navbar-right ~ .navbar-right {\n    margin-right: 0;\n  }\n}\n.navbar-default {\n  background-color: #f8f8f8;\n  border-color: #e7e7e7;\n}\n.navbar-default .navbar-brand {\n  color: #777;\n}\n.navbar-default .navbar-brand:hover,\n.navbar-default .navbar-brand:focus {\n  color: #5e5e5e;\n  background-color: transparent;\n}\n.navbar-default .navbar-text {\n  color: #777;\n}\n.navbar-default .navbar-nav > li > a {\n  color: #777;\n}\n.navbar-default .navbar-nav > li > a:hover,\n.navbar-default .navbar-nav > li > a:focus {\n  color: #333;\n  background-color: transparent;\n}\n.navbar-default .navbar-nav > .active > a,\n.navbar-default .navbar-nav > .active > a:hover,\n.navbar-default .navbar-nav > .active > a:focus {\n  color: #555;\n  background-color: #e7e7e7;\n}\n.navbar-default .navbar-nav > .disabled > a,\n.navbar-default .navbar-nav > .disabled > a:hover,\n.navbar-default .navbar-nav > .disabled > a:focus {\n  color: #ccc;\n  background-color: transparent;\n}\n.navbar-default .navbar-toggle {\n  border-color: #ddd;\n}\n.navbar-default .navbar-toggle:hover,\n.navbar-default .navbar-toggle:focus {\n  background-color: #ddd;\n}\n.navbar-default .navbar-toggle .icon-bar {\n  background-color: #888;\n}\n.navbar-default .navbar-collapse,\n.navbar-default .navbar-form {\n  border-color: #e7e7e7;\n}\n.navbar-default .navbar-nav > .open > a,\n.navbar-default .navbar-nav > .open > a:hover,\n.navbar-default .navbar-nav > .open > a:focus {\n  background-color: #e7e7e7;\n  color: #555;\n}\n@media (max-width: 767px) {\n  .navbar-default .navbar-nav .open .dropdown-menu > li > a {\n    color: #777;\n  }\n  .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,\n  .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {\n    color: #333;\n    background-color: transparent;\n  }\n  .navbar-default .navbar-nav .open .dropdown-menu > .active > a,\n  .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover,\n  .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {\n    color: #555;\n    background-color: #e7e7e7;\n  }\n  .navbar-default .navbar-nav .open .dropdown-menu > .disabled > a,\n  .navbar-default .navbar-nav .open .dropdown-menu > .disabled > a:hover,\n  .navbar-default .navbar-nav .open .dropdown-menu > .disabled > a:focus {\n    color: #ccc;\n    background-color: transparent;\n  }\n}\n.navbar-default .navbar-link {\n  color: #777;\n}\n.navbar-default .navbar-link:hover {\n  color: #333;\n}\n.navbar-default .btn-link {\n  color: #777;\n}\n.navbar-default .btn-link:hover,\n.navbar-default .btn-link:focus {\n  color: #333;\n}\n.navbar-default .btn-link[disabled]:hover,\nfieldset[disabled] .navbar-default .btn-link:hover,\n.navbar-default .btn-link[disabled]:focus,\nfieldset[disabled] .navbar-default .btn-link:focus {\n  color: #ccc;\n}\n.navbar-inverse {\n  background-color: #222;\n  border-color: #080808;\n}\n.navbar-inverse .navbar-brand {\n  color: #9d9d9d;\n}\n.navbar-inverse .navbar-brand:hover,\n.navbar-inverse .navbar-brand:focus {\n  color: #fff;\n  background-color: transparent;\n}\n.navbar-inverse .navbar-text {\n  color: #9d9d9d;\n}\n.navbar-inverse .navbar-nav > li > a {\n  color: #9d9d9d;\n}\n.navbar-inverse .navbar-nav > li > a:hover,\n.navbar-inverse .navbar-nav > li > a:focus {\n  color: #fff;\n  background-color: transparent;\n}\n.navbar-inverse .navbar-nav > .active > a,\n.navbar-inverse .navbar-nav > .active > a:hover,\n.navbar-inverse .navbar-nav > .active > a:focus {\n  color: #fff;\n  background-color: #080808;\n}\n.navbar-inverse .navbar-nav > .disabled > a,\n.navbar-inverse .navbar-nav > .disabled > a:hover,\n.navbar-inverse .navbar-nav > .disabled > a:focus {\n  color: #444;\n  background-color: transparent;\n}\n.navbar-inverse .navbar-toggle {\n  border-color: #333;\n}\n.navbar-inverse .navbar-toggle:hover,\n.navbar-inverse .navbar-toggle:focus {\n  background-color: #333;\n}\n.navbar-inverse .navbar-toggle .icon-bar {\n  background-color: #fff;\n}\n.navbar-inverse .navbar-collapse,\n.navbar-inverse .navbar-form {\n  border-color: #101010;\n}\n.navbar-inverse .navbar-nav > .open > a,\n.navbar-inverse .navbar-nav > .open > a:hover,\n.navbar-inverse .navbar-nav > .open > a:focus {\n  background-color: #080808;\n  color: #fff;\n}\n@media (max-width: 767px) {\n  .navbar-inverse .navbar-nav .open .dropdown-menu > .dropdown-header {\n    border-color: #080808;\n  }\n  .navbar-inverse .navbar-nav .open .dropdown-menu .divider {\n    background-color: #080808;\n  }\n  .navbar-inverse .navbar-nav .open .dropdown-menu > li > a {\n    color: #9d9d9d;\n  }\n  .navbar-inverse .navbar-nav .open .dropdown-menu > li > a:hover,\n  .navbar-inverse .navbar-nav .open .dropdown-menu > li > a:focus {\n    color: #fff;\n    background-color: transparent;\n  }\n  .navbar-inverse .navbar-nav .open .dropdown-menu > .active > a,\n  .navbar-inverse .navbar-nav .open .dropdown-menu > .active > a:hover,\n  .navbar-inverse .navbar-nav .open .dropdown-menu > .active > a:focus {\n    color: #fff;\n    background-color: #080808;\n  }\n  .navbar-inverse .navbar-nav .open .dropdown-menu > .disabled > a,\n  .navbar-inverse .navbar-nav .open .dropdown-menu > .disabled > a:hover,\n  .navbar-inverse .navbar-nav .open .dropdown-menu > .disabled > a:focus {\n    color: #444;\n    background-color: transparent;\n  }\n}\n.navbar-inverse .navbar-link {\n  color: #9d9d9d;\n}\n.navbar-inverse .navbar-link:hover {\n  color: #fff;\n}\n.navbar-inverse .btn-link {\n  color: #9d9d9d;\n}\n.navbar-inverse .btn-link:hover,\n.navbar-inverse .btn-link:focus {\n  color: #fff;\n}\n.navbar-inverse .btn-link[disabled]:hover,\nfieldset[disabled] .navbar-inverse .btn-link:hover,\n.navbar-inverse .btn-link[disabled]:focus,\nfieldset[disabled] .navbar-inverse .btn-link:focus {\n  color: #444;\n}\n.breadcrumb {\n  padding: 8px 15px;\n  margin-bottom: 20px;\n  list-style: none;\n  background-color: #f5f5f5;\n  border-radius: 4px;\n}\n.breadcrumb > li {\n  display: inline-block;\n}\n.breadcrumb > li + li:before {\n  content: \"/\\A0\";\n  padding: 0 5px;\n  color: #ccc;\n}\n.breadcrumb > .active {\n  color: #777777;\n}\n.pagination {\n  display: inline-block;\n  padding-left: 0;\n  margin: 20px 0;\n  border-radius: 4px;\n}\n.pagination > li {\n  display: inline;\n}\n.pagination > li > a,\n.pagination > li > span {\n  position: relative;\n  float: left;\n  padding: 6px 12px;\n  line-height: 1.42857143;\n  text-decoration: none;\n  color: #337ab7;\n  background-color: #fff;\n  border: 1px solid #ddd;\n  margin-left: -1px;\n}\n.pagination > li:first-child > a,\n.pagination > li:first-child > span {\n  margin-left: 0;\n  border-bottom-left-radius: 4px;\n  border-top-left-radius: 4px;\n}\n.pagination > li:last-child > a,\n.pagination > li:last-child > span {\n  border-bottom-right-radius: 4px;\n  border-top-right-radius: 4px;\n}\n.pagination > li > a:hover,\n.pagination > li > span:hover,\n.pagination > li > a:focus,\n.pagination > li > span:focus {\n  z-index: 2;\n  color: #23527c;\n  background-color: #eeeeee;\n  border-color: #ddd;\n}\n.pagination > .active > a,\n.pagination > .active > span,\n.pagination > .active > a:hover,\n.pagination > .active > span:hover,\n.pagination > .active > a:focus,\n.pagination > .active > span:focus {\n  z-index: 3;\n  color: #fff;\n  background-color: #337ab7;\n  border-color: #337ab7;\n  cursor: default;\n}\n.pagination > .disabled > span,\n.pagination > .disabled > span:hover,\n.pagination > .disabled > span:focus,\n.pagination > .disabled > a,\n.pagination > .disabled > a:hover,\n.pagination > .disabled > a:focus {\n  color: #777777;\n  background-color: #fff;\n  border-color: #ddd;\n  cursor: not-allowed;\n}\n.pagination-lg > li > a,\n.pagination-lg > li > span {\n  padding: 10px 16px;\n  font-size: 18px;\n  line-height: 1.3333333;\n}\n.pagination-lg > li:first-child > a,\n.pagination-lg > li:first-child > span {\n  border-bottom-left-radius: 6px;\n  border-top-left-radius: 6px;\n}\n.pagination-lg > li:last-child > a,\n.pagination-lg > li:last-child > span {\n  border-bottom-right-radius: 6px;\n  border-top-right-radius: 6px;\n}\n.pagination-sm > li > a,\n.pagination-sm > li > span {\n  padding: 5px 10px;\n  font-size: 12px;\n  line-height: 1.5;\n}\n.pagination-sm > li:first-child > a,\n.pagination-sm > li:first-child > span {\n  border-bottom-left-radius: 3px;\n  border-top-left-radius: 3px;\n}\n.pagination-sm > li:last-child > a,\n.pagination-sm > li:last-child > span {\n  border-bottom-right-radius: 3px;\n  border-top-right-radius: 3px;\n}\n.pager {\n  padding-left: 0;\n  margin: 20px 0;\n  list-style: none;\n  text-align: center;\n}\n.pager li {\n  display: inline;\n}\n.pager li > a,\n.pager li > span {\n  display: inline-block;\n  padding: 5px 14px;\n  background-color: #fff;\n  border: 1px solid #ddd;\n  border-radius: 15px;\n}\n.pager li > a:hover,\n.pager li > a:focus {\n  text-decoration: none;\n  background-color: #eeeeee;\n}\n.pager .next > a,\n.pager .next > span {\n  float: right;\n}\n.pager .previous > a,\n.pager .previous > span {\n  float: left;\n}\n.pager .disabled > a,\n.pager .disabled > a:hover,\n.pager .disabled > a:focus,\n.pager .disabled > span {\n  color: #777777;\n  background-color: #fff;\n  cursor: not-allowed;\n}\n.label {\n  display: inline;\n  padding: .2em .6em .3em;\n  font-size: 75%;\n  font-weight: bold;\n  line-height: 1;\n  color: #fff;\n  text-align: center;\n  white-space: nowrap;\n  vertical-align: baseline;\n  border-radius: .25em;\n}\na.label:hover,\na.label:focus {\n  color: #fff;\n  text-decoration: none;\n  cursor: pointer;\n}\n.label:empty {\n  display: none;\n}\n.btn .label {\n  position: relative;\n  top: -1px;\n}\n.label-default {\n  background-color: #777777;\n}\n.label-default[href]:hover,\n.label-default[href]:focus {\n  background-color: #5e5e5e;\n}\n.label-primary {\n  background-color: #337ab7;\n}\n.label-primary[href]:hover,\n.label-primary[href]:focus {\n  background-color: #286090;\n}\n.label-success {\n  background-color: #5cb85c;\n}\n.label-success[href]:hover,\n.label-success[href]:focus {\n  background-color: #449d44;\n}\n.label-info {\n  background-color: #5bc0de;\n}\n.label-info[href]:hover,\n.label-info[href]:focus {\n  background-color: #31b0d5;\n}\n.label-warning {\n  background-color: #f0ad4e;\n}\n.label-warning[href]:hover,\n.label-warning[href]:focus {\n  background-color: #ec971f;\n}\n.label-danger {\n  background-color: #d9534f;\n}\n.label-danger[href]:hover,\n.label-danger[href]:focus {\n  background-color: #c9302c;\n}\n.badge {\n  display: inline-block;\n  min-width: 10px;\n  padding: 3px 7px;\n  font-size: 12px;\n  font-weight: bold;\n  color: #fff;\n  line-height: 1;\n  vertical-align: middle;\n  white-space: nowrap;\n  text-align: center;\n  background-color: #777777;\n  border-radius: 10px;\n}\n.badge:empty {\n  display: none;\n}\n.btn .badge {\n  position: relative;\n  top: -1px;\n}\n.btn-xs .badge,\n.btn-group-xs > .btn .badge {\n  top: 0;\n  padding: 1px 5px;\n}\na.badge:hover,\na.badge:focus {\n  color: #fff;\n  text-decoration: none;\n  cursor: pointer;\n}\n.list-group-item.active > .badge,\n.nav-pills > .active > a > .badge {\n  color: #337ab7;\n  background-color: #fff;\n}\n.list-group-item > .badge {\n  float: right;\n}\n.list-group-item > .badge + .badge {\n  margin-right: 5px;\n}\n.nav-pills > li > a > .badge {\n  margin-left: 3px;\n}\n.jumbotron {\n  padding-top: 30px;\n  padding-bottom: 30px;\n  margin-bottom: 30px;\n  color: inherit;\n  background-color: #eeeeee;\n}\n.jumbotron h1,\n.jumbotron .h1 {\n  color: inherit;\n}\n.jumbotron p {\n  margin-bottom: 15px;\n  font-size: 21px;\n  font-weight: 200;\n}\n.jumbotron > hr {\n  border-top-color: #d5d5d5;\n}\n.container .jumbotron,\n.container-fluid .jumbotron {\n  border-radius: 6px;\n  padding-left: 15px;\n  padding-right: 15px;\n}\n.jumbotron .container {\n  max-width: 100%;\n}\n@media screen and (min-width: 768px) {\n  .jumbotron {\n    padding-top: 48px;\n    padding-bottom: 48px;\n  }\n  .container .jumbotron,\n  .container-fluid .jumbotron {\n    padding-left: 60px;\n    padding-right: 60px;\n  }\n  .jumbotron h1,\n  .jumbotron .h1 {\n    font-size: 63px;\n  }\n}\n.thumbnail {\n  display: block;\n  padding: 4px;\n  margin-bottom: 20px;\n  line-height: 1.42857143;\n  background-color: #fff;\n  border: 1px solid #ddd;\n  border-radius: 4px;\n  -webkit-transition: border 0.2s ease-in-out;\n  -o-transition: border 0.2s ease-in-out;\n  transition: border 0.2s ease-in-out;\n}\n.thumbnail > img,\n.thumbnail a > img {\n  margin-left: auto;\n  margin-right: auto;\n}\na.thumbnail:hover,\na.thumbnail:focus,\na.thumbnail.active {\n  border-color: #337ab7;\n}\n.thumbnail .caption {\n  padding: 9px;\n  color: #333333;\n}\n.alert {\n  padding: 15px;\n  margin-bottom: 20px;\n  border: 1px solid transparent;\n  border-radius: 4px;\n}\n.alert h4 {\n  margin-top: 0;\n  color: inherit;\n}\n.alert .alert-link {\n  font-weight: bold;\n}\n.alert > p,\n.alert > ul {\n  margin-bottom: 0;\n}\n.alert > p + p {\n  margin-top: 5px;\n}\n.alert-dismissable,\n.alert-dismissible {\n  padding-right: 35px;\n}\n.alert-dismissable .close,\n.alert-dismissible .close {\n  position: relative;\n  top: -2px;\n  right: -21px;\n  color: inherit;\n}\n.alert-success {\n  background-color: #dff0d8;\n  border-color: #d6e9c6;\n  color: #3c763d;\n}\n.alert-success hr {\n  border-top-color: #c9e2b3;\n}\n.alert-success .alert-link {\n  color: #2b542c;\n}\n.alert-info {\n  background-color: #d9edf7;\n  border-color: #bce8f1;\n  color: #31708f;\n}\n.alert-info hr {\n  border-top-color: #a6e1ec;\n}\n.alert-info .alert-link {\n  color: #245269;\n}\n.alert-warning {\n  background-color: #fcf8e3;\n  border-color: #faebcc;\n  color: #8a6d3b;\n}\n.alert-warning hr {\n  border-top-color: #f7e1b5;\n}\n.alert-warning .alert-link {\n  color: #66512c;\n}\n.alert-danger {\n  background-color: #f2dede;\n  border-color: #ebccd1;\n  color: #a94442;\n}\n.alert-danger hr {\n  border-top-color: #e4b9c0;\n}\n.alert-danger .alert-link {\n  color: #843534;\n}\n@-webkit-keyframes progress-bar-stripes {\n  from {\n    background-position: 40px 0;\n  }\n  to {\n    background-position: 0 0;\n  }\n}\n@keyframes progress-bar-stripes {\n  from {\n    background-position: 40px 0;\n  }\n  to {\n    background-position: 0 0;\n  }\n}\n.progress {\n  overflow: hidden;\n  height: 20px;\n  margin-bottom: 20px;\n  background-color: #f5f5f5;\n  border-radius: 4px;\n  -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);\n  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);\n}\n.progress-bar {\n  float: left;\n  width: 0%;\n  height: 100%;\n  font-size: 12px;\n  line-height: 20px;\n  color: #fff;\n  text-align: center;\n  background-color: #337ab7;\n  -webkit-box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15);\n  box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15);\n  -webkit-transition: width 0.6s ease;\n  -o-transition: width 0.6s ease;\n  transition: width 0.6s ease;\n}\n.progress-striped .progress-bar,\n.progress-bar-striped {\n  background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);\n  background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);\n  background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);\n  background-size: 40px 40px;\n}\n.progress.active .progress-bar,\n.progress-bar.active {\n  -webkit-animation: progress-bar-stripes 2s linear infinite;\n  -o-animation: progress-bar-stripes 2s linear infinite;\n  animation: progress-bar-stripes 2s linear infinite;\n}\n.progress-bar-success {\n  background-color: #5cb85c;\n}\n.progress-striped .progress-bar-success {\n  background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);\n  background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);\n  background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);\n}\n.progress-bar-info {\n  background-color: #5bc0de;\n}\n.progress-striped .progress-bar-info {\n  background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);\n  background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);\n  background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);\n}\n.progress-bar-warning {\n  background-color: #f0ad4e;\n}\n.progress-striped .progress-bar-warning {\n  background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);\n  background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);\n  background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);\n}\n.progress-bar-danger {\n  background-color: #d9534f;\n}\n.progress-striped .progress-bar-danger {\n  background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);\n  background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);\n  background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);\n}\n.media {\n  margin-top: 15px;\n}\n.media:first-child {\n  margin-top: 0;\n}\n.media,\n.media-body {\n  zoom: 1;\n  overflow: hidden;\n}\n.media-body {\n  width: 10000px;\n}\n.media-object {\n  display: block;\n}\n.media-object.img-thumbnail {\n  max-width: none;\n}\n.media-right,\n.media > .pull-right {\n  padding-left: 10px;\n}\n.media-left,\n.media > .pull-left {\n  padding-right: 10px;\n}\n.media-left,\n.media-right,\n.media-body {\n  display: table-cell;\n  vertical-align: top;\n}\n.media-middle {\n  vertical-align: middle;\n}\n.media-bottom {\n  vertical-align: bottom;\n}\n.media-heading {\n  margin-top: 0;\n  margin-bottom: 5px;\n}\n.media-list {\n  padding-left: 0;\n  list-style: none;\n}\n.list-group {\n  margin-bottom: 20px;\n  padding-left: 0;\n}\n.list-group-item {\n  position: relative;\n  display: block;\n  padding: 10px 15px;\n  margin-bottom: -1px;\n  background-color: #fff;\n  border: 1px solid #ddd;\n}\n.list-group-item:first-child {\n  border-top-right-radius: 4px;\n  border-top-left-radius: 4px;\n}\n.list-group-item:last-child {\n  margin-bottom: 0;\n  border-bottom-right-radius: 4px;\n  border-bottom-left-radius: 4px;\n}\na.list-group-item,\nbutton.list-group-item {\n  color: #555;\n}\na.list-group-item .list-group-item-heading,\nbutton.list-group-item .list-group-item-heading {\n  color: #333;\n}\na.list-group-item:hover,\nbutton.list-group-item:hover,\na.list-group-item:focus,\nbutton.list-group-item:focus {\n  text-decoration: none;\n  color: #555;\n  background-color: #f5f5f5;\n}\nbutton.list-group-item {\n  width: 100%;\n  text-align: left;\n}\n.list-group-item.disabled,\n.list-group-item.disabled:hover,\n.list-group-item.disabled:focus {\n  background-color: #eeeeee;\n  color: #777777;\n  cursor: not-allowed;\n}\n.list-group-item.disabled .list-group-item-heading,\n.list-group-item.disabled:hover .list-group-item-heading,\n.list-group-item.disabled:focus .list-group-item-heading {\n  color: inherit;\n}\n.list-group-item.disabled .list-group-item-text,\n.list-group-item.disabled:hover .list-group-item-text,\n.list-group-item.disabled:focus .list-group-item-text {\n  color: #777777;\n}\n.list-group-item.active,\n.list-group-item.active:hover,\n.list-group-item.active:focus {\n  z-index: 2;\n  color: #fff;\n  background-color: #337ab7;\n  border-color: #337ab7;\n}\n.list-group-item.active .list-group-item-heading,\n.list-group-item.active:hover .list-group-item-heading,\n.list-group-item.active:focus .list-group-item-heading,\n.list-group-item.active .list-group-item-heading > small,\n.list-group-item.active:hover .list-group-item-heading > small,\n.list-group-item.active:focus .list-group-item-heading > small,\n.list-group-item.active .list-group-item-heading > .small,\n.list-group-item.active:hover .list-group-item-heading > .small,\n.list-group-item.active:focus .list-group-item-heading > .small {\n  color: inherit;\n}\n.list-group-item.active .list-group-item-text,\n.list-group-item.active:hover .list-group-item-text,\n.list-group-item.active:focus .list-group-item-text {\n  color: #c7ddef;\n}\n.list-group-item-success {\n  color: #3c763d;\n  background-color: #dff0d8;\n}\na.list-group-item-success,\nbutton.list-group-item-success {\n  color: #3c763d;\n}\na.list-group-item-success .list-group-item-heading,\nbutton.list-group-item-success .list-group-item-heading {\n  color: inherit;\n}\na.list-group-item-success:hover,\nbutton.list-group-item-success:hover,\na.list-group-item-success:focus,\nbutton.list-group-item-success:focus {\n  color: #3c763d;\n  background-color: #d0e9c6;\n}\na.list-group-item-success.active,\nbutton.list-group-item-success.active,\na.list-group-item-success.active:hover,\nbutton.list-group-item-success.active:hover,\na.list-group-item-success.active:focus,\nbutton.list-group-item-success.active:focus {\n  color: #fff;\n  background-color: #3c763d;\n  border-color: #3c763d;\n}\n.list-group-item-info {\n  color: #31708f;\n  background-color: #d9edf7;\n}\na.list-group-item-info,\nbutton.list-group-item-info {\n  color: #31708f;\n}\na.list-group-item-info .list-group-item-heading,\nbutton.list-group-item-info .list-group-item-heading {\n  color: inherit;\n}\na.list-group-item-info:hover,\nbutton.list-group-item-info:hover,\na.list-group-item-info:focus,\nbutton.list-group-item-info:focus {\n  color: #31708f;\n  background-color: #c4e3f3;\n}\na.list-group-item-info.active,\nbutton.list-group-item-info.active,\na.list-group-item-info.active:hover,\nbutton.list-group-item-info.active:hover,\na.list-group-item-info.active:focus,\nbutton.list-group-item-info.active:focus {\n  color: #fff;\n  background-color: #31708f;\n  border-color: #31708f;\n}\n.list-group-item-warning {\n  color: #8a6d3b;\n  background-color: #fcf8e3;\n}\na.list-group-item-warning,\nbutton.list-group-item-warning {\n  color: #8a6d3b;\n}\na.list-group-item-warning .list-group-item-heading,\nbutton.list-group-item-warning .list-group-item-heading {\n  color: inherit;\n}\na.list-group-item-warning:hover,\nbutton.list-group-item-warning:hover,\na.list-group-item-warning:focus,\nbutton.list-group-item-warning:focus {\n  color: #8a6d3b;\n  background-color: #faf2cc;\n}\na.list-group-item-warning.active,\nbutton.list-group-item-warning.active,\na.list-group-item-warning.active:hover,\nbutton.list-group-item-warning.active:hover,\na.list-group-item-warning.active:focus,\nbutton.list-group-item-warning.active:focus {\n  color: #fff;\n  background-color: #8a6d3b;\n  border-color: #8a6d3b;\n}\n.list-group-item-danger {\n  color: #a94442;\n  background-color: #f2dede;\n}\na.list-group-item-danger,\nbutton.list-group-item-danger {\n  color: #a94442;\n}\na.list-group-item-danger .list-group-item-heading,\nbutton.list-group-item-danger .list-group-item-heading {\n  color: inherit;\n}\na.list-group-item-danger:hover,\nbutton.list-group-item-danger:hover,\na.list-group-item-danger:focus,\nbutton.list-group-item-danger:focus {\n  color: #a94442;\n  background-color: #ebcccc;\n}\na.list-group-item-danger.active,\nbutton.list-group-item-danger.active,\na.list-group-item-danger.active:hover,\nbutton.list-group-item-danger.active:hover,\na.list-group-item-danger.active:focus,\nbutton.list-group-item-danger.active:focus {\n  color: #fff;\n  background-color: #a94442;\n  border-color: #a94442;\n}\n.list-group-item-heading {\n  margin-top: 0;\n  margin-bottom: 5px;\n}\n.list-group-item-text {\n  margin-bottom: 0;\n  line-height: 1.3;\n}\n.panel {\n  margin-bottom: 20px;\n  background-color: #fff;\n  border: 1px solid transparent;\n  border-radius: 4px;\n  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);\n  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);\n}\n.panel-body {\n  padding: 15px;\n}\n.panel-heading {\n  padding: 10px 15px;\n  border-bottom: 1px solid transparent;\n  border-top-right-radius: 3px;\n  border-top-left-radius: 3px;\n}\n.panel-heading > .dropdown .dropdown-toggle {\n  color: inherit;\n}\n.panel-title {\n  margin-top: 0;\n  margin-bottom: 0;\n  font-size: 16px;\n  color: inherit;\n}\n.panel-title > a,\n.panel-title > small,\n.panel-title > .small,\n.panel-title > small > a,\n.panel-title > .small > a {\n  color: inherit;\n}\n.panel-footer {\n  padding: 10px 15px;\n  background-color: #f5f5f5;\n  border-top: 1px solid #ddd;\n  border-bottom-right-radius: 3px;\n  border-bottom-left-radius: 3px;\n}\n.panel > .list-group,\n.panel > .panel-collapse > .list-group {\n  margin-bottom: 0;\n}\n.panel > .list-group .list-group-item,\n.panel > .panel-collapse > .list-group .list-group-item {\n  border-width: 1px 0;\n  border-radius: 0;\n}\n.panel > .list-group:first-child .list-group-item:first-child,\n.panel > .panel-collapse > .list-group:first-child .list-group-item:first-child {\n  border-top: 0;\n  border-top-right-radius: 3px;\n  border-top-left-radius: 3px;\n}\n.panel > .list-group:last-child .list-group-item:last-child,\n.panel > .panel-collapse > .list-group:last-child .list-group-item:last-child {\n  border-bottom: 0;\n  border-bottom-right-radius: 3px;\n  border-bottom-left-radius: 3px;\n}\n.panel > .panel-heading + .panel-collapse > .list-group .list-group-item:first-child {\n  border-top-right-radius: 0;\n  border-top-left-radius: 0;\n}\n.panel-heading + .list-group .list-group-item:first-child {\n  border-top-width: 0;\n}\n.list-group + .panel-footer {\n  border-top-width: 0;\n}\n.panel > .table,\n.panel > .table-responsive > .table,\n.panel > .panel-collapse > .table {\n  margin-bottom: 0;\n}\n.panel > .table caption,\n.panel > .table-responsive > .table caption,\n.panel > .panel-collapse > .table caption {\n  padding-left: 15px;\n  padding-right: 15px;\n}\n.panel > .table:first-child,\n.panel > .table-responsive:first-child > .table:first-child {\n  border-top-right-radius: 3px;\n  border-top-left-radius: 3px;\n}\n.panel > .table:first-child > thead:first-child > tr:first-child,\n.panel > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child,\n.panel > .table:first-child > tbody:first-child > tr:first-child,\n.panel > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child {\n  border-top-left-radius: 3px;\n  border-top-right-radius: 3px;\n}\n.panel > .table:first-child > thead:first-child > tr:first-child td:first-child,\n.panel > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child td:first-child,\n.panel > .table:first-child > tbody:first-child > tr:first-child td:first-child,\n.panel > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child td:first-child,\n.panel > .table:first-child > thead:first-child > tr:first-child th:first-child,\n.panel > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child th:first-child,\n.panel > .table:first-child > tbody:first-child > tr:first-child th:first-child,\n.panel > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child th:first-child {\n  border-top-left-radius: 3px;\n}\n.panel > .table:first-child > thead:first-child > tr:first-child td:last-child,\n.panel > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child td:last-child,\n.panel > .table:first-child > tbody:first-child > tr:first-child td:last-child,\n.panel > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child td:last-child,\n.panel > .table:first-child > thead:first-child > tr:first-child th:last-child,\n.panel > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child th:last-child,\n.panel > .table:first-child > tbody:first-child > tr:first-child th:last-child,\n.panel > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child th:last-child {\n  border-top-right-radius: 3px;\n}\n.panel > .table:last-child,\n.panel > .table-responsive:last-child > .table:last-child {\n  border-bottom-right-radius: 3px;\n  border-bottom-left-radius: 3px;\n}\n.panel > .table:last-child > tbody:last-child > tr:last-child,\n.panel > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child,\n.panel > .table:last-child > tfoot:last-child > tr:last-child,\n.panel > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child {\n  border-bottom-left-radius: 3px;\n  border-bottom-right-radius: 3px;\n}\n.panel > .table:last-child > tbody:last-child > tr:last-child td:first-child,\n.panel > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child td:first-child,\n.panel > .table:last-child > tfoot:last-child > tr:last-child td:first-child,\n.panel > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child td:first-child,\n.panel > .table:last-child > tbody:last-child > tr:last-child th:first-child,\n.panel > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child th:first-child,\n.panel > .table:last-child > tfoot:last-child > tr:last-child th:first-child,\n.panel > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child th:first-child {\n  border-bottom-left-radius: 3px;\n}\n.panel > .table:last-child > tbody:last-child > tr:last-child td:last-child,\n.panel > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child td:last-child,\n.panel > .table:last-child > tfoot:last-child > tr:last-child td:last-child,\n.panel > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child td:last-child,\n.panel > .table:last-child > tbody:last-child > tr:last-child th:last-child,\n.panel > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child th:last-child,\n.panel > .table:last-child > tfoot:last-child > tr:last-child th:last-child,\n.panel > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child th:last-child {\n  border-bottom-right-radius: 3px;\n}\n.panel > .panel-body + .table,\n.panel > .panel-body + .table-responsive,\n.panel > .table + .panel-body,\n.panel > .table-responsive + .panel-body {\n  border-top: 1px solid #ddd;\n}\n.panel > .table > tbody:first-child > tr:first-child th,\n.panel > .table > tbody:first-child > tr:first-child td {\n  border-top: 0;\n}\n.panel > .table-bordered,\n.panel > .table-responsive > .table-bordered {\n  border: 0;\n}\n.panel > .table-bordered > thead > tr > th:first-child,\n.panel > .table-responsive > .table-bordered > thead > tr > th:first-child,\n.panel > .table-bordered > tbody > tr > th:first-child,\n.panel > .table-responsive > .table-bordered > tbody > tr > th:first-child,\n.panel > .table-bordered > tfoot > tr > th:first-child,\n.panel > .table-responsive > .table-bordered > tfoot > tr > th:first-child,\n.panel > .table-bordered > thead > tr > td:first-child,\n.panel > .table-responsive > .table-bordered > thead > tr > td:first-child,\n.panel > .table-bordered > tbody > tr > td:first-child,\n.panel > .table-responsive > .table-bordered > tbody > tr > td:first-child,\n.panel > .table-bordered > tfoot > tr > td:first-child,\n.panel > .table-responsive > .table-bordered > tfoot > tr > td:first-child {\n  border-left: 0;\n}\n.panel > .table-bordered > thead > tr > th:last-child,\n.panel > .table-responsive > .table-bordered > thead > tr > th:last-child,\n.panel > .table-bordered > tbody > tr > th:last-child,\n.panel > .table-responsive > .table-bordered > tbody > tr > th:last-child,\n.panel > .table-bordered > tfoot > tr > th:last-child,\n.panel > .table-responsive > .table-bordered > tfoot > tr > th:last-child,\n.panel > .table-bordered > thead > tr > td:last-child,\n.panel > .table-responsive > .table-bordered > thead > tr > td:last-child,\n.panel > .table-bordered > tbody > tr > td:last-child,\n.panel > .table-responsive > .table-bordered > tbody > tr > td:last-child,\n.panel > .table-bordered > tfoot > tr > td:last-child,\n.panel > .table-responsive > .table-bordered > tfoot > tr > td:last-child {\n  border-right: 0;\n}\n.panel > .table-bordered > thead > tr:first-child > td,\n.panel > .table-responsive > .table-bordered > thead > tr:first-child > td,\n.panel > .table-bordered > tbody > tr:first-child > td,\n.panel > .table-responsive > .table-bordered > tbody > tr:first-child > td,\n.panel > .table-bordered > thead > tr:first-child > th,\n.panel > .table-responsive > .table-bordered > thead > tr:first-child > th,\n.panel > .table-bordered > tbody > tr:first-child > th,\n.panel > .table-responsive > .table-bordered > tbody > tr:first-child > th {\n  border-bottom: 0;\n}\n.panel > .table-bordered > tbody > tr:last-child > td,\n.panel > .table-responsive > .table-bordered > tbody > tr:last-child > td,\n.panel > .table-bordered > tfoot > tr:last-child > td,\n.panel > .table-responsive > .table-bordered > tfoot > tr:last-child > td,\n.panel > .table-bordered > tbody > tr:last-child > th,\n.panel > .table-responsive > .table-bordered > tbody > tr:last-child > th,\n.panel > .table-bordered > tfoot > tr:last-child > th,\n.panel > .table-responsive > .table-bordered > tfoot > tr:last-child > th {\n  border-bottom: 0;\n}\n.panel > .table-responsive {\n  border: 0;\n  margin-bottom: 0;\n}\n.panel-group {\n  margin-bottom: 20px;\n}\n.panel-group .panel {\n  margin-bottom: 0;\n  border-radius: 4px;\n}\n.panel-group .panel + .panel {\n  margin-top: 5px;\n}\n.panel-group .panel-heading {\n  border-bottom: 0;\n}\n.panel-group .panel-heading + .panel-collapse > .panel-body,\n.panel-group .panel-heading + .panel-collapse > .list-group {\n  border-top: 1px solid #ddd;\n}\n.panel-group .panel-footer {\n  border-top: 0;\n}\n.panel-group .panel-footer + .panel-collapse .panel-body {\n  border-bottom: 1px solid #ddd;\n}\n.panel-default {\n  border-color: #ddd;\n}\n.panel-default > .panel-heading {\n  color: #333333;\n  background-color: #f5f5f5;\n  border-color: #ddd;\n}\n.panel-default > .panel-heading + .panel-collapse > .panel-body {\n  border-top-color: #ddd;\n}\n.panel-default > .panel-heading .badge {\n  color: #f5f5f5;\n  background-color: #333333;\n}\n.panel-default > .panel-footer + .panel-collapse > .panel-body {\n  border-bottom-color: #ddd;\n}\n.panel-primary {\n  border-color: #337ab7;\n}\n.panel-primary > .panel-heading {\n  color: #fff;\n  background-color: #337ab7;\n  border-color: #337ab7;\n}\n.panel-primary > .panel-heading + .panel-collapse > .panel-body {\n  border-top-color: #337ab7;\n}\n.panel-primary > .panel-heading .badge {\n  color: #337ab7;\n  background-color: #fff;\n}\n.panel-primary > .panel-footer + .panel-collapse > .panel-body {\n  border-bottom-color: #337ab7;\n}\n.panel-success {\n  border-color: #d6e9c6;\n}\n.panel-success > .panel-heading {\n  color: #3c763d;\n  background-color: #dff0d8;\n  border-color: #d6e9c6;\n}\n.panel-success > .panel-heading + .panel-collapse > .panel-body {\n  border-top-color: #d6e9c6;\n}\n.panel-success > .panel-heading .badge {\n  color: #dff0d8;\n  background-color: #3c763d;\n}\n.panel-success > .panel-footer + .panel-collapse > .panel-body {\n  border-bottom-color: #d6e9c6;\n}\n.panel-info {\n  border-color: #bce8f1;\n}\n.panel-info > .panel-heading {\n  color: #31708f;\n  background-color: #d9edf7;\n  border-color: #bce8f1;\n}\n.panel-info > .panel-heading + .panel-collapse > .panel-body {\n  border-top-color: #bce8f1;\n}\n.panel-info > .panel-heading .badge {\n  color: #d9edf7;\n  background-color: #31708f;\n}\n.panel-info > .panel-footer + .panel-collapse > .panel-body {\n  border-bottom-color: #bce8f1;\n}\n.panel-warning {\n  border-color: #faebcc;\n}\n.panel-warning > .panel-heading {\n  color: #8a6d3b;\n  background-color: #fcf8e3;\n  border-color: #faebcc;\n}\n.panel-warning > .panel-heading + .panel-collapse > .panel-body {\n  border-top-color: #faebcc;\n}\n.panel-warning > .panel-heading .badge {\n  color: #fcf8e3;\n  background-color: #8a6d3b;\n}\n.panel-warning > .panel-footer + .panel-collapse > .panel-body {\n  border-bottom-color: #faebcc;\n}\n.panel-danger {\n  border-color: #ebccd1;\n}\n.panel-danger > .panel-heading {\n  color: #a94442;\n  background-color: #f2dede;\n  border-color: #ebccd1;\n}\n.panel-danger > .panel-heading + .panel-collapse > .panel-body {\n  border-top-color: #ebccd1;\n}\n.panel-danger > .panel-heading .badge {\n  color: #f2dede;\n  background-color: #a94442;\n}\n.panel-danger > .panel-footer + .panel-collapse > .panel-body {\n  border-bottom-color: #ebccd1;\n}\n.well {\n  min-height: 20px;\n  padding: 19px;\n  margin-bottom: 20px;\n  background-color: #f5f5f5;\n  border: 1px solid #e3e3e3;\n  border-radius: 4px;\n  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);\n  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);\n}\n.well blockquote {\n  border-color: #ddd;\n  border-color: rgba(0, 0, 0, 0.15);\n}\n.well-lg {\n  padding: 24px;\n  border-radius: 6px;\n}\n.well-sm {\n  padding: 9px;\n  border-radius: 3px;\n}\n.close {\n  float: right;\n  font-size: 21px;\n  font-weight: bold;\n  line-height: 1;\n  color: #000;\n  text-shadow: 0 1px 0 #fff;\n  opacity: 0.2;\n  filter: alpha(opacity=20);\n}\n.close:hover,\n.close:focus {\n  color: #000;\n  text-decoration: none;\n  cursor: pointer;\n  opacity: 0.5;\n  filter: alpha(opacity=50);\n}\nbutton.close {\n  padding: 0;\n  cursor: pointer;\n  background: transparent;\n  border: 0;\n  -webkit-appearance: none;\n}\n.modal-open {\n  overflow: hidden;\n}\n.modal {\n  display: none;\n  overflow: hidden;\n  position: fixed;\n  top: 0;\n  right: 0;\n  bottom: 0;\n  left: 0;\n  z-index: 1050;\n  -webkit-overflow-scrolling: touch;\n  outline: 0;\n}\n.modal.fade .modal-dialog {\n  -webkit-transform: translate(0, -25%);\n  -ms-transform: translate(0, -25%);\n  -o-transform: translate(0, -25%);\n  transform: translate(0, -25%);\n  -webkit-transition: -webkit-transform 0.3s ease-out;\n  -moz-transition: -moz-transform 0.3s ease-out;\n  -o-transition: -o-transform 0.3s ease-out;\n  transition: transform 0.3s ease-out;\n}\n.modal.in .modal-dialog {\n  -webkit-transform: translate(0, 0);\n  -ms-transform: translate(0, 0);\n  -o-transform: translate(0, 0);\n  transform: translate(0, 0);\n}\n.modal-open .modal {\n  overflow-x: hidden;\n  overflow-y: auto;\n}\n.modal-dialog {\n  position: relative;\n  width: auto;\n  margin: 10px;\n}\n.modal-content {\n  position: relative;\n  background-color: #fff;\n  border: 1px solid #999;\n  border: 1px solid rgba(0, 0, 0, 0.2);\n  border-radius: 6px;\n  -webkit-box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);\n  box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);\n  background-clip: padding-box;\n  outline: 0;\n}\n.modal-backdrop {\n  position: fixed;\n  top: 0;\n  right: 0;\n  bottom: 0;\n  left: 0;\n  z-index: 1040;\n  background-color: #000;\n}\n.modal-backdrop.fade {\n  opacity: 0;\n  filter: alpha(opacity=0);\n}\n.modal-backdrop.in {\n  opacity: 0.5;\n  filter: alpha(opacity=50);\n}\n.modal-header {\n  padding: 15px;\n  border-bottom: 1px solid #e5e5e5;\n}\n.modal-header .close {\n  margin-top: -2px;\n}\n.modal-title {\n  margin: 0;\n  line-height: 1.42857143;\n}\n.modal-body {\n  position: relative;\n  padding: 15px;\n}\n.modal-footer {\n  padding: 15px;\n  text-align: right;\n  border-top: 1px solid #e5e5e5;\n}\n.modal-footer .btn + .btn {\n  margin-left: 5px;\n  margin-bottom: 0;\n}\n.modal-footer .btn-group .btn + .btn {\n  margin-left: -1px;\n}\n.modal-footer .btn-block + .btn-block {\n  margin-left: 0;\n}\n.modal-scrollbar-measure {\n  position: absolute;\n  top: -9999px;\n  width: 50px;\n  height: 50px;\n  overflow: scroll;\n}\n@media (min-width: 768px) {\n  .modal-dialog {\n    width: 600px;\n    margin: 30px auto;\n  }\n  .modal-content {\n    -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);\n    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);\n  }\n  .modal-sm {\n    width: 300px;\n  }\n}\n@media (min-width: 992px) {\n  .modal-lg {\n    width: 900px;\n  }\n}\n.tooltip {\n  position: absolute;\n  z-index: 1070;\n  display: block;\n  font-family: \"Helvetica Neue\", Helvetica, Arial, sans-serif;\n  font-style: normal;\n  font-weight: normal;\n  letter-spacing: normal;\n  line-break: auto;\n  line-height: 1.42857143;\n  text-align: left;\n  text-align: start;\n  text-decoration: none;\n  text-shadow: none;\n  text-transform: none;\n  white-space: normal;\n  word-break: normal;\n  word-spacing: normal;\n  word-wrap: normal;\n  font-size: 12px;\n  opacity: 0;\n  filter: alpha(opacity=0);\n}\n.tooltip.in {\n  opacity: 0.9;\n  filter: alpha(opacity=90);\n}\n.tooltip.top {\n  margin-top: -3px;\n  padding: 5px 0;\n}\n.tooltip.right {\n  margin-left: 3px;\n  padding: 0 5px;\n}\n.tooltip.bottom {\n  margin-top: 3px;\n  padding: 5px 0;\n}\n.tooltip.left {\n  margin-left: -3px;\n  padding: 0 5px;\n}\n.tooltip-inner {\n  max-width: 200px;\n  padding: 3px 8px;\n  color: #fff;\n  text-align: center;\n  background-color: #000;\n  border-radius: 4px;\n}\n.tooltip-arrow {\n  position: absolute;\n  width: 0;\n  height: 0;\n  border-color: transparent;\n  border-style: solid;\n}\n.tooltip.top .tooltip-arrow {\n  bottom: 0;\n  left: 50%;\n  margin-left: -5px;\n  border-width: 5px 5px 0;\n  border-top-color: #000;\n}\n.tooltip.top-left .tooltip-arrow {\n  bottom: 0;\n  right: 5px;\n  margin-bottom: -5px;\n  border-width: 5px 5px 0;\n  border-top-color: #000;\n}\n.tooltip.top-right .tooltip-arrow {\n  bottom: 0;\n  left: 5px;\n  margin-bottom: -5px;\n  border-width: 5px 5px 0;\n  border-top-color: #000;\n}\n.tooltip.right .tooltip-arrow {\n  top: 50%;\n  left: 0;\n  margin-top: -5px;\n  border-width: 5px 5px 5px 0;\n  border-right-color: #000;\n}\n.tooltip.left .tooltip-arrow {\n  top: 50%;\n  right: 0;\n  margin-top: -5px;\n  border-width: 5px 0 5px 5px;\n  border-left-color: #000;\n}\n.tooltip.bottom .tooltip-arrow {\n  top: 0;\n  left: 50%;\n  margin-left: -5px;\n  border-width: 0 5px 5px;\n  border-bottom-color: #000;\n}\n.tooltip.bottom-left .tooltip-arrow {\n  top: 0;\n  right: 5px;\n  margin-top: -5px;\n  border-width: 0 5px 5px;\n  border-bottom-color: #000;\n}\n.tooltip.bottom-right .tooltip-arrow {\n  top: 0;\n  left: 5px;\n  margin-top: -5px;\n  border-width: 0 5px 5px;\n  border-bottom-color: #000;\n}\n.popover {\n  position: absolute;\n  top: 0;\n  left: 0;\n  z-index: 1060;\n  display: none;\n  max-width: 276px;\n  padding: 1px;\n  font-family: \"Helvetica Neue\", Helvetica, Arial, sans-serif;\n  font-style: normal;\n  font-weight: normal;\n  letter-spacing: normal;\n  line-break: auto;\n  line-height: 1.42857143;\n  text-align: left;\n  text-align: start;\n  text-decoration: none;\n  text-shadow: none;\n  text-transform: none;\n  white-space: normal;\n  word-break: normal;\n  word-spacing: normal;\n  word-wrap: normal;\n  font-size: 14px;\n  background-color: #fff;\n  background-clip: padding-box;\n  border: 1px solid #ccc;\n  border: 1px solid rgba(0, 0, 0, 0.2);\n  border-radius: 6px;\n  -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);\n  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);\n}\n.popover.top {\n  margin-top: -10px;\n}\n.popover.right {\n  margin-left: 10px;\n}\n.popover.bottom {\n  margin-top: 10px;\n}\n.popover.left {\n  margin-left: -10px;\n}\n.popover-title {\n  margin: 0;\n  padding: 8px 14px;\n  font-size: 14px;\n  background-color: #f7f7f7;\n  border-bottom: 1px solid #ebebeb;\n  border-radius: 5px 5px 0 0;\n}\n.popover-content {\n  padding: 9px 14px;\n}\n.popover > .arrow,\n.popover > .arrow:after {\n  position: absolute;\n  display: block;\n  width: 0;\n  height: 0;\n  border-color: transparent;\n  border-style: solid;\n}\n.popover > .arrow {\n  border-width: 11px;\n}\n.popover > .arrow:after {\n  border-width: 10px;\n  content: \"\";\n}\n.popover.top > .arrow {\n  left: 50%;\n  margin-left: -11px;\n  border-bottom-width: 0;\n  border-top-color: #999999;\n  border-top-color: rgba(0, 0, 0, 0.25);\n  bottom: -11px;\n}\n.popover.top > .arrow:after {\n  content: \" \";\n  bottom: 1px;\n  margin-left: -10px;\n  border-bottom-width: 0;\n  border-top-color: #fff;\n}\n.popover.right > .arrow {\n  top: 50%;\n  left: -11px;\n  margin-top: -11px;\n  border-left-width: 0;\n  border-right-color: #999999;\n  border-right-color: rgba(0, 0, 0, 0.25);\n}\n.popover.right > .arrow:after {\n  content: \" \";\n  left: 1px;\n  bottom: -10px;\n  border-left-width: 0;\n  border-right-color: #fff;\n}\n.popover.bottom > .arrow {\n  left: 50%;\n  margin-left: -11px;\n  border-top-width: 0;\n  border-bottom-color: #999999;\n  border-bottom-color: rgba(0, 0, 0, 0.25);\n  top: -11px;\n}\n.popover.bottom > .arrow:after {\n  content: \" \";\n  top: 1px;\n  margin-left: -10px;\n  border-top-width: 0;\n  border-bottom-color: #fff;\n}\n.popover.left > .arrow {\n  top: 50%;\n  right: -11px;\n  margin-top: -11px;\n  border-right-width: 0;\n  border-left-color: #999999;\n  border-left-color: rgba(0, 0, 0, 0.25);\n}\n.popover.left > .arrow:after {\n  content: \" \";\n  right: 1px;\n  border-right-width: 0;\n  border-left-color: #fff;\n  bottom: -10px;\n}\n.carousel {\n  position: relative;\n}\n.carousel-inner {\n  position: relative;\n  overflow: hidden;\n  width: 100%;\n}\n.carousel-inner > .item {\n  display: none;\n  position: relative;\n  -webkit-transition: 0.6s ease-in-out left;\n  -o-transition: 0.6s ease-in-out left;\n  transition: 0.6s ease-in-out left;\n}\n.carousel-inner > .item > img,\n.carousel-inner > .item > a > img {\n  line-height: 1;\n}\n@media all and (transform-3d), (-webkit-transform-3d) {\n  .carousel-inner > .item {\n    -webkit-transition: -webkit-transform 0.6s ease-in-out;\n    -moz-transition: -moz-transform 0.6s ease-in-out;\n    -o-transition: -o-transform 0.6s ease-in-out;\n    transition: transform 0.6s ease-in-out;\n    -webkit-backface-visibility: hidden;\n    -moz-backface-visibility: hidden;\n    backface-visibility: hidden;\n    -webkit-perspective: 1000px;\n    -moz-perspective: 1000px;\n    perspective: 1000px;\n  }\n  .carousel-inner > .item.next,\n  .carousel-inner > .item.active.right {\n    -webkit-transform: translate3d(100%, 0, 0);\n    transform: translate3d(100%, 0, 0);\n    left: 0;\n  }\n  .carousel-inner > .item.prev,\n  .carousel-inner > .item.active.left {\n    -webkit-transform: translate3d(-100%, 0, 0);\n    transform: translate3d(-100%, 0, 0);\n    left: 0;\n  }\n  .carousel-inner > .item.next.left,\n  .carousel-inner > .item.prev.right,\n  .carousel-inner > .item.active {\n    -webkit-transform: translate3d(0, 0, 0);\n    transform: translate3d(0, 0, 0);\n    left: 0;\n  }\n}\n.carousel-inner > .active,\n.carousel-inner > .next,\n.carousel-inner > .prev {\n  display: block;\n}\n.carousel-inner > .active {\n  left: 0;\n}\n.carousel-inner > .next,\n.carousel-inner > .prev {\n  position: absolute;\n  top: 0;\n  width: 100%;\n}\n.carousel-inner > .next {\n  left: 100%;\n}\n.carousel-inner > .prev {\n  left: -100%;\n}\n.carousel-inner > .next.left,\n.carousel-inner > .prev.right {\n  left: 0;\n}\n.carousel-inner > .active.left {\n  left: -100%;\n}\n.carousel-inner > .active.right {\n  left: 100%;\n}\n.carousel-control {\n  position: absolute;\n  top: 0;\n  left: 0;\n  bottom: 0;\n  width: 15%;\n  opacity: 0.5;\n  filter: alpha(opacity=50);\n  font-size: 20px;\n  color: #fff;\n  text-align: center;\n  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);\n  background-color: rgba(0, 0, 0, 0);\n}\n.carousel-control.left {\n  background-image: -webkit-linear-gradient(left, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.0001) 100%);\n  background-image: -o-linear-gradient(left, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.0001) 100%);\n  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.0001) 100%);\n  background-repeat: repeat-x;\n  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#80000000', endColorstr='#00000000', GradientType=1);\n}\n.carousel-control.right {\n  left: auto;\n  right: 0;\n  background-image: -webkit-linear-gradient(left, rgba(0, 0, 0, 0.0001) 0%, rgba(0, 0, 0, 0.5) 100%);\n  background-image: -o-linear-gradient(left, rgba(0, 0, 0, 0.0001) 0%, rgba(0, 0, 0, 0.5) 100%);\n  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.0001) 0%, rgba(0, 0, 0, 0.5) 100%);\n  background-repeat: repeat-x;\n  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#80000000', GradientType=1);\n}\n.carousel-control:hover,\n.carousel-control:focus {\n  outline: 0;\n  color: #fff;\n  text-decoration: none;\n  opacity: 0.9;\n  filter: alpha(opacity=90);\n}\n.carousel-control .icon-prev,\n.carousel-control .icon-next,\n.carousel-control .glyphicon-chevron-left,\n.carousel-control .glyphicon-chevron-right {\n  position: absolute;\n  top: 50%;\n  margin-top: -10px;\n  z-index: 5;\n  display: inline-block;\n}\n.carousel-control .icon-prev,\n.carousel-control .glyphicon-chevron-left {\n  left: 50%;\n  margin-left: -10px;\n}\n.carousel-control .icon-next,\n.carousel-control .glyphicon-chevron-right {\n  right: 50%;\n  margin-right: -10px;\n}\n.carousel-control .icon-prev,\n.carousel-control .icon-next {\n  width: 20px;\n  height: 20px;\n  line-height: 1;\n  font-family: serif;\n}\n.carousel-control .icon-prev:before {\n  content: '\\2039';\n}\n.carousel-control .icon-next:before {\n  content: '\\203A';\n}\n.carousel-indicators {\n  position: absolute;\n  bottom: 10px;\n  left: 50%;\n  z-index: 15;\n  width: 60%;\n  margin-left: -30%;\n  padding-left: 0;\n  list-style: none;\n  text-align: center;\n}\n.carousel-indicators li {\n  display: inline-block;\n  width: 10px;\n  height: 10px;\n  margin: 1px;\n  text-indent: -999px;\n  border: 1px solid #fff;\n  border-radius: 10px;\n  cursor: pointer;\n  background-color: #000 \\9;\n  background-color: rgba(0, 0, 0, 0);\n}\n.carousel-indicators .active {\n  margin: 0;\n  width: 12px;\n  height: 12px;\n  background-color: #fff;\n}\n.carousel-caption {\n  position: absolute;\n  left: 15%;\n  right: 15%;\n  bottom: 20px;\n  z-index: 10;\n  padding-top: 20px;\n  padding-bottom: 20px;\n  color: #fff;\n  text-align: center;\n  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);\n}\n.carousel-caption .btn {\n  text-shadow: none;\n}\n@media screen and (min-width: 768px) {\n  .carousel-control .glyphicon-chevron-left,\n  .carousel-control .glyphicon-chevron-right,\n  .carousel-control .icon-prev,\n  .carousel-control .icon-next {\n    width: 30px;\n    height: 30px;\n    margin-top: -10px;\n    font-size: 30px;\n  }\n  .carousel-control .glyphicon-chevron-left,\n  .carousel-control .icon-prev {\n    margin-left: -10px;\n  }\n  .carousel-control .glyphicon-chevron-right,\n  .carousel-control .icon-next {\n    margin-right: -10px;\n  }\n  .carousel-caption {\n    left: 20%;\n    right: 20%;\n    padding-bottom: 30px;\n  }\n  .carousel-indicators {\n    bottom: 20px;\n  }\n}\n.clearfix:before,\n.clearfix:after,\n.dl-horizontal dd:before,\n.dl-horizontal dd:after,\n.container:before,\n.container:after,\n.container-fluid:before,\n.container-fluid:after,\n.row:before,\n.row:after,\n.form-horizontal .form-group:before,\n.form-horizontal .form-group:after,\n.btn-toolbar:before,\n.btn-toolbar:after,\n.btn-group-vertical > .btn-group:before,\n.btn-group-vertical > .btn-group:after,\n.nav:before,\n.nav:after,\n.navbar:before,\n.navbar:after,\n.navbar-header:before,\n.navbar-header:after,\n.navbar-collapse:before,\n.navbar-collapse:after,\n.pager:before,\n.pager:after,\n.panel-body:before,\n.panel-body:after,\n.modal-header:before,\n.modal-header:after,\n.modal-footer:before,\n.modal-footer:after {\n  content: \" \";\n  display: table;\n}\n.clearfix:after,\n.dl-horizontal dd:after,\n.container:after,\n.container-fluid:after,\n.row:after,\n.form-horizontal .form-group:after,\n.btn-toolbar:after,\n.btn-group-vertical > .btn-group:after,\n.nav:after,\n.navbar:after,\n.navbar-header:after,\n.navbar-collapse:after,\n.pager:after,\n.panel-body:after,\n.modal-header:after,\n.modal-footer:after {\n  clear: both;\n}\n.center-block {\n  display: block;\n  margin-left: auto;\n  margin-right: auto;\n}\n.pull-right {\n  float: right !important;\n}\n.pull-left {\n  float: left !important;\n}\n.hide {\n  display: none !important;\n}\n.show {\n  display: block !important;\n}\n.invisible {\n  visibility: hidden;\n}\n.text-hide {\n  font: 0/0 a;\n  color: transparent;\n  text-shadow: none;\n  background-color: transparent;\n  border: 0;\n}\n.hidden {\n  display: none !important;\n}\n.affix {\n  position: fixed;\n}\n@-ms-viewport {\n  width: device-width;\n}\n.visible-xs,\n.visible-sm,\n.visible-md,\n.visible-lg {\n  display: none !important;\n}\n.visible-xs-block,\n.visible-xs-inline,\n.visible-xs-inline-block,\n.visible-sm-block,\n.visible-sm-inline,\n.visible-sm-inline-block,\n.visible-md-block,\n.visible-md-inline,\n.visible-md-inline-block,\n.visible-lg-block,\n.visible-lg-inline,\n.visible-lg-inline-block {\n  display: none !important;\n}\n@media (max-width: 767px) {\n  .visible-xs {\n    display: block !important;\n  }\n  table.visible-xs {\n    display: table !important;\n  }\n  tr.visible-xs {\n    display: table-row !important;\n  }\n  th.visible-xs,\n  td.visible-xs {\n    display: table-cell !important;\n  }\n}\n@media (max-width: 767px) {\n  .visible-xs-block {\n    display: block !important;\n  }\n}\n@media (max-width: 767px) {\n  .visible-xs-inline {\n    display: inline !important;\n  }\n}\n@media (max-width: 767px) {\n  .visible-xs-inline-block {\n    display: inline-block !important;\n  }\n}\n@media (min-width: 768px) and (max-width: 991px) {\n  .visible-sm {\n    display: block !important;\n  }\n  table.visible-sm {\n    display: table !important;\n  }\n  tr.visible-sm {\n    display: table-row !important;\n  }\n  th.visible-sm,\n  td.visible-sm {\n    display: table-cell !important;\n  }\n}\n@media (min-width: 768px) and (max-width: 991px) {\n  .visible-sm-block {\n    display: block !important;\n  }\n}\n@media (min-width: 768px) and (max-width: 991px) {\n  .visible-sm-inline {\n    display: inline !important;\n  }\n}\n@media (min-width: 768px) and (max-width: 991px) {\n  .visible-sm-inline-block {\n    display: inline-block !important;\n  }\n}\n@media (min-width: 992px) and (max-width: 1199px) {\n  .visible-md {\n    display: block !important;\n  }\n  table.visible-md {\n    display: table !important;\n  }\n  tr.visible-md {\n    display: table-row !important;\n  }\n  th.visible-md,\n  td.visible-md {\n    display: table-cell !important;\n  }\n}\n@media (min-width: 992px) and (max-width: 1199px) {\n  .visible-md-block {\n    display: block !important;\n  }\n}\n@media (min-width: 992px) and (max-width: 1199px) {\n  .visible-md-inline {\n    display: inline !important;\n  }\n}\n@media (min-width: 992px) and (max-width: 1199px) {\n  .visible-md-inline-block {\n    display: inline-block !important;\n  }\n}\n@media (min-width: 1200px) {\n  .visible-lg {\n    display: block !important;\n  }\n  table.visible-lg {\n    display: table !important;\n  }\n  tr.visible-lg {\n    display: table-row !important;\n  }\n  th.visible-lg,\n  td.visible-lg {\n    display: table-cell !important;\n  }\n}\n@media (min-width: 1200px) {\n  .visible-lg-block {\n    display: block !important;\n  }\n}\n@media (min-width: 1200px) {\n  .visible-lg-inline {\n    display: inline !important;\n  }\n}\n@media (min-width: 1200px) {\n  .visible-lg-inline-block {\n    display: inline-block !important;\n  }\n}\n@media (max-width: 767px) {\n  .hidden-xs {\n    display: none !important;\n  }\n}\n@media (min-width: 768px) and (max-width: 991px) {\n  .hidden-sm {\n    display: none !important;\n  }\n}\n@media (min-width: 992px) and (max-width: 1199px) {\n  .hidden-md {\n    display: none !important;\n  }\n}\n@media (min-width: 1200px) {\n  .hidden-lg {\n    display: none !important;\n  }\n}\n.visible-print {\n  display: none !important;\n}\n@media print {\n  .visible-print {\n    display: block !important;\n  }\n  table.visible-print {\n    display: table !important;\n  }\n  tr.visible-print {\n    display: table-row !important;\n  }\n  th.visible-print,\n  td.visible-print {\n    display: table-cell !important;\n  }\n}\n.visible-print-block {\n  display: none !important;\n}\n@media print {\n  .visible-print-block {\n    display: block !important;\n  }\n}\n.visible-print-inline {\n  display: none !important;\n}\n@media print {\n  .visible-print-inline {\n    display: inline !important;\n  }\n}\n.visible-print-inline-block {\n  display: none !important;\n}\n@media print {\n  .visible-print-inline-block {\n    display: inline-block !important;\n  }\n}\n@media print {\n  .hidden-print {\n    display: none !important;\n  }\n}\n", ""]);
-
+	exports.push([module.id, "/*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */\nhtml {\n  font-family: sans-serif;\n  -ms-text-size-adjust: 100%;\n  -webkit-text-size-adjust: 100%;\n}\nbody {\n  margin: 0;\n}\narticle,\naside,\ndetails,\nfigcaption,\nfigure,\nfooter,\nheader,\nhgroup,\nmain,\nmenu,\nnav,\nsection,\nsummary {\n  display: block;\n}\naudio,\ncanvas,\nprogress,\nvideo {\n  display: inline-block;\n  vertical-align: baseline;\n}\naudio:not([controls]) {\n  display: none;\n  height: 0;\n}\n[hidden],\ntemplate {\n  display: none;\n}\na {\n  background-color: transparent;\n}\na:active,\na:hover {\n  outline: 0;\n}\nabbr[title] {\n  border-bottom: 1px dotted;\n}\nb,\nstrong {\n  font-weight: bold;\n}\ndfn {\n  font-style: italic;\n}\nh1 {\n  font-size: 2em;\n  margin: 0.67em 0;\n}\nmark {\n  background: #ff0;\n  color: #000;\n}\nsmall {\n  font-size: 80%;\n}\nsub,\nsup {\n  font-size: 75%;\n  line-height: 0;\n  position: relative;\n  vertical-align: baseline;\n}\nsup {\n  top: -0.5em;\n}\nsub {\n  bottom: -0.25em;\n}\nimg {\n  border: 0;\n}\nsvg:not(:root) {\n  overflow: hidden;\n}\nfigure {\n  margin: 1em 40px;\n}\nhr {\n  box-sizing: content-box;\n  height: 0;\n}\npre {\n  overflow: auto;\n}\ncode,\nkbd,\npre,\nsamp {\n  font-family: monospace, monospace;\n  font-size: 1em;\n}\nbutton,\ninput,\noptgroup,\nselect,\ntextarea {\n  color: inherit;\n  font: inherit;\n  margin: 0;\n}\nbutton {\n  overflow: visible;\n}\nbutton,\nselect {\n  text-transform: none;\n}\nbutton,\nhtml input[type=\"button\"],\ninput[type=\"reset\"],\ninput[type=\"submit\"] {\n  -webkit-appearance: button;\n  cursor: pointer;\n}\nbutton[disabled],\nhtml input[disabled] {\n  cursor: default;\n}\nbutton::-moz-focus-inner,\ninput::-moz-focus-inner {\n  border: 0;\n  padding: 0;\n}\ninput {\n  line-height: normal;\n}\ninput[type=\"checkbox\"],\ninput[type=\"radio\"] {\n  box-sizing: border-box;\n  padding: 0;\n}\ninput[type=\"number\"]::-webkit-inner-spin-button,\ninput[type=\"number\"]::-webkit-outer-spin-button {\n  height: auto;\n}\ninput[type=\"search\"] {\n  -webkit-appearance: textfield;\n  box-sizing: content-box;\n}\ninput[type=\"search\"]::-webkit-search-cancel-button,\ninput[type=\"search\"]::-webkit-search-decoration {\n  -webkit-appearance: none;\n}\nfieldset {\n  border: 1px solid #c0c0c0;\n  margin: 0 2px;\n  padding: 0.35em 0.625em 0.75em;\n}\nlegend {\n  border: 0;\n  padding: 0;\n}\ntextarea {\n  overflow: auto;\n}\noptgroup {\n  font-weight: bold;\n}\ntable {\n  border-collapse: collapse;\n  border-spacing: 0;\n}\ntd,\nth {\n  padding: 0;\n}\n/*! Source: https://github.com/h5bp/html5-boilerplate/blob/master/src/css/main.css */\n@media print {\n  *,\n  *:before,\n  *:after {\n    background: transparent !important;\n    color: #000 !important;\n    box-shadow: none !important;\n    text-shadow: none !important;\n  }\n  a,\n  a:visited {\n    text-decoration: underline;\n  }\n  a[href]:after {\n    content: \" (\" attr(href) \")\";\n  }\n  abbr[title]:after {\n    content: \" (\" attr(title) \")\";\n  }\n  a[href^=\"#\"]:after,\n  a[href^=\"javascript:\"]:after {\n    content: \"\";\n  }\n  pre,\n  blockquote {\n    border: 1px solid #999;\n    page-break-inside: avoid;\n  }\n  thead {\n    display: table-header-group;\n  }\n  tr,\n  img {\n    page-break-inside: avoid;\n  }\n  img {\n    max-width: 100% !important;\n  }\n  p,\n  h2,\n  h3 {\n    orphans: 3;\n    widows: 3;\n  }\n  h2,\n  h3 {\n    page-break-after: avoid;\n  }\n  .navbar {\n    display: none;\n  }\n  .btn > .caret,\n  .dropup > .btn > .caret {\n    border-top-color: #000 !important;\n  }\n  .label {\n    border: 1px solid #000;\n  }\n  .table {\n    border-collapse: collapse !important;\n  }\n  .table td,\n  .table th {\n    background-color: #fff !important;\n  }\n  .table-bordered th,\n  .table-bordered td {\n    border: 1px solid #ddd !important;\n  }\n}\n* {\n  -webkit-box-sizing: border-box;\n  -moz-box-sizing: border-box;\n  box-sizing: border-box;\n}\n*:before,\n*:after {\n  -webkit-box-sizing: border-box;\n  -moz-box-sizing: border-box;\n  box-sizing: border-box;\n}\nhtml {\n  font-size: 10px;\n  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);\n}\nbody {\n  font-family: \"Helvetica Neue\", Helvetica, Arial, sans-serif;\n  font-size: 14px;\n  line-height: 1.42857143;\n  color: #333333;\n  background-color: #fff;\n}\ninput,\nbutton,\nselect,\ntextarea {\n  font-family: inherit;\n  font-size: inherit;\n  line-height: inherit;\n}\na {\n  color: #337ab7;\n  text-decoration: none;\n}\na:hover,\na:focus {\n  color: #23527c;\n  text-decoration: underline;\n}\na:focus {\n  outline: thin dotted;\n  outline: 5px auto -webkit-focus-ring-color;\n  outline-offset: -2px;\n}\nfigure {\n  margin: 0;\n}\nimg {\n  vertical-align: middle;\n}\n.img-responsive,\n.thumbnail > img,\n.thumbnail a > img,\n.carousel-inner > .item > img,\n.carousel-inner > .item > a > img {\n  display: block;\n  max-width: 100%;\n  height: auto;\n}\n.img-rounded {\n  border-radius: 6px;\n}\n.img-thumbnail {\n  padding: 4px;\n  line-height: 1.42857143;\n  background-color: #fff;\n  border: 1px solid #ddd;\n  border-radius: 4px;\n  -webkit-transition: all 0.2s ease-in-out;\n  -o-transition: all 0.2s ease-in-out;\n  transition: all 0.2s ease-in-out;\n  display: inline-block;\n  max-width: 100%;\n  height: auto;\n}\n.img-circle {\n  border-radius: 50%;\n}\nhr {\n  margin-top: 20px;\n  margin-bottom: 20px;\n  border: 0;\n  border-top: 1px solid #eeeeee;\n}\n.sr-only {\n  position: absolute;\n  width: 1px;\n  height: 1px;\n  margin: -1px;\n  padding: 0;\n  overflow: hidden;\n  clip: rect(0, 0, 0, 0);\n  border: 0;\n}\n.sr-only-focusable:active,\n.sr-only-focusable:focus {\n  position: static;\n  width: auto;\n  height: auto;\n  margin: 0;\n  overflow: visible;\n  clip: auto;\n}\n[role=\"button\"] {\n  cursor: pointer;\n}\nh1,\nh2,\nh3,\nh4,\nh5,\nh6,\n.h1,\n.h2,\n.h3,\n.h4,\n.h5,\n.h6 {\n  font-family: inherit;\n  font-weight: 500;\n  line-height: 1.1;\n  color: inherit;\n}\nh1 small,\nh2 small,\nh3 small,\nh4 small,\nh5 small,\nh6 small,\n.h1 small,\n.h2 small,\n.h3 small,\n.h4 small,\n.h5 small,\n.h6 small,\nh1 .small,\nh2 .small,\nh3 .small,\nh4 .small,\nh5 .small,\nh6 .small,\n.h1 .small,\n.h2 .small,\n.h3 .small,\n.h4 .small,\n.h5 .small,\n.h6 .small {\n  font-weight: normal;\n  line-height: 1;\n  color: #777777;\n}\nh1,\n.h1,\nh2,\n.h2,\nh3,\n.h3 {\n  margin-top: 20px;\n  margin-bottom: 10px;\n}\nh1 small,\n.h1 small,\nh2 small,\n.h2 small,\nh3 small,\n.h3 small,\nh1 .small,\n.h1 .small,\nh2 .small,\n.h2 .small,\nh3 .small,\n.h3 .small {\n  font-size: 65%;\n}\nh4,\n.h4,\nh5,\n.h5,\nh6,\n.h6 {\n  margin-top: 10px;\n  margin-bottom: 10px;\n}\nh4 small,\n.h4 small,\nh5 small,\n.h5 small,\nh6 small,\n.h6 small,\nh4 .small,\n.h4 .small,\nh5 .small,\n.h5 .small,\nh6 .small,\n.h6 .small {\n  font-size: 75%;\n}\nh1,\n.h1 {\n  font-size: 36px;\n}\nh2,\n.h2 {\n  font-size: 30px;\n}\nh3,\n.h3 {\n  font-size: 24px;\n}\nh4,\n.h4 {\n  font-size: 18px;\n}\nh5,\n.h5 {\n  font-size: 14px;\n}\nh6,\n.h6 {\n  font-size: 12px;\n}\np {\n  margin: 0 0 10px;\n}\n.lead {\n  margin-bottom: 20px;\n  font-size: 16px;\n  font-weight: 300;\n  line-height: 1.4;\n}\n@media (min-width: 768px) {\n  .lead {\n    font-size: 21px;\n  }\n}\nsmall,\n.small {\n  font-size: 85%;\n}\nmark,\n.mark {\n  background-color: #fcf8e3;\n  padding: .2em;\n}\n.text-left {\n  text-align: left;\n}\n.text-right {\n  text-align: right;\n}\n.text-center {\n  text-align: center;\n}\n.text-justify {\n  text-align: justify;\n}\n.text-nowrap {\n  white-space: nowrap;\n}\n.text-lowercase {\n  text-transform: lowercase;\n}\n.text-uppercase {\n  text-transform: uppercase;\n}\n.text-capitalize {\n  text-transform: capitalize;\n}\n.text-muted {\n  color: #777777;\n}\n.text-primary {\n  color: #337ab7;\n}\na.text-primary:hover,\na.text-primary:focus {\n  color: #286090;\n}\n.text-success {\n  color: #3c763d;\n}\na.text-success:hover,\na.text-success:focus {\n  color: #2b542c;\n}\n.text-info {\n  color: #31708f;\n}\na.text-info:hover,\na.text-info:focus {\n  color: #245269;\n}\n.text-warning {\n  color: #8a6d3b;\n}\na.text-warning:hover,\na.text-warning:focus {\n  color: #66512c;\n}\n.text-danger {\n  color: #a94442;\n}\na.text-danger:hover,\na.text-danger:focus {\n  color: #843534;\n}\n.bg-primary {\n  color: #fff;\n  background-color: #337ab7;\n}\na.bg-primary:hover,\na.bg-primary:focus {\n  background-color: #286090;\n}\n.bg-success {\n  background-color: #dff0d8;\n}\na.bg-success:hover,\na.bg-success:focus {\n  background-color: #c1e2b3;\n}\n.bg-info {\n  background-color: #d9edf7;\n}\na.bg-info:hover,\na.bg-info:focus {\n  background-color: #afd9ee;\n}\n.bg-warning {\n  background-color: #fcf8e3;\n}\na.bg-warning:hover,\na.bg-warning:focus {\n  background-color: #f7ecb5;\n}\n.bg-danger {\n  background-color: #f2dede;\n}\na.bg-danger:hover,\na.bg-danger:focus {\n  background-color: #e4b9b9;\n}\n.page-header {\n  padding-bottom: 9px;\n  margin: 40px 0 20px;\n  border-bottom: 1px solid #eeeeee;\n}\nul,\nol {\n  margin-top: 0;\n  margin-bottom: 10px;\n}\nul ul,\nol ul,\nul ol,\nol ol {\n  margin-bottom: 0;\n}\n.list-unstyled {\n  padding-left: 0;\n  list-style: none;\n}\n.list-inline {\n  padding-left: 0;\n  list-style: none;\n  margin-left: -5px;\n}\n.list-inline > li {\n  display: inline-block;\n  padding-left: 5px;\n  padding-right: 5px;\n}\ndl {\n  margin-top: 0;\n  margin-bottom: 20px;\n}\ndt,\ndd {\n  line-height: 1.42857143;\n}\ndt {\n  font-weight: bold;\n}\ndd {\n  margin-left: 0;\n}\n@media (min-width: 768px) {\n  .dl-horizontal dt {\n    float: left;\n    width: 160px;\n    clear: left;\n    text-align: right;\n    overflow: hidden;\n    text-overflow: ellipsis;\n    white-space: nowrap;\n  }\n  .dl-horizontal dd {\n    margin-left: 180px;\n  }\n}\nabbr[title],\nabbr[data-original-title] {\n  cursor: help;\n  border-bottom: 1px dotted #777777;\n}\n.initialism {\n  font-size: 90%;\n  text-transform: uppercase;\n}\nblockquote {\n  padding: 10px 20px;\n  margin: 0 0 20px;\n  font-size: 17.5px;\n  border-left: 5px solid #eeeeee;\n}\nblockquote p:last-child,\nblockquote ul:last-child,\nblockquote ol:last-child {\n  margin-bottom: 0;\n}\nblockquote footer,\nblockquote small,\nblockquote .small {\n  display: block;\n  font-size: 80%;\n  line-height: 1.42857143;\n  color: #777777;\n}\nblockquote footer:before,\nblockquote small:before,\nblockquote .small:before {\n  content: '\\2014   \\A0';\n}\n.blockquote-reverse,\nblockquote.pull-right {\n  padding-right: 15px;\n  padding-left: 0;\n  border-right: 5px solid #eeeeee;\n  border-left: 0;\n  text-align: right;\n}\n.blockquote-reverse footer:before,\nblockquote.pull-right footer:before,\n.blockquote-reverse small:before,\nblockquote.pull-right small:before,\n.blockquote-reverse .small:before,\nblockquote.pull-right .small:before {\n  content: '';\n}\n.blockquote-reverse footer:after,\nblockquote.pull-right footer:after,\n.blockquote-reverse small:after,\nblockquote.pull-right small:after,\n.blockquote-reverse .small:after,\nblockquote.pull-right .small:after {\n  content: '\\A0   \\2014';\n}\naddress {\n  margin-bottom: 20px;\n  font-style: normal;\n  line-height: 1.42857143;\n}\ncode,\nkbd,\npre,\nsamp {\n  font-family: Menlo, Monaco, Consolas, \"Courier New\", monospace;\n}\ncode {\n  padding: 2px 4px;\n  font-size: 90%;\n  color: #c7254e;\n  background-color: #f9f2f4;\n  border-radius: 4px;\n}\nkbd {\n  padding: 2px 4px;\n  font-size: 90%;\n  color: #fff;\n  background-color: #333;\n  border-radius: 3px;\n  box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.25);\n}\nkbd kbd {\n  padding: 0;\n  font-size: 100%;\n  font-weight: bold;\n  box-shadow: none;\n}\npre {\n  display: block;\n  padding: 9.5px;\n  margin: 0 0 10px;\n  font-size: 13px;\n  line-height: 1.42857143;\n  word-break: break-all;\n  word-wrap: break-word;\n  color: #333333;\n  background-color: #f5f5f5;\n  border: 1px solid #ccc;\n  border-radius: 4px;\n}\npre code {\n  padding: 0;\n  font-size: inherit;\n  color: inherit;\n  white-space: pre-wrap;\n  background-color: transparent;\n  border-radius: 0;\n}\n.pre-scrollable {\n  max-height: 340px;\n  overflow-y: scroll;\n}\n.container {\n  margin-right: auto;\n  margin-left: auto;\n  padding-left: 15px;\n  padding-right: 15px;\n}\n@media (min-width: 768px) {\n  .container {\n    width: 750px;\n  }\n}\n@media (min-width: 992px) {\n  .container {\n    width: 970px;\n  }\n}\n@media (min-width: 1200px) {\n  .container {\n    width: 1170px;\n  }\n}\n.container-fluid {\n  margin-right: auto;\n  margin-left: auto;\n  padding-left: 15px;\n  padding-right: 15px;\n}\n.row {\n  margin-left: -15px;\n  margin-right: -15px;\n}\n.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {\n  position: relative;\n  min-height: 1px;\n  padding-left: 15px;\n  padding-right: 15px;\n}\n.col-xs-1, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9, .col-xs-10, .col-xs-11, .col-xs-12 {\n  float: left;\n}\n.col-xs-12 {\n  width: 100%;\n}\n.col-xs-11 {\n  width: 91.66666667%;\n}\n.col-xs-10 {\n  width: 83.33333333%;\n}\n.col-xs-9 {\n  width: 75%;\n}\n.col-xs-8 {\n  width: 66.66666667%;\n}\n.col-xs-7 {\n  width: 58.33333333%;\n}\n.col-xs-6 {\n  width: 50%;\n}\n.col-xs-5 {\n  width: 41.66666667%;\n}\n.col-xs-4 {\n  width: 33.33333333%;\n}\n.col-xs-3 {\n  width: 25%;\n}\n.col-xs-2 {\n  width: 16.66666667%;\n}\n.col-xs-1 {\n  width: 8.33333333%;\n}\n.col-xs-pull-12 {\n  right: 100%;\n}\n.col-xs-pull-11 {\n  right: 91.66666667%;\n}\n.col-xs-pull-10 {\n  right: 83.33333333%;\n}\n.col-xs-pull-9 {\n  right: 75%;\n}\n.col-xs-pull-8 {\n  right: 66.66666667%;\n}\n.col-xs-pull-7 {\n  right: 58.33333333%;\n}\n.col-xs-pull-6 {\n  right: 50%;\n}\n.col-xs-pull-5 {\n  right: 41.66666667%;\n}\n.col-xs-pull-4 {\n  right: 33.33333333%;\n}\n.col-xs-pull-3 {\n  right: 25%;\n}\n.col-xs-pull-2 {\n  right: 16.66666667%;\n}\n.col-xs-pull-1 {\n  right: 8.33333333%;\n}\n.col-xs-pull-0 {\n  right: auto;\n}\n.col-xs-push-12 {\n  left: 100%;\n}\n.col-xs-push-11 {\n  left: 91.66666667%;\n}\n.col-xs-push-10 {\n  left: 83.33333333%;\n}\n.col-xs-push-9 {\n  left: 75%;\n}\n.col-xs-push-8 {\n  left: 66.66666667%;\n}\n.col-xs-push-7 {\n  left: 58.33333333%;\n}\n.col-xs-push-6 {\n  left: 50%;\n}\n.col-xs-push-5 {\n  left: 41.66666667%;\n}\n.col-xs-push-4 {\n  left: 33.33333333%;\n}\n.col-xs-push-3 {\n  left: 25%;\n}\n.col-xs-push-2 {\n  left: 16.66666667%;\n}\n.col-xs-push-1 {\n  left: 8.33333333%;\n}\n.col-xs-push-0 {\n  left: auto;\n}\n.col-xs-offset-12 {\n  margin-left: 100%;\n}\n.col-xs-offset-11 {\n  margin-left: 91.66666667%;\n}\n.col-xs-offset-10 {\n  margin-left: 83.33333333%;\n}\n.col-xs-offset-9 {\n  margin-left: 75%;\n}\n.col-xs-offset-8 {\n  margin-left: 66.66666667%;\n}\n.col-xs-offset-7 {\n  margin-left: 58.33333333%;\n}\n.col-xs-offset-6 {\n  margin-left: 50%;\n}\n.col-xs-offset-5 {\n  margin-left: 41.66666667%;\n}\n.col-xs-offset-4 {\n  margin-left: 33.33333333%;\n}\n.col-xs-offset-3 {\n  margin-left: 25%;\n}\n.col-xs-offset-2 {\n  margin-left: 16.66666667%;\n}\n.col-xs-offset-1 {\n  margin-left: 8.33333333%;\n}\n.col-xs-offset-0 {\n  margin-left: 0%;\n}\n@media (min-width: 768px) {\n  .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12 {\n    float: left;\n  }\n  .col-sm-12 {\n    width: 100%;\n  }\n  .col-sm-11 {\n    width: 91.66666667%;\n  }\n  .col-sm-10 {\n    width: 83.33333333%;\n  }\n  .col-sm-9 {\n    width: 75%;\n  }\n  .col-sm-8 {\n    width: 66.66666667%;\n  }\n  .col-sm-7 {\n    width: 58.33333333%;\n  }\n  .col-sm-6 {\n    width: 50%;\n  }\n  .col-sm-5 {\n    width: 41.66666667%;\n  }\n  .col-sm-4 {\n    width: 33.33333333%;\n  }\n  .col-sm-3 {\n    width: 25%;\n  }\n  .col-sm-2 {\n    width: 16.66666667%;\n  }\n  .col-sm-1 {\n    width: 8.33333333%;\n  }\n  .col-sm-pull-12 {\n    right: 100%;\n  }\n  .col-sm-pull-11 {\n    right: 91.66666667%;\n  }\n  .col-sm-pull-10 {\n    right: 83.33333333%;\n  }\n  .col-sm-pull-9 {\n    right: 75%;\n  }\n  .col-sm-pull-8 {\n    right: 66.66666667%;\n  }\n  .col-sm-pull-7 {\n    right: 58.33333333%;\n  }\n  .col-sm-pull-6 {\n    right: 50%;\n  }\n  .col-sm-pull-5 {\n    right: 41.66666667%;\n  }\n  .col-sm-pull-4 {\n    right: 33.33333333%;\n  }\n  .col-sm-pull-3 {\n    right: 25%;\n  }\n  .col-sm-pull-2 {\n    right: 16.66666667%;\n  }\n  .col-sm-pull-1 {\n    right: 8.33333333%;\n  }\n  .col-sm-pull-0 {\n    right: auto;\n  }\n  .col-sm-push-12 {\n    left: 100%;\n  }\n  .col-sm-push-11 {\n    left: 91.66666667%;\n  }\n  .col-sm-push-10 {\n    left: 83.33333333%;\n  }\n  .col-sm-push-9 {\n    left: 75%;\n  }\n  .col-sm-push-8 {\n    left: 66.66666667%;\n  }\n  .col-sm-push-7 {\n    left: 58.33333333%;\n  }\n  .col-sm-push-6 {\n    left: 50%;\n  }\n  .col-sm-push-5 {\n    left: 41.66666667%;\n  }\n  .col-sm-push-4 {\n    left: 33.33333333%;\n  }\n  .col-sm-push-3 {\n    left: 25%;\n  }\n  .col-sm-push-2 {\n    left: 16.66666667%;\n  }\n  .col-sm-push-1 {\n    left: 8.33333333%;\n  }\n  .col-sm-push-0 {\n    left: auto;\n  }\n  .col-sm-offset-12 {\n    margin-left: 100%;\n  }\n  .col-sm-offset-11 {\n    margin-left: 91.66666667%;\n  }\n  .col-sm-offset-10 {\n    margin-left: 83.33333333%;\n  }\n  .col-sm-offset-9 {\n    margin-left: 75%;\n  }\n  .col-sm-offset-8 {\n    margin-left: 66.66666667%;\n  }\n  .col-sm-offset-7 {\n    margin-left: 58.33333333%;\n  }\n  .col-sm-offset-6 {\n    margin-left: 50%;\n  }\n  .col-sm-offset-5 {\n    margin-left: 41.66666667%;\n  }\n  .col-sm-offset-4 {\n    margin-left: 33.33333333%;\n  }\n  .col-sm-offset-3 {\n    margin-left: 25%;\n  }\n  .col-sm-offset-2 {\n    margin-left: 16.66666667%;\n  }\n  .col-sm-offset-1 {\n    margin-left: 8.33333333%;\n  }\n  .col-sm-offset-0 {\n    margin-left: 0%;\n  }\n}\n@media (min-width: 992px) {\n  .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12 {\n    float: left;\n  }\n  .col-md-12 {\n    width: 100%;\n  }\n  .col-md-11 {\n    width: 91.66666667%;\n  }\n  .col-md-10 {\n    width: 83.33333333%;\n  }\n  .col-md-9 {\n    width: 75%;\n  }\n  .col-md-8 {\n    width: 66.66666667%;\n  }\n  .col-md-7 {\n    width: 58.33333333%;\n  }\n  .col-md-6 {\n    width: 50%;\n  }\n  .col-md-5 {\n    width: 41.66666667%;\n  }\n  .col-md-4 {\n    width: 33.33333333%;\n  }\n  .col-md-3 {\n    width: 25%;\n  }\n  .col-md-2 {\n    width: 16.66666667%;\n  }\n  .col-md-1 {\n    width: 8.33333333%;\n  }\n  .col-md-pull-12 {\n    right: 100%;\n  }\n  .col-md-pull-11 {\n    right: 91.66666667%;\n  }\n  .col-md-pull-10 {\n    right: 83.33333333%;\n  }\n  .col-md-pull-9 {\n    right: 75%;\n  }\n  .col-md-pull-8 {\n    right: 66.66666667%;\n  }\n  .col-md-pull-7 {\n    right: 58.33333333%;\n  }\n  .col-md-pull-6 {\n    right: 50%;\n  }\n  .col-md-pull-5 {\n    right: 41.66666667%;\n  }\n  .col-md-pull-4 {\n    right: 33.33333333%;\n  }\n  .col-md-pull-3 {\n    right: 25%;\n  }\n  .col-md-pull-2 {\n    right: 16.66666667%;\n  }\n  .col-md-pull-1 {\n    right: 8.33333333%;\n  }\n  .col-md-pull-0 {\n    right: auto;\n  }\n  .col-md-push-12 {\n    left: 100%;\n  }\n  .col-md-push-11 {\n    left: 91.66666667%;\n  }\n  .col-md-push-10 {\n    left: 83.33333333%;\n  }\n  .col-md-push-9 {\n    left: 75%;\n  }\n  .col-md-push-8 {\n    left: 66.66666667%;\n  }\n  .col-md-push-7 {\n    left: 58.33333333%;\n  }\n  .col-md-push-6 {\n    left: 50%;\n  }\n  .col-md-push-5 {\n    left: 41.66666667%;\n  }\n  .col-md-push-4 {\n    left: 33.33333333%;\n  }\n  .col-md-push-3 {\n    left: 25%;\n  }\n  .col-md-push-2 {\n    left: 16.66666667%;\n  }\n  .col-md-push-1 {\n    left: 8.33333333%;\n  }\n  .col-md-push-0 {\n    left: auto;\n  }\n  .col-md-offset-12 {\n    margin-left: 100%;\n  }\n  .col-md-offset-11 {\n    margin-left: 91.66666667%;\n  }\n  .col-md-offset-10 {\n    margin-left: 83.33333333%;\n  }\n  .col-md-offset-9 {\n    margin-left: 75%;\n  }\n  .col-md-offset-8 {\n    margin-left: 66.66666667%;\n  }\n  .col-md-offset-7 {\n    margin-left: 58.33333333%;\n  }\n  .col-md-offset-6 {\n    margin-left: 50%;\n  }\n  .col-md-offset-5 {\n    margin-left: 41.66666667%;\n  }\n  .col-md-offset-4 {\n    margin-left: 33.33333333%;\n  }\n  .col-md-offset-3 {\n    margin-left: 25%;\n  }\n  .col-md-offset-2 {\n    margin-left: 16.66666667%;\n  }\n  .col-md-offset-1 {\n    margin-left: 8.33333333%;\n  }\n  .col-md-offset-0 {\n    margin-left: 0%;\n  }\n}\n@media (min-width: 1200px) {\n  .col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12 {\n    float: left;\n  }\n  .col-lg-12 {\n    width: 100%;\n  }\n  .col-lg-11 {\n    width: 91.66666667%;\n  }\n  .col-lg-10 {\n    width: 83.33333333%;\n  }\n  .col-lg-9 {\n    width: 75%;\n  }\n  .col-lg-8 {\n    width: 66.66666667%;\n  }\n  .col-lg-7 {\n    width: 58.33333333%;\n  }\n  .col-lg-6 {\n    width: 50%;\n  }\n  .col-lg-5 {\n    width: 41.66666667%;\n  }\n  .col-lg-4 {\n    width: 33.33333333%;\n  }\n  .col-lg-3 {\n    width: 25%;\n  }\n  .col-lg-2 {\n    width: 16.66666667%;\n  }\n  .col-lg-1 {\n    width: 8.33333333%;\n  }\n  .col-lg-pull-12 {\n    right: 100%;\n  }\n  .col-lg-pull-11 {\n    right: 91.66666667%;\n  }\n  .col-lg-pull-10 {\n    right: 83.33333333%;\n  }\n  .col-lg-pull-9 {\n    right: 75%;\n  }\n  .col-lg-pull-8 {\n    right: 66.66666667%;\n  }\n  .col-lg-pull-7 {\n    right: 58.33333333%;\n  }\n  .col-lg-pull-6 {\n    right: 50%;\n  }\n  .col-lg-pull-5 {\n    right: 41.66666667%;\n  }\n  .col-lg-pull-4 {\n    right: 33.33333333%;\n  }\n  .col-lg-pull-3 {\n    right: 25%;\n  }\n  .col-lg-pull-2 {\n    right: 16.66666667%;\n  }\n  .col-lg-pull-1 {\n    right: 8.33333333%;\n  }\n  .col-lg-pull-0 {\n    right: auto;\n  }\n  .col-lg-push-12 {\n    left: 100%;\n  }\n  .col-lg-push-11 {\n    left: 91.66666667%;\n  }\n  .col-lg-push-10 {\n    left: 83.33333333%;\n  }\n  .col-lg-push-9 {\n    left: 75%;\n  }\n  .col-lg-push-8 {\n    left: 66.66666667%;\n  }\n  .col-lg-push-7 {\n    left: 58.33333333%;\n  }\n  .col-lg-push-6 {\n    left: 50%;\n  }\n  .col-lg-push-5 {\n    left: 41.66666667%;\n  }\n  .col-lg-push-4 {\n    left: 33.33333333%;\n  }\n  .col-lg-push-3 {\n    left: 25%;\n  }\n  .col-lg-push-2 {\n    left: 16.66666667%;\n  }\n  .col-lg-push-1 {\n    left: 8.33333333%;\n  }\n  .col-lg-push-0 {\n    left: auto;\n  }\n  .col-lg-offset-12 {\n    margin-left: 100%;\n  }\n  .col-lg-offset-11 {\n    margin-left: 91.66666667%;\n  }\n  .col-lg-offset-10 {\n    margin-left: 83.33333333%;\n  }\n  .col-lg-offset-9 {\n    margin-left: 75%;\n  }\n  .col-lg-offset-8 {\n    margin-left: 66.66666667%;\n  }\n  .col-lg-offset-7 {\n    margin-left: 58.33333333%;\n  }\n  .col-lg-offset-6 {\n    margin-left: 50%;\n  }\n  .col-lg-offset-5 {\n    margin-left: 41.66666667%;\n  }\n  .col-lg-offset-4 {\n    margin-left: 33.33333333%;\n  }\n  .col-lg-offset-3 {\n    margin-left: 25%;\n  }\n  .col-lg-offset-2 {\n    margin-left: 16.66666667%;\n  }\n  .col-lg-offset-1 {\n    margin-left: 8.33333333%;\n  }\n  .col-lg-offset-0 {\n    margin-left: 0%;\n  }\n}\ntable {\n  background-color: transparent;\n}\ncaption {\n  padding-top: 8px;\n  padding-bottom: 8px;\n  color: #777777;\n  text-align: left;\n}\nth {\n  text-align: left;\n}\n.table {\n  width: 100%;\n  max-width: 100%;\n  margin-bottom: 20px;\n}\n.table > thead > tr > th,\n.table > tbody > tr > th,\n.table > tfoot > tr > th,\n.table > thead > tr > td,\n.table > tbody > tr > td,\n.table > tfoot > tr > td {\n  padding: 8px;\n  line-height: 1.42857143;\n  vertical-align: top;\n  border-top: 1px solid #ddd;\n}\n.table > thead > tr > th {\n  vertical-align: bottom;\n  border-bottom: 2px solid #ddd;\n}\n.table > caption + thead > tr:first-child > th,\n.table > colgroup + thead > tr:first-child > th,\n.table > thead:first-child > tr:first-child > th,\n.table > caption + thead > tr:first-child > td,\n.table > colgroup + thead > tr:first-child > td,\n.table > thead:first-child > tr:first-child > td {\n  border-top: 0;\n}\n.table > tbody + tbody {\n  border-top: 2px solid #ddd;\n}\n.table .table {\n  background-color: #fff;\n}\n.table-condensed > thead > tr > th,\n.table-condensed > tbody > tr > th,\n.table-condensed > tfoot > tr > th,\n.table-condensed > thead > tr > td,\n.table-condensed > tbody > tr > td,\n.table-condensed > tfoot > tr > td {\n  padding: 5px;\n}\n.table-bordered {\n  border: 1px solid #ddd;\n}\n.table-bordered > thead > tr > th,\n.table-bordered > tbody > tr > th,\n.table-bordered > tfoot > tr > th,\n.table-bordered > thead > tr > td,\n.table-bordered > tbody > tr > td,\n.table-bordered > tfoot > tr > td {\n  border: 1px solid #ddd;\n}\n.table-bordered > thead > tr > th,\n.table-bordered > thead > tr > td {\n  border-bottom-width: 2px;\n}\n.table-striped > tbody > tr:nth-of-type(odd) {\n  background-color: #f9f9f9;\n}\n.table-hover > tbody > tr:hover {\n  background-color: #f5f5f5;\n}\ntable col[class*=\"col-\"] {\n  position: static;\n  float: none;\n  display: table-column;\n}\ntable td[class*=\"col-\"],\ntable th[class*=\"col-\"] {\n  position: static;\n  float: none;\n  display: table-cell;\n}\n.table > thead > tr > td.active,\n.table > tbody > tr > td.active,\n.table > tfoot > tr > td.active,\n.table > thead > tr > th.active,\n.table > tbody > tr > th.active,\n.table > tfoot > tr > th.active,\n.table > thead > tr.active > td,\n.table > tbody > tr.active > td,\n.table > tfoot > tr.active > td,\n.table > thead > tr.active > th,\n.table > tbody > tr.active > th,\n.table > tfoot > tr.active > th {\n  background-color: #f5f5f5;\n}\n.table-hover > tbody > tr > td.active:hover,\n.table-hover > tbody > tr > th.active:hover,\n.table-hover > tbody > tr.active:hover > td,\n.table-hover > tbody > tr:hover > .active,\n.table-hover > tbody > tr.active:hover > th {\n  background-color: #e8e8e8;\n}\n.table > thead > tr > td.success,\n.table > tbody > tr > td.success,\n.table > tfoot > tr > td.success,\n.table > thead > tr > th.success,\n.table > tbody > tr > th.success,\n.table > tfoot > tr > th.success,\n.table > thead > tr.success > td,\n.table > tbody > tr.success > td,\n.table > tfoot > tr.success > td,\n.table > thead > tr.success > th,\n.table > tbody > tr.success > th,\n.table > tfoot > tr.success > th {\n  background-color: #dff0d8;\n}\n.table-hover > tbody > tr > td.success:hover,\n.table-hover > tbody > tr > th.success:hover,\n.table-hover > tbody > tr.success:hover > td,\n.table-hover > tbody > tr:hover > .success,\n.table-hover > tbody > tr.success:hover > th {\n  background-color: #d0e9c6;\n}\n.table > thead > tr > td.info,\n.table > tbody > tr > td.info,\n.table > tfoot > tr > td.info,\n.table > thead > tr > th.info,\n.table > tbody > tr > th.info,\n.table > tfoot > tr > th.info,\n.table > thead > tr.info > td,\n.table > tbody > tr.info > td,\n.table > tfoot > tr.info > td,\n.table > thead > tr.info > th,\n.table > tbody > tr.info > th,\n.table > tfoot > tr.info > th {\n  background-color: #d9edf7;\n}\n.table-hover > tbody > tr > td.info:hover,\n.table-hover > tbody > tr > th.info:hover,\n.table-hover > tbody > tr.info:hover > td,\n.table-hover > tbody > tr:hover > .info,\n.table-hover > tbody > tr.info:hover > th {\n  background-color: #c4e3f3;\n}\n.table > thead > tr > td.warning,\n.table > tbody > tr > td.warning,\n.table > tfoot > tr > td.warning,\n.table > thead > tr > th.warning,\n.table > tbody > tr > th.warning,\n.table > tfoot > tr > th.warning,\n.table > thead > tr.warning > td,\n.table > tbody > tr.warning > td,\n.table > tfoot > tr.warning > td,\n.table > thead > tr.warning > th,\n.table > tbody > tr.warning > th,\n.table > tfoot > tr.warning > th {\n  background-color: #fcf8e3;\n}\n.table-hover > tbody > tr > td.warning:hover,\n.table-hover > tbody > tr > th.warning:hover,\n.table-hover > tbody > tr.warning:hover > td,\n.table-hover > tbody > tr:hover > .warning,\n.table-hover > tbody > tr.warning:hover > th {\n  background-color: #faf2cc;\n}\n.table > thead > tr > td.danger,\n.table > tbody > tr > td.danger,\n.table > tfoot > tr > td.danger,\n.table > thead > tr > th.danger,\n.table > tbody > tr > th.danger,\n.table > tfoot > tr > th.danger,\n.table > thead > tr.danger > td,\n.table > tbody > tr.danger > td,\n.table > tfoot > tr.danger > td,\n.table > thead > tr.danger > th,\n.table > tbody > tr.danger > th,\n.table > tfoot > tr.danger > th {\n  background-color: #f2dede;\n}\n.table-hover > tbody > tr > td.danger:hover,\n.table-hover > tbody > tr > th.danger:hover,\n.table-hover > tbody > tr.danger:hover > td,\n.table-hover > tbody > tr:hover > .danger,\n.table-hover > tbody > tr.danger:hover > th {\n  background-color: #ebcccc;\n}\n.table-responsive {\n  overflow-x: auto;\n  min-height: 0.01%;\n}\n@media screen and (max-width: 767px) {\n  .table-responsive {\n    width: 100%;\n    margin-bottom: 15px;\n    overflow-y: hidden;\n    -ms-overflow-style: -ms-autohiding-scrollbar;\n    border: 1px solid #ddd;\n  }\n  .table-responsive > .table {\n    margin-bottom: 0;\n  }\n  .table-responsive > .table > thead > tr > th,\n  .table-responsive > .table > tbody > tr > th,\n  .table-responsive > .table > tfoot > tr > th,\n  .table-responsive > .table > thead > tr > td,\n  .table-responsive > .table > tbody > tr > td,\n  .table-responsive > .table > tfoot > tr > td {\n    white-space: nowrap;\n  }\n  .table-responsive > .table-bordered {\n    border: 0;\n  }\n  .table-responsive > .table-bordered > thead > tr > th:first-child,\n  .table-responsive > .table-bordered > tbody > tr > th:first-child,\n  .table-responsive > .table-bordered > tfoot > tr > th:first-child,\n  .table-responsive > .table-bordered > thead > tr > td:first-child,\n  .table-responsive > .table-bordered > tbody > tr > td:first-child,\n  .table-responsive > .table-bordered > tfoot > tr > td:first-child {\n    border-left: 0;\n  }\n  .table-responsive > .table-bordered > thead > tr > th:last-child,\n  .table-responsive > .table-bordered > tbody > tr > th:last-child,\n  .table-responsive > .table-bordered > tfoot > tr > th:last-child,\n  .table-responsive > .table-bordered > thead > tr > td:last-child,\n  .table-responsive > .table-bordered > tbody > tr > td:last-child,\n  .table-responsive > .table-bordered > tfoot > tr > td:last-child {\n    border-right: 0;\n  }\n  .table-responsive > .table-bordered > tbody > tr:last-child > th,\n  .table-responsive > .table-bordered > tfoot > tr:last-child > th,\n  .table-responsive > .table-bordered > tbody > tr:last-child > td,\n  .table-responsive > .table-bordered > tfoot > tr:last-child > td {\n    border-bottom: 0;\n  }\n}\nfieldset {\n  padding: 0;\n  margin: 0;\n  border: 0;\n  min-width: 0;\n}\nlegend {\n  display: block;\n  width: 100%;\n  padding: 0;\n  margin-bottom: 20px;\n  font-size: 21px;\n  line-height: inherit;\n  color: #333333;\n  border: 0;\n  border-bottom: 1px solid #e5e5e5;\n}\nlabel {\n  display: inline-block;\n  max-width: 100%;\n  margin-bottom: 5px;\n  font-weight: bold;\n}\ninput[type=\"search\"] {\n  -webkit-box-sizing: border-box;\n  -moz-box-sizing: border-box;\n  box-sizing: border-box;\n}\ninput[type=\"radio\"],\ninput[type=\"checkbox\"] {\n  margin: 4px 0 0;\n  margin-top: 1px \\9;\n  line-height: normal;\n}\ninput[type=\"file\"] {\n  display: block;\n}\ninput[type=\"range\"] {\n  display: block;\n  width: 100%;\n}\nselect[multiple],\nselect[size] {\n  height: auto;\n}\ninput[type=\"file\"]:focus,\ninput[type=\"radio\"]:focus,\ninput[type=\"checkbox\"]:focus {\n  outline: thin dotted;\n  outline: 5px auto -webkit-focus-ring-color;\n  outline-offset: -2px;\n}\noutput {\n  display: block;\n  padding-top: 7px;\n  font-size: 14px;\n  line-height: 1.42857143;\n  color: #555555;\n}\n.form-control {\n  display: block;\n  width: 100%;\n  height: 34px;\n  padding: 6px 12px;\n  font-size: 14px;\n  line-height: 1.42857143;\n  color: #555555;\n  background-color: #fff;\n  background-image: none;\n  border: 1px solid #ccc;\n  border-radius: 4px;\n  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);\n  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);\n  -webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;\n  -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;\n  transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;\n}\n.form-control:focus {\n  border-color: #66afe9;\n  outline: 0;\n  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);\n  box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);\n}\n.form-control::-moz-placeholder {\n  color: #999;\n  opacity: 1;\n}\n.form-control:-ms-input-placeholder {\n  color: #999;\n}\n.form-control::-webkit-input-placeholder {\n  color: #999;\n}\n.form-control::-ms-expand {\n  border: 0;\n  background-color: transparent;\n}\n.form-control[disabled],\n.form-control[readonly],\nfieldset[disabled] .form-control {\n  background-color: #eeeeee;\n  opacity: 1;\n}\n.form-control[disabled],\nfieldset[disabled] .form-control {\n  cursor: not-allowed;\n}\ntextarea.form-control {\n  height: auto;\n}\ninput[type=\"search\"] {\n  -webkit-appearance: none;\n}\n@media screen and (-webkit-min-device-pixel-ratio: 0) {\n  input[type=\"date\"].form-control,\n  input[type=\"time\"].form-control,\n  input[type=\"datetime-local\"].form-control,\n  input[type=\"month\"].form-control {\n    line-height: 34px;\n  }\n  input[type=\"date\"].input-sm,\n  input[type=\"time\"].input-sm,\n  input[type=\"datetime-local\"].input-sm,\n  input[type=\"month\"].input-sm,\n  .input-group-sm input[type=\"date\"],\n  .input-group-sm input[type=\"time\"],\n  .input-group-sm input[type=\"datetime-local\"],\n  .input-group-sm input[type=\"month\"] {\n    line-height: 30px;\n  }\n  input[type=\"date\"].input-lg,\n  input[type=\"time\"].input-lg,\n  input[type=\"datetime-local\"].input-lg,\n  input[type=\"month\"].input-lg,\n  .input-group-lg input[type=\"date\"],\n  .input-group-lg input[type=\"time\"],\n  .input-group-lg input[type=\"datetime-local\"],\n  .input-group-lg input[type=\"month\"] {\n    line-height: 46px;\n  }\n}\n.form-group {\n  margin-bottom: 15px;\n}\n.radio,\n.checkbox {\n  position: relative;\n  display: block;\n  margin-top: 10px;\n  margin-bottom: 10px;\n}\n.radio label,\n.checkbox label {\n  min-height: 20px;\n  padding-left: 20px;\n  margin-bottom: 0;\n  font-weight: normal;\n  cursor: pointer;\n}\n.radio input[type=\"radio\"],\n.radio-inline input[type=\"radio\"],\n.checkbox input[type=\"checkbox\"],\n.checkbox-inline input[type=\"checkbox\"] {\n  position: absolute;\n  margin-left: -20px;\n  margin-top: 4px \\9;\n}\n.radio + .radio,\n.checkbox + .checkbox {\n  margin-top: -5px;\n}\n.radio-inline,\n.checkbox-inline {\n  position: relative;\n  display: inline-block;\n  padding-left: 20px;\n  margin-bottom: 0;\n  vertical-align: middle;\n  font-weight: normal;\n  cursor: pointer;\n}\n.radio-inline + .radio-inline,\n.checkbox-inline + .checkbox-inline {\n  margin-top: 0;\n  margin-left: 10px;\n}\ninput[type=\"radio\"][disabled],\ninput[type=\"checkbox\"][disabled],\ninput[type=\"radio\"].disabled,\ninput[type=\"checkbox\"].disabled,\nfieldset[disabled] input[type=\"radio\"],\nfieldset[disabled] input[type=\"checkbox\"] {\n  cursor: not-allowed;\n}\n.radio-inline.disabled,\n.checkbox-inline.disabled,\nfieldset[disabled] .radio-inline,\nfieldset[disabled] .checkbox-inline {\n  cursor: not-allowed;\n}\n.radio.disabled label,\n.checkbox.disabled label,\nfieldset[disabled] .radio label,\nfieldset[disabled] .checkbox label {\n  cursor: not-allowed;\n}\n.form-control-static {\n  padding-top: 7px;\n  padding-bottom: 7px;\n  margin-bottom: 0;\n  min-height: 34px;\n}\n.form-control-static.input-lg,\n.form-control-static.input-sm {\n  padding-left: 0;\n  padding-right: 0;\n}\n.input-sm {\n  height: 30px;\n  padding: 5px 10px;\n  font-size: 12px;\n  line-height: 1.5;\n  border-radius: 3px;\n}\nselect.input-sm {\n  height: 30px;\n  line-height: 30px;\n}\ntextarea.input-sm,\nselect[multiple].input-sm {\n  height: auto;\n}\n.form-group-sm .form-control {\n  height: 30px;\n  padding: 5px 10px;\n  font-size: 12px;\n  line-height: 1.5;\n  border-radius: 3px;\n}\n.form-group-sm select.form-control {\n  height: 30px;\n  line-height: 30px;\n}\n.form-group-sm textarea.form-control,\n.form-group-sm select[multiple].form-control {\n  height: auto;\n}\n.form-group-sm .form-control-static {\n  height: 30px;\n  min-height: 32px;\n  padding: 6px 10px;\n  font-size: 12px;\n  line-height: 1.5;\n}\n.input-lg {\n  height: 46px;\n  padding: 10px 16px;\n  font-size: 18px;\n  line-height: 1.3333333;\n  border-radius: 6px;\n}\nselect.input-lg {\n  height: 46px;\n  line-height: 46px;\n}\ntextarea.input-lg,\nselect[multiple].input-lg {\n  height: auto;\n}\n.form-group-lg .form-control {\n  height: 46px;\n  padding: 10px 16px;\n  font-size: 18px;\n  line-height: 1.3333333;\n  border-radius: 6px;\n}\n.form-group-lg select.form-control {\n  height: 46px;\n  line-height: 46px;\n}\n.form-group-lg textarea.form-control,\n.form-group-lg select[multiple].form-control {\n  height: auto;\n}\n.form-group-lg .form-control-static {\n  height: 46px;\n  min-height: 38px;\n  padding: 11px 16px;\n  font-size: 18px;\n  line-height: 1.3333333;\n}\n.has-feedback {\n  position: relative;\n}\n.has-feedback .form-control {\n  padding-right: 42.5px;\n}\n.form-control-feedback {\n  position: absolute;\n  top: 0;\n  right: 0;\n  z-index: 2;\n  display: block;\n  width: 34px;\n  height: 34px;\n  line-height: 34px;\n  text-align: center;\n  pointer-events: none;\n}\n.input-lg + .form-control-feedback,\n.input-group-lg + .form-control-feedback,\n.form-group-lg .form-control + .form-control-feedback {\n  width: 46px;\n  height: 46px;\n  line-height: 46px;\n}\n.input-sm + .form-control-feedback,\n.input-group-sm + .form-control-feedback,\n.form-group-sm .form-control + .form-control-feedback {\n  width: 30px;\n  height: 30px;\n  line-height: 30px;\n}\n.has-success .help-block,\n.has-success .control-label,\n.has-success .radio,\n.has-success .checkbox,\n.has-success .radio-inline,\n.has-success .checkbox-inline,\n.has-success.radio label,\n.has-success.checkbox label,\n.has-success.radio-inline label,\n.has-success.checkbox-inline label {\n  color: #3c763d;\n}\n.has-success .form-control {\n  border-color: #3c763d;\n  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);\n  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);\n}\n.has-success .form-control:focus {\n  border-color: #2b542c;\n  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #67b168;\n  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #67b168;\n}\n.has-success .input-group-addon {\n  color: #3c763d;\n  border-color: #3c763d;\n  background-color: #dff0d8;\n}\n.has-success .form-control-feedback {\n  color: #3c763d;\n}\n.has-warning .help-block,\n.has-warning .control-label,\n.has-warning .radio,\n.has-warning .checkbox,\n.has-warning .radio-inline,\n.has-warning .checkbox-inline,\n.has-warning.radio label,\n.has-warning.checkbox label,\n.has-warning.radio-inline label,\n.has-warning.checkbox-inline label {\n  color: #8a6d3b;\n}\n.has-warning .form-control {\n  border-color: #8a6d3b;\n  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);\n  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);\n}\n.has-warning .form-control:focus {\n  border-color: #66512c;\n  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #c0a16b;\n  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #c0a16b;\n}\n.has-warning .input-group-addon {\n  color: #8a6d3b;\n  border-color: #8a6d3b;\n  background-color: #fcf8e3;\n}\n.has-warning .form-control-feedback {\n  color: #8a6d3b;\n}\n.has-error .help-block,\n.has-error .control-label,\n.has-error .radio,\n.has-error .checkbox,\n.has-error .radio-inline,\n.has-error .checkbox-inline,\n.has-error.radio label,\n.has-error.checkbox label,\n.has-error.radio-inline label,\n.has-error.checkbox-inline label {\n  color: #a94442;\n}\n.has-error .form-control {\n  border-color: #a94442;\n  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);\n  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);\n}\n.has-error .form-control:focus {\n  border-color: #843534;\n  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #ce8483;\n  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #ce8483;\n}\n.has-error .input-group-addon {\n  color: #a94442;\n  border-color: #a94442;\n  background-color: #f2dede;\n}\n.has-error .form-control-feedback {\n  color: #a94442;\n}\n.has-feedback label ~ .form-control-feedback {\n  top: 25px;\n}\n.has-feedback label.sr-only ~ .form-control-feedback {\n  top: 0;\n}\n.help-block {\n  display: block;\n  margin-top: 5px;\n  margin-bottom: 10px;\n  color: #737373;\n}\n@media (min-width: 768px) {\n  .form-inline .form-group {\n    display: inline-block;\n    margin-bottom: 0;\n    vertical-align: middle;\n  }\n  .form-inline .form-control {\n    display: inline-block;\n    width: auto;\n    vertical-align: middle;\n  }\n  .form-inline .form-control-static {\n    display: inline-block;\n  }\n  .form-inline .input-group {\n    display: inline-table;\n    vertical-align: middle;\n  }\n  .form-inline .input-group .input-group-addon,\n  .form-inline .input-group .input-group-btn,\n  .form-inline .input-group .form-control {\n    width: auto;\n  }\n  .form-inline .input-group > .form-control {\n    width: 100%;\n  }\n  .form-inline .control-label {\n    margin-bottom: 0;\n    vertical-align: middle;\n  }\n  .form-inline .radio,\n  .form-inline .checkbox {\n    display: inline-block;\n    margin-top: 0;\n    margin-bottom: 0;\n    vertical-align: middle;\n  }\n  .form-inline .radio label,\n  .form-inline .checkbox label {\n    padding-left: 0;\n  }\n  .form-inline .radio input[type=\"radio\"],\n  .form-inline .checkbox input[type=\"checkbox\"] {\n    position: relative;\n    margin-left: 0;\n  }\n  .form-inline .has-feedback .form-control-feedback {\n    top: 0;\n  }\n}\n.form-horizontal .radio,\n.form-horizontal .checkbox,\n.form-horizontal .radio-inline,\n.form-horizontal .checkbox-inline {\n  margin-top: 0;\n  margin-bottom: 0;\n  padding-top: 7px;\n}\n.form-horizontal .radio,\n.form-horizontal .checkbox {\n  min-height: 27px;\n}\n.form-horizontal .form-group {\n  margin-left: -15px;\n  margin-right: -15px;\n}\n@media (min-width: 768px) {\n  .form-horizontal .control-label {\n    text-align: right;\n    margin-bottom: 0;\n    padding-top: 7px;\n  }\n}\n.form-horizontal .has-feedback .form-control-feedback {\n  right: 15px;\n}\n@media (min-width: 768px) {\n  .form-horizontal .form-group-lg .control-label {\n    padding-top: 11px;\n    font-size: 18px;\n  }\n}\n@media (min-width: 768px) {\n  .form-horizontal .form-group-sm .control-label {\n    padding-top: 6px;\n    font-size: 12px;\n  }\n}\n.btn {\n  display: inline-block;\n  margin-bottom: 0;\n  font-weight: normal;\n  text-align: center;\n  vertical-align: middle;\n  touch-action: manipulation;\n  cursor: pointer;\n  background-image: none;\n  border: 1px solid transparent;\n  white-space: nowrap;\n  padding: 6px 12px;\n  font-size: 14px;\n  line-height: 1.42857143;\n  border-radius: 4px;\n  -webkit-user-select: none;\n  -moz-user-select: none;\n  -ms-user-select: none;\n  user-select: none;\n}\n.btn:focus,\n.btn:active:focus,\n.btn.active:focus,\n.btn.focus,\n.btn:active.focus,\n.btn.active.focus {\n  outline: thin dotted;\n  outline: 5px auto -webkit-focus-ring-color;\n  outline-offset: -2px;\n}\n.btn:hover,\n.btn:focus,\n.btn.focus {\n  color: #333;\n  text-decoration: none;\n}\n.btn:active,\n.btn.active {\n  outline: 0;\n  background-image: none;\n  -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);\n  box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);\n}\n.btn.disabled,\n.btn[disabled],\nfieldset[disabled] .btn {\n  cursor: not-allowed;\n  opacity: 0.65;\n  filter: alpha(opacity=65);\n  -webkit-box-shadow: none;\n  box-shadow: none;\n}\na.btn.disabled,\nfieldset[disabled] a.btn {\n  pointer-events: none;\n}\n.btn-default {\n  color: #333;\n  background-color: #fff;\n  border-color: #ccc;\n}\n.btn-default:focus,\n.btn-default.focus {\n  color: #333;\n  background-color: #e6e6e6;\n  border-color: #8c8c8c;\n}\n.btn-default:hover {\n  color: #333;\n  background-color: #e6e6e6;\n  border-color: #adadad;\n}\n.btn-default:active,\n.btn-default.active,\n.open > .dropdown-toggle.btn-default {\n  color: #333;\n  background-color: #e6e6e6;\n  border-color: #adadad;\n}\n.btn-default:active:hover,\n.btn-default.active:hover,\n.open > .dropdown-toggle.btn-default:hover,\n.btn-default:active:focus,\n.btn-default.active:focus,\n.open > .dropdown-toggle.btn-default:focus,\n.btn-default:active.focus,\n.btn-default.active.focus,\n.open > .dropdown-toggle.btn-default.focus {\n  color: #333;\n  background-color: #d4d4d4;\n  border-color: #8c8c8c;\n}\n.btn-default:active,\n.btn-default.active,\n.open > .dropdown-toggle.btn-default {\n  background-image: none;\n}\n.btn-default.disabled:hover,\n.btn-default[disabled]:hover,\nfieldset[disabled] .btn-default:hover,\n.btn-default.disabled:focus,\n.btn-default[disabled]:focus,\nfieldset[disabled] .btn-default:focus,\n.btn-default.disabled.focus,\n.btn-default[disabled].focus,\nfieldset[disabled] .btn-default.focus {\n  background-color: #fff;\n  border-color: #ccc;\n}\n.btn-default .badge {\n  color: #fff;\n  background-color: #333;\n}\n.btn-primary {\n  color: #fff;\n  background-color: #337ab7;\n  border-color: #2e6da4;\n}\n.btn-primary:focus,\n.btn-primary.focus {\n  color: #fff;\n  background-color: #286090;\n  border-color: #122b40;\n}\n.btn-primary:hover {\n  color: #fff;\n  background-color: #286090;\n  border-color: #204d74;\n}\n.btn-primary:active,\n.btn-primary.active,\n.open > .dropdown-toggle.btn-primary {\n  color: #fff;\n  background-color: #286090;\n  border-color: #204d74;\n}\n.btn-primary:active:hover,\n.btn-primary.active:hover,\n.open > .dropdown-toggle.btn-primary:hover,\n.btn-primary:active:focus,\n.btn-primary.active:focus,\n.open > .dropdown-toggle.btn-primary:focus,\n.btn-primary:active.focus,\n.btn-primary.active.focus,\n.open > .dropdown-toggle.btn-primary.focus {\n  color: #fff;\n  background-color: #204d74;\n  border-color: #122b40;\n}\n.btn-primary:active,\n.btn-primary.active,\n.open > .dropdown-toggle.btn-primary {\n  background-image: none;\n}\n.btn-primary.disabled:hover,\n.btn-primary[disabled]:hover,\nfieldset[disabled] .btn-primary:hover,\n.btn-primary.disabled:focus,\n.btn-primary[disabled]:focus,\nfieldset[disabled] .btn-primary:focus,\n.btn-primary.disabled.focus,\n.btn-primary[disabled].focus,\nfieldset[disabled] .btn-primary.focus {\n  background-color: #337ab7;\n  border-color: #2e6da4;\n}\n.btn-primary .badge {\n  color: #337ab7;\n  background-color: #fff;\n}\n.btn-success {\n  color: #fff;\n  background-color: #5cb85c;\n  border-color: #4cae4c;\n}\n.btn-success:focus,\n.btn-success.focus {\n  color: #fff;\n  background-color: #449d44;\n  border-color: #255625;\n}\n.btn-success:hover {\n  color: #fff;\n  background-color: #449d44;\n  border-color: #398439;\n}\n.btn-success:active,\n.btn-success.active,\n.open > .dropdown-toggle.btn-success {\n  color: #fff;\n  background-color: #449d44;\n  border-color: #398439;\n}\n.btn-success:active:hover,\n.btn-success.active:hover,\n.open > .dropdown-toggle.btn-success:hover,\n.btn-success:active:focus,\n.btn-success.active:focus,\n.open > .dropdown-toggle.btn-success:focus,\n.btn-success:active.focus,\n.btn-success.active.focus,\n.open > .dropdown-toggle.btn-success.focus {\n  color: #fff;\n  background-color: #398439;\n  border-color: #255625;\n}\n.btn-success:active,\n.btn-success.active,\n.open > .dropdown-toggle.btn-success {\n  background-image: none;\n}\n.btn-success.disabled:hover,\n.btn-success[disabled]:hover,\nfieldset[disabled] .btn-success:hover,\n.btn-success.disabled:focus,\n.btn-success[disabled]:focus,\nfieldset[disabled] .btn-success:focus,\n.btn-success.disabled.focus,\n.btn-success[disabled].focus,\nfieldset[disabled] .btn-success.focus {\n  background-color: #5cb85c;\n  border-color: #4cae4c;\n}\n.btn-success .badge {\n  color: #5cb85c;\n  background-color: #fff;\n}\n.btn-info {\n  color: #fff;\n  background-color: #5bc0de;\n  border-color: #46b8da;\n}\n.btn-info:focus,\n.btn-info.focus {\n  color: #fff;\n  background-color: #31b0d5;\n  border-color: #1b6d85;\n}\n.btn-info:hover {\n  color: #fff;\n  background-color: #31b0d5;\n  border-color: #269abc;\n}\n.btn-info:active,\n.btn-info.active,\n.open > .dropdown-toggle.btn-info {\n  color: #fff;\n  background-color: #31b0d5;\n  border-color: #269abc;\n}\n.btn-info:active:hover,\n.btn-info.active:hover,\n.open > .dropdown-toggle.btn-info:hover,\n.btn-info:active:focus,\n.btn-info.active:focus,\n.open > .dropdown-toggle.btn-info:focus,\n.btn-info:active.focus,\n.btn-info.active.focus,\n.open > .dropdown-toggle.btn-info.focus {\n  color: #fff;\n  background-color: #269abc;\n  border-color: #1b6d85;\n}\n.btn-info:active,\n.btn-info.active,\n.open > .dropdown-toggle.btn-info {\n  background-image: none;\n}\n.btn-info.disabled:hover,\n.btn-info[disabled]:hover,\nfieldset[disabled] .btn-info:hover,\n.btn-info.disabled:focus,\n.btn-info[disabled]:focus,\nfieldset[disabled] .btn-info:focus,\n.btn-info.disabled.focus,\n.btn-info[disabled].focus,\nfieldset[disabled] .btn-info.focus {\n  background-color: #5bc0de;\n  border-color: #46b8da;\n}\n.btn-info .badge {\n  color: #5bc0de;\n  background-color: #fff;\n}\n.btn-warning {\n  color: #fff;\n  background-color: #f0ad4e;\n  border-color: #eea236;\n}\n.btn-warning:focus,\n.btn-warning.focus {\n  color: #fff;\n  background-color: #ec971f;\n  border-color: #985f0d;\n}\n.btn-warning:hover {\n  color: #fff;\n  background-color: #ec971f;\n  border-color: #d58512;\n}\n.btn-warning:active,\n.btn-warning.active,\n.open > .dropdown-toggle.btn-warning {\n  color: #fff;\n  background-color: #ec971f;\n  border-color: #d58512;\n}\n.btn-warning:active:hover,\n.btn-warning.active:hover,\n.open > .dropdown-toggle.btn-warning:hover,\n.btn-warning:active:focus,\n.btn-warning.active:focus,\n.open > .dropdown-toggle.btn-warning:focus,\n.btn-warning:active.focus,\n.btn-warning.active.focus,\n.open > .dropdown-toggle.btn-warning.focus {\n  color: #fff;\n  background-color: #d58512;\n  border-color: #985f0d;\n}\n.btn-warning:active,\n.btn-warning.active,\n.open > .dropdown-toggle.btn-warning {\n  background-image: none;\n}\n.btn-warning.disabled:hover,\n.btn-warning[disabled]:hover,\nfieldset[disabled] .btn-warning:hover,\n.btn-warning.disabled:focus,\n.btn-warning[disabled]:focus,\nfieldset[disabled] .btn-warning:focus,\n.btn-warning.disabled.focus,\n.btn-warning[disabled].focus,\nfieldset[disabled] .btn-warning.focus {\n  background-color: #f0ad4e;\n  border-color: #eea236;\n}\n.btn-warning .badge {\n  color: #f0ad4e;\n  background-color: #fff;\n}\n.btn-danger {\n  color: #fff;\n  background-color: #d9534f;\n  border-color: #d43f3a;\n}\n.btn-danger:focus,\n.btn-danger.focus {\n  color: #fff;\n  background-color: #c9302c;\n  border-color: #761c19;\n}\n.btn-danger:hover {\n  color: #fff;\n  background-color: #c9302c;\n  border-color: #ac2925;\n}\n.btn-danger:active,\n.btn-danger.active,\n.open > .dropdown-toggle.btn-danger {\n  color: #fff;\n  background-color: #c9302c;\n  border-color: #ac2925;\n}\n.btn-danger:active:hover,\n.btn-danger.active:hover,\n.open > .dropdown-toggle.btn-danger:hover,\n.btn-danger:active:focus,\n.btn-danger.active:focus,\n.open > .dropdown-toggle.btn-danger:focus,\n.btn-danger:active.focus,\n.btn-danger.active.focus,\n.open > .dropdown-toggle.btn-danger.focus {\n  color: #fff;\n  background-color: #ac2925;\n  border-color: #761c19;\n}\n.btn-danger:active,\n.btn-danger.active,\n.open > .dropdown-toggle.btn-danger {\n  background-image: none;\n}\n.btn-danger.disabled:hover,\n.btn-danger[disabled]:hover,\nfieldset[disabled] .btn-danger:hover,\n.btn-danger.disabled:focus,\n.btn-danger[disabled]:focus,\nfieldset[disabled] .btn-danger:focus,\n.btn-danger.disabled.focus,\n.btn-danger[disabled].focus,\nfieldset[disabled] .btn-danger.focus {\n  background-color: #d9534f;\n  border-color: #d43f3a;\n}\n.btn-danger .badge {\n  color: #d9534f;\n  background-color: #fff;\n}\n.btn-link {\n  color: #337ab7;\n  font-weight: normal;\n  border-radius: 0;\n}\n.btn-link,\n.btn-link:active,\n.btn-link.active,\n.btn-link[disabled],\nfieldset[disabled] .btn-link {\n  background-color: transparent;\n  -webkit-box-shadow: none;\n  box-shadow: none;\n}\n.btn-link,\n.btn-link:hover,\n.btn-link:focus,\n.btn-link:active {\n  border-color: transparent;\n}\n.btn-link:hover,\n.btn-link:focus {\n  color: #23527c;\n  text-decoration: underline;\n  background-color: transparent;\n}\n.btn-link[disabled]:hover,\nfieldset[disabled] .btn-link:hover,\n.btn-link[disabled]:focus,\nfieldset[disabled] .btn-link:focus {\n  color: #777777;\n  text-decoration: none;\n}\n.btn-lg,\n.btn-group-lg > .btn {\n  padding: 10px 16px;\n  font-size: 18px;\n  line-height: 1.3333333;\n  border-radius: 6px;\n}\n.btn-sm,\n.btn-group-sm > .btn {\n  padding: 5px 10px;\n  font-size: 12px;\n  line-height: 1.5;\n  border-radius: 3px;\n}\n.btn-xs,\n.btn-group-xs > .btn {\n  padding: 1px 5px;\n  font-size: 12px;\n  line-height: 1.5;\n  border-radius: 3px;\n}\n.btn-block {\n  display: block;\n  width: 100%;\n}\n.btn-block + .btn-block {\n  margin-top: 5px;\n}\ninput[type=\"submit\"].btn-block,\ninput[type=\"reset\"].btn-block,\ninput[type=\"button\"].btn-block {\n  width: 100%;\n}\n.fade {\n  opacity: 0;\n  -webkit-transition: opacity 0.15s linear;\n  -o-transition: opacity 0.15s linear;\n  transition: opacity 0.15s linear;\n}\n.fade.in {\n  opacity: 1;\n}\n.collapse {\n  display: none;\n}\n.collapse.in {\n  display: block;\n}\ntr.collapse.in {\n  display: table-row;\n}\ntbody.collapse.in {\n  display: table-row-group;\n}\n.collapsing {\n  position: relative;\n  height: 0;\n  overflow: hidden;\n  -webkit-transition-property: height, visibility;\n  transition-property: height, visibility;\n  -webkit-transition-duration: 0.35s;\n  transition-duration: 0.35s;\n  -webkit-transition-timing-function: ease;\n  transition-timing-function: ease;\n}\n@font-face {\n  font-family: 'Glyphicons Halflings';\n  src: url(" + __webpack_require__(/*! bootstrap/fonts/glyphicons-halflings-regular.eot */ 90) + ");\n  src: url(" + __webpack_require__(/*! bootstrap/fonts/glyphicons-halflings-regular.eot */ 90) + "?#iefix) format('embedded-opentype'), url(" + __webpack_require__(/*! bootstrap/fonts/glyphicons-halflings-regular.woff2 */ 91) + ") format('woff2'), url(" + __webpack_require__(/*! bootstrap/fonts/glyphicons-halflings-regular.woff */ 92) + ") format('woff'), url(" + __webpack_require__(/*! bootstrap/fonts/glyphicons-halflings-regular.ttf */ 93) + ") format('truetype'), url(" + __webpack_require__(/*! bootstrap/fonts/glyphicons-halflings-regular.svg */ 94) + "#glyphicons_halflingsregular) format('svg');\n}\n.glyphicon {\n  position: relative;\n  top: 1px;\n  display: inline-block;\n  font-family: 'Glyphicons Halflings';\n  font-style: normal;\n  font-weight: normal;\n  line-height: 1;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n}\n.glyphicon-asterisk:before {\n  content: \"*\";\n}\n.glyphicon-plus:before {\n  content: \"+\";\n}\n.glyphicon-euro:before,\n.glyphicon-eur:before {\n  content: \"\\20AC\";\n}\n.glyphicon-minus:before {\n  content: \"\\2212\";\n}\n.glyphicon-cloud:before {\n  content: \"\\2601\";\n}\n.glyphicon-envelope:before {\n  content: \"\\2709\";\n}\n.glyphicon-pencil:before {\n  content: \"\\270F\";\n}\n.glyphicon-glass:before {\n  content: \"\\E001\";\n}\n.glyphicon-music:before {\n  content: \"\\E002\";\n}\n.glyphicon-search:before {\n  content: \"\\E003\";\n}\n.glyphicon-heart:before {\n  content: \"\\E005\";\n}\n.glyphicon-star:before {\n  content: \"\\E006\";\n}\n.glyphicon-star-empty:before {\n  content: \"\\E007\";\n}\n.glyphicon-user:before {\n  content: \"\\E008\";\n}\n.glyphicon-film:before {\n  content: \"\\E009\";\n}\n.glyphicon-th-large:before {\n  content: \"\\E010\";\n}\n.glyphicon-th:before {\n  content: \"\\E011\";\n}\n.glyphicon-th-list:before {\n  content: \"\\E012\";\n}\n.glyphicon-ok:before {\n  content: \"\\E013\";\n}\n.glyphicon-remove:before {\n  content: \"\\E014\";\n}\n.glyphicon-zoom-in:before {\n  content: \"\\E015\";\n}\n.glyphicon-zoom-out:before {\n  content: \"\\E016\";\n}\n.glyphicon-off:before {\n  content: \"\\E017\";\n}\n.glyphicon-signal:before {\n  content: \"\\E018\";\n}\n.glyphicon-cog:before {\n  content: \"\\E019\";\n}\n.glyphicon-trash:before {\n  content: \"\\E020\";\n}\n.glyphicon-home:before {\n  content: \"\\E021\";\n}\n.glyphicon-file:before {\n  content: \"\\E022\";\n}\n.glyphicon-time:before {\n  content: \"\\E023\";\n}\n.glyphicon-road:before {\n  content: \"\\E024\";\n}\n.glyphicon-download-alt:before {\n  content: \"\\E025\";\n}\n.glyphicon-download:before {\n  content: \"\\E026\";\n}\n.glyphicon-upload:before {\n  content: \"\\E027\";\n}\n.glyphicon-inbox:before {\n  content: \"\\E028\";\n}\n.glyphicon-play-circle:before {\n  content: \"\\E029\";\n}\n.glyphicon-repeat:before {\n  content: \"\\E030\";\n}\n.glyphicon-refresh:before {\n  content: \"\\E031\";\n}\n.glyphicon-list-alt:before {\n  content: \"\\E032\";\n}\n.glyphicon-lock:before {\n  content: \"\\E033\";\n}\n.glyphicon-flag:before {\n  content: \"\\E034\";\n}\n.glyphicon-headphones:before {\n  content: \"\\E035\";\n}\n.glyphicon-volume-off:before {\n  content: \"\\E036\";\n}\n.glyphicon-volume-down:before {\n  content: \"\\E037\";\n}\n.glyphicon-volume-up:before {\n  content: \"\\E038\";\n}\n.glyphicon-qrcode:before {\n  content: \"\\E039\";\n}\n.glyphicon-barcode:before {\n  content: \"\\E040\";\n}\n.glyphicon-tag:before {\n  content: \"\\E041\";\n}\n.glyphicon-tags:before {\n  content: \"\\E042\";\n}\n.glyphicon-book:before {\n  content: \"\\E043\";\n}\n.glyphicon-bookmark:before {\n  content: \"\\E044\";\n}\n.glyphicon-print:before {\n  content: \"\\E045\";\n}\n.glyphicon-camera:before {\n  content: \"\\E046\";\n}\n.glyphicon-font:before {\n  content: \"\\E047\";\n}\n.glyphicon-bold:before {\n  content: \"\\E048\";\n}\n.glyphicon-italic:before {\n  content: \"\\E049\";\n}\n.glyphicon-text-height:before {\n  content: \"\\E050\";\n}\n.glyphicon-text-width:before {\n  content: \"\\E051\";\n}\n.glyphicon-align-left:before {\n  content: \"\\E052\";\n}\n.glyphicon-align-center:before {\n  content: \"\\E053\";\n}\n.glyphicon-align-right:before {\n  content: \"\\E054\";\n}\n.glyphicon-align-justify:before {\n  content: \"\\E055\";\n}\n.glyphicon-list:before {\n  content: \"\\E056\";\n}\n.glyphicon-indent-left:before {\n  content: \"\\E057\";\n}\n.glyphicon-indent-right:before {\n  content: \"\\E058\";\n}\n.glyphicon-facetime-video:before {\n  content: \"\\E059\";\n}\n.glyphicon-picture:before {\n  content: \"\\E060\";\n}\n.glyphicon-map-marker:before {\n  content: \"\\E062\";\n}\n.glyphicon-adjust:before {\n  content: \"\\E063\";\n}\n.glyphicon-tint:before {\n  content: \"\\E064\";\n}\n.glyphicon-edit:before {\n  content: \"\\E065\";\n}\n.glyphicon-share:before {\n  content: \"\\E066\";\n}\n.glyphicon-check:before {\n  content: \"\\E067\";\n}\n.glyphicon-move:before {\n  content: \"\\E068\";\n}\n.glyphicon-step-backward:before {\n  content: \"\\E069\";\n}\n.glyphicon-fast-backward:before {\n  content: \"\\E070\";\n}\n.glyphicon-backward:before {\n  content: \"\\E071\";\n}\n.glyphicon-play:before {\n  content: \"\\E072\";\n}\n.glyphicon-pause:before {\n  content: \"\\E073\";\n}\n.glyphicon-stop:before {\n  content: \"\\E074\";\n}\n.glyphicon-forward:before {\n  content: \"\\E075\";\n}\n.glyphicon-fast-forward:before {\n  content: \"\\E076\";\n}\n.glyphicon-step-forward:before {\n  content: \"\\E077\";\n}\n.glyphicon-eject:before {\n  content: \"\\E078\";\n}\n.glyphicon-chevron-left:before {\n  content: \"\\E079\";\n}\n.glyphicon-chevron-right:before {\n  content: \"\\E080\";\n}\n.glyphicon-plus-sign:before {\n  content: \"\\E081\";\n}\n.glyphicon-minus-sign:before {\n  content: \"\\E082\";\n}\n.glyphicon-remove-sign:before {\n  content: \"\\E083\";\n}\n.glyphicon-ok-sign:before {\n  content: \"\\E084\";\n}\n.glyphicon-question-sign:before {\n  content: \"\\E085\";\n}\n.glyphicon-info-sign:before {\n  content: \"\\E086\";\n}\n.glyphicon-screenshot:before {\n  content: \"\\E087\";\n}\n.glyphicon-remove-circle:before {\n  content: \"\\E088\";\n}\n.glyphicon-ok-circle:before {\n  content: \"\\E089\";\n}\n.glyphicon-ban-circle:before {\n  content: \"\\E090\";\n}\n.glyphicon-arrow-left:before {\n  content: \"\\E091\";\n}\n.glyphicon-arrow-right:before {\n  content: \"\\E092\";\n}\n.glyphicon-arrow-up:before {\n  content: \"\\E093\";\n}\n.glyphicon-arrow-down:before {\n  content: \"\\E094\";\n}\n.glyphicon-share-alt:before {\n  content: \"\\E095\";\n}\n.glyphicon-resize-full:before {\n  content: \"\\E096\";\n}\n.glyphicon-resize-small:before {\n  content: \"\\E097\";\n}\n.glyphicon-exclamation-sign:before {\n  content: \"\\E101\";\n}\n.glyphicon-gift:before {\n  content: \"\\E102\";\n}\n.glyphicon-leaf:before {\n  content: \"\\E103\";\n}\n.glyphicon-fire:before {\n  content: \"\\E104\";\n}\n.glyphicon-eye-open:before {\n  content: \"\\E105\";\n}\n.glyphicon-eye-close:before {\n  content: \"\\E106\";\n}\n.glyphicon-warning-sign:before {\n  content: \"\\E107\";\n}\n.glyphicon-plane:before {\n  content: \"\\E108\";\n}\n.glyphicon-calendar:before {\n  content: \"\\E109\";\n}\n.glyphicon-random:before {\n  content: \"\\E110\";\n}\n.glyphicon-comment:before {\n  content: \"\\E111\";\n}\n.glyphicon-magnet:before {\n  content: \"\\E112\";\n}\n.glyphicon-chevron-up:before {\n  content: \"\\E113\";\n}\n.glyphicon-chevron-down:before {\n  content: \"\\E114\";\n}\n.glyphicon-retweet:before {\n  content: \"\\E115\";\n}\n.glyphicon-shopping-cart:before {\n  content: \"\\E116\";\n}\n.glyphicon-folder-close:before {\n  content: \"\\E117\";\n}\n.glyphicon-folder-open:before {\n  content: \"\\E118\";\n}\n.glyphicon-resize-vertical:before {\n  content: \"\\E119\";\n}\n.glyphicon-resize-horizontal:before {\n  content: \"\\E120\";\n}\n.glyphicon-hdd:before {\n  content: \"\\E121\";\n}\n.glyphicon-bullhorn:before {\n  content: \"\\E122\";\n}\n.glyphicon-bell:before {\n  content: \"\\E123\";\n}\n.glyphicon-certificate:before {\n  content: \"\\E124\";\n}\n.glyphicon-thumbs-up:before {\n  content: \"\\E125\";\n}\n.glyphicon-thumbs-down:before {\n  content: \"\\E126\";\n}\n.glyphicon-hand-right:before {\n  content: \"\\E127\";\n}\n.glyphicon-hand-left:before {\n  content: \"\\E128\";\n}\n.glyphicon-hand-up:before {\n  content: \"\\E129\";\n}\n.glyphicon-hand-down:before {\n  content: \"\\E130\";\n}\n.glyphicon-circle-arrow-right:before {\n  content: \"\\E131\";\n}\n.glyphicon-circle-arrow-left:before {\n  content: \"\\E132\";\n}\n.glyphicon-circle-arrow-up:before {\n  content: \"\\E133\";\n}\n.glyphicon-circle-arrow-down:before {\n  content: \"\\E134\";\n}\n.glyphicon-globe:before {\n  content: \"\\E135\";\n}\n.glyphicon-wrench:before {\n  content: \"\\E136\";\n}\n.glyphicon-tasks:before {\n  content: \"\\E137\";\n}\n.glyphicon-filter:before {\n  content: \"\\E138\";\n}\n.glyphicon-briefcase:before {\n  content: \"\\E139\";\n}\n.glyphicon-fullscreen:before {\n  content: \"\\E140\";\n}\n.glyphicon-dashboard:before {\n  content: \"\\E141\";\n}\n.glyphicon-paperclip:before {\n  content: \"\\E142\";\n}\n.glyphicon-heart-empty:before {\n  content: \"\\E143\";\n}\n.glyphicon-link:before {\n  content: \"\\E144\";\n}\n.glyphicon-phone:before {\n  content: \"\\E145\";\n}\n.glyphicon-pushpin:before {\n  content: \"\\E146\";\n}\n.glyphicon-usd:before {\n  content: \"\\E148\";\n}\n.glyphicon-gbp:before {\n  content: \"\\E149\";\n}\n.glyphicon-sort:before {\n  content: \"\\E150\";\n}\n.glyphicon-sort-by-alphabet:before {\n  content: \"\\E151\";\n}\n.glyphicon-sort-by-alphabet-alt:before {\n  content: \"\\E152\";\n}\n.glyphicon-sort-by-order:before {\n  content: \"\\E153\";\n}\n.glyphicon-sort-by-order-alt:before {\n  content: \"\\E154\";\n}\n.glyphicon-sort-by-attributes:before {\n  content: \"\\E155\";\n}\n.glyphicon-sort-by-attributes-alt:before {\n  content: \"\\E156\";\n}\n.glyphicon-unchecked:before {\n  content: \"\\E157\";\n}\n.glyphicon-expand:before {\n  content: \"\\E158\";\n}\n.glyphicon-collapse-down:before {\n  content: \"\\E159\";\n}\n.glyphicon-collapse-up:before {\n  content: \"\\E160\";\n}\n.glyphicon-log-in:before {\n  content: \"\\E161\";\n}\n.glyphicon-flash:before {\n  content: \"\\E162\";\n}\n.glyphicon-log-out:before {\n  content: \"\\E163\";\n}\n.glyphicon-new-window:before {\n  content: \"\\E164\";\n}\n.glyphicon-record:before {\n  content: \"\\E165\";\n}\n.glyphicon-save:before {\n  content: \"\\E166\";\n}\n.glyphicon-open:before {\n  content: \"\\E167\";\n}\n.glyphicon-saved:before {\n  content: \"\\E168\";\n}\n.glyphicon-import:before {\n  content: \"\\E169\";\n}\n.glyphicon-export:before {\n  content: \"\\E170\";\n}\n.glyphicon-send:before {\n  content: \"\\E171\";\n}\n.glyphicon-floppy-disk:before {\n  content: \"\\E172\";\n}\n.glyphicon-floppy-saved:before {\n  content: \"\\E173\";\n}\n.glyphicon-floppy-remove:before {\n  content: \"\\E174\";\n}\n.glyphicon-floppy-save:before {\n  content: \"\\E175\";\n}\n.glyphicon-floppy-open:before {\n  content: \"\\E176\";\n}\n.glyphicon-credit-card:before {\n  content: \"\\E177\";\n}\n.glyphicon-transfer:before {\n  content: \"\\E178\";\n}\n.glyphicon-cutlery:before {\n  content: \"\\E179\";\n}\n.glyphicon-header:before {\n  content: \"\\E180\";\n}\n.glyphicon-compressed:before {\n  content: \"\\E181\";\n}\n.glyphicon-earphone:before {\n  content: \"\\E182\";\n}\n.glyphicon-phone-alt:before {\n  content: \"\\E183\";\n}\n.glyphicon-tower:before {\n  content: \"\\E184\";\n}\n.glyphicon-stats:before {\n  content: \"\\E185\";\n}\n.glyphicon-sd-video:before {\n  content: \"\\E186\";\n}\n.glyphicon-hd-video:before {\n  content: \"\\E187\";\n}\n.glyphicon-subtitles:before {\n  content: \"\\E188\";\n}\n.glyphicon-sound-stereo:before {\n  content: \"\\E189\";\n}\n.glyphicon-sound-dolby:before {\n  content: \"\\E190\";\n}\n.glyphicon-sound-5-1:before {\n  content: \"\\E191\";\n}\n.glyphicon-sound-6-1:before {\n  content: \"\\E192\";\n}\n.glyphicon-sound-7-1:before {\n  content: \"\\E193\";\n}\n.glyphicon-copyright-mark:before {\n  content: \"\\E194\";\n}\n.glyphicon-registration-mark:before {\n  content: \"\\E195\";\n}\n.glyphicon-cloud-download:before {\n  content: \"\\E197\";\n}\n.glyphicon-cloud-upload:before {\n  content: \"\\E198\";\n}\n.glyphicon-tree-conifer:before {\n  content: \"\\E199\";\n}\n.glyphicon-tree-deciduous:before {\n  content: \"\\E200\";\n}\n.glyphicon-cd:before {\n  content: \"\\E201\";\n}\n.glyphicon-save-file:before {\n  content: \"\\E202\";\n}\n.glyphicon-open-file:before {\n  content: \"\\E203\";\n}\n.glyphicon-level-up:before {\n  content: \"\\E204\";\n}\n.glyphicon-copy:before {\n  content: \"\\E205\";\n}\n.glyphicon-paste:before {\n  content: \"\\E206\";\n}\n.glyphicon-alert:before {\n  content: \"\\E209\";\n}\n.glyphicon-equalizer:before {\n  content: \"\\E210\";\n}\n.glyphicon-king:before {\n  content: \"\\E211\";\n}\n.glyphicon-queen:before {\n  content: \"\\E212\";\n}\n.glyphicon-pawn:before {\n  content: \"\\E213\";\n}\n.glyphicon-bishop:before {\n  content: \"\\E214\";\n}\n.glyphicon-knight:before {\n  content: \"\\E215\";\n}\n.glyphicon-baby-formula:before {\n  content: \"\\E216\";\n}\n.glyphicon-tent:before {\n  content: \"\\26FA\";\n}\n.glyphicon-blackboard:before {\n  content: \"\\E218\";\n}\n.glyphicon-bed:before {\n  content: \"\\E219\";\n}\n.glyphicon-apple:before {\n  content: \"\\F8FF\";\n}\n.glyphicon-erase:before {\n  content: \"\\E221\";\n}\n.glyphicon-hourglass:before {\n  content: \"\\231B\";\n}\n.glyphicon-lamp:before {\n  content: \"\\E223\";\n}\n.glyphicon-duplicate:before {\n  content: \"\\E224\";\n}\n.glyphicon-piggy-bank:before {\n  content: \"\\E225\";\n}\n.glyphicon-scissors:before {\n  content: \"\\E226\";\n}\n.glyphicon-bitcoin:before {\n  content: \"\\E227\";\n}\n.glyphicon-btc:before {\n  content: \"\\E227\";\n}\n.glyphicon-xbt:before {\n  content: \"\\E227\";\n}\n.glyphicon-yen:before {\n  content: \"\\A5\";\n}\n.glyphicon-jpy:before {\n  content: \"\\A5\";\n}\n.glyphicon-ruble:before {\n  content: \"\\20BD\";\n}\n.glyphicon-rub:before {\n  content: \"\\20BD\";\n}\n.glyphicon-scale:before {\n  content: \"\\E230\";\n}\n.glyphicon-ice-lolly:before {\n  content: \"\\E231\";\n}\n.glyphicon-ice-lolly-tasted:before {\n  content: \"\\E232\";\n}\n.glyphicon-education:before {\n  content: \"\\E233\";\n}\n.glyphicon-option-horizontal:before {\n  content: \"\\E234\";\n}\n.glyphicon-option-vertical:before {\n  content: \"\\E235\";\n}\n.glyphicon-menu-hamburger:before {\n  content: \"\\E236\";\n}\n.glyphicon-modal-window:before {\n  content: \"\\E237\";\n}\n.glyphicon-oil:before {\n  content: \"\\E238\";\n}\n.glyphicon-grain:before {\n  content: \"\\E239\";\n}\n.glyphicon-sunglasses:before {\n  content: \"\\E240\";\n}\n.glyphicon-text-size:before {\n  content: \"\\E241\";\n}\n.glyphicon-text-color:before {\n  content: \"\\E242\";\n}\n.glyphicon-text-background:before {\n  content: \"\\E243\";\n}\n.glyphicon-object-align-top:before {\n  content: \"\\E244\";\n}\n.glyphicon-object-align-bottom:before {\n  content: \"\\E245\";\n}\n.glyphicon-object-align-horizontal:before {\n  content: \"\\E246\";\n}\n.glyphicon-object-align-left:before {\n  content: \"\\E247\";\n}\n.glyphicon-object-align-vertical:before {\n  content: \"\\E248\";\n}\n.glyphicon-object-align-right:before {\n  content: \"\\E249\";\n}\n.glyphicon-triangle-right:before {\n  content: \"\\E250\";\n}\n.glyphicon-triangle-left:before {\n  content: \"\\E251\";\n}\n.glyphicon-triangle-bottom:before {\n  content: \"\\E252\";\n}\n.glyphicon-triangle-top:before {\n  content: \"\\E253\";\n}\n.glyphicon-console:before {\n  content: \"\\E254\";\n}\n.glyphicon-superscript:before {\n  content: \"\\E255\";\n}\n.glyphicon-subscript:before {\n  content: \"\\E256\";\n}\n.glyphicon-menu-left:before {\n  content: \"\\E257\";\n}\n.glyphicon-menu-right:before {\n  content: \"\\E258\";\n}\n.glyphicon-menu-down:before {\n  content: \"\\E259\";\n}\n.glyphicon-menu-up:before {\n  content: \"\\E260\";\n}\n.caret {\n  display: inline-block;\n  width: 0;\n  height: 0;\n  margin-left: 2px;\n  vertical-align: middle;\n  border-top: 4px dashed;\n  border-top: 4px solid \\9;\n  border-right: 4px solid transparent;\n  border-left: 4px solid transparent;\n}\n.dropup,\n.dropdown {\n  position: relative;\n}\n.dropdown-toggle:focus {\n  outline: 0;\n}\n.dropdown-menu {\n  position: absolute;\n  top: 100%;\n  left: 0;\n  z-index: 1000;\n  display: none;\n  float: left;\n  min-width: 160px;\n  padding: 5px 0;\n  margin: 2px 0 0;\n  list-style: none;\n  font-size: 14px;\n  text-align: left;\n  background-color: #fff;\n  border: 1px solid #ccc;\n  border: 1px solid rgba(0, 0, 0, 0.15);\n  border-radius: 4px;\n  -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);\n  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);\n  background-clip: padding-box;\n}\n.dropdown-menu.pull-right {\n  right: 0;\n  left: auto;\n}\n.dropdown-menu .divider {\n  height: 1px;\n  margin: 9px 0;\n  overflow: hidden;\n  background-color: #e5e5e5;\n}\n.dropdown-menu > li > a {\n  display: block;\n  padding: 3px 20px;\n  clear: both;\n  font-weight: normal;\n  line-height: 1.42857143;\n  color: #333333;\n  white-space: nowrap;\n}\n.dropdown-menu > li > a:hover,\n.dropdown-menu > li > a:focus {\n  text-decoration: none;\n  color: #262626;\n  background-color: #f5f5f5;\n}\n.dropdown-menu > .active > a,\n.dropdown-menu > .active > a:hover,\n.dropdown-menu > .active > a:focus {\n  color: #fff;\n  text-decoration: none;\n  outline: 0;\n  background-color: #337ab7;\n}\n.dropdown-menu > .disabled > a,\n.dropdown-menu > .disabled > a:hover,\n.dropdown-menu > .disabled > a:focus {\n  color: #777777;\n}\n.dropdown-menu > .disabled > a:hover,\n.dropdown-menu > .disabled > a:focus {\n  text-decoration: none;\n  background-color: transparent;\n  background-image: none;\n  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);\n  cursor: not-allowed;\n}\n.open > .dropdown-menu {\n  display: block;\n}\n.open > a {\n  outline: 0;\n}\n.dropdown-menu-right {\n  left: auto;\n  right: 0;\n}\n.dropdown-menu-left {\n  left: 0;\n  right: auto;\n}\n.dropdown-header {\n  display: block;\n  padding: 3px 20px;\n  font-size: 12px;\n  line-height: 1.42857143;\n  color: #777777;\n  white-space: nowrap;\n}\n.dropdown-backdrop {\n  position: fixed;\n  left: 0;\n  right: 0;\n  bottom: 0;\n  top: 0;\n  z-index: 990;\n}\n.pull-right > .dropdown-menu {\n  right: 0;\n  left: auto;\n}\n.dropup .caret,\n.navbar-fixed-bottom .dropdown .caret {\n  border-top: 0;\n  border-bottom: 4px dashed;\n  border-bottom: 4px solid \\9;\n  content: \"\";\n}\n.dropup .dropdown-menu,\n.navbar-fixed-bottom .dropdown .dropdown-menu {\n  top: auto;\n  bottom: 100%;\n  margin-bottom: 2px;\n}\n@media (min-width: 768px) {\n  .navbar-right .dropdown-menu {\n    left: auto;\n    right: 0;\n  }\n  .navbar-right .dropdown-menu-left {\n    left: 0;\n    right: auto;\n  }\n}\n.btn-group,\n.btn-group-vertical {\n  position: relative;\n  display: inline-block;\n  vertical-align: middle;\n}\n.btn-group > .btn,\n.btn-group-vertical > .btn {\n  position: relative;\n  float: left;\n}\n.btn-group > .btn:hover,\n.btn-group-vertical > .btn:hover,\n.btn-group > .btn:focus,\n.btn-group-vertical > .btn:focus,\n.btn-group > .btn:active,\n.btn-group-vertical > .btn:active,\n.btn-group > .btn.active,\n.btn-group-vertical > .btn.active {\n  z-index: 2;\n}\n.btn-group .btn + .btn,\n.btn-group .btn + .btn-group,\n.btn-group .btn-group + .btn,\n.btn-group .btn-group + .btn-group {\n  margin-left: -1px;\n}\n.btn-toolbar {\n  margin-left: -5px;\n}\n.btn-toolbar .btn,\n.btn-toolbar .btn-group,\n.btn-toolbar .input-group {\n  float: left;\n}\n.btn-toolbar > .btn,\n.btn-toolbar > .btn-group,\n.btn-toolbar > .input-group {\n  margin-left: 5px;\n}\n.btn-group > .btn:not(:first-child):not(:last-child):not(.dropdown-toggle) {\n  border-radius: 0;\n}\n.btn-group > .btn:first-child {\n  margin-left: 0;\n}\n.btn-group > .btn:first-child:not(:last-child):not(.dropdown-toggle) {\n  border-bottom-right-radius: 0;\n  border-top-right-radius: 0;\n}\n.btn-group > .btn:last-child:not(:first-child),\n.btn-group > .dropdown-toggle:not(:first-child) {\n  border-bottom-left-radius: 0;\n  border-top-left-radius: 0;\n}\n.btn-group > .btn-group {\n  float: left;\n}\n.btn-group > .btn-group:not(:first-child):not(:last-child) > .btn {\n  border-radius: 0;\n}\n.btn-group > .btn-group:first-child:not(:last-child) > .btn:last-child,\n.btn-group > .btn-group:first-child:not(:last-child) > .dropdown-toggle {\n  border-bottom-right-radius: 0;\n  border-top-right-radius: 0;\n}\n.btn-group > .btn-group:last-child:not(:first-child) > .btn:first-child {\n  border-bottom-left-radius: 0;\n  border-top-left-radius: 0;\n}\n.btn-group .dropdown-toggle:active,\n.btn-group.open .dropdown-toggle {\n  outline: 0;\n}\n.btn-group > .btn + .dropdown-toggle {\n  padding-left: 8px;\n  padding-right: 8px;\n}\n.btn-group > .btn-lg + .dropdown-toggle {\n  padding-left: 12px;\n  padding-right: 12px;\n}\n.btn-group.open .dropdown-toggle {\n  -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);\n  box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);\n}\n.btn-group.open .dropdown-toggle.btn-link {\n  -webkit-box-shadow: none;\n  box-shadow: none;\n}\n.btn .caret {\n  margin-left: 0;\n}\n.btn-lg .caret {\n  border-width: 5px 5px 0;\n  border-bottom-width: 0;\n}\n.dropup .btn-lg .caret {\n  border-width: 0 5px 5px;\n}\n.btn-group-vertical > .btn,\n.btn-group-vertical > .btn-group,\n.btn-group-vertical > .btn-group > .btn {\n  display: block;\n  float: none;\n  width: 100%;\n  max-width: 100%;\n}\n.btn-group-vertical > .btn-group > .btn {\n  float: none;\n}\n.btn-group-vertical > .btn + .btn,\n.btn-group-vertical > .btn + .btn-group,\n.btn-group-vertical > .btn-group + .btn,\n.btn-group-vertical > .btn-group + .btn-group {\n  margin-top: -1px;\n  margin-left: 0;\n}\n.btn-group-vertical > .btn:not(:first-child):not(:last-child) {\n  border-radius: 0;\n}\n.btn-group-vertical > .btn:first-child:not(:last-child) {\n  border-top-right-radius: 4px;\n  border-top-left-radius: 4px;\n  border-bottom-right-radius: 0;\n  border-bottom-left-radius: 0;\n}\n.btn-group-vertical > .btn:last-child:not(:first-child) {\n  border-top-right-radius: 0;\n  border-top-left-radius: 0;\n  border-bottom-right-radius: 4px;\n  border-bottom-left-radius: 4px;\n}\n.btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > .btn {\n  border-radius: 0;\n}\n.btn-group-vertical > .btn-group:first-child:not(:last-child) > .btn:last-child,\n.btn-group-vertical > .btn-group:first-child:not(:last-child) > .dropdown-toggle {\n  border-bottom-right-radius: 0;\n  border-bottom-left-radius: 0;\n}\n.btn-group-vertical > .btn-group:last-child:not(:first-child) > .btn:first-child {\n  border-top-right-radius: 0;\n  border-top-left-radius: 0;\n}\n.btn-group-justified {\n  display: table;\n  width: 100%;\n  table-layout: fixed;\n  border-collapse: separate;\n}\n.btn-group-justified > .btn,\n.btn-group-justified > .btn-group {\n  float: none;\n  display: table-cell;\n  width: 1%;\n}\n.btn-group-justified > .btn-group .btn {\n  width: 100%;\n}\n.btn-group-justified > .btn-group .dropdown-menu {\n  left: auto;\n}\n[data-toggle=\"buttons\"] > .btn input[type=\"radio\"],\n[data-toggle=\"buttons\"] > .btn-group > .btn input[type=\"radio\"],\n[data-toggle=\"buttons\"] > .btn input[type=\"checkbox\"],\n[data-toggle=\"buttons\"] > .btn-group > .btn input[type=\"checkbox\"] {\n  position: absolute;\n  clip: rect(0, 0, 0, 0);\n  pointer-events: none;\n}\n.input-group {\n  position: relative;\n  display: table;\n  border-collapse: separate;\n}\n.input-group[class*=\"col-\"] {\n  float: none;\n  padding-left: 0;\n  padding-right: 0;\n}\n.input-group .form-control {\n  position: relative;\n  z-index: 2;\n  float: left;\n  width: 100%;\n  margin-bottom: 0;\n}\n.input-group .form-control:focus {\n  z-index: 3;\n}\n.input-group-lg > .form-control,\n.input-group-lg > .input-group-addon,\n.input-group-lg > .input-group-btn > .btn {\n  height: 46px;\n  padding: 10px 16px;\n  font-size: 18px;\n  line-height: 1.3333333;\n  border-radius: 6px;\n}\nselect.input-group-lg > .form-control,\nselect.input-group-lg > .input-group-addon,\nselect.input-group-lg > .input-group-btn > .btn {\n  height: 46px;\n  line-height: 46px;\n}\ntextarea.input-group-lg > .form-control,\ntextarea.input-group-lg > .input-group-addon,\ntextarea.input-group-lg > .input-group-btn > .btn,\nselect[multiple].input-group-lg > .form-control,\nselect[multiple].input-group-lg > .input-group-addon,\nselect[multiple].input-group-lg > .input-group-btn > .btn {\n  height: auto;\n}\n.input-group-sm > .form-control,\n.input-group-sm > .input-group-addon,\n.input-group-sm > .input-group-btn > .btn {\n  height: 30px;\n  padding: 5px 10px;\n  font-size: 12px;\n  line-height: 1.5;\n  border-radius: 3px;\n}\nselect.input-group-sm > .form-control,\nselect.input-group-sm > .input-group-addon,\nselect.input-group-sm > .input-group-btn > .btn {\n  height: 30px;\n  line-height: 30px;\n}\ntextarea.input-group-sm > .form-control,\ntextarea.input-group-sm > .input-group-addon,\ntextarea.input-group-sm > .input-group-btn > .btn,\nselect[multiple].input-group-sm > .form-control,\nselect[multiple].input-group-sm > .input-group-addon,\nselect[multiple].input-group-sm > .input-group-btn > .btn {\n  height: auto;\n}\n.input-group-addon,\n.input-group-btn,\n.input-group .form-control {\n  display: table-cell;\n}\n.input-group-addon:not(:first-child):not(:last-child),\n.input-group-btn:not(:first-child):not(:last-child),\n.input-group .form-control:not(:first-child):not(:last-child) {\n  border-radius: 0;\n}\n.input-group-addon,\n.input-group-btn {\n  width: 1%;\n  white-space: nowrap;\n  vertical-align: middle;\n}\n.input-group-addon {\n  padding: 6px 12px;\n  font-size: 14px;\n  font-weight: normal;\n  line-height: 1;\n  color: #555555;\n  text-align: center;\n  background-color: #eeeeee;\n  border: 1px solid #ccc;\n  border-radius: 4px;\n}\n.input-group-addon.input-sm {\n  padding: 5px 10px;\n  font-size: 12px;\n  border-radius: 3px;\n}\n.input-group-addon.input-lg {\n  padding: 10px 16px;\n  font-size: 18px;\n  border-radius: 6px;\n}\n.input-group-addon input[type=\"radio\"],\n.input-group-addon input[type=\"checkbox\"] {\n  margin-top: 0;\n}\n.input-group .form-control:first-child,\n.input-group-addon:first-child,\n.input-group-btn:first-child > .btn,\n.input-group-btn:first-child > .btn-group > .btn,\n.input-group-btn:first-child > .dropdown-toggle,\n.input-group-btn:last-child > .btn:not(:last-child):not(.dropdown-toggle),\n.input-group-btn:last-child > .btn-group:not(:last-child) > .btn {\n  border-bottom-right-radius: 0;\n  border-top-right-radius: 0;\n}\n.input-group-addon:first-child {\n  border-right: 0;\n}\n.input-group .form-control:last-child,\n.input-group-addon:last-child,\n.input-group-btn:last-child > .btn,\n.input-group-btn:last-child > .btn-group > .btn,\n.input-group-btn:last-child > .dropdown-toggle,\n.input-group-btn:first-child > .btn:not(:first-child),\n.input-group-btn:first-child > .btn-group:not(:first-child) > .btn {\n  border-bottom-left-radius: 0;\n  border-top-left-radius: 0;\n}\n.input-group-addon:last-child {\n  border-left: 0;\n}\n.input-group-btn {\n  position: relative;\n  font-size: 0;\n  white-space: nowrap;\n}\n.input-group-btn > .btn {\n  position: relative;\n}\n.input-group-btn > .btn + .btn {\n  margin-left: -1px;\n}\n.input-group-btn > .btn:hover,\n.input-group-btn > .btn:focus,\n.input-group-btn > .btn:active {\n  z-index: 2;\n}\n.input-group-btn:first-child > .btn,\n.input-group-btn:first-child > .btn-group {\n  margin-right: -1px;\n}\n.input-group-btn:last-child > .btn,\n.input-group-btn:last-child > .btn-group {\n  z-index: 2;\n  margin-left: -1px;\n}\n.nav {\n  margin-bottom: 0;\n  padding-left: 0;\n  list-style: none;\n}\n.nav > li {\n  position: relative;\n  display: block;\n}\n.nav > li > a {\n  position: relative;\n  display: block;\n  padding: 10px 15px;\n}\n.nav > li > a:hover,\n.nav > li > a:focus {\n  text-decoration: none;\n  background-color: #eeeeee;\n}\n.nav > li.disabled > a {\n  color: #777777;\n}\n.nav > li.disabled > a:hover,\n.nav > li.disabled > a:focus {\n  color: #777777;\n  text-decoration: none;\n  background-color: transparent;\n  cursor: not-allowed;\n}\n.nav .open > a,\n.nav .open > a:hover,\n.nav .open > a:focus {\n  background-color: #eeeeee;\n  border-color: #337ab7;\n}\n.nav .nav-divider {\n  height: 1px;\n  margin: 9px 0;\n  overflow: hidden;\n  background-color: #e5e5e5;\n}\n.nav > li > a > img {\n  max-width: none;\n}\n.nav-tabs {\n  border-bottom: 1px solid #ddd;\n}\n.nav-tabs > li {\n  float: left;\n  margin-bottom: -1px;\n}\n.nav-tabs > li > a {\n  margin-right: 2px;\n  line-height: 1.42857143;\n  border: 1px solid transparent;\n  border-radius: 4px 4px 0 0;\n}\n.nav-tabs > li > a:hover {\n  border-color: #eeeeee #eeeeee #ddd;\n}\n.nav-tabs > li.active > a,\n.nav-tabs > li.active > a:hover,\n.nav-tabs > li.active > a:focus {\n  color: #555555;\n  background-color: #fff;\n  border: 1px solid #ddd;\n  border-bottom-color: transparent;\n  cursor: default;\n}\n.nav-tabs.nav-justified {\n  width: 100%;\n  border-bottom: 0;\n}\n.nav-tabs.nav-justified > li {\n  float: none;\n}\n.nav-tabs.nav-justified > li > a {\n  text-align: center;\n  margin-bottom: 5px;\n}\n.nav-tabs.nav-justified > .dropdown .dropdown-menu {\n  top: auto;\n  left: auto;\n}\n@media (min-width: 768px) {\n  .nav-tabs.nav-justified > li {\n    display: table-cell;\n    width: 1%;\n  }\n  .nav-tabs.nav-justified > li > a {\n    margin-bottom: 0;\n  }\n}\n.nav-tabs.nav-justified > li > a {\n  margin-right: 0;\n  border-radius: 4px;\n}\n.nav-tabs.nav-justified > .active > a,\n.nav-tabs.nav-justified > .active > a:hover,\n.nav-tabs.nav-justified > .active > a:focus {\n  border: 1px solid #ddd;\n}\n@media (min-width: 768px) {\n  .nav-tabs.nav-justified > li > a {\n    border-bottom: 1px solid #ddd;\n    border-radius: 4px 4px 0 0;\n  }\n  .nav-tabs.nav-justified > .active > a,\n  .nav-tabs.nav-justified > .active > a:hover,\n  .nav-tabs.nav-justified > .active > a:focus {\n    border-bottom-color: #fff;\n  }\n}\n.nav-pills > li {\n  float: left;\n}\n.nav-pills > li > a {\n  border-radius: 4px;\n}\n.nav-pills > li + li {\n  margin-left: 2px;\n}\n.nav-pills > li.active > a,\n.nav-pills > li.active > a:hover,\n.nav-pills > li.active > a:focus {\n  color: #fff;\n  background-color: #337ab7;\n}\n.nav-stacked > li {\n  float: none;\n}\n.nav-stacked > li + li {\n  margin-top: 2px;\n  margin-left: 0;\n}\n.nav-justified {\n  width: 100%;\n}\n.nav-justified > li {\n  float: none;\n}\n.nav-justified > li > a {\n  text-align: center;\n  margin-bottom: 5px;\n}\n.nav-justified > .dropdown .dropdown-menu {\n  top: auto;\n  left: auto;\n}\n@media (min-width: 768px) {\n  .nav-justified > li {\n    display: table-cell;\n    width: 1%;\n  }\n  .nav-justified > li > a {\n    margin-bottom: 0;\n  }\n}\n.nav-tabs-justified {\n  border-bottom: 0;\n}\n.nav-tabs-justified > li > a {\n  margin-right: 0;\n  border-radius: 4px;\n}\n.nav-tabs-justified > .active > a,\n.nav-tabs-justified > .active > a:hover,\n.nav-tabs-justified > .active > a:focus {\n  border: 1px solid #ddd;\n}\n@media (min-width: 768px) {\n  .nav-tabs-justified > li > a {\n    border-bottom: 1px solid #ddd;\n    border-radius: 4px 4px 0 0;\n  }\n  .nav-tabs-justified > .active > a,\n  .nav-tabs-justified > .active > a:hover,\n  .nav-tabs-justified > .active > a:focus {\n    border-bottom-color: #fff;\n  }\n}\n.tab-content > .tab-pane {\n  display: none;\n}\n.tab-content > .active {\n  display: block;\n}\n.nav-tabs .dropdown-menu {\n  margin-top: -1px;\n  border-top-right-radius: 0;\n  border-top-left-radius: 0;\n}\n.navbar {\n  position: relative;\n  min-height: 50px;\n  margin-bottom: 20px;\n  border: 1px solid transparent;\n}\n@media (min-width: 768px) {\n  .navbar {\n    border-radius: 4px;\n  }\n}\n@media (min-width: 768px) {\n  .navbar-header {\n    float: left;\n  }\n}\n.navbar-collapse {\n  overflow-x: visible;\n  padding-right: 15px;\n  padding-left: 15px;\n  border-top: 1px solid transparent;\n  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);\n  -webkit-overflow-scrolling: touch;\n}\n.navbar-collapse.in {\n  overflow-y: auto;\n}\n@media (min-width: 768px) {\n  .navbar-collapse {\n    width: auto;\n    border-top: 0;\n    box-shadow: none;\n  }\n  .navbar-collapse.collapse {\n    display: block !important;\n    height: auto !important;\n    padding-bottom: 0;\n    overflow: visible !important;\n  }\n  .navbar-collapse.in {\n    overflow-y: visible;\n  }\n  .navbar-fixed-top .navbar-collapse,\n  .navbar-static-top .navbar-collapse,\n  .navbar-fixed-bottom .navbar-collapse {\n    padding-left: 0;\n    padding-right: 0;\n  }\n}\n.navbar-fixed-top .navbar-collapse,\n.navbar-fixed-bottom .navbar-collapse {\n  max-height: 340px;\n}\n@media (max-device-width: 480px) and (orientation: landscape) {\n  .navbar-fixed-top .navbar-collapse,\n  .navbar-fixed-bottom .navbar-collapse {\n    max-height: 200px;\n  }\n}\n.container > .navbar-header,\n.container-fluid > .navbar-header,\n.container > .navbar-collapse,\n.container-fluid > .navbar-collapse {\n  margin-right: -15px;\n  margin-left: -15px;\n}\n@media (min-width: 768px) {\n  .container > .navbar-header,\n  .container-fluid > .navbar-header,\n  .container > .navbar-collapse,\n  .container-fluid > .navbar-collapse {\n    margin-right: 0;\n    margin-left: 0;\n  }\n}\n.navbar-static-top {\n  z-index: 1000;\n  border-width: 0 0 1px;\n}\n@media (min-width: 768px) {\n  .navbar-static-top {\n    border-radius: 0;\n  }\n}\n.navbar-fixed-top,\n.navbar-fixed-bottom {\n  position: fixed;\n  right: 0;\n  left: 0;\n  z-index: 1030;\n}\n@media (min-width: 768px) {\n  .navbar-fixed-top,\n  .navbar-fixed-bottom {\n    border-radius: 0;\n  }\n}\n.navbar-fixed-top {\n  top: 0;\n  border-width: 0 0 1px;\n}\n.navbar-fixed-bottom {\n  bottom: 0;\n  margin-bottom: 0;\n  border-width: 1px 0 0;\n}\n.navbar-brand {\n  float: left;\n  padding: 15px 15px;\n  font-size: 18px;\n  line-height: 20px;\n  height: 50px;\n}\n.navbar-brand:hover,\n.navbar-brand:focus {\n  text-decoration: none;\n}\n.navbar-brand > img {\n  display: block;\n}\n@media (min-width: 768px) {\n  .navbar > .container .navbar-brand,\n  .navbar > .container-fluid .navbar-brand {\n    margin-left: -15px;\n  }\n}\n.navbar-toggle {\n  position: relative;\n  float: right;\n  margin-right: 15px;\n  padding: 9px 10px;\n  margin-top: 8px;\n  margin-bottom: 8px;\n  background-color: transparent;\n  background-image: none;\n  border: 1px solid transparent;\n  border-radius: 4px;\n}\n.navbar-toggle:focus {\n  outline: 0;\n}\n.navbar-toggle .icon-bar {\n  display: block;\n  width: 22px;\n  height: 2px;\n  border-radius: 1px;\n}\n.navbar-toggle .icon-bar + .icon-bar {\n  margin-top: 4px;\n}\n@media (min-width: 768px) {\n  .navbar-toggle {\n    display: none;\n  }\n}\n.navbar-nav {\n  margin: 7.5px -15px;\n}\n.navbar-nav > li > a {\n  padding-top: 10px;\n  padding-bottom: 10px;\n  line-height: 20px;\n}\n@media (max-width: 767px) {\n  .navbar-nav .open .dropdown-menu {\n    position: static;\n    float: none;\n    width: auto;\n    margin-top: 0;\n    background-color: transparent;\n    border: 0;\n    box-shadow: none;\n  }\n  .navbar-nav .open .dropdown-menu > li > a,\n  .navbar-nav .open .dropdown-menu .dropdown-header {\n    padding: 5px 15px 5px 25px;\n  }\n  .navbar-nav .open .dropdown-menu > li > a {\n    line-height: 20px;\n  }\n  .navbar-nav .open .dropdown-menu > li > a:hover,\n  .navbar-nav .open .dropdown-menu > li > a:focus {\n    background-image: none;\n  }\n}\n@media (min-width: 768px) {\n  .navbar-nav {\n    float: left;\n    margin: 0;\n  }\n  .navbar-nav > li {\n    float: left;\n  }\n  .navbar-nav > li > a {\n    padding-top: 15px;\n    padding-bottom: 15px;\n  }\n}\n.navbar-form {\n  margin-left: -15px;\n  margin-right: -15px;\n  padding: 10px 15px;\n  border-top: 1px solid transparent;\n  border-bottom: 1px solid transparent;\n  -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 0 rgba(255, 255, 255, 0.1);\n  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 0 rgba(255, 255, 255, 0.1);\n  margin-top: 8px;\n  margin-bottom: 8px;\n}\n@media (min-width: 768px) {\n  .navbar-form .form-group {\n    display: inline-block;\n    margin-bottom: 0;\n    vertical-align: middle;\n  }\n  .navbar-form .form-control {\n    display: inline-block;\n    width: auto;\n    vertical-align: middle;\n  }\n  .navbar-form .form-control-static {\n    display: inline-block;\n  }\n  .navbar-form .input-group {\n    display: inline-table;\n    vertical-align: middle;\n  }\n  .navbar-form .input-group .input-group-addon,\n  .navbar-form .input-group .input-group-btn,\n  .navbar-form .input-group .form-control {\n    width: auto;\n  }\n  .navbar-form .input-group > .form-control {\n    width: 100%;\n  }\n  .navbar-form .control-label {\n    margin-bottom: 0;\n    vertical-align: middle;\n  }\n  .navbar-form .radio,\n  .navbar-form .checkbox {\n    display: inline-block;\n    margin-top: 0;\n    margin-bottom: 0;\n    vertical-align: middle;\n  }\n  .navbar-form .radio label,\n  .navbar-form .checkbox label {\n    padding-left: 0;\n  }\n  .navbar-form .radio input[type=\"radio\"],\n  .navbar-form .checkbox input[type=\"checkbox\"] {\n    position: relative;\n    margin-left: 0;\n  }\n  .navbar-form .has-feedback .form-control-feedback {\n    top: 0;\n  }\n}\n@media (max-width: 767px) {\n  .navbar-form .form-group {\n    margin-bottom: 5px;\n  }\n  .navbar-form .form-group:last-child {\n    margin-bottom: 0;\n  }\n}\n@media (min-width: 768px) {\n  .navbar-form {\n    width: auto;\n    border: 0;\n    margin-left: 0;\n    margin-right: 0;\n    padding-top: 0;\n    padding-bottom: 0;\n    -webkit-box-shadow: none;\n    box-shadow: none;\n  }\n}\n.navbar-nav > li > .dropdown-menu {\n  margin-top: 0;\n  border-top-right-radius: 0;\n  border-top-left-radius: 0;\n}\n.navbar-fixed-bottom .navbar-nav > li > .dropdown-menu {\n  margin-bottom: 0;\n  border-top-right-radius: 4px;\n  border-top-left-radius: 4px;\n  border-bottom-right-radius: 0;\n  border-bottom-left-radius: 0;\n}\n.navbar-btn {\n  margin-top: 8px;\n  margin-bottom: 8px;\n}\n.navbar-btn.btn-sm {\n  margin-top: 10px;\n  margin-bottom: 10px;\n}\n.navbar-btn.btn-xs {\n  margin-top: 14px;\n  margin-bottom: 14px;\n}\n.navbar-text {\n  margin-top: 15px;\n  margin-bottom: 15px;\n}\n@media (min-width: 768px) {\n  .navbar-text {\n    float: left;\n    margin-left: 15px;\n    margin-right: 15px;\n  }\n}\n@media (min-width: 768px) {\n  .navbar-left {\n    float: left !important;\n  }\n  .navbar-right {\n    float: right !important;\n    margin-right: -15px;\n  }\n  .navbar-right ~ .navbar-right {\n    margin-right: 0;\n  }\n}\n.navbar-default {\n  background-color: #f8f8f8;\n  border-color: #e7e7e7;\n}\n.navbar-default .navbar-brand {\n  color: #777;\n}\n.navbar-default .navbar-brand:hover,\n.navbar-default .navbar-brand:focus {\n  color: #5e5e5e;\n  background-color: transparent;\n}\n.navbar-default .navbar-text {\n  color: #777;\n}\n.navbar-default .navbar-nav > li > a {\n  color: #777;\n}\n.navbar-default .navbar-nav > li > a:hover,\n.navbar-default .navbar-nav > li > a:focus {\n  color: #333;\n  background-color: transparent;\n}\n.navbar-default .navbar-nav > .active > a,\n.navbar-default .navbar-nav > .active > a:hover,\n.navbar-default .navbar-nav > .active > a:focus {\n  color: #555;\n  background-color: #e7e7e7;\n}\n.navbar-default .navbar-nav > .disabled > a,\n.navbar-default .navbar-nav > .disabled > a:hover,\n.navbar-default .navbar-nav > .disabled > a:focus {\n  color: #ccc;\n  background-color: transparent;\n}\n.navbar-default .navbar-toggle {\n  border-color: #ddd;\n}\n.navbar-default .navbar-toggle:hover,\n.navbar-default .navbar-toggle:focus {\n  background-color: #ddd;\n}\n.navbar-default .navbar-toggle .icon-bar {\n  background-color: #888;\n}\n.navbar-default .navbar-collapse,\n.navbar-default .navbar-form {\n  border-color: #e7e7e7;\n}\n.navbar-default .navbar-nav > .open > a,\n.navbar-default .navbar-nav > .open > a:hover,\n.navbar-default .navbar-nav > .open > a:focus {\n  background-color: #e7e7e7;\n  color: #555;\n}\n@media (max-width: 767px) {\n  .navbar-default .navbar-nav .open .dropdown-menu > li > a {\n    color: #777;\n  }\n  .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,\n  .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {\n    color: #333;\n    background-color: transparent;\n  }\n  .navbar-default .navbar-nav .open .dropdown-menu > .active > a,\n  .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover,\n  .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {\n    color: #555;\n    background-color: #e7e7e7;\n  }\n  .navbar-default .navbar-nav .open .dropdown-menu > .disabled > a,\n  .navbar-default .navbar-nav .open .dropdown-menu > .disabled > a:hover,\n  .navbar-default .navbar-nav .open .dropdown-menu > .disabled > a:focus {\n    color: #ccc;\n    background-color: transparent;\n  }\n}\n.navbar-default .navbar-link {\n  color: #777;\n}\n.navbar-default .navbar-link:hover {\n  color: #333;\n}\n.navbar-default .btn-link {\n  color: #777;\n}\n.navbar-default .btn-link:hover,\n.navbar-default .btn-link:focus {\n  color: #333;\n}\n.navbar-default .btn-link[disabled]:hover,\nfieldset[disabled] .navbar-default .btn-link:hover,\n.navbar-default .btn-link[disabled]:focus,\nfieldset[disabled] .navbar-default .btn-link:focus {\n  color: #ccc;\n}\n.navbar-inverse {\n  background-color: #222;\n  border-color: #080808;\n}\n.navbar-inverse .navbar-brand {\n  color: #9d9d9d;\n}\n.navbar-inverse .navbar-brand:hover,\n.navbar-inverse .navbar-brand:focus {\n  color: #fff;\n  background-color: transparent;\n}\n.navbar-inverse .navbar-text {\n  color: #9d9d9d;\n}\n.navbar-inverse .navbar-nav > li > a {\n  color: #9d9d9d;\n}\n.navbar-inverse .navbar-nav > li > a:hover,\n.navbar-inverse .navbar-nav > li > a:focus {\n  color: #fff;\n  background-color: transparent;\n}\n.navbar-inverse .navbar-nav > .active > a,\n.navbar-inverse .navbar-nav > .active > a:hover,\n.navbar-inverse .navbar-nav > .active > a:focus {\n  color: #fff;\n  background-color: #080808;\n}\n.navbar-inverse .navbar-nav > .disabled > a,\n.navbar-inverse .navbar-nav > .disabled > a:hover,\n.navbar-inverse .navbar-nav > .disabled > a:focus {\n  color: #444;\n  background-color: transparent;\n}\n.navbar-inverse .navbar-toggle {\n  border-color: #333;\n}\n.navbar-inverse .navbar-toggle:hover,\n.navbar-inverse .navbar-toggle:focus {\n  background-color: #333;\n}\n.navbar-inverse .navbar-toggle .icon-bar {\n  background-color: #fff;\n}\n.navbar-inverse .navbar-collapse,\n.navbar-inverse .navbar-form {\n  border-color: #101010;\n}\n.navbar-inverse .navbar-nav > .open > a,\n.navbar-inverse .navbar-nav > .open > a:hover,\n.navbar-inverse .navbar-nav > .open > a:focus {\n  background-color: #080808;\n  color: #fff;\n}\n@media (max-width: 767px) {\n  .navbar-inverse .navbar-nav .open .dropdown-menu > .dropdown-header {\n    border-color: #080808;\n  }\n  .navbar-inverse .navbar-nav .open .dropdown-menu .divider {\n    background-color: #080808;\n  }\n  .navbar-inverse .navbar-nav .open .dropdown-menu > li > a {\n    color: #9d9d9d;\n  }\n  .navbar-inverse .navbar-nav .open .dropdown-menu > li > a:hover,\n  .navbar-inverse .navbar-nav .open .dropdown-menu > li > a:focus {\n    color: #fff;\n    background-color: transparent;\n  }\n  .navbar-inverse .navbar-nav .open .dropdown-menu > .active > a,\n  .navbar-inverse .navbar-nav .open .dropdown-menu > .active > a:hover,\n  .navbar-inverse .navbar-nav .open .dropdown-menu > .active > a:focus {\n    color: #fff;\n    background-color: #080808;\n  }\n  .navbar-inverse .navbar-nav .open .dropdown-menu > .disabled > a,\n  .navbar-inverse .navbar-nav .open .dropdown-menu > .disabled > a:hover,\n  .navbar-inverse .navbar-nav .open .dropdown-menu > .disabled > a:focus {\n    color: #444;\n    background-color: transparent;\n  }\n}\n.navbar-inverse .navbar-link {\n  color: #9d9d9d;\n}\n.navbar-inverse .navbar-link:hover {\n  color: #fff;\n}\n.navbar-inverse .btn-link {\n  color: #9d9d9d;\n}\n.navbar-inverse .btn-link:hover,\n.navbar-inverse .btn-link:focus {\n  color: #fff;\n}\n.navbar-inverse .btn-link[disabled]:hover,\nfieldset[disabled] .navbar-inverse .btn-link:hover,\n.navbar-inverse .btn-link[disabled]:focus,\nfieldset[disabled] .navbar-inverse .btn-link:focus {\n  color: #444;\n}\n.breadcrumb {\n  padding: 8px 15px;\n  margin-bottom: 20px;\n  list-style: none;\n  background-color: #f5f5f5;\n  border-radius: 4px;\n}\n.breadcrumb > li {\n  display: inline-block;\n}\n.breadcrumb > li + li:before {\n  content: \"/\\A0\";\n  padding: 0 5px;\n  color: #ccc;\n}\n.breadcrumb > .active {\n  color: #777777;\n}\n.pagination {\n  display: inline-block;\n  padding-left: 0;\n  margin: 20px 0;\n  border-radius: 4px;\n}\n.pagination > li {\n  display: inline;\n}\n.pagination > li > a,\n.pagination > li > span {\n  position: relative;\n  float: left;\n  padding: 6px 12px;\n  line-height: 1.42857143;\n  text-decoration: none;\n  color: #337ab7;\n  background-color: #fff;\n  border: 1px solid #ddd;\n  margin-left: -1px;\n}\n.pagination > li:first-child > a,\n.pagination > li:first-child > span {\n  margin-left: 0;\n  border-bottom-left-radius: 4px;\n  border-top-left-radius: 4px;\n}\n.pagination > li:last-child > a,\n.pagination > li:last-child > span {\n  border-bottom-right-radius: 4px;\n  border-top-right-radius: 4px;\n}\n.pagination > li > a:hover,\n.pagination > li > span:hover,\n.pagination > li > a:focus,\n.pagination > li > span:focus {\n  z-index: 2;\n  color: #23527c;\n  background-color: #eeeeee;\n  border-color: #ddd;\n}\n.pagination > .active > a,\n.pagination > .active > span,\n.pagination > .active > a:hover,\n.pagination > .active > span:hover,\n.pagination > .active > a:focus,\n.pagination > .active > span:focus {\n  z-index: 3;\n  color: #fff;\n  background-color: #337ab7;\n  border-color: #337ab7;\n  cursor: default;\n}\n.pagination > .disabled > span,\n.pagination > .disabled > span:hover,\n.pagination > .disabled > span:focus,\n.pagination > .disabled > a,\n.pagination > .disabled > a:hover,\n.pagination > .disabled > a:focus {\n  color: #777777;\n  background-color: #fff;\n  border-color: #ddd;\n  cursor: not-allowed;\n}\n.pagination-lg > li > a,\n.pagination-lg > li > span {\n  padding: 10px 16px;\n  font-size: 18px;\n  line-height: 1.3333333;\n}\n.pagination-lg > li:first-child > a,\n.pagination-lg > li:first-child > span {\n  border-bottom-left-radius: 6px;\n  border-top-left-radius: 6px;\n}\n.pagination-lg > li:last-child > a,\n.pagination-lg > li:last-child > span {\n  border-bottom-right-radius: 6px;\n  border-top-right-radius: 6px;\n}\n.pagination-sm > li > a,\n.pagination-sm > li > span {\n  padding: 5px 10px;\n  font-size: 12px;\n  line-height: 1.5;\n}\n.pagination-sm > li:first-child > a,\n.pagination-sm > li:first-child > span {\n  border-bottom-left-radius: 3px;\n  border-top-left-radius: 3px;\n}\n.pagination-sm > li:last-child > a,\n.pagination-sm > li:last-child > span {\n  border-bottom-right-radius: 3px;\n  border-top-right-radius: 3px;\n}\n.pager {\n  padding-left: 0;\n  margin: 20px 0;\n  list-style: none;\n  text-align: center;\n}\n.pager li {\n  display: inline;\n}\n.pager li > a,\n.pager li > span {\n  display: inline-block;\n  padding: 5px 14px;\n  background-color: #fff;\n  border: 1px solid #ddd;\n  border-radius: 15px;\n}\n.pager li > a:hover,\n.pager li > a:focus {\n  text-decoration: none;\n  background-color: #eeeeee;\n}\n.pager .next > a,\n.pager .next > span {\n  float: right;\n}\n.pager .previous > a,\n.pager .previous > span {\n  float: left;\n}\n.pager .disabled > a,\n.pager .disabled > a:hover,\n.pager .disabled > a:focus,\n.pager .disabled > span {\n  color: #777777;\n  background-color: #fff;\n  cursor: not-allowed;\n}\n.label {\n  display: inline;\n  padding: .2em .6em .3em;\n  font-size: 75%;\n  font-weight: bold;\n  line-height: 1;\n  color: #fff;\n  text-align: center;\n  white-space: nowrap;\n  vertical-align: baseline;\n  border-radius: .25em;\n}\na.label:hover,\na.label:focus {\n  color: #fff;\n  text-decoration: none;\n  cursor: pointer;\n}\n.label:empty {\n  display: none;\n}\n.btn .label {\n  position: relative;\n  top: -1px;\n}\n.label-default {\n  background-color: #777777;\n}\n.label-default[href]:hover,\n.label-default[href]:focus {\n  background-color: #5e5e5e;\n}\n.label-primary {\n  background-color: #337ab7;\n}\n.label-primary[href]:hover,\n.label-primary[href]:focus {\n  background-color: #286090;\n}\n.label-success {\n  background-color: #5cb85c;\n}\n.label-success[href]:hover,\n.label-success[href]:focus {\n  background-color: #449d44;\n}\n.label-info {\n  background-color: #5bc0de;\n}\n.label-info[href]:hover,\n.label-info[href]:focus {\n  background-color: #31b0d5;\n}\n.label-warning {\n  background-color: #f0ad4e;\n}\n.label-warning[href]:hover,\n.label-warning[href]:focus {\n  background-color: #ec971f;\n}\n.label-danger {\n  background-color: #d9534f;\n}\n.label-danger[href]:hover,\n.label-danger[href]:focus {\n  background-color: #c9302c;\n}\n.badge {\n  display: inline-block;\n  min-width: 10px;\n  padding: 3px 7px;\n  font-size: 12px;\n  font-weight: bold;\n  color: #fff;\n  line-height: 1;\n  vertical-align: middle;\n  white-space: nowrap;\n  text-align: center;\n  background-color: #777777;\n  border-radius: 10px;\n}\n.badge:empty {\n  display: none;\n}\n.btn .badge {\n  position: relative;\n  top: -1px;\n}\n.btn-xs .badge,\n.btn-group-xs > .btn .badge {\n  top: 0;\n  padding: 1px 5px;\n}\na.badge:hover,\na.badge:focus {\n  color: #fff;\n  text-decoration: none;\n  cursor: pointer;\n}\n.list-group-item.active > .badge,\n.nav-pills > .active > a > .badge {\n  color: #337ab7;\n  background-color: #fff;\n}\n.list-group-item > .badge {\n  float: right;\n}\n.list-group-item > .badge + .badge {\n  margin-right: 5px;\n}\n.nav-pills > li > a > .badge {\n  margin-left: 3px;\n}\n.jumbotron {\n  padding-top: 30px;\n  padding-bottom: 30px;\n  margin-bottom: 30px;\n  color: inherit;\n  background-color: #eeeeee;\n}\n.jumbotron h1,\n.jumbotron .h1 {\n  color: inherit;\n}\n.jumbotron p {\n  margin-bottom: 15px;\n  font-size: 21px;\n  font-weight: 200;\n}\n.jumbotron > hr {\n  border-top-color: #d5d5d5;\n}\n.container .jumbotron,\n.container-fluid .jumbotron {\n  border-radius: 6px;\n  padding-left: 15px;\n  padding-right: 15px;\n}\n.jumbotron .container {\n  max-width: 100%;\n}\n@media screen and (min-width: 768px) {\n  .jumbotron {\n    padding-top: 48px;\n    padding-bottom: 48px;\n  }\n  .container .jumbotron,\n  .container-fluid .jumbotron {\n    padding-left: 60px;\n    padding-right: 60px;\n  }\n  .jumbotron h1,\n  .jumbotron .h1 {\n    font-size: 63px;\n  }\n}\n.thumbnail {\n  display: block;\n  padding: 4px;\n  margin-bottom: 20px;\n  line-height: 1.42857143;\n  background-color: #fff;\n  border: 1px solid #ddd;\n  border-radius: 4px;\n  -webkit-transition: border 0.2s ease-in-out;\n  -o-transition: border 0.2s ease-in-out;\n  transition: border 0.2s ease-in-out;\n}\n.thumbnail > img,\n.thumbnail a > img {\n  margin-left: auto;\n  margin-right: auto;\n}\na.thumbnail:hover,\na.thumbnail:focus,\na.thumbnail.active {\n  border-color: #337ab7;\n}\n.thumbnail .caption {\n  padding: 9px;\n  color: #333333;\n}\n.alert {\n  padding: 15px;\n  margin-bottom: 20px;\n  border: 1px solid transparent;\n  border-radius: 4px;\n}\n.alert h4 {\n  margin-top: 0;\n  color: inherit;\n}\n.alert .alert-link {\n  font-weight: bold;\n}\n.alert > p,\n.alert > ul {\n  margin-bottom: 0;\n}\n.alert > p + p {\n  margin-top: 5px;\n}\n.alert-dismissable,\n.alert-dismissible {\n  padding-right: 35px;\n}\n.alert-dismissable .close,\n.alert-dismissible .close {\n  position: relative;\n  top: -2px;\n  right: -21px;\n  color: inherit;\n}\n.alert-success {\n  background-color: #dff0d8;\n  border-color: #d6e9c6;\n  color: #3c763d;\n}\n.alert-success hr {\n  border-top-color: #c9e2b3;\n}\n.alert-success .alert-link {\n  color: #2b542c;\n}\n.alert-info {\n  background-color: #d9edf7;\n  border-color: #bce8f1;\n  color: #31708f;\n}\n.alert-info hr {\n  border-top-color: #a6e1ec;\n}\n.alert-info .alert-link {\n  color: #245269;\n}\n.alert-warning {\n  background-color: #fcf8e3;\n  border-color: #faebcc;\n  color: #8a6d3b;\n}\n.alert-warning hr {\n  border-top-color: #f7e1b5;\n}\n.alert-warning .alert-link {\n  color: #66512c;\n}\n.alert-danger {\n  background-color: #f2dede;\n  border-color: #ebccd1;\n  color: #a94442;\n}\n.alert-danger hr {\n  border-top-color: #e4b9c0;\n}\n.alert-danger .alert-link {\n  color: #843534;\n}\n@-webkit-keyframes progress-bar-stripes {\n  from {\n    background-position: 40px 0;\n  }\n  to {\n    background-position: 0 0;\n  }\n}\n@keyframes progress-bar-stripes {\n  from {\n    background-position: 40px 0;\n  }\n  to {\n    background-position: 0 0;\n  }\n}\n.progress {\n  overflow: hidden;\n  height: 20px;\n  margin-bottom: 20px;\n  background-color: #f5f5f5;\n  border-radius: 4px;\n  -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);\n  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);\n}\n.progress-bar {\n  float: left;\n  width: 0%;\n  height: 100%;\n  font-size: 12px;\n  line-height: 20px;\n  color: #fff;\n  text-align: center;\n  background-color: #337ab7;\n  -webkit-box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15);\n  box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15);\n  -webkit-transition: width 0.6s ease;\n  -o-transition: width 0.6s ease;\n  transition: width 0.6s ease;\n}\n.progress-striped .progress-bar,\n.progress-bar-striped {\n  background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);\n  background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);\n  background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);\n  background-size: 40px 40px;\n}\n.progress.active .progress-bar,\n.progress-bar.active {\n  -webkit-animation: progress-bar-stripes 2s linear infinite;\n  -o-animation: progress-bar-stripes 2s linear infinite;\n  animation: progress-bar-stripes 2s linear infinite;\n}\n.progress-bar-success {\n  background-color: #5cb85c;\n}\n.progress-striped .progress-bar-success {\n  background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);\n  background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);\n  background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);\n}\n.progress-bar-info {\n  background-color: #5bc0de;\n}\n.progress-striped .progress-bar-info {\n  background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);\n  background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);\n  background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);\n}\n.progress-bar-warning {\n  background-color: #f0ad4e;\n}\n.progress-striped .progress-bar-warning {\n  background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);\n  background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);\n  background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);\n}\n.progress-bar-danger {\n  background-color: #d9534f;\n}\n.progress-striped .progress-bar-danger {\n  background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);\n  background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);\n  background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);\n}\n.media {\n  margin-top: 15px;\n}\n.media:first-child {\n  margin-top: 0;\n}\n.media,\n.media-body {\n  zoom: 1;\n  overflow: hidden;\n}\n.media-body {\n  width: 10000px;\n}\n.media-object {\n  display: block;\n}\n.media-object.img-thumbnail {\n  max-width: none;\n}\n.media-right,\n.media > .pull-right {\n  padding-left: 10px;\n}\n.media-left,\n.media > .pull-left {\n  padding-right: 10px;\n}\n.media-left,\n.media-right,\n.media-body {\n  display: table-cell;\n  vertical-align: top;\n}\n.media-middle {\n  vertical-align: middle;\n}\n.media-bottom {\n  vertical-align: bottom;\n}\n.media-heading {\n  margin-top: 0;\n  margin-bottom: 5px;\n}\n.media-list {\n  padding-left: 0;\n  list-style: none;\n}\n.list-group {\n  margin-bottom: 20px;\n  padding-left: 0;\n}\n.list-group-item {\n  position: relative;\n  display: block;\n  padding: 10px 15px;\n  margin-bottom: -1px;\n  background-color: #fff;\n  border: 1px solid #ddd;\n}\n.list-group-item:first-child {\n  border-top-right-radius: 4px;\n  border-top-left-radius: 4px;\n}\n.list-group-item:last-child {\n  margin-bottom: 0;\n  border-bottom-right-radius: 4px;\n  border-bottom-left-radius: 4px;\n}\na.list-group-item,\nbutton.list-group-item {\n  color: #555;\n}\na.list-group-item .list-group-item-heading,\nbutton.list-group-item .list-group-item-heading {\n  color: #333;\n}\na.list-group-item:hover,\nbutton.list-group-item:hover,\na.list-group-item:focus,\nbutton.list-group-item:focus {\n  text-decoration: none;\n  color: #555;\n  background-color: #f5f5f5;\n}\nbutton.list-group-item {\n  width: 100%;\n  text-align: left;\n}\n.list-group-item.disabled,\n.list-group-item.disabled:hover,\n.list-group-item.disabled:focus {\n  background-color: #eeeeee;\n  color: #777777;\n  cursor: not-allowed;\n}\n.list-group-item.disabled .list-group-item-heading,\n.list-group-item.disabled:hover .list-group-item-heading,\n.list-group-item.disabled:focus .list-group-item-heading {\n  color: inherit;\n}\n.list-group-item.disabled .list-group-item-text,\n.list-group-item.disabled:hover .list-group-item-text,\n.list-group-item.disabled:focus .list-group-item-text {\n  color: #777777;\n}\n.list-group-item.active,\n.list-group-item.active:hover,\n.list-group-item.active:focus {\n  z-index: 2;\n  color: #fff;\n  background-color: #337ab7;\n  border-color: #337ab7;\n}\n.list-group-item.active .list-group-item-heading,\n.list-group-item.active:hover .list-group-item-heading,\n.list-group-item.active:focus .list-group-item-heading,\n.list-group-item.active .list-group-item-heading > small,\n.list-group-item.active:hover .list-group-item-heading > small,\n.list-group-item.active:focus .list-group-item-heading > small,\n.list-group-item.active .list-group-item-heading > .small,\n.list-group-item.active:hover .list-group-item-heading > .small,\n.list-group-item.active:focus .list-group-item-heading > .small {\n  color: inherit;\n}\n.list-group-item.active .list-group-item-text,\n.list-group-item.active:hover .list-group-item-text,\n.list-group-item.active:focus .list-group-item-text {\n  color: #c7ddef;\n}\n.list-group-item-success {\n  color: #3c763d;\n  background-color: #dff0d8;\n}\na.list-group-item-success,\nbutton.list-group-item-success {\n  color: #3c763d;\n}\na.list-group-item-success .list-group-item-heading,\nbutton.list-group-item-success .list-group-item-heading {\n  color: inherit;\n}\na.list-group-item-success:hover,\nbutton.list-group-item-success:hover,\na.list-group-item-success:focus,\nbutton.list-group-item-success:focus {\n  color: #3c763d;\n  background-color: #d0e9c6;\n}\na.list-group-item-success.active,\nbutton.list-group-item-success.active,\na.list-group-item-success.active:hover,\nbutton.list-group-item-success.active:hover,\na.list-group-item-success.active:focus,\nbutton.list-group-item-success.active:focus {\n  color: #fff;\n  background-color: #3c763d;\n  border-color: #3c763d;\n}\n.list-group-item-info {\n  color: #31708f;\n  background-color: #d9edf7;\n}\na.list-group-item-info,\nbutton.list-group-item-info {\n  color: #31708f;\n}\na.list-group-item-info .list-group-item-heading,\nbutton.list-group-item-info .list-group-item-heading {\n  color: inherit;\n}\na.list-group-item-info:hover,\nbutton.list-group-item-info:hover,\na.list-group-item-info:focus,\nbutton.list-group-item-info:focus {\n  color: #31708f;\n  background-color: #c4e3f3;\n}\na.list-group-item-info.active,\nbutton.list-group-item-info.active,\na.list-group-item-info.active:hover,\nbutton.list-group-item-info.active:hover,\na.list-group-item-info.active:focus,\nbutton.list-group-item-info.active:focus {\n  color: #fff;\n  background-color: #31708f;\n  border-color: #31708f;\n}\n.list-group-item-warning {\n  color: #8a6d3b;\n  background-color: #fcf8e3;\n}\na.list-group-item-warning,\nbutton.list-group-item-warning {\n  color: #8a6d3b;\n}\na.list-group-item-warning .list-group-item-heading,\nbutton.list-group-item-warning .list-group-item-heading {\n  color: inherit;\n}\na.list-group-item-warning:hover,\nbutton.list-group-item-warning:hover,\na.list-group-item-warning:focus,\nbutton.list-group-item-warning:focus {\n  color: #8a6d3b;\n  background-color: #faf2cc;\n}\na.list-group-item-warning.active,\nbutton.list-group-item-warning.active,\na.list-group-item-warning.active:hover,\nbutton.list-group-item-warning.active:hover,\na.list-group-item-warning.active:focus,\nbutton.list-group-item-warning.active:focus {\n  color: #fff;\n  background-color: #8a6d3b;\n  border-color: #8a6d3b;\n}\n.list-group-item-danger {\n  color: #a94442;\n  background-color: #f2dede;\n}\na.list-group-item-danger,\nbutton.list-group-item-danger {\n  color: #a94442;\n}\na.list-group-item-danger .list-group-item-heading,\nbutton.list-group-item-danger .list-group-item-heading {\n  color: inherit;\n}\na.list-group-item-danger:hover,\nbutton.list-group-item-danger:hover,\na.list-group-item-danger:focus,\nbutton.list-group-item-danger:focus {\n  color: #a94442;\n  background-color: #ebcccc;\n}\na.list-group-item-danger.active,\nbutton.list-group-item-danger.active,\na.list-group-item-danger.active:hover,\nbutton.list-group-item-danger.active:hover,\na.list-group-item-danger.active:focus,\nbutton.list-group-item-danger.active:focus {\n  color: #fff;\n  background-color: #a94442;\n  border-color: #a94442;\n}\n.list-group-item-heading {\n  margin-top: 0;\n  margin-bottom: 5px;\n}\n.list-group-item-text {\n  margin-bottom: 0;\n  line-height: 1.3;\n}\n.panel {\n  margin-bottom: 20px;\n  background-color: #fff;\n  border: 1px solid transparent;\n  border-radius: 4px;\n  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);\n  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);\n}\n.panel-body {\n  padding: 15px;\n}\n.panel-heading {\n  padding: 10px 15px;\n  border-bottom: 1px solid transparent;\n  border-top-right-radius: 3px;\n  border-top-left-radius: 3px;\n}\n.panel-heading > .dropdown .dropdown-toggle {\n  color: inherit;\n}\n.panel-title {\n  margin-top: 0;\n  margin-bottom: 0;\n  font-size: 16px;\n  color: inherit;\n}\n.panel-title > a,\n.panel-title > small,\n.panel-title > .small,\n.panel-title > small > a,\n.panel-title > .small > a {\n  color: inherit;\n}\n.panel-footer {\n  padding: 10px 15px;\n  background-color: #f5f5f5;\n  border-top: 1px solid #ddd;\n  border-bottom-right-radius: 3px;\n  border-bottom-left-radius: 3px;\n}\n.panel > .list-group,\n.panel > .panel-collapse > .list-group {\n  margin-bottom: 0;\n}\n.panel > .list-group .list-group-item,\n.panel > .panel-collapse > .list-group .list-group-item {\n  border-width: 1px 0;\n  border-radius: 0;\n}\n.panel > .list-group:first-child .list-group-item:first-child,\n.panel > .panel-collapse > .list-group:first-child .list-group-item:first-child {\n  border-top: 0;\n  border-top-right-radius: 3px;\n  border-top-left-radius: 3px;\n}\n.panel > .list-group:last-child .list-group-item:last-child,\n.panel > .panel-collapse > .list-group:last-child .list-group-item:last-child {\n  border-bottom: 0;\n  border-bottom-right-radius: 3px;\n  border-bottom-left-radius: 3px;\n}\n.panel > .panel-heading + .panel-collapse > .list-group .list-group-item:first-child {\n  border-top-right-radius: 0;\n  border-top-left-radius: 0;\n}\n.panel-heading + .list-group .list-group-item:first-child {\n  border-top-width: 0;\n}\n.list-group + .panel-footer {\n  border-top-width: 0;\n}\n.panel > .table,\n.panel > .table-responsive > .table,\n.panel > .panel-collapse > .table {\n  margin-bottom: 0;\n}\n.panel > .table caption,\n.panel > .table-responsive > .table caption,\n.panel > .panel-collapse > .table caption {\n  padding-left: 15px;\n  padding-right: 15px;\n}\n.panel > .table:first-child,\n.panel > .table-responsive:first-child > .table:first-child {\n  border-top-right-radius: 3px;\n  border-top-left-radius: 3px;\n}\n.panel > .table:first-child > thead:first-child > tr:first-child,\n.panel > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child,\n.panel > .table:first-child > tbody:first-child > tr:first-child,\n.panel > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child {\n  border-top-left-radius: 3px;\n  border-top-right-radius: 3px;\n}\n.panel > .table:first-child > thead:first-child > tr:first-child td:first-child,\n.panel > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child td:first-child,\n.panel > .table:first-child > tbody:first-child > tr:first-child td:first-child,\n.panel > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child td:first-child,\n.panel > .table:first-child > thead:first-child > tr:first-child th:first-child,\n.panel > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child th:first-child,\n.panel > .table:first-child > tbody:first-child > tr:first-child th:first-child,\n.panel > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child th:first-child {\n  border-top-left-radius: 3px;\n}\n.panel > .table:first-child > thead:first-child > tr:first-child td:last-child,\n.panel > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child td:last-child,\n.panel > .table:first-child > tbody:first-child > tr:first-child td:last-child,\n.panel > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child td:last-child,\n.panel > .table:first-child > thead:first-child > tr:first-child th:last-child,\n.panel > .table-responsive:first-child > .table:first-child > thead:first-child > tr:first-child th:last-child,\n.panel > .table:first-child > tbody:first-child > tr:first-child th:last-child,\n.panel > .table-responsive:first-child > .table:first-child > tbody:first-child > tr:first-child th:last-child {\n  border-top-right-radius: 3px;\n}\n.panel > .table:last-child,\n.panel > .table-responsive:last-child > .table:last-child {\n  border-bottom-right-radius: 3px;\n  border-bottom-left-radius: 3px;\n}\n.panel > .table:last-child > tbody:last-child > tr:last-child,\n.panel > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child,\n.panel > .table:last-child > tfoot:last-child > tr:last-child,\n.panel > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child {\n  border-bottom-left-radius: 3px;\n  border-bottom-right-radius: 3px;\n}\n.panel > .table:last-child > tbody:last-child > tr:last-child td:first-child,\n.panel > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child td:first-child,\n.panel > .table:last-child > tfoot:last-child > tr:last-child td:first-child,\n.panel > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child td:first-child,\n.panel > .table:last-child > tbody:last-child > tr:last-child th:first-child,\n.panel > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child th:first-child,\n.panel > .table:last-child > tfoot:last-child > tr:last-child th:first-child,\n.panel > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child th:first-child {\n  border-bottom-left-radius: 3px;\n}\n.panel > .table:last-child > tbody:last-child > tr:last-child td:last-child,\n.panel > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child td:last-child,\n.panel > .table:last-child > tfoot:last-child > tr:last-child td:last-child,\n.panel > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child td:last-child,\n.panel > .table:last-child > tbody:last-child > tr:last-child th:last-child,\n.panel > .table-responsive:last-child > .table:last-child > tbody:last-child > tr:last-child th:last-child,\n.panel > .table:last-child > tfoot:last-child > tr:last-child th:last-child,\n.panel > .table-responsive:last-child > .table:last-child > tfoot:last-child > tr:last-child th:last-child {\n  border-bottom-right-radius: 3px;\n}\n.panel > .panel-body + .table,\n.panel > .panel-body + .table-responsive,\n.panel > .table + .panel-body,\n.panel > .table-responsive + .panel-body {\n  border-top: 1px solid #ddd;\n}\n.panel > .table > tbody:first-child > tr:first-child th,\n.panel > .table > tbody:first-child > tr:first-child td {\n  border-top: 0;\n}\n.panel > .table-bordered,\n.panel > .table-responsive > .table-bordered {\n  border: 0;\n}\n.panel > .table-bordered > thead > tr > th:first-child,\n.panel > .table-responsive > .table-bordered > thead > tr > th:first-child,\n.panel > .table-bordered > tbody > tr > th:first-child,\n.panel > .table-responsive > .table-bordered > tbody > tr > th:first-child,\n.panel > .table-bordered > tfoot > tr > th:first-child,\n.panel > .table-responsive > .table-bordered > tfoot > tr > th:first-child,\n.panel > .table-bordered > thead > tr > td:first-child,\n.panel > .table-responsive > .table-bordered > thead > tr > td:first-child,\n.panel > .table-bordered > tbody > tr > td:first-child,\n.panel > .table-responsive > .table-bordered > tbody > tr > td:first-child,\n.panel > .table-bordered > tfoot > tr > td:first-child,\n.panel > .table-responsive > .table-bordered > tfoot > tr > td:first-child {\n  border-left: 0;\n}\n.panel > .table-bordered > thead > tr > th:last-child,\n.panel > .table-responsive > .table-bordered > thead > tr > th:last-child,\n.panel > .table-bordered > tbody > tr > th:last-child,\n.panel > .table-responsive > .table-bordered > tbody > tr > th:last-child,\n.panel > .table-bordered > tfoot > tr > th:last-child,\n.panel > .table-responsive > .table-bordered > tfoot > tr > th:last-child,\n.panel > .table-bordered > thead > tr > td:last-child,\n.panel > .table-responsive > .table-bordered > thead > tr > td:last-child,\n.panel > .table-bordered > tbody > tr > td:last-child,\n.panel > .table-responsive > .table-bordered > tbody > tr > td:last-child,\n.panel > .table-bordered > tfoot > tr > td:last-child,\n.panel > .table-responsive > .table-bordered > tfoot > tr > td:last-child {\n  border-right: 0;\n}\n.panel > .table-bordered > thead > tr:first-child > td,\n.panel > .table-responsive > .table-bordered > thead > tr:first-child > td,\n.panel > .table-bordered > tbody > tr:first-child > td,\n.panel > .table-responsive > .table-bordered > tbody > tr:first-child > td,\n.panel > .table-bordered > thead > tr:first-child > th,\n.panel > .table-responsive > .table-bordered > thead > tr:first-child > th,\n.panel > .table-bordered > tbody > tr:first-child > th,\n.panel > .table-responsive > .table-bordered > tbody > tr:first-child > th {\n  border-bottom: 0;\n}\n.panel > .table-bordered > tbody > tr:last-child > td,\n.panel > .table-responsive > .table-bordered > tbody > tr:last-child > td,\n.panel > .table-bordered > tfoot > tr:last-child > td,\n.panel > .table-responsive > .table-bordered > tfoot > tr:last-child > td,\n.panel > .table-bordered > tbody > tr:last-child > th,\n.panel > .table-responsive > .table-bordered > tbody > tr:last-child > th,\n.panel > .table-bordered > tfoot > tr:last-child > th,\n.panel > .table-responsive > .table-bordered > tfoot > tr:last-child > th {\n  border-bottom: 0;\n}\n.panel > .table-responsive {\n  border: 0;\n  margin-bottom: 0;\n}\n.panel-group {\n  margin-bottom: 20px;\n}\n.panel-group .panel {\n  margin-bottom: 0;\n  border-radius: 4px;\n}\n.panel-group .panel + .panel {\n  margin-top: 5px;\n}\n.panel-group .panel-heading {\n  border-bottom: 0;\n}\n.panel-group .panel-heading + .panel-collapse > .panel-body,\n.panel-group .panel-heading + .panel-collapse > .list-group {\n  border-top: 1px solid #ddd;\n}\n.panel-group .panel-footer {\n  border-top: 0;\n}\n.panel-group .panel-footer + .panel-collapse .panel-body {\n  border-bottom: 1px solid #ddd;\n}\n.panel-default {\n  border-color: #ddd;\n}\n.panel-default > .panel-heading {\n  color: #333333;\n  background-color: #f5f5f5;\n  border-color: #ddd;\n}\n.panel-default > .panel-heading + .panel-collapse > .panel-body {\n  border-top-color: #ddd;\n}\n.panel-default > .panel-heading .badge {\n  color: #f5f5f5;\n  background-color: #333333;\n}\n.panel-default > .panel-footer + .panel-collapse > .panel-body {\n  border-bottom-color: #ddd;\n}\n.panel-primary {\n  border-color: #337ab7;\n}\n.panel-primary > .panel-heading {\n  color: #fff;\n  background-color: #337ab7;\n  border-color: #337ab7;\n}\n.panel-primary > .panel-heading + .panel-collapse > .panel-body {\n  border-top-color: #337ab7;\n}\n.panel-primary > .panel-heading .badge {\n  color: #337ab7;\n  background-color: #fff;\n}\n.panel-primary > .panel-footer + .panel-collapse > .panel-body {\n  border-bottom-color: #337ab7;\n}\n.panel-success {\n  border-color: #d6e9c6;\n}\n.panel-success > .panel-heading {\n  color: #3c763d;\n  background-color: #dff0d8;\n  border-color: #d6e9c6;\n}\n.panel-success > .panel-heading + .panel-collapse > .panel-body {\n  border-top-color: #d6e9c6;\n}\n.panel-success > .panel-heading .badge {\n  color: #dff0d8;\n  background-color: #3c763d;\n}\n.panel-success > .panel-footer + .panel-collapse > .panel-body {\n  border-bottom-color: #d6e9c6;\n}\n.panel-info {\n  border-color: #bce8f1;\n}\n.panel-info > .panel-heading {\n  color: #31708f;\n  background-color: #d9edf7;\n  border-color: #bce8f1;\n}\n.panel-info > .panel-heading + .panel-collapse > .panel-body {\n  border-top-color: #bce8f1;\n}\n.panel-info > .panel-heading .badge {\n  color: #d9edf7;\n  background-color: #31708f;\n}\n.panel-info > .panel-footer + .panel-collapse > .panel-body {\n  border-bottom-color: #bce8f1;\n}\n.panel-warning {\n  border-color: #faebcc;\n}\n.panel-warning > .panel-heading {\n  color: #8a6d3b;\n  background-color: #fcf8e3;\n  border-color: #faebcc;\n}\n.panel-warning > .panel-heading + .panel-collapse > .panel-body {\n  border-top-color: #faebcc;\n}\n.panel-warning > .panel-heading .badge {\n  color: #fcf8e3;\n  background-color: #8a6d3b;\n}\n.panel-warning > .panel-footer + .panel-collapse > .panel-body {\n  border-bottom-color: #faebcc;\n}\n.panel-danger {\n  border-color: #ebccd1;\n}\n.panel-danger > .panel-heading {\n  color: #a94442;\n  background-color: #f2dede;\n  border-color: #ebccd1;\n}\n.panel-danger > .panel-heading + .panel-collapse > .panel-body {\n  border-top-color: #ebccd1;\n}\n.panel-danger > .panel-heading .badge {\n  color: #f2dede;\n  background-color: #a94442;\n}\n.panel-danger > .panel-footer + .panel-collapse > .panel-body {\n  border-bottom-color: #ebccd1;\n}\n.well {\n  min-height: 20px;\n  padding: 19px;\n  margin-bottom: 20px;\n  background-color: #f5f5f5;\n  border: 1px solid #e3e3e3;\n  border-radius: 4px;\n  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);\n  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);\n}\n.well blockquote {\n  border-color: #ddd;\n  border-color: rgba(0, 0, 0, 0.15);\n}\n.well-lg {\n  padding: 24px;\n  border-radius: 6px;\n}\n.well-sm {\n  padding: 9px;\n  border-radius: 3px;\n}\n.close {\n  float: right;\n  font-size: 21px;\n  font-weight: bold;\n  line-height: 1;\n  color: #000;\n  text-shadow: 0 1px 0 #fff;\n  opacity: 0.2;\n  filter: alpha(opacity=20);\n}\n.close:hover,\n.close:focus {\n  color: #000;\n  text-decoration: none;\n  cursor: pointer;\n  opacity: 0.5;\n  filter: alpha(opacity=50);\n}\nbutton.close {\n  padding: 0;\n  cursor: pointer;\n  background: transparent;\n  border: 0;\n  -webkit-appearance: none;\n}\n.modal-open {\n  overflow: hidden;\n}\n.modal {\n  display: none;\n  overflow: hidden;\n  position: fixed;\n  top: 0;\n  right: 0;\n  bottom: 0;\n  left: 0;\n  z-index: 1050;\n  -webkit-overflow-scrolling: touch;\n  outline: 0;\n}\n.modal.fade .modal-dialog {\n  -webkit-transform: translate(0, -25%);\n  -ms-transform: translate(0, -25%);\n  -o-transform: translate(0, -25%);\n  transform: translate(0, -25%);\n  -webkit-transition: -webkit-transform 0.3s ease-out;\n  -moz-transition: -moz-transform 0.3s ease-out;\n  -o-transition: -o-transform 0.3s ease-out;\n  transition: transform 0.3s ease-out;\n}\n.modal.in .modal-dialog {\n  -webkit-transform: translate(0, 0);\n  -ms-transform: translate(0, 0);\n  -o-transform: translate(0, 0);\n  transform: translate(0, 0);\n}\n.modal-open .modal {\n  overflow-x: hidden;\n  overflow-y: auto;\n}\n.modal-dialog {\n  position: relative;\n  width: auto;\n  margin: 10px;\n}\n.modal-content {\n  position: relative;\n  background-color: #fff;\n  border: 1px solid #999;\n  border: 1px solid rgba(0, 0, 0, 0.2);\n  border-radius: 6px;\n  -webkit-box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);\n  box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);\n  background-clip: padding-box;\n  outline: 0;\n}\n.modal-backdrop {\n  position: fixed;\n  top: 0;\n  right: 0;\n  bottom: 0;\n  left: 0;\n  z-index: 1040;\n  background-color: #000;\n}\n.modal-backdrop.fade {\n  opacity: 0;\n  filter: alpha(opacity=0);\n}\n.modal-backdrop.in {\n  opacity: 0.5;\n  filter: alpha(opacity=50);\n}\n.modal-header {\n  padding: 15px;\n  border-bottom: 1px solid #e5e5e5;\n}\n.modal-header .close {\n  margin-top: -2px;\n}\n.modal-title {\n  margin: 0;\n  line-height: 1.42857143;\n}\n.modal-body {\n  position: relative;\n  padding: 15px;\n}\n.modal-footer {\n  padding: 15px;\n  text-align: right;\n  border-top: 1px solid #e5e5e5;\n}\n.modal-footer .btn + .btn {\n  margin-left: 5px;\n  margin-bottom: 0;\n}\n.modal-footer .btn-group .btn + .btn {\n  margin-left: -1px;\n}\n.modal-footer .btn-block + .btn-block {\n  margin-left: 0;\n}\n.modal-scrollbar-measure {\n  position: absolute;\n  top: -9999px;\n  width: 50px;\n  height: 50px;\n  overflow: scroll;\n}\n@media (min-width: 768px) {\n  .modal-dialog {\n    width: 600px;\n    margin: 30px auto;\n  }\n  .modal-content {\n    -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);\n    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);\n  }\n  .modal-sm {\n    width: 300px;\n  }\n}\n@media (min-width: 992px) {\n  .modal-lg {\n    width: 900px;\n  }\n}\n.tooltip {\n  position: absolute;\n  z-index: 1070;\n  display: block;\n  font-family: \"Helvetica Neue\", Helvetica, Arial, sans-serif;\n  font-style: normal;\n  font-weight: normal;\n  letter-spacing: normal;\n  line-break: auto;\n  line-height: 1.42857143;\n  text-align: left;\n  text-align: start;\n  text-decoration: none;\n  text-shadow: none;\n  text-transform: none;\n  white-space: normal;\n  word-break: normal;\n  word-spacing: normal;\n  word-wrap: normal;\n  font-size: 12px;\n  opacity: 0;\n  filter: alpha(opacity=0);\n}\n.tooltip.in {\n  opacity: 0.9;\n  filter: alpha(opacity=90);\n}\n.tooltip.top {\n  margin-top: -3px;\n  padding: 5px 0;\n}\n.tooltip.right {\n  margin-left: 3px;\n  padding: 0 5px;\n}\n.tooltip.bottom {\n  margin-top: 3px;\n  padding: 5px 0;\n}\n.tooltip.left {\n  margin-left: -3px;\n  padding: 0 5px;\n}\n.tooltip-inner {\n  max-width: 200px;\n  padding: 3px 8px;\n  color: #fff;\n  text-align: center;\n  background-color: #000;\n  border-radius: 4px;\n}\n.tooltip-arrow {\n  position: absolute;\n  width: 0;\n  height: 0;\n  border-color: transparent;\n  border-style: solid;\n}\n.tooltip.top .tooltip-arrow {\n  bottom: 0;\n  left: 50%;\n  margin-left: -5px;\n  border-width: 5px 5px 0;\n  border-top-color: #000;\n}\n.tooltip.top-left .tooltip-arrow {\n  bottom: 0;\n  right: 5px;\n  margin-bottom: -5px;\n  border-width: 5px 5px 0;\n  border-top-color: #000;\n}\n.tooltip.top-right .tooltip-arrow {\n  bottom: 0;\n  left: 5px;\n  margin-bottom: -5px;\n  border-width: 5px 5px 0;\n  border-top-color: #000;\n}\n.tooltip.right .tooltip-arrow {\n  top: 50%;\n  left: 0;\n  margin-top: -5px;\n  border-width: 5px 5px 5px 0;\n  border-right-color: #000;\n}\n.tooltip.left .tooltip-arrow {\n  top: 50%;\n  right: 0;\n  margin-top: -5px;\n  border-width: 5px 0 5px 5px;\n  border-left-color: #000;\n}\n.tooltip.bottom .tooltip-arrow {\n  top: 0;\n  left: 50%;\n  margin-left: -5px;\n  border-width: 0 5px 5px;\n  border-bottom-color: #000;\n}\n.tooltip.bottom-left .tooltip-arrow {\n  top: 0;\n  right: 5px;\n  margin-top: -5px;\n  border-width: 0 5px 5px;\n  border-bottom-color: #000;\n}\n.tooltip.bottom-right .tooltip-arrow {\n  top: 0;\n  left: 5px;\n  margin-top: -5px;\n  border-width: 0 5px 5px;\n  border-bottom-color: #000;\n}\n.popover {\n  position: absolute;\n  top: 0;\n  left: 0;\n  z-index: 1060;\n  display: none;\n  max-width: 276px;\n  padding: 1px;\n  font-family: \"Helvetica Neue\", Helvetica, Arial, sans-serif;\n  font-style: normal;\n  font-weight: normal;\n  letter-spacing: normal;\n  line-break: auto;\n  line-height: 1.42857143;\n  text-align: left;\n  text-align: start;\n  text-decoration: none;\n  text-shadow: none;\n  text-transform: none;\n  white-space: normal;\n  word-break: normal;\n  word-spacing: normal;\n  word-wrap: normal;\n  font-size: 14px;\n  background-color: #fff;\n  background-clip: padding-box;\n  border: 1px solid #ccc;\n  border: 1px solid rgba(0, 0, 0, 0.2);\n  border-radius: 6px;\n  -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);\n  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);\n}\n.popover.top {\n  margin-top: -10px;\n}\n.popover.right {\n  margin-left: 10px;\n}\n.popover.bottom {\n  margin-top: 10px;\n}\n.popover.left {\n  margin-left: -10px;\n}\n.popover-title {\n  margin: 0;\n  padding: 8px 14px;\n  font-size: 14px;\n  background-color: #f7f7f7;\n  border-bottom: 1px solid #ebebeb;\n  border-radius: 5px 5px 0 0;\n}\n.popover-content {\n  padding: 9px 14px;\n}\n.popover > .arrow,\n.popover > .arrow:after {\n  position: absolute;\n  display: block;\n  width: 0;\n  height: 0;\n  border-color: transparent;\n  border-style: solid;\n}\n.popover > .arrow {\n  border-width: 11px;\n}\n.popover > .arrow:after {\n  border-width: 10px;\n  content: \"\";\n}\n.popover.top > .arrow {\n  left: 50%;\n  margin-left: -11px;\n  border-bottom-width: 0;\n  border-top-color: #999999;\n  border-top-color: rgba(0, 0, 0, 0.25);\n  bottom: -11px;\n}\n.popover.top > .arrow:after {\n  content: \" \";\n  bottom: 1px;\n  margin-left: -10px;\n  border-bottom-width: 0;\n  border-top-color: #fff;\n}\n.popover.right > .arrow {\n  top: 50%;\n  left: -11px;\n  margin-top: -11px;\n  border-left-width: 0;\n  border-right-color: #999999;\n  border-right-color: rgba(0, 0, 0, 0.25);\n}\n.popover.right > .arrow:after {\n  content: \" \";\n  left: 1px;\n  bottom: -10px;\n  border-left-width: 0;\n  border-right-color: #fff;\n}\n.popover.bottom > .arrow {\n  left: 50%;\n  margin-left: -11px;\n  border-top-width: 0;\n  border-bottom-color: #999999;\n  border-bottom-color: rgba(0, 0, 0, 0.25);\n  top: -11px;\n}\n.popover.bottom > .arrow:after {\n  content: \" \";\n  top: 1px;\n  margin-left: -10px;\n  border-top-width: 0;\n  border-bottom-color: #fff;\n}\n.popover.left > .arrow {\n  top: 50%;\n  right: -11px;\n  margin-top: -11px;\n  border-right-width: 0;\n  border-left-color: #999999;\n  border-left-color: rgba(0, 0, 0, 0.25);\n}\n.popover.left > .arrow:after {\n  content: \" \";\n  right: 1px;\n  border-right-width: 0;\n  border-left-color: #fff;\n  bottom: -10px;\n}\n.carousel {\n  position: relative;\n}\n.carousel-inner {\n  position: relative;\n  overflow: hidden;\n  width: 100%;\n}\n.carousel-inner > .item {\n  display: none;\n  position: relative;\n  -webkit-transition: 0.6s ease-in-out left;\n  -o-transition: 0.6s ease-in-out left;\n  transition: 0.6s ease-in-out left;\n}\n.carousel-inner > .item > img,\n.carousel-inner > .item > a > img {\n  line-height: 1;\n}\n@media all and (transform-3d), (-webkit-transform-3d) {\n  .carousel-inner > .item {\n    -webkit-transition: -webkit-transform 0.6s ease-in-out;\n    -moz-transition: -moz-transform 0.6s ease-in-out;\n    -o-transition: -o-transform 0.6s ease-in-out;\n    transition: transform 0.6s ease-in-out;\n    -webkit-backface-visibility: hidden;\n    -moz-backface-visibility: hidden;\n    backface-visibility: hidden;\n    -webkit-perspective: 1000px;\n    -moz-perspective: 1000px;\n    perspective: 1000px;\n  }\n  .carousel-inner > .item.next,\n  .carousel-inner > .item.active.right {\n    -webkit-transform: translate3d(100%, 0, 0);\n    transform: translate3d(100%, 0, 0);\n    left: 0;\n  }\n  .carousel-inner > .item.prev,\n  .carousel-inner > .item.active.left {\n    -webkit-transform: translate3d(-100%, 0, 0);\n    transform: translate3d(-100%, 0, 0);\n    left: 0;\n  }\n  .carousel-inner > .item.next.left,\n  .carousel-inner > .item.prev.right,\n  .carousel-inner > .item.active {\n    -webkit-transform: translate3d(0, 0, 0);\n    transform: translate3d(0, 0, 0);\n    left: 0;\n  }\n}\n.carousel-inner > .active,\n.carousel-inner > .next,\n.carousel-inner > .prev {\n  display: block;\n}\n.carousel-inner > .active {\n  left: 0;\n}\n.carousel-inner > .next,\n.carousel-inner > .prev {\n  position: absolute;\n  top: 0;\n  width: 100%;\n}\n.carousel-inner > .next {\n  left: 100%;\n}\n.carousel-inner > .prev {\n  left: -100%;\n}\n.carousel-inner > .next.left,\n.carousel-inner > .prev.right {\n  left: 0;\n}\n.carousel-inner > .active.left {\n  left: -100%;\n}\n.carousel-inner > .active.right {\n  left: 100%;\n}\n.carousel-control {\n  position: absolute;\n  top: 0;\n  left: 0;\n  bottom: 0;\n  width: 15%;\n  opacity: 0.5;\n  filter: alpha(opacity=50);\n  font-size: 20px;\n  color: #fff;\n  text-align: center;\n  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);\n  background-color: rgba(0, 0, 0, 0);\n}\n.carousel-control.left {\n  background-image: -webkit-linear-gradient(left, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.0001) 100%);\n  background-image: -o-linear-gradient(left, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.0001) 100%);\n  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.0001) 100%);\n  background-repeat: repeat-x;\n  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#80000000', endColorstr='#00000000', GradientType=1);\n}\n.carousel-control.right {\n  left: auto;\n  right: 0;\n  background-image: -webkit-linear-gradient(left, rgba(0, 0, 0, 0.0001) 0%, rgba(0, 0, 0, 0.5) 100%);\n  background-image: -o-linear-gradient(left, rgba(0, 0, 0, 0.0001) 0%, rgba(0, 0, 0, 0.5) 100%);\n  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.0001) 0%, rgba(0, 0, 0, 0.5) 100%);\n  background-repeat: repeat-x;\n  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#80000000', GradientType=1);\n}\n.carousel-control:hover,\n.carousel-control:focus {\n  outline: 0;\n  color: #fff;\n  text-decoration: none;\n  opacity: 0.9;\n  filter: alpha(opacity=90);\n}\n.carousel-control .icon-prev,\n.carousel-control .icon-next,\n.carousel-control .glyphicon-chevron-left,\n.carousel-control .glyphicon-chevron-right {\n  position: absolute;\n  top: 50%;\n  margin-top: -10px;\n  z-index: 5;\n  display: inline-block;\n}\n.carousel-control .icon-prev,\n.carousel-control .glyphicon-chevron-left {\n  left: 50%;\n  margin-left: -10px;\n}\n.carousel-control .icon-next,\n.carousel-control .glyphicon-chevron-right {\n  right: 50%;\n  margin-right: -10px;\n}\n.carousel-control .icon-prev,\n.carousel-control .icon-next {\n  width: 20px;\n  height: 20px;\n  line-height: 1;\n  font-family: serif;\n}\n.carousel-control .icon-prev:before {\n  content: '\\2039';\n}\n.carousel-control .icon-next:before {\n  content: '\\203A';\n}\n.carousel-indicators {\n  position: absolute;\n  bottom: 10px;\n  left: 50%;\n  z-index: 15;\n  width: 60%;\n  margin-left: -30%;\n  padding-left: 0;\n  list-style: none;\n  text-align: center;\n}\n.carousel-indicators li {\n  display: inline-block;\n  width: 10px;\n  height: 10px;\n  margin: 1px;\n  text-indent: -999px;\n  border: 1px solid #fff;\n  border-radius: 10px;\n  cursor: pointer;\n  background-color: #000 \\9;\n  background-color: rgba(0, 0, 0, 0);\n}\n.carousel-indicators .active {\n  margin: 0;\n  width: 12px;\n  height: 12px;\n  background-color: #fff;\n}\n.carousel-caption {\n  position: absolute;\n  left: 15%;\n  right: 15%;\n  bottom: 20px;\n  z-index: 10;\n  padding-top: 20px;\n  padding-bottom: 20px;\n  color: #fff;\n  text-align: center;\n  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);\n}\n.carousel-caption .btn {\n  text-shadow: none;\n}\n@media screen and (min-width: 768px) {\n  .carousel-control .glyphicon-chevron-left,\n  .carousel-control .glyphicon-chevron-right,\n  .carousel-control .icon-prev,\n  .carousel-control .icon-next {\n    width: 30px;\n    height: 30px;\n    margin-top: -10px;\n    font-size: 30px;\n  }\n  .carousel-control .glyphicon-chevron-left,\n  .carousel-control .icon-prev {\n    margin-left: -10px;\n  }\n  .carousel-control .glyphicon-chevron-right,\n  .carousel-control .icon-next {\n    margin-right: -10px;\n  }\n  .carousel-caption {\n    left: 20%;\n    right: 20%;\n    padding-bottom: 30px;\n  }\n  .carousel-indicators {\n    bottom: 20px;\n  }\n}\n.clearfix:before,\n.clearfix:after,\n.dl-horizontal dd:before,\n.dl-horizontal dd:after,\n.container:before,\n.container:after,\n.container-fluid:before,\n.container-fluid:after,\n.row:before,\n.row:after,\n.form-horizontal .form-group:before,\n.form-horizontal .form-group:after,\n.btn-toolbar:before,\n.btn-toolbar:after,\n.btn-group-vertical > .btn-group:before,\n.btn-group-vertical > .btn-group:after,\n.nav:before,\n.nav:after,\n.navbar:before,\n.navbar:after,\n.navbar-header:before,\n.navbar-header:after,\n.navbar-collapse:before,\n.navbar-collapse:after,\n.pager:before,\n.pager:after,\n.panel-body:before,\n.panel-body:after,\n.modal-header:before,\n.modal-header:after,\n.modal-footer:before,\n.modal-footer:after {\n  content: \" \";\n  display: table;\n}\n.clearfix:after,\n.dl-horizontal dd:after,\n.container:after,\n.container-fluid:after,\n.row:after,\n.form-horizontal .form-group:after,\n.btn-toolbar:after,\n.btn-group-vertical > .btn-group:after,\n.nav:after,\n.navbar:after,\n.navbar-header:after,\n.navbar-collapse:after,\n.pager:after,\n.panel-body:after,\n.modal-header:after,\n.modal-footer:after {\n  clear: both;\n}\n.center-block {\n  display: block;\n  margin-left: auto;\n  margin-right: auto;\n}\n.pull-right {\n  float: right !important;\n}\n.pull-left {\n  float: left !important;\n}\n.hide {\n  display: none !important;\n}\n.show {\n  display: block !important;\n}\n.invisible {\n  visibility: hidden;\n}\n.text-hide {\n  font: 0/0 a;\n  color: transparent;\n  text-shadow: none;\n  background-color: transparent;\n  border: 0;\n}\n.hidden {\n  display: none !important;\n}\n.affix {\n  position: fixed;\n}\n@-ms-viewport {\n  width: device-width;\n}\n.visible-xs,\n.visible-sm,\n.visible-md,\n.visible-lg {\n  display: none !important;\n}\n.visible-xs-block,\n.visible-xs-inline,\n.visible-xs-inline-block,\n.visible-sm-block,\n.visible-sm-inline,\n.visible-sm-inline-block,\n.visible-md-block,\n.visible-md-inline,\n.visible-md-inline-block,\n.visible-lg-block,\n.visible-lg-inline,\n.visible-lg-inline-block {\n  display: none !important;\n}\n@media (max-width: 767px) {\n  .visible-xs {\n    display: block !important;\n  }\n  table.visible-xs {\n    display: table !important;\n  }\n  tr.visible-xs {\n    display: table-row !important;\n  }\n  th.visible-xs,\n  td.visible-xs {\n    display: table-cell !important;\n  }\n}\n@media (max-width: 767px) {\n  .visible-xs-block {\n    display: block !important;\n  }\n}\n@media (max-width: 767px) {\n  .visible-xs-inline {\n    display: inline !important;\n  }\n}\n@media (max-width: 767px) {\n  .visible-xs-inline-block {\n    display: inline-block !important;\n  }\n}\n@media (min-width: 768px) and (max-width: 991px) {\n  .visible-sm {\n    display: block !important;\n  }\n  table.visible-sm {\n    display: table !important;\n  }\n  tr.visible-sm {\n    display: table-row !important;\n  }\n  th.visible-sm,\n  td.visible-sm {\n    display: table-cell !important;\n  }\n}\n@media (min-width: 768px) and (max-width: 991px) {\n  .visible-sm-block {\n    display: block !important;\n  }\n}\n@media (min-width: 768px) and (max-width: 991px) {\n  .visible-sm-inline {\n    display: inline !important;\n  }\n}\n@media (min-width: 768px) and (max-width: 991px) {\n  .visible-sm-inline-block {\n    display: inline-block !important;\n  }\n}\n@media (min-width: 992px) and (max-width: 1199px) {\n  .visible-md {\n    display: block !important;\n  }\n  table.visible-md {\n    display: table !important;\n  }\n  tr.visible-md {\n    display: table-row !important;\n  }\n  th.visible-md,\n  td.visible-md {\n    display: table-cell !important;\n  }\n}\n@media (min-width: 992px) and (max-width: 1199px) {\n  .visible-md-block {\n    display: block !important;\n  }\n}\n@media (min-width: 992px) and (max-width: 1199px) {\n  .visible-md-inline {\n    display: inline !important;\n  }\n}\n@media (min-width: 992px) and (max-width: 1199px) {\n  .visible-md-inline-block {\n    display: inline-block !important;\n  }\n}\n@media (min-width: 1200px) {\n  .visible-lg {\n    display: block !important;\n  }\n  table.visible-lg {\n    display: table !important;\n  }\n  tr.visible-lg {\n    display: table-row !important;\n  }\n  th.visible-lg,\n  td.visible-lg {\n    display: table-cell !important;\n  }\n}\n@media (min-width: 1200px) {\n  .visible-lg-block {\n    display: block !important;\n  }\n}\n@media (min-width: 1200px) {\n  .visible-lg-inline {\n    display: inline !important;\n  }\n}\n@media (min-width: 1200px) {\n  .visible-lg-inline-block {\n    display: inline-block !important;\n  }\n}\n@media (max-width: 767px) {\n  .hidden-xs {\n    display: none !important;\n  }\n}\n@media (min-width: 768px) and (max-width: 991px) {\n  .hidden-sm {\n    display: none !important;\n  }\n}\n@media (min-width: 992px) and (max-width: 1199px) {\n  .hidden-md {\n    display: none !important;\n  }\n}\n@media (min-width: 1200px) {\n  .hidden-lg {\n    display: none !important;\n  }\n}\n.visible-print {\n  display: none !important;\n}\n@media print {\n  .visible-print {\n    display: block !important;\n  }\n  table.visible-print {\n    display: table !important;\n  }\n  tr.visible-print {\n    display: table-row !important;\n  }\n  th.visible-print,\n  td.visible-print {\n    display: table-cell !important;\n  }\n}\n.visible-print-block {\n  display: none !important;\n}\n@media print {\n  .visible-print-block {\n    display: block !important;\n  }\n}\n.visible-print-inline {\n  display: none !important;\n}\n@media print {\n  .visible-print-inline {\n    display: inline !important;\n  }\n}\n.visible-print-inline-block {\n  display: none !important;\n}\n@media print {\n  .visible-print-inline-block {\n    display: inline-block !important;\n  }\n}\n@media print {\n  .hidden-print {\n    display: none !important;\n  }\n}\n", ""]);
+	
 	// exports
 
 
 /***/ },
-/* 76 */
+/* 89 */
+/*!**************************************!*\
+  !*** ./~/css-loader/lib/css-base.js ***!
+  \**************************************/
 /***/ function(module, exports) {
 
 	/*
@@ -10241,7 +10280,7 @@
 	// css base code, injected by the css-loader
 	module.exports = function() {
 		var list = [];
-
+	
 		// return the list of modules as css string
 		list.toString = function toString() {
 			var result = [];
@@ -10255,7 +10294,7 @@
 			}
 			return result.join("");
 		};
-
+	
 		// import a list of modules into the list
 		list.i = function(modules, mediaQuery) {
 			if(typeof modules === "string")
@@ -10287,37 +10326,55 @@
 
 
 /***/ },
-/* 77 */
+/* 90 */
+/*!************************************************************!*\
+  !*** ./~/bootstrap/fonts/glyphicons-halflings-regular.eot ***!
+  \************************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__.p + "f4769f9bdb7466be65088239c12046d1.eot";
+	module.exports = __webpack_require__.p + "12a426958c2fd0d78683b99233309f8a.eot";
 
 /***/ },
-/* 78 */
+/* 91 */
+/*!**************************************************************!*\
+  !*** ./~/bootstrap/fonts/glyphicons-halflings-regular.woff2 ***!
+  \**************************************************************/
+/***/ function(module, exports) {
+
+	module.exports = "data:application/font-woff;base64,bW9kdWxlLmV4cG9ydHMgPSBfX3dlYnBhY2tfcHVibGljX3BhdGhfXyArICI0NDhjMzRhNTZkNjk5YzI5MTE3YWRjNjRjNDNhZmZlYi53b2ZmMiI7"
+
+/***/ },
+/* 92 */
+/*!*************************************************************!*\
+  !*** ./~/bootstrap/fonts/glyphicons-halflings-regular.woff ***!
+  \*************************************************************/
+/***/ function(module, exports) {
+
+	module.exports = "data:application/font-woff;base64,bW9kdWxlLmV4cG9ydHMgPSBfX3dlYnBhY2tfcHVibGljX3BhdGhfXyArICJmYTI3NzIzMjdmNTVkODE5ODMwMWZkYjhiY2ZjODE1OC53b2ZmIjs="
+
+/***/ },
+/* 93 */
+/*!************************************************************!*\
+  !*** ./~/bootstrap/fonts/glyphicons-halflings-regular.ttf ***!
+  \************************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__.p + "448c34a56d699c29117adc64c43affeb.woff2";
+	module.exports = __webpack_require__.p + "a8680ee4a60bc03270cb85165fbd2878.ttf";
 
 /***/ },
-/* 79 */
+/* 94 */
+/*!************************************************************!*\
+  !*** ./~/bootstrap/fonts/glyphicons-halflings-regular.svg ***!
+  \************************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__.p + "fa2772327f55d8198301fdb8bcfc8158.woff";
+	module.exports = __webpack_require__.p + "a0180954d7d374e153899d0974b25225.svg";
 
 /***/ },
-/* 80 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = __webpack_require__.p + "e18bbf611f2a2e43afc071aa2f4e1512.ttf";
-
-/***/ },
-/* 81 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = __webpack_require__.p + "89889688147bd7575d6327160d64e760.svg";
-
-/***/ },
-/* 82 */
+/* 95 */
+/*!*************************************!*\
+  !*** ./~/style-loader/addStyles.js ***!
+  \*************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	/*
@@ -10341,23 +10398,23 @@
 		singletonElement = null,
 		singletonCounter = 0,
 		styleElementsInsertedAtTop = [];
-
+	
 	module.exports = function(list, options) {
-		if(false) {
+		if(true) {
 			if(typeof document !== "object") throw new Error("The style-loader cannot be used in a non-browser environment");
 		}
-
+	
 		options = options || {};
 		// Force single-tag solution on IE6-9, which has a hard limit on the # of <style>
 		// tags it will allow on a page
 		if (typeof options.singleton === "undefined") options.singleton = isOldIE();
-
+	
 		// By default, add <style> tags to the bottom of <head>.
 		if (typeof options.insertAt === "undefined") options.insertAt = "bottom";
-
+	
 		var styles = listToStyles(list);
 		addStylesToDom(styles, options);
-
+	
 		return function update(newList) {
 			var mayRemove = [];
 			for(var i = 0; i < styles.length; i++) {
@@ -10380,7 +10437,7 @@
 			}
 		};
 	}
-
+	
 	function addStylesToDom(styles, options) {
 		for(var i = 0; i < styles.length; i++) {
 			var item = styles[i];
@@ -10402,7 +10459,7 @@
 			}
 		}
 	}
-
+	
 	function listToStyles(list) {
 		var styles = [];
 		var newStyles = {};
@@ -10420,7 +10477,7 @@
 		}
 		return styles;
 	}
-
+	
 	function insertStyleElement(options, styleElement) {
 		var head = getHeadElement();
 		var lastStyleElementInsertedAtTop = styleElementsInsertedAtTop[styleElementsInsertedAtTop.length - 1];
@@ -10439,7 +10496,7 @@
 			throw new Error("Invalid value for parameter 'insertAt'. Must be 'top' or 'bottom'.");
 		}
 	}
-
+	
 	function removeStyleElement(styleElement) {
 		styleElement.parentNode.removeChild(styleElement);
 		var idx = styleElementsInsertedAtTop.indexOf(styleElement);
@@ -10447,24 +10504,24 @@
 			styleElementsInsertedAtTop.splice(idx, 1);
 		}
 	}
-
+	
 	function createStyleElement(options) {
 		var styleElement = document.createElement("style");
 		styleElement.type = "text/css";
 		insertStyleElement(options, styleElement);
 		return styleElement;
 	}
-
+	
 	function createLinkElement(options) {
 		var linkElement = document.createElement("link");
 		linkElement.rel = "stylesheet";
 		insertStyleElement(options, linkElement);
 		return linkElement;
 	}
-
+	
 	function addStyle(obj, options) {
 		var styleElement, update, remove;
-
+	
 		if (options.singleton) {
 			var styleIndex = singletonCounter++;
 			styleElement = singletonElement || (singletonElement = createStyleElement(options));
@@ -10490,9 +10547,9 @@
 				removeStyleElement(styleElement);
 			};
 		}
-
+	
 		update(obj);
-
+	
 		return function updateStyle(newObj) {
 			if(newObj) {
 				if(newObj.css === obj.css && newObj.media === obj.media && newObj.sourceMap === obj.sourceMap)
@@ -10503,19 +10560,19 @@
 			}
 		};
 	}
-
+	
 	var replaceText = (function () {
 		var textStore = [];
-
+	
 		return function (index, replacement) {
 			textStore[index] = replacement;
 			return textStore.filter(Boolean).join('\n');
 		};
 	})();
-
+	
 	function applyToSingletonTag(styleElement, index, remove, obj) {
 		var css = remove ? "" : obj.css;
-
+	
 		if (styleElement.styleSheet) {
 			styleElement.styleSheet.cssText = replaceText(index, css);
 		} else {
@@ -10529,15 +10586,15 @@
 			}
 		}
 	}
-
+	
 	function applyToTag(styleElement, obj) {
 		var css = obj.css;
 		var media = obj.media;
-
+	
 		if(media) {
 			styleElement.setAttribute("media", media)
 		}
-
+	
 		if(styleElement.styleSheet) {
 			styleElement.styleSheet.cssText = css;
 		} else {
@@ -10547,35 +10604,41 @@
 			styleElement.appendChild(document.createTextNode(css));
 		}
 	}
-
+	
 	function updateLink(linkElement, obj) {
 		var css = obj.css;
 		var sourceMap = obj.sourceMap;
-
+	
 		if(sourceMap) {
 			// http://stackoverflow.com/a/26603875
 			css += "\n/*# sourceMappingURL=data:application/json;base64," + btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap)))) + " */";
 		}
-
+	
 		var blob = new Blob([css], { type: "text/css" });
-
+	
 		var oldSrc = linkElement.href;
-
+	
 		linkElement.href = URL.createObjectURL(blob);
-
+	
 		if(oldSrc)
 			URL.revokeObjectURL(oldSrc);
 	}
 
 
 /***/ },
-/* 83 */
+/* 96 */
+/*!***********************************************************************************!*\
+  !*** ./~/bootstrap-webpack/bootstrap-scripts.loader.js!./src/bootstrap.config.js ***!
+  \***********************************************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(84);
+	__webpack_require__(/*! bootstrap/js/transition */ 97);
 
 /***/ },
-/* 84 */
+/* 97 */
+/*!**************************************!*\
+  !*** ./~/bootstrap/js/transition.js ***!
+  \**************************************/
 /***/ function(module, exports) {
 
 	/* ========================================================================
@@ -10585,33 +10648,33 @@
 	 * Copyright 2011-2015 Twitter, Inc.
 	 * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
 	 * ======================================================================== */
-
-
+	
+	
 	+function ($) {
 	  'use strict';
-
+	
 	  // CSS TRANSITION SUPPORT (Shoutout: http://www.modernizr.com/)
 	  // ============================================================
-
+	
 	  function transitionEnd() {
 	    var el = document.createElement('bootstrap')
-
+	
 	    var transEndEventNames = {
 	      WebkitTransition : 'webkitTransitionEnd',
 	      MozTransition    : 'transitionend',
 	      OTransition      : 'oTransitionEnd otransitionend',
 	      transition       : 'transitionend'
 	    }
-
+	
 	    for (var name in transEndEventNames) {
 	      if (el.style[name] !== undefined) {
 	        return { end: transEndEventNames[name] }
 	      }
 	    }
-
+	
 	    return false // explicit for ie8 (  ._.)
 	  }
-
+	
 	  // http://blog.alexmaccaw.com/css-transitions
 	  $.fn.emulateTransitionEnd = function (duration) {
 	    var called = false
@@ -10621,12 +10684,12 @@
 	    setTimeout(callback, duration)
 	    return this
 	  }
-
+	
 	  $(function () {
 	    $.support.transition = transitionEnd()
-
+	
 	    if (!$.support.transition) return
-
+	
 	    $.event.special.bsTransitionEnd = {
 	      bindType: $.support.transition.end,
 	      delegateType: $.support.transition.end,
@@ -10635,12 +10698,3313 @@
 	      }
 	    }
 	  })
-
+	
 	}(jQuery);
 
 
 /***/ },
-/* 85 */
+/* 98 */
+/*!*****************************************!*\
+  !*** ./~/font-awesome-webpack/index.js ***!
+  \*****************************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	__webpack_require__(/*! style!css!less!./font-awesome-styles!./font-awesome.config.js */ 99);
+
+
+/***/ },
+/* 99 */
+/*!************************************************************************************************************************************************************************************************************!*\
+  !*** ./~/font-awesome-webpack/~/style-loader!./~/font-awesome-webpack/~/css-loader!./~/less-loader!./~/font-awesome-webpack/font-awesome-styles.loader.js!./~/font-awesome-webpack/font-awesome.config.js ***!
+  \************************************************************************************************************************************************************************************************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+	
+	// load the styles
+	var content = __webpack_require__(/*! !./~/css-loader!./../less-loader!./font-awesome-styles.loader.js!./font-awesome.config.js */ 100);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(/*! ./~/style-loader/addStyles.js */ 108)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./node_modules/css-loader/index.js!./../less-loader/index.js!./font-awesome-styles.loader.js!./font-awesome.config.js", function() {
+				var newContent = require("!!./node_modules/css-loader/index.js!./../less-loader/index.js!./font-awesome-styles.loader.js!./font-awesome.config.js");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 100 */
+/*!********************************************************************************************************************************************************************!*\
+  !*** ./~/font-awesome-webpack/~/css-loader!./~/less-loader!./~/font-awesome-webpack/font-awesome-styles.loader.js!./~/font-awesome-webpack/font-awesome.config.js ***!
+  \********************************************************************************************************************************************************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(/*! ./~/css-loader/lib/css-base.js */ 101)();
+	// imports
+	
+	
+	// module
+	exports.push([module.id, ".fa-border {\n  padding: .2em .25em .15em;\n  border: solid 0.08em #eee;\n  border-radius: .1em;\n}\n.fa-pull-left {\n  float: left;\n}\n.fa-pull-right {\n  float: right;\n}\n.fa.fa-pull-left {\n  margin-right: .3em;\n}\n.fa.fa-pull-right {\n  margin-left: .3em;\n}\n/* Deprecated as of 4.4.0 */\n.pull-right {\n  float: right;\n}\n.pull-left {\n  float: left;\n}\n.fa.pull-left {\n  margin-right: .3em;\n}\n.fa.pull-right {\n  margin-left: .3em;\n}\n.fa {\n  display: inline-block;\n  font: normal normal normal 14px/1 FontAwesome;\n  font-size: inherit;\n  text-rendering: auto;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n}\n.fa-fw {\n  width: 1.28571429em;\n  text-align: center;\n}\n/* Font Awesome uses the Unicode Private Use Area (PUA) to ensure screen\n   readers do not read off random characters that represent icons */\n.fa-glass:before {\n  content: \"\\F000\";\n}\n.fa-music:before {\n  content: \"\\F001\";\n}\n.fa-search:before {\n  content: \"\\F002\";\n}\n.fa-envelope-o:before {\n  content: \"\\F003\";\n}\n.fa-heart:before {\n  content: \"\\F004\";\n}\n.fa-star:before {\n  content: \"\\F005\";\n}\n.fa-star-o:before {\n  content: \"\\F006\";\n}\n.fa-user:before {\n  content: \"\\F007\";\n}\n.fa-film:before {\n  content: \"\\F008\";\n}\n.fa-th-large:before {\n  content: \"\\F009\";\n}\n.fa-th:before {\n  content: \"\\F00A\";\n}\n.fa-th-list:before {\n  content: \"\\F00B\";\n}\n.fa-check:before {\n  content: \"\\F00C\";\n}\n.fa-remove:before,\n.fa-close:before,\n.fa-times:before {\n  content: \"\\F00D\";\n}\n.fa-search-plus:before {\n  content: \"\\F00E\";\n}\n.fa-search-minus:before {\n  content: \"\\F010\";\n}\n.fa-power-off:before {\n  content: \"\\F011\";\n}\n.fa-signal:before {\n  content: \"\\F012\";\n}\n.fa-gear:before,\n.fa-cog:before {\n  content: \"\\F013\";\n}\n.fa-trash-o:before {\n  content: \"\\F014\";\n}\n.fa-home:before {\n  content: \"\\F015\";\n}\n.fa-file-o:before {\n  content: \"\\F016\";\n}\n.fa-clock-o:before {\n  content: \"\\F017\";\n}\n.fa-road:before {\n  content: \"\\F018\";\n}\n.fa-download:before {\n  content: \"\\F019\";\n}\n.fa-arrow-circle-o-down:before {\n  content: \"\\F01A\";\n}\n.fa-arrow-circle-o-up:before {\n  content: \"\\F01B\";\n}\n.fa-inbox:before {\n  content: \"\\F01C\";\n}\n.fa-play-circle-o:before {\n  content: \"\\F01D\";\n}\n.fa-rotate-right:before,\n.fa-repeat:before {\n  content: \"\\F01E\";\n}\n.fa-refresh:before {\n  content: \"\\F021\";\n}\n.fa-list-alt:before {\n  content: \"\\F022\";\n}\n.fa-lock:before {\n  content: \"\\F023\";\n}\n.fa-flag:before {\n  content: \"\\F024\";\n}\n.fa-headphones:before {\n  content: \"\\F025\";\n}\n.fa-volume-off:before {\n  content: \"\\F026\";\n}\n.fa-volume-down:before {\n  content: \"\\F027\";\n}\n.fa-volume-up:before {\n  content: \"\\F028\";\n}\n.fa-qrcode:before {\n  content: \"\\F029\";\n}\n.fa-barcode:before {\n  content: \"\\F02A\";\n}\n.fa-tag:before {\n  content: \"\\F02B\";\n}\n.fa-tags:before {\n  content: \"\\F02C\";\n}\n.fa-book:before {\n  content: \"\\F02D\";\n}\n.fa-bookmark:before {\n  content: \"\\F02E\";\n}\n.fa-print:before {\n  content: \"\\F02F\";\n}\n.fa-camera:before {\n  content: \"\\F030\";\n}\n.fa-font:before {\n  content: \"\\F031\";\n}\n.fa-bold:before {\n  content: \"\\F032\";\n}\n.fa-italic:before {\n  content: \"\\F033\";\n}\n.fa-text-height:before {\n  content: \"\\F034\";\n}\n.fa-text-width:before {\n  content: \"\\F035\";\n}\n.fa-align-left:before {\n  content: \"\\F036\";\n}\n.fa-align-center:before {\n  content: \"\\F037\";\n}\n.fa-align-right:before {\n  content: \"\\F038\";\n}\n.fa-align-justify:before {\n  content: \"\\F039\";\n}\n.fa-list:before {\n  content: \"\\F03A\";\n}\n.fa-dedent:before,\n.fa-outdent:before {\n  content: \"\\F03B\";\n}\n.fa-indent:before {\n  content: \"\\F03C\";\n}\n.fa-video-camera:before {\n  content: \"\\F03D\";\n}\n.fa-photo:before,\n.fa-image:before,\n.fa-picture-o:before {\n  content: \"\\F03E\";\n}\n.fa-pencil:before {\n  content: \"\\F040\";\n}\n.fa-map-marker:before {\n  content: \"\\F041\";\n}\n.fa-adjust:before {\n  content: \"\\F042\";\n}\n.fa-tint:before {\n  content: \"\\F043\";\n}\n.fa-edit:before,\n.fa-pencil-square-o:before {\n  content: \"\\F044\";\n}\n.fa-share-square-o:before {\n  content: \"\\F045\";\n}\n.fa-check-square-o:before {\n  content: \"\\F046\";\n}\n.fa-arrows:before {\n  content: \"\\F047\";\n}\n.fa-step-backward:before {\n  content: \"\\F048\";\n}\n.fa-fast-backward:before {\n  content: \"\\F049\";\n}\n.fa-backward:before {\n  content: \"\\F04A\";\n}\n.fa-play:before {\n  content: \"\\F04B\";\n}\n.fa-pause:before {\n  content: \"\\F04C\";\n}\n.fa-stop:before {\n  content: \"\\F04D\";\n}\n.fa-forward:before {\n  content: \"\\F04E\";\n}\n.fa-fast-forward:before {\n  content: \"\\F050\";\n}\n.fa-step-forward:before {\n  content: \"\\F051\";\n}\n.fa-eject:before {\n  content: \"\\F052\";\n}\n.fa-chevron-left:before {\n  content: \"\\F053\";\n}\n.fa-chevron-right:before {\n  content: \"\\F054\";\n}\n.fa-plus-circle:before {\n  content: \"\\F055\";\n}\n.fa-minus-circle:before {\n  content: \"\\F056\";\n}\n.fa-times-circle:before {\n  content: \"\\F057\";\n}\n.fa-check-circle:before {\n  content: \"\\F058\";\n}\n.fa-question-circle:before {\n  content: \"\\F059\";\n}\n.fa-info-circle:before {\n  content: \"\\F05A\";\n}\n.fa-crosshairs:before {\n  content: \"\\F05B\";\n}\n.fa-times-circle-o:before {\n  content: \"\\F05C\";\n}\n.fa-check-circle-o:before {\n  content: \"\\F05D\";\n}\n.fa-ban:before {\n  content: \"\\F05E\";\n}\n.fa-arrow-left:before {\n  content: \"\\F060\";\n}\n.fa-arrow-right:before {\n  content: \"\\F061\";\n}\n.fa-arrow-up:before {\n  content: \"\\F062\";\n}\n.fa-arrow-down:before {\n  content: \"\\F063\";\n}\n.fa-mail-forward:before,\n.fa-share:before {\n  content: \"\\F064\";\n}\n.fa-expand:before {\n  content: \"\\F065\";\n}\n.fa-compress:before {\n  content: \"\\F066\";\n}\n.fa-plus:before {\n  content: \"\\F067\";\n}\n.fa-minus:before {\n  content: \"\\F068\";\n}\n.fa-asterisk:before {\n  content: \"\\F069\";\n}\n.fa-exclamation-circle:before {\n  content: \"\\F06A\";\n}\n.fa-gift:before {\n  content: \"\\F06B\";\n}\n.fa-leaf:before {\n  content: \"\\F06C\";\n}\n.fa-fire:before {\n  content: \"\\F06D\";\n}\n.fa-eye:before {\n  content: \"\\F06E\";\n}\n.fa-eye-slash:before {\n  content: \"\\F070\";\n}\n.fa-warning:before,\n.fa-exclamation-triangle:before {\n  content: \"\\F071\";\n}\n.fa-plane:before {\n  content: \"\\F072\";\n}\n.fa-calendar:before {\n  content: \"\\F073\";\n}\n.fa-random:before {\n  content: \"\\F074\";\n}\n.fa-comment:before {\n  content: \"\\F075\";\n}\n.fa-magnet:before {\n  content: \"\\F076\";\n}\n.fa-chevron-up:before {\n  content: \"\\F077\";\n}\n.fa-chevron-down:before {\n  content: \"\\F078\";\n}\n.fa-retweet:before {\n  content: \"\\F079\";\n}\n.fa-shopping-cart:before {\n  content: \"\\F07A\";\n}\n.fa-folder:before {\n  content: \"\\F07B\";\n}\n.fa-folder-open:before {\n  content: \"\\F07C\";\n}\n.fa-arrows-v:before {\n  content: \"\\F07D\";\n}\n.fa-arrows-h:before {\n  content: \"\\F07E\";\n}\n.fa-bar-chart-o:before,\n.fa-bar-chart:before {\n  content: \"\\F080\";\n}\n.fa-twitter-square:before {\n  content: \"\\F081\";\n}\n.fa-facebook-square:before {\n  content: \"\\F082\";\n}\n.fa-camera-retro:before {\n  content: \"\\F083\";\n}\n.fa-key:before {\n  content: \"\\F084\";\n}\n.fa-gears:before,\n.fa-cogs:before {\n  content: \"\\F085\";\n}\n.fa-comments:before {\n  content: \"\\F086\";\n}\n.fa-thumbs-o-up:before {\n  content: \"\\F087\";\n}\n.fa-thumbs-o-down:before {\n  content: \"\\F088\";\n}\n.fa-star-half:before {\n  content: \"\\F089\";\n}\n.fa-heart-o:before {\n  content: \"\\F08A\";\n}\n.fa-sign-out:before {\n  content: \"\\F08B\";\n}\n.fa-linkedin-square:before {\n  content: \"\\F08C\";\n}\n.fa-thumb-tack:before {\n  content: \"\\F08D\";\n}\n.fa-external-link:before {\n  content: \"\\F08E\";\n}\n.fa-sign-in:before {\n  content: \"\\F090\";\n}\n.fa-trophy:before {\n  content: \"\\F091\";\n}\n.fa-github-square:before {\n  content: \"\\F092\";\n}\n.fa-upload:before {\n  content: \"\\F093\";\n}\n.fa-lemon-o:before {\n  content: \"\\F094\";\n}\n.fa-phone:before {\n  content: \"\\F095\";\n}\n.fa-square-o:before {\n  content: \"\\F096\";\n}\n.fa-bookmark-o:before {\n  content: \"\\F097\";\n}\n.fa-phone-square:before {\n  content: \"\\F098\";\n}\n.fa-twitter:before {\n  content: \"\\F099\";\n}\n.fa-facebook-f:before,\n.fa-facebook:before {\n  content: \"\\F09A\";\n}\n.fa-github:before {\n  content: \"\\F09B\";\n}\n.fa-unlock:before {\n  content: \"\\F09C\";\n}\n.fa-credit-card:before {\n  content: \"\\F09D\";\n}\n.fa-feed:before,\n.fa-rss:before {\n  content: \"\\F09E\";\n}\n.fa-hdd-o:before {\n  content: \"\\F0A0\";\n}\n.fa-bullhorn:before {\n  content: \"\\F0A1\";\n}\n.fa-bell:before {\n  content: \"\\F0F3\";\n}\n.fa-certificate:before {\n  content: \"\\F0A3\";\n}\n.fa-hand-o-right:before {\n  content: \"\\F0A4\";\n}\n.fa-hand-o-left:before {\n  content: \"\\F0A5\";\n}\n.fa-hand-o-up:before {\n  content: \"\\F0A6\";\n}\n.fa-hand-o-down:before {\n  content: \"\\F0A7\";\n}\n.fa-arrow-circle-left:before {\n  content: \"\\F0A8\";\n}\n.fa-arrow-circle-right:before {\n  content: \"\\F0A9\";\n}\n.fa-arrow-circle-up:before {\n  content: \"\\F0AA\";\n}\n.fa-arrow-circle-down:before {\n  content: \"\\F0AB\";\n}\n.fa-globe:before {\n  content: \"\\F0AC\";\n}\n.fa-wrench:before {\n  content: \"\\F0AD\";\n}\n.fa-tasks:before {\n  content: \"\\F0AE\";\n}\n.fa-filter:before {\n  content: \"\\F0B0\";\n}\n.fa-briefcase:before {\n  content: \"\\F0B1\";\n}\n.fa-arrows-alt:before {\n  content: \"\\F0B2\";\n}\n.fa-group:before,\n.fa-users:before {\n  content: \"\\F0C0\";\n}\n.fa-chain:before,\n.fa-link:before {\n  content: \"\\F0C1\";\n}\n.fa-cloud:before {\n  content: \"\\F0C2\";\n}\n.fa-flask:before {\n  content: \"\\F0C3\";\n}\n.fa-cut:before,\n.fa-scissors:before {\n  content: \"\\F0C4\";\n}\n.fa-copy:before,\n.fa-files-o:before {\n  content: \"\\F0C5\";\n}\n.fa-paperclip:before {\n  content: \"\\F0C6\";\n}\n.fa-save:before,\n.fa-floppy-o:before {\n  content: \"\\F0C7\";\n}\n.fa-square:before {\n  content: \"\\F0C8\";\n}\n.fa-navicon:before,\n.fa-reorder:before,\n.fa-bars:before {\n  content: \"\\F0C9\";\n}\n.fa-list-ul:before {\n  content: \"\\F0CA\";\n}\n.fa-list-ol:before {\n  content: \"\\F0CB\";\n}\n.fa-strikethrough:before {\n  content: \"\\F0CC\";\n}\n.fa-underline:before {\n  content: \"\\F0CD\";\n}\n.fa-table:before {\n  content: \"\\F0CE\";\n}\n.fa-magic:before {\n  content: \"\\F0D0\";\n}\n.fa-truck:before {\n  content: \"\\F0D1\";\n}\n.fa-pinterest:before {\n  content: \"\\F0D2\";\n}\n.fa-pinterest-square:before {\n  content: \"\\F0D3\";\n}\n.fa-google-plus-square:before {\n  content: \"\\F0D4\";\n}\n.fa-google-plus:before {\n  content: \"\\F0D5\";\n}\n.fa-money:before {\n  content: \"\\F0D6\";\n}\n.fa-caret-down:before {\n  content: \"\\F0D7\";\n}\n.fa-caret-up:before {\n  content: \"\\F0D8\";\n}\n.fa-caret-left:before {\n  content: \"\\F0D9\";\n}\n.fa-caret-right:before {\n  content: \"\\F0DA\";\n}\n.fa-columns:before {\n  content: \"\\F0DB\";\n}\n.fa-unsorted:before,\n.fa-sort:before {\n  content: \"\\F0DC\";\n}\n.fa-sort-down:before,\n.fa-sort-desc:before {\n  content: \"\\F0DD\";\n}\n.fa-sort-up:before,\n.fa-sort-asc:before {\n  content: \"\\F0DE\";\n}\n.fa-envelope:before {\n  content: \"\\F0E0\";\n}\n.fa-linkedin:before {\n  content: \"\\F0E1\";\n}\n.fa-rotate-left:before,\n.fa-undo:before {\n  content: \"\\F0E2\";\n}\n.fa-legal:before,\n.fa-gavel:before {\n  content: \"\\F0E3\";\n}\n.fa-dashboard:before,\n.fa-tachometer:before {\n  content: \"\\F0E4\";\n}\n.fa-comment-o:before {\n  content: \"\\F0E5\";\n}\n.fa-comments-o:before {\n  content: \"\\F0E6\";\n}\n.fa-flash:before,\n.fa-bolt:before {\n  content: \"\\F0E7\";\n}\n.fa-sitemap:before {\n  content: \"\\F0E8\";\n}\n.fa-umbrella:before {\n  content: \"\\F0E9\";\n}\n.fa-paste:before,\n.fa-clipboard:before {\n  content: \"\\F0EA\";\n}\n.fa-lightbulb-o:before {\n  content: \"\\F0EB\";\n}\n.fa-exchange:before {\n  content: \"\\F0EC\";\n}\n.fa-cloud-download:before {\n  content: \"\\F0ED\";\n}\n.fa-cloud-upload:before {\n  content: \"\\F0EE\";\n}\n.fa-user-md:before {\n  content: \"\\F0F0\";\n}\n.fa-stethoscope:before {\n  content: \"\\F0F1\";\n}\n.fa-suitcase:before {\n  content: \"\\F0F2\";\n}\n.fa-bell-o:before {\n  content: \"\\F0A2\";\n}\n.fa-coffee:before {\n  content: \"\\F0F4\";\n}\n.fa-cutlery:before {\n  content: \"\\F0F5\";\n}\n.fa-file-text-o:before {\n  content: \"\\F0F6\";\n}\n.fa-building-o:before {\n  content: \"\\F0F7\";\n}\n.fa-hospital-o:before {\n  content: \"\\F0F8\";\n}\n.fa-ambulance:before {\n  content: \"\\F0F9\";\n}\n.fa-medkit:before {\n  content: \"\\F0FA\";\n}\n.fa-fighter-jet:before {\n  content: \"\\F0FB\";\n}\n.fa-beer:before {\n  content: \"\\F0FC\";\n}\n.fa-h-square:before {\n  content: \"\\F0FD\";\n}\n.fa-plus-square:before {\n  content: \"\\F0FE\";\n}\n.fa-angle-double-left:before {\n  content: \"\\F100\";\n}\n.fa-angle-double-right:before {\n  content: \"\\F101\";\n}\n.fa-angle-double-up:before {\n  content: \"\\F102\";\n}\n.fa-angle-double-down:before {\n  content: \"\\F103\";\n}\n.fa-angle-left:before {\n  content: \"\\F104\";\n}\n.fa-angle-right:before {\n  content: \"\\F105\";\n}\n.fa-angle-up:before {\n  content: \"\\F106\";\n}\n.fa-angle-down:before {\n  content: \"\\F107\";\n}\n.fa-desktop:before {\n  content: \"\\F108\";\n}\n.fa-laptop:before {\n  content: \"\\F109\";\n}\n.fa-tablet:before {\n  content: \"\\F10A\";\n}\n.fa-mobile-phone:before,\n.fa-mobile:before {\n  content: \"\\F10B\";\n}\n.fa-circle-o:before {\n  content: \"\\F10C\";\n}\n.fa-quote-left:before {\n  content: \"\\F10D\";\n}\n.fa-quote-right:before {\n  content: \"\\F10E\";\n}\n.fa-spinner:before {\n  content: \"\\F110\";\n}\n.fa-circle:before {\n  content: \"\\F111\";\n}\n.fa-mail-reply:before,\n.fa-reply:before {\n  content: \"\\F112\";\n}\n.fa-github-alt:before {\n  content: \"\\F113\";\n}\n.fa-folder-o:before {\n  content: \"\\F114\";\n}\n.fa-folder-open-o:before {\n  content: \"\\F115\";\n}\n.fa-smile-o:before {\n  content: \"\\F118\";\n}\n.fa-frown-o:before {\n  content: \"\\F119\";\n}\n.fa-meh-o:before {\n  content: \"\\F11A\";\n}\n.fa-gamepad:before {\n  content: \"\\F11B\";\n}\n.fa-keyboard-o:before {\n  content: \"\\F11C\";\n}\n.fa-flag-o:before {\n  content: \"\\F11D\";\n}\n.fa-flag-checkered:before {\n  content: \"\\F11E\";\n}\n.fa-terminal:before {\n  content: \"\\F120\";\n}\n.fa-code:before {\n  content: \"\\F121\";\n}\n.fa-mail-reply-all:before,\n.fa-reply-all:before {\n  content: \"\\F122\";\n}\n.fa-star-half-empty:before,\n.fa-star-half-full:before,\n.fa-star-half-o:before {\n  content: \"\\F123\";\n}\n.fa-location-arrow:before {\n  content: \"\\F124\";\n}\n.fa-crop:before {\n  content: \"\\F125\";\n}\n.fa-code-fork:before {\n  content: \"\\F126\";\n}\n.fa-unlink:before,\n.fa-chain-broken:before {\n  content: \"\\F127\";\n}\n.fa-question:before {\n  content: \"\\F128\";\n}\n.fa-info:before {\n  content: \"\\F129\";\n}\n.fa-exclamation:before {\n  content: \"\\F12A\";\n}\n.fa-superscript:before {\n  content: \"\\F12B\";\n}\n.fa-subscript:before {\n  content: \"\\F12C\";\n}\n.fa-eraser:before {\n  content: \"\\F12D\";\n}\n.fa-puzzle-piece:before {\n  content: \"\\F12E\";\n}\n.fa-microphone:before {\n  content: \"\\F130\";\n}\n.fa-microphone-slash:before {\n  content: \"\\F131\";\n}\n.fa-shield:before {\n  content: \"\\F132\";\n}\n.fa-calendar-o:before {\n  content: \"\\F133\";\n}\n.fa-fire-extinguisher:before {\n  content: \"\\F134\";\n}\n.fa-rocket:before {\n  content: \"\\F135\";\n}\n.fa-maxcdn:before {\n  content: \"\\F136\";\n}\n.fa-chevron-circle-left:before {\n  content: \"\\F137\";\n}\n.fa-chevron-circle-right:before {\n  content: \"\\F138\";\n}\n.fa-chevron-circle-up:before {\n  content: \"\\F139\";\n}\n.fa-chevron-circle-down:before {\n  content: \"\\F13A\";\n}\n.fa-html5:before {\n  content: \"\\F13B\";\n}\n.fa-css3:before {\n  content: \"\\F13C\";\n}\n.fa-anchor:before {\n  content: \"\\F13D\";\n}\n.fa-unlock-alt:before {\n  content: \"\\F13E\";\n}\n.fa-bullseye:before {\n  content: \"\\F140\";\n}\n.fa-ellipsis-h:before {\n  content: \"\\F141\";\n}\n.fa-ellipsis-v:before {\n  content: \"\\F142\";\n}\n.fa-rss-square:before {\n  content: \"\\F143\";\n}\n.fa-play-circle:before {\n  content: \"\\F144\";\n}\n.fa-ticket:before {\n  content: \"\\F145\";\n}\n.fa-minus-square:before {\n  content: \"\\F146\";\n}\n.fa-minus-square-o:before {\n  content: \"\\F147\";\n}\n.fa-level-up:before {\n  content: \"\\F148\";\n}\n.fa-level-down:before {\n  content: \"\\F149\";\n}\n.fa-check-square:before {\n  content: \"\\F14A\";\n}\n.fa-pencil-square:before {\n  content: \"\\F14B\";\n}\n.fa-external-link-square:before {\n  content: \"\\F14C\";\n}\n.fa-share-square:before {\n  content: \"\\F14D\";\n}\n.fa-compass:before {\n  content: \"\\F14E\";\n}\n.fa-toggle-down:before,\n.fa-caret-square-o-down:before {\n  content: \"\\F150\";\n}\n.fa-toggle-up:before,\n.fa-caret-square-o-up:before {\n  content: \"\\F151\";\n}\n.fa-toggle-right:before,\n.fa-caret-square-o-right:before {\n  content: \"\\F152\";\n}\n.fa-euro:before,\n.fa-eur:before {\n  content: \"\\F153\";\n}\n.fa-gbp:before {\n  content: \"\\F154\";\n}\n.fa-dollar:before,\n.fa-usd:before {\n  content: \"\\F155\";\n}\n.fa-rupee:before,\n.fa-inr:before {\n  content: \"\\F156\";\n}\n.fa-cny:before,\n.fa-rmb:before,\n.fa-yen:before,\n.fa-jpy:before {\n  content: \"\\F157\";\n}\n.fa-ruble:before,\n.fa-rouble:before,\n.fa-rub:before {\n  content: \"\\F158\";\n}\n.fa-won:before,\n.fa-krw:before {\n  content: \"\\F159\";\n}\n.fa-bitcoin:before,\n.fa-btc:before {\n  content: \"\\F15A\";\n}\n.fa-file:before {\n  content: \"\\F15B\";\n}\n.fa-file-text:before {\n  content: \"\\F15C\";\n}\n.fa-sort-alpha-asc:before {\n  content: \"\\F15D\";\n}\n.fa-sort-alpha-desc:before {\n  content: \"\\F15E\";\n}\n.fa-sort-amount-asc:before {\n  content: \"\\F160\";\n}\n.fa-sort-amount-desc:before {\n  content: \"\\F161\";\n}\n.fa-sort-numeric-asc:before {\n  content: \"\\F162\";\n}\n.fa-sort-numeric-desc:before {\n  content: \"\\F163\";\n}\n.fa-thumbs-up:before {\n  content: \"\\F164\";\n}\n.fa-thumbs-down:before {\n  content: \"\\F165\";\n}\n.fa-youtube-square:before {\n  content: \"\\F166\";\n}\n.fa-youtube:before {\n  content: \"\\F167\";\n}\n.fa-xing:before {\n  content: \"\\F168\";\n}\n.fa-xing-square:before {\n  content: \"\\F169\";\n}\n.fa-youtube-play:before {\n  content: \"\\F16A\";\n}\n.fa-dropbox:before {\n  content: \"\\F16B\";\n}\n.fa-stack-overflow:before {\n  content: \"\\F16C\";\n}\n.fa-instagram:before {\n  content: \"\\F16D\";\n}\n.fa-flickr:before {\n  content: \"\\F16E\";\n}\n.fa-adn:before {\n  content: \"\\F170\";\n}\n.fa-bitbucket:before {\n  content: \"\\F171\";\n}\n.fa-bitbucket-square:before {\n  content: \"\\F172\";\n}\n.fa-tumblr:before {\n  content: \"\\F173\";\n}\n.fa-tumblr-square:before {\n  content: \"\\F174\";\n}\n.fa-long-arrow-down:before {\n  content: \"\\F175\";\n}\n.fa-long-arrow-up:before {\n  content: \"\\F176\";\n}\n.fa-long-arrow-left:before {\n  content: \"\\F177\";\n}\n.fa-long-arrow-right:before {\n  content: \"\\F178\";\n}\n.fa-apple:before {\n  content: \"\\F179\";\n}\n.fa-windows:before {\n  content: \"\\F17A\";\n}\n.fa-android:before {\n  content: \"\\F17B\";\n}\n.fa-linux:before {\n  content: \"\\F17C\";\n}\n.fa-dribbble:before {\n  content: \"\\F17D\";\n}\n.fa-skype:before {\n  content: \"\\F17E\";\n}\n.fa-foursquare:before {\n  content: \"\\F180\";\n}\n.fa-trello:before {\n  content: \"\\F181\";\n}\n.fa-female:before {\n  content: \"\\F182\";\n}\n.fa-male:before {\n  content: \"\\F183\";\n}\n.fa-gittip:before,\n.fa-gratipay:before {\n  content: \"\\F184\";\n}\n.fa-sun-o:before {\n  content: \"\\F185\";\n}\n.fa-moon-o:before {\n  content: \"\\F186\";\n}\n.fa-archive:before {\n  content: \"\\F187\";\n}\n.fa-bug:before {\n  content: \"\\F188\";\n}\n.fa-vk:before {\n  content: \"\\F189\";\n}\n.fa-weibo:before {\n  content: \"\\F18A\";\n}\n.fa-renren:before {\n  content: \"\\F18B\";\n}\n.fa-pagelines:before {\n  content: \"\\F18C\";\n}\n.fa-stack-exchange:before {\n  content: \"\\F18D\";\n}\n.fa-arrow-circle-o-right:before {\n  content: \"\\F18E\";\n}\n.fa-arrow-circle-o-left:before {\n  content: \"\\F190\";\n}\n.fa-toggle-left:before,\n.fa-caret-square-o-left:before {\n  content: \"\\F191\";\n}\n.fa-dot-circle-o:before {\n  content: \"\\F192\";\n}\n.fa-wheelchair:before {\n  content: \"\\F193\";\n}\n.fa-vimeo-square:before {\n  content: \"\\F194\";\n}\n.fa-turkish-lira:before,\n.fa-try:before {\n  content: \"\\F195\";\n}\n.fa-plus-square-o:before {\n  content: \"\\F196\";\n}\n.fa-space-shuttle:before {\n  content: \"\\F197\";\n}\n.fa-slack:before {\n  content: \"\\F198\";\n}\n.fa-envelope-square:before {\n  content: \"\\F199\";\n}\n.fa-wordpress:before {\n  content: \"\\F19A\";\n}\n.fa-openid:before {\n  content: \"\\F19B\";\n}\n.fa-institution:before,\n.fa-bank:before,\n.fa-university:before {\n  content: \"\\F19C\";\n}\n.fa-mortar-board:before,\n.fa-graduation-cap:before {\n  content: \"\\F19D\";\n}\n.fa-yahoo:before {\n  content: \"\\F19E\";\n}\n.fa-google:before {\n  content: \"\\F1A0\";\n}\n.fa-reddit:before {\n  content: \"\\F1A1\";\n}\n.fa-reddit-square:before {\n  content: \"\\F1A2\";\n}\n.fa-stumbleupon-circle:before {\n  content: \"\\F1A3\";\n}\n.fa-stumbleupon:before {\n  content: \"\\F1A4\";\n}\n.fa-delicious:before {\n  content: \"\\F1A5\";\n}\n.fa-digg:before {\n  content: \"\\F1A6\";\n}\n.fa-pied-piper-pp:before {\n  content: \"\\F1A7\";\n}\n.fa-pied-piper-alt:before {\n  content: \"\\F1A8\";\n}\n.fa-drupal:before {\n  content: \"\\F1A9\";\n}\n.fa-joomla:before {\n  content: \"\\F1AA\";\n}\n.fa-language:before {\n  content: \"\\F1AB\";\n}\n.fa-fax:before {\n  content: \"\\F1AC\";\n}\n.fa-building:before {\n  content: \"\\F1AD\";\n}\n.fa-child:before {\n  content: \"\\F1AE\";\n}\n.fa-paw:before {\n  content: \"\\F1B0\";\n}\n.fa-spoon:before {\n  content: \"\\F1B1\";\n}\n.fa-cube:before {\n  content: \"\\F1B2\";\n}\n.fa-cubes:before {\n  content: \"\\F1B3\";\n}\n.fa-behance:before {\n  content: \"\\F1B4\";\n}\n.fa-behance-square:before {\n  content: \"\\F1B5\";\n}\n.fa-steam:before {\n  content: \"\\F1B6\";\n}\n.fa-steam-square:before {\n  content: \"\\F1B7\";\n}\n.fa-recycle:before {\n  content: \"\\F1B8\";\n}\n.fa-automobile:before,\n.fa-car:before {\n  content: \"\\F1B9\";\n}\n.fa-cab:before,\n.fa-taxi:before {\n  content: \"\\F1BA\";\n}\n.fa-tree:before {\n  content: \"\\F1BB\";\n}\n.fa-spotify:before {\n  content: \"\\F1BC\";\n}\n.fa-deviantart:before {\n  content: \"\\F1BD\";\n}\n.fa-soundcloud:before {\n  content: \"\\F1BE\";\n}\n.fa-database:before {\n  content: \"\\F1C0\";\n}\n.fa-file-pdf-o:before {\n  content: \"\\F1C1\";\n}\n.fa-file-word-o:before {\n  content: \"\\F1C2\";\n}\n.fa-file-excel-o:before {\n  content: \"\\F1C3\";\n}\n.fa-file-powerpoint-o:before {\n  content: \"\\F1C4\";\n}\n.fa-file-photo-o:before,\n.fa-file-picture-o:before,\n.fa-file-image-o:before {\n  content: \"\\F1C5\";\n}\n.fa-file-zip-o:before,\n.fa-file-archive-o:before {\n  content: \"\\F1C6\";\n}\n.fa-file-sound-o:before,\n.fa-file-audio-o:before {\n  content: \"\\F1C7\";\n}\n.fa-file-movie-o:before,\n.fa-file-video-o:before {\n  content: \"\\F1C8\";\n}\n.fa-file-code-o:before {\n  content: \"\\F1C9\";\n}\n.fa-vine:before {\n  content: \"\\F1CA\";\n}\n.fa-codepen:before {\n  content: \"\\F1CB\";\n}\n.fa-jsfiddle:before {\n  content: \"\\F1CC\";\n}\n.fa-life-bouy:before,\n.fa-life-buoy:before,\n.fa-life-saver:before,\n.fa-support:before,\n.fa-life-ring:before {\n  content: \"\\F1CD\";\n}\n.fa-circle-o-notch:before {\n  content: \"\\F1CE\";\n}\n.fa-ra:before,\n.fa-resistance:before,\n.fa-rebel:before {\n  content: \"\\F1D0\";\n}\n.fa-ge:before,\n.fa-empire:before {\n  content: \"\\F1D1\";\n}\n.fa-git-square:before {\n  content: \"\\F1D2\";\n}\n.fa-git:before {\n  content: \"\\F1D3\";\n}\n.fa-y-combinator-square:before,\n.fa-yc-square:before,\n.fa-hacker-news:before {\n  content: \"\\F1D4\";\n}\n.fa-tencent-weibo:before {\n  content: \"\\F1D5\";\n}\n.fa-qq:before {\n  content: \"\\F1D6\";\n}\n.fa-wechat:before,\n.fa-weixin:before {\n  content: \"\\F1D7\";\n}\n.fa-send:before,\n.fa-paper-plane:before {\n  content: \"\\F1D8\";\n}\n.fa-send-o:before,\n.fa-paper-plane-o:before {\n  content: \"\\F1D9\";\n}\n.fa-history:before {\n  content: \"\\F1DA\";\n}\n.fa-circle-thin:before {\n  content: \"\\F1DB\";\n}\n.fa-header:before {\n  content: \"\\F1DC\";\n}\n.fa-paragraph:before {\n  content: \"\\F1DD\";\n}\n.fa-sliders:before {\n  content: \"\\F1DE\";\n}\n.fa-share-alt:before {\n  content: \"\\F1E0\";\n}\n.fa-share-alt-square:before {\n  content: \"\\F1E1\";\n}\n.fa-bomb:before {\n  content: \"\\F1E2\";\n}\n.fa-soccer-ball-o:before,\n.fa-futbol-o:before {\n  content: \"\\F1E3\";\n}\n.fa-tty:before {\n  content: \"\\F1E4\";\n}\n.fa-binoculars:before {\n  content: \"\\F1E5\";\n}\n.fa-plug:before {\n  content: \"\\F1E6\";\n}\n.fa-slideshare:before {\n  content: \"\\F1E7\";\n}\n.fa-twitch:before {\n  content: \"\\F1E8\";\n}\n.fa-yelp:before {\n  content: \"\\F1E9\";\n}\n.fa-newspaper-o:before {\n  content: \"\\F1EA\";\n}\n.fa-wifi:before {\n  content: \"\\F1EB\";\n}\n.fa-calculator:before {\n  content: \"\\F1EC\";\n}\n.fa-paypal:before {\n  content: \"\\F1ED\";\n}\n.fa-google-wallet:before {\n  content: \"\\F1EE\";\n}\n.fa-cc-visa:before {\n  content: \"\\F1F0\";\n}\n.fa-cc-mastercard:before {\n  content: \"\\F1F1\";\n}\n.fa-cc-discover:before {\n  content: \"\\F1F2\";\n}\n.fa-cc-amex:before {\n  content: \"\\F1F3\";\n}\n.fa-cc-paypal:before {\n  content: \"\\F1F4\";\n}\n.fa-cc-stripe:before {\n  content: \"\\F1F5\";\n}\n.fa-bell-slash:before {\n  content: \"\\F1F6\";\n}\n.fa-bell-slash-o:before {\n  content: \"\\F1F7\";\n}\n.fa-trash:before {\n  content: \"\\F1F8\";\n}\n.fa-copyright:before {\n  content: \"\\F1F9\";\n}\n.fa-at:before {\n  content: \"\\F1FA\";\n}\n.fa-eyedropper:before {\n  content: \"\\F1FB\";\n}\n.fa-paint-brush:before {\n  content: \"\\F1FC\";\n}\n.fa-birthday-cake:before {\n  content: \"\\F1FD\";\n}\n.fa-area-chart:before {\n  content: \"\\F1FE\";\n}\n.fa-pie-chart:before {\n  content: \"\\F200\";\n}\n.fa-line-chart:before {\n  content: \"\\F201\";\n}\n.fa-lastfm:before {\n  content: \"\\F202\";\n}\n.fa-lastfm-square:before {\n  content: \"\\F203\";\n}\n.fa-toggle-off:before {\n  content: \"\\F204\";\n}\n.fa-toggle-on:before {\n  content: \"\\F205\";\n}\n.fa-bicycle:before {\n  content: \"\\F206\";\n}\n.fa-bus:before {\n  content: \"\\F207\";\n}\n.fa-ioxhost:before {\n  content: \"\\F208\";\n}\n.fa-angellist:before {\n  content: \"\\F209\";\n}\n.fa-cc:before {\n  content: \"\\F20A\";\n}\n.fa-shekel:before,\n.fa-sheqel:before,\n.fa-ils:before {\n  content: \"\\F20B\";\n}\n.fa-meanpath:before {\n  content: \"\\F20C\";\n}\n.fa-buysellads:before {\n  content: \"\\F20D\";\n}\n.fa-connectdevelop:before {\n  content: \"\\F20E\";\n}\n.fa-dashcube:before {\n  content: \"\\F210\";\n}\n.fa-forumbee:before {\n  content: \"\\F211\";\n}\n.fa-leanpub:before {\n  content: \"\\F212\";\n}\n.fa-sellsy:before {\n  content: \"\\F213\";\n}\n.fa-shirtsinbulk:before {\n  content: \"\\F214\";\n}\n.fa-simplybuilt:before {\n  content: \"\\F215\";\n}\n.fa-skyatlas:before {\n  content: \"\\F216\";\n}\n.fa-cart-plus:before {\n  content: \"\\F217\";\n}\n.fa-cart-arrow-down:before {\n  content: \"\\F218\";\n}\n.fa-diamond:before {\n  content: \"\\F219\";\n}\n.fa-ship:before {\n  content: \"\\F21A\";\n}\n.fa-user-secret:before {\n  content: \"\\F21B\";\n}\n.fa-motorcycle:before {\n  content: \"\\F21C\";\n}\n.fa-street-view:before {\n  content: \"\\F21D\";\n}\n.fa-heartbeat:before {\n  content: \"\\F21E\";\n}\n.fa-venus:before {\n  content: \"\\F221\";\n}\n.fa-mars:before {\n  content: \"\\F222\";\n}\n.fa-mercury:before {\n  content: \"\\F223\";\n}\n.fa-intersex:before,\n.fa-transgender:before {\n  content: \"\\F224\";\n}\n.fa-transgender-alt:before {\n  content: \"\\F225\";\n}\n.fa-venus-double:before {\n  content: \"\\F226\";\n}\n.fa-mars-double:before {\n  content: \"\\F227\";\n}\n.fa-venus-mars:before {\n  content: \"\\F228\";\n}\n.fa-mars-stroke:before {\n  content: \"\\F229\";\n}\n.fa-mars-stroke-v:before {\n  content: \"\\F22A\";\n}\n.fa-mars-stroke-h:before {\n  content: \"\\F22B\";\n}\n.fa-neuter:before {\n  content: \"\\F22C\";\n}\n.fa-genderless:before {\n  content: \"\\F22D\";\n}\n.fa-facebook-official:before {\n  content: \"\\F230\";\n}\n.fa-pinterest-p:before {\n  content: \"\\F231\";\n}\n.fa-whatsapp:before {\n  content: \"\\F232\";\n}\n.fa-server:before {\n  content: \"\\F233\";\n}\n.fa-user-plus:before {\n  content: \"\\F234\";\n}\n.fa-user-times:before {\n  content: \"\\F235\";\n}\n.fa-hotel:before,\n.fa-bed:before {\n  content: \"\\F236\";\n}\n.fa-viacoin:before {\n  content: \"\\F237\";\n}\n.fa-train:before {\n  content: \"\\F238\";\n}\n.fa-subway:before {\n  content: \"\\F239\";\n}\n.fa-medium:before {\n  content: \"\\F23A\";\n}\n.fa-yc:before,\n.fa-y-combinator:before {\n  content: \"\\F23B\";\n}\n.fa-optin-monster:before {\n  content: \"\\F23C\";\n}\n.fa-opencart:before {\n  content: \"\\F23D\";\n}\n.fa-expeditedssl:before {\n  content: \"\\F23E\";\n}\n.fa-battery-4:before,\n.fa-battery-full:before {\n  content: \"\\F240\";\n}\n.fa-battery-3:before,\n.fa-battery-three-quarters:before {\n  content: \"\\F241\";\n}\n.fa-battery-2:before,\n.fa-battery-half:before {\n  content: \"\\F242\";\n}\n.fa-battery-1:before,\n.fa-battery-quarter:before {\n  content: \"\\F243\";\n}\n.fa-battery-0:before,\n.fa-battery-empty:before {\n  content: \"\\F244\";\n}\n.fa-mouse-pointer:before {\n  content: \"\\F245\";\n}\n.fa-i-cursor:before {\n  content: \"\\F246\";\n}\n.fa-object-group:before {\n  content: \"\\F247\";\n}\n.fa-object-ungroup:before {\n  content: \"\\F248\";\n}\n.fa-sticky-note:before {\n  content: \"\\F249\";\n}\n.fa-sticky-note-o:before {\n  content: \"\\F24A\";\n}\n.fa-cc-jcb:before {\n  content: \"\\F24B\";\n}\n.fa-cc-diners-club:before {\n  content: \"\\F24C\";\n}\n.fa-clone:before {\n  content: \"\\F24D\";\n}\n.fa-balance-scale:before {\n  content: \"\\F24E\";\n}\n.fa-hourglass-o:before {\n  content: \"\\F250\";\n}\n.fa-hourglass-1:before,\n.fa-hourglass-start:before {\n  content: \"\\F251\";\n}\n.fa-hourglass-2:before,\n.fa-hourglass-half:before {\n  content: \"\\F252\";\n}\n.fa-hourglass-3:before,\n.fa-hourglass-end:before {\n  content: \"\\F253\";\n}\n.fa-hourglass:before {\n  content: \"\\F254\";\n}\n.fa-hand-grab-o:before,\n.fa-hand-rock-o:before {\n  content: \"\\F255\";\n}\n.fa-hand-stop-o:before,\n.fa-hand-paper-o:before {\n  content: \"\\F256\";\n}\n.fa-hand-scissors-o:before {\n  content: \"\\F257\";\n}\n.fa-hand-lizard-o:before {\n  content: \"\\F258\";\n}\n.fa-hand-spock-o:before {\n  content: \"\\F259\";\n}\n.fa-hand-pointer-o:before {\n  content: \"\\F25A\";\n}\n.fa-hand-peace-o:before {\n  content: \"\\F25B\";\n}\n.fa-trademark:before {\n  content: \"\\F25C\";\n}\n.fa-registered:before {\n  content: \"\\F25D\";\n}\n.fa-creative-commons:before {\n  content: \"\\F25E\";\n}\n.fa-gg:before {\n  content: \"\\F260\";\n}\n.fa-gg-circle:before {\n  content: \"\\F261\";\n}\n.fa-tripadvisor:before {\n  content: \"\\F262\";\n}\n.fa-odnoklassniki:before {\n  content: \"\\F263\";\n}\n.fa-odnoklassniki-square:before {\n  content: \"\\F264\";\n}\n.fa-get-pocket:before {\n  content: \"\\F265\";\n}\n.fa-wikipedia-w:before {\n  content: \"\\F266\";\n}\n.fa-safari:before {\n  content: \"\\F267\";\n}\n.fa-chrome:before {\n  content: \"\\F268\";\n}\n.fa-firefox:before {\n  content: \"\\F269\";\n}\n.fa-opera:before {\n  content: \"\\F26A\";\n}\n.fa-internet-explorer:before {\n  content: \"\\F26B\";\n}\n.fa-tv:before,\n.fa-television:before {\n  content: \"\\F26C\";\n}\n.fa-contao:before {\n  content: \"\\F26D\";\n}\n.fa-500px:before {\n  content: \"\\F26E\";\n}\n.fa-amazon:before {\n  content: \"\\F270\";\n}\n.fa-calendar-plus-o:before {\n  content: \"\\F271\";\n}\n.fa-calendar-minus-o:before {\n  content: \"\\F272\";\n}\n.fa-calendar-times-o:before {\n  content: \"\\F273\";\n}\n.fa-calendar-check-o:before {\n  content: \"\\F274\";\n}\n.fa-industry:before {\n  content: \"\\F275\";\n}\n.fa-map-pin:before {\n  content: \"\\F276\";\n}\n.fa-map-signs:before {\n  content: \"\\F277\";\n}\n.fa-map-o:before {\n  content: \"\\F278\";\n}\n.fa-map:before {\n  content: \"\\F279\";\n}\n.fa-commenting:before {\n  content: \"\\F27A\";\n}\n.fa-commenting-o:before {\n  content: \"\\F27B\";\n}\n.fa-houzz:before {\n  content: \"\\F27C\";\n}\n.fa-vimeo:before {\n  content: \"\\F27D\";\n}\n.fa-black-tie:before {\n  content: \"\\F27E\";\n}\n.fa-fonticons:before {\n  content: \"\\F280\";\n}\n.fa-reddit-alien:before {\n  content: \"\\F281\";\n}\n.fa-edge:before {\n  content: \"\\F282\";\n}\n.fa-credit-card-alt:before {\n  content: \"\\F283\";\n}\n.fa-codiepie:before {\n  content: \"\\F284\";\n}\n.fa-modx:before {\n  content: \"\\F285\";\n}\n.fa-fort-awesome:before {\n  content: \"\\F286\";\n}\n.fa-usb:before {\n  content: \"\\F287\";\n}\n.fa-product-hunt:before {\n  content: \"\\F288\";\n}\n.fa-mixcloud:before {\n  content: \"\\F289\";\n}\n.fa-scribd:before {\n  content: \"\\F28A\";\n}\n.fa-pause-circle:before {\n  content: \"\\F28B\";\n}\n.fa-pause-circle-o:before {\n  content: \"\\F28C\";\n}\n.fa-stop-circle:before {\n  content: \"\\F28D\";\n}\n.fa-stop-circle-o:before {\n  content: \"\\F28E\";\n}\n.fa-shopping-bag:before {\n  content: \"\\F290\";\n}\n.fa-shopping-basket:before {\n  content: \"\\F291\";\n}\n.fa-hashtag:before {\n  content: \"\\F292\";\n}\n.fa-bluetooth:before {\n  content: \"\\F293\";\n}\n.fa-bluetooth-b:before {\n  content: \"\\F294\";\n}\n.fa-percent:before {\n  content: \"\\F295\";\n}\n.fa-gitlab:before {\n  content: \"\\F296\";\n}\n.fa-wpbeginner:before {\n  content: \"\\F297\";\n}\n.fa-wpforms:before {\n  content: \"\\F298\";\n}\n.fa-envira:before {\n  content: \"\\F299\";\n}\n.fa-universal-access:before {\n  content: \"\\F29A\";\n}\n.fa-wheelchair-alt:before {\n  content: \"\\F29B\";\n}\n.fa-question-circle-o:before {\n  content: \"\\F29C\";\n}\n.fa-blind:before {\n  content: \"\\F29D\";\n}\n.fa-audio-description:before {\n  content: \"\\F29E\";\n}\n.fa-volume-control-phone:before {\n  content: \"\\F2A0\";\n}\n.fa-braille:before {\n  content: \"\\F2A1\";\n}\n.fa-assistive-listening-systems:before {\n  content: \"\\F2A2\";\n}\n.fa-asl-interpreting:before,\n.fa-american-sign-language-interpreting:before {\n  content: \"\\F2A3\";\n}\n.fa-deafness:before,\n.fa-hard-of-hearing:before,\n.fa-deaf:before {\n  content: \"\\F2A4\";\n}\n.fa-glide:before {\n  content: \"\\F2A5\";\n}\n.fa-glide-g:before {\n  content: \"\\F2A6\";\n}\n.fa-signing:before,\n.fa-sign-language:before {\n  content: \"\\F2A7\";\n}\n.fa-low-vision:before {\n  content: \"\\F2A8\";\n}\n.fa-viadeo:before {\n  content: \"\\F2A9\";\n}\n.fa-viadeo-square:before {\n  content: \"\\F2AA\";\n}\n.fa-snapchat:before {\n  content: \"\\F2AB\";\n}\n.fa-snapchat-ghost:before {\n  content: \"\\F2AC\";\n}\n.fa-snapchat-square:before {\n  content: \"\\F2AD\";\n}\n.fa-pied-piper:before {\n  content: \"\\F2AE\";\n}\n.fa-first-order:before {\n  content: \"\\F2B0\";\n}\n.fa-yoast:before {\n  content: \"\\F2B1\";\n}\n.fa-themeisle:before {\n  content: \"\\F2B2\";\n}\n.fa-google-plus-circle:before,\n.fa-google-plus-official:before {\n  content: \"\\F2B3\";\n}\n.fa-fa:before,\n.fa-font-awesome:before {\n  content: \"\\F2B4\";\n}\n/* makes the font 33% larger relative to the icon container */\n.fa-lg {\n  font-size: 1.33333333em;\n  line-height: 0.75em;\n  vertical-align: -15%;\n}\n.fa-2x {\n  font-size: 2em;\n}\n.fa-3x {\n  font-size: 3em;\n}\n.fa-4x {\n  font-size: 4em;\n}\n.fa-5x {\n  font-size: 5em;\n}\n.fa-ul {\n  padding-left: 0;\n  margin-left: 2.14285714em;\n  list-style-type: none;\n}\n.fa-ul > li {\n  position: relative;\n}\n.fa-li {\n  position: absolute;\n  left: -2.14285714em;\n  width: 2.14285714em;\n  top: 0.14285714em;\n  text-align: center;\n}\n.fa-li.fa-lg {\n  left: -1.85714286em;\n}\n/* FONT PATH\n * -------------------------- */\n@font-face {\n  font-family: 'FontAwesome';\n  src: url(" + __webpack_require__(/*! font-awesome/fonts//fontawesome-webfont.eot?v=4.6.3 */ 102) + ");\n  src: url(" + __webpack_require__(/*! font-awesome/fonts//fontawesome-webfont.eot */ 103) + "?#iefix&v=4.6.3) format('embedded-opentype'), url(" + __webpack_require__(/*! font-awesome/fonts//fontawesome-webfont.woff2?v=4.6.3 */ 104) + ") format('woff2'), url(" + __webpack_require__(/*! font-awesome/fonts//fontawesome-webfont.woff?v=4.6.3 */ 105) + ") format('woff'), url(" + __webpack_require__(/*! font-awesome/fonts//fontawesome-webfont.ttf?v=4.6.3 */ 106) + ") format('truetype'), url(" + __webpack_require__(/*! font-awesome/fonts//fontawesome-webfont.svg?v=4.6.3 */ 107) + "#fontawesomeregular) format('svg');\n  font-weight: normal;\n  font-style: normal;\n}\n.fa-rotate-90 {\n  -ms-filter: \"progid:DXImageTransform.Microsoft.BasicImage(rotation=1)\";\n  -webkit-transform: rotate(90deg);\n  -ms-transform: rotate(90deg);\n  transform: rotate(90deg);\n}\n.fa-rotate-180 {\n  -ms-filter: \"progid:DXImageTransform.Microsoft.BasicImage(rotation=2)\";\n  -webkit-transform: rotate(180deg);\n  -ms-transform: rotate(180deg);\n  transform: rotate(180deg);\n}\n.fa-rotate-270 {\n  -ms-filter: \"progid:DXImageTransform.Microsoft.BasicImage(rotation=3)\";\n  -webkit-transform: rotate(270deg);\n  -ms-transform: rotate(270deg);\n  transform: rotate(270deg);\n}\n.fa-flip-horizontal {\n  -ms-filter: \"progid:DXImageTransform.Microsoft.BasicImage(rotation=0, mirror=1)\";\n  -webkit-transform: scale(-1, 1);\n  -ms-transform: scale(-1, 1);\n  transform: scale(-1, 1);\n}\n.fa-flip-vertical {\n  -ms-filter: \"progid:DXImageTransform.Microsoft.BasicImage(rotation=2, mirror=1)\";\n  -webkit-transform: scale(1, -1);\n  -ms-transform: scale(1, -1);\n  transform: scale(1, -1);\n}\n:root .fa-rotate-90,\n:root .fa-rotate-180,\n:root .fa-rotate-270,\n:root .fa-flip-horizontal,\n:root .fa-flip-vertical {\n  filter: none;\n}\n.fa-spin {\n  -webkit-animation: fa-spin 2s infinite linear;\n  animation: fa-spin 2s infinite linear;\n}\n.fa-pulse {\n  -webkit-animation: fa-spin 1s infinite steps(8);\n  animation: fa-spin 1s infinite steps(8);\n}\n@-webkit-keyframes fa-spin {\n  0% {\n    -webkit-transform: rotate(0deg);\n    transform: rotate(0deg);\n  }\n  100% {\n    -webkit-transform: rotate(359deg);\n    transform: rotate(359deg);\n  }\n}\n@keyframes fa-spin {\n  0% {\n    -webkit-transform: rotate(0deg);\n    transform: rotate(0deg);\n  }\n  100% {\n    -webkit-transform: rotate(359deg);\n    transform: rotate(359deg);\n  }\n}\n.fa-stack {\n  position: relative;\n  display: inline-block;\n  width: 2em;\n  height: 2em;\n  line-height: 2em;\n  vertical-align: middle;\n}\n.fa-stack-1x,\n.fa-stack-2x {\n  position: absolute;\n  left: 0;\n  width: 100%;\n  text-align: center;\n}\n.fa-stack-1x {\n  line-height: inherit;\n}\n.fa-stack-2x {\n  font-size: 2em;\n}\n.fa-inverse {\n  color: #fff;\n}\n", ""]);
+	
+	// exports
+
+
+/***/ },
+/* 101 */
+/*!*************************************************************!*\
+  !*** ./~/font-awesome-webpack/~/css-loader/lib/css-base.js ***!
+  \*************************************************************/
+/***/ function(module, exports) {
+
+	/*
+		MIT License http://www.opensource.org/licenses/mit-license.php
+		Author Tobias Koppers @sokra
+	*/
+	// css base code, injected by the css-loader
+	module.exports = function() {
+		var list = [];
+	
+		// return the list of modules as css string
+		list.toString = function toString() {
+			var result = [];
+			for(var i = 0; i < this.length; i++) {
+				var item = this[i];
+				if(item[2]) {
+					result.push("@media " + item[2] + "{" + item[1] + "}");
+				} else {
+					result.push(item[1]);
+				}
+			}
+			return result.join("");
+		};
+	
+		// import a list of modules into the list
+		list.i = function(modules, mediaQuery) {
+			if(typeof modules === "string")
+				modules = [[null, modules, ""]];
+			var alreadyImportedModules = {};
+			for(var i = 0; i < this.length; i++) {
+				var id = this[i][0];
+				if(typeof id === "number")
+					alreadyImportedModules[id] = true;
+			}
+			for(i = 0; i < modules.length; i++) {
+				var item = modules[i];
+				// skip already imported module
+				// this implementation is not 100% perfect for weird media query combinations
+				//  when a module is imported multiple times with different media queries.
+				//  I hope this will never occur (Hey this way we have smaller bundles)
+				if(typeof item[0] !== "number" || !alreadyImportedModules[item[0]]) {
+					if(mediaQuery && !item[2]) {
+						item[2] = mediaQuery;
+					} else if(mediaQuery) {
+						item[2] = "(" + item[2] + ") and (" + mediaQuery + ")";
+					}
+					list.push(item);
+				}
+			}
+		};
+		return list;
+	};
+
+
+/***/ },
+/* 102 */
+/*!**************************************************************!*\
+  !*** ./~/font-awesome/fonts/fontawesome-webfont.eot?v=4.6.3 ***!
+  \**************************************************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__.p + "25a32416abee198dd821b0b17a198a8f.eot";
+
+/***/ },
+/* 103 */
+/*!******************************************************!*\
+  !*** ./~/font-awesome/fonts/fontawesome-webfont.eot ***!
+  \******************************************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__.p + "9c08427fa3c1562ceea15c9f5f0e3143.eot";
+
+/***/ },
+/* 104 */
+/*!****************************************************************!*\
+  !*** ./~/font-awesome/fonts/fontawesome-webfont.woff2?v=4.6.3 ***!
+  \****************************************************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__.p + "e6cf7c6ec7c2d6f670ae9d762604cb0b.woff2";
+
+/***/ },
+/* 105 */
+/*!***************************************************************!*\
+  !*** ./~/font-awesome/fonts/fontawesome-webfont.woff?v=4.6.3 ***!
+  \***************************************************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__.p + "c8ddf1e5e5bf3682bc7bebf30f394148.woff";
+
+/***/ },
+/* 106 */
+/*!**************************************************************!*\
+  !*** ./~/font-awesome/fonts/fontawesome-webfont.ttf?v=4.6.3 ***!
+  \**************************************************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__.p + "1dc35d25e61d819a9c357074014867ab.ttf";
+
+/***/ },
+/* 107 */
+/*!**************************************************************!*\
+  !*** ./~/font-awesome/fonts/fontawesome-webfont.svg?v=4.6.3 ***!
+  \**************************************************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__.p + "d7c639084f684d66a1bc66855d193ed8.svg";
+
+/***/ },
+/* 108 */
+/*!************************************************************!*\
+  !*** ./~/font-awesome-webpack/~/style-loader/addStyles.js ***!
+  \************************************************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	/*
+		MIT License http://www.opensource.org/licenses/mit-license.php
+		Author Tobias Koppers @sokra
+	*/
+	var stylesInDom = {},
+		memoize = function(fn) {
+			var memo;
+			return function () {
+				if (typeof memo === "undefined") memo = fn.apply(this, arguments);
+				return memo;
+			};
+		},
+		isOldIE = memoize(function() {
+			return /msie [6-9]\b/.test(window.navigator.userAgent.toLowerCase());
+		}),
+		getHeadElement = memoize(function () {
+			return document.head || document.getElementsByTagName("head")[0];
+		}),
+		singletonElement = null,
+		singletonCounter = 0;
+	
+	module.exports = function(list, options) {
+		if(true) {
+			if(typeof document !== "object") throw new Error("The style-loader cannot be used in a non-browser environment");
+		}
+	
+		options = options || {};
+		// Force single-tag solution on IE6-9, which has a hard limit on the # of <style>
+		// tags it will allow on a page
+		if (typeof options.singleton === "undefined") options.singleton = isOldIE();
+	
+		var styles = listToStyles(list);
+		addStylesToDom(styles, options);
+	
+		return function update(newList) {
+			var mayRemove = [];
+			for(var i = 0; i < styles.length; i++) {
+				var item = styles[i];
+				var domStyle = stylesInDom[item.id];
+				domStyle.refs--;
+				mayRemove.push(domStyle);
+			}
+			if(newList) {
+				var newStyles = listToStyles(newList);
+				addStylesToDom(newStyles, options);
+			}
+			for(var i = 0; i < mayRemove.length; i++) {
+				var domStyle = mayRemove[i];
+				if(domStyle.refs === 0) {
+					for(var j = 0; j < domStyle.parts.length; j++)
+						domStyle.parts[j]();
+					delete stylesInDom[domStyle.id];
+				}
+			}
+		};
+	}
+	
+	function addStylesToDom(styles, options) {
+		for(var i = 0; i < styles.length; i++) {
+			var item = styles[i];
+			var domStyle = stylesInDom[item.id];
+			if(domStyle) {
+				domStyle.refs++;
+				for(var j = 0; j < domStyle.parts.length; j++) {
+					domStyle.parts[j](item.parts[j]);
+				}
+				for(; j < item.parts.length; j++) {
+					domStyle.parts.push(addStyle(item.parts[j], options));
+				}
+			} else {
+				var parts = [];
+				for(var j = 0; j < item.parts.length; j++) {
+					parts.push(addStyle(item.parts[j], options));
+				}
+				stylesInDom[item.id] = {id: item.id, refs: 1, parts: parts};
+			}
+		}
+	}
+	
+	function listToStyles(list) {
+		var styles = [];
+		var newStyles = {};
+		for(var i = 0; i < list.length; i++) {
+			var item = list[i];
+			var id = item[0];
+			var css = item[1];
+			var media = item[2];
+			var sourceMap = item[3];
+			var part = {css: css, media: media, sourceMap: sourceMap};
+			if(!newStyles[id])
+				styles.push(newStyles[id] = {id: id, parts: [part]});
+			else
+				newStyles[id].parts.push(part);
+		}
+		return styles;
+	}
+	
+	function createStyleElement() {
+		var styleElement = document.createElement("style");
+		var head = getHeadElement();
+		styleElement.type = "text/css";
+		head.appendChild(styleElement);
+		return styleElement;
+	}
+	
+	function createLinkElement() {
+		var linkElement = document.createElement("link");
+		var head = getHeadElement();
+		linkElement.rel = "stylesheet";
+		head.appendChild(linkElement);
+		return linkElement;
+	}
+	
+	function addStyle(obj, options) {
+		var styleElement, update, remove;
+	
+		if (options.singleton) {
+			var styleIndex = singletonCounter++;
+			styleElement = singletonElement || (singletonElement = createStyleElement());
+			update = applyToSingletonTag.bind(null, styleElement, styleIndex, false);
+			remove = applyToSingletonTag.bind(null, styleElement, styleIndex, true);
+		} else if(obj.sourceMap &&
+			typeof URL === "function" &&
+			typeof URL.createObjectURL === "function" &&
+			typeof URL.revokeObjectURL === "function" &&
+			typeof Blob === "function" &&
+			typeof btoa === "function") {
+			styleElement = createLinkElement();
+			update = updateLink.bind(null, styleElement);
+			remove = function() {
+				styleElement.parentNode.removeChild(styleElement);
+				if(styleElement.href)
+					URL.revokeObjectURL(styleElement.href);
+			};
+		} else {
+			styleElement = createStyleElement();
+			update = applyToTag.bind(null, styleElement);
+			remove = function() {
+				styleElement.parentNode.removeChild(styleElement);
+			};
+		}
+	
+		update(obj);
+	
+		return function updateStyle(newObj) {
+			if(newObj) {
+				if(newObj.css === obj.css && newObj.media === obj.media && newObj.sourceMap === obj.sourceMap)
+					return;
+				update(obj = newObj);
+			} else {
+				remove();
+			}
+		};
+	}
+	
+	var replaceText = (function () {
+		var textStore = [];
+	
+		return function (index, replacement) {
+			textStore[index] = replacement;
+			return textStore.filter(Boolean).join('\n');
+		};
+	})();
+	
+	function applyToSingletonTag(styleElement, index, remove, obj) {
+		var css = remove ? "" : obj.css;
+	
+		if (styleElement.styleSheet) {
+			styleElement.styleSheet.cssText = replaceText(index, css);
+		} else {
+			var cssNode = document.createTextNode(css);
+			var childNodes = styleElement.childNodes;
+			if (childNodes[index]) styleElement.removeChild(childNodes[index]);
+			if (childNodes.length) {
+				styleElement.insertBefore(cssNode, childNodes[index]);
+			} else {
+				styleElement.appendChild(cssNode);
+			}
+		}
+	}
+	
+	function applyToTag(styleElement, obj) {
+		var css = obj.css;
+		var media = obj.media;
+		var sourceMap = obj.sourceMap;
+	
+		if(media) {
+			styleElement.setAttribute("media", media)
+		}
+	
+		if(styleElement.styleSheet) {
+			styleElement.styleSheet.cssText = css;
+		} else {
+			while(styleElement.firstChild) {
+				styleElement.removeChild(styleElement.firstChild);
+			}
+			styleElement.appendChild(document.createTextNode(css));
+		}
+	}
+	
+	function updateLink(linkElement, obj) {
+		var css = obj.css;
+		var media = obj.media;
+		var sourceMap = obj.sourceMap;
+	
+		if(sourceMap) {
+			// http://stackoverflow.com/a/26603875
+			css += "\n/*# sourceMappingURL=data:application/json;base64," + btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap)))) + " */";
+		}
+	
+		var blob = new Blob([css], { type: "text/css" });
+	
+		var oldSrc = linkElement.href;
+	
+		linkElement.href = URL.createObjectURL(blob);
+	
+		if(oldSrc)
+			URL.revokeObjectURL(oldSrc);
+	}
+
+
+/***/ },
+/* 109 */
+/*!*****************************************!*\
+  !*** ./~/slick-carousel/slick/slick.js ***!
+  \*****************************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*
+	     _ _      _       _
+	 ___| (_) ___| | __  (_)___
+	/ __| | |/ __| |/ /  | / __|
+	\__ \ | | (__|   < _ | \__ \
+	|___/_|_|\___|_|\_(_)/ |___/
+	                   |__/
+	
+	 Version: 1.6.0
+	  Author: Ken Wheeler
+	 Website: http://kenwheeler.github.io
+	    Docs: http://kenwheeler.github.io/slick
+	    Repo: http://github.com/kenwheeler/slick
+	  Issues: http://github.com/kenwheeler/slick/issues
+	
+	 */
+	/* global window, document, define, jQuery, setInterval, clearInterval */
+	(function(factory) {
+	    'use strict';
+	    if (true) {
+	        !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(/*! jquery */ 85)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+	    } else if (typeof exports !== 'undefined') {
+	        module.exports = factory(require('jquery'));
+	    } else {
+	        factory(jQuery);
+	    }
+	
+	}(function($) {
+	    'use strict';
+	    var Slick = window.Slick || {};
+	
+	    Slick = (function() {
+	
+	        var instanceUid = 0;
+	
+	        function Slick(element, settings) {
+	
+	            var _ = this, dataSettings;
+	
+	            _.defaults = {
+	                accessibility: true,
+	                adaptiveHeight: false,
+	                appendArrows: $(element),
+	                appendDots: $(element),
+	                arrows: true,
+	                asNavFor: null,
+	                prevArrow: '<button type="button" data-role="none" class="slick-prev" aria-label="Previous" tabindex="0" role="button">Previous</button>',
+	                nextArrow: '<button type="button" data-role="none" class="slick-next" aria-label="Next" tabindex="0" role="button">Next</button>',
+	                autoplay: false,
+	                autoplaySpeed: 3000,
+	                centerMode: false,
+	                centerPadding: '50px',
+	                cssEase: 'ease',
+	                customPaging: function(slider, i) {
+	                    return $('<button type="button" data-role="none" role="button" tabindex="0" />').text(i + 1);
+	                },
+	                dots: false,
+	                dotsClass: 'slick-dots',
+	                draggable: true,
+	                easing: 'linear',
+	                edgeFriction: 0.35,
+	                fade: false,
+	                focusOnSelect: false,
+	                infinite: true,
+	                initialSlide: 0,
+	                lazyLoad: 'ondemand',
+	                mobileFirst: false,
+	                pauseOnHover: true,
+	                pauseOnFocus: true,
+	                pauseOnDotsHover: false,
+	                respondTo: 'window',
+	                responsive: null,
+	                rows: 1,
+	                rtl: false,
+	                slide: '',
+	                slidesPerRow: 1,
+	                slidesToShow: 1,
+	                slidesToScroll: 1,
+	                speed: 500,
+	                swipe: true,
+	                swipeToSlide: false,
+	                touchMove: true,
+	                touchThreshold: 5,
+	                useCSS: true,
+	                useTransform: true,
+	                variableWidth: false,
+	                vertical: false,
+	                verticalSwiping: false,
+	                waitForAnimate: true,
+	                zIndex: 1000
+	            };
+	
+	            _.initials = {
+	                animating: false,
+	                dragging: false,
+	                autoPlayTimer: null,
+	                currentDirection: 0,
+	                currentLeft: null,
+	                currentSlide: 0,
+	                direction: 1,
+	                $dots: null,
+	                listWidth: null,
+	                listHeight: null,
+	                loadIndex: 0,
+	                $nextArrow: null,
+	                $prevArrow: null,
+	                slideCount: null,
+	                slideWidth: null,
+	                $slideTrack: null,
+	                $slides: null,
+	                sliding: false,
+	                slideOffset: 0,
+	                swipeLeft: null,
+	                $list: null,
+	                touchObject: {},
+	                transformsEnabled: false,
+	                unslicked: false
+	            };
+	
+	            $.extend(_, _.initials);
+	
+	            _.activeBreakpoint = null;
+	            _.animType = null;
+	            _.animProp = null;
+	            _.breakpoints = [];
+	            _.breakpointSettings = [];
+	            _.cssTransitions = false;
+	            _.focussed = false;
+	            _.interrupted = false;
+	            _.hidden = 'hidden';
+	            _.paused = true;
+	            _.positionProp = null;
+	            _.respondTo = null;
+	            _.rowCount = 1;
+	            _.shouldClick = true;
+	            _.$slider = $(element);
+	            _.$slidesCache = null;
+	            _.transformType = null;
+	            _.transitionType = null;
+	            _.visibilityChange = 'visibilitychange';
+	            _.windowWidth = 0;
+	            _.windowTimer = null;
+	
+	            dataSettings = $(element).data('slick') || {};
+	
+	            _.options = $.extend({}, _.defaults, settings, dataSettings);
+	
+	            _.currentSlide = _.options.initialSlide;
+	
+	            _.originalSettings = _.options;
+	
+	            if (typeof document.mozHidden !== 'undefined') {
+	                _.hidden = 'mozHidden';
+	                _.visibilityChange = 'mozvisibilitychange';
+	            } else if (typeof document.webkitHidden !== 'undefined') {
+	                _.hidden = 'webkitHidden';
+	                _.visibilityChange = 'webkitvisibilitychange';
+	            }
+	
+	            _.autoPlay = $.proxy(_.autoPlay, _);
+	            _.autoPlayClear = $.proxy(_.autoPlayClear, _);
+	            _.autoPlayIterator = $.proxy(_.autoPlayIterator, _);
+	            _.changeSlide = $.proxy(_.changeSlide, _);
+	            _.clickHandler = $.proxy(_.clickHandler, _);
+	            _.selectHandler = $.proxy(_.selectHandler, _);
+	            _.setPosition = $.proxy(_.setPosition, _);
+	            _.swipeHandler = $.proxy(_.swipeHandler, _);
+	            _.dragHandler = $.proxy(_.dragHandler, _);
+	            _.keyHandler = $.proxy(_.keyHandler, _);
+	
+	            _.instanceUid = instanceUid++;
+	
+	            // A simple way to check for HTML strings
+	            // Strict HTML recognition (must start with <)
+	            // Extracted from jQuery v1.11 source
+	            _.htmlExpr = /^(?:\s*(<[\w\W]+>)[^>]*)$/;
+	
+	
+	            _.registerBreakpoints();
+	            _.init(true);
+	
+	        }
+	
+	        return Slick;
+	
+	    }());
+	
+	    Slick.prototype.activateADA = function() {
+	        var _ = this;
+	
+	        _.$slideTrack.find('.slick-active').attr({
+	            'aria-hidden': 'false'
+	        }).find('a, input, button, select').attr({
+	            'tabindex': '0'
+	        });
+	
+	    };
+	
+	    Slick.prototype.addSlide = Slick.prototype.slickAdd = function(markup, index, addBefore) {
+	
+	        var _ = this;
+	
+	        if (typeof(index) === 'boolean') {
+	            addBefore = index;
+	            index = null;
+	        } else if (index < 0 || (index >= _.slideCount)) {
+	            return false;
+	        }
+	
+	        _.unload();
+	
+	        if (typeof(index) === 'number') {
+	            if (index === 0 && _.$slides.length === 0) {
+	                $(markup).appendTo(_.$slideTrack);
+	            } else if (addBefore) {
+	                $(markup).insertBefore(_.$slides.eq(index));
+	            } else {
+	                $(markup).insertAfter(_.$slides.eq(index));
+	            }
+	        } else {
+	            if (addBefore === true) {
+	                $(markup).prependTo(_.$slideTrack);
+	            } else {
+	                $(markup).appendTo(_.$slideTrack);
+	            }
+	        }
+	
+	        _.$slides = _.$slideTrack.children(this.options.slide);
+	
+	        _.$slideTrack.children(this.options.slide).detach();
+	
+	        _.$slideTrack.append(_.$slides);
+	
+	        _.$slides.each(function(index, element) {
+	            $(element).attr('data-slick-index', index);
+	        });
+	
+	        _.$slidesCache = _.$slides;
+	
+	        _.reinit();
+	
+	    };
+	
+	    Slick.prototype.animateHeight = function() {
+	        var _ = this;
+	        if (_.options.slidesToShow === 1 && _.options.adaptiveHeight === true && _.options.vertical === false) {
+	            var targetHeight = _.$slides.eq(_.currentSlide).outerHeight(true);
+	            _.$list.animate({
+	                height: targetHeight
+	            }, _.options.speed);
+	        }
+	    };
+	
+	    Slick.prototype.animateSlide = function(targetLeft, callback) {
+	
+	        var animProps = {},
+	            _ = this;
+	
+	        _.animateHeight();
+	
+	        if (_.options.rtl === true && _.options.vertical === false) {
+	            targetLeft = -targetLeft;
+	        }
+	        if (_.transformsEnabled === false) {
+	            if (_.options.vertical === false) {
+	                _.$slideTrack.animate({
+	                    left: targetLeft
+	                }, _.options.speed, _.options.easing, callback);
+	            } else {
+	                _.$slideTrack.animate({
+	                    top: targetLeft
+	                }, _.options.speed, _.options.easing, callback);
+	            }
+	
+	        } else {
+	
+	            if (_.cssTransitions === false) {
+	                if (_.options.rtl === true) {
+	                    _.currentLeft = -(_.currentLeft);
+	                }
+	                $({
+	                    animStart: _.currentLeft
+	                }).animate({
+	                    animStart: targetLeft
+	                }, {
+	                    duration: _.options.speed,
+	                    easing: _.options.easing,
+	                    step: function(now) {
+	                        now = Math.ceil(now);
+	                        if (_.options.vertical === false) {
+	                            animProps[_.animType] = 'translate(' +
+	                                now + 'px, 0px)';
+	                            _.$slideTrack.css(animProps);
+	                        } else {
+	                            animProps[_.animType] = 'translate(0px,' +
+	                                now + 'px)';
+	                            _.$slideTrack.css(animProps);
+	                        }
+	                    },
+	                    complete: function() {
+	                        if (callback) {
+	                            callback.call();
+	                        }
+	                    }
+	                });
+	
+	            } else {
+	
+	                _.applyTransition();
+	                targetLeft = Math.ceil(targetLeft);
+	
+	                if (_.options.vertical === false) {
+	                    animProps[_.animType] = 'translate3d(' + targetLeft + 'px, 0px, 0px)';
+	                } else {
+	                    animProps[_.animType] = 'translate3d(0px,' + targetLeft + 'px, 0px)';
+	                }
+	                _.$slideTrack.css(animProps);
+	
+	                if (callback) {
+	                    setTimeout(function() {
+	
+	                        _.disableTransition();
+	
+	                        callback.call();
+	                    }, _.options.speed);
+	                }
+	
+	            }
+	
+	        }
+	
+	    };
+	
+	    Slick.prototype.getNavTarget = function() {
+	
+	        var _ = this,
+	            asNavFor = _.options.asNavFor;
+	
+	        if ( asNavFor && asNavFor !== null ) {
+	            asNavFor = $(asNavFor).not(_.$slider);
+	        }
+	
+	        return asNavFor;
+	
+	    };
+	
+	    Slick.prototype.asNavFor = function(index) {
+	
+	        var _ = this,
+	            asNavFor = _.getNavTarget();
+	
+	        if ( asNavFor !== null && typeof asNavFor === 'object' ) {
+	            asNavFor.each(function() {
+	                var target = $(this).slick('getSlick');
+	                if(!target.unslicked) {
+	                    target.slideHandler(index, true);
+	                }
+	            });
+	        }
+	
+	    };
+	
+	    Slick.prototype.applyTransition = function(slide) {
+	
+	        var _ = this,
+	            transition = {};
+	
+	        if (_.options.fade === false) {
+	            transition[_.transitionType] = _.transformType + ' ' + _.options.speed + 'ms ' + _.options.cssEase;
+	        } else {
+	            transition[_.transitionType] = 'opacity ' + _.options.speed + 'ms ' + _.options.cssEase;
+	        }
+	
+	        if (_.options.fade === false) {
+	            _.$slideTrack.css(transition);
+	        } else {
+	            _.$slides.eq(slide).css(transition);
+	        }
+	
+	    };
+	
+	    Slick.prototype.autoPlay = function() {
+	
+	        var _ = this;
+	
+	        _.autoPlayClear();
+	
+	        if ( _.slideCount > _.options.slidesToShow ) {
+	            _.autoPlayTimer = setInterval( _.autoPlayIterator, _.options.autoplaySpeed );
+	        }
+	
+	    };
+	
+	    Slick.prototype.autoPlayClear = function() {
+	
+	        var _ = this;
+	
+	        if (_.autoPlayTimer) {
+	            clearInterval(_.autoPlayTimer);
+	        }
+	
+	    };
+	
+	    Slick.prototype.autoPlayIterator = function() {
+	
+	        var _ = this,
+	            slideTo = _.currentSlide + _.options.slidesToScroll;
+	
+	        if ( !_.paused && !_.interrupted && !_.focussed ) {
+	
+	            if ( _.options.infinite === false ) {
+	
+	                if ( _.direction === 1 && ( _.currentSlide + 1 ) === ( _.slideCount - 1 )) {
+	                    _.direction = 0;
+	                }
+	
+	                else if ( _.direction === 0 ) {
+	
+	                    slideTo = _.currentSlide - _.options.slidesToScroll;
+	
+	                    if ( _.currentSlide - 1 === 0 ) {
+	                        _.direction = 1;
+	                    }
+	
+	                }
+	
+	            }
+	
+	            _.slideHandler( slideTo );
+	
+	        }
+	
+	    };
+	
+	    Slick.prototype.buildArrows = function() {
+	
+	        var _ = this;
+	
+	        if (_.options.arrows === true ) {
+	
+	            _.$prevArrow = $(_.options.prevArrow).addClass('slick-arrow');
+	            _.$nextArrow = $(_.options.nextArrow).addClass('slick-arrow');
+	
+	            if( _.slideCount > _.options.slidesToShow ) {
+	
+	                _.$prevArrow.removeClass('slick-hidden').removeAttr('aria-hidden tabindex');
+	                _.$nextArrow.removeClass('slick-hidden').removeAttr('aria-hidden tabindex');
+	
+	                if (_.htmlExpr.test(_.options.prevArrow)) {
+	                    _.$prevArrow.prependTo(_.options.appendArrows);
+	                }
+	
+	                if (_.htmlExpr.test(_.options.nextArrow)) {
+	                    _.$nextArrow.appendTo(_.options.appendArrows);
+	                }
+	
+	                if (_.options.infinite !== true) {
+	                    _.$prevArrow
+	                        .addClass('slick-disabled')
+	                        .attr('aria-disabled', 'true');
+	                }
+	
+	            } else {
+	
+	                _.$prevArrow.add( _.$nextArrow )
+	
+	                    .addClass('slick-hidden')
+	                    .attr({
+	                        'aria-disabled': 'true',
+	                        'tabindex': '-1'
+	                    });
+	
+	            }
+	
+	        }
+	
+	    };
+	
+	    Slick.prototype.buildDots = function() {
+	
+	        var _ = this,
+	            i, dot;
+	
+	        if (_.options.dots === true && _.slideCount > _.options.slidesToShow) {
+	
+	            _.$slider.addClass('slick-dotted');
+	
+	            dot = $('<ul />').addClass(_.options.dotsClass);
+	
+	            for (i = 0; i <= _.getDotCount(); i += 1) {
+	                dot.append($('<li />').append(_.options.customPaging.call(this, _, i)));
+	            }
+	
+	            _.$dots = dot.appendTo(_.options.appendDots);
+	
+	            _.$dots.find('li').first().addClass('slick-active').attr('aria-hidden', 'false');
+	
+	        }
+	
+	    };
+	
+	    Slick.prototype.buildOut = function() {
+	
+	        var _ = this;
+	
+	        _.$slides =
+	            _.$slider
+	                .children( _.options.slide + ':not(.slick-cloned)')
+	                .addClass('slick-slide');
+	
+	        _.slideCount = _.$slides.length;
+	
+	        _.$slides.each(function(index, element) {
+	            $(element)
+	                .attr('data-slick-index', index)
+	                .data('originalStyling', $(element).attr('style') || '');
+	        });
+	
+	        _.$slider.addClass('slick-slider');
+	
+	        _.$slideTrack = (_.slideCount === 0) ?
+	            $('<div class="slick-track"/>').appendTo(_.$slider) :
+	            _.$slides.wrapAll('<div class="slick-track"/>').parent();
+	
+	        _.$list = _.$slideTrack.wrap(
+	            '<div aria-live="polite" class="slick-list"/>').parent();
+	        _.$slideTrack.css('opacity', 0);
+	
+	        if (_.options.centerMode === true || _.options.swipeToSlide === true) {
+	            _.options.slidesToScroll = 1;
+	        }
+	
+	        $('img[data-lazy]', _.$slider).not('[src]').addClass('slick-loading');
+	
+	        _.setupInfinite();
+	
+	        _.buildArrows();
+	
+	        _.buildDots();
+	
+	        _.updateDots();
+	
+	
+	        _.setSlideClasses(typeof _.currentSlide === 'number' ? _.currentSlide : 0);
+	
+	        if (_.options.draggable === true) {
+	            _.$list.addClass('draggable');
+	        }
+	
+	    };
+	
+	    Slick.prototype.buildRows = function() {
+	
+	        var _ = this, a, b, c, newSlides, numOfSlides, originalSlides,slidesPerSection;
+	
+	        newSlides = document.createDocumentFragment();
+	        originalSlides = _.$slider.children();
+	
+	        if(_.options.rows > 1) {
+	
+	            slidesPerSection = _.options.slidesPerRow * _.options.rows;
+	            numOfSlides = Math.ceil(
+	                originalSlides.length / slidesPerSection
+	            );
+	
+	            for(a = 0; a < numOfSlides; a++){
+	                var slide = document.createElement('div');
+	                for(b = 0; b < _.options.rows; b++) {
+	                    var row = document.createElement('div');
+	                    for(c = 0; c < _.options.slidesPerRow; c++) {
+	                        var target = (a * slidesPerSection + ((b * _.options.slidesPerRow) + c));
+	                        if (originalSlides.get(target)) {
+	                            row.appendChild(originalSlides.get(target));
+	                        }
+	                    }
+	                    slide.appendChild(row);
+	                }
+	                newSlides.appendChild(slide);
+	            }
+	
+	            _.$slider.empty().append(newSlides);
+	            _.$slider.children().children().children()
+	                .css({
+	                    'width':(100 / _.options.slidesPerRow) + '%',
+	                    'display': 'inline-block'
+	                });
+	
+	        }
+	
+	    };
+	
+	    Slick.prototype.checkResponsive = function(initial, forceUpdate) {
+	
+	        var _ = this,
+	            breakpoint, targetBreakpoint, respondToWidth, triggerBreakpoint = false;
+	        var sliderWidth = _.$slider.width();
+	        var windowWidth = window.innerWidth || $(window).width();
+	
+	        if (_.respondTo === 'window') {
+	            respondToWidth = windowWidth;
+	        } else if (_.respondTo === 'slider') {
+	            respondToWidth = sliderWidth;
+	        } else if (_.respondTo === 'min') {
+	            respondToWidth = Math.min(windowWidth, sliderWidth);
+	        }
+	
+	        if ( _.options.responsive &&
+	            _.options.responsive.length &&
+	            _.options.responsive !== null) {
+	
+	            targetBreakpoint = null;
+	
+	            for (breakpoint in _.breakpoints) {
+	                if (_.breakpoints.hasOwnProperty(breakpoint)) {
+	                    if (_.originalSettings.mobileFirst === false) {
+	                        if (respondToWidth < _.breakpoints[breakpoint]) {
+	                            targetBreakpoint = _.breakpoints[breakpoint];
+	                        }
+	                    } else {
+	                        if (respondToWidth > _.breakpoints[breakpoint]) {
+	                            targetBreakpoint = _.breakpoints[breakpoint];
+	                        }
+	                    }
+	                }
+	            }
+	
+	            if (targetBreakpoint !== null) {
+	                if (_.activeBreakpoint !== null) {
+	                    if (targetBreakpoint !== _.activeBreakpoint || forceUpdate) {
+	                        _.activeBreakpoint =
+	                            targetBreakpoint;
+	                        if (_.breakpointSettings[targetBreakpoint] === 'unslick') {
+	                            _.unslick(targetBreakpoint);
+	                        } else {
+	                            _.options = $.extend({}, _.originalSettings,
+	                                _.breakpointSettings[
+	                                    targetBreakpoint]);
+	                            if (initial === true) {
+	                                _.currentSlide = _.options.initialSlide;
+	                            }
+	                            _.refresh(initial);
+	                        }
+	                        triggerBreakpoint = targetBreakpoint;
+	                    }
+	                } else {
+	                    _.activeBreakpoint = targetBreakpoint;
+	                    if (_.breakpointSettings[targetBreakpoint] === 'unslick') {
+	                        _.unslick(targetBreakpoint);
+	                    } else {
+	                        _.options = $.extend({}, _.originalSettings,
+	                            _.breakpointSettings[
+	                                targetBreakpoint]);
+	                        if (initial === true) {
+	                            _.currentSlide = _.options.initialSlide;
+	                        }
+	                        _.refresh(initial);
+	                    }
+	                    triggerBreakpoint = targetBreakpoint;
+	                }
+	            } else {
+	                if (_.activeBreakpoint !== null) {
+	                    _.activeBreakpoint = null;
+	                    _.options = _.originalSettings;
+	                    if (initial === true) {
+	                        _.currentSlide = _.options.initialSlide;
+	                    }
+	                    _.refresh(initial);
+	                    triggerBreakpoint = targetBreakpoint;
+	                }
+	            }
+	
+	            // only trigger breakpoints during an actual break. not on initialize.
+	            if( !initial && triggerBreakpoint !== false ) {
+	                _.$slider.trigger('breakpoint', [_, triggerBreakpoint]);
+	            }
+	        }
+	
+	    };
+	
+	    Slick.prototype.changeSlide = function(event, dontAnimate) {
+	
+	        var _ = this,
+	            $target = $(event.currentTarget),
+	            indexOffset, slideOffset, unevenOffset;
+	
+	        // If target is a link, prevent default action.
+	        if($target.is('a')) {
+	            event.preventDefault();
+	        }
+	
+	        // If target is not the <li> element (ie: a child), find the <li>.
+	        if(!$target.is('li')) {
+	            $target = $target.closest('li');
+	        }
+	
+	        unevenOffset = (_.slideCount % _.options.slidesToScroll !== 0);
+	        indexOffset = unevenOffset ? 0 : (_.slideCount - _.currentSlide) % _.options.slidesToScroll;
+	
+	        switch (event.data.message) {
+	
+	            case 'previous':
+	                slideOffset = indexOffset === 0 ? _.options.slidesToScroll : _.options.slidesToShow - indexOffset;
+	                if (_.slideCount > _.options.slidesToShow) {
+	                    _.slideHandler(_.currentSlide - slideOffset, false, dontAnimate);
+	                }
+	                break;
+	
+	            case 'next':
+	                slideOffset = indexOffset === 0 ? _.options.slidesToScroll : indexOffset;
+	                if (_.slideCount > _.options.slidesToShow) {
+	                    _.slideHandler(_.currentSlide + slideOffset, false, dontAnimate);
+	                }
+	                break;
+	
+	            case 'index':
+	                var index = event.data.index === 0 ? 0 :
+	                    event.data.index || $target.index() * _.options.slidesToScroll;
+	
+	                _.slideHandler(_.checkNavigable(index), false, dontAnimate);
+	                $target.children().trigger('focus');
+	                break;
+	
+	            default:
+	                return;
+	        }
+	
+	    };
+	
+	    Slick.prototype.checkNavigable = function(index) {
+	
+	        var _ = this,
+	            navigables, prevNavigable;
+	
+	        navigables = _.getNavigableIndexes();
+	        prevNavigable = 0;
+	        if (index > navigables[navigables.length - 1]) {
+	            index = navigables[navigables.length - 1];
+	        } else {
+	            for (var n in navigables) {
+	                if (index < navigables[n]) {
+	                    index = prevNavigable;
+	                    break;
+	                }
+	                prevNavigable = navigables[n];
+	            }
+	        }
+	
+	        return index;
+	    };
+	
+	    Slick.prototype.cleanUpEvents = function() {
+	
+	        var _ = this;
+	
+	        if (_.options.dots && _.$dots !== null) {
+	
+	            $('li', _.$dots)
+	                .off('click.slick', _.changeSlide)
+	                .off('mouseenter.slick', $.proxy(_.interrupt, _, true))
+	                .off('mouseleave.slick', $.proxy(_.interrupt, _, false));
+	
+	        }
+	
+	        _.$slider.off('focus.slick blur.slick');
+	
+	        if (_.options.arrows === true && _.slideCount > _.options.slidesToShow) {
+	            _.$prevArrow && _.$prevArrow.off('click.slick', _.changeSlide);
+	            _.$nextArrow && _.$nextArrow.off('click.slick', _.changeSlide);
+	        }
+	
+	        _.$list.off('touchstart.slick mousedown.slick', _.swipeHandler);
+	        _.$list.off('touchmove.slick mousemove.slick', _.swipeHandler);
+	        _.$list.off('touchend.slick mouseup.slick', _.swipeHandler);
+	        _.$list.off('touchcancel.slick mouseleave.slick', _.swipeHandler);
+	
+	        _.$list.off('click.slick', _.clickHandler);
+	
+	        $(document).off(_.visibilityChange, _.visibility);
+	
+	        _.cleanUpSlideEvents();
+	
+	        if (_.options.accessibility === true) {
+	            _.$list.off('keydown.slick', _.keyHandler);
+	        }
+	
+	        if (_.options.focusOnSelect === true) {
+	            $(_.$slideTrack).children().off('click.slick', _.selectHandler);
+	        }
+	
+	        $(window).off('orientationchange.slick.slick-' + _.instanceUid, _.orientationChange);
+	
+	        $(window).off('resize.slick.slick-' + _.instanceUid, _.resize);
+	
+	        $('[draggable!=true]', _.$slideTrack).off('dragstart', _.preventDefault);
+	
+	        $(window).off('load.slick.slick-' + _.instanceUid, _.setPosition);
+	        $(document).off('ready.slick.slick-' + _.instanceUid, _.setPosition);
+	
+	    };
+	
+	    Slick.prototype.cleanUpSlideEvents = function() {
+	
+	        var _ = this;
+	
+	        _.$list.off('mouseenter.slick', $.proxy(_.interrupt, _, true));
+	        _.$list.off('mouseleave.slick', $.proxy(_.interrupt, _, false));
+	
+	    };
+	
+	    Slick.prototype.cleanUpRows = function() {
+	
+	        var _ = this, originalSlides;
+	
+	        if(_.options.rows > 1) {
+	            originalSlides = _.$slides.children().children();
+	            originalSlides.removeAttr('style');
+	            _.$slider.empty().append(originalSlides);
+	        }
+	
+	    };
+	
+	    Slick.prototype.clickHandler = function(event) {
+	
+	        var _ = this;
+	
+	        if (_.shouldClick === false) {
+	            event.stopImmediatePropagation();
+	            event.stopPropagation();
+	            event.preventDefault();
+	        }
+	
+	    };
+	
+	    Slick.prototype.destroy = function(refresh) {
+	
+	        var _ = this;
+	
+	        _.autoPlayClear();
+	
+	        _.touchObject = {};
+	
+	        _.cleanUpEvents();
+	
+	        $('.slick-cloned', _.$slider).detach();
+	
+	        if (_.$dots) {
+	            _.$dots.remove();
+	        }
+	
+	
+	        if ( _.$prevArrow && _.$prevArrow.length ) {
+	
+	            _.$prevArrow
+	                .removeClass('slick-disabled slick-arrow slick-hidden')
+	                .removeAttr('aria-hidden aria-disabled tabindex')
+	                .css('display','');
+	
+	            if ( _.htmlExpr.test( _.options.prevArrow )) {
+	                _.$prevArrow.remove();
+	            }
+	        }
+	
+	        if ( _.$nextArrow && _.$nextArrow.length ) {
+	
+	            _.$nextArrow
+	                .removeClass('slick-disabled slick-arrow slick-hidden')
+	                .removeAttr('aria-hidden aria-disabled tabindex')
+	                .css('display','');
+	
+	            if ( _.htmlExpr.test( _.options.nextArrow )) {
+	                _.$nextArrow.remove();
+	            }
+	
+	        }
+	
+	
+	        if (_.$slides) {
+	
+	            _.$slides
+	                .removeClass('slick-slide slick-active slick-center slick-visible slick-current')
+	                .removeAttr('aria-hidden')
+	                .removeAttr('data-slick-index')
+	                .each(function(){
+	                    $(this).attr('style', $(this).data('originalStyling'));
+	                });
+	
+	            _.$slideTrack.children(this.options.slide).detach();
+	
+	            _.$slideTrack.detach();
+	
+	            _.$list.detach();
+	
+	            _.$slider.append(_.$slides);
+	        }
+	
+	        _.cleanUpRows();
+	
+	        _.$slider.removeClass('slick-slider');
+	        _.$slider.removeClass('slick-initialized');
+	        _.$slider.removeClass('slick-dotted');
+	
+	        _.unslicked = true;
+	
+	        if(!refresh) {
+	            _.$slider.trigger('destroy', [_]);
+	        }
+	
+	    };
+	
+	    Slick.prototype.disableTransition = function(slide) {
+	
+	        var _ = this,
+	            transition = {};
+	
+	        transition[_.transitionType] = '';
+	
+	        if (_.options.fade === false) {
+	            _.$slideTrack.css(transition);
+	        } else {
+	            _.$slides.eq(slide).css(transition);
+	        }
+	
+	    };
+	
+	    Slick.prototype.fadeSlide = function(slideIndex, callback) {
+	
+	        var _ = this;
+	
+	        if (_.cssTransitions === false) {
+	
+	            _.$slides.eq(slideIndex).css({
+	                zIndex: _.options.zIndex
+	            });
+	
+	            _.$slides.eq(slideIndex).animate({
+	                opacity: 1
+	            }, _.options.speed, _.options.easing, callback);
+	
+	        } else {
+	
+	            _.applyTransition(slideIndex);
+	
+	            _.$slides.eq(slideIndex).css({
+	                opacity: 1,
+	                zIndex: _.options.zIndex
+	            });
+	
+	            if (callback) {
+	                setTimeout(function() {
+	
+	                    _.disableTransition(slideIndex);
+	
+	                    callback.call();
+	                }, _.options.speed);
+	            }
+	
+	        }
+	
+	    };
+	
+	    Slick.prototype.fadeSlideOut = function(slideIndex) {
+	
+	        var _ = this;
+	
+	        if (_.cssTransitions === false) {
+	
+	            _.$slides.eq(slideIndex).animate({
+	                opacity: 0,
+	                zIndex: _.options.zIndex - 2
+	            }, _.options.speed, _.options.easing);
+	
+	        } else {
+	
+	            _.applyTransition(slideIndex);
+	
+	            _.$slides.eq(slideIndex).css({
+	                opacity: 0,
+	                zIndex: _.options.zIndex - 2
+	            });
+	
+	        }
+	
+	    };
+	
+	    Slick.prototype.filterSlides = Slick.prototype.slickFilter = function(filter) {
+	
+	        var _ = this;
+	
+	        if (filter !== null) {
+	
+	            _.$slidesCache = _.$slides;
+	
+	            _.unload();
+	
+	            _.$slideTrack.children(this.options.slide).detach();
+	
+	            _.$slidesCache.filter(filter).appendTo(_.$slideTrack);
+	
+	            _.reinit();
+	
+	        }
+	
+	    };
+	
+	    Slick.prototype.focusHandler = function() {
+	
+	        var _ = this;
+	
+	        _.$slider
+	            .off('focus.slick blur.slick')
+	            .on('focus.slick blur.slick',
+	                '*:not(.slick-arrow)', function(event) {
+	
+	            event.stopImmediatePropagation();
+	            var $sf = $(this);
+	
+	            setTimeout(function() {
+	
+	                if( _.options.pauseOnFocus ) {
+	                    _.focussed = $sf.is(':focus');
+	                    _.autoPlay();
+	                }
+	
+	            }, 0);
+	
+	        });
+	    };
+	
+	    Slick.prototype.getCurrent = Slick.prototype.slickCurrentSlide = function() {
+	
+	        var _ = this;
+	        return _.currentSlide;
+	
+	    };
+	
+	    Slick.prototype.getDotCount = function() {
+	
+	        var _ = this;
+	
+	        var breakPoint = 0;
+	        var counter = 0;
+	        var pagerQty = 0;
+	
+	        if (_.options.infinite === true) {
+	            while (breakPoint < _.slideCount) {
+	                ++pagerQty;
+	                breakPoint = counter + _.options.slidesToScroll;
+	                counter += _.options.slidesToScroll <= _.options.slidesToShow ? _.options.slidesToScroll : _.options.slidesToShow;
+	            }
+	        } else if (_.options.centerMode === true) {
+	            pagerQty = _.slideCount;
+	        } else if(!_.options.asNavFor) {
+	            pagerQty = 1 + Math.ceil((_.slideCount - _.options.slidesToShow) / _.options.slidesToScroll);
+	        }else {
+	            while (breakPoint < _.slideCount) {
+	                ++pagerQty;
+	                breakPoint = counter + _.options.slidesToScroll;
+	                counter += _.options.slidesToScroll <= _.options.slidesToShow ? _.options.slidesToScroll : _.options.slidesToShow;
+	            }
+	        }
+	
+	        return pagerQty - 1;
+	
+	    };
+	
+	    Slick.prototype.getLeft = function(slideIndex) {
+	
+	        var _ = this,
+	            targetLeft,
+	            verticalHeight,
+	            verticalOffset = 0,
+	            targetSlide;
+	
+	        _.slideOffset = 0;
+	        verticalHeight = _.$slides.first().outerHeight(true);
+	
+	        if (_.options.infinite === true) {
+	            if (_.slideCount > _.options.slidesToShow) {
+	                _.slideOffset = (_.slideWidth * _.options.slidesToShow) * -1;
+	                verticalOffset = (verticalHeight * _.options.slidesToShow) * -1;
+	            }
+	            if (_.slideCount % _.options.slidesToScroll !== 0) {
+	                if (slideIndex + _.options.slidesToScroll > _.slideCount && _.slideCount > _.options.slidesToShow) {
+	                    if (slideIndex > _.slideCount) {
+	                        _.slideOffset = ((_.options.slidesToShow - (slideIndex - _.slideCount)) * _.slideWidth) * -1;
+	                        verticalOffset = ((_.options.slidesToShow - (slideIndex - _.slideCount)) * verticalHeight) * -1;
+	                    } else {
+	                        _.slideOffset = ((_.slideCount % _.options.slidesToScroll) * _.slideWidth) * -1;
+	                        verticalOffset = ((_.slideCount % _.options.slidesToScroll) * verticalHeight) * -1;
+	                    }
+	                }
+	            }
+	        } else {
+	            if (slideIndex + _.options.slidesToShow > _.slideCount) {
+	                _.slideOffset = ((slideIndex + _.options.slidesToShow) - _.slideCount) * _.slideWidth;
+	                verticalOffset = ((slideIndex + _.options.slidesToShow) - _.slideCount) * verticalHeight;
+	            }
+	        }
+	
+	        if (_.slideCount <= _.options.slidesToShow) {
+	            _.slideOffset = 0;
+	            verticalOffset = 0;
+	        }
+	
+	        if (_.options.centerMode === true && _.options.infinite === true) {
+	            _.slideOffset += _.slideWidth * Math.floor(_.options.slidesToShow / 2) - _.slideWidth;
+	        } else if (_.options.centerMode === true) {
+	            _.slideOffset = 0;
+	            _.slideOffset += _.slideWidth * Math.floor(_.options.slidesToShow / 2);
+	        }
+	
+	        if (_.options.vertical === false) {
+	            targetLeft = ((slideIndex * _.slideWidth) * -1) + _.slideOffset;
+	        } else {
+	            targetLeft = ((slideIndex * verticalHeight) * -1) + verticalOffset;
+	        }
+	
+	        if (_.options.variableWidth === true) {
+	
+	            if (_.slideCount <= _.options.slidesToShow || _.options.infinite === false) {
+	                targetSlide = _.$slideTrack.children('.slick-slide').eq(slideIndex);
+	            } else {
+	                targetSlide = _.$slideTrack.children('.slick-slide').eq(slideIndex + _.options.slidesToShow);
+	            }
+	
+	            if (_.options.rtl === true) {
+	                if (targetSlide[0]) {
+	                    targetLeft = (_.$slideTrack.width() - targetSlide[0].offsetLeft - targetSlide.width()) * -1;
+	                } else {
+	                    targetLeft =  0;
+	                }
+	            } else {
+	                targetLeft = targetSlide[0] ? targetSlide[0].offsetLeft * -1 : 0;
+	            }
+	
+	            if (_.options.centerMode === true) {
+	                if (_.slideCount <= _.options.slidesToShow || _.options.infinite === false) {
+	                    targetSlide = _.$slideTrack.children('.slick-slide').eq(slideIndex);
+	                } else {
+	                    targetSlide = _.$slideTrack.children('.slick-slide').eq(slideIndex + _.options.slidesToShow + 1);
+	                }
+	
+	                if (_.options.rtl === true) {
+	                    if (targetSlide[0]) {
+	                        targetLeft = (_.$slideTrack.width() - targetSlide[0].offsetLeft - targetSlide.width()) * -1;
+	                    } else {
+	                        targetLeft =  0;
+	                    }
+	                } else {
+	                    targetLeft = targetSlide[0] ? targetSlide[0].offsetLeft * -1 : 0;
+	                }
+	
+	                targetLeft += (_.$list.width() - targetSlide.outerWidth()) / 2;
+	            }
+	        }
+	
+	        return targetLeft;
+	
+	    };
+	
+	    Slick.prototype.getOption = Slick.prototype.slickGetOption = function(option) {
+	
+	        var _ = this;
+	
+	        return _.options[option];
+	
+	    };
+	
+	    Slick.prototype.getNavigableIndexes = function() {
+	
+	        var _ = this,
+	            breakPoint = 0,
+	            counter = 0,
+	            indexes = [],
+	            max;
+	
+	        if (_.options.infinite === false) {
+	            max = _.slideCount;
+	        } else {
+	            breakPoint = _.options.slidesToScroll * -1;
+	            counter = _.options.slidesToScroll * -1;
+	            max = _.slideCount * 2;
+	        }
+	
+	        while (breakPoint < max) {
+	            indexes.push(breakPoint);
+	            breakPoint = counter + _.options.slidesToScroll;
+	            counter += _.options.slidesToScroll <= _.options.slidesToShow ? _.options.slidesToScroll : _.options.slidesToShow;
+	        }
+	
+	        return indexes;
+	
+	    };
+	
+	    Slick.prototype.getSlick = function() {
+	
+	        return this;
+	
+	    };
+	
+	    Slick.prototype.getSlideCount = function() {
+	
+	        var _ = this,
+	            slidesTraversed, swipedSlide, centerOffset;
+	
+	        centerOffset = _.options.centerMode === true ? _.slideWidth * Math.floor(_.options.slidesToShow / 2) : 0;
+	
+	        if (_.options.swipeToSlide === true) {
+	            _.$slideTrack.find('.slick-slide').each(function(index, slide) {
+	                if (slide.offsetLeft - centerOffset + ($(slide).outerWidth() / 2) > (_.swipeLeft * -1)) {
+	                    swipedSlide = slide;
+	                    return false;
+	                }
+	            });
+	
+	            slidesTraversed = Math.abs($(swipedSlide).attr('data-slick-index') - _.currentSlide) || 1;
+	
+	            return slidesTraversed;
+	
+	        } else {
+	            return _.options.slidesToScroll;
+	        }
+	
+	    };
+	
+	    Slick.prototype.goTo = Slick.prototype.slickGoTo = function(slide, dontAnimate) {
+	
+	        var _ = this;
+	
+	        _.changeSlide({
+	            data: {
+	                message: 'index',
+	                index: parseInt(slide)
+	            }
+	        }, dontAnimate);
+	
+	    };
+	
+	    Slick.prototype.init = function(creation) {
+	
+	        var _ = this;
+	
+	        if (!$(_.$slider).hasClass('slick-initialized')) {
+	
+	            $(_.$slider).addClass('slick-initialized');
+	
+	            _.buildRows();
+	            _.buildOut();
+	            _.setProps();
+	            _.startLoad();
+	            _.loadSlider();
+	            _.initializeEvents();
+	            _.updateArrows();
+	            _.updateDots();
+	            _.checkResponsive(true);
+	            _.focusHandler();
+	
+	        }
+	
+	        if (creation) {
+	            _.$slider.trigger('init', [_]);
+	        }
+	
+	        if (_.options.accessibility === true) {
+	            _.initADA();
+	        }
+	
+	        if ( _.options.autoplay ) {
+	
+	            _.paused = false;
+	            _.autoPlay();
+	
+	        }
+	
+	    };
+	
+	    Slick.prototype.initADA = function() {
+	        var _ = this;
+	        _.$slides.add(_.$slideTrack.find('.slick-cloned')).attr({
+	            'aria-hidden': 'true',
+	            'tabindex': '-1'
+	        }).find('a, input, button, select').attr({
+	            'tabindex': '-1'
+	        });
+	
+	        _.$slideTrack.attr('role', 'listbox');
+	
+	        _.$slides.not(_.$slideTrack.find('.slick-cloned')).each(function(i) {
+	            $(this).attr({
+	                'role': 'option',
+	                'aria-describedby': 'slick-slide' + _.instanceUid + i + ''
+	            });
+	        });
+	
+	        if (_.$dots !== null) {
+	            _.$dots.attr('role', 'tablist').find('li').each(function(i) {
+	                $(this).attr({
+	                    'role': 'presentation',
+	                    'aria-selected': 'false',
+	                    'aria-controls': 'navigation' + _.instanceUid + i + '',
+	                    'id': 'slick-slide' + _.instanceUid + i + ''
+	                });
+	            })
+	                .first().attr('aria-selected', 'true').end()
+	                .find('button').attr('role', 'button').end()
+	                .closest('div').attr('role', 'toolbar');
+	        }
+	        _.activateADA();
+	
+	    };
+	
+	    Slick.prototype.initArrowEvents = function() {
+	
+	        var _ = this;
+	
+	        if (_.options.arrows === true && _.slideCount > _.options.slidesToShow) {
+	            _.$prevArrow
+	               .off('click.slick')
+	               .on('click.slick', {
+	                    message: 'previous'
+	               }, _.changeSlide);
+	            _.$nextArrow
+	               .off('click.slick')
+	               .on('click.slick', {
+	                    message: 'next'
+	               }, _.changeSlide);
+	        }
+	
+	    };
+	
+	    Slick.prototype.initDotEvents = function() {
+	
+	        var _ = this;
+	
+	        if (_.options.dots === true && _.slideCount > _.options.slidesToShow) {
+	            $('li', _.$dots).on('click.slick', {
+	                message: 'index'
+	            }, _.changeSlide);
+	        }
+	
+	        if ( _.options.dots === true && _.options.pauseOnDotsHover === true ) {
+	
+	            $('li', _.$dots)
+	                .on('mouseenter.slick', $.proxy(_.interrupt, _, true))
+	                .on('mouseleave.slick', $.proxy(_.interrupt, _, false));
+	
+	        }
+	
+	    };
+	
+	    Slick.prototype.initSlideEvents = function() {
+	
+	        var _ = this;
+	
+	        if ( _.options.pauseOnHover ) {
+	
+	            _.$list.on('mouseenter.slick', $.proxy(_.interrupt, _, true));
+	            _.$list.on('mouseleave.slick', $.proxy(_.interrupt, _, false));
+	
+	        }
+	
+	    };
+	
+	    Slick.prototype.initializeEvents = function() {
+	
+	        var _ = this;
+	
+	        _.initArrowEvents();
+	
+	        _.initDotEvents();
+	        _.initSlideEvents();
+	
+	        _.$list.on('touchstart.slick mousedown.slick', {
+	            action: 'start'
+	        }, _.swipeHandler);
+	        _.$list.on('touchmove.slick mousemove.slick', {
+	            action: 'move'
+	        }, _.swipeHandler);
+	        _.$list.on('touchend.slick mouseup.slick', {
+	            action: 'end'
+	        }, _.swipeHandler);
+	        _.$list.on('touchcancel.slick mouseleave.slick', {
+	            action: 'end'
+	        }, _.swipeHandler);
+	
+	        _.$list.on('click.slick', _.clickHandler);
+	
+	        $(document).on(_.visibilityChange, $.proxy(_.visibility, _));
+	
+	        if (_.options.accessibility === true) {
+	            _.$list.on('keydown.slick', _.keyHandler);
+	        }
+	
+	        if (_.options.focusOnSelect === true) {
+	            $(_.$slideTrack).children().on('click.slick', _.selectHandler);
+	        }
+	
+	        $(window).on('orientationchange.slick.slick-' + _.instanceUid, $.proxy(_.orientationChange, _));
+	
+	        $(window).on('resize.slick.slick-' + _.instanceUid, $.proxy(_.resize, _));
+	
+	        $('[draggable!=true]', _.$slideTrack).on('dragstart', _.preventDefault);
+	
+	        $(window).on('load.slick.slick-' + _.instanceUid, _.setPosition);
+	        $(document).on('ready.slick.slick-' + _.instanceUid, _.setPosition);
+	
+	    };
+	
+	    Slick.prototype.initUI = function() {
+	
+	        var _ = this;
+	
+	        if (_.options.arrows === true && _.slideCount > _.options.slidesToShow) {
+	
+	            _.$prevArrow.show();
+	            _.$nextArrow.show();
+	
+	        }
+	
+	        if (_.options.dots === true && _.slideCount > _.options.slidesToShow) {
+	
+	            _.$dots.show();
+	
+	        }
+	
+	    };
+	
+	    Slick.prototype.keyHandler = function(event) {
+	
+	        var _ = this;
+	         //Dont slide if the cursor is inside the form fields and arrow keys are pressed
+	        if(!event.target.tagName.match('TEXTAREA|INPUT|SELECT')) {
+	            if (event.keyCode === 37 && _.options.accessibility === true) {
+	                _.changeSlide({
+	                    data: {
+	                        message: _.options.rtl === true ? 'next' :  'previous'
+	                    }
+	                });
+	            } else if (event.keyCode === 39 && _.options.accessibility === true) {
+	                _.changeSlide({
+	                    data: {
+	                        message: _.options.rtl === true ? 'previous' : 'next'
+	                    }
+	                });
+	            }
+	        }
+	
+	    };
+	
+	    Slick.prototype.lazyLoad = function() {
+	
+	        var _ = this,
+	            loadRange, cloneRange, rangeStart, rangeEnd;
+	
+	        function loadImages(imagesScope) {
+	
+	            $('img[data-lazy]', imagesScope).each(function() {
+	
+	                var image = $(this),
+	                    imageSource = $(this).attr('data-lazy'),
+	                    imageToLoad = document.createElement('img');
+	
+	                imageToLoad.onload = function() {
+	
+	                    image
+	                        .animate({ opacity: 0 }, 100, function() {
+	                            image
+	                                .attr('src', imageSource)
+	                                .animate({ opacity: 1 }, 200, function() {
+	                                    image
+	                                        .removeAttr('data-lazy')
+	                                        .removeClass('slick-loading');
+	                                });
+	                            _.$slider.trigger('lazyLoaded', [_, image, imageSource]);
+	                        });
+	
+	                };
+	
+	                imageToLoad.onerror = function() {
+	
+	                    image
+	                        .removeAttr( 'data-lazy' )
+	                        .removeClass( 'slick-loading' )
+	                        .addClass( 'slick-lazyload-error' );
+	
+	                    _.$slider.trigger('lazyLoadError', [ _, image, imageSource ]);
+	
+	                };
+	
+	                imageToLoad.src = imageSource;
+	
+	            });
+	
+	        }
+	
+	        if (_.options.centerMode === true) {
+	            if (_.options.infinite === true) {
+	                rangeStart = _.currentSlide + (_.options.slidesToShow / 2 + 1);
+	                rangeEnd = rangeStart + _.options.slidesToShow + 2;
+	            } else {
+	                rangeStart = Math.max(0, _.currentSlide - (_.options.slidesToShow / 2 + 1));
+	                rangeEnd = 2 + (_.options.slidesToShow / 2 + 1) + _.currentSlide;
+	            }
+	        } else {
+	            rangeStart = _.options.infinite ? _.options.slidesToShow + _.currentSlide : _.currentSlide;
+	            rangeEnd = Math.ceil(rangeStart + _.options.slidesToShow);
+	            if (_.options.fade === true) {
+	                if (rangeStart > 0) rangeStart--;
+	                if (rangeEnd <= _.slideCount) rangeEnd++;
+	            }
+	        }
+	
+	        loadRange = _.$slider.find('.slick-slide').slice(rangeStart, rangeEnd);
+	        loadImages(loadRange);
+	
+	        if (_.slideCount <= _.options.slidesToShow) {
+	            cloneRange = _.$slider.find('.slick-slide');
+	            loadImages(cloneRange);
+	        } else
+	        if (_.currentSlide >= _.slideCount - _.options.slidesToShow) {
+	            cloneRange = _.$slider.find('.slick-cloned').slice(0, _.options.slidesToShow);
+	            loadImages(cloneRange);
+	        } else if (_.currentSlide === 0) {
+	            cloneRange = _.$slider.find('.slick-cloned').slice(_.options.slidesToShow * -1);
+	            loadImages(cloneRange);
+	        }
+	
+	    };
+	
+	    Slick.prototype.loadSlider = function() {
+	
+	        var _ = this;
+	
+	        _.setPosition();
+	
+	        _.$slideTrack.css({
+	            opacity: 1
+	        });
+	
+	        _.$slider.removeClass('slick-loading');
+	
+	        _.initUI();
+	
+	        if (_.options.lazyLoad === 'progressive') {
+	            _.progressiveLazyLoad();
+	        }
+	
+	    };
+	
+	    Slick.prototype.next = Slick.prototype.slickNext = function() {
+	
+	        var _ = this;
+	
+	        _.changeSlide({
+	            data: {
+	                message: 'next'
+	            }
+	        });
+	
+	    };
+	
+	    Slick.prototype.orientationChange = function() {
+	
+	        var _ = this;
+	
+	        _.checkResponsive();
+	        _.setPosition();
+	
+	    };
+	
+	    Slick.prototype.pause = Slick.prototype.slickPause = function() {
+	
+	        var _ = this;
+	
+	        _.autoPlayClear();
+	        _.paused = true;
+	
+	    };
+	
+	    Slick.prototype.play = Slick.prototype.slickPlay = function() {
+	
+	        var _ = this;
+	
+	        _.autoPlay();
+	        _.options.autoplay = true;
+	        _.paused = false;
+	        _.focussed = false;
+	        _.interrupted = false;
+	
+	    };
+	
+	    Slick.prototype.postSlide = function(index) {
+	
+	        var _ = this;
+	
+	        if( !_.unslicked ) {
+	
+	            _.$slider.trigger('afterChange', [_, index]);
+	
+	            _.animating = false;
+	
+	            _.setPosition();
+	
+	            _.swipeLeft = null;
+	
+	            if ( _.options.autoplay ) {
+	                _.autoPlay();
+	            }
+	
+	            if (_.options.accessibility === true) {
+	                _.initADA();
+	            }
+	
+	        }
+	
+	    };
+	
+	    Slick.prototype.prev = Slick.prototype.slickPrev = function() {
+	
+	        var _ = this;
+	
+	        _.changeSlide({
+	            data: {
+	                message: 'previous'
+	            }
+	        });
+	
+	    };
+	
+	    Slick.prototype.preventDefault = function(event) {
+	
+	        event.preventDefault();
+	
+	    };
+	
+	    Slick.prototype.progressiveLazyLoad = function( tryCount ) {
+	
+	        tryCount = tryCount || 1;
+	
+	        var _ = this,
+	            $imgsToLoad = $( 'img[data-lazy]', _.$slider ),
+	            image,
+	            imageSource,
+	            imageToLoad;
+	
+	        if ( $imgsToLoad.length ) {
+	
+	            image = $imgsToLoad.first();
+	            imageSource = image.attr('data-lazy');
+	            imageToLoad = document.createElement('img');
+	
+	            imageToLoad.onload = function() {
+	
+	                image
+	                    .attr( 'src', imageSource )
+	                    .removeAttr('data-lazy')
+	                    .removeClass('slick-loading');
+	
+	                if ( _.options.adaptiveHeight === true ) {
+	                    _.setPosition();
+	                }
+	
+	                _.$slider.trigger('lazyLoaded', [ _, image, imageSource ]);
+	                _.progressiveLazyLoad();
+	
+	            };
+	
+	            imageToLoad.onerror = function() {
+	
+	                if ( tryCount < 3 ) {
+	
+	                    /**
+	                     * try to load the image 3 times,
+	                     * leave a slight delay so we don't get
+	                     * servers blocking the request.
+	                     */
+	                    setTimeout( function() {
+	                        _.progressiveLazyLoad( tryCount + 1 );
+	                    }, 500 );
+	
+	                } else {
+	
+	                    image
+	                        .removeAttr( 'data-lazy' )
+	                        .removeClass( 'slick-loading' )
+	                        .addClass( 'slick-lazyload-error' );
+	
+	                    _.$slider.trigger('lazyLoadError', [ _, image, imageSource ]);
+	
+	                    _.progressiveLazyLoad();
+	
+	                }
+	
+	            };
+	
+	            imageToLoad.src = imageSource;
+	
+	        } else {
+	
+	            _.$slider.trigger('allImagesLoaded', [ _ ]);
+	
+	        }
+	
+	    };
+	
+	    Slick.prototype.refresh = function( initializing ) {
+	
+	        var _ = this, currentSlide, lastVisibleIndex;
+	
+	        lastVisibleIndex = _.slideCount - _.options.slidesToShow;
+	
+	        // in non-infinite sliders, we don't want to go past the
+	        // last visible index.
+	        if( !_.options.infinite && ( _.currentSlide > lastVisibleIndex )) {
+	            _.currentSlide = lastVisibleIndex;
+	        }
+	
+	        // if less slides than to show, go to start.
+	        if ( _.slideCount <= _.options.slidesToShow ) {
+	            _.currentSlide = 0;
+	
+	        }
+	
+	        currentSlide = _.currentSlide;
+	
+	        _.destroy(true);
+	
+	        $.extend(_, _.initials, { currentSlide: currentSlide });
+	
+	        _.init();
+	
+	        if( !initializing ) {
+	
+	            _.changeSlide({
+	                data: {
+	                    message: 'index',
+	                    index: currentSlide
+	                }
+	            }, false);
+	
+	        }
+	
+	    };
+	
+	    Slick.prototype.registerBreakpoints = function() {
+	
+	        var _ = this, breakpoint, currentBreakpoint, l,
+	            responsiveSettings = _.options.responsive || null;
+	
+	        if ( $.type(responsiveSettings) === 'array' && responsiveSettings.length ) {
+	
+	            _.respondTo = _.options.respondTo || 'window';
+	
+	            for ( breakpoint in responsiveSettings ) {
+	
+	                l = _.breakpoints.length-1;
+	                currentBreakpoint = responsiveSettings[breakpoint].breakpoint;
+	
+	                if (responsiveSettings.hasOwnProperty(breakpoint)) {
+	
+	                    // loop through the breakpoints and cut out any existing
+	                    // ones with the same breakpoint number, we don't want dupes.
+	                    while( l >= 0 ) {
+	                        if( _.breakpoints[l] && _.breakpoints[l] === currentBreakpoint ) {
+	                            _.breakpoints.splice(l,1);
+	                        }
+	                        l--;
+	                    }
+	
+	                    _.breakpoints.push(currentBreakpoint);
+	                    _.breakpointSettings[currentBreakpoint] = responsiveSettings[breakpoint].settings;
+	
+	                }
+	
+	            }
+	
+	            _.breakpoints.sort(function(a, b) {
+	                return ( _.options.mobileFirst ) ? a-b : b-a;
+	            });
+	
+	        }
+	
+	    };
+	
+	    Slick.prototype.reinit = function() {
+	
+	        var _ = this;
+	
+	        _.$slides =
+	            _.$slideTrack
+	                .children(_.options.slide)
+	                .addClass('slick-slide');
+	
+	        _.slideCount = _.$slides.length;
+	
+	        if (_.currentSlide >= _.slideCount && _.currentSlide !== 0) {
+	            _.currentSlide = _.currentSlide - _.options.slidesToScroll;
+	        }
+	
+	        if (_.slideCount <= _.options.slidesToShow) {
+	            _.currentSlide = 0;
+	        }
+	
+	        _.registerBreakpoints();
+	
+	        _.setProps();
+	        _.setupInfinite();
+	        _.buildArrows();
+	        _.updateArrows();
+	        _.initArrowEvents();
+	        _.buildDots();
+	        _.updateDots();
+	        _.initDotEvents();
+	        _.cleanUpSlideEvents();
+	        _.initSlideEvents();
+	
+	        _.checkResponsive(false, true);
+	
+	        if (_.options.focusOnSelect === true) {
+	            $(_.$slideTrack).children().on('click.slick', _.selectHandler);
+	        }
+	
+	        _.setSlideClasses(typeof _.currentSlide === 'number' ? _.currentSlide : 0);
+	
+	        _.setPosition();
+	        _.focusHandler();
+	
+	        _.paused = !_.options.autoplay;
+	        _.autoPlay();
+	
+	        _.$slider.trigger('reInit', [_]);
+	
+	    };
+	
+	    Slick.prototype.resize = function() {
+	
+	        var _ = this;
+	
+	        if ($(window).width() !== _.windowWidth) {
+	            clearTimeout(_.windowDelay);
+	            _.windowDelay = window.setTimeout(function() {
+	                _.windowWidth = $(window).width();
+	                _.checkResponsive();
+	                if( !_.unslicked ) { _.setPosition(); }
+	            }, 50);
+	        }
+	    };
+	
+	    Slick.prototype.removeSlide = Slick.prototype.slickRemove = function(index, removeBefore, removeAll) {
+	
+	        var _ = this;
+	
+	        if (typeof(index) === 'boolean') {
+	            removeBefore = index;
+	            index = removeBefore === true ? 0 : _.slideCount - 1;
+	        } else {
+	            index = removeBefore === true ? --index : index;
+	        }
+	
+	        if (_.slideCount < 1 || index < 0 || index > _.slideCount - 1) {
+	            return false;
+	        }
+	
+	        _.unload();
+	
+	        if (removeAll === true) {
+	            _.$slideTrack.children().remove();
+	        } else {
+	            _.$slideTrack.children(this.options.slide).eq(index).remove();
+	        }
+	
+	        _.$slides = _.$slideTrack.children(this.options.slide);
+	
+	        _.$slideTrack.children(this.options.slide).detach();
+	
+	        _.$slideTrack.append(_.$slides);
+	
+	        _.$slidesCache = _.$slides;
+	
+	        _.reinit();
+	
+	    };
+	
+	    Slick.prototype.setCSS = function(position) {
+	
+	        var _ = this,
+	            positionProps = {},
+	            x, y;
+	
+	        if (_.options.rtl === true) {
+	            position = -position;
+	        }
+	        x = _.positionProp == 'left' ? Math.ceil(position) + 'px' : '0px';
+	        y = _.positionProp == 'top' ? Math.ceil(position) + 'px' : '0px';
+	
+	        positionProps[_.positionProp] = position;
+	
+	        if (_.transformsEnabled === false) {
+	            _.$slideTrack.css(positionProps);
+	        } else {
+	            positionProps = {};
+	            if (_.cssTransitions === false) {
+	                positionProps[_.animType] = 'translate(' + x + ', ' + y + ')';
+	                _.$slideTrack.css(positionProps);
+	            } else {
+	                positionProps[_.animType] = 'translate3d(' + x + ', ' + y + ', 0px)';
+	                _.$slideTrack.css(positionProps);
+	            }
+	        }
+	
+	    };
+	
+	    Slick.prototype.setDimensions = function() {
+	
+	        var _ = this;
+	
+	        if (_.options.vertical === false) {
+	            if (_.options.centerMode === true) {
+	                _.$list.css({
+	                    padding: ('0px ' + _.options.centerPadding)
+	                });
+	            }
+	        } else {
+	            _.$list.height(_.$slides.first().outerHeight(true) * _.options.slidesToShow);
+	            if (_.options.centerMode === true) {
+	                _.$list.css({
+	                    padding: (_.options.centerPadding + ' 0px')
+	                });
+	            }
+	        }
+	
+	        _.listWidth = _.$list.width();
+	        _.listHeight = _.$list.height();
+	
+	
+	        if (_.options.vertical === false && _.options.variableWidth === false) {
+	            _.slideWidth = Math.ceil(_.listWidth / _.options.slidesToShow);
+	            _.$slideTrack.width(Math.ceil((_.slideWidth * _.$slideTrack.children('.slick-slide').length)));
+	
+	        } else if (_.options.variableWidth === true) {
+	            _.$slideTrack.width(5000 * _.slideCount);
+	        } else {
+	            _.slideWidth = Math.ceil(_.listWidth);
+	            _.$slideTrack.height(Math.ceil((_.$slides.first().outerHeight(true) * _.$slideTrack.children('.slick-slide').length)));
+	        }
+	
+	        var offset = _.$slides.first().outerWidth(true) - _.$slides.first().width();
+	        if (_.options.variableWidth === false) _.$slideTrack.children('.slick-slide').width(_.slideWidth - offset);
+	
+	    };
+	
+	    Slick.prototype.setFade = function() {
+	
+	        var _ = this,
+	            targetLeft;
+	
+	        _.$slides.each(function(index, element) {
+	            targetLeft = (_.slideWidth * index) * -1;
+	            if (_.options.rtl === true) {
+	                $(element).css({
+	                    position: 'relative',
+	                    right: targetLeft,
+	                    top: 0,
+	                    zIndex: _.options.zIndex - 2,
+	                    opacity: 0
+	                });
+	            } else {
+	                $(element).css({
+	                    position: 'relative',
+	                    left: targetLeft,
+	                    top: 0,
+	                    zIndex: _.options.zIndex - 2,
+	                    opacity: 0
+	                });
+	            }
+	        });
+	
+	        _.$slides.eq(_.currentSlide).css({
+	            zIndex: _.options.zIndex - 1,
+	            opacity: 1
+	        });
+	
+	    };
+	
+	    Slick.prototype.setHeight = function() {
+	
+	        var _ = this;
+	
+	        if (_.options.slidesToShow === 1 && _.options.adaptiveHeight === true && _.options.vertical === false) {
+	            var targetHeight = _.$slides.eq(_.currentSlide).outerHeight(true);
+	            _.$list.css('height', targetHeight);
+	        }
+	
+	    };
+	
+	    Slick.prototype.setOption =
+	    Slick.prototype.slickSetOption = function() {
+	
+	        /**
+	         * accepts arguments in format of:
+	         *
+	         *  - for changing a single option's value:
+	         *     .slick("setOption", option, value, refresh )
+	         *
+	         *  - for changing a set of responsive options:
+	         *     .slick("setOption", 'responsive', [{}, ...], refresh )
+	         *
+	         *  - for updating multiple values at once (not responsive)
+	         *     .slick("setOption", { 'option': value, ... }, refresh )
+	         */
+	
+	        var _ = this, l, item, option, value, refresh = false, type;
+	
+	        if( $.type( arguments[0] ) === 'object' ) {
+	
+	            option =  arguments[0];
+	            refresh = arguments[1];
+	            type = 'multiple';
+	
+	        } else if ( $.type( arguments[0] ) === 'string' ) {
+	
+	            option =  arguments[0];
+	            value = arguments[1];
+	            refresh = arguments[2];
+	
+	            if ( arguments[0] === 'responsive' && $.type( arguments[1] ) === 'array' ) {
+	
+	                type = 'responsive';
+	
+	            } else if ( typeof arguments[1] !== 'undefined' ) {
+	
+	                type = 'single';
+	
+	            }
+	
+	        }
+	
+	        if ( type === 'single' ) {
+	
+	            _.options[option] = value;
+	
+	
+	        } else if ( type === 'multiple' ) {
+	
+	            $.each( option , function( opt, val ) {
+	
+	                _.options[opt] = val;
+	
+	            });
+	
+	
+	        } else if ( type === 'responsive' ) {
+	
+	            for ( item in value ) {
+	
+	                if( $.type( _.options.responsive ) !== 'array' ) {
+	
+	                    _.options.responsive = [ value[item] ];
+	
+	                } else {
+	
+	                    l = _.options.responsive.length-1;
+	
+	                    // loop through the responsive object and splice out duplicates.
+	                    while( l >= 0 ) {
+	
+	                        if( _.options.responsive[l].breakpoint === value[item].breakpoint ) {
+	
+	                            _.options.responsive.splice(l,1);
+	
+	                        }
+	
+	                        l--;
+	
+	                    }
+	
+	                    _.options.responsive.push( value[item] );
+	
+	                }
+	
+	            }
+	
+	        }
+	
+	        if ( refresh ) {
+	
+	            _.unload();
+	            _.reinit();
+	
+	        }
+	
+	    };
+	
+	    Slick.prototype.setPosition = function() {
+	
+	        var _ = this;
+	
+	        _.setDimensions();
+	
+	        _.setHeight();
+	
+	        if (_.options.fade === false) {
+	            _.setCSS(_.getLeft(_.currentSlide));
+	        } else {
+	            _.setFade();
+	        }
+	
+	        _.$slider.trigger('setPosition', [_]);
+	
+	    };
+	
+	    Slick.prototype.setProps = function() {
+	
+	        var _ = this,
+	            bodyStyle = document.body.style;
+	
+	        _.positionProp = _.options.vertical === true ? 'top' : 'left';
+	
+	        if (_.positionProp === 'top') {
+	            _.$slider.addClass('slick-vertical');
+	        } else {
+	            _.$slider.removeClass('slick-vertical');
+	        }
+	
+	        if (bodyStyle.WebkitTransition !== undefined ||
+	            bodyStyle.MozTransition !== undefined ||
+	            bodyStyle.msTransition !== undefined) {
+	            if (_.options.useCSS === true) {
+	                _.cssTransitions = true;
+	            }
+	        }
+	
+	        if ( _.options.fade ) {
+	            if ( typeof _.options.zIndex === 'number' ) {
+	                if( _.options.zIndex < 3 ) {
+	                    _.options.zIndex = 3;
+	                }
+	            } else {
+	                _.options.zIndex = _.defaults.zIndex;
+	            }
+	        }
+	
+	        if (bodyStyle.OTransform !== undefined) {
+	            _.animType = 'OTransform';
+	            _.transformType = '-o-transform';
+	            _.transitionType = 'OTransition';
+	            if (bodyStyle.perspectiveProperty === undefined && bodyStyle.webkitPerspective === undefined) _.animType = false;
+	        }
+	        if (bodyStyle.MozTransform !== undefined) {
+	            _.animType = 'MozTransform';
+	            _.transformType = '-moz-transform';
+	            _.transitionType = 'MozTransition';
+	            if (bodyStyle.perspectiveProperty === undefined && bodyStyle.MozPerspective === undefined) _.animType = false;
+	        }
+	        if (bodyStyle.webkitTransform !== undefined) {
+	            _.animType = 'webkitTransform';
+	            _.transformType = '-webkit-transform';
+	            _.transitionType = 'webkitTransition';
+	            if (bodyStyle.perspectiveProperty === undefined && bodyStyle.webkitPerspective === undefined) _.animType = false;
+	        }
+	        if (bodyStyle.msTransform !== undefined) {
+	            _.animType = 'msTransform';
+	            _.transformType = '-ms-transform';
+	            _.transitionType = 'msTransition';
+	            if (bodyStyle.msTransform === undefined) _.animType = false;
+	        }
+	        if (bodyStyle.transform !== undefined && _.animType !== false) {
+	            _.animType = 'transform';
+	            _.transformType = 'transform';
+	            _.transitionType = 'transition';
+	        }
+	        _.transformsEnabled = _.options.useTransform && (_.animType !== null && _.animType !== false);
+	    };
+	
+	
+	    Slick.prototype.setSlideClasses = function(index) {
+	
+	        var _ = this,
+	            centerOffset, allSlides, indexOffset, remainder;
+	
+	        allSlides = _.$slider
+	            .find('.slick-slide')
+	            .removeClass('slick-active slick-center slick-current')
+	            .attr('aria-hidden', 'true');
+	
+	        _.$slides
+	            .eq(index)
+	            .addClass('slick-current');
+	
+	        if (_.options.centerMode === true) {
+	
+	            centerOffset = Math.floor(_.options.slidesToShow / 2);
+	
+	            if (_.options.infinite === true) {
+	
+	                if (index >= centerOffset && index <= (_.slideCount - 1) - centerOffset) {
+	
+	                    _.$slides
+	                        .slice(index - centerOffset, index + centerOffset + 1)
+	                        .addClass('slick-active')
+	                        .attr('aria-hidden', 'false');
+	
+	                } else {
+	
+	                    indexOffset = _.options.slidesToShow + index;
+	                    allSlides
+	                        .slice(indexOffset - centerOffset + 1, indexOffset + centerOffset + 2)
+	                        .addClass('slick-active')
+	                        .attr('aria-hidden', 'false');
+	
+	                }
+	
+	                if (index === 0) {
+	
+	                    allSlides
+	                        .eq(allSlides.length - 1 - _.options.slidesToShow)
+	                        .addClass('slick-center');
+	
+	                } else if (index === _.slideCount - 1) {
+	
+	                    allSlides
+	                        .eq(_.options.slidesToShow)
+	                        .addClass('slick-center');
+	
+	                }
+	
+	            }
+	
+	            _.$slides
+	                .eq(index)
+	                .addClass('slick-center');
+	
+	        } else {
+	
+	            if (index >= 0 && index <= (_.slideCount - _.options.slidesToShow)) {
+	
+	                _.$slides
+	                    .slice(index, index + _.options.slidesToShow)
+	                    .addClass('slick-active')
+	                    .attr('aria-hidden', 'false');
+	
+	            } else if (allSlides.length <= _.options.slidesToShow) {
+	
+	                allSlides
+	                    .addClass('slick-active')
+	                    .attr('aria-hidden', 'false');
+	
+	            } else {
+	
+	                remainder = _.slideCount % _.options.slidesToShow;
+	                indexOffset = _.options.infinite === true ? _.options.slidesToShow + index : index;
+	
+	                if (_.options.slidesToShow == _.options.slidesToScroll && (_.slideCount - index) < _.options.slidesToShow) {
+	
+	                    allSlides
+	                        .slice(indexOffset - (_.options.slidesToShow - remainder), indexOffset + remainder)
+	                        .addClass('slick-active')
+	                        .attr('aria-hidden', 'false');
+	
+	                } else {
+	
+	                    allSlides
+	                        .slice(indexOffset, indexOffset + _.options.slidesToShow)
+	                        .addClass('slick-active')
+	                        .attr('aria-hidden', 'false');
+	
+	                }
+	
+	            }
+	
+	        }
+	
+	        if (_.options.lazyLoad === 'ondemand') {
+	            _.lazyLoad();
+	        }
+	
+	    };
+	
+	    Slick.prototype.setupInfinite = function() {
+	
+	        var _ = this,
+	            i, slideIndex, infiniteCount;
+	
+	        if (_.options.fade === true) {
+	            _.options.centerMode = false;
+	        }
+	
+	        if (_.options.infinite === true && _.options.fade === false) {
+	
+	            slideIndex = null;
+	
+	            if (_.slideCount > _.options.slidesToShow) {
+	
+	                if (_.options.centerMode === true) {
+	                    infiniteCount = _.options.slidesToShow + 1;
+	                } else {
+	                    infiniteCount = _.options.slidesToShow;
+	                }
+	
+	                for (i = _.slideCount; i > (_.slideCount -
+	                        infiniteCount); i -= 1) {
+	                    slideIndex = i - 1;
+	                    $(_.$slides[slideIndex]).clone(true).attr('id', '')
+	                        .attr('data-slick-index', slideIndex - _.slideCount)
+	                        .prependTo(_.$slideTrack).addClass('slick-cloned');
+	                }
+	                for (i = 0; i < infiniteCount; i += 1) {
+	                    slideIndex = i;
+	                    $(_.$slides[slideIndex]).clone(true).attr('id', '')
+	                        .attr('data-slick-index', slideIndex + _.slideCount)
+	                        .appendTo(_.$slideTrack).addClass('slick-cloned');
+	                }
+	                _.$slideTrack.find('.slick-cloned').find('[id]').each(function() {
+	                    $(this).attr('id', '');
+	                });
+	
+	            }
+	
+	        }
+	
+	    };
+	
+	    Slick.prototype.interrupt = function( toggle ) {
+	
+	        var _ = this;
+	
+	        if( !toggle ) {
+	            _.autoPlay();
+	        }
+	        _.interrupted = toggle;
+	
+	    };
+	
+	    Slick.prototype.selectHandler = function(event) {
+	
+	        var _ = this;
+	
+	        var targetElement =
+	            $(event.target).is('.slick-slide') ?
+	                $(event.target) :
+	                $(event.target).parents('.slick-slide');
+	
+	        var index = parseInt(targetElement.attr('data-slick-index'));
+	
+	        if (!index) index = 0;
+	
+	        if (_.slideCount <= _.options.slidesToShow) {
+	
+	            _.setSlideClasses(index);
+	            _.asNavFor(index);
+	            return;
+	
+	        }
+	
+	        _.slideHandler(index);
+	
+	    };
+	
+	    Slick.prototype.slideHandler = function(index, sync, dontAnimate) {
+	
+	        var targetSlide, animSlide, oldSlide, slideLeft, targetLeft = null,
+	            _ = this, navTarget;
+	
+	        sync = sync || false;
+	
+	        if (_.animating === true && _.options.waitForAnimate === true) {
+	            return;
+	        }
+	
+	        if (_.options.fade === true && _.currentSlide === index) {
+	            return;
+	        }
+	
+	        if (_.slideCount <= _.options.slidesToShow) {
+	            return;
+	        }
+	
+	        if (sync === false) {
+	            _.asNavFor(index);
+	        }
+	
+	        targetSlide = index;
+	        targetLeft = _.getLeft(targetSlide);
+	        slideLeft = _.getLeft(_.currentSlide);
+	
+	        _.currentLeft = _.swipeLeft === null ? slideLeft : _.swipeLeft;
+	
+	        if (_.options.infinite === false && _.options.centerMode === false && (index < 0 || index > _.getDotCount() * _.options.slidesToScroll)) {
+	            if (_.options.fade === false) {
+	                targetSlide = _.currentSlide;
+	                if (dontAnimate !== true) {
+	                    _.animateSlide(slideLeft, function() {
+	                        _.postSlide(targetSlide);
+	                    });
+	                } else {
+	                    _.postSlide(targetSlide);
+	                }
+	            }
+	            return;
+	        } else if (_.options.infinite === false && _.options.centerMode === true && (index < 0 || index > (_.slideCount - _.options.slidesToScroll))) {
+	            if (_.options.fade === false) {
+	                targetSlide = _.currentSlide;
+	                if (dontAnimate !== true) {
+	                    _.animateSlide(slideLeft, function() {
+	                        _.postSlide(targetSlide);
+	                    });
+	                } else {
+	                    _.postSlide(targetSlide);
+	                }
+	            }
+	            return;
+	        }
+	
+	        if ( _.options.autoplay ) {
+	            clearInterval(_.autoPlayTimer);
+	        }
+	
+	        if (targetSlide < 0) {
+	            if (_.slideCount % _.options.slidesToScroll !== 0) {
+	                animSlide = _.slideCount - (_.slideCount % _.options.slidesToScroll);
+	            } else {
+	                animSlide = _.slideCount + targetSlide;
+	            }
+	        } else if (targetSlide >= _.slideCount) {
+	            if (_.slideCount % _.options.slidesToScroll !== 0) {
+	                animSlide = 0;
+	            } else {
+	                animSlide = targetSlide - _.slideCount;
+	            }
+	        } else {
+	            animSlide = targetSlide;
+	        }
+	
+	        _.animating = true;
+	
+	        _.$slider.trigger('beforeChange', [_, _.currentSlide, animSlide]);
+	
+	        oldSlide = _.currentSlide;
+	        _.currentSlide = animSlide;
+	
+	        _.setSlideClasses(_.currentSlide);
+	
+	        if ( _.options.asNavFor ) {
+	
+	            navTarget = _.getNavTarget();
+	            navTarget = navTarget.slick('getSlick');
+	
+	            if ( navTarget.slideCount <= navTarget.options.slidesToShow ) {
+	                navTarget.setSlideClasses(_.currentSlide);
+	            }
+	
+	        }
+	
+	        _.updateDots();
+	        _.updateArrows();
+	
+	        if (_.options.fade === true) {
+	            if (dontAnimate !== true) {
+	
+	                _.fadeSlideOut(oldSlide);
+	
+	                _.fadeSlide(animSlide, function() {
+	                    _.postSlide(animSlide);
+	                });
+	
+	            } else {
+	                _.postSlide(animSlide);
+	            }
+	            _.animateHeight();
+	            return;
+	        }
+	
+	        if (dontAnimate !== true) {
+	            _.animateSlide(targetLeft, function() {
+	                _.postSlide(animSlide);
+	            });
+	        } else {
+	            _.postSlide(animSlide);
+	        }
+	
+	    };
+	
+	    Slick.prototype.startLoad = function() {
+	
+	        var _ = this;
+	
+	        if (_.options.arrows === true && _.slideCount > _.options.slidesToShow) {
+	
+	            _.$prevArrow.hide();
+	            _.$nextArrow.hide();
+	
+	        }
+	
+	        if (_.options.dots === true && _.slideCount > _.options.slidesToShow) {
+	
+	            _.$dots.hide();
+	
+	        }
+	
+	        _.$slider.addClass('slick-loading');
+	
+	    };
+	
+	    Slick.prototype.swipeDirection = function() {
+	
+	        var xDist, yDist, r, swipeAngle, _ = this;
+	
+	        xDist = _.touchObject.startX - _.touchObject.curX;
+	        yDist = _.touchObject.startY - _.touchObject.curY;
+	        r = Math.atan2(yDist, xDist);
+	
+	        swipeAngle = Math.round(r * 180 / Math.PI);
+	        if (swipeAngle < 0) {
+	            swipeAngle = 360 - Math.abs(swipeAngle);
+	        }
+	
+	        if ((swipeAngle <= 45) && (swipeAngle >= 0)) {
+	            return (_.options.rtl === false ? 'left' : 'right');
+	        }
+	        if ((swipeAngle <= 360) && (swipeAngle >= 315)) {
+	            return (_.options.rtl === false ? 'left' : 'right');
+	        }
+	        if ((swipeAngle >= 135) && (swipeAngle <= 225)) {
+	            return (_.options.rtl === false ? 'right' : 'left');
+	        }
+	        if (_.options.verticalSwiping === true) {
+	            if ((swipeAngle >= 35) && (swipeAngle <= 135)) {
+	                return 'down';
+	            } else {
+	                return 'up';
+	            }
+	        }
+	
+	        return 'vertical';
+	
+	    };
+	
+	    Slick.prototype.swipeEnd = function(event) {
+	
+	        var _ = this,
+	            slideCount,
+	            direction;
+	
+	        _.dragging = false;
+	        _.interrupted = false;
+	        _.shouldClick = ( _.touchObject.swipeLength > 10 ) ? false : true;
+	
+	        if ( _.touchObject.curX === undefined ) {
+	            return false;
+	        }
+	
+	        if ( _.touchObject.edgeHit === true ) {
+	            _.$slider.trigger('edge', [_, _.swipeDirection() ]);
+	        }
+	
+	        if ( _.touchObject.swipeLength >= _.touchObject.minSwipe ) {
+	
+	            direction = _.swipeDirection();
+	
+	            switch ( direction ) {
+	
+	                case 'left':
+	                case 'down':
+	
+	                    slideCount =
+	                        _.options.swipeToSlide ?
+	                            _.checkNavigable( _.currentSlide + _.getSlideCount() ) :
+	                            _.currentSlide + _.getSlideCount();
+	
+	                    _.currentDirection = 0;
+	
+	                    break;
+	
+	                case 'right':
+	                case 'up':
+	
+	                    slideCount =
+	                        _.options.swipeToSlide ?
+	                            _.checkNavigable( _.currentSlide - _.getSlideCount() ) :
+	                            _.currentSlide - _.getSlideCount();
+	
+	                    _.currentDirection = 1;
+	
+	                    break;
+	
+	                default:
+	
+	
+	            }
+	
+	            if( direction != 'vertical' ) {
+	
+	                _.slideHandler( slideCount );
+	                _.touchObject = {};
+	                _.$slider.trigger('swipe', [_, direction ]);
+	
+	            }
+	
+	        } else {
+	
+	            if ( _.touchObject.startX !== _.touchObject.curX ) {
+	
+	                _.slideHandler( _.currentSlide );
+	                _.touchObject = {};
+	
+	            }
+	
+	        }
+	
+	    };
+	
+	    Slick.prototype.swipeHandler = function(event) {
+	
+	        var _ = this;
+	
+	        if ((_.options.swipe === false) || ('ontouchend' in document && _.options.swipe === false)) {
+	            return;
+	        } else if (_.options.draggable === false && event.type.indexOf('mouse') !== -1) {
+	            return;
+	        }
+	
+	        _.touchObject.fingerCount = event.originalEvent && event.originalEvent.touches !== undefined ?
+	            event.originalEvent.touches.length : 1;
+	
+	        _.touchObject.minSwipe = _.listWidth / _.options
+	            .touchThreshold;
+	
+	        if (_.options.verticalSwiping === true) {
+	            _.touchObject.minSwipe = _.listHeight / _.options
+	                .touchThreshold;
+	        }
+	
+	        switch (event.data.action) {
+	
+	            case 'start':
+	                _.swipeStart(event);
+	                break;
+	
+	            case 'move':
+	                _.swipeMove(event);
+	                break;
+	
+	            case 'end':
+	                _.swipeEnd(event);
+	                break;
+	
+	        }
+	
+	    };
+	
+	    Slick.prototype.swipeMove = function(event) {
+	
+	        var _ = this,
+	            edgeWasHit = false,
+	            curLeft, swipeDirection, swipeLength, positionOffset, touches;
+	
+	        touches = event.originalEvent !== undefined ? event.originalEvent.touches : null;
+	
+	        if (!_.dragging || touches && touches.length !== 1) {
+	            return false;
+	        }
+	
+	        curLeft = _.getLeft(_.currentSlide);
+	
+	        _.touchObject.curX = touches !== undefined ? touches[0].pageX : event.clientX;
+	        _.touchObject.curY = touches !== undefined ? touches[0].pageY : event.clientY;
+	
+	        _.touchObject.swipeLength = Math.round(Math.sqrt(
+	            Math.pow(_.touchObject.curX - _.touchObject.startX, 2)));
+	
+	        if (_.options.verticalSwiping === true) {
+	            _.touchObject.swipeLength = Math.round(Math.sqrt(
+	                Math.pow(_.touchObject.curY - _.touchObject.startY, 2)));
+	        }
+	
+	        swipeDirection = _.swipeDirection();
+	
+	        if (swipeDirection === 'vertical') {
+	            return;
+	        }
+	
+	        if (event.originalEvent !== undefined && _.touchObject.swipeLength > 4) {
+	            event.preventDefault();
+	        }
+	
+	        positionOffset = (_.options.rtl === false ? 1 : -1) * (_.touchObject.curX > _.touchObject.startX ? 1 : -1);
+	        if (_.options.verticalSwiping === true) {
+	            positionOffset = _.touchObject.curY > _.touchObject.startY ? 1 : -1;
+	        }
+	
+	
+	        swipeLength = _.touchObject.swipeLength;
+	
+	        _.touchObject.edgeHit = false;
+	
+	        if (_.options.infinite === false) {
+	            if ((_.currentSlide === 0 && swipeDirection === 'right') || (_.currentSlide >= _.getDotCount() && swipeDirection === 'left')) {
+	                swipeLength = _.touchObject.swipeLength * _.options.edgeFriction;
+	                _.touchObject.edgeHit = true;
+	            }
+	        }
+	
+	        if (_.options.vertical === false) {
+	            _.swipeLeft = curLeft + swipeLength * positionOffset;
+	        } else {
+	            _.swipeLeft = curLeft + (swipeLength * (_.$list.height() / _.listWidth)) * positionOffset;
+	        }
+	        if (_.options.verticalSwiping === true) {
+	            _.swipeLeft = curLeft + swipeLength * positionOffset;
+	        }
+	
+	        if (_.options.fade === true || _.options.touchMove === false) {
+	            return false;
+	        }
+	
+	        if (_.animating === true) {
+	            _.swipeLeft = null;
+	            return false;
+	        }
+	
+	        _.setCSS(_.swipeLeft);
+	
+	    };
+	
+	    Slick.prototype.swipeStart = function(event) {
+	
+	        var _ = this,
+	            touches;
+	
+	        _.interrupted = true;
+	
+	        if (_.touchObject.fingerCount !== 1 || _.slideCount <= _.options.slidesToShow) {
+	            _.touchObject = {};
+	            return false;
+	        }
+	
+	        if (event.originalEvent !== undefined && event.originalEvent.touches !== undefined) {
+	            touches = event.originalEvent.touches[0];
+	        }
+	
+	        _.touchObject.startX = _.touchObject.curX = touches !== undefined ? touches.pageX : event.clientX;
+	        _.touchObject.startY = _.touchObject.curY = touches !== undefined ? touches.pageY : event.clientY;
+	
+	        _.dragging = true;
+	
+	    };
+	
+	    Slick.prototype.unfilterSlides = Slick.prototype.slickUnfilter = function() {
+	
+	        var _ = this;
+	
+	        if (_.$slidesCache !== null) {
+	
+	            _.unload();
+	
+	            _.$slideTrack.children(this.options.slide).detach();
+	
+	            _.$slidesCache.appendTo(_.$slideTrack);
+	
+	            _.reinit();
+	
+	        }
+	
+	    };
+	
+	    Slick.prototype.unload = function() {
+	
+	        var _ = this;
+	
+	        $('.slick-cloned', _.$slider).remove();
+	
+	        if (_.$dots) {
+	            _.$dots.remove();
+	        }
+	
+	        if (_.$prevArrow && _.htmlExpr.test(_.options.prevArrow)) {
+	            _.$prevArrow.remove();
+	        }
+	
+	        if (_.$nextArrow && _.htmlExpr.test(_.options.nextArrow)) {
+	            _.$nextArrow.remove();
+	        }
+	
+	        _.$slides
+	            .removeClass('slick-slide slick-active slick-visible slick-current')
+	            .attr('aria-hidden', 'true')
+	            .css('width', '');
+	
+	    };
+	
+	    Slick.prototype.unslick = function(fromBreakpoint) {
+	
+	        var _ = this;
+	        _.$slider.trigger('unslick', [_, fromBreakpoint]);
+	        _.destroy();
+	
+	    };
+	
+	    Slick.prototype.updateArrows = function() {
+	
+	        var _ = this,
+	            centerOffset;
+	
+	        centerOffset = Math.floor(_.options.slidesToShow / 2);
+	
+	        if ( _.options.arrows === true &&
+	            _.slideCount > _.options.slidesToShow &&
+	            !_.options.infinite ) {
+	
+	            _.$prevArrow.removeClass('slick-disabled').attr('aria-disabled', 'false');
+	            _.$nextArrow.removeClass('slick-disabled').attr('aria-disabled', 'false');
+	
+	            if (_.currentSlide === 0) {
+	
+	                _.$prevArrow.addClass('slick-disabled').attr('aria-disabled', 'true');
+	                _.$nextArrow.removeClass('slick-disabled').attr('aria-disabled', 'false');
+	
+	            } else if (_.currentSlide >= _.slideCount - _.options.slidesToShow && _.options.centerMode === false) {
+	
+	                _.$nextArrow.addClass('slick-disabled').attr('aria-disabled', 'true');
+	                _.$prevArrow.removeClass('slick-disabled').attr('aria-disabled', 'false');
+	
+	            } else if (_.currentSlide >= _.slideCount - 1 && _.options.centerMode === true) {
+	
+	                _.$nextArrow.addClass('slick-disabled').attr('aria-disabled', 'true');
+	                _.$prevArrow.removeClass('slick-disabled').attr('aria-disabled', 'false');
+	
+	            }
+	
+	        }
+	
+	    };
+	
+	    Slick.prototype.updateDots = function() {
+	
+	        var _ = this;
+	
+	        if (_.$dots !== null) {
+	
+	            _.$dots
+	                .find('li')
+	                .removeClass('slick-active')
+	                .attr('aria-hidden', 'true');
+	
+	            _.$dots
+	                .find('li')
+	                .eq(Math.floor(_.currentSlide / _.options.slidesToScroll))
+	                .addClass('slick-active')
+	                .attr('aria-hidden', 'false');
+	
+	        }
+	
+	    };
+	
+	    Slick.prototype.visibility = function() {
+	
+	        var _ = this;
+	
+	        if ( _.options.autoplay ) {
+	
+	            if ( document[_.hidden] ) {
+	
+	                _.interrupted = true;
+	
+	            } else {
+	
+	                _.interrupted = false;
+	
+	            }
+	
+	        }
+	
+	    };
+	
+	    $.fn.slick = function() {
+	        var _ = this,
+	            opt = arguments[0],
+	            args = Array.prototype.slice.call(arguments, 1),
+	            l = _.length,
+	            i,
+	            ret;
+	        for (i = 0; i < l; i++) {
+	            if (typeof opt == 'object' || typeof opt == 'undefined')
+	                _[i].slick = new Slick(_[i], opt);
+	            else
+	                ret = _[i].slick[opt].apply(_[i].slick, args);
+	            if (typeof ret != 'undefined') return ret;
+	        }
+	        return _;
+	    };
+	
+	}));
+
+
+/***/ },
+/* 110 */
+/*!****************************!*\
+  !*** ./~/lodash/lodash.js ***!
+  \****************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_RESULT__;/* WEBPACK VAR INJECTION */(function(module, global) {/**
@@ -10652,25 +14016,25 @@
 	 * Copyright Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
 	 */
 	;(function() {
-
+	
 	  /** Used as a safe reference for `undefined` in pre-ES5 environments. */
 	  var undefined;
-
+	
 	  /** Used as the semantic version number. */
 	  var VERSION = '4.13.1';
-
+	
 	  /** Used as the size to enable large array optimizations. */
 	  var LARGE_ARRAY_SIZE = 200;
-
+	
 	  /** Used as the `TypeError` message for "Functions" methods. */
 	  var FUNC_ERROR_TEXT = 'Expected a function';
-
+	
 	  /** Used to stand-in for `undefined` hash values. */
 	  var HASH_UNDEFINED = '__lodash_hash_undefined__';
-
+	
 	  /** Used as the internal argument placeholder. */
 	  var PLACEHOLDER = '__lodash_placeholder__';
-
+	
 	  /** Used to compose bitmasks for wrapper metadata. */
 	  var BIND_FLAG = 1,
 	      BIND_KEY_FLAG = 2,
@@ -10682,35 +14046,35 @@
 	      ARY_FLAG = 128,
 	      REARG_FLAG = 256,
 	      FLIP_FLAG = 512;
-
+	
 	  /** Used to compose bitmasks for comparison styles. */
 	  var UNORDERED_COMPARE_FLAG = 1,
 	      PARTIAL_COMPARE_FLAG = 2;
-
+	
 	  /** Used as default options for `_.truncate`. */
 	  var DEFAULT_TRUNC_LENGTH = 30,
 	      DEFAULT_TRUNC_OMISSION = '...';
-
+	
 	  /** Used to detect hot functions by number of calls within a span of milliseconds. */
 	  var HOT_COUNT = 150,
 	      HOT_SPAN = 16;
-
+	
 	  /** Used to indicate the type of lazy iteratees. */
 	  var LAZY_FILTER_FLAG = 1,
 	      LAZY_MAP_FLAG = 2,
 	      LAZY_WHILE_FLAG = 3;
-
+	
 	  /** Used as references for various `Number` constants. */
 	  var INFINITY = 1 / 0,
 	      MAX_SAFE_INTEGER = 9007199254740991,
 	      MAX_INTEGER = 1.7976931348623157e+308,
 	      NAN = 0 / 0;
-
+	
 	  /** Used as references for the maximum length and index of an array. */
 	  var MAX_ARRAY_LENGTH = 4294967295,
 	      MAX_ARRAY_INDEX = MAX_ARRAY_LENGTH - 1,
 	      HALF_MAX_ARRAY_LENGTH = MAX_ARRAY_LENGTH >>> 1;
-
+	
 	  /** `Object#toString` result references. */
 	  var argsTag = '[object Arguments]',
 	      arrayTag = '[object Array]',
@@ -10729,7 +14093,7 @@
 	      symbolTag = '[object Symbol]',
 	      weakMapTag = '[object WeakMap]',
 	      weakSetTag = '[object WeakSet]';
-
+	
 	  var arrayBufferTag = '[object ArrayBuffer]',
 	      dataViewTag = '[object DataView]',
 	      float32Tag = '[object Float32Array]',
@@ -10741,82 +14105,82 @@
 	      uint8ClampedTag = '[object Uint8ClampedArray]',
 	      uint16Tag = '[object Uint16Array]',
 	      uint32Tag = '[object Uint32Array]';
-
+	
 	  /** Used to match empty string literals in compiled template source. */
 	  var reEmptyStringLeading = /\b__p \+= '';/g,
 	      reEmptyStringMiddle = /\b(__p \+=) '' \+/g,
 	      reEmptyStringTrailing = /(__e\(.*?\)|\b__t\)) \+\n'';/g;
-
+	
 	  /** Used to match HTML entities and HTML characters. */
 	  var reEscapedHtml = /&(?:amp|lt|gt|quot|#39|#96);/g,
 	      reUnescapedHtml = /[&<>"'`]/g,
 	      reHasEscapedHtml = RegExp(reEscapedHtml.source),
 	      reHasUnescapedHtml = RegExp(reUnescapedHtml.source);
-
+	
 	  /** Used to match template delimiters. */
 	  var reEscape = /<%-([\s\S]+?)%>/g,
 	      reEvaluate = /<%([\s\S]+?)%>/g,
 	      reInterpolate = /<%=([\s\S]+?)%>/g;
-
+	
 	  /** Used to match property names within property paths. */
 	  var reIsDeepProp = /\.|\[(?:[^[\]]*|(["'])(?:(?!\1)[^\\]|\\.)*?\1)\]/,
 	      reIsPlainProp = /^\w*$/,
 	      rePropName = /[^.[\]]+|\[(?:(-?\d+(?:\.\d+)?)|(["'])((?:(?!\2)[^\\]|\\.)*?)\2)\]|(?=(\.|\[\])(?:\4|$))/g;
-
+	
 	  /**
 	   * Used to match `RegExp`
 	   * [syntax characters](http://ecma-international.org/ecma-262/6.0/#sec-patterns).
 	   */
 	  var reRegExpChar = /[\\^$.*+?()[\]{}|]/g,
 	      reHasRegExpChar = RegExp(reRegExpChar.source);
-
+	
 	  /** Used to match leading and trailing whitespace. */
 	  var reTrim = /^\s+|\s+$/g,
 	      reTrimStart = /^\s+/,
 	      reTrimEnd = /\s+$/;
-
+	
 	  /** Used to match non-compound words composed of alphanumeric characters. */
 	  var reBasicWord = /[a-zA-Z0-9]+/g;
-
+	
 	  /** Used to match backslashes in property paths. */
 	  var reEscapeChar = /\\(\\)?/g;
-
+	
 	  /**
 	   * Used to match
 	   * [ES template delimiters](http://ecma-international.org/ecma-262/6.0/#sec-template-literal-lexical-components).
 	   */
 	  var reEsTemplate = /\$\{([^\\}]*(?:\\.[^\\}]*)*)\}/g;
-
+	
 	  /** Used to match `RegExp` flags from their coerced string values. */
 	  var reFlags = /\w*$/;
-
+	
 	  /** Used to detect hexadecimal string values. */
 	  var reHasHexPrefix = /^0x/i;
-
+	
 	  /** Used to detect bad signed hexadecimal string values. */
 	  var reIsBadHex = /^[-+]0x[0-9a-f]+$/i;
-
+	
 	  /** Used to detect binary string values. */
 	  var reIsBinary = /^0b[01]+$/i;
-
+	
 	  /** Used to detect host constructors (Safari). */
 	  var reIsHostCtor = /^\[object .+?Constructor\]$/;
-
+	
 	  /** Used to detect octal string values. */
 	  var reIsOctal = /^0o[0-7]+$/i;
-
+	
 	  /** Used to detect unsigned integer values. */
 	  var reIsUint = /^(?:0|[1-9]\d*)$/;
-
+	
 	  /** Used to match latin-1 supplementary letters (excluding mathematical operators). */
 	  var reLatin1 = /[\xc0-\xd6\xd8-\xde\xdf-\xf6\xf8-\xff]/g;
-
+	
 	  /** Used to ensure capturing order of template delimiters. */
 	  var reNoMatch = /($^)/;
-
+	
 	  /** Used to match unescaped characters in compiled string literals. */
 	  var reUnescapedString = /['\n\r\u2028\u2029\\]/g;
-
+	
 	  /** Used to compose unicode character classes. */
 	  var rsAstralRange = '\\ud800-\\udfff',
 	      rsComboMarksRange = '\\u0300-\\u036f\\ufe20-\\ufe23',
@@ -10830,7 +14194,7 @@
 	      rsUpperRange = 'A-Z\\xc0-\\xd6\\xd8-\\xde',
 	      rsVarRange = '\\ufe0e\\ufe0f',
 	      rsBreakRange = rsMathOpRange + rsNonCharRange + rsPunctuationRange + rsSpaceRange;
-
+	
 	  /** Used to compose unicode capture groups. */
 	  var rsApos = "['\u2019]",
 	      rsAstral = '[' + rsAstralRange + ']',
@@ -10847,7 +14211,7 @@
 	      rsSurrPair = '[\\ud800-\\udbff][\\udc00-\\udfff]',
 	      rsUpper = '[' + rsUpperRange + ']',
 	      rsZWJ = '\\u200d';
-
+	
 	  /** Used to compose unicode regexes. */
 	  var rsLowerMisc = '(?:' + rsLower + '|' + rsMisc + ')',
 	      rsUpperMisc = '(?:' + rsUpper + '|' + rsMisc + ')',
@@ -10859,19 +14223,19 @@
 	      rsSeq = rsOptVar + reOptMod + rsOptJoin,
 	      rsEmoji = '(?:' + [rsDingbat, rsRegional, rsSurrPair].join('|') + ')' + rsSeq,
 	      rsSymbol = '(?:' + [rsNonAstral + rsCombo + '?', rsCombo, rsRegional, rsSurrPair, rsAstral].join('|') + ')';
-
+	
 	  /** Used to match apostrophes. */
 	  var reApos = RegExp(rsApos, 'g');
-
+	
 	  /**
 	   * Used to match [combining diacritical marks](https://en.wikipedia.org/wiki/Combining_Diacritical_Marks) and
 	   * [combining diacritical marks for symbols](https://en.wikipedia.org/wiki/Combining_Diacritical_Marks_for_Symbols).
 	   */
 	  var reComboMark = RegExp(rsCombo, 'g');
-
+	
 	  /** Used to match [string symbols](https://mathiasbynens.be/notes/javascript-unicode). */
 	  var reComplexSymbol = RegExp(rsFitz + '(?=' + rsFitz + ')|' + rsSymbol + rsSeq, 'g');
-
+	
 	  /** Used to match complex or compound words. */
 	  var reComplexWord = RegExp([
 	    rsUpper + '?' + rsLower + '+' + rsOptLowerContr + '(?=' + [rsBreak, rsUpper, '$'].join('|') + ')',
@@ -10881,13 +14245,13 @@
 	    rsDigits,
 	    rsEmoji
 	  ].join('|'), 'g');
-
+	
 	  /** Used to detect strings with [zero-width joiners or code points from the astral planes](http://eev.ee/blog/2015/09/12/dark-corners-of-unicode/). */
 	  var reHasComplexSymbol = RegExp('[' + rsZWJ + rsAstralRange  + rsComboMarksRange + rsComboSymbolsRange + rsVarRange + ']');
-
+	
 	  /** Used to detect strings that need a more robust regexp to match words. */
 	  var reHasComplexWord = /[a-z][A-Z]|[A-Z]{2,}[a-z]|[0-9][a-zA-Z]|[a-zA-Z][0-9]|[^a-zA-Z0-9 ]/;
-
+	
 	  /** Used to assign default `context` object properties. */
 	  var contextProps = [
 	    'Array', 'Buffer', 'DataView', 'Date', 'Error', 'Float32Array', 'Float64Array',
@@ -10896,10 +14260,10 @@
 	    'Uint8Array', 'Uint8ClampedArray', 'Uint16Array', 'Uint32Array', 'WeakMap',
 	    '_', 'isFinite', 'parseInt', 'setTimeout'
 	  ];
-
+	
 	  /** Used to make template sourceURLs easier to identify. */
 	  var templateCounter = -1;
-
+	
 	  /** Used to identify `toStringTag` values of typed arrays. */
 	  var typedArrayTags = {};
 	  typedArrayTags[float32Tag] = typedArrayTags[float64Tag] =
@@ -10915,7 +14279,7 @@
 	  typedArrayTags[objectTag] = typedArrayTags[regexpTag] =
 	  typedArrayTags[setTag] = typedArrayTags[stringTag] =
 	  typedArrayTags[weakMapTag] = false;
-
+	
 	  /** Used to identify `toStringTag` values supported by `_.clone`. */
 	  var cloneableTags = {};
 	  cloneableTags[argsTag] = cloneableTags[arrayTag] =
@@ -10931,7 +14295,7 @@
 	  cloneableTags[uint16Tag] = cloneableTags[uint32Tag] = true;
 	  cloneableTags[errorTag] = cloneableTags[funcTag] =
 	  cloneableTags[weakMapTag] = false;
-
+	
 	  /** Used to map latin-1 supplementary letters to basic latin letters. */
 	  var deburredLetters = {
 	    '\xc0': 'A',  '\xc1': 'A', '\xc2': 'A', '\xc3': 'A', '\xc4': 'A', '\xc5': 'A',
@@ -10952,7 +14316,7 @@
 	    '\xde': 'Th', '\xfe': 'th',
 	    '\xdf': 'ss'
 	  };
-
+	
 	  /** Used to map characters to HTML entities. */
 	  var htmlEscapes = {
 	    '&': '&amp;',
@@ -10962,7 +14326,7 @@
 	    "'": '&#39;',
 	    '`': '&#96;'
 	  };
-
+	
 	  /** Used to map HTML entities to characters. */
 	  var htmlUnescapes = {
 	    '&amp;': '&',
@@ -10972,7 +14336,7 @@
 	    '&#39;': "'",
 	    '&#96;': '`'
 	  };
-
+	
 	  /** Used to escape characters for inclusion in compiled string literals. */
 	  var stringEscapes = {
 	    '\\': '\\',
@@ -10982,34 +14346,34 @@
 	    '\u2028': 'u2028',
 	    '\u2029': 'u2029'
 	  };
-
+	
 	  /** Built-in method references without a dependency on `root`. */
 	  var freeParseFloat = parseFloat,
 	      freeParseInt = parseInt;
-
+	
 	  /** Detect free variable `exports`. */
 	  var freeExports = typeof exports == 'object' && exports;
-
+	
 	  /** Detect free variable `module`. */
 	  var freeModule = freeExports && typeof module == 'object' && module;
-
+	
 	  /** Detect the popular CommonJS extension `module.exports`. */
 	  var moduleExports = freeModule && freeModule.exports === freeExports;
-
+	
 	  /** Detect free variable `global` from Node.js. */
 	  var freeGlobal = checkGlobal(typeof global == 'object' && global);
-
+	
 	  /** Detect free variable `self`. */
 	  var freeSelf = checkGlobal(typeof self == 'object' && self);
-
+	
 	  /** Detect `this` as the global object. */
 	  var thisGlobal = checkGlobal(typeof this == 'object' && this);
-
+	
 	  /** Used as a reference to the global object. */
 	  var root = freeGlobal || freeSelf || thisGlobal || Function('return this')();
-
+	
 	  /*--------------------------------------------------------------------------*/
-
+	
 	  /**
 	   * Adds the key-value `pair` to `map`.
 	   *
@@ -11023,7 +14387,7 @@
 	    map.set(pair[0], pair[1]);
 	    return map;
 	  }
-
+	
 	  /**
 	   * Adds `value` to `set`.
 	   *
@@ -11036,7 +14400,7 @@
 	    set.add(value);
 	    return set;
 	  }
-
+	
 	  /**
 	   * A faster alternative to `Function#apply`, this function invokes `func`
 	   * with the `this` binding of `thisArg` and the arguments of `args`.
@@ -11057,7 +14421,7 @@
 	    }
 	    return func.apply(thisArg, args);
 	  }
-
+	
 	  /**
 	   * A specialized version of `baseAggregator` for arrays.
 	   *
@@ -11071,14 +14435,14 @@
 	  function arrayAggregator(array, setter, iteratee, accumulator) {
 	    var index = -1,
 	        length = array ? array.length : 0;
-
+	
 	    while (++index < length) {
 	      var value = array[index];
 	      setter(accumulator, value, iteratee(value), array);
 	    }
 	    return accumulator;
 	  }
-
+	
 	  /**
 	   * A specialized version of `_.forEach` for arrays without support for
 	   * iteratee shorthands.
@@ -11091,7 +14455,7 @@
 	  function arrayEach(array, iteratee) {
 	    var index = -1,
 	        length = array ? array.length : 0;
-
+	
 	    while (++index < length) {
 	      if (iteratee(array[index], index, array) === false) {
 	        break;
@@ -11099,7 +14463,7 @@
 	    }
 	    return array;
 	  }
-
+	
 	  /**
 	   * A specialized version of `_.forEachRight` for arrays without support for
 	   * iteratee shorthands.
@@ -11111,7 +14475,7 @@
 	   */
 	  function arrayEachRight(array, iteratee) {
 	    var length = array ? array.length : 0;
-
+	
 	    while (length--) {
 	      if (iteratee(array[length], length, array) === false) {
 	        break;
@@ -11119,7 +14483,7 @@
 	    }
 	    return array;
 	  }
-
+	
 	  /**
 	   * A specialized version of `_.every` for arrays without support for
 	   * iteratee shorthands.
@@ -11133,7 +14497,7 @@
 	  function arrayEvery(array, predicate) {
 	    var index = -1,
 	        length = array ? array.length : 0;
-
+	
 	    while (++index < length) {
 	      if (!predicate(array[index], index, array)) {
 	        return false;
@@ -11141,7 +14505,7 @@
 	    }
 	    return true;
 	  }
-
+	
 	  /**
 	   * A specialized version of `_.filter` for arrays without support for
 	   * iteratee shorthands.
@@ -11156,7 +14520,7 @@
 	        length = array ? array.length : 0,
 	        resIndex = 0,
 	        result = [];
-
+	
 	    while (++index < length) {
 	      var value = array[index];
 	      if (predicate(value, index, array)) {
@@ -11165,7 +14529,7 @@
 	    }
 	    return result;
 	  }
-
+	
 	  /**
 	   * A specialized version of `_.includes` for arrays without support for
 	   * specifying an index to search from.
@@ -11179,7 +14543,7 @@
 	    var length = array ? array.length : 0;
 	    return !!length && baseIndexOf(array, value, 0) > -1;
 	  }
-
+	
 	  /**
 	   * This function is like `arrayIncludes` except that it accepts a comparator.
 	   *
@@ -11192,7 +14556,7 @@
 	  function arrayIncludesWith(array, value, comparator) {
 	    var index = -1,
 	        length = array ? array.length : 0;
-
+	
 	    while (++index < length) {
 	      if (comparator(value, array[index])) {
 	        return true;
@@ -11200,7 +14564,7 @@
 	    }
 	    return false;
 	  }
-
+	
 	  /**
 	   * A specialized version of `_.map` for arrays without support for iteratee
 	   * shorthands.
@@ -11214,13 +14578,13 @@
 	    var index = -1,
 	        length = array ? array.length : 0,
 	        result = Array(length);
-
+	
 	    while (++index < length) {
 	      result[index] = iteratee(array[index], index, array);
 	    }
 	    return result;
 	  }
-
+	
 	  /**
 	   * Appends the elements of `values` to `array`.
 	   *
@@ -11233,13 +14597,13 @@
 	    var index = -1,
 	        length = values.length,
 	        offset = array.length;
-
+	
 	    while (++index < length) {
 	      array[offset + index] = values[index];
 	    }
 	    return array;
 	  }
-
+	
 	  /**
 	   * A specialized version of `_.reduce` for arrays without support for
 	   * iteratee shorthands.
@@ -11255,7 +14619,7 @@
 	  function arrayReduce(array, iteratee, accumulator, initAccum) {
 	    var index = -1,
 	        length = array ? array.length : 0;
-
+	
 	    if (initAccum && length) {
 	      accumulator = array[++index];
 	    }
@@ -11264,7 +14628,7 @@
 	    }
 	    return accumulator;
 	  }
-
+	
 	  /**
 	   * A specialized version of `_.reduceRight` for arrays without support for
 	   * iteratee shorthands.
@@ -11287,7 +14651,7 @@
 	    }
 	    return accumulator;
 	  }
-
+	
 	  /**
 	   * A specialized version of `_.some` for arrays without support for iteratee
 	   * shorthands.
@@ -11301,7 +14665,7 @@
 	  function arraySome(array, predicate) {
 	    var index = -1,
 	        length = array ? array.length : 0;
-
+	
 	    while (++index < length) {
 	      if (predicate(array[index], index, array)) {
 	        return true;
@@ -11309,7 +14673,7 @@
 	    }
 	    return false;
 	  }
-
+	
 	  /**
 	   * The base implementation of methods like `_.findKey` and `_.findLastKey`,
 	   * without support for iteratee shorthands, which iterates over `collection`
@@ -11331,7 +14695,7 @@
 	    });
 	    return result;
 	  }
-
+	
 	  /**
 	   * The base implementation of `_.findIndex` and `_.findLastIndex` without
 	   * support for iteratee shorthands.
@@ -11346,7 +14710,7 @@
 	  function baseFindIndex(array, predicate, fromIndex, fromRight) {
 	    var length = array.length,
 	        index = fromIndex + (fromRight ? 1 : -1);
-
+	
 	    while ((fromRight ? index-- : ++index < length)) {
 	      if (predicate(array[index], index, array)) {
 	        return index;
@@ -11354,7 +14718,7 @@
 	    }
 	    return -1;
 	  }
-
+	
 	  /**
 	   * The base implementation of `_.indexOf` without `fromIndex` bounds checks.
 	   *
@@ -11370,7 +14734,7 @@
 	    }
 	    var index = fromIndex - 1,
 	        length = array.length;
-
+	
 	    while (++index < length) {
 	      if (array[index] === value) {
 	        return index;
@@ -11378,7 +14742,7 @@
 	    }
 	    return -1;
 	  }
-
+	
 	  /**
 	   * This function is like `baseIndexOf` except that it accepts a comparator.
 	   *
@@ -11392,7 +14756,7 @@
 	  function baseIndexOfWith(array, value, fromIndex, comparator) {
 	    var index = fromIndex - 1,
 	        length = array.length;
-
+	
 	    while (++index < length) {
 	      if (comparator(array[index], value)) {
 	        return index;
@@ -11400,7 +14764,7 @@
 	    }
 	    return -1;
 	  }
-
+	
 	  /**
 	   * The base implementation of `_.mean` and `_.meanBy` without support for
 	   * iteratee shorthands.
@@ -11414,7 +14778,7 @@
 	    var length = array ? array.length : 0;
 	    return length ? (baseSum(array, iteratee) / length) : NAN;
 	  }
-
+	
 	  /**
 	   * The base implementation of `_.reduce` and `_.reduceRight`, without support
 	   * for iteratee shorthands, which iterates over `collection` using `eachFunc`.
@@ -11436,7 +14800,7 @@
 	    });
 	    return accumulator;
 	  }
-
+	
 	  /**
 	   * The base implementation of `_.sortBy` which uses `comparer` to define the
 	   * sort order of `array` and replaces criteria objects with their corresponding
@@ -11449,14 +14813,14 @@
 	   */
 	  function baseSortBy(array, comparer) {
 	    var length = array.length;
-
+	
 	    array.sort(comparer);
 	    while (length--) {
 	      array[length] = array[length].value;
 	    }
 	    return array;
 	  }
-
+	
 	  /**
 	   * The base implementation of `_.sum` and `_.sumBy` without support for
 	   * iteratee shorthands.
@@ -11470,7 +14834,7 @@
 	    var result,
 	        index = -1,
 	        length = array.length;
-
+	
 	    while (++index < length) {
 	      var current = iteratee(array[index]);
 	      if (current !== undefined) {
@@ -11479,7 +14843,7 @@
 	    }
 	    return result;
 	  }
-
+	
 	  /**
 	   * The base implementation of `_.times` without support for iteratee shorthands
 	   * or max array length checks.
@@ -11492,13 +14856,13 @@
 	  function baseTimes(n, iteratee) {
 	    var index = -1,
 	        result = Array(n);
-
+	
 	    while (++index < n) {
 	      result[index] = iteratee(index);
 	    }
 	    return result;
 	  }
-
+	
 	  /**
 	   * The base implementation of `_.toPairs` and `_.toPairsIn` which creates an array
 	   * of key-value pairs for `object` corresponding to the property names of `props`.
@@ -11513,7 +14877,7 @@
 	      return [key, object[key]];
 	    });
 	  }
-
+	
 	  /**
 	   * The base implementation of `_.unary` without support for storing wrapper metadata.
 	   *
@@ -11526,7 +14890,7 @@
 	      return func(value);
 	    };
 	  }
-
+	
 	  /**
 	   * The base implementation of `_.values` and `_.valuesIn` which creates an
 	   * array of `object` property values corresponding to the property names
@@ -11542,7 +14906,7 @@
 	      return object[key];
 	    });
 	  }
-
+	
 	  /**
 	   * Checks if a cache value for `key` exists.
 	   *
@@ -11554,7 +14918,7 @@
 	  function cacheHas(cache, key) {
 	    return cache.has(key);
 	  }
-
+	
 	  /**
 	   * Used by `_.trim` and `_.trimStart` to get the index of the first string symbol
 	   * that is not found in the character symbols.
@@ -11567,11 +14931,11 @@
 	  function charsStartIndex(strSymbols, chrSymbols) {
 	    var index = -1,
 	        length = strSymbols.length;
-
+	
 	    while (++index < length && baseIndexOf(chrSymbols, strSymbols[index], 0) > -1) {}
 	    return index;
 	  }
-
+	
 	  /**
 	   * Used by `_.trim` and `_.trimEnd` to get the index of the last string symbol
 	   * that is not found in the character symbols.
@@ -11583,11 +14947,11 @@
 	   */
 	  function charsEndIndex(strSymbols, chrSymbols) {
 	    var index = strSymbols.length;
-
+	
 	    while (index-- && baseIndexOf(chrSymbols, strSymbols[index], 0) > -1) {}
 	    return index;
 	  }
-
+	
 	  /**
 	   * Checks if `value` is a global object.
 	   *
@@ -11598,7 +14962,7 @@
 	  function checkGlobal(value) {
 	    return (value && value.Object === Object) ? value : null;
 	  }
-
+	
 	  /**
 	   * Gets the number of `placeholder` occurrences in `array`.
 	   *
@@ -11610,7 +14974,7 @@
 	  function countHolders(array, placeholder) {
 	    var length = array.length,
 	        result = 0;
-
+	
 	    while (length--) {
 	      if (array[length] === placeholder) {
 	        result++;
@@ -11618,7 +14982,7 @@
 	    }
 	    return result;
 	  }
-
+	
 	  /**
 	   * Used by `_.deburr` to convert latin-1 supplementary letters to basic latin letters.
 	   *
@@ -11629,7 +14993,7 @@
 	  function deburrLetter(letter) {
 	    return deburredLetters[letter];
 	  }
-
+	
 	  /**
 	   * Used by `_.escape` to convert characters to HTML entities.
 	   *
@@ -11640,7 +15004,7 @@
 	  function escapeHtmlChar(chr) {
 	    return htmlEscapes[chr];
 	  }
-
+	
 	  /**
 	   * Used by `_.template` to escape characters for inclusion in compiled string literals.
 	   *
@@ -11651,7 +15015,7 @@
 	  function escapeStringChar(chr) {
 	    return '\\' + stringEscapes[chr];
 	  }
-
+	
 	  /**
 	   * Gets the value at `key` of `object`.
 	   *
@@ -11663,7 +15027,7 @@
 	  function getValue(object, key) {
 	    return object == null ? undefined : object[key];
 	  }
-
+	
 	  /**
 	   * Gets the index at which the first occurrence of `NaN` is found in `array`.
 	   *
@@ -11676,7 +15040,7 @@
 	  function indexOfNaN(array, fromIndex, fromRight) {
 	    var length = array.length,
 	        index = fromIndex + (fromRight ? 1 : -1);
-
+	
 	    while ((fromRight ? index-- : ++index < length)) {
 	      var other = array[index];
 	      if (other !== other) {
@@ -11685,7 +15049,7 @@
 	    }
 	    return -1;
 	  }
-
+	
 	  /**
 	   * Checks if `value` is a host object in IE < 9.
 	   *
@@ -11704,7 +15068,7 @@
 	    }
 	    return result;
 	  }
-
+	
 	  /**
 	   * Converts `iterator` to an array.
 	   *
@@ -11715,13 +15079,13 @@
 	  function iteratorToArray(iterator) {
 	    var data,
 	        result = [];
-
+	
 	    while (!(data = iterator.next()).done) {
 	      result.push(data.value);
 	    }
 	    return result;
 	  }
-
+	
 	  /**
 	   * Converts `map` to its key-value pairs.
 	   *
@@ -11732,13 +15096,13 @@
 	  function mapToArray(map) {
 	    var index = -1,
 	        result = Array(map.size);
-
+	
 	    map.forEach(function(value, key) {
 	      result[++index] = [key, value];
 	    });
 	    return result;
 	  }
-
+	
 	  /**
 	   * Replaces all `placeholder` elements in `array` with an internal placeholder
 	   * and returns an array of their indexes.
@@ -11753,7 +15117,7 @@
 	        length = array.length,
 	        resIndex = 0,
 	        result = [];
-
+	
 	    while (++index < length) {
 	      var value = array[index];
 	      if (value === placeholder || value === PLACEHOLDER) {
@@ -11763,7 +15127,7 @@
 	    }
 	    return result;
 	  }
-
+	
 	  /**
 	   * Converts `set` to an array of its values.
 	   *
@@ -11774,13 +15138,13 @@
 	  function setToArray(set) {
 	    var index = -1,
 	        result = Array(set.size);
-
+	
 	    set.forEach(function(value) {
 	      result[++index] = value;
 	    });
 	    return result;
 	  }
-
+	
 	  /**
 	   * Converts `set` to its value-value pairs.
 	   *
@@ -11791,13 +15155,13 @@
 	  function setToPairs(set) {
 	    var index = -1,
 	        result = Array(set.size);
-
+	
 	    set.forEach(function(value) {
 	      result[++index] = [value, value];
 	    });
 	    return result;
 	  }
-
+	
 	  /**
 	   * Gets the number of symbols in `string`.
 	   *
@@ -11815,7 +15179,7 @@
 	    }
 	    return result;
 	  }
-
+	
 	  /**
 	   * Converts `string` to an array.
 	   *
@@ -11826,7 +15190,7 @@
 	  function stringToArray(string) {
 	    return string.match(reComplexSymbol);
 	  }
-
+	
 	  /**
 	   * Used by `_.unescape` to convert HTML entities to characters.
 	   *
@@ -11837,9 +15201,9 @@
 	  function unescapeHtmlChar(chr) {
 	    return htmlUnescapes[chr];
 	  }
-
+	
 	  /*--------------------------------------------------------------------------*/
-
+	
 	  /**
 	   * Create a new pristine `lodash` function using the `context` object.
 	   *
@@ -11878,56 +15242,56 @@
 	   */
 	  function runInContext(context) {
 	    context = context ? _.defaults({}, context, _.pick(root, contextProps)) : root;
-
+	
 	    /** Built-in constructor references. */
 	    var Date = context.Date,
 	        Error = context.Error,
 	        Math = context.Math,
 	        RegExp = context.RegExp,
 	        TypeError = context.TypeError;
-
+	
 	    /** Used for built-in method references. */
 	    var arrayProto = context.Array.prototype,
 	        objectProto = context.Object.prototype,
 	        stringProto = context.String.prototype;
-
+	
 	    /** Used to detect overreaching core-js shims. */
 	    var coreJsData = context['__core-js_shared__'];
-
+	
 	    /** Used to detect methods masquerading as native. */
 	    var maskSrcKey = (function() {
 	      var uid = /[^.]+$/.exec(coreJsData && coreJsData.keys && coreJsData.keys.IE_PROTO || '');
 	      return uid ? ('Symbol(src)_1.' + uid) : '';
 	    }());
-
+	
 	    /** Used to resolve the decompiled source of functions. */
 	    var funcToString = context.Function.prototype.toString;
-
+	
 	    /** Used to check objects for own properties. */
 	    var hasOwnProperty = objectProto.hasOwnProperty;
-
+	
 	    /** Used to generate unique IDs. */
 	    var idCounter = 0;
-
+	
 	    /** Used to infer the `Object` constructor. */
 	    var objectCtorString = funcToString.call(Object);
-
+	
 	    /**
 	     * Used to resolve the
 	     * [`toStringTag`](http://ecma-international.org/ecma-262/6.0/#sec-object.prototype.tostring)
 	     * of values.
 	     */
 	    var objectToString = objectProto.toString;
-
+	
 	    /** Used to restore the original `_` reference in `_.noConflict`. */
 	    var oldDash = root._;
-
+	
 	    /** Used to detect if a method is native. */
 	    var reIsNative = RegExp('^' +
 	      funcToString.call(hasOwnProperty).replace(reRegExpChar, '\\$&')
 	      .replace(/hasOwnProperty|(function).*?(?=\\\()| for .+?(?=\\\])/g, '$1.*?') + '$'
 	    );
-
+	
 	    /** Built-in value references. */
 	    var Buffer = moduleExports ? context.Buffer : undefined,
 	        Reflect = context.Reflect,
@@ -11939,10 +15303,10 @@
 	        objectCreate = Object.create,
 	        propertyIsEnumerable = objectProto.propertyIsEnumerable,
 	        splice = arrayProto.splice;
-
+	
 	    /** Built-in method references that are mockable. */
 	    var setTimeout = function(func, wait) { return context.setTimeout.call(root, func, wait); };
-
+	
 	    /* Built-in method references for those with the same name as other `lodash` methods. */
 	    var nativeCeil = Math.ceil,
 	        nativeFloor = Math.floor,
@@ -11957,7 +15321,7 @@
 	        nativeReplace = stringProto.replace,
 	        nativeReverse = arrayProto.reverse,
 	        nativeSplit = stringProto.split;
-
+	
 	    /* Built-in method references that are verified to be native. */
 	    var DataView = getNative(context, 'DataView'),
 	        Map = getNative(context, 'Map'),
@@ -11965,30 +15329,30 @@
 	        Set = getNative(context, 'Set'),
 	        WeakMap = getNative(context, 'WeakMap'),
 	        nativeCreate = getNative(Object, 'create');
-
+	
 	    /** Used to store function metadata. */
 	    var metaMap = WeakMap && new WeakMap;
-
+	
 	    /** Detect if properties shadowing those on `Object.prototype` are non-enumerable. */
 	    var nonEnumShadows = !propertyIsEnumerable.call({ 'valueOf': 1 }, 'valueOf');
-
+	
 	    /** Used to lookup unminified function names. */
 	    var realNames = {};
-
+	
 	    /** Used to detect maps, sets, and weakmaps. */
 	    var dataViewCtorString = toSource(DataView),
 	        mapCtorString = toSource(Map),
 	        promiseCtorString = toSource(Promise),
 	        setCtorString = toSource(Set),
 	        weakMapCtorString = toSource(WeakMap);
-
+	
 	    /** Used to convert symbols to primitives and strings. */
 	    var symbolProto = Symbol ? Symbol.prototype : undefined,
 	        symbolValueOf = symbolProto ? symbolProto.valueOf : undefined,
 	        symbolToString = symbolProto ? symbolProto.toString : undefined;
-
+	
 	    /*------------------------------------------------------------------------*/
-
+	
 	    /**
 	     * Creates a `lodash` object which wraps `value` to enable implicit method
 	     * chain sequences. Methods that operate on and return arrays, collections,
@@ -12117,7 +15481,7 @@
 	      }
 	      return new LodashWrapper(value);
 	    }
-
+	
 	    /**
 	     * The function whose prototype chain sequence wrappers inherit from.
 	     *
@@ -12126,7 +15490,7 @@
 	    function baseLodash() {
 	      // No operation performed.
 	    }
-
+	
 	    /**
 	     * The base constructor for creating `lodash` wrapper objects.
 	     *
@@ -12141,7 +15505,7 @@
 	      this.__index__ = 0;
 	      this.__values__ = undefined;
 	    }
-
+	
 	    /**
 	     * By default, the template delimiters used by lodash are like those in
 	     * embedded Ruby (ERB). Change the following template settings to use
@@ -12152,7 +15516,7 @@
 	     * @type {Object}
 	     */
 	    lodash.templateSettings = {
-
+	
 	      /**
 	       * Used to detect `data` property values to be HTML-escaped.
 	       *
@@ -12160,7 +15524,7 @@
 	       * @type {RegExp}
 	       */
 	      'escape': reEscape,
-
+	
 	      /**
 	       * Used to detect code to be evaluated.
 	       *
@@ -12168,7 +15532,7 @@
 	       * @type {RegExp}
 	       */
 	      'evaluate': reEvaluate,
-
+	
 	      /**
 	       * Used to detect `data` property values to inject.
 	       *
@@ -12176,7 +15540,7 @@
 	       * @type {RegExp}
 	       */
 	      'interpolate': reInterpolate,
-
+	
 	      /**
 	       * Used to reference the data object in the template text.
 	       *
@@ -12184,7 +15548,7 @@
 	       * @type {string}
 	       */
 	      'variable': '',
-
+	
 	      /**
 	       * Used to import variables into the compiled template.
 	       *
@@ -12192,7 +15556,7 @@
 	       * @type {Object}
 	       */
 	      'imports': {
-
+	
 	        /**
 	         * A reference to the `lodash` function.
 	         *
@@ -12202,16 +15566,16 @@
 	        '_': lodash
 	      }
 	    };
-
+	
 	    // Ensure wrappers are instances of `baseLodash`.
 	    lodash.prototype = baseLodash.prototype;
 	    lodash.prototype.constructor = lodash;
-
+	
 	    LodashWrapper.prototype = baseCreate(baseLodash.prototype);
 	    LodashWrapper.prototype.constructor = LodashWrapper;
-
+	
 	    /*------------------------------------------------------------------------*/
-
+	
 	    /**
 	     * Creates a lazy wrapper object which wraps `value` to enable lazy evaluation.
 	     *
@@ -12228,7 +15592,7 @@
 	      this.__takeCount__ = MAX_ARRAY_LENGTH;
 	      this.__views__ = [];
 	    }
-
+	
 	    /**
 	     * Creates a clone of the lazy wrapper object.
 	     *
@@ -12247,7 +15611,7 @@
 	      result.__views__ = copyArray(this.__views__);
 	      return result;
 	    }
-
+	
 	    /**
 	     * Reverses the direction of lazy iteration.
 	     *
@@ -12267,7 +15631,7 @@
 	      }
 	      return result;
 	    }
-
+	
 	    /**
 	     * Extracts the unwrapped value from its lazy wrapper.
 	     *
@@ -12291,26 +15655,26 @@
 	          iterLength = iteratees.length,
 	          resIndex = 0,
 	          takeCount = nativeMin(length, this.__takeCount__);
-
+	
 	      if (!isArr || arrLength < LARGE_ARRAY_SIZE ||
 	          (arrLength == length && takeCount == length)) {
 	        return baseWrapperValue(array, this.__actions__);
 	      }
 	      var result = [];
-
+	
 	      outer:
 	      while (length-- && resIndex < takeCount) {
 	        index += dir;
-
+	
 	        var iterIndex = -1,
 	            value = array[index];
-
+	
 	        while (++iterIndex < iterLength) {
 	          var data = iteratees[iterIndex],
 	              iteratee = data.iteratee,
 	              type = data.type,
 	              computed = iteratee(value);
-
+	
 	          if (type == LAZY_MAP_FLAG) {
 	            value = computed;
 	          } else if (!computed) {
@@ -12325,13 +15689,13 @@
 	      }
 	      return result;
 	    }
-
+	
 	    // Ensure `LazyWrapper` is an instance of `baseLodash`.
 	    LazyWrapper.prototype = baseCreate(baseLodash.prototype);
 	    LazyWrapper.prototype.constructor = LazyWrapper;
-
+	
 	    /*------------------------------------------------------------------------*/
-
+	
 	    /**
 	     * Creates a hash object.
 	     *
@@ -12342,14 +15706,14 @@
 	    function Hash(entries) {
 	      var index = -1,
 	          length = entries ? entries.length : 0;
-
+	
 	      this.clear();
 	      while (++index < length) {
 	        var entry = entries[index];
 	        this.set(entry[0], entry[1]);
 	      }
 	    }
-
+	
 	    /**
 	     * Removes all key-value entries from the hash.
 	     *
@@ -12360,7 +15724,7 @@
 	    function hashClear() {
 	      this.__data__ = nativeCreate ? nativeCreate(null) : {};
 	    }
-
+	
 	    /**
 	     * Removes `key` and its value from the hash.
 	     *
@@ -12374,7 +15738,7 @@
 	    function hashDelete(key) {
 	      return this.has(key) && delete this.__data__[key];
 	    }
-
+	
 	    /**
 	     * Gets the hash value for `key`.
 	     *
@@ -12392,7 +15756,7 @@
 	      }
 	      return hasOwnProperty.call(data, key) ? data[key] : undefined;
 	    }
-
+	
 	    /**
 	     * Checks if a hash value for `key` exists.
 	     *
@@ -12406,7 +15770,7 @@
 	      var data = this.__data__;
 	      return nativeCreate ? data[key] !== undefined : hasOwnProperty.call(data, key);
 	    }
-
+	
 	    /**
 	     * Sets the hash `key` to `value`.
 	     *
@@ -12422,16 +15786,16 @@
 	      data[key] = (nativeCreate && value === undefined) ? HASH_UNDEFINED : value;
 	      return this;
 	    }
-
+	
 	    // Add methods to `Hash`.
 	    Hash.prototype.clear = hashClear;
 	    Hash.prototype['delete'] = hashDelete;
 	    Hash.prototype.get = hashGet;
 	    Hash.prototype.has = hashHas;
 	    Hash.prototype.set = hashSet;
-
+	
 	    /*------------------------------------------------------------------------*/
-
+	
 	    /**
 	     * Creates an list cache object.
 	     *
@@ -12442,14 +15806,14 @@
 	    function ListCache(entries) {
 	      var index = -1,
 	          length = entries ? entries.length : 0;
-
+	
 	      this.clear();
 	      while (++index < length) {
 	        var entry = entries[index];
 	        this.set(entry[0], entry[1]);
 	      }
 	    }
-
+	
 	    /**
 	     * Removes all key-value entries from the list cache.
 	     *
@@ -12460,7 +15824,7 @@
 	    function listCacheClear() {
 	      this.__data__ = [];
 	    }
-
+	
 	    /**
 	     * Removes `key` and its value from the list cache.
 	     *
@@ -12473,7 +15837,7 @@
 	    function listCacheDelete(key) {
 	      var data = this.__data__,
 	          index = assocIndexOf(data, key);
-
+	
 	      if (index < 0) {
 	        return false;
 	      }
@@ -12485,7 +15849,7 @@
 	      }
 	      return true;
 	    }
-
+	
 	    /**
 	     * Gets the list cache value for `key`.
 	     *
@@ -12498,10 +15862,10 @@
 	    function listCacheGet(key) {
 	      var data = this.__data__,
 	          index = assocIndexOf(data, key);
-
+	
 	      return index < 0 ? undefined : data[index][1];
 	    }
-
+	
 	    /**
 	     * Checks if a list cache value for `key` exists.
 	     *
@@ -12514,7 +15878,7 @@
 	    function listCacheHas(key) {
 	      return assocIndexOf(this.__data__, key) > -1;
 	    }
-
+	
 	    /**
 	     * Sets the list cache `key` to `value`.
 	     *
@@ -12528,7 +15892,7 @@
 	    function listCacheSet(key, value) {
 	      var data = this.__data__,
 	          index = assocIndexOf(data, key);
-
+	
 	      if (index < 0) {
 	        data.push([key, value]);
 	      } else {
@@ -12536,16 +15900,16 @@
 	      }
 	      return this;
 	    }
-
+	
 	    // Add methods to `ListCache`.
 	    ListCache.prototype.clear = listCacheClear;
 	    ListCache.prototype['delete'] = listCacheDelete;
 	    ListCache.prototype.get = listCacheGet;
 	    ListCache.prototype.has = listCacheHas;
 	    ListCache.prototype.set = listCacheSet;
-
+	
 	    /*------------------------------------------------------------------------*/
-
+	
 	    /**
 	     * Creates a map cache object to store key-value pairs.
 	     *
@@ -12556,14 +15920,14 @@
 	    function MapCache(entries) {
 	      var index = -1,
 	          length = entries ? entries.length : 0;
-
+	
 	      this.clear();
 	      while (++index < length) {
 	        var entry = entries[index];
 	        this.set(entry[0], entry[1]);
 	      }
 	    }
-
+	
 	    /**
 	     * Removes all key-value entries from the map.
 	     *
@@ -12578,7 +15942,7 @@
 	        'string': new Hash
 	      };
 	    }
-
+	
 	    /**
 	     * Removes `key` and its value from the map.
 	     *
@@ -12591,7 +15955,7 @@
 	    function mapCacheDelete(key) {
 	      return getMapData(this, key)['delete'](key);
 	    }
-
+	
 	    /**
 	     * Gets the map value for `key`.
 	     *
@@ -12604,7 +15968,7 @@
 	    function mapCacheGet(key) {
 	      return getMapData(this, key).get(key);
 	    }
-
+	
 	    /**
 	     * Checks if a map value for `key` exists.
 	     *
@@ -12617,7 +15981,7 @@
 	    function mapCacheHas(key) {
 	      return getMapData(this, key).has(key);
 	    }
-
+	
 	    /**
 	     * Sets the map `key` to `value`.
 	     *
@@ -12632,16 +15996,16 @@
 	      getMapData(this, key).set(key, value);
 	      return this;
 	    }
-
+	
 	    // Add methods to `MapCache`.
 	    MapCache.prototype.clear = mapCacheClear;
 	    MapCache.prototype['delete'] = mapCacheDelete;
 	    MapCache.prototype.get = mapCacheGet;
 	    MapCache.prototype.has = mapCacheHas;
 	    MapCache.prototype.set = mapCacheSet;
-
+	
 	    /*------------------------------------------------------------------------*/
-
+	
 	    /**
 	     *
 	     * Creates an array cache object to store unique values.
@@ -12653,13 +16017,13 @@
 	    function SetCache(values) {
 	      var index = -1,
 	          length = values ? values.length : 0;
-
+	
 	      this.__data__ = new MapCache;
 	      while (++index < length) {
 	        this.add(values[index]);
 	      }
 	    }
-
+	
 	    /**
 	     * Adds `value` to the array cache.
 	     *
@@ -12674,7 +16038,7 @@
 	      this.__data__.set(value, HASH_UNDEFINED);
 	      return this;
 	    }
-
+	
 	    /**
 	     * Checks if `value` is in the array cache.
 	     *
@@ -12687,13 +16051,13 @@
 	    function setCacheHas(value) {
 	      return this.__data__.has(value);
 	    }
-
+	
 	    // Add methods to `SetCache`.
 	    SetCache.prototype.add = SetCache.prototype.push = setCacheAdd;
 	    SetCache.prototype.has = setCacheHas;
-
+	
 	    /*------------------------------------------------------------------------*/
-
+	
 	    /**
 	     * Creates a stack cache object to store key-value pairs.
 	     *
@@ -12704,7 +16068,7 @@
 	    function Stack(entries) {
 	      this.__data__ = new ListCache(entries);
 	    }
-
+	
 	    /**
 	     * Removes all key-value entries from the stack.
 	     *
@@ -12715,7 +16079,7 @@
 	    function stackClear() {
 	      this.__data__ = new ListCache;
 	    }
-
+	
 	    /**
 	     * Removes `key` and its value from the stack.
 	     *
@@ -12728,7 +16092,7 @@
 	    function stackDelete(key) {
 	      return this.__data__['delete'](key);
 	    }
-
+	
 	    /**
 	     * Gets the stack value for `key`.
 	     *
@@ -12741,7 +16105,7 @@
 	    function stackGet(key) {
 	      return this.__data__.get(key);
 	    }
-
+	
 	    /**
 	     * Checks if a stack value for `key` exists.
 	     *
@@ -12754,7 +16118,7 @@
 	    function stackHas(key) {
 	      return this.__data__.has(key);
 	    }
-
+	
 	    /**
 	     * Sets the stack `key` to `value`.
 	     *
@@ -12773,16 +16137,16 @@
 	      cache.set(key, value);
 	      return this;
 	    }
-
+	
 	    // Add methods to `Stack`.
 	    Stack.prototype.clear = stackClear;
 	    Stack.prototype['delete'] = stackDelete;
 	    Stack.prototype.get = stackGet;
 	    Stack.prototype.has = stackHas;
 	    Stack.prototype.set = stackSet;
-
+	
 	    /*------------------------------------------------------------------------*/
-
+	
 	    /**
 	     * Used by `_.defaults` to customize its `_.assignIn` use.
 	     *
@@ -12800,7 +16164,7 @@
 	      }
 	      return objValue;
 	    }
-
+	
 	    /**
 	     * This function is like `assignValue` except that it doesn't assign
 	     * `undefined` values.
@@ -12816,7 +16180,7 @@
 	        object[key] = value;
 	      }
 	    }
-
+	
 	    /**
 	     * Assigns `value` to `key` of `object` if the existing value is not equivalent
 	     * using [`SameValueZero`](http://ecma-international.org/ecma-262/6.0/#sec-samevaluezero)
@@ -12834,7 +16198,7 @@
 	        object[key] = value;
 	      }
 	    }
-
+	
 	    /**
 	     * Gets the index at which the `key` is found in `array` of key-value pairs.
 	     *
@@ -12852,7 +16216,7 @@
 	      }
 	      return -1;
 	    }
-
+	
 	    /**
 	     * Aggregates elements of `collection` on `accumulator` with keys transformed
 	     * by `iteratee` and values set by `setter`.
@@ -12870,7 +16234,7 @@
 	      });
 	      return accumulator;
 	    }
-
+	
 	    /**
 	     * The base implementation of `_.assign` without support for multiple sources
 	     * or `customizer` functions.
@@ -12883,7 +16247,7 @@
 	    function baseAssign(object, source) {
 	      return object && copyObject(source, keys(source), object);
 	    }
-
+	
 	    /**
 	     * The base implementation of `_.at` without support for individual paths.
 	     *
@@ -12897,13 +16261,13 @@
 	          isNil = object == null,
 	          length = paths.length,
 	          result = Array(length);
-
+	
 	      while (++index < length) {
 	        result[index] = isNil ? undefined : get(object, paths[index]);
 	      }
 	      return result;
 	    }
-
+	
 	    /**
 	     * The base implementation of `_.clamp` which doesn't coerce arguments to numbers.
 	     *
@@ -12924,7 +16288,7 @@
 	      }
 	      return number;
 	    }
-
+	
 	    /**
 	     * The base implementation of `_.clone` and `_.cloneDeep` which tracks
 	     * traversed objects.
@@ -12959,7 +16323,7 @@
 	      } else {
 	        var tag = getTag(value),
 	            isFunc = tag == funcTag || tag == genTag;
-
+	
 	        if (isBuffer(value)) {
 	          return cloneBuffer(value, isDeep);
 	        }
@@ -12985,7 +16349,7 @@
 	        return stacked;
 	      }
 	      stack.set(value, result);
-
+	
 	      if (!isArr) {
 	        var props = isFull ? getAllKeys(value) : keys(value);
 	      }
@@ -12999,7 +16363,7 @@
 	      });
 	      return result;
 	    }
-
+	
 	    /**
 	     * The base implementation of `_.conforms` which doesn't clone `source`.
 	     *
@@ -13010,7 +16374,7 @@
 	    function baseConforms(source) {
 	      var props = keys(source),
 	          length = props.length;
-
+	
 	      return function(object) {
 	        if (object == null) {
 	          return !length;
@@ -13020,7 +16384,7 @@
 	          var key = props[index],
 	              predicate = source[key],
 	              value = object[key];
-
+	
 	          if ((value === undefined &&
 	              !(key in Object(object))) || !predicate(value)) {
 	            return false;
@@ -13029,7 +16393,7 @@
 	        return true;
 	      };
 	    }
-
+	
 	    /**
 	     * The base implementation of `_.create` without support for assigning
 	     * properties to the created object.
@@ -13041,7 +16405,7 @@
 	    function baseCreate(proto) {
 	      return isObject(proto) ? objectCreate(proto) : {};
 	    }
-
+	
 	    /**
 	     * The base implementation of `_.delay` and `_.defer` which accepts an array
 	     * of `func` arguments.
@@ -13058,7 +16422,7 @@
 	      }
 	      return setTimeout(function() { func.apply(undefined, args); }, wait);
 	    }
-
+	
 	    /**
 	     * The base implementation of methods like `_.difference` without support
 	     * for excluding multiple arrays or iteratee shorthands.
@@ -13077,7 +16441,7 @@
 	          length = array.length,
 	          result = [],
 	          valuesLength = values.length;
-
+	
 	      if (!length) {
 	        return result;
 	      }
@@ -13097,7 +16461,7 @@
 	      while (++index < length) {
 	        var value = array[index],
 	            computed = iteratee ? iteratee(value) : value;
-
+	
 	        value = (comparator || value !== 0) ? value : 0;
 	        if (isCommon && computed === computed) {
 	          var valuesIndex = valuesLength;
@@ -13114,7 +16478,7 @@
 	      }
 	      return result;
 	    }
-
+	
 	    /**
 	     * The base implementation of `_.forEach` without support for iteratee shorthands.
 	     *
@@ -13124,7 +16488,7 @@
 	     * @returns {Array|Object} Returns `collection`.
 	     */
 	    var baseEach = createBaseEach(baseForOwn);
-
+	
 	    /**
 	     * The base implementation of `_.forEachRight` without support for iteratee shorthands.
 	     *
@@ -13134,7 +16498,7 @@
 	     * @returns {Array|Object} Returns `collection`.
 	     */
 	    var baseEachRight = createBaseEach(baseForOwnRight, true);
-
+	
 	    /**
 	     * The base implementation of `_.every` without support for iteratee shorthands.
 	     *
@@ -13152,7 +16516,7 @@
 	      });
 	      return result;
 	    }
-
+	
 	    /**
 	     * The base implementation of methods like `_.max` and `_.min` which accepts a
 	     * `comparator` to determine the extremum value.
@@ -13166,11 +16530,11 @@
 	    function baseExtremum(array, iteratee, comparator) {
 	      var index = -1,
 	          length = array.length;
-
+	
 	      while (++index < length) {
 	        var value = array[index],
 	            current = iteratee(value);
-
+	
 	        if (current != null && (computed === undefined
 	              ? (current === current && !isSymbol(current))
 	              : comparator(current, computed)
@@ -13181,7 +16545,7 @@
 	      }
 	      return result;
 	    }
-
+	
 	    /**
 	     * The base implementation of `_.fill` without an iteratee call guard.
 	     *
@@ -13194,7 +16558,7 @@
 	     */
 	    function baseFill(array, value, start, end) {
 	      var length = array.length;
-
+	
 	      start = toInteger(start);
 	      if (start < 0) {
 	        start = -start > length ? 0 : (length + start);
@@ -13209,7 +16573,7 @@
 	      }
 	      return array;
 	    }
-
+	
 	    /**
 	     * The base implementation of `_.filter` without support for iteratee shorthands.
 	     *
@@ -13227,7 +16591,7 @@
 	      });
 	      return result;
 	    }
-
+	
 	    /**
 	     * The base implementation of `_.flatten` with support for restricting flattening.
 	     *
@@ -13242,10 +16606,10 @@
 	    function baseFlatten(array, depth, predicate, isStrict, result) {
 	      var index = -1,
 	          length = array.length;
-
+	
 	      predicate || (predicate = isFlattenable);
 	      result || (result = []);
-
+	
 	      while (++index < length) {
 	        var value = array[index];
 	        if (depth > 0 && predicate(value)) {
@@ -13261,7 +16625,7 @@
 	      }
 	      return result;
 	    }
-
+	
 	    /**
 	     * The base implementation of `baseForOwn` which iterates over `object`
 	     * properties returned by `keysFunc` and invokes `iteratee` for each property.
@@ -13274,7 +16638,7 @@
 	     * @returns {Object} Returns `object`.
 	     */
 	    var baseFor = createBaseFor();
-
+	
 	    /**
 	     * This function is like `baseFor` except that it iterates over properties
 	     * in the opposite order.
@@ -13286,7 +16650,7 @@
 	     * @returns {Object} Returns `object`.
 	     */
 	    var baseForRight = createBaseFor(true);
-
+	
 	    /**
 	     * The base implementation of `_.forOwn` without support for iteratee shorthands.
 	     *
@@ -13298,7 +16662,7 @@
 	    function baseForOwn(object, iteratee) {
 	      return object && baseFor(object, iteratee, keys);
 	    }
-
+	
 	    /**
 	     * The base implementation of `_.forOwnRight` without support for iteratee shorthands.
 	     *
@@ -13310,7 +16674,7 @@
 	    function baseForOwnRight(object, iteratee) {
 	      return object && baseForRight(object, iteratee, keys);
 	    }
-
+	
 	    /**
 	     * The base implementation of `_.functions` which creates an array of
 	     * `object` function property names filtered from `props`.
@@ -13325,7 +16689,7 @@
 	        return isFunction(object[key]);
 	      });
 	    }
-
+	
 	    /**
 	     * The base implementation of `_.get` without support for default values.
 	     *
@@ -13336,16 +16700,16 @@
 	     */
 	    function baseGet(object, path) {
 	      path = isKey(path, object) ? [path] : castPath(path);
-
+	
 	      var index = 0,
 	          length = path.length;
-
+	
 	      while (object != null && index < length) {
 	        object = object[toKey(path[index++])];
 	      }
 	      return (index && index == length) ? object : undefined;
 	    }
-
+	
 	    /**
 	     * The base implementation of `getAllKeys` and `getAllKeysIn` which uses
 	     * `keysFunc` and `symbolsFunc` to get the enumerable property names and
@@ -13361,7 +16725,7 @@
 	      var result = keysFunc(object);
 	      return isArray(object) ? result : arrayPush(result, symbolsFunc(object));
 	    }
-
+	
 	    /**
 	     * The base implementation of `_.gt` which doesn't coerce arguments to numbers.
 	     *
@@ -13374,7 +16738,7 @@
 	    function baseGt(value, other) {
 	      return value > other;
 	    }
-
+	
 	    /**
 	     * The base implementation of `_.has` without support for deep paths.
 	     *
@@ -13391,7 +16755,7 @@
 	        (hasOwnProperty.call(object, key) ||
 	          (typeof object == 'object' && key in object && getPrototype(object) === null));
 	    }
-
+	
 	    /**
 	     * The base implementation of `_.hasIn` without support for deep paths.
 	     *
@@ -13403,7 +16767,7 @@
 	    function baseHasIn(object, key) {
 	      return object != null && key in Object(object);
 	    }
-
+	
 	    /**
 	     * The base implementation of `_.inRange` which doesn't coerce arguments to numbers.
 	     *
@@ -13416,7 +16780,7 @@
 	    function baseInRange(number, start, end) {
 	      return number >= nativeMin(start, end) && number < nativeMax(start, end);
 	    }
-
+	
 	    /**
 	     * The base implementation of methods like `_.intersection`, without support
 	     * for iteratee shorthands, that accepts an array of arrays to inspect.
@@ -13435,7 +16799,7 @@
 	          caches = Array(othLength),
 	          maxLength = Infinity,
 	          result = [];
-
+	
 	      while (othIndex--) {
 	        var array = arrays[othIndex];
 	        if (othIndex && iteratee) {
@@ -13447,15 +16811,15 @@
 	          : undefined;
 	      }
 	      array = arrays[0];
-
+	
 	      var index = -1,
 	          seen = caches[0];
-
+	
 	      outer:
 	      while (++index < length && result.length < maxLength) {
 	        var value = array[index],
 	            computed = iteratee ? iteratee(value) : value;
-
+	
 	        value = (comparator || value !== 0) ? value : 0;
 	        if (!(seen
 	              ? cacheHas(seen, computed)
@@ -13479,7 +16843,7 @@
 	      }
 	      return result;
 	    }
-
+	
 	    /**
 	     * The base implementation of `_.invert` and `_.invertBy` which inverts
 	     * `object` with values transformed by `iteratee` and set by `setter`.
@@ -13497,7 +16861,7 @@
 	      });
 	      return accumulator;
 	    }
-
+	
 	    /**
 	     * The base implementation of `_.invoke` without support for individual
 	     * method arguments.
@@ -13517,7 +16881,7 @@
 	      var func = object == null ? object : object[toKey(path)];
 	      return func == null ? undefined : apply(func, object, args);
 	    }
-
+	
 	    /**
 	     * The base implementation of `_.isEqual` which supports partial comparisons
 	     * and tracks traversed objects.
@@ -13542,7 +16906,7 @@
 	      }
 	      return baseIsEqualDeep(value, other, baseIsEqual, customizer, bitmask, stack);
 	    }
-
+	
 	    /**
 	     * A specialized version of `baseIsEqual` for arrays and objects which performs
 	     * deep comparisons and tracks traversed objects enabling objects with circular
@@ -13563,7 +16927,7 @@
 	          othIsArr = isArray(other),
 	          objTag = arrayTag,
 	          othTag = arrayTag;
-
+	
 	      if (!objIsArr) {
 	        objTag = getTag(object);
 	        objTag = objTag == argsTag ? objectTag : objTag;
@@ -13575,7 +16939,7 @@
 	      var objIsObj = objTag == objectTag && !isHostObject(object),
 	          othIsObj = othTag == objectTag && !isHostObject(other),
 	          isSameTag = objTag == othTag;
-
+	
 	      if (isSameTag && !objIsObj) {
 	        stack || (stack = new Stack);
 	        return (objIsArr || isTypedArray(object))
@@ -13585,11 +16949,11 @@
 	      if (!(bitmask & PARTIAL_COMPARE_FLAG)) {
 	        var objIsWrapped = objIsObj && hasOwnProperty.call(object, '__wrapped__'),
 	            othIsWrapped = othIsObj && hasOwnProperty.call(other, '__wrapped__');
-
+	
 	        if (objIsWrapped || othIsWrapped) {
 	          var objUnwrapped = objIsWrapped ? object.value() : object,
 	              othUnwrapped = othIsWrapped ? other.value() : other;
-
+	
 	          stack || (stack = new Stack);
 	          return equalFunc(objUnwrapped, othUnwrapped, customizer, bitmask, stack);
 	        }
@@ -13600,7 +16964,7 @@
 	      stack || (stack = new Stack);
 	      return equalObjects(object, other, equalFunc, customizer, bitmask, stack);
 	    }
-
+	
 	    /**
 	     * The base implementation of `_.isMatch` without support for iteratee shorthands.
 	     *
@@ -13615,7 +16979,7 @@
 	      var index = matchData.length,
 	          length = index,
 	          noCustomizer = !customizer;
-
+	
 	      if (object == null) {
 	        return !length;
 	      }
@@ -13634,7 +16998,7 @@
 	        var key = data[0],
 	            objValue = object[key],
 	            srcValue = data[1];
-
+	
 	        if (noCustomizer && data[2]) {
 	          if (objValue === undefined && !(key in object)) {
 	            return false;
@@ -13654,7 +17018,7 @@
 	      }
 	      return true;
 	    }
-
+	
 	    /**
 	     * The base implementation of `_.isNative` without bad shim checks.
 	     *
@@ -13670,7 +17034,7 @@
 	      var pattern = (isFunction(value) || isHostObject(value)) ? reIsNative : reIsHostCtor;
 	      return pattern.test(toSource(value));
 	    }
-
+	
 	    /**
 	     * The base implementation of `_.iteratee`.
 	     *
@@ -13694,7 +17058,7 @@
 	      }
 	      return property(value);
 	    }
-
+	
 	    /**
 	     * The base implementation of `_.keys` which doesn't skip the constructor
 	     * property of prototypes or treat sparse arrays as dense.
@@ -13706,7 +17070,7 @@
 	    function baseKeys(object) {
 	      return nativeKeys(Object(object));
 	    }
-
+	
 	    /**
 	     * The base implementation of `_.keysIn` which doesn't skip the constructor
 	     * property of prototypes or treat sparse arrays as dense.
@@ -13717,21 +17081,21 @@
 	     */
 	    function baseKeysIn(object) {
 	      object = object == null ? object : Object(object);
-
+	
 	      var result = [];
 	      for (var key in object) {
 	        result.push(key);
 	      }
 	      return result;
 	    }
-
+	
 	    // Fallback for IE < 9 with es6-shim.
 	    if (enumerate && !propertyIsEnumerable.call({ 'valueOf': 1 }, 'valueOf')) {
 	      baseKeysIn = function(object) {
 	        return iteratorToArray(enumerate(object));
 	      };
 	    }
-
+	
 	    /**
 	     * The base implementation of `_.lt` which doesn't coerce arguments to numbers.
 	     *
@@ -13744,7 +17108,7 @@
 	    function baseLt(value, other) {
 	      return value < other;
 	    }
-
+	
 	    /**
 	     * The base implementation of `_.map` without support for iteratee shorthands.
 	     *
@@ -13756,13 +17120,13 @@
 	    function baseMap(collection, iteratee) {
 	      var index = -1,
 	          result = isArrayLike(collection) ? Array(collection.length) : [];
-
+	
 	      baseEach(collection, function(value, key, collection) {
 	        result[++index] = iteratee(value, key, collection);
 	      });
 	      return result;
 	    }
-
+	
 	    /**
 	     * The base implementation of `_.matches` which doesn't clone `source`.
 	     *
@@ -13779,7 +17143,7 @@
 	        return object === source || baseIsMatch(object, source, matchData);
 	      };
 	    }
-
+	
 	    /**
 	     * The base implementation of `_.matchesProperty` which doesn't clone `srcValue`.
 	     *
@@ -13799,7 +17163,7 @@
 	          : baseIsEqual(srcValue, objValue, undefined, UNORDERED_COMPARE_FLAG | PARTIAL_COMPARE_FLAG);
 	      };
 	    }
-
+	
 	    /**
 	     * The base implementation of `_.merge` without support for multiple sources.
 	     *
@@ -13831,7 +17195,7 @@
 	          var newValue = customizer
 	            ? customizer(object[key], srcValue, (key + ''), object, source, stack)
 	            : undefined;
-
+	
 	          if (newValue === undefined) {
 	            newValue = srcValue;
 	          }
@@ -13839,7 +17203,7 @@
 	        }
 	      });
 	    }
-
+	
 	    /**
 	     * A specialized version of `baseMerge` for arrays and objects which performs
 	     * deep merges and tracks traversed objects enabling objects with circular
@@ -13859,7 +17223,7 @@
 	      var objValue = object[key],
 	          srcValue = source[key],
 	          stacked = stack.get(srcValue);
-
+	
 	      if (stacked) {
 	        assignMergeValue(object, key, stacked);
 	        return;
@@ -13867,9 +17231,9 @@
 	      var newValue = customizer
 	        ? customizer(objValue, srcValue, (key + ''), object, source, stack)
 	        : undefined;
-
+	
 	      var isCommon = newValue === undefined;
-
+	
 	      if (isCommon) {
 	        newValue = srcValue;
 	        if (isArray(srcValue) || isTypedArray(srcValue)) {
@@ -13901,7 +17265,7 @@
 	        }
 	      }
 	      stack.set(srcValue, newValue);
-
+	
 	      if (isCommon) {
 	        // Recursively merge objects and arrays (susceptible to call stack limits).
 	        mergeFunc(newValue, srcValue, srcIndex, customizer, stack);
@@ -13909,7 +17273,7 @@
 	      stack['delete'](srcValue);
 	      assignMergeValue(object, key, newValue);
 	    }
-
+	
 	    /**
 	     * The base implementation of `_.nth` which doesn't coerce `n` to an integer.
 	     *
@@ -13926,7 +17290,7 @@
 	      n += n < 0 ? length : 0;
 	      return isIndex(n, length) ? array[n] : undefined;
 	    }
-
+	
 	    /**
 	     * The base implementation of `_.orderBy` without param guards.
 	     *
@@ -13939,19 +17303,19 @@
 	    function baseOrderBy(collection, iteratees, orders) {
 	      var index = -1;
 	      iteratees = arrayMap(iteratees.length ? iteratees : [identity], baseUnary(getIteratee()));
-
+	
 	      var result = baseMap(collection, function(value, key, collection) {
 	        var criteria = arrayMap(iteratees, function(iteratee) {
 	          return iteratee(value);
 	        });
 	        return { 'criteria': criteria, 'index': ++index, 'value': value };
 	      });
-
+	
 	      return baseSortBy(result, function(object, other) {
 	        return compareMultiple(object, other, orders);
 	      });
 	    }
-
+	
 	    /**
 	     * The base implementation of `_.pick` without support for individual
 	     * property identifiers.
@@ -13970,7 +17334,7 @@
 	        return result;
 	      }, {});
 	    }
-
+	
 	    /**
 	     * The base implementation of  `_.pickBy` without support for iteratee shorthands.
 	     *
@@ -13984,18 +17348,18 @@
 	          props = getAllKeysIn(object),
 	          length = props.length,
 	          result = {};
-
+	
 	      while (++index < length) {
 	        var key = props[index],
 	            value = object[key];
-
+	
 	        if (predicate(value, key)) {
 	          result[key] = value;
 	        }
 	      }
 	      return result;
 	    }
-
+	
 	    /**
 	     * The base implementation of `_.property` without support for deep paths.
 	     *
@@ -14008,7 +17372,7 @@
 	        return object == null ? undefined : object[key];
 	      };
 	    }
-
+	
 	    /**
 	     * A specialized version of `baseProperty` which supports deep paths.
 	     *
@@ -14021,7 +17385,7 @@
 	        return baseGet(object, path);
 	      };
 	    }
-
+	
 	    /**
 	     * The base implementation of `_.pullAllBy` without support for iteratee
 	     * shorthands.
@@ -14038,7 +17402,7 @@
 	          index = -1,
 	          length = values.length,
 	          seen = array;
-
+	
 	      if (array === values) {
 	        values = copyArray(values);
 	      }
@@ -14049,7 +17413,7 @@
 	        var fromIndex = 0,
 	            value = values[index],
 	            computed = iteratee ? iteratee(value) : value;
-
+	
 	        while ((fromIndex = indexOf(seen, computed, fromIndex, comparator)) > -1) {
 	          if (seen !== array) {
 	            splice.call(seen, fromIndex, 1);
@@ -14059,7 +17423,7 @@
 	      }
 	      return array;
 	    }
-
+	
 	    /**
 	     * The base implementation of `_.pullAt` without support for individual
 	     * indexes or capturing the removed elements.
@@ -14072,7 +17436,7 @@
 	    function basePullAt(array, indexes) {
 	      var length = array ? indexes.length : 0,
 	          lastIndex = length - 1;
-
+	
 	      while (length--) {
 	        var index = indexes[length];
 	        if (length == lastIndex || index !== previous) {
@@ -14083,7 +17447,7 @@
 	          else if (!isKey(index, array)) {
 	            var path = castPath(index),
 	                object = parent(array, path);
-
+	
 	            if (object != null) {
 	              delete object[toKey(last(path))];
 	            }
@@ -14095,7 +17459,7 @@
 	      }
 	      return array;
 	    }
-
+	
 	    /**
 	     * The base implementation of `_.random` without support for returning
 	     * floating-point numbers.
@@ -14108,7 +17472,7 @@
 	    function baseRandom(lower, upper) {
 	      return lower + nativeFloor(nativeRandom() * (upper - lower + 1));
 	    }
-
+	
 	    /**
 	     * The base implementation of `_.range` and `_.rangeRight` which doesn't
 	     * coerce arguments to numbers.
@@ -14124,14 +17488,14 @@
 	      var index = -1,
 	          length = nativeMax(nativeCeil((end - start) / (step || 1)), 0),
 	          result = Array(length);
-
+	
 	      while (length--) {
 	        result[fromRight ? length : ++index] = start;
 	        start += step;
 	      }
 	      return result;
 	    }
-
+	
 	    /**
 	     * The base implementation of `_.repeat` which doesn't coerce arguments.
 	     *
@@ -14156,10 +17520,10 @@
 	          string += string;
 	        }
 	      } while (n);
-
+	
 	      return result;
 	    }
-
+	
 	    /**
 	     * The base implementation of `_.set`.
 	     *
@@ -14172,12 +17536,12 @@
 	     */
 	    function baseSet(object, path, value, customizer) {
 	      path = isKey(path, object) ? [path] : castPath(path);
-
+	
 	      var index = -1,
 	          length = path.length,
 	          lastIndex = length - 1,
 	          nested = object;
-
+	
 	      while (nested != null && ++index < length) {
 	        var key = toKey(path[index]);
 	        if (isObject(nested)) {
@@ -14197,7 +17561,7 @@
 	      }
 	      return object;
 	    }
-
+	
 	    /**
 	     * The base implementation of `setData` without support for hot loop detection.
 	     *
@@ -14210,7 +17574,7 @@
 	      metaMap.set(func, data);
 	      return func;
 	    };
-
+	
 	    /**
 	     * The base implementation of `_.slice` without an iteratee call guard.
 	     *
@@ -14223,7 +17587,7 @@
 	    function baseSlice(array, start, end) {
 	      var index = -1,
 	          length = array.length;
-
+	
 	      if (start < 0) {
 	        start = -start > length ? 0 : (length + start);
 	      }
@@ -14233,14 +17597,14 @@
 	      }
 	      length = start > end ? 0 : ((end - start) >>> 0);
 	      start >>>= 0;
-
+	
 	      var result = Array(length);
 	      while (++index < length) {
 	        result[index] = array[index + start];
 	      }
 	      return result;
 	    }
-
+	
 	    /**
 	     * The base implementation of `_.some` without support for iteratee shorthands.
 	     *
@@ -14252,14 +17616,14 @@
 	     */
 	    function baseSome(collection, predicate) {
 	      var result;
-
+	
 	      baseEach(collection, function(value, index, collection) {
 	        result = predicate(value, index, collection);
 	        return !result;
 	      });
 	      return !!result;
 	    }
-
+	
 	    /**
 	     * The base implementation of `_.sortedIndex` and `_.sortedLastIndex` which
 	     * performs a binary search of `array` to determine the index at which `value`
@@ -14275,12 +17639,12 @@
 	    function baseSortedIndex(array, value, retHighest) {
 	      var low = 0,
 	          high = array ? array.length : low;
-
+	
 	      if (typeof value == 'number' && value === value && high <= HALF_MAX_ARRAY_LENGTH) {
 	        while (low < high) {
 	          var mid = (low + high) >>> 1,
 	              computed = array[mid];
-
+	
 	          if (computed !== null && !isSymbol(computed) &&
 	              (retHighest ? (computed <= value) : (computed < value))) {
 	            low = mid + 1;
@@ -14292,7 +17656,7 @@
 	      }
 	      return baseSortedIndexBy(array, value, identity, retHighest);
 	    }
-
+	
 	    /**
 	     * The base implementation of `_.sortedIndexBy` and `_.sortedLastIndexBy`
 	     * which invokes `iteratee` for `value` and each element of `array` to compute
@@ -14308,14 +17672,14 @@
 	     */
 	    function baseSortedIndexBy(array, value, iteratee, retHighest) {
 	      value = iteratee(value);
-
+	
 	      var low = 0,
 	          high = array ? array.length : 0,
 	          valIsNaN = value !== value,
 	          valIsNull = value === null,
 	          valIsSymbol = isSymbol(value),
 	          valIsUndefined = value === undefined;
-
+	
 	      while (low < high) {
 	        var mid = nativeFloor((low + high) / 2),
 	            computed = iteratee(array[mid]),
@@ -14323,7 +17687,7 @@
 	            othIsNull = computed === null,
 	            othIsReflexive = computed === computed,
 	            othIsSymbol = isSymbol(computed);
-
+	
 	        if (valIsNaN) {
 	          var setLow = retHighest || othIsReflexive;
 	        } else if (valIsUndefined) {
@@ -14345,7 +17709,7 @@
 	      }
 	      return nativeMin(high, MAX_ARRAY_INDEX);
 	    }
-
+	
 	    /**
 	     * The base implementation of `_.sortedUniq` and `_.sortedUniqBy` without
 	     * support for iteratee shorthands.
@@ -14360,11 +17724,11 @@
 	          length = array.length,
 	          resIndex = 0,
 	          result = [];
-
+	
 	      while (++index < length) {
 	        var value = array[index],
 	            computed = iteratee ? iteratee(value) : value;
-
+	
 	        if (!index || !eq(computed, seen)) {
 	          var seen = computed;
 	          result[resIndex++] = value === 0 ? 0 : value;
@@ -14372,7 +17736,7 @@
 	      }
 	      return result;
 	    }
-
+	
 	    /**
 	     * The base implementation of `_.toNumber` which doesn't ensure correct
 	     * conversions of binary, hexadecimal, or octal string values.
@@ -14390,7 +17754,7 @@
 	      }
 	      return +value;
 	    }
-
+	
 	    /**
 	     * The base implementation of `_.toString` which doesn't convert nullish
 	     * values to empty strings.
@@ -14410,7 +17774,7 @@
 	      var result = (value + '');
 	      return (result == '0' && (1 / value) == -INFINITY) ? '-0' : result;
 	    }
-
+	
 	    /**
 	     * The base implementation of `_.uniqBy` without support for iteratee shorthands.
 	     *
@@ -14427,7 +17791,7 @@
 	          isCommon = true,
 	          result = [],
 	          seen = result;
-
+	
 	      if (comparator) {
 	        isCommon = false;
 	        includes = arrayIncludesWith;
@@ -14448,7 +17812,7 @@
 	      while (++index < length) {
 	        var value = array[index],
 	            computed = iteratee ? iteratee(value) : value;
-
+	
 	        value = (comparator || value !== 0) ? value : 0;
 	        if (isCommon && computed === computed) {
 	          var seenIndex = seen.length;
@@ -14471,7 +17835,7 @@
 	      }
 	      return result;
 	    }
-
+	
 	    /**
 	     * The base implementation of `_.unset`.
 	     *
@@ -14483,11 +17847,11 @@
 	    function baseUnset(object, path) {
 	      path = isKey(path, object) ? [path] : castPath(path);
 	      object = parent(object, path);
-
+	
 	      var key = toKey(last(path));
 	      return !(object != null && baseHas(object, key)) || delete object[key];
 	    }
-
+	
 	    /**
 	     * The base implementation of `_.update`.
 	     *
@@ -14501,7 +17865,7 @@
 	    function baseUpdate(object, path, updater, customizer) {
 	      return baseSet(object, path, updater(baseGet(object, path)), customizer);
 	    }
-
+	
 	    /**
 	     * The base implementation of methods like `_.dropWhile` and `_.takeWhile`
 	     * without support for iteratee shorthands.
@@ -14516,15 +17880,15 @@
 	    function baseWhile(array, predicate, isDrop, fromRight) {
 	      var length = array.length,
 	          index = fromRight ? length : -1;
-
+	
 	      while ((fromRight ? index-- : ++index < length) &&
 	        predicate(array[index], index, array)) {}
-
+	
 	      return isDrop
 	        ? baseSlice(array, (fromRight ? 0 : index), (fromRight ? index + 1 : length))
 	        : baseSlice(array, (fromRight ? index + 1 : 0), (fromRight ? length : index));
 	    }
-
+	
 	    /**
 	     * The base implementation of `wrapperValue` which returns the result of
 	     * performing a sequence of actions on the unwrapped `value`, where each
@@ -14544,7 +17908,7 @@
 	        return action.func.apply(action.thisArg, arrayPush([result], action.args));
 	      }, result);
 	    }
-
+	
 	    /**
 	     * The base implementation of methods like `_.xor`, without support for
 	     * iteratee shorthands, that accepts an array of arrays to inspect.
@@ -14558,7 +17922,7 @@
 	    function baseXor(arrays, iteratee, comparator) {
 	      var index = -1,
 	          length = arrays.length;
-
+	
 	      while (++index < length) {
 	        var result = result
 	          ? arrayPush(
@@ -14569,7 +17933,7 @@
 	      }
 	      return (result && result.length) ? baseUniq(result, iteratee, comparator) : [];
 	    }
-
+	
 	    /**
 	     * This base implementation of `_.zipObject` which assigns values using `assignFunc`.
 	     *
@@ -14584,14 +17948,14 @@
 	          length = props.length,
 	          valsLength = values.length,
 	          result = {};
-
+	
 	      while (++index < length) {
 	        var value = index < valsLength ? values[index] : undefined;
 	        assignFunc(result, props[index], value);
 	      }
 	      return result;
 	    }
-
+	
 	    /**
 	     * Casts `value` to an empty array if it's not an array like object.
 	     *
@@ -14602,7 +17966,7 @@
 	    function castArrayLikeObject(value) {
 	      return isArrayLikeObject(value) ? value : [];
 	    }
-
+	
 	    /**
 	     * Casts `value` to `identity` if it's not a function.
 	     *
@@ -14613,7 +17977,7 @@
 	    function castFunction(value) {
 	      return typeof value == 'function' ? value : identity;
 	    }
-
+	
 	    /**
 	     * Casts `value` to a path array if it's not one.
 	     *
@@ -14624,7 +17988,7 @@
 	    function castPath(value) {
 	      return isArray(value) ? value : stringToPath(value);
 	    }
-
+	
 	    /**
 	     * Casts `array` to a slice if it's needed.
 	     *
@@ -14639,7 +18003,7 @@
 	      end = end === undefined ? length : end;
 	      return (!start && end >= length) ? array : baseSlice(array, start, end);
 	    }
-
+	
 	    /**
 	     * Creates a clone of  `buffer`.
 	     *
@@ -14656,7 +18020,7 @@
 	      buffer.copy(result);
 	      return result;
 	    }
-
+	
 	    /**
 	     * Creates a clone of `arrayBuffer`.
 	     *
@@ -14669,7 +18033,7 @@
 	      new Uint8Array(result).set(new Uint8Array(arrayBuffer));
 	      return result;
 	    }
-
+	
 	    /**
 	     * Creates a clone of `dataView`.
 	     *
@@ -14682,7 +18046,7 @@
 	      var buffer = isDeep ? cloneArrayBuffer(dataView.buffer) : dataView.buffer;
 	      return new dataView.constructor(buffer, dataView.byteOffset, dataView.byteLength);
 	    }
-
+	
 	    /**
 	     * Creates a clone of `map`.
 	     *
@@ -14696,7 +18060,7 @@
 	      var array = isDeep ? cloneFunc(mapToArray(map), true) : mapToArray(map);
 	      return arrayReduce(array, addMapEntry, new map.constructor);
 	    }
-
+	
 	    /**
 	     * Creates a clone of `regexp`.
 	     *
@@ -14709,7 +18073,7 @@
 	      result.lastIndex = regexp.lastIndex;
 	      return result;
 	    }
-
+	
 	    /**
 	     * Creates a clone of `set`.
 	     *
@@ -14723,7 +18087,7 @@
 	      var array = isDeep ? cloneFunc(setToArray(set), true) : setToArray(set);
 	      return arrayReduce(array, addSetEntry, new set.constructor);
 	    }
-
+	
 	    /**
 	     * Creates a clone of the `symbol` object.
 	     *
@@ -14734,7 +18098,7 @@
 	    function cloneSymbol(symbol) {
 	      return symbolValueOf ? Object(symbolValueOf.call(symbol)) : {};
 	    }
-
+	
 	    /**
 	     * Creates a clone of `typedArray`.
 	     *
@@ -14747,7 +18111,7 @@
 	      var buffer = isDeep ? cloneArrayBuffer(typedArray.buffer) : typedArray.buffer;
 	      return new typedArray.constructor(buffer, typedArray.byteOffset, typedArray.length);
 	    }
-
+	
 	    /**
 	     * Compares values to sort them in ascending order.
 	     *
@@ -14762,12 +18126,12 @@
 	            valIsNull = value === null,
 	            valIsReflexive = value === value,
 	            valIsSymbol = isSymbol(value);
-
+	
 	        var othIsDefined = other !== undefined,
 	            othIsNull = other === null,
 	            othIsReflexive = other === other,
 	            othIsSymbol = isSymbol(other);
-
+	
 	        if ((!othIsNull && !othIsSymbol && !valIsSymbol && value > other) ||
 	            (valIsSymbol && othIsDefined && othIsReflexive && !othIsNull && !othIsSymbol) ||
 	            (valIsNull && othIsDefined && othIsReflexive) ||
@@ -14785,7 +18149,7 @@
 	      }
 	      return 0;
 	    }
-
+	
 	    /**
 	     * Used by `_.orderBy` to compare multiple properties of a value to another
 	     * and stable sort them.
@@ -14806,7 +18170,7 @@
 	          othCriteria = other.criteria,
 	          length = objCriteria.length,
 	          ordersLength = orders.length;
-
+	
 	      while (++index < length) {
 	        var result = compareAscending(objCriteria[index], othCriteria[index]);
 	        if (result) {
@@ -14826,7 +18190,7 @@
 	      // See https://bugs.chromium.org/p/v8/issues/detail?id=90 for more details.
 	      return object.index - other.index;
 	    }
-
+	
 	    /**
 	     * Creates an array that is the composition of partially applied arguments,
 	     * placeholders, and provided arguments into a single array of arguments.
@@ -14847,7 +18211,7 @@
 	          rangeLength = nativeMax(argsLength - holdersLength, 0),
 	          result = Array(leftLength + rangeLength),
 	          isUncurried = !isCurried;
-
+	
 	      while (++leftIndex < leftLength) {
 	        result[leftIndex] = partials[leftIndex];
 	      }
@@ -14861,7 +18225,7 @@
 	      }
 	      return result;
 	    }
-
+	
 	    /**
 	     * This function is like `composeArgs` except that the arguments composition
 	     * is tailored for `_.partialRight`.
@@ -14883,7 +18247,7 @@
 	          rangeLength = nativeMax(argsLength - holdersLength, 0),
 	          result = Array(rangeLength + rightLength),
 	          isUncurried = !isCurried;
-
+	
 	      while (++argsIndex < rangeLength) {
 	        result[argsIndex] = args[argsIndex];
 	      }
@@ -14898,7 +18262,7 @@
 	      }
 	      return result;
 	    }
-
+	
 	    /**
 	     * Copies the values of `source` to `array`.
 	     *
@@ -14910,14 +18274,14 @@
 	    function copyArray(source, array) {
 	      var index = -1,
 	          length = source.length;
-
+	
 	      array || (array = Array(length));
 	      while (++index < length) {
 	        array[index] = source[index];
 	      }
 	      return array;
 	    }
-
+	
 	    /**
 	     * Copies properties of `source` to `object`.
 	     *
@@ -14930,22 +18294,22 @@
 	     */
 	    function copyObject(source, props, object, customizer) {
 	      object || (object = {});
-
+	
 	      var index = -1,
 	          length = props.length;
-
+	
 	      while (++index < length) {
 	        var key = props[index];
-
+	
 	        var newValue = customizer
 	          ? customizer(object[key], source[key], key, object, source)
 	          : source[key];
-
+	
 	        assignValue(object, key, newValue);
 	      }
 	      return object;
 	    }
-
+	
 	    /**
 	     * Copies own symbol properties of `source` to `object`.
 	     *
@@ -14957,7 +18321,7 @@
 	    function copySymbols(source, object) {
 	      return copyObject(source, getSymbols(source), object);
 	    }
-
+	
 	    /**
 	     * Creates a function like `_.groupBy`.
 	     *
@@ -14970,11 +18334,11 @@
 	      return function(collection, iteratee) {
 	        var func = isArray(collection) ? arrayAggregator : baseAggregator,
 	            accumulator = initializer ? initializer() : {};
-
+	
 	        return func(collection, setter, getIteratee(iteratee), accumulator);
 	      };
 	    }
-
+	
 	    /**
 	     * Creates a function like `_.assign`.
 	     *
@@ -14988,11 +18352,11 @@
 	            length = sources.length,
 	            customizer = length > 1 ? sources[length - 1] : undefined,
 	            guard = length > 2 ? sources[2] : undefined;
-
+	
 	        customizer = (assigner.length > 3 && typeof customizer == 'function')
 	          ? (length--, customizer)
 	          : undefined;
-
+	
 	        if (guard && isIterateeCall(sources[0], sources[1], guard)) {
 	          customizer = length < 3 ? undefined : customizer;
 	          length = 1;
@@ -15007,7 +18371,7 @@
 	        return object;
 	      });
 	    }
-
+	
 	    /**
 	     * Creates a `baseEach` or `baseEachRight` function.
 	     *
@@ -15027,7 +18391,7 @@
 	        var length = collection.length,
 	            index = fromRight ? length : -1,
 	            iterable = Object(collection);
-
+	
 	        while ((fromRight ? index-- : ++index < length)) {
 	          if (iteratee(iterable[index], index, iterable) === false) {
 	            break;
@@ -15036,7 +18400,7 @@
 	        return collection;
 	      };
 	    }
-
+	
 	    /**
 	     * Creates a base function for methods like `_.forIn` and `_.forOwn`.
 	     *
@@ -15050,7 +18414,7 @@
 	            iterable = Object(object),
 	            props = keysFunc(object),
 	            length = props.length;
-
+	
 	        while (length--) {
 	          var key = props[fromRight ? length : ++index];
 	          if (iteratee(iterable[key], key, iterable) === false) {
@@ -15060,7 +18424,7 @@
 	        return object;
 	      };
 	    }
-
+	
 	    /**
 	     * Creates a function that wraps `func` to invoke it with the optional `this`
 	     * binding of `thisArg`.
@@ -15075,14 +18439,14 @@
 	    function createBaseWrapper(func, bitmask, thisArg) {
 	      var isBind = bitmask & BIND_FLAG,
 	          Ctor = createCtorWrapper(func);
-
+	
 	      function wrapper() {
 	        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
 	        return fn.apply(isBind ? thisArg : this, arguments);
 	      }
 	      return wrapper;
 	    }
-
+	
 	    /**
 	     * Creates a function like `_.lowerFirst`.
 	     *
@@ -15093,23 +18457,23 @@
 	    function createCaseFirst(methodName) {
 	      return function(string) {
 	        string = toString(string);
-
+	
 	        var strSymbols = reHasComplexSymbol.test(string)
 	          ? stringToArray(string)
 	          : undefined;
-
+	
 	        var chr = strSymbols
 	          ? strSymbols[0]
 	          : string.charAt(0);
-
+	
 	        var trailing = strSymbols
 	          ? castSlice(strSymbols, 1).join('')
 	          : string.slice(1);
-
+	
 	        return chr[methodName]() + trailing;
 	      };
 	    }
-
+	
 	    /**
 	     * Creates a function like `_.camelCase`.
 	     *
@@ -15122,7 +18486,7 @@
 	        return arrayReduce(words(deburr(string).replace(reApos, '')), callback, '');
 	      };
 	    }
-
+	
 	    /**
 	     * Creates a function that produces an instance of `Ctor` regardless of
 	     * whether it was invoked as part of a `new` expression or by `call` or `apply`.
@@ -15149,13 +18513,13 @@
 	        }
 	        var thisBinding = baseCreate(Ctor.prototype),
 	            result = Ctor.apply(thisBinding, args);
-
+	
 	        // Mimic the constructor's `return` behavior.
 	        // See https://es5.github.io/#x13.2.2 for more details.
 	        return isObject(result) ? result : thisBinding;
 	      };
 	    }
-
+	
 	    /**
 	     * Creates a function that wraps `func` to enable currying.
 	     *
@@ -15168,20 +18532,20 @@
 	     */
 	    function createCurryWrapper(func, bitmask, arity) {
 	      var Ctor = createCtorWrapper(func);
-
+	
 	      function wrapper() {
 	        var length = arguments.length,
 	            args = Array(length),
 	            index = length,
 	            placeholder = getHolder(wrapper);
-
+	
 	        while (index--) {
 	          args[index] = arguments[index];
 	        }
 	        var holders = (length < 3 && args[0] !== placeholder && args[length - 1] !== placeholder)
 	          ? []
 	          : replaceHolders(args, placeholder);
-
+	
 	        length -= holders.length;
 	        if (length < arity) {
 	          return createRecurryWrapper(
@@ -15193,7 +18557,7 @@
 	      }
 	      return wrapper;
 	    }
-
+	
 	    /**
 	     * Creates a `_.find` or `_.findLast` function.
 	     *
@@ -15218,7 +18582,7 @@
 	        return index > -1 ? collection[props ? props[index] : index] : undefined;
 	      };
 	    }
-
+	
 	    /**
 	     * Creates a `_.flow` or `_.flowRight` function.
 	     *
@@ -15229,11 +18593,11 @@
 	    function createFlow(fromRight) {
 	      return rest(function(funcs) {
 	        funcs = baseFlatten(funcs, 1);
-
+	
 	        var length = funcs.length,
 	            index = length,
 	            prereq = LodashWrapper.prototype.thru;
-
+	
 	        if (fromRight) {
 	          funcs.reverse();
 	        }
@@ -15249,10 +18613,10 @@
 	        index = wrapper ? index : length;
 	        while (++index < length) {
 	          func = funcs[index];
-
+	
 	          var funcName = getFuncName(func),
 	              data = funcName == 'wrapper' ? getData(func) : undefined;
-
+	
 	          if (data && isLaziable(data[0]) &&
 	                data[1] == (ARY_FLAG | CURRY_FLAG | PARTIAL_FLAG | REARG_FLAG) &&
 	                !data[4].length && data[9] == 1
@@ -15267,14 +18631,14 @@
 	        return function() {
 	          var args = arguments,
 	              value = args[0];
-
+	
 	          if (wrapper && args.length == 1 &&
 	              isArray(value) && value.length >= LARGE_ARRAY_SIZE) {
 	            return wrapper.plant(value).value();
 	          }
 	          var index = 0,
 	              result = length ? funcs[index].apply(this, args) : value;
-
+	
 	          while (++index < length) {
 	            result = funcs[index].call(this, result);
 	          }
@@ -15282,7 +18646,7 @@
 	        };
 	      });
 	    }
-
+	
 	    /**
 	     * Creates a function that wraps `func` to invoke it with optional `this`
 	     * binding of `thisArg`, partial application, and currying.
@@ -15310,12 +18674,12 @@
 	          isCurried = bitmask & (CURRY_FLAG | CURRY_RIGHT_FLAG),
 	          isFlip = bitmask & FLIP_FLAG,
 	          Ctor = isBindKey ? undefined : createCtorWrapper(func);
-
+	
 	      function wrapper() {
 	        var length = arguments.length,
 	            args = Array(length),
 	            index = length;
-
+	
 	        while (index--) {
 	          args[index] = arguments[index];
 	        }
@@ -15339,7 +18703,7 @@
 	        }
 	        var thisBinding = isBind ? thisArg : this,
 	            fn = isBindKey ? thisBinding[func] : func;
-
+	
 	        length = args.length;
 	        if (argPos) {
 	          args = reorder(args, argPos);
@@ -15356,7 +18720,7 @@
 	      }
 	      return wrapper;
 	    }
-
+	
 	    /**
 	     * Creates a function like `_.invertBy`.
 	     *
@@ -15370,7 +18734,7 @@
 	        return baseInverter(object, setter, toIteratee(iteratee), {});
 	      };
 	    }
-
+	
 	    /**
 	     * Creates a function that performs a mathematical operation on two values.
 	     *
@@ -15403,7 +18767,7 @@
 	        return result;
 	      };
 	    }
-
+	
 	    /**
 	     * Creates a function like `_.over`.
 	     *
@@ -15416,7 +18780,7 @@
 	        iteratees = (iteratees.length == 1 && isArray(iteratees[0]))
 	          ? arrayMap(iteratees[0], baseUnary(getIteratee()))
 	          : arrayMap(baseFlatten(iteratees, 1, isFlattenableIteratee), baseUnary(getIteratee()));
-
+	
 	        return rest(function(args) {
 	          var thisArg = this;
 	          return arrayFunc(iteratees, function(iteratee) {
@@ -15425,7 +18789,7 @@
 	        });
 	      });
 	    }
-
+	
 	    /**
 	     * Creates the padding for `string` based on `length`. The `chars` string
 	     * is truncated if the number of characters exceeds `length`.
@@ -15437,7 +18801,7 @@
 	     */
 	    function createPadding(length, chars) {
 	      chars = chars === undefined ? ' ' : baseToString(chars);
-
+	
 	      var charsLength = chars.length;
 	      if (charsLength < 2) {
 	        return charsLength ? baseRepeat(chars, length) : chars;
@@ -15447,7 +18811,7 @@
 	        ? castSlice(stringToArray(result), 0, length).join('')
 	        : result.slice(0, length);
 	    }
-
+	
 	    /**
 	     * Creates a function that wraps `func` to invoke it with the `this` binding
 	     * of `thisArg` and `partials` prepended to the arguments it receives.
@@ -15464,7 +18828,7 @@
 	    function createPartialWrapper(func, bitmask, thisArg, partials) {
 	      var isBind = bitmask & BIND_FLAG,
 	          Ctor = createCtorWrapper(func);
-
+	
 	      function wrapper() {
 	        var argsIndex = -1,
 	            argsLength = arguments.length,
@@ -15472,7 +18836,7 @@
 	            leftLength = partials.length,
 	            args = Array(leftLength + argsLength),
 	            fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
-
+	
 	        while (++leftIndex < leftLength) {
 	          args[leftIndex] = partials[leftIndex];
 	        }
@@ -15483,7 +18847,7 @@
 	      }
 	      return wrapper;
 	    }
-
+	
 	    /**
 	     * Creates a `_.range` or `_.rangeRight` function.
 	     *
@@ -15509,7 +18873,7 @@
 	        return baseRange(start, end, step, fromRight);
 	      };
 	    }
-
+	
 	    /**
 	     * Creates a function that performs a relational operation on two values.
 	     *
@@ -15526,7 +18890,7 @@
 	        return operator(value, other);
 	      };
 	    }
-
+	
 	    /**
 	     * Creates a function that wraps `func` to continue currying.
 	     *
@@ -15551,10 +18915,10 @@
 	          newHoldersRight = isCurry ? undefined : holders,
 	          newPartials = isCurry ? partials : undefined,
 	          newPartialsRight = isCurry ? undefined : partials;
-
+	
 	      bitmask |= (isCurry ? PARTIAL_FLAG : PARTIAL_RIGHT_FLAG);
 	      bitmask &= ~(isCurry ? PARTIAL_RIGHT_FLAG : PARTIAL_FLAG);
-
+	
 	      if (!(bitmask & CURRY_BOUND_FLAG)) {
 	        bitmask &= ~(BIND_FLAG | BIND_KEY_FLAG);
 	      }
@@ -15562,7 +18926,7 @@
 	        func, bitmask, thisArg, newPartials, newHolders, newPartialsRight,
 	        newHoldersRight, argPos, ary, arity
 	      ];
-
+	
 	      var result = wrapFunc.apply(undefined, newData);
 	      if (isLaziable(func)) {
 	        setData(result, newData);
@@ -15570,7 +18934,7 @@
 	      result.placeholder = placeholder;
 	      return result;
 	    }
-
+	
 	    /**
 	     * Creates a function like `_.round`.
 	     *
@@ -15588,14 +18952,14 @@
 	          // See [MDN](https://mdn.io/round#Examples) for more details.
 	          var pair = (toString(number) + 'e').split('e'),
 	              value = func(pair[0] + 'e' + (+pair[1] + precision));
-
+	
 	          pair = (toString(value) + 'e').split('e');
 	          return +(pair[0] + 'e' + (+pair[1] - precision));
 	        }
 	        return func(number);
 	      };
 	    }
-
+	
 	    /**
 	     * Creates a set of `values`.
 	     *
@@ -15606,7 +18970,7 @@
 	    var createSet = !(Set && (1 / setToArray(new Set([,-0]))[1]) == INFINITY) ? noop : function(values) {
 	      return new Set(values);
 	    };
-
+	
 	    /**
 	     * Creates a `_.toPairs` or `_.toPairsIn` function.
 	     *
@@ -15626,7 +18990,7 @@
 	        return baseToPairs(object, keysFunc(object));
 	      };
 	    }
-
+	
 	    /**
 	     * Creates a function that either curries or invokes `func` with optional
 	     * `this` binding and partially applied arguments.
@@ -15666,20 +19030,20 @@
 	      ary = ary === undefined ? ary : nativeMax(toInteger(ary), 0);
 	      arity = arity === undefined ? arity : toInteger(arity);
 	      length -= holders ? holders.length : 0;
-
+	
 	      if (bitmask & PARTIAL_RIGHT_FLAG) {
 	        var partialsRight = partials,
 	            holdersRight = holders;
-
+	
 	        partials = holders = undefined;
 	      }
 	      var data = isBindKey ? undefined : getData(func);
-
+	
 	      var newData = [
 	        func, bitmask, thisArg, partials, holders, partialsRight, holdersRight,
 	        argPos, ary, arity
 	      ];
-
+	
 	      if (data) {
 	        mergeData(newData, data);
 	      }
@@ -15691,7 +19055,7 @@
 	      arity = newData[9] = newData[9] == null
 	        ? (isBindKey ? 0 : func.length)
 	        : nativeMax(newData[9] - length, 0);
-
+	
 	      if (!arity && bitmask & (CURRY_FLAG | CURRY_RIGHT_FLAG)) {
 	        bitmask &= ~(CURRY_FLAG | CURRY_RIGHT_FLAG);
 	      }
@@ -15707,7 +19071,7 @@
 	      var setter = data ? baseSetData : setData;
 	      return setter(result, newData);
 	    }
-
+	
 	    /**
 	     * A specialized version of `baseIsEqualDeep` for arrays with support for
 	     * partial deep comparisons.
@@ -15726,7 +19090,7 @@
 	      var isPartial = bitmask & PARTIAL_COMPARE_FLAG,
 	          arrLength = array.length,
 	          othLength = other.length;
-
+	
 	      if (arrLength != othLength && !(isPartial && othLength > arrLength)) {
 	        return false;
 	      }
@@ -15738,14 +19102,14 @@
 	      var index = -1,
 	          result = true,
 	          seen = (bitmask & UNORDERED_COMPARE_FLAG) ? new SetCache : undefined;
-
+	
 	      stack.set(array, other);
-
+	
 	      // Ignore non-index properties.
 	      while (++index < arrLength) {
 	        var arrValue = array[index],
 	            othValue = other[index];
-
+	
 	        if (customizer) {
 	          var compared = isPartial
 	            ? customizer(othValue, arrValue, index, other, array, stack)
@@ -15780,7 +19144,7 @@
 	      stack['delete'](array);
 	      return result;
 	    }
-
+	
 	    /**
 	     * A specialized version of `baseIsEqualDeep` for comparing objects of
 	     * the same `toStringTag`.
@@ -15808,42 +19172,42 @@
 	          }
 	          object = object.buffer;
 	          other = other.buffer;
-
+	
 	        case arrayBufferTag:
 	          if ((object.byteLength != other.byteLength) ||
 	              !equalFunc(new Uint8Array(object), new Uint8Array(other))) {
 	            return false;
 	          }
 	          return true;
-
+	
 	        case boolTag:
 	        case dateTag:
 	          // Coerce dates and booleans to numbers, dates to milliseconds and
 	          // booleans to `1` or `0` treating invalid dates coerced to `NaN` as
 	          // not equal.
 	          return +object == +other;
-
+	
 	        case errorTag:
 	          return object.name == other.name && object.message == other.message;
-
+	
 	        case numberTag:
 	          // Treat `NaN` vs. `NaN` as equal.
 	          return (object != +object) ? other != +other : object == +other;
-
+	
 	        case regexpTag:
 	        case stringTag:
 	          // Coerce regexes to strings and treat strings, primitives and objects,
 	          // as equal. See http://www.ecma-international.org/ecma-262/6.0/#sec-regexp.prototype.tostring
 	          // for more details.
 	          return object == (other + '');
-
+	
 	        case mapTag:
 	          var convert = mapToArray;
-
+	
 	        case setTag:
 	          var isPartial = bitmask & PARTIAL_COMPARE_FLAG;
 	          convert || (convert = setToArray);
-
+	
 	          if (object.size != other.size && !isPartial) {
 	            return false;
 	          }
@@ -15854,10 +19218,10 @@
 	          }
 	          bitmask |= UNORDERED_COMPARE_FLAG;
 	          stack.set(object, other);
-
+	
 	          // Recursively compare objects (susceptible to call stack limits).
 	          return equalArrays(convert(object), convert(other), equalFunc, customizer, bitmask, stack);
-
+	
 	        case symbolTag:
 	          if (symbolValueOf) {
 	            return symbolValueOf.call(object) == symbolValueOf.call(other);
@@ -15865,7 +19229,7 @@
 	      }
 	      return false;
 	    }
-
+	
 	    /**
 	     * A specialized version of `baseIsEqualDeep` for objects with support for
 	     * partial deep comparisons.
@@ -15886,7 +19250,7 @@
 	          objLength = objProps.length,
 	          othProps = keys(other),
 	          othLength = othProps.length;
-
+	
 	      if (objLength != othLength && !isPartial) {
 	        return false;
 	      }
@@ -15904,13 +19268,13 @@
 	      }
 	      var result = true;
 	      stack.set(object, other);
-
+	
 	      var skipCtor = isPartial;
 	      while (++index < objLength) {
 	        key = objProps[index];
 	        var objValue = object[key],
 	            othValue = other[key];
-
+	
 	        if (customizer) {
 	          var compared = isPartial
 	            ? customizer(othValue, objValue, key, other, object, stack)
@@ -15929,7 +19293,7 @@
 	      if (result && !skipCtor) {
 	        var objCtor = object.constructor,
 	            othCtor = other.constructor;
-
+	
 	        // Non `Object` object instances with different constructors are not equal.
 	        if (objCtor != othCtor &&
 	            ('constructor' in object && 'constructor' in other) &&
@@ -15941,7 +19305,7 @@
 	      stack['delete'](object);
 	      return result;
 	    }
-
+	
 	    /**
 	     * Creates an array of own enumerable property names and symbols of `object`.
 	     *
@@ -15952,7 +19316,7 @@
 	    function getAllKeys(object) {
 	      return baseGetAllKeys(object, keys, getSymbols);
 	    }
-
+	
 	    /**
 	     * Creates an array of own and inherited enumerable property names and
 	     * symbols of `object`.
@@ -15964,7 +19328,7 @@
 	    function getAllKeysIn(object) {
 	      return baseGetAllKeys(object, keysIn, getSymbolsIn);
 	    }
-
+	
 	    /**
 	     * Gets metadata for `func`.
 	     *
@@ -15975,7 +19339,7 @@
 	    var getData = !metaMap ? noop : function(func) {
 	      return metaMap.get(func);
 	    };
-
+	
 	    /**
 	     * Gets the name of `func`.
 	     *
@@ -15987,7 +19351,7 @@
 	      var result = (func.name + ''),
 	          array = realNames[result],
 	          length = hasOwnProperty.call(realNames, result) ? array.length : 0;
-
+	
 	      while (length--) {
 	        var data = array[length],
 	            otherFunc = data.func;
@@ -15997,7 +19361,7 @@
 	      }
 	      return result;
 	    }
-
+	
 	    /**
 	     * Gets the argument placeholder value for `func`.
 	     *
@@ -16009,7 +19373,7 @@
 	      var object = hasOwnProperty.call(lodash, 'placeholder') ? lodash : func;
 	      return object.placeholder;
 	    }
-
+	
 	    /**
 	     * Gets the appropriate "iteratee" function. If `_.iteratee` is customized,
 	     * this function returns the custom method, otherwise it returns `baseIteratee`.
@@ -16026,7 +19390,7 @@
 	      result = result === iteratee ? baseIteratee : result;
 	      return arguments.length ? result(arguments[0], arguments[1]) : result;
 	    }
-
+	
 	    /**
 	     * Gets the "length" property value of `object`.
 	     *
@@ -16039,7 +19403,7 @@
 	     * @returns {*} Returns the "length" value.
 	     */
 	    var getLength = baseProperty('length');
-
+	
 	    /**
 	     * Gets the data for `map`.
 	     *
@@ -16054,7 +19418,7 @@
 	        ? data[typeof key == 'string' ? 'string' : 'hash']
 	        : data.map;
 	    }
-
+	
 	    /**
 	     * Gets the property names, values, and compare flags of `object`.
 	     *
@@ -16065,16 +19429,16 @@
 	    function getMatchData(object) {
 	      var result = keys(object),
 	          length = result.length;
-
+	
 	      while (length--) {
 	        var key = result[length],
 	            value = object[key];
-
+	
 	        result[length] = [key, value, isStrictComparable(value)];
 	      }
 	      return result;
 	    }
-
+	
 	    /**
 	     * Gets the native function at `key` of `object`.
 	     *
@@ -16087,7 +19451,7 @@
 	      var value = getValue(object, key);
 	      return baseIsNative(value) ? value : undefined;
 	    }
-
+	
 	    /**
 	     * Gets the `[[Prototype]]` of `value`.
 	     *
@@ -16098,7 +19462,7 @@
 	    function getPrototype(value) {
 	      return nativeGetPrototype(Object(value));
 	    }
-
+	
 	    /**
 	     * Creates an array of the own enumerable symbol properties of `object`.
 	     *
@@ -16111,12 +19475,12 @@
 	      // See https://bugs.chromium.org/p/v8/issues/detail?id=3443 for more details.
 	      return getOwnPropertySymbols(Object(object));
 	    }
-
+	
 	    // Fallback for IE < 11.
 	    if (!getOwnPropertySymbols) {
 	      getSymbols = stubArray;
 	    }
-
+	
 	    /**
 	     * Creates an array of the own and inherited enumerable symbol properties
 	     * of `object`.
@@ -16133,7 +19497,7 @@
 	      }
 	      return result;
 	    };
-
+	
 	    /**
 	     * Gets the `toStringTag` of `value`.
 	     *
@@ -16144,7 +19508,7 @@
 	    function getTag(value) {
 	      return objectToString.call(value);
 	    }
-
+	
 	    // Fallback for data views, maps, sets, and weak maps in IE 11,
 	    // for data views in Edge, and promises in Node.js.
 	    if ((DataView && getTag(new DataView(new ArrayBuffer(1))) != dataViewTag) ||
@@ -16156,7 +19520,7 @@
 	        var result = objectToString.call(value),
 	            Ctor = result == objectTag ? value.constructor : undefined,
 	            ctorString = Ctor ? toSource(Ctor) : undefined;
-
+	
 	        if (ctorString) {
 	          switch (ctorString) {
 	            case dataViewCtorString: return dataViewTag;
@@ -16169,7 +19533,7 @@
 	        return result;
 	      };
 	    }
-
+	
 	    /**
 	     * Gets the view, applying any `transforms` to the `start` and `end` positions.
 	     *
@@ -16183,11 +19547,11 @@
 	    function getView(start, end, transforms) {
 	      var index = -1,
 	          length = transforms.length;
-
+	
 	      while (++index < length) {
 	        var data = transforms[index],
 	            size = data.size;
-
+	
 	        switch (data.type) {
 	          case 'drop':      start += size; break;
 	          case 'dropRight': end -= size; break;
@@ -16197,7 +19561,7 @@
 	      }
 	      return { 'start': start, 'end': end };
 	    }
-
+	
 	    /**
 	     * Checks if `path` exists on `object`.
 	     *
@@ -16209,11 +19573,11 @@
 	     */
 	    function hasPath(object, path, hasFunc) {
 	      path = isKey(path, object) ? [path] : castPath(path);
-
+	
 	      var result,
 	          index = -1,
 	          length = path.length;
-
+	
 	      while (++index < length) {
 	        var key = toKey(path[index]);
 	        if (!(result = object != null && hasFunc(object, key))) {
@@ -16228,7 +19592,7 @@
 	      return !!length && isLength(length) && isIndex(key, length) &&
 	        (isArray(object) || isString(object) || isArguments(object));
 	    }
-
+	
 	    /**
 	     * Initializes an array clone.
 	     *
@@ -16239,7 +19603,7 @@
 	    function initCloneArray(array) {
 	      var length = array.length,
 	          result = array.constructor(length);
-
+	
 	      // Add properties assigned by `RegExp#exec`.
 	      if (length && typeof array[0] == 'string' && hasOwnProperty.call(array, 'index')) {
 	        result.index = array.index;
@@ -16247,7 +19611,7 @@
 	      }
 	      return result;
 	    }
-
+	
 	    /**
 	     * Initializes an object clone.
 	     *
@@ -16260,7 +19624,7 @@
 	        ? baseCreate(getPrototype(object))
 	        : {};
 	    }
-
+	
 	    /**
 	     * Initializes an object clone based on its `toStringTag`.
 	     *
@@ -16279,37 +19643,37 @@
 	      switch (tag) {
 	        case arrayBufferTag:
 	          return cloneArrayBuffer(object);
-
+	
 	        case boolTag:
 	        case dateTag:
 	          return new Ctor(+object);
-
+	
 	        case dataViewTag:
 	          return cloneDataView(object, isDeep);
-
+	
 	        case float32Tag: case float64Tag:
 	        case int8Tag: case int16Tag: case int32Tag:
 	        case uint8Tag: case uint8ClampedTag: case uint16Tag: case uint32Tag:
 	          return cloneTypedArray(object, isDeep);
-
+	
 	        case mapTag:
 	          return cloneMap(object, isDeep, cloneFunc);
-
+	
 	        case numberTag:
 	        case stringTag:
 	          return new Ctor(object);
-
+	
 	        case regexpTag:
 	          return cloneRegExp(object);
-
+	
 	        case setTag:
 	          return cloneSet(object, isDeep, cloneFunc);
-
+	
 	        case symbolTag:
 	          return cloneSymbol(object);
 	      }
 	    }
-
+	
 	    /**
 	     * Creates an array of index keys for `object` values of arrays,
 	     * `arguments` objects, and strings, otherwise `null` is returned.
@@ -16326,7 +19690,7 @@
 	      }
 	      return null;
 	    }
-
+	
 	    /**
 	     * Checks if `value` is a flattenable `arguments` object or array.
 	     *
@@ -16337,7 +19701,7 @@
 	    function isFlattenable(value) {
 	      return isArray(value) || isArguments(value);
 	    }
-
+	
 	    /**
 	     * Checks if `value` is a flattenable array and not a `_.matchesProperty`
 	     * iteratee shorthand.
@@ -16349,7 +19713,7 @@
 	    function isFlattenableIteratee(value) {
 	      return isArray(value) && !(value.length == 2 && !isFunction(value[0]));
 	    }
-
+	
 	    /**
 	     * Checks if `value` is a valid array-like index.
 	     *
@@ -16364,7 +19728,7 @@
 	        (typeof value == 'number' || reIsUint.test(value)) &&
 	        (value > -1 && value % 1 == 0 && value < length);
 	    }
-
+	
 	    /**
 	     * Checks if the given arguments are from an iteratee call.
 	     *
@@ -16388,7 +19752,7 @@
 	      }
 	      return false;
 	    }
-
+	
 	    /**
 	     * Checks if `value` is a property name and not a property path.
 	     *
@@ -16409,7 +19773,7 @@
 	      return reIsPlainProp.test(value) || !reIsDeepProp.test(value) ||
 	        (object != null && value in Object(object));
 	    }
-
+	
 	    /**
 	     * Checks if `value` is suitable for use as unique object key.
 	     *
@@ -16423,7 +19787,7 @@
 	        ? (value !== '__proto__')
 	        : (value === null);
 	    }
-
+	
 	    /**
 	     * Checks if `func` has a lazy counterpart.
 	     *
@@ -16435,7 +19799,7 @@
 	    function isLaziable(func) {
 	      var funcName = getFuncName(func),
 	          other = lodash[funcName];
-
+	
 	      if (typeof other != 'function' || !(funcName in LazyWrapper.prototype)) {
 	        return false;
 	      }
@@ -16445,7 +19809,7 @@
 	      var data = getData(other);
 	      return !!data && func === data[0];
 	    }
-
+	
 	    /**
 	     * Checks if `func` has its source masked.
 	     *
@@ -16456,7 +19820,7 @@
 	    function isMasked(func) {
 	      return !!maskSrcKey && (maskSrcKey in func);
 	    }
-
+	
 	    /**
 	     * Checks if `func` is capable of being masked.
 	     *
@@ -16465,7 +19829,7 @@
 	     * @returns {boolean} Returns `true` if `func` is maskable, else `false`.
 	     */
 	    var isMaskable = coreJsData ? isFunction : stubFalse;
-
+	
 	    /**
 	     * Checks if `value` is likely a prototype object.
 	     *
@@ -16476,10 +19840,10 @@
 	    function isPrototype(value) {
 	      var Ctor = value && value.constructor,
 	          proto = (typeof Ctor == 'function' && Ctor.prototype) || objectProto;
-
+	
 	      return value === proto;
 	    }
-
+	
 	    /**
 	     * Checks if `value` is suitable for strict equality comparisons, i.e. `===`.
 	     *
@@ -16491,7 +19855,7 @@
 	    function isStrictComparable(value) {
 	      return value === value && !isObject(value);
 	    }
-
+	
 	    /**
 	     * A specialized version of `matchesProperty` for source values suitable
 	     * for strict equality comparisons, i.e. `===`.
@@ -16510,7 +19874,7 @@
 	          (srcValue !== undefined || (key in Object(object)));
 	      };
 	    }
-
+	
 	    /**
 	     * Merges the function metadata of `source` into `data`.
 	     *
@@ -16532,12 +19896,12 @@
 	          srcBitmask = source[1],
 	          newBitmask = bitmask | srcBitmask,
 	          isCommon = newBitmask < (BIND_FLAG | BIND_KEY_FLAG | ARY_FLAG);
-
+	
 	      var isCombo =
 	        ((srcBitmask == ARY_FLAG) && (bitmask == CURRY_FLAG)) ||
 	        ((srcBitmask == ARY_FLAG) && (bitmask == REARG_FLAG) && (data[7].length <= source[8])) ||
 	        ((srcBitmask == (ARY_FLAG | REARG_FLAG)) && (source[7].length <= source[8]) && (bitmask == CURRY_FLAG));
-
+	
 	      // Exit early if metadata can't be merged.
 	      if (!(isCommon || isCombo)) {
 	        return data;
@@ -16578,10 +19942,10 @@
 	      // Use source `func` and merge bitmasks.
 	      data[0] = source[0];
 	      data[1] = newBitmask;
-
+	
 	      return data;
 	    }
-
+	
 	    /**
 	     * Used by `_.defaultsDeep` to customize its `_.merge` use.
 	     *
@@ -16601,7 +19965,7 @@
 	      }
 	      return objValue;
 	    }
-
+	
 	    /**
 	     * Gets the parent value at `path` of `object`.
 	     *
@@ -16613,7 +19977,7 @@
 	    function parent(object, path) {
 	      return path.length == 1 ? object : baseGet(object, baseSlice(path, 0, -1));
 	    }
-
+	
 	    /**
 	     * Reorder `array` according to the specified indexes where the element at
 	     * the first index is assigned as the first element, the element at
@@ -16628,14 +19992,14 @@
 	      var arrLength = array.length,
 	          length = nativeMin(indexes.length, arrLength),
 	          oldArray = copyArray(array);
-
+	
 	      while (length--) {
 	        var index = indexes[length];
 	        array[length] = isIndex(index, arrLength) ? oldArray[index] : undefined;
 	      }
 	      return array;
 	    }
-
+	
 	    /**
 	     * Sets metadata for `func`.
 	     *
@@ -16653,11 +20017,11 @@
 	    var setData = (function() {
 	      var count = 0,
 	          lastCalled = 0;
-
+	
 	      return function(key, value) {
 	        var stamp = now(),
 	            remaining = HOT_SPAN - (stamp - lastCalled);
-
+	
 	        lastCalled = stamp;
 	        if (remaining > 0) {
 	          if (++count >= HOT_COUNT) {
@@ -16669,7 +20033,7 @@
 	        return baseSetData(key, value);
 	      };
 	    }());
-
+	
 	    /**
 	     * Converts `string` to a property path array.
 	     *
@@ -16684,7 +20048,7 @@
 	      });
 	      return result;
 	    });
-
+	
 	    /**
 	     * Converts `value` to a string key if it's not a string or symbol.
 	     *
@@ -16699,7 +20063,7 @@
 	      var result = (value + '');
 	      return (result == '0' && (1 / value) == -INFINITY) ? '-0' : result;
 	    }
-
+	
 	    /**
 	     * Converts `func` to its source code.
 	     *
@@ -16718,7 +20082,7 @@
 	      }
 	      return '';
 	    }
-
+	
 	    /**
 	     * Creates a clone of `wrapper`.
 	     *
@@ -16736,9 +20100,9 @@
 	      result.__values__ = wrapper.__values__;
 	      return result;
 	    }
-
+	
 	    /*------------------------------------------------------------------------*/
-
+	
 	    /**
 	     * Creates an array of elements split into groups the length of `size`.
 	     * If `array` can't be split evenly, the final chunk will be the remaining
@@ -16773,13 +20137,13 @@
 	      var index = 0,
 	          resIndex = 0,
 	          result = Array(nativeCeil(length / size));
-
+	
 	      while (index < length) {
 	        result[resIndex++] = baseSlice(array, index, (index += size));
 	      }
 	      return result;
 	    }
-
+	
 	    /**
 	     * Creates an array with all falsey values removed. The values `false`, `null`,
 	     * `0`, `""`, `undefined`, and `NaN` are falsey.
@@ -16800,7 +20164,7 @@
 	          length = array ? array.length : 0,
 	          resIndex = 0,
 	          result = [];
-
+	
 	      while (++index < length) {
 	        var value = array[index];
 	        if (value) {
@@ -16809,7 +20173,7 @@
 	      }
 	      return result;
 	    }
-
+	
 	    /**
 	     * Creates a new array concatenating `array` with any additional arrays
 	     * and/or values.
@@ -16837,7 +20201,7 @@
 	          args = Array(length ? length - 1 : 0),
 	          array = arguments[0],
 	          index = length;
-
+	
 	      while (index--) {
 	        args[index - 1] = arguments[index];
 	      }
@@ -16845,7 +20209,7 @@
 	        ? arrayPush(isArray(array) ? copyArray(array) : [array], baseFlatten(args, 1))
 	        : [];
 	    }
-
+	
 	    /**
 	     * Creates an array of unique `array` values not included in the other given
 	     * arrays using [`SameValueZero`](http://ecma-international.org/ecma-262/6.0/#sec-samevaluezero)
@@ -16870,7 +20234,7 @@
 	        ? baseDifference(array, baseFlatten(values, 1, isArrayLikeObject, true))
 	        : [];
 	    });
-
+	
 	    /**
 	     * This method is like `_.difference` except that it accepts `iteratee` which
 	     * is invoked for each element of `array` and `values` to generate the criterion
@@ -16904,7 +20268,7 @@
 	        ? baseDifference(array, baseFlatten(values, 1, isArrayLikeObject, true), getIteratee(iteratee))
 	        : [];
 	    });
-
+	
 	    /**
 	     * This method is like `_.difference` except that it accepts `comparator`
 	     * which is invoked to compare elements of `array` to `values`. Result values
@@ -16935,7 +20299,7 @@
 	        ? baseDifference(array, baseFlatten(values, 1, isArrayLikeObject, true), undefined, comparator)
 	        : [];
 	    });
-
+	
 	    /**
 	     * Creates a slice of `array` with `n` elements dropped from the beginning.
 	     *
@@ -16969,7 +20333,7 @@
 	      n = (guard || n === undefined) ? 1 : toInteger(n);
 	      return baseSlice(array, n < 0 ? 0 : n, length);
 	    }
-
+	
 	    /**
 	     * Creates a slice of `array` with `n` elements dropped from the end.
 	     *
@@ -17004,7 +20368,7 @@
 	      n = length - n;
 	      return baseSlice(array, 0, n < 0 ? 0 : n);
 	    }
-
+	
 	    /**
 	     * Creates a slice of `array` excluding elements dropped from the end.
 	     * Elements are dropped until `predicate` returns falsey. The predicate is
@@ -17046,7 +20410,7 @@
 	        ? baseWhile(array, getIteratee(predicate, 3), true, true)
 	        : [];
 	    }
-
+	
 	    /**
 	     * Creates a slice of `array` excluding elements dropped from the beginning.
 	     * Elements are dropped until `predicate` returns falsey. The predicate is
@@ -17088,7 +20452,7 @@
 	        ? baseWhile(array, getIteratee(predicate, 3), true)
 	        : [];
 	    }
-
+	
 	    /**
 	     * Fills elements of `array` with `value` from `start` up to, but not
 	     * including, `end`.
@@ -17129,7 +20493,7 @@
 	      }
 	      return baseFill(array, value, start, end);
 	    }
-
+	
 	    /**
 	     * This method is like `_.find` except that it returns the index of the first
 	     * element `predicate` returns truthy for instead of the element itself.
@@ -17177,7 +20541,7 @@
 	      }
 	      return baseFindIndex(array, getIteratee(predicate, 3), index);
 	    }
-
+	
 	    /**
 	     * This method is like `_.findIndex` except that it iterates over elements
 	     * of `collection` from right to left.
@@ -17228,7 +20592,7 @@
 	      }
 	      return baseFindIndex(array, getIteratee(predicate, 3), index, true);
 	    }
-
+	
 	    /**
 	     * Flattens `array` a single level deep.
 	     *
@@ -17247,7 +20611,7 @@
 	      var length = array ? array.length : 0;
 	      return length ? baseFlatten(array, 1) : [];
 	    }
-
+	
 	    /**
 	     * Recursively flattens `array`.
 	     *
@@ -17266,7 +20630,7 @@
 	      var length = array ? array.length : 0;
 	      return length ? baseFlatten(array, INFINITY) : [];
 	    }
-
+	
 	    /**
 	     * Recursively flatten `array` up to `depth` times.
 	     *
@@ -17295,7 +20659,7 @@
 	      depth = depth === undefined ? 1 : toInteger(depth);
 	      return baseFlatten(array, depth);
 	    }
-
+	
 	    /**
 	     * The inverse of `_.toPairs`; this method returns an object composed
 	     * from key-value `pairs`.
@@ -17315,14 +20679,14 @@
 	      var index = -1,
 	          length = pairs ? pairs.length : 0,
 	          result = {};
-
+	
 	      while (++index < length) {
 	        var pair = pairs[index];
 	        result[pair[0]] = pair[1];
 	      }
 	      return result;
 	    }
-
+	
 	    /**
 	     * Gets the first element of `array`.
 	     *
@@ -17344,7 +20708,7 @@
 	    function head(array) {
 	      return (array && array.length) ? array[0] : undefined;
 	    }
-
+	
 	    /**
 	     * Gets the index at which the first occurrence of `value` is found in `array`
 	     * using [`SameValueZero`](http://ecma-international.org/ecma-262/6.0/#sec-samevaluezero)
@@ -17379,7 +20743,7 @@
 	      }
 	      return baseIndexOf(array, value, index);
 	    }
-
+	
 	    /**
 	     * Gets all but the last element of `array`.
 	     *
@@ -17397,7 +20761,7 @@
 	    function initial(array) {
 	      return dropRight(array, 1);
 	    }
-
+	
 	    /**
 	     * Creates an array of unique values that are included in all given arrays
 	     * using [`SameValueZero`](http://ecma-international.org/ecma-262/6.0/#sec-samevaluezero)
@@ -17421,7 +20785,7 @@
 	        ? baseIntersection(mapped)
 	        : [];
 	    });
-
+	
 	    /**
 	     * This method is like `_.intersection` except that it accepts `iteratee`
 	     * which is invoked for each element of each `arrays` to generate the criterion
@@ -17448,7 +20812,7 @@
 	    var intersectionBy = rest(function(arrays) {
 	      var iteratee = last(arrays),
 	          mapped = arrayMap(arrays, castArrayLikeObject);
-
+	
 	      if (iteratee === last(mapped)) {
 	        iteratee = undefined;
 	      } else {
@@ -17458,7 +20822,7 @@
 	        ? baseIntersection(mapped, getIteratee(iteratee))
 	        : [];
 	    });
-
+	
 	    /**
 	     * This method is like `_.intersection` except that it accepts `comparator`
 	     * which is invoked to compare elements of `arrays`. Result values are chosen
@@ -17483,7 +20847,7 @@
 	    var intersectionWith = rest(function(arrays) {
 	      var comparator = last(arrays),
 	          mapped = arrayMap(arrays, castArrayLikeObject);
-
+	
 	      if (comparator === last(mapped)) {
 	        comparator = undefined;
 	      } else {
@@ -17493,7 +20857,7 @@
 	        ? baseIntersection(mapped, undefined, comparator)
 	        : [];
 	    });
-
+	
 	    /**
 	     * Converts all elements in `array` into a string separated by `separator`.
 	     *
@@ -17512,7 +20876,7 @@
 	    function join(array, separator) {
 	      return array ? nativeJoin.call(array, separator) : '';
 	    }
-
+	
 	    /**
 	     * Gets the last element of `array`.
 	     *
@@ -17531,7 +20895,7 @@
 	      var length = array ? array.length : 0;
 	      return length ? array[length - 1] : undefined;
 	    }
-
+	
 	    /**
 	     * This method is like `_.indexOf` except that it iterates over elements of
 	     * `array` from right to left.
@@ -17577,7 +20941,7 @@
 	      }
 	      return -1;
 	    }
-
+	
 	    /**
 	     * Gets the element at index `n` of `array`. If `n` is negative, the nth
 	     * element from the end is returned.
@@ -17602,7 +20966,7 @@
 	    function nth(array, n) {
 	      return (array && array.length) ? baseNth(array, toInteger(n)) : undefined;
 	    }
-
+	
 	    /**
 	     * Removes all given values from `array` using
 	     * [`SameValueZero`](http://ecma-international.org/ecma-262/6.0/#sec-samevaluezero)
@@ -17627,7 +20991,7 @@
 	     * // => ['b', 'b']
 	     */
 	    var pull = rest(pullAll);
-
+	
 	    /**
 	     * This method is like `_.pull` except that it accepts an array of values to remove.
 	     *
@@ -17653,7 +21017,7 @@
 	        ? basePullAll(array, values)
 	        : array;
 	    }
-
+	
 	    /**
 	     * This method is like `_.pullAll` except that it accepts `iteratee` which is
 	     * invoked for each element of `array` and `values` to generate the criterion
@@ -17683,7 +21047,7 @@
 	        ? basePullAll(array, values, getIteratee(iteratee))
 	        : array;
 	    }
-
+	
 	    /**
 	     * This method is like `_.pullAll` except that it accepts `comparator` which
 	     * is invoked to compare elements of `array` to `values`. The comparator is
@@ -17712,7 +21076,7 @@
 	        ? basePullAll(array, values, undefined, comparator)
 	        : array;
 	    }
-
+	
 	    /**
 	     * Removes elements from `array` corresponding to `indexes` and returns an
 	     * array of removed elements.
@@ -17739,17 +21103,17 @@
 	     */
 	    var pullAt = rest(function(array, indexes) {
 	      indexes = baseFlatten(indexes, 1);
-
+	
 	      var length = array ? array.length : 0,
 	          result = baseAt(array, indexes);
-
+	
 	      basePullAt(array, arrayMap(indexes, function(index) {
 	        return isIndex(index, length) ? +index : index;
 	      }).sort(compareAscending));
-
+	
 	      return result;
 	    });
-
+	
 	    /**
 	     * Removes all elements from `array` that `predicate` returns truthy for
 	     * and returns an array of the removed elements. The predicate is invoked
@@ -17787,7 +21151,7 @@
 	      var index = -1,
 	          indexes = [],
 	          length = array.length;
-
+	
 	      predicate = getIteratee(predicate, 3);
 	      while (++index < length) {
 	        var value = array[index];
@@ -17799,7 +21163,7 @@
 	      basePullAt(array, indexes);
 	      return result;
 	    }
-
+	
 	    /**
 	     * Reverses `array` so that the first element becomes the last, the second
 	     * element becomes the second to last, and so on.
@@ -17826,7 +21190,7 @@
 	    function reverse(array) {
 	      return array ? nativeReverse.call(array) : array;
 	    }
-
+	
 	    /**
 	     * Creates a slice of `array` from `start` up to, but not including, `end`.
 	     *
@@ -17858,7 +21222,7 @@
 	      }
 	      return baseSlice(array, start, end);
 	    }
-
+	
 	    /**
 	     * Uses a binary search to determine the lowest index at which `value`
 	     * should be inserted into `array` in order to maintain its sort order.
@@ -17879,7 +21243,7 @@
 	    function sortedIndex(array, value) {
 	      return baseSortedIndex(array, value);
 	    }
-
+	
 	    /**
 	     * This method is like `_.sortedIndex` except that it accepts `iteratee`
 	     * which is invoked for `value` and each element of `array` to compute their
@@ -17909,7 +21273,7 @@
 	    function sortedIndexBy(array, value, iteratee) {
 	      return baseSortedIndexBy(array, value, getIteratee(iteratee));
 	    }
-
+	
 	    /**
 	     * This method is like `_.indexOf` except that it performs a binary
 	     * search on a sorted `array`.
@@ -17936,7 +21300,7 @@
 	      }
 	      return -1;
 	    }
-
+	
 	    /**
 	     * This method is like `_.sortedIndex` except that it returns the highest
 	     * index at which `value` should be inserted into `array` in order to
@@ -17958,7 +21322,7 @@
 	    function sortedLastIndex(array, value) {
 	      return baseSortedIndex(array, value, true);
 	    }
-
+	
 	    /**
 	     * This method is like `_.sortedLastIndex` except that it accepts `iteratee`
 	     * which is invoked for `value` and each element of `array` to compute their
@@ -17988,7 +21352,7 @@
 	    function sortedLastIndexBy(array, value, iteratee) {
 	      return baseSortedIndexBy(array, value, getIteratee(iteratee), true);
 	    }
-
+	
 	    /**
 	     * This method is like `_.lastIndexOf` except that it performs a binary
 	     * search on a sorted `array`.
@@ -18015,7 +21379,7 @@
 	      }
 	      return -1;
 	    }
-
+	
 	    /**
 	     * This method is like `_.uniq` except that it's designed and optimized
 	     * for sorted arrays.
@@ -18036,7 +21400,7 @@
 	        ? baseSortedUniq(array)
 	        : [];
 	    }
-
+	
 	    /**
 	     * This method is like `_.uniqBy` except that it's designed and optimized
 	     * for sorted arrays.
@@ -18058,7 +21422,7 @@
 	        ? baseSortedUniq(array, getIteratee(iteratee))
 	        : [];
 	    }
-
+	
 	    /**
 	     * Gets all but the first element of `array`.
 	     *
@@ -18076,7 +21440,7 @@
 	    function tail(array) {
 	      return drop(array, 1);
 	    }
-
+	
 	    /**
 	     * Creates a slice of `array` with `n` elements taken from the beginning.
 	     *
@@ -18109,7 +21473,7 @@
 	      n = (guard || n === undefined) ? 1 : toInteger(n);
 	      return baseSlice(array, 0, n < 0 ? 0 : n);
 	    }
-
+	
 	    /**
 	     * Creates a slice of `array` with `n` elements taken from the end.
 	     *
@@ -18144,7 +21508,7 @@
 	      n = length - n;
 	      return baseSlice(array, n < 0 ? 0 : n, length);
 	    }
-
+	
 	    /**
 	     * Creates a slice of `array` with elements taken from the end. Elements are
 	     * taken until `predicate` returns falsey. The predicate is invoked with
@@ -18186,7 +21550,7 @@
 	        ? baseWhile(array, getIteratee(predicate, 3), false, true)
 	        : [];
 	    }
-
+	
 	    /**
 	     * Creates a slice of `array` with elements taken from the beginning. Elements
 	     * are taken until `predicate` returns falsey. The predicate is invoked with
@@ -18228,7 +21592,7 @@
 	        ? baseWhile(array, getIteratee(predicate, 3))
 	        : [];
 	    }
-
+	
 	    /**
 	     * Creates an array of unique values, in order, from all given arrays using
 	     * [`SameValueZero`](http://ecma-international.org/ecma-262/6.0/#sec-samevaluezero)
@@ -18248,7 +21612,7 @@
 	    var union = rest(function(arrays) {
 	      return baseUniq(baseFlatten(arrays, 1, isArrayLikeObject, true));
 	    });
-
+	
 	    /**
 	     * This method is like `_.union` except that it accepts `iteratee` which is
 	     * invoked for each element of each `arrays` to generate the criterion by
@@ -18279,7 +21643,7 @@
 	      }
 	      return baseUniq(baseFlatten(arrays, 1, isArrayLikeObject, true), getIteratee(iteratee));
 	    });
-
+	
 	    /**
 	     * This method is like `_.union` except that it accepts `comparator` which
 	     * is invoked to compare elements of `arrays`. The comparator is invoked
@@ -18307,7 +21671,7 @@
 	      }
 	      return baseUniq(baseFlatten(arrays, 1, isArrayLikeObject, true), undefined, comparator);
 	    });
-
+	
 	    /**
 	     * Creates a duplicate-free version of an array, using
 	     * [`SameValueZero`](http://ecma-international.org/ecma-262/6.0/#sec-samevaluezero)
@@ -18330,7 +21694,7 @@
 	        ? baseUniq(array)
 	        : [];
 	    }
-
+	
 	    /**
 	     * This method is like `_.uniq` except that it accepts `iteratee` which is
 	     * invoked for each element in `array` to generate the criterion by which
@@ -18358,7 +21722,7 @@
 	        ? baseUniq(array, getIteratee(iteratee))
 	        : [];
 	    }
-
+	
 	    /**
 	     * This method is like `_.uniq` except that it accepts `comparator` which
 	     * is invoked to compare elements of `array`. The comparator is invoked with
@@ -18383,7 +21747,7 @@
 	        ? baseUniq(array, undefined, comparator)
 	        : [];
 	    }
-
+	
 	    /**
 	     * This method is like `_.zip` except that it accepts an array of grouped
 	     * elements and creates an array regrouping the elements to their pre-zip
@@ -18418,7 +21782,7 @@
 	        return arrayMap(array, baseProperty(index));
 	      });
 	    }
-
+	
 	    /**
 	     * This method is like `_.unzip` except that it accepts `iteratee` to specify
 	     * how regrouped values should be combined. The iteratee is invoked with the
@@ -18452,7 +21816,7 @@
 	        return apply(iteratee, undefined, group);
 	      });
 	    }
-
+	
 	    /**
 	     * Creates an array excluding all given values using
 	     * [`SameValueZero`](http://ecma-international.org/ecma-262/6.0/#sec-samevaluezero)
@@ -18476,7 +21840,7 @@
 	        ? baseDifference(array, values)
 	        : [];
 	    });
-
+	
 	    /**
 	     * Creates an array of unique values that is the
 	     * [symmetric difference](https://en.wikipedia.org/wiki/Symmetric_difference)
@@ -18498,7 +21862,7 @@
 	    var xor = rest(function(arrays) {
 	      return baseXor(arrayFilter(arrays, isArrayLikeObject));
 	    });
-
+	
 	    /**
 	     * This method is like `_.xor` except that it accepts `iteratee` which is
 	     * invoked for each element of each `arrays` to generate the criterion by
@@ -18529,7 +21893,7 @@
 	      }
 	      return baseXor(arrayFilter(arrays, isArrayLikeObject), getIteratee(iteratee));
 	    });
-
+	
 	    /**
 	     * This method is like `_.xor` except that it accepts `comparator` which is
 	     * invoked to compare elements of `arrays`. The comparator is invoked with
@@ -18557,7 +21921,7 @@
 	      }
 	      return baseXor(arrayFilter(arrays, isArrayLikeObject), undefined, comparator);
 	    });
-
+	
 	    /**
 	     * Creates an array of grouped elements, the first of which contains the
 	     * first elements of the given arrays, the second of which contains the
@@ -18575,7 +21939,7 @@
 	     * // => [['fred', 30, true], ['barney', 40, false]]
 	     */
 	    var zip = rest(unzip);
-
+	
 	    /**
 	     * This method is like `_.fromPairs` except that it accepts two arrays,
 	     * one of property identifiers and one of corresponding values.
@@ -18595,7 +21959,7 @@
 	    function zipObject(props, values) {
 	      return baseZipObject(props || [], values || [], assignValue);
 	    }
-
+	
 	    /**
 	     * This method is like `_.zipObject` except that it supports property paths.
 	     *
@@ -18614,7 +21978,7 @@
 	    function zipObjectDeep(props, values) {
 	      return baseZipObject(props || [], values || [], baseSet);
 	    }
-
+	
 	    /**
 	     * This method is like `_.zip` except that it accepts `iteratee` to specify
 	     * how grouped values should be combined. The iteratee is invoked with the
@@ -18637,13 +22001,13 @@
 	    var zipWith = rest(function(arrays) {
 	      var length = arrays.length,
 	          iteratee = length > 1 ? arrays[length - 1] : undefined;
-
+	
 	      iteratee = typeof iteratee == 'function' ? (arrays.pop(), iteratee) : undefined;
 	      return unzipWith(arrays, iteratee);
 	    });
-
+	
 	    /*------------------------------------------------------------------------*/
-
+	
 	    /**
 	     * Creates a `lodash` wrapper instance that wraps `value` with explicit method
 	     * chain sequences enabled. The result of such sequences must be unwrapped
@@ -18678,7 +22042,7 @@
 	      result.__chain__ = true;
 	      return result;
 	    }
-
+	
 	    /**
 	     * This method invokes `interceptor` and returns `value`. The interceptor
 	     * is invoked with one argument; (value). The purpose of this method is to
@@ -18706,7 +22070,7 @@
 	      interceptor(value);
 	      return value;
 	    }
-
+	
 	    /**
 	     * This method is like `_.tap` except that it returns the result of `interceptor`.
 	     * The purpose of this method is to "pass thru" values replacing intermediate
@@ -18733,7 +22097,7 @@
 	    function thru(value, interceptor) {
 	      return interceptor(value);
 	    }
-
+	
 	    /**
 	     * This method is the wrapper version of `_.at`.
 	     *
@@ -18756,7 +22120,7 @@
 	          start = length ? paths[0] : 0,
 	          value = this.__wrapped__,
 	          interceptor = function(object) { return baseAt(object, paths); };
-
+	
 	      if (length > 1 || this.__actions__.length ||
 	          !(value instanceof LazyWrapper) || !isIndex(start)) {
 	        return this.thru(interceptor);
@@ -18774,7 +22138,7 @@
 	        return array;
 	      });
 	    });
-
+	
 	    /**
 	     * Creates a `lodash` wrapper instance with explicit method chain sequences enabled.
 	     *
@@ -18805,7 +22169,7 @@
 	    function wrapperChain() {
 	      return chain(this);
 	    }
-
+	
 	    /**
 	     * Executes the chain sequence and returns the wrapped result.
 	     *
@@ -18835,7 +22199,7 @@
 	    function wrapperCommit() {
 	      return new LodashWrapper(this.value(), this.__chain__);
 	    }
-
+	
 	    /**
 	     * Gets the next value on a wrapped object following the
 	     * [iterator protocol](https://mdn.io/iteration_protocols#iterator).
@@ -18864,10 +22228,10 @@
 	      }
 	      var done = this.__index__ >= this.__values__.length,
 	          value = done ? undefined : this.__values__[this.__index__++];
-
+	
 	      return { 'done': done, 'value': value };
 	    }
-
+	
 	    /**
 	     * Enables the wrapper to be iterable.
 	     *
@@ -18889,7 +22253,7 @@
 	    function wrapperToIterator() {
 	      return this;
 	    }
-
+	
 	    /**
 	     * Creates a clone of the chain sequence planting `value` as the wrapped value.
 	     *
@@ -18917,7 +22281,7 @@
 	    function wrapperPlant(value) {
 	      var result,
 	          parent = this;
-
+	
 	      while (parent instanceof baseLodash) {
 	        var clone = wrapperClone(parent);
 	        clone.__index__ = 0;
@@ -18933,7 +22297,7 @@
 	      previous.__wrapped__ = value;
 	      return result;
 	    }
-
+	
 	    /**
 	     * This method is the wrapper version of `_.reverse`.
 	     *
@@ -18971,7 +22335,7 @@
 	      }
 	      return this.thru(reverse);
 	    }
-
+	
 	    /**
 	     * Executes the chain sequence to resolve the unwrapped value.
 	     *
@@ -18989,9 +22353,9 @@
 	    function wrapperValue() {
 	      return baseWrapperValue(this.__wrapped__, this.__actions__);
 	    }
-
+	
 	    /*------------------------------------------------------------------------*/
-
+	
 	    /**
 	     * Creates an object composed of keys generated from the results of running
 	     * each element of `collection` thru `iteratee`. The corresponding value of
@@ -19018,7 +22382,7 @@
 	    var countBy = createAggregator(function(result, value, key) {
 	      hasOwnProperty.call(result, key) ? ++result[key] : (result[key] = 1);
 	    });
-
+	
 	    /**
 	     * Checks if `predicate` returns truthy for **all** elements of `collection`.
 	     * Iteration is stopped once `predicate` returns falsey. The predicate is
@@ -19063,7 +22427,7 @@
 	      }
 	      return func(collection, getIteratee(predicate, 3));
 	    }
-
+	
 	    /**
 	     * Iterates over elements of `collection`, returning an array of all elements
 	     * `predicate` returns truthy for. The predicate is invoked with three
@@ -19104,7 +22468,7 @@
 	      var func = isArray(collection) ? arrayFilter : baseFilter;
 	      return func(collection, getIteratee(predicate, 3));
 	    }
-
+	
 	    /**
 	     * Iterates over elements of `collection`, returning the first element
 	     * `predicate` returns truthy for. The predicate is invoked with three
@@ -19143,7 +22507,7 @@
 	     * // => object for 'barney'
 	     */
 	    var find = createFind(findIndex);
-
+	
 	    /**
 	     * This method is like `_.find` except that it iterates over elements of
 	     * `collection` from right to left.
@@ -19165,7 +22529,7 @@
 	     * // => 3
 	     */
 	    var findLast = createFind(findLastIndex);
-
+	
 	    /**
 	     * Creates a flattened array of values by running each element in `collection`
 	     * thru `iteratee` and flattening the mapped results. The iteratee is invoked
@@ -19191,7 +22555,7 @@
 	    function flatMap(collection, iteratee) {
 	      return baseFlatten(map(collection, iteratee), 1);
 	    }
-
+	
 	    /**
 	     * This method is like `_.flatMap` except that it recursively flattens the
 	     * mapped results.
@@ -19216,7 +22580,7 @@
 	    function flatMapDeep(collection, iteratee) {
 	      return baseFlatten(map(collection, iteratee), INFINITY);
 	    }
-
+	
 	    /**
 	     * This method is like `_.flatMap` except that it recursively flattens the
 	     * mapped results up to `depth` times.
@@ -19243,7 +22607,7 @@
 	      depth = depth === undefined ? 1 : toInteger(depth);
 	      return baseFlatten(map(collection, iteratee), depth);
 	    }
-
+	
 	    /**
 	     * Iterates over elements of `collection` and invokes `iteratee` for each element.
 	     * The iteratee is invoked with three arguments: (value, index|key, collection).
@@ -19278,7 +22642,7 @@
 	      var func = isArray(collection) ? arrayEach : baseEach;
 	      return func(collection, getIteratee(iteratee, 3));
 	    }
-
+	
 	    /**
 	     * This method is like `_.forEach` except that it iterates over elements of
 	     * `collection` from right to left.
@@ -19303,7 +22667,7 @@
 	      var func = isArray(collection) ? arrayEachRight : baseEachRight;
 	      return func(collection, getIteratee(iteratee, 3));
 	    }
-
+	
 	    /**
 	     * Creates an object composed of keys generated from the results of running
 	     * each element of `collection` thru `iteratee`. The order of grouped values
@@ -19335,7 +22699,7 @@
 	        result[key] = [value];
 	      }
 	    });
-
+	
 	    /**
 	     * Checks if `value` is in `collection`. If `collection` is a string, it's
 	     * checked for a substring of `value`, otherwise
@@ -19369,7 +22733,7 @@
 	    function includes(collection, value, fromIndex, guard) {
 	      collection = isArrayLike(collection) ? collection : values(collection);
 	      fromIndex = (fromIndex && !guard) ? toInteger(fromIndex) : 0;
-
+	
 	      var length = collection.length;
 	      if (fromIndex < 0) {
 	        fromIndex = nativeMax(length + fromIndex, 0);
@@ -19378,7 +22742,7 @@
 	        ? (fromIndex <= length && collection.indexOf(value, fromIndex) > -1)
 	        : (!!length && baseIndexOf(collection, value, fromIndex) > -1);
 	    }
-
+	
 	    /**
 	     * Invokes the method at `path` of each element in `collection`, returning
 	     * an array of the results of each invoked method. Any additional arguments
@@ -19407,14 +22771,14 @@
 	          isFunc = typeof path == 'function',
 	          isProp = isKey(path),
 	          result = isArrayLike(collection) ? Array(collection.length) : [];
-
+	
 	      baseEach(collection, function(value) {
 	        var func = isFunc ? path : ((isProp && value != null) ? value[path] : undefined);
 	        result[++index] = func ? apply(func, value, args) : baseInvoke(value, path, args);
 	      });
 	      return result;
 	    });
-
+	
 	    /**
 	     * Creates an object composed of keys generated from the results of running
 	     * each element of `collection` thru `iteratee`. The corresponding value of
@@ -19447,7 +22811,7 @@
 	    var keyBy = createAggregator(function(result, value, key) {
 	      result[key] = value;
 	    });
-
+	
 	    /**
 	     * Creates an array of values by running each element in `collection` thru
 	     * `iteratee`. The iteratee is invoked with three arguments:
@@ -19495,7 +22859,7 @@
 	      var func = isArray(collection) ? arrayMap : baseMap;
 	      return func(collection, getIteratee(iteratee, 3));
 	    }
-
+	
 	    /**
 	     * This method is like `_.sortBy` except that it allows specifying the sort
 	     * orders of the iteratees to sort by. If `orders` is unspecified, all values
@@ -19538,7 +22902,7 @@
 	      }
 	      return baseOrderBy(collection, iteratees, orders);
 	    }
-
+	
 	    /**
 	     * Creates an array of elements split into two groups, the first of which
 	     * contains elements `predicate` returns truthy for, the second of which
@@ -19579,7 +22943,7 @@
 	    var partition = createAggregator(function(result, value, key) {
 	      result[key ? 0 : 1].push(value);
 	    }, function() { return [[], []]; });
-
+	
 	    /**
 	     * Reduces `collection` to a value which is the accumulated result of running
 	     * each element in `collection` thru `iteratee`, where each successive
@@ -19620,10 +22984,10 @@
 	    function reduce(collection, iteratee, accumulator) {
 	      var func = isArray(collection) ? arrayReduce : baseReduce,
 	          initAccum = arguments.length < 3;
-
+	
 	      return func(collection, getIteratee(iteratee, 4), accumulator, initAccum, baseEach);
 	    }
-
+	
 	    /**
 	     * This method is like `_.reduce` except that it iterates over elements of
 	     * `collection` from right to left.
@@ -19649,10 +23013,10 @@
 	    function reduceRight(collection, iteratee, accumulator) {
 	      var func = isArray(collection) ? arrayReduceRight : baseReduce,
 	          initAccum = arguments.length < 3;
-
+	
 	      return func(collection, getIteratee(iteratee, 4), accumulator, initAccum, baseEachRight);
 	    }
-
+	
 	    /**
 	     * The opposite of `_.filter`; this method returns the elements of `collection`
 	     * that `predicate` does **not** return truthy for.
@@ -19695,7 +23059,7 @@
 	        return !predicate(value, index, collection);
 	      });
 	    }
-
+	
 	    /**
 	     * Gets a random element from `collection`.
 	     *
@@ -19713,10 +23077,10 @@
 	    function sample(collection) {
 	      var array = isArrayLike(collection) ? collection : values(collection),
 	          length = array.length;
-
+	
 	      return length > 0 ? array[baseRandom(0, length - 1)] : undefined;
 	    }
-
+	
 	    /**
 	     * Gets `n` random elements at unique keys from `collection` up to the
 	     * size of `collection`.
@@ -19742,7 +23106,7 @@
 	          result = toArray(collection),
 	          length = result.length,
 	          lastIndex = length - 1;
-
+	
 	      if ((guard ? isIterateeCall(collection, n, guard) : n === undefined)) {
 	        n = 1;
 	      } else {
@@ -19751,14 +23115,14 @@
 	      while (++index < n) {
 	        var rand = baseRandom(index, lastIndex),
 	            value = result[rand];
-
+	
 	        result[rand] = result[index];
 	        result[index] = value;
 	      }
 	      result.length = n;
 	      return result;
 	    }
-
+	
 	    /**
 	     * Creates an array of shuffled values, using a version of the
 	     * [Fisher-Yates shuffle](https://en.wikipedia.org/wiki/Fisher-Yates_shuffle).
@@ -19777,7 +23141,7 @@
 	    function shuffle(collection) {
 	      return sampleSize(collection, MAX_ARRAY_LENGTH);
 	    }
-
+	
 	    /**
 	     * Gets the size of `collection` by returning its length for array-like
 	     * values or the number of own enumerable string keyed properties for objects.
@@ -19815,7 +23179,7 @@
 	      }
 	      return keys(collection).length;
 	    }
-
+	
 	    /**
 	     * Checks if `predicate` returns truthy for **any** element of `collection`.
 	     * Iteration is stopped once `predicate` returns truthy. The predicate is
@@ -19860,7 +23224,7 @@
 	      }
 	      return func(collection, getIteratee(predicate, 3));
 	    }
-
+	
 	    /**
 	     * Creates an array of elements, sorted in ascending order by the results of
 	     * running each element in a collection thru each iteratee. This method
@@ -19908,12 +23272,12 @@
 	      iteratees = (iteratees.length == 1 && isArray(iteratees[0]))
 	        ? iteratees[0]
 	        : baseFlatten(iteratees, 1, isFlattenableIteratee);
-
+	
 	      return baseOrderBy(collection, iteratees, []);
 	    });
-
+	
 	    /*------------------------------------------------------------------------*/
-
+	
 	    /**
 	     * Gets the timestamp of the number of milliseconds that have elapsed since
 	     * the Unix epoch (1 January 1970 00:00:00 UTC).
@@ -19933,9 +23297,9 @@
 	    function now() {
 	      return Date.now();
 	    }
-
+	
 	    /*------------------------------------------------------------------------*/
-
+	
 	    /**
 	     * The opposite of `_.before`; this method creates a function that invokes
 	     * `func` once it's called `n` or more times.
@@ -19971,7 +23335,7 @@
 	        }
 	      };
 	    }
-
+	
 	    /**
 	     * Creates a function that invokes `func`, with up to `n` arguments,
 	     * ignoring any additional arguments.
@@ -19994,7 +23358,7 @@
 	      n = (func && n == null) ? func.length : n;
 	      return createWrapper(func, ARY_FLAG, undefined, undefined, undefined, undefined, n);
 	    }
-
+	
 	    /**
 	     * Creates a function that invokes `func`, with the `this` binding and arguments
 	     * of the created function, while it's called less than `n` times. Subsequent
@@ -20028,7 +23392,7 @@
 	        return result;
 	      };
 	    }
-
+	
 	    /**
 	     * Creates a function that invokes `func` with the `this` binding of `thisArg`
 	     * and `partials` prepended to the arguments it receives.
@@ -20072,7 +23436,7 @@
 	      }
 	      return createWrapper(func, bitmask, thisArg, partials, holders);
 	    });
-
+	
 	    /**
 	     * Creates a function that invokes the method at `object[key]` with `partials`
 	     * prepended to the arguments it receives.
@@ -20126,7 +23490,7 @@
 	      }
 	      return createWrapper(key, bitmask, object, partials, holders);
 	    });
-
+	
 	    /**
 	     * Creates a function that accepts arguments of `func` and either invokes
 	     * `func` returning its result, if at least `arity` number of arguments have
@@ -20174,7 +23538,7 @@
 	      result.placeholder = curry.placeholder;
 	      return result;
 	    }
-
+	
 	    /**
 	     * This method is like `_.curry` except that arguments are applied to `func`
 	     * in the manner of `_.partialRight` instead of `_.partial`.
@@ -20219,7 +23583,7 @@
 	      result.placeholder = curryRight.placeholder;
 	      return result;
 	    }
-
+	
 	    /**
 	     * Creates a debounced function that delays invoking `func` until after `wait`
 	     * milliseconds have elapsed since the last time the debounced function was
@@ -20281,7 +23645,7 @@
 	          leading = false,
 	          maxing = false,
 	          trailing = true;
-
+	
 	      if (typeof func != 'function') {
 	        throw new TypeError(FUNC_ERROR_TEXT);
 	      }
@@ -20292,17 +23656,17 @@
 	        maxWait = maxing ? nativeMax(toNumber(options.maxWait) || 0, wait) : maxWait;
 	        trailing = 'trailing' in options ? !!options.trailing : trailing;
 	      }
-
+	
 	      function invokeFunc(time) {
 	        var args = lastArgs,
 	            thisArg = lastThis;
-
+	
 	        lastArgs = lastThis = undefined;
 	        lastInvokeTime = time;
 	        result = func.apply(thisArg, args);
 	        return result;
 	      }
-
+	
 	      function leadingEdge(time) {
 	        // Reset any `maxWait` timer.
 	        lastInvokeTime = time;
@@ -20311,26 +23675,26 @@
 	        // Invoke the leading edge.
 	        return leading ? invokeFunc(time) : result;
 	      }
-
+	
 	      function remainingWait(time) {
 	        var timeSinceLastCall = time - lastCallTime,
 	            timeSinceLastInvoke = time - lastInvokeTime,
 	            result = wait - timeSinceLastCall;
-
+	
 	        return maxing ? nativeMin(result, maxWait - timeSinceLastInvoke) : result;
 	      }
-
+	
 	      function shouldInvoke(time) {
 	        var timeSinceLastCall = time - lastCallTime,
 	            timeSinceLastInvoke = time - lastInvokeTime;
-
+	
 	        // Either this is the first call, activity has stopped and we're at the
 	        // trailing edge, the system time has gone backwards and we're treating
 	        // it as the trailing edge, or we've hit the `maxWait` limit.
 	        return (lastCallTime === undefined || (timeSinceLastCall >= wait) ||
 	          (timeSinceLastCall < 0) || (maxing && timeSinceLastInvoke >= maxWait));
 	      }
-
+	
 	      function timerExpired() {
 	        var time = now();
 	        if (shouldInvoke(time)) {
@@ -20339,10 +23703,10 @@
 	        // Restart the timer.
 	        timerId = setTimeout(timerExpired, remainingWait(time));
 	      }
-
+	
 	      function trailingEdge(time) {
 	        timerId = undefined;
-
+	
 	        // Only invoke if we have `lastArgs` which means `func` has been
 	        // debounced at least once.
 	        if (trailing && lastArgs) {
@@ -20351,24 +23715,24 @@
 	        lastArgs = lastThis = undefined;
 	        return result;
 	      }
-
+	
 	      function cancel() {
 	        lastInvokeTime = 0;
 	        lastArgs = lastCallTime = lastThis = timerId = undefined;
 	      }
-
+	
 	      function flush() {
 	        return timerId === undefined ? result : trailingEdge(now());
 	      }
-
+	
 	      function debounced() {
 	        var time = now(),
 	            isInvoking = shouldInvoke(time);
-
+	
 	        lastArgs = arguments;
 	        lastThis = this;
 	        lastCallTime = time;
-
+	
 	        if (isInvoking) {
 	          if (timerId === undefined) {
 	            return leadingEdge(lastCallTime);
@@ -20388,7 +23752,7 @@
 	      debounced.flush = flush;
 	      return debounced;
 	    }
-
+	
 	    /**
 	     * Defers invoking the `func` until the current call stack has cleared. Any
 	     * additional arguments are provided to `func` when it's invoked.
@@ -20410,7 +23774,7 @@
 	    var defer = rest(function(func, args) {
 	      return baseDelay(func, 1, args);
 	    });
-
+	
 	    /**
 	     * Invokes `func` after `wait` milliseconds. Any additional arguments are
 	     * provided to `func` when it's invoked.
@@ -20433,7 +23797,7 @@
 	    var delay = rest(function(func, wait, args) {
 	      return baseDelay(func, toNumber(wait) || 0, args);
 	    });
-
+	
 	    /**
 	     * Creates a function that invokes `func` with arguments reversed.
 	     *
@@ -20455,7 +23819,7 @@
 	    function flip(func) {
 	      return createWrapper(func, FLIP_FLAG);
 	    }
-
+	
 	    /**
 	     * Creates a function that memoizes the result of `func`. If `resolver` is
 	     * provided, it determines the cache key for storing the result based on the
@@ -20508,7 +23872,7 @@
 	        var args = arguments,
 	            key = resolver ? resolver.apply(this, args) : args[0],
 	            cache = memoized.cache;
-
+	
 	        if (cache.has(key)) {
 	          return cache.get(key);
 	        }
@@ -20519,10 +23883,10 @@
 	      memoized.cache = new (memoize.Cache || MapCache);
 	      return memoized;
 	    }
-
+	
 	    // Assign cache to `_.memoize`.
 	    memoize.Cache = MapCache;
-
+	
 	    /**
 	     * Creates a function that negates the result of the predicate `func`. The
 	     * `func` predicate is invoked with the `this` binding and arguments of the
@@ -20551,7 +23915,7 @@
 	        return !predicate.apply(this, arguments);
 	      };
 	    }
-
+	
 	    /**
 	     * Creates a function that is restricted to invoking `func` once. Repeat calls
 	     * to the function return the value of the first invocation. The `func` is
@@ -20573,7 +23937,7 @@
 	    function once(func) {
 	      return before(2, func);
 	    }
-
+	
 	    /**
 	     * Creates a function that invokes `func` with arguments transformed by
 	     * corresponding `transforms`.
@@ -20610,19 +23974,19 @@
 	      transforms = (transforms.length == 1 && isArray(transforms[0]))
 	        ? arrayMap(transforms[0], baseUnary(getIteratee()))
 	        : arrayMap(baseFlatten(transforms, 1, isFlattenableIteratee), baseUnary(getIteratee()));
-
+	
 	      var funcsLength = transforms.length;
 	      return rest(function(args) {
 	        var index = -1,
 	            length = nativeMin(args.length, funcsLength);
-
+	
 	        while (++index < length) {
 	          args[index] = transforms[index].call(this, args[index]);
 	        }
 	        return apply(func, this, args);
 	      });
 	    });
-
+	
 	    /**
 	     * Creates a function that invokes `func` with `partials` prepended to the
 	     * arguments it receives. This method is like `_.bind` except it does **not**
@@ -20660,7 +24024,7 @@
 	      var holders = replaceHolders(partials, getHolder(partial));
 	      return createWrapper(func, PARTIAL_FLAG, undefined, partials, holders);
 	    });
-
+	
 	    /**
 	     * This method is like `_.partial` except that partially applied arguments
 	     * are appended to the arguments it receives.
@@ -20697,7 +24061,7 @@
 	      var holders = replaceHolders(partials, getHolder(partialRight));
 	      return createWrapper(func, PARTIAL_RIGHT_FLAG, undefined, partials, holders);
 	    });
-
+	
 	    /**
 	     * Creates a function that invokes `func` with arguments arranged according
 	     * to the specified `indexes` where the argument value at the first index is
@@ -20723,7 +24087,7 @@
 	    var rearg = rest(function(func, indexes) {
 	      return createWrapper(func, REARG_FLAG, undefined, undefined, undefined, baseFlatten(indexes, 1));
 	    });
-
+	
 	    /**
 	     * Creates a function that invokes `func` with the `this` binding of the
 	     * created function and arguments from `start` and beyond provided as
@@ -20759,7 +24123,7 @@
 	            index = -1,
 	            length = nativeMax(args.length - start, 0),
 	            array = Array(length);
-
+	
 	        while (++index < length) {
 	          array[index] = args[start + index];
 	        }
@@ -20777,7 +24141,7 @@
 	        return apply(func, this, otherArgs);
 	      };
 	    }
-
+	
 	    /**
 	     * Creates a function that invokes `func` with the `this` binding of the
 	     * create function and an array of arguments much like
@@ -20820,14 +24184,14 @@
 	      return rest(function(args) {
 	        var array = args[start],
 	            otherArgs = castSlice(args, 0, start);
-
+	
 	        if (array) {
 	          arrayPush(otherArgs, array);
 	        }
 	        return apply(func, this, otherArgs);
 	      });
 	    }
-
+	
 	    /**
 	     * Creates a throttled function that only invokes `func` at most once per
 	     * every `wait` milliseconds. The throttled function comes with a `cancel`
@@ -20872,7 +24236,7 @@
 	    function throttle(func, wait, options) {
 	      var leading = true,
 	          trailing = true;
-
+	
 	      if (typeof func != 'function') {
 	        throw new TypeError(FUNC_ERROR_TEXT);
 	      }
@@ -20886,7 +24250,7 @@
 	        'trailing': trailing
 	      });
 	    }
-
+	
 	    /**
 	     * Creates a function that accepts up to one argument, ignoring any
 	     * additional arguments.
@@ -20905,7 +24269,7 @@
 	    function unary(func) {
 	      return ary(func, 1);
 	    }
-
+	
 	    /**
 	     * Creates a function that provides `value` to the wrapper function as its
 	     * first argument. Any additional arguments provided to the function are
@@ -20932,9 +24296,9 @@
 	      wrapper = wrapper == null ? identity : wrapper;
 	      return partial(wrapper, value);
 	    }
-
+	
 	    /*------------------------------------------------------------------------*/
-
+	
 	    /**
 	     * Casts `value` as an array if it's not one.
 	     *
@@ -20975,7 +24339,7 @@
 	      var value = arguments[0];
 	      return isArray(value) ? value : [value];
 	    }
-
+	
 	    /**
 	     * Creates a shallow clone of `value`.
 	     *
@@ -21005,7 +24369,7 @@
 	    function clone(value) {
 	      return baseClone(value, false, true);
 	    }
-
+	
 	    /**
 	     * This method is like `_.clone` except that it accepts `customizer` which
 	     * is invoked to produce the cloned value. If `customizer` returns `undefined`,
@@ -21040,7 +24404,7 @@
 	    function cloneWith(value, customizer) {
 	      return baseClone(value, false, true, customizer);
 	    }
-
+	
 	    /**
 	     * This method is like `_.clone` except that it recursively clones `value`.
 	     *
@@ -21062,7 +24426,7 @@
 	    function cloneDeep(value) {
 	      return baseClone(value, true, true);
 	    }
-
+	
 	    /**
 	     * This method is like `_.cloneWith` except that it recursively clones `value`.
 	     *
@@ -21094,7 +24458,7 @@
 	    function cloneDeepWith(value, customizer) {
 	      return baseClone(value, true, true, customizer);
 	    }
-
+	
 	    /**
 	     * Performs a
 	     * [`SameValueZero`](http://ecma-international.org/ecma-262/6.0/#sec-samevaluezero)
@@ -21130,7 +24494,7 @@
 	    function eq(value, other) {
 	      return value === other || (value !== value && other !== other);
 	    }
-
+	
 	    /**
 	     * Checks if `value` is greater than `other`.
 	     *
@@ -21155,7 +24519,7 @@
 	     * // => false
 	     */
 	    var gt = createRelationalOperation(baseGt);
-
+	
 	    /**
 	     * Checks if `value` is greater than or equal to `other`.
 	     *
@@ -21182,7 +24546,7 @@
 	    var gte = createRelationalOperation(function(value, other) {
 	      return value >= other;
 	    });
-
+	
 	    /**
 	     * Checks if `value` is likely an `arguments` object.
 	     *
@@ -21206,7 +24570,7 @@
 	      return isArrayLikeObject(value) && hasOwnProperty.call(value, 'callee') &&
 	        (!propertyIsEnumerable.call(value, 'callee') || objectToString.call(value) == argsTag);
 	    }
-
+	
 	    /**
 	     * Checks if `value` is classified as an `Array` object.
 	     *
@@ -21233,7 +24597,7 @@
 	     * // => false
 	     */
 	    var isArray = Array.isArray;
-
+	
 	    /**
 	     * Checks if `value` is classified as an `ArrayBuffer` object.
 	     *
@@ -21255,7 +24619,7 @@
 	    function isArrayBuffer(value) {
 	      return isObjectLike(value) && objectToString.call(value) == arrayBufferTag;
 	    }
-
+	
 	    /**
 	     * Checks if `value` is array-like. A value is considered array-like if it's
 	     * not a function and has a `value.length` that's an integer greater than or
@@ -21284,7 +24648,7 @@
 	    function isArrayLike(value) {
 	      return value != null && isLength(getLength(value)) && !isFunction(value);
 	    }
-
+	
 	    /**
 	     * This method is like `_.isArrayLike` except that it also checks if `value`
 	     * is an object.
@@ -21313,7 +24677,7 @@
 	    function isArrayLikeObject(value) {
 	      return isObjectLike(value) && isArrayLike(value);
 	    }
-
+	
 	    /**
 	     * Checks if `value` is classified as a boolean primitive or object.
 	     *
@@ -21336,7 +24700,7 @@
 	      return value === true || value === false ||
 	        (isObjectLike(value) && objectToString.call(value) == boolTag);
 	    }
-
+	
 	    /**
 	     * Checks if `value` is a buffer.
 	     *
@@ -21357,7 +24721,7 @@
 	    var isBuffer = !Buffer ? stubFalse : function(value) {
 	      return value instanceof Buffer;
 	    };
-
+	
 	    /**
 	     * Checks if `value` is classified as a `Date` object.
 	     *
@@ -21379,7 +24743,7 @@
 	    function isDate(value) {
 	      return isObjectLike(value) && objectToString.call(value) == dateTag;
 	    }
-
+	
 	    /**
 	     * Checks if `value` is likely a DOM element.
 	     *
@@ -21401,7 +24765,7 @@
 	    function isElement(value) {
 	      return !!value && value.nodeType === 1 && isObjectLike(value) && !isPlainObject(value);
 	    }
-
+	
 	    /**
 	     * Checks if `value` is an empty object, collection, map, or set.
 	     *
@@ -21454,7 +24818,7 @@
 	      }
 	      return !(nonEnumShadows && keys(value).length);
 	    }
-
+	
 	    /**
 	     * Performs a deep comparison between two values to determine if they are
 	     * equivalent.
@@ -21487,7 +24851,7 @@
 	    function isEqual(value, other) {
 	      return baseIsEqual(value, other);
 	    }
-
+	
 	    /**
 	     * This method is like `_.isEqual` except that it accepts `customizer` which
 	     * is invoked to compare values. If `customizer` returns `undefined`, comparisons
@@ -21526,7 +24890,7 @@
 	      var result = customizer ? customizer(value, other) : undefined;
 	      return result === undefined ? baseIsEqual(value, other, customizer) : !!result;
 	    }
-
+	
 	    /**
 	     * Checks if `value` is an `Error`, `EvalError`, `RangeError`, `ReferenceError`,
 	     * `SyntaxError`, `TypeError`, or `URIError` object.
@@ -21553,7 +24917,7 @@
 	      return (objectToString.call(value) == errorTag) ||
 	        (typeof value.message == 'string' && typeof value.name == 'string');
 	    }
-
+	
 	    /**
 	     * Checks if `value` is a finite primitive number.
 	     *
@@ -21584,7 +24948,7 @@
 	    function isFinite(value) {
 	      return typeof value == 'number' && nativeIsFinite(value);
 	    }
-
+	
 	    /**
 	     * Checks if `value` is classified as a `Function` object.
 	     *
@@ -21610,7 +24974,7 @@
 	      var tag = isObject(value) ? objectToString.call(value) : '';
 	      return tag == funcTag || tag == genTag;
 	    }
-
+	
 	    /**
 	     * Checks if `value` is an integer.
 	     *
@@ -21640,7 +25004,7 @@
 	    function isInteger(value) {
 	      return typeof value == 'number' && value == toInteger(value);
 	    }
-
+	
 	    /**
 	     * Checks if `value` is a valid array-like length.
 	     *
@@ -21672,7 +25036,7 @@
 	      return typeof value == 'number' &&
 	        value > -1 && value % 1 == 0 && value <= MAX_SAFE_INTEGER;
 	    }
-
+	
 	    /**
 	     * Checks if `value` is the
 	     * [language type](http://www.ecma-international.org/ecma-262/6.0/#sec-ecmascript-language-types)
@@ -21702,7 +25066,7 @@
 	      var type = typeof value;
 	      return !!value && (type == 'object' || type == 'function');
 	    }
-
+	
 	    /**
 	     * Checks if `value` is object-like. A value is object-like if it's not `null`
 	     * and has a `typeof` result of "object".
@@ -21730,7 +25094,7 @@
 	    function isObjectLike(value) {
 	      return !!value && typeof value == 'object';
 	    }
-
+	
 	    /**
 	     * Checks if `value` is classified as a `Map` object.
 	     *
@@ -21752,7 +25116,7 @@
 	    function isMap(value) {
 	      return isObjectLike(value) && getTag(value) == mapTag;
 	    }
-
+	
 	    /**
 	     * Performs a partial deep comparison between `object` and `source` to
 	     * determine if `object` contains equivalent property values. This method is
@@ -21780,7 +25144,7 @@
 	    function isMatch(object, source) {
 	      return object === source || baseIsMatch(object, source, getMatchData(source));
 	    }
-
+	
 	    /**
 	     * This method is like `_.isMatch` except that it accepts `customizer` which
 	     * is invoked to compare values. If `customizer` returns `undefined`, comparisons
@@ -21817,7 +25181,7 @@
 	      customizer = typeof customizer == 'function' ? customizer : undefined;
 	      return baseIsMatch(object, source, getMatchData(source), customizer);
 	    }
-
+	
 	    /**
 	     * Checks if `value` is `NaN`.
 	     *
@@ -21852,7 +25216,7 @@
 	      // ActiveX objects in IE.
 	      return isNumber(value) && value != +value;
 	    }
-
+	
 	    /**
 	     * Checks if `value` is a pristine native function.
 	     *
@@ -21885,7 +25249,7 @@
 	      }
 	      return baseIsNative(value);
 	    }
-
+	
 	    /**
 	     * Checks if `value` is `null`.
 	     *
@@ -21906,7 +25270,7 @@
 	    function isNull(value) {
 	      return value === null;
 	    }
-
+	
 	    /**
 	     * Checks if `value` is `null` or `undefined`.
 	     *
@@ -21930,7 +25294,7 @@
 	    function isNil(value) {
 	      return value == null;
 	    }
-
+	
 	    /**
 	     * Checks if `value` is classified as a `Number` primitive or object.
 	     *
@@ -21962,7 +25326,7 @@
 	      return typeof value == 'number' ||
 	        (isObjectLike(value) && objectToString.call(value) == numberTag);
 	    }
-
+	
 	    /**
 	     * Checks if `value` is a plain object, that is, an object created by the
 	     * `Object` constructor or one with a `[[Prototype]]` of `null`.
@@ -22005,7 +25369,7 @@
 	      return (typeof Ctor == 'function' &&
 	        Ctor instanceof Ctor && funcToString.call(Ctor) == objectCtorString);
 	    }
-
+	
 	    /**
 	     * Checks if `value` is classified as a `RegExp` object.
 	     *
@@ -22027,7 +25391,7 @@
 	    function isRegExp(value) {
 	      return isObject(value) && objectToString.call(value) == regexpTag;
 	    }
-
+	
 	    /**
 	     * Checks if `value` is a safe integer. An integer is safe if it's an IEEE-754
 	     * double precision number which isn't the result of a rounded unsafe integer.
@@ -22059,7 +25423,7 @@
 	    function isSafeInteger(value) {
 	      return isInteger(value) && value >= -MAX_SAFE_INTEGER && value <= MAX_SAFE_INTEGER;
 	    }
-
+	
 	    /**
 	     * Checks if `value` is classified as a `Set` object.
 	     *
@@ -22081,7 +25445,7 @@
 	    function isSet(value) {
 	      return isObjectLike(value) && getTag(value) == setTag;
 	    }
-
+	
 	    /**
 	     * Checks if `value` is classified as a `String` primitive or object.
 	     *
@@ -22104,7 +25468,7 @@
 	      return typeof value == 'string' ||
 	        (!isArray(value) && isObjectLike(value) && objectToString.call(value) == stringTag);
 	    }
-
+	
 	    /**
 	     * Checks if `value` is classified as a `Symbol` primitive or object.
 	     *
@@ -22127,7 +25491,7 @@
 	      return typeof value == 'symbol' ||
 	        (isObjectLike(value) && objectToString.call(value) == symbolTag);
 	    }
-
+	
 	    /**
 	     * Checks if `value` is classified as a typed array.
 	     *
@@ -22150,7 +25514,7 @@
 	      return isObjectLike(value) &&
 	        isLength(value.length) && !!typedArrayTags[objectToString.call(value)];
 	    }
-
+	
 	    /**
 	     * Checks if `value` is `undefined`.
 	     *
@@ -22171,7 +25535,7 @@
 	    function isUndefined(value) {
 	      return value === undefined;
 	    }
-
+	
 	    /**
 	     * Checks if `value` is classified as a `WeakMap` object.
 	     *
@@ -22193,7 +25557,7 @@
 	    function isWeakMap(value) {
 	      return isObjectLike(value) && getTag(value) == weakMapTag;
 	    }
-
+	
 	    /**
 	     * Checks if `value` is classified as a `WeakSet` object.
 	     *
@@ -22215,7 +25579,7 @@
 	    function isWeakSet(value) {
 	      return isObjectLike(value) && objectToString.call(value) == weakSetTag;
 	    }
-
+	
 	    /**
 	     * Checks if `value` is less than `other`.
 	     *
@@ -22240,7 +25604,7 @@
 	     * // => false
 	     */
 	    var lt = createRelationalOperation(baseLt);
-
+	
 	    /**
 	     * Checks if `value` is less than or equal to `other`.
 	     *
@@ -22267,7 +25631,7 @@
 	    var lte = createRelationalOperation(function(value, other) {
 	      return value <= other;
 	    });
-
+	
 	    /**
 	     * Converts `value` to an array.
 	     *
@@ -22303,10 +25667,10 @@
 	      }
 	      var tag = getTag(value),
 	          func = tag == mapTag ? mapToArray : (tag == setTag ? setToArray : values);
-
+	
 	      return func(value);
 	    }
-
+	
 	    /**
 	     * Converts `value` to a finite number.
 	     *
@@ -22341,7 +25705,7 @@
 	      }
 	      return value === value ? value : 0;
 	    }
-
+	
 	    /**
 	     * Converts `value` to an integer.
 	     *
@@ -22371,10 +25735,10 @@
 	    function toInteger(value) {
 	      var result = toFinite(value),
 	          remainder = result % 1;
-
+	
 	      return result === result ? (remainder ? result - remainder : result) : 0;
 	    }
-
+	
 	    /**
 	     * Converts `value` to an integer suitable for use as the length of an
 	     * array-like object.
@@ -22405,7 +25769,7 @@
 	    function toLength(value) {
 	      return value ? baseClamp(toInteger(value), 0, MAX_ARRAY_LENGTH) : 0;
 	    }
-
+	
 	    /**
 	     * Converts `value` to a number.
 	     *
@@ -22449,7 +25813,7 @@
 	        ? freeParseInt(value.slice(2), isBinary ? 2 : 8)
 	        : (reIsBadHex.test(value) ? NAN : +value);
 	    }
-
+	
 	    /**
 	     * Converts `value` to a plain object flattening inherited enumerable string
 	     * keyed properties of `value` to own properties of the plain object.
@@ -22477,7 +25841,7 @@
 	    function toPlainObject(value) {
 	      return copyObject(value, keysIn(value));
 	    }
-
+	
 	    /**
 	     * Converts `value` to a safe integer. A safe integer can be compared and
 	     * represented correctly.
@@ -22505,7 +25869,7 @@
 	    function toSafeInteger(value) {
 	      return baseClamp(toInteger(value), -MAX_SAFE_INTEGER, MAX_SAFE_INTEGER);
 	    }
-
+	
 	    /**
 	     * Converts `value` to a string. An empty string is returned for `null`
 	     * and `undefined` values. The sign of `-0` is preserved.
@@ -22530,9 +25894,9 @@
 	    function toString(value) {
 	      return value == null ? '' : baseToString(value);
 	    }
-
+	
 	    /*------------------------------------------------------------------------*/
-
+	
 	    /**
 	     * Assigns own enumerable string keyed properties of source objects to the
 	     * destination object. Source objects are applied from left to right.
@@ -22576,7 +25940,7 @@
 	        }
 	      }
 	    });
-
+	
 	    /**
 	     * This method is like `_.assign` except that it iterates over own and
 	     * inherited source properties.
@@ -22617,7 +25981,7 @@
 	        assignValue(object, key, source[key]);
 	      }
 	    });
-
+	
 	    /**
 	     * This method is like `_.assignIn` except that it accepts `customizer`
 	     * which is invoked to produce the assigned values. If `customizer` returns
@@ -22650,7 +26014,7 @@
 	    var assignInWith = createAssigner(function(object, source, srcIndex, customizer) {
 	      copyObject(source, keysIn(source), object, customizer);
 	    });
-
+	
 	    /**
 	     * This method is like `_.assign` except that it accepts `customizer`
 	     * which is invoked to produce the assigned values. If `customizer` returns
@@ -22682,7 +26046,7 @@
 	    var assignWith = createAssigner(function(object, source, srcIndex, customizer) {
 	      copyObject(source, keys(source), object, customizer);
 	    });
-
+	
 	    /**
 	     * Creates an array of values corresponding to `paths` of `object`.
 	     *
@@ -22703,7 +26067,7 @@
 	    var at = rest(function(object, paths) {
 	      return baseAt(object, baseFlatten(paths, 1));
 	    });
-
+	
 	    /**
 	     * Creates an object that inherits from the `prototype` object. If a
 	     * `properties` object is given, its own enumerable string keyed properties
@@ -22742,7 +26106,7 @@
 	      var result = baseCreate(prototype);
 	      return properties ? baseAssign(result, properties) : result;
 	    }
-
+	
 	    /**
 	     * Assigns own and inherited enumerable string keyed properties of source
 	     * objects to the destination object for all destination properties that
@@ -22768,7 +26132,7 @@
 	      args.push(undefined, assignInDefaults);
 	      return apply(assignInWith, undefined, args);
 	    });
-
+	
 	    /**
 	     * This method is like `_.defaults` except that it recursively assigns
 	     * default properties.
@@ -22793,7 +26157,7 @@
 	      args.push(undefined, mergeDefaults);
 	      return apply(mergeWith, undefined, args);
 	    });
-
+	
 	    /**
 	     * This method is like `_.find` except that it returns the key of the first
 	     * element `predicate` returns truthy for instead of the element itself.
@@ -22833,7 +26197,7 @@
 	    function findKey(object, predicate) {
 	      return baseFindKey(object, getIteratee(predicate, 3), baseForOwn);
 	    }
-
+	
 	    /**
 	     * This method is like `_.findKey` except that it iterates over elements of
 	     * a collection in the opposite order.
@@ -22873,7 +26237,7 @@
 	    function findLastKey(object, predicate) {
 	      return baseFindKey(object, getIteratee(predicate, 3), baseForOwnRight);
 	    }
-
+	
 	    /**
 	     * Iterates over own and inherited enumerable string keyed properties of an
 	     * object and invokes `iteratee` for each property. The iteratee is invoked
@@ -22907,7 +26271,7 @@
 	        ? object
 	        : baseFor(object, getIteratee(iteratee, 3), keysIn);
 	    }
-
+	
 	    /**
 	     * This method is like `_.forIn` except that it iterates over properties of
 	     * `object` in the opposite order.
@@ -22939,7 +26303,7 @@
 	        ? object
 	        : baseForRight(object, getIteratee(iteratee, 3), keysIn);
 	    }
-
+	
 	    /**
 	     * Iterates over own enumerable string keyed properties of an object and
 	     * invokes `iteratee` for each property. The iteratee is invoked with three
@@ -22971,7 +26335,7 @@
 	    function forOwn(object, iteratee) {
 	      return object && baseForOwn(object, getIteratee(iteratee, 3));
 	    }
-
+	
 	    /**
 	     * This method is like `_.forOwn` except that it iterates over properties of
 	     * `object` in the opposite order.
@@ -23001,7 +26365,7 @@
 	    function forOwnRight(object, iteratee) {
 	      return object && baseForOwnRight(object, getIteratee(iteratee, 3));
 	    }
-
+	
 	    /**
 	     * Creates an array of function property names from own enumerable properties
 	     * of `object`.
@@ -23028,7 +26392,7 @@
 	    function functions(object) {
 	      return object == null ? [] : baseFunctions(object, keys(object));
 	    }
-
+	
 	    /**
 	     * Creates an array of function property names from own and inherited
 	     * enumerable properties of `object`.
@@ -23055,7 +26419,7 @@
 	    function functionsIn(object) {
 	      return object == null ? [] : baseFunctions(object, keysIn(object));
 	    }
-
+	
 	    /**
 	     * Gets the value at `path` of `object`. If the resolved value is
 	     * `undefined`, the `defaultValue` is used in its place.
@@ -23085,7 +26449,7 @@
 	      var result = object == null ? undefined : baseGet(object, path);
 	      return result === undefined ? defaultValue : result;
 	    }
-
+	
 	    /**
 	     * Checks if `path` is a direct property of `object`.
 	     *
@@ -23116,7 +26480,7 @@
 	    function has(object, path) {
 	      return object != null && hasPath(object, path, baseHas);
 	    }
-
+	
 	    /**
 	     * Checks if `path` is a direct or inherited property of `object`.
 	     *
@@ -23146,7 +26510,7 @@
 	    function hasIn(object, path) {
 	      return object != null && hasPath(object, path, baseHasIn);
 	    }
-
+	
 	    /**
 	     * Creates an object composed of the inverted keys and values of `object`.
 	     * If `object` contains duplicate values, subsequent values overwrite
@@ -23168,7 +26532,7 @@
 	    var invert = createInverter(function(result, value, key) {
 	      result[value] = key;
 	    }, constant(identity));
-
+	
 	    /**
 	     * This method is like `_.invert` except that the inverted object is generated
 	     * from the results of running each element of `object` thru `iteratee`. The
@@ -23203,7 +26567,7 @@
 	        result[value] = [key];
 	      }
 	    }, getIteratee);
-
+	
 	    /**
 	     * Invokes the method at `path` of `object`.
 	     *
@@ -23223,7 +26587,7 @@
 	     * // => [2, 3]
 	     */
 	    var invoke = rest(baseInvoke);
-
+	
 	    /**
 	     * Creates an array of the own enumerable property names of `object`.
 	     *
@@ -23261,7 +26625,7 @@
 	          skipIndexes = !!indexes,
 	          result = indexes || [],
 	          length = result.length;
-
+	
 	      for (var key in object) {
 	        if (baseHas(object, key) &&
 	            !(skipIndexes && (key == 'length' || isIndex(key, length))) &&
@@ -23271,7 +26635,7 @@
 	      }
 	      return result;
 	    }
-
+	
 	    /**
 	     * Creates an array of the own and inherited enumerable property names of `object`.
 	     *
@@ -23304,7 +26668,7 @@
 	          skipIndexes = !!indexes,
 	          result = indexes || [],
 	          length = result.length;
-
+	
 	      while (++index < propsLength) {
 	        var key = props[index];
 	        if (!(skipIndexes && (key == 'length' || isIndex(key, length))) &&
@@ -23314,7 +26678,7 @@
 	      }
 	      return result;
 	    }
-
+	
 	    /**
 	     * The opposite of `_.mapValues`; this method creates an object with the
 	     * same values as `object` and keys generated by running each own enumerable
@@ -23340,13 +26704,13 @@
 	    function mapKeys(object, iteratee) {
 	      var result = {};
 	      iteratee = getIteratee(iteratee, 3);
-
+	
 	      baseForOwn(object, function(value, key, object) {
 	        result[iteratee(value, key, object)] = value;
 	      });
 	      return result;
 	    }
-
+	
 	    /**
 	     * Creates an object with the same keys as `object` and values generated
 	     * by running each own enumerable string keyed property of `object` thru
@@ -23379,13 +26743,13 @@
 	    function mapValues(object, iteratee) {
 	      var result = {};
 	      iteratee = getIteratee(iteratee, 3);
-
+	
 	      baseForOwn(object, function(value, key, object) {
 	        result[key] = iteratee(value, key, object);
 	      });
 	      return result;
 	    }
-
+	
 	    /**
 	     * This method is like `_.assign` except that it recursively merges own and
 	     * inherited enumerable string keyed properties of source objects into the
@@ -23420,7 +26784,7 @@
 	    var merge = createAssigner(function(object, source, srcIndex) {
 	      baseMerge(object, source, srcIndex);
 	    });
-
+	
 	    /**
 	     * This method is like `_.merge` except that it accepts `customizer` which
 	     * is invoked to produce the merged values of the destination and source
@@ -23462,7 +26826,7 @@
 	    var mergeWith = createAssigner(function(object, source, srcIndex, customizer) {
 	      baseMerge(object, source, srcIndex, customizer);
 	    });
-
+	
 	    /**
 	     * The opposite of `_.pick`; this method creates an object composed of the
 	     * own and inherited enumerable string keyed properties of `object` that are
@@ -23489,7 +26853,7 @@
 	      props = arrayMap(baseFlatten(props, 1), toKey);
 	      return basePick(object, baseDifference(getAllKeysIn(object), props));
 	    });
-
+	
 	    /**
 	     * The opposite of `_.pickBy`; this method creates an object composed of
 	     * the own and inherited enumerable string keyed properties of `object` that
@@ -23517,7 +26881,7 @@
 	        return !predicate(value, key);
 	      });
 	    }
-
+	
 	    /**
 	     * Creates an object composed of the picked `object` properties.
 	     *
@@ -23538,7 +26902,7 @@
 	    var pick = rest(function(object, props) {
 	      return object == null ? {} : basePick(object, arrayMap(baseFlatten(props, 1), toKey));
 	    });
-
+	
 	    /**
 	     * Creates an object composed of the `object` properties `predicate` returns
 	     * truthy for. The predicate is invoked with two arguments: (value, key).
@@ -23561,7 +26925,7 @@
 	    function pickBy(object, predicate) {
 	      return object == null ? {} : basePickBy(object, getIteratee(predicate));
 	    }
-
+	
 	    /**
 	     * This method is like `_.get` except that if the resolved value is a
 	     * function it's invoked with the `this` binding of its parent object and
@@ -23593,10 +26957,10 @@
 	     */
 	    function result(object, path, defaultValue) {
 	      path = isKey(path, object) ? [path] : castPath(path);
-
+	
 	      var index = -1,
 	          length = path.length;
-
+	
 	      // Ensure the loop is entered when path is empty.
 	      if (!length) {
 	        object = undefined;
@@ -23612,7 +26976,7 @@
 	      }
 	      return object;
 	    }
-
+	
 	    /**
 	     * Sets the value at `path` of `object`. If a portion of `path` doesn't exist,
 	     * it's created. Arrays are created for missing index properties while objects
@@ -23644,7 +27008,7 @@
 	    function set(object, path, value) {
 	      return object == null ? object : baseSet(object, path, value);
 	    }
-
+	
 	    /**
 	     * This method is like `_.set` except that it accepts `customizer` which is
 	     * invoked to produce the objects of `path`.  If `customizer` returns `undefined`
@@ -23673,7 +27037,7 @@
 	      customizer = typeof customizer == 'function' ? customizer : undefined;
 	      return object == null ? object : baseSet(object, path, value, customizer);
 	    }
-
+	
 	    /**
 	     * Creates an array of own enumerable string keyed-value pairs for `object`
 	     * which can be consumed by `_.fromPairs`. If `object` is a map or set, its
@@ -23699,7 +27063,7 @@
 	     * // => [['a', 1], ['b', 2]] (iteration order is not guaranteed)
 	     */
 	    var toPairs = createToPairs(keys);
-
+	
 	    /**
 	     * Creates an array of own and inherited enumerable string keyed-value pairs
 	     * for `object` which can be consumed by `_.fromPairs`. If `object` is a map
@@ -23725,7 +27089,7 @@
 	     * // => [['a', 1], ['b', 2], ['c', 3]] (iteration order is not guaranteed)
 	     */
 	    var toPairsIn = createToPairs(keysIn);
-
+	
 	    /**
 	     * An alternative to `_.reduce`; this method transforms `object` to a new
 	     * `accumulator` object which is the result of running each of its own
@@ -23759,7 +27123,7 @@
 	    function transform(object, iteratee, accumulator) {
 	      var isArr = isArray(object) || isTypedArray(object);
 	      iteratee = getIteratee(iteratee, 4);
-
+	
 	      if (accumulator == null) {
 	        if (isArr || isObject(object)) {
 	          var Ctor = object.constructor;
@@ -23777,7 +27141,7 @@
 	      });
 	      return accumulator;
 	    }
-
+	
 	    /**
 	     * Removes the property at `path` of `object`.
 	     *
@@ -23808,7 +27172,7 @@
 	    function unset(object, path) {
 	      return object == null ? true : baseUnset(object, path);
 	    }
-
+	
 	    /**
 	     * This method is like `_.set` except that accepts `updater` to produce the
 	     * value to set. Use `_.updateWith` to customize `path` creation. The `updater`
@@ -23839,7 +27203,7 @@
 	    function update(object, path, updater) {
 	      return object == null ? object : baseUpdate(object, path, castFunction(updater));
 	    }
-
+	
 	    /**
 	     * This method is like `_.update` except that it accepts `customizer` which is
 	     * invoked to produce the objects of `path`.  If `customizer` returns `undefined`
@@ -23868,7 +27232,7 @@
 	      customizer = typeof customizer == 'function' ? customizer : undefined;
 	      return object == null ? object : baseUpdate(object, path, castFunction(updater), customizer);
 	    }
-
+	
 	    /**
 	     * Creates an array of the own enumerable string keyed property values of `object`.
 	     *
@@ -23898,7 +27262,7 @@
 	    function values(object) {
 	      return object ? baseValues(object, keys(object)) : [];
 	    }
-
+	
 	    /**
 	     * Creates an array of the own and inherited enumerable string keyed property
 	     * values of `object`.
@@ -23926,9 +27290,9 @@
 	    function valuesIn(object) {
 	      return object == null ? [] : baseValues(object, keysIn(object));
 	    }
-
+	
 	    /*------------------------------------------------------------------------*/
-
+	
 	    /**
 	     * Clamps `number` within the inclusive `lower` and `upper` bounds.
 	     *
@@ -23963,7 +27327,7 @@
 	      }
 	      return baseClamp(toNumber(number), lower, upper);
 	    }
-
+	
 	    /**
 	     * Checks if `n` is between `start` and up to, but not including, `end`. If
 	     * `end` is not specified, it's set to `start` with `start` then set to `0`.
@@ -24013,7 +27377,7 @@
 	      number = toNumber(number);
 	      return baseInRange(number, start, end);
 	    }
-
+	
 	    /**
 	     * Produces a random number between the inclusive `lower` and `upper` bounds.
 	     * If only one argument is provided a number between `0` and the given number
@@ -24083,9 +27447,9 @@
 	      }
 	      return baseRandom(lower, upper);
 	    }
-
+	
 	    /*------------------------------------------------------------------------*/
-
+	
 	    /**
 	     * Converts `string` to [camel case](https://en.wikipedia.org/wiki/CamelCase).
 	     *
@@ -24110,7 +27474,7 @@
 	      word = word.toLowerCase();
 	      return result + (index ? capitalize(word) : word);
 	    });
-
+	
 	    /**
 	     * Converts the first character of `string` to upper case and the remaining
 	     * to lower case.
@@ -24129,7 +27493,7 @@
 	    function capitalize(string) {
 	      return upperFirst(toString(string).toLowerCase());
 	    }
-
+	
 	    /**
 	     * Deburrs `string` by converting
 	     * [latin-1 supplementary letters](https://en.wikipedia.org/wiki/Latin-1_Supplement_(Unicode_block)#Character_table)
@@ -24151,7 +27515,7 @@
 	      string = toString(string);
 	      return string && string.replace(reLatin1, deburrLetter).replace(reComboMark, '');
 	    }
-
+	
 	    /**
 	     * Checks if `string` ends with the given target string.
 	     *
@@ -24178,16 +27542,16 @@
 	    function endsWith(string, target, position) {
 	      string = toString(string);
 	      target = baseToString(target);
-
+	
 	      var length = string.length;
 	      position = position === undefined
 	        ? length
 	        : baseClamp(toInteger(position), 0, length);
-
+	
 	      position -= target.length;
 	      return position >= 0 && string.indexOf(target, position) == position;
 	    }
-
+	
 	    /**
 	     * Converts the characters "&", "<", ">", '"', "'", and "\`" in `string` to
 	     * their corresponding HTML entities.
@@ -24228,7 +27592,7 @@
 	        ? string.replace(reUnescapedHtml, escapeHtmlChar)
 	        : string;
 	    }
-
+	
 	    /**
 	     * Escapes the `RegExp` special characters "^", "$", "\", ".", "*", "+",
 	     * "?", "(", ")", "[", "]", "{", "}", and "|" in `string`.
@@ -24250,7 +27614,7 @@
 	        ? string.replace(reRegExpChar, '\\$&')
 	        : string;
 	    }
-
+	
 	    /**
 	     * Converts `string` to
 	     * [kebab case](https://en.wikipedia.org/wiki/Letter_case#Special_case_styles).
@@ -24275,7 +27639,7 @@
 	    var kebabCase = createCompounder(function(result, word, index) {
 	      return result + (index ? '-' : '') + word.toLowerCase();
 	    });
-
+	
 	    /**
 	     * Converts `string`, as space separated words, to lower case.
 	     *
@@ -24299,7 +27663,7 @@
 	    var lowerCase = createCompounder(function(result, word, index) {
 	      return result + (index ? ' ' : '') + word.toLowerCase();
 	    });
-
+	
 	    /**
 	     * Converts the first character of `string` to lower case.
 	     *
@@ -24318,7 +27682,7 @@
 	     * // => 'fRED'
 	     */
 	    var lowerFirst = createCaseFirst('toLowerCase');
-
+	
 	    /**
 	     * Pads `string` on the left and right sides if it's shorter than `length`.
 	     * Padding characters are truncated if they can't be evenly divided by `length`.
@@ -24345,7 +27709,7 @@
 	    function pad(string, length, chars) {
 	      string = toString(string);
 	      length = toInteger(length);
-
+	
 	      var strLength = length ? stringSize(string) : 0;
 	      if (!length || strLength >= length) {
 	        return string;
@@ -24357,7 +27721,7 @@
 	        createPadding(nativeCeil(mid), chars)
 	      );
 	    }
-
+	
 	    /**
 	     * Pads `string` on the right side if it's shorter than `length`. Padding
 	     * characters are truncated if they exceed `length`.
@@ -24384,13 +27748,13 @@
 	    function padEnd(string, length, chars) {
 	      string = toString(string);
 	      length = toInteger(length);
-
+	
 	      var strLength = length ? stringSize(string) : 0;
 	      return (length && strLength < length)
 	        ? (string + createPadding(length - strLength, chars))
 	        : string;
 	    }
-
+	
 	    /**
 	     * Pads `string` on the left side if it's shorter than `length`. Padding
 	     * characters are truncated if they exceed `length`.
@@ -24417,13 +27781,13 @@
 	    function padStart(string, length, chars) {
 	      string = toString(string);
 	      length = toInteger(length);
-
+	
 	      var strLength = length ? stringSize(string) : 0;
 	      return (length && strLength < length)
 	        ? (createPadding(length - strLength, chars) + string)
 	        : string;
 	    }
-
+	
 	    /**
 	     * Converts `string` to an integer of the specified radix. If `radix` is
 	     * `undefined` or `0`, a `radix` of `10` is used unless `value` is a
@@ -24459,7 +27823,7 @@
 	      string = toString(string).replace(reTrim, '');
 	      return nativeParseInt(string, radix || (reHasHexPrefix.test(string) ? 16 : 10));
 	    }
-
+	
 	    /**
 	     * Repeats the given string `n` times.
 	     *
@@ -24490,7 +27854,7 @@
 	      }
 	      return baseRepeat(toString(string), n);
 	    }
-
+	
 	    /**
 	     * Replaces matches for `pattern` in `string` with `replacement`.
 	     *
@@ -24513,10 +27877,10 @@
 	    function replace() {
 	      var args = arguments,
 	          string = toString(args[0]);
-
+	
 	      return args.length < 3 ? string : nativeReplace.call(string, args[1], args[2]);
 	    }
-
+	
 	    /**
 	     * Converts `string` to
 	     * [snake case](https://en.wikipedia.org/wiki/Snake_case).
@@ -24541,7 +27905,7 @@
 	    var snakeCase = createCompounder(function(result, word, index) {
 	      return result + (index ? '_' : '') + word.toLowerCase();
 	    });
-
+	
 	    /**
 	     * Splits `string` by `separator`.
 	     *
@@ -24581,7 +27945,7 @@
 	      }
 	      return nativeSplit.call(string, separator, limit);
 	    }
-
+	
 	    /**
 	     * Converts `string` to
 	     * [start case](https://en.wikipedia.org/wiki/Letter_case#Stylistic_or_specialised_usage).
@@ -24606,7 +27970,7 @@
 	    var startCase = createCompounder(function(result, word, index) {
 	      return result + (index ? ' ' : '') + upperFirst(word);
 	    });
-
+	
 	    /**
 	     * Checks if `string` starts with the given target string.
 	     *
@@ -24635,7 +27999,7 @@
 	      position = baseClamp(toInteger(position), 0, string.length);
 	      return string.lastIndexOf(baseToString(target), position) == position;
 	    }
-
+	
 	    /**
 	     * Creates a compiled template function that can interpolate data properties
 	     * in "interpolate" delimiters, HTML-escape interpolated data properties in
@@ -24744,23 +28108,23 @@
 	      // (http://ejohn.org/blog/javascript-micro-templating/)
 	      // and Laura Doktorova's doT.js (https://github.com/olado/doT).
 	      var settings = lodash.templateSettings;
-
+	
 	      if (guard && isIterateeCall(string, options, guard)) {
 	        options = undefined;
 	      }
 	      string = toString(string);
 	      options = assignInWith({}, options, settings, assignInDefaults);
-
+	
 	      var imports = assignInWith({}, options.imports, settings.imports, assignInDefaults),
 	          importsKeys = keys(imports),
 	          importsValues = baseValues(imports, importsKeys);
-
+	
 	      var isEscaping,
 	          isEvaluating,
 	          index = 0,
 	          interpolate = options.interpolate || reNoMatch,
 	          source = "__p += '";
-
+	
 	      // Compile the regexp to match each delimiter.
 	      var reDelimiters = RegExp(
 	        (options.escape || reNoMatch).source + '|' +
@@ -24768,20 +28132,20 @@
 	        (interpolate === reInterpolate ? reEsTemplate : reNoMatch).source + '|' +
 	        (options.evaluate || reNoMatch).source + '|$'
 	      , 'g');
-
+	
 	      // Use a sourceURL for easier debugging.
 	      var sourceURL = '//# sourceURL=' +
 	        ('sourceURL' in options
 	          ? options.sourceURL
 	          : ('lodash.templateSources[' + (++templateCounter) + ']')
 	        ) + '\n';
-
+	
 	      string.replace(reDelimiters, function(match, escapeValue, interpolateValue, esTemplateValue, evaluateValue, offset) {
 	        interpolateValue || (interpolateValue = esTemplateValue);
-
+	
 	        // Escape characters that can't be included in string literals.
 	        source += string.slice(index, offset).replace(reUnescapedString, escapeStringChar);
-
+	
 	        // Replace delimiters with snippets.
 	        if (escapeValue) {
 	          isEscaping = true;
@@ -24795,14 +28159,14 @@
 	          source += "' +\n((__t = (" + interpolateValue + ")) == null ? '' : __t) +\n'";
 	        }
 	        index = offset + match.length;
-
+	
 	        // The JS engine embedded in Adobe products needs `match` returned in
 	        // order to produce the correct `offset` value.
 	        return match;
 	      });
-
+	
 	      source += "';\n";
-
+	
 	      // If `variable` is not specified wrap a with-statement around the generated
 	      // code to add the data object to the top of the scope chain.
 	      var variable = options.variable;
@@ -24813,7 +28177,7 @@
 	      source = (isEvaluating ? source.replace(reEmptyStringLeading, '') : source)
 	        .replace(reEmptyStringMiddle, '$1')
 	        .replace(reEmptyStringTrailing, '$1;');
-
+	
 	      // Frame code as the function body.
 	      source = 'function(' + (variable || 'obj') + ') {\n' +
 	        (variable
@@ -24832,12 +28196,12 @@
 	        ) +
 	        source +
 	        'return __p\n}';
-
+	
 	      var result = attempt(function() {
 	        return Function(importsKeys, sourceURL + 'return ' + source)
 	          .apply(undefined, importsValues);
 	      });
-
+	
 	      // Provide the compiled function's source by its `toString` method or
 	      // the `source` property as a convenience for inlining compiled templates.
 	      result.source = source;
@@ -24846,7 +28210,7 @@
 	      }
 	      return result;
 	    }
-
+	
 	    /**
 	     * Converts `string`, as a whole, to lower case just like
 	     * [String#toLowerCase](https://mdn.io/toLowerCase).
@@ -24871,7 +28235,7 @@
 	    function toLower(value) {
 	      return toString(value).toLowerCase();
 	    }
-
+	
 	    /**
 	     * Converts `string`, as a whole, to upper case just like
 	     * [String#toUpperCase](https://mdn.io/toUpperCase).
@@ -24896,7 +28260,7 @@
 	    function toUpper(value) {
 	      return toString(value).toUpperCase();
 	    }
-
+	
 	    /**
 	     * Removes leading and trailing whitespace or specified characters from `string`.
 	     *
@@ -24931,10 +28295,10 @@
 	          chrSymbols = stringToArray(chars),
 	          start = charsStartIndex(strSymbols, chrSymbols),
 	          end = charsEndIndex(strSymbols, chrSymbols) + 1;
-
+	
 	      return castSlice(strSymbols, start, end).join('');
 	    }
-
+	
 	    /**
 	     * Removes trailing whitespace or specified characters from `string`.
 	     *
@@ -24964,10 +28328,10 @@
 	      }
 	      var strSymbols = stringToArray(string),
 	          end = charsEndIndex(strSymbols, stringToArray(chars)) + 1;
-
+	
 	      return castSlice(strSymbols, 0, end).join('');
 	    }
-
+	
 	    /**
 	     * Removes leading whitespace or specified characters from `string`.
 	     *
@@ -24997,10 +28361,10 @@
 	      }
 	      var strSymbols = stringToArray(string),
 	          start = charsStartIndex(strSymbols, stringToArray(chars));
-
+	
 	      return castSlice(strSymbols, start).join('');
 	    }
-
+	
 	    /**
 	     * Truncates `string` if it's longer than the given maximum string length.
 	     * The last characters of the truncated string are replaced with the omission
@@ -25041,14 +28405,14 @@
 	    function truncate(string, options) {
 	      var length = DEFAULT_TRUNC_LENGTH,
 	          omission = DEFAULT_TRUNC_OMISSION;
-
+	
 	      if (isObject(options)) {
 	        var separator = 'separator' in options ? options.separator : separator;
 	        length = 'length' in options ? toInteger(options.length) : length;
 	        omission = 'omission' in options ? baseToString(options.omission) : omission;
 	      }
 	      string = toString(string);
-
+	
 	      var strLength = string.length;
 	      if (reHasComplexSymbol.test(string)) {
 	        var strSymbols = stringToArray(string);
@@ -25064,7 +28428,7 @@
 	      var result = strSymbols
 	        ? castSlice(strSymbols, 0, end).join('')
 	        : string.slice(0, end);
-
+	
 	      if (separator === undefined) {
 	        return result + omission;
 	      }
@@ -25075,7 +28439,7 @@
 	        if (string.slice(end).search(separator)) {
 	          var match,
 	              substring = result;
-
+	
 	          if (!separator.global) {
 	            separator = RegExp(separator.source, toString(reFlags.exec(separator)) + 'g');
 	          }
@@ -25093,7 +28457,7 @@
 	      }
 	      return result + omission;
 	    }
-
+	
 	    /**
 	     * The inverse of `_.escape`; this method converts the HTML entities
 	     * `&amp;`, `&lt;`, `&gt;`, `&quot;`, `&#39;`, and `&#96;` in `string` to
@@ -25119,7 +28483,7 @@
 	        ? string.replace(reEscapedHtml, unescapeHtmlChar)
 	        : string;
 	    }
-
+	
 	    /**
 	     * Converts `string`, as space separated words, to upper case.
 	     *
@@ -25143,7 +28507,7 @@
 	    var upperCase = createCompounder(function(result, word, index) {
 	      return result + (index ? ' ' : '') + word.toUpperCase();
 	    });
-
+	
 	    /**
 	     * Converts the first character of `string` to upper case.
 	     *
@@ -25162,7 +28526,7 @@
 	     * // => 'FRED'
 	     */
 	    var upperFirst = createCaseFirst('toUpperCase');
-
+	
 	    /**
 	     * Splits `string` into an array of its words.
 	     *
@@ -25185,15 +28549,15 @@
 	    function words(string, pattern, guard) {
 	      string = toString(string);
 	      pattern = guard ? undefined : pattern;
-
+	
 	      if (pattern === undefined) {
 	        pattern = reHasComplexWord.test(string) ? reComplexWord : reBasicWord;
 	      }
 	      return string.match(pattern) || [];
 	    }
-
+	
 	    /*------------------------------------------------------------------------*/
-
+	
 	    /**
 	     * Attempts to invoke `func`, returning either the result or the caught error
 	     * object. Any additional arguments are provided to `func` when it's invoked.
@@ -25223,7 +28587,7 @@
 	        return isError(e) ? e : new Error(e);
 	      }
 	    });
-
+	
 	    /**
 	     * Binds methods of an object to the object itself, overwriting the existing
 	     * method.
@@ -25257,7 +28621,7 @@
 	      });
 	      return object;
 	    });
-
+	
 	    /**
 	     * Creates a function that iterates over `pairs` and invokes the corresponding
 	     * function of the first predicate to return truthy. The predicate-function
@@ -25290,14 +28654,14 @@
 	    function cond(pairs) {
 	      var length = pairs ? pairs.length : 0,
 	          toIteratee = getIteratee();
-
+	
 	      pairs = !length ? [] : arrayMap(pairs, function(pair) {
 	        if (typeof pair[1] != 'function') {
 	          throw new TypeError(FUNC_ERROR_TEXT);
 	        }
 	        return [toIteratee(pair[0]), pair[1]];
 	      });
-
+	
 	      return rest(function(args) {
 	        var index = -1;
 	        while (++index < length) {
@@ -25308,7 +28672,7 @@
 	        }
 	      });
 	    }
-
+	
 	    /**
 	     * Creates a function that invokes the predicate properties of `source` with
 	     * the corresponding property values of a given object, returning `true` if
@@ -25333,7 +28697,7 @@
 	    function conforms(source) {
 	      return baseConforms(baseClone(source, true));
 	    }
-
+	
 	    /**
 	     * Creates a function that returns `value`.
 	     *
@@ -25358,7 +28722,7 @@
 	        return value;
 	      };
 	    }
-
+	
 	    /**
 	     * Creates a function that returns the result of invoking the given functions
 	     * with the `this` binding of the created function, where each successive
@@ -25382,7 +28746,7 @@
 	     * // => 9
 	     */
 	    var flow = createFlow();
-
+	
 	    /**
 	     * This method is like `_.flow` except that it creates a function that
 	     * invokes the given functions from right to left.
@@ -25405,7 +28769,7 @@
 	     * // => 9
 	     */
 	    var flowRight = createFlow(true);
-
+	
 	    /**
 	     * This method returns the first argument given to it.
 	     *
@@ -25425,7 +28789,7 @@
 	    function identity(value) {
 	      return value;
 	    }
-
+	
 	    /**
 	     * Creates a function that invokes `func` with the arguments of the created
 	     * function. If `func` is a property name, the created function returns the
@@ -25471,7 +28835,7 @@
 	    function iteratee(func) {
 	      return baseIteratee(typeof func == 'function' ? func : baseClone(func, true));
 	    }
-
+	
 	    /**
 	     * Creates a function that performs a partial deep comparison between a given
 	     * object and `source`, returning `true` if the given object has equivalent
@@ -25499,7 +28863,7 @@
 	    function matches(source) {
 	      return baseMatches(baseClone(source, true));
 	    }
-
+	
 	    /**
 	     * Creates a function that performs a partial deep comparison between the
 	     * value at `path` of a given object to `srcValue`, returning `true` if the
@@ -25527,7 +28891,7 @@
 	    function matchesProperty(path, srcValue) {
 	      return baseMatchesProperty(path, baseClone(srcValue, true));
 	    }
-
+	
 	    /**
 	     * Creates a function that invokes the method at `path` of a given object.
 	     * Any additional arguments are provided to the invoked method.
@@ -25557,7 +28921,7 @@
 	        return baseInvoke(object, path, args);
 	      };
 	    });
-
+	
 	    /**
 	     * The opposite of `_.method`; this method creates a function that invokes
 	     * the method at a given path of `object`. Any additional arguments are
@@ -25586,7 +28950,7 @@
 	        return baseInvoke(object, path, args);
 	      };
 	    });
-
+	
 	    /**
 	     * Adds all own enumerable string keyed function properties of a source
 	     * object to the destination object. If `object` is a function, then methods
@@ -25626,7 +28990,7 @@
 	    function mixin(object, source, options) {
 	      var props = keys(source),
 	          methodNames = baseFunctions(source, props);
-
+	
 	      if (options == null &&
 	          !(isObject(source) && (methodNames.length || !props.length))) {
 	        options = source;
@@ -25636,7 +29000,7 @@
 	      }
 	      var chain = !(isObject(options) && 'chain' in options) || !!options.chain,
 	          isFunc = isFunction(object);
-
+	
 	      arrayEach(methodNames, function(methodName) {
 	        var func = source[methodName];
 	        object[methodName] = func;
@@ -25646,7 +29010,7 @@
 	            if (chain || chainAll) {
 	              var result = object(this.__wrapped__),
 	                  actions = result.__actions__ = copyArray(this.__actions__);
-
+	
 	              actions.push({ 'func': func, 'args': arguments, 'thisArg': object });
 	              result.__chain__ = chainAll;
 	              return result;
@@ -25655,10 +29019,10 @@
 	          };
 	        }
 	      });
-
+	
 	      return object;
 	    }
-
+	
 	    /**
 	     * Reverts the `_` variable to its previous value and returns a reference to
 	     * the `lodash` function.
@@ -25678,7 +29042,7 @@
 	      }
 	      return this;
 	    }
-
+	
 	    /**
 	     * A method that returns `undefined`.
 	     *
@@ -25694,7 +29058,7 @@
 	    function noop() {
 	      // No operation performed.
 	    }
-
+	
 	    /**
 	     * Creates a function that gets the argument at index `n`. If `n` is negative,
 	     * the nth argument from the end is returned.
@@ -25721,7 +29085,7 @@
 	        return baseNth(args, n);
 	      });
 	    }
-
+	
 	    /**
 	     * Creates a function that invokes `iteratees` with the arguments it receives
 	     * and returns their results.
@@ -25741,7 +29105,7 @@
 	     * // => [4, 1]
 	     */
 	    var over = createOver(arrayMap);
-
+	
 	    /**
 	     * Creates a function that checks if **all** of the `predicates` return
 	     * truthy when invoked with the arguments it receives.
@@ -25767,7 +29131,7 @@
 	     * // => false
 	     */
 	    var overEvery = createOver(arrayEvery);
-
+	
 	    /**
 	     * Creates a function that checks if **any** of the `predicates` return
 	     * truthy when invoked with the arguments it receives.
@@ -25793,7 +29157,7 @@
 	     * // => false
 	     */
 	    var overSome = createOver(arraySome);
-
+	
 	    /**
 	     * Creates a function that returns the value at `path` of a given object.
 	     *
@@ -25819,7 +29183,7 @@
 	    function property(path) {
 	      return isKey(path) ? baseProperty(toKey(path)) : basePropertyDeep(path);
 	    }
-
+	
 	    /**
 	     * The opposite of `_.property`; this method creates a function that returns
 	     * the value at a given path of `object`.
@@ -25846,7 +29210,7 @@
 	        return object == null ? undefined : baseGet(object, path);
 	      };
 	    }
-
+	
 	    /**
 	     * Creates an array of numbers (positive and/or negative) progressing from
 	     * `start` up to, but not including, `end`. A step of `-1` is used if a negative
@@ -25889,7 +29253,7 @@
 	     * // => []
 	     */
 	    var range = createRange();
-
+	
 	    /**
 	     * This method is like `_.range` except that it populates values in
 	     * descending order.
@@ -25927,7 +29291,7 @@
 	     * // => []
 	     */
 	    var rangeRight = createRange(true);
-
+	
 	    /**
 	     * A method that returns a new empty array.
 	     *
@@ -25949,7 +29313,7 @@
 	    function stubArray() {
 	      return [];
 	    }
-
+	
 	    /**
 	     * A method that returns `false`.
 	     *
@@ -25966,7 +29330,7 @@
 	    function stubFalse() {
 	      return false;
 	    }
-
+	
 	    /**
 	     * A method that returns a new empty object.
 	     *
@@ -25988,7 +29352,7 @@
 	    function stubObject() {
 	      return {};
 	    }
-
+	
 	    /**
 	     * A method that returns an empty string.
 	     *
@@ -26005,7 +29369,7 @@
 	    function stubString() {
 	      return '';
 	    }
-
+	
 	    /**
 	     * A method that returns `true`.
 	     *
@@ -26022,7 +29386,7 @@
 	    function stubTrue() {
 	      return true;
 	    }
-
+	
 	    /**
 	     * Invokes the iteratee `n` times, returning an array of the results of
 	     * each invocation. The iteratee is invoked with one argument; (index).
@@ -26049,17 +29413,17 @@
 	      }
 	      var index = MAX_ARRAY_LENGTH,
 	          length = nativeMin(n, MAX_ARRAY_LENGTH);
-
+	
 	      iteratee = getIteratee(iteratee);
 	      n -= MAX_ARRAY_LENGTH;
-
+	
 	      var result = baseTimes(length, iteratee);
 	      while (++index < n) {
 	        iteratee(index);
 	      }
 	      return result;
 	    }
-
+	
 	    /**
 	     * Converts `value` to a property path array.
 	     *
@@ -26083,7 +29447,7 @@
 	      }
 	      return isSymbol(value) ? [value] : copyArray(stringToPath(value));
 	    }
-
+	
 	    /**
 	     * Generates a unique ID. If `prefix` is given, the ID is appended to it.
 	     *
@@ -26105,9 +29469,9 @@
 	      var id = ++idCounter;
 	      return toString(prefix) + id;
 	    }
-
+	
 	    /*------------------------------------------------------------------------*/
-
+	
 	    /**
 	     * Adds two numbers.
 	     *
@@ -26126,7 +29490,7 @@
 	    var add = createMathOperation(function(augend, addend) {
 	      return augend + addend;
 	    });
-
+	
 	    /**
 	     * Computes `number` rounded up to `precision`.
 	     *
@@ -26149,7 +29513,7 @@
 	     * // => 6100
 	     */
 	    var ceil = createRound('ceil');
-
+	
 	    /**
 	     * Divide two numbers.
 	     *
@@ -26168,7 +29532,7 @@
 	    var divide = createMathOperation(function(dividend, divisor) {
 	      return dividend / divisor;
 	    });
-
+	
 	    /**
 	     * Computes `number` rounded down to `precision`.
 	     *
@@ -26191,7 +29555,7 @@
 	     * // => 4000
 	     */
 	    var floor = createRound('floor');
-
+	
 	    /**
 	     * Computes the maximum value of `array`. If `array` is empty or falsey,
 	     * `undefined` is returned.
@@ -26215,7 +29579,7 @@
 	        ? baseExtremum(array, identity, baseGt)
 	        : undefined;
 	    }
-
+	
 	    /**
 	     * This method is like `_.max` except that it accepts `iteratee` which is
 	     * invoked for each element in `array` to generate the criterion by which
@@ -26245,7 +29609,7 @@
 	        ? baseExtremum(array, getIteratee(iteratee), baseGt)
 	        : undefined;
 	    }
-
+	
 	    /**
 	     * Computes the mean of the values in `array`.
 	     *
@@ -26263,7 +29627,7 @@
 	    function mean(array) {
 	      return baseMean(array, identity);
 	    }
-
+	
 	    /**
 	     * This method is like `_.mean` except that it accepts `iteratee` which is
 	     * invoked for each element in `array` to generate the value to be averaged.
@@ -26291,7 +29655,7 @@
 	    function meanBy(array, iteratee) {
 	      return baseMean(array, getIteratee(iteratee));
 	    }
-
+	
 	    /**
 	     * Computes the minimum value of `array`. If `array` is empty or falsey,
 	     * `undefined` is returned.
@@ -26315,7 +29679,7 @@
 	        ? baseExtremum(array, identity, baseLt)
 	        : undefined;
 	    }
-
+	
 	    /**
 	     * This method is like `_.min` except that it accepts `iteratee` which is
 	     * invoked for each element in `array` to generate the criterion by which
@@ -26345,7 +29709,7 @@
 	        ? baseExtremum(array, getIteratee(iteratee), baseLt)
 	        : undefined;
 	    }
-
+	
 	    /**
 	     * Multiply two numbers.
 	     *
@@ -26364,7 +29728,7 @@
 	    var multiply = createMathOperation(function(multiplier, multiplicand) {
 	      return multiplier * multiplicand;
 	    });
-
+	
 	    /**
 	     * Computes `number` rounded to `precision`.
 	     *
@@ -26387,7 +29751,7 @@
 	     * // => 4100
 	     */
 	    var round = createRound('round');
-
+	
 	    /**
 	     * Subtract two numbers.
 	     *
@@ -26406,7 +29770,7 @@
 	    var subtract = createMathOperation(function(minuend, subtrahend) {
 	      return minuend - subtrahend;
 	    });
-
+	
 	    /**
 	     * Computes the sum of the values in `array`.
 	     *
@@ -26426,7 +29790,7 @@
 	        ? baseSum(array, identity)
 	        : 0;
 	    }
-
+	
 	    /**
 	     * This method is like `_.sum` except that it accepts `iteratee` which is
 	     * invoked for each element in `array` to generate the value to be summed.
@@ -26456,9 +29820,9 @@
 	        ? baseSum(array, getIteratee(iteratee))
 	        : 0;
 	    }
-
+	
 	    /*------------------------------------------------------------------------*/
-
+	
 	    // Add methods that return wrapped values in chain sequences.
 	    lodash.after = after;
 	    lodash.ary = ary;
@@ -26609,18 +29973,18 @@
 	    lodash.zipObject = zipObject;
 	    lodash.zipObjectDeep = zipObjectDeep;
 	    lodash.zipWith = zipWith;
-
+	
 	    // Add aliases.
 	    lodash.entries = toPairs;
 	    lodash.entriesIn = toPairsIn;
 	    lodash.extend = assignIn;
 	    lodash.extendWith = assignInWith;
-
+	
 	    // Add methods to `lodash.prototype`.
 	    mixin(lodash, lodash);
-
+	
 	    /*------------------------------------------------------------------------*/
-
+	
 	    // Add methods that return unwrapped values in chain sequences.
 	    lodash.add = add;
 	    lodash.attempt = attempt;
@@ -26769,12 +30133,12 @@
 	    lodash.uniqueId = uniqueId;
 	    lodash.upperCase = upperCase;
 	    lodash.upperFirst = upperFirst;
-
+	
 	    // Add aliases.
 	    lodash.each = forEach;
 	    lodash.eachRight = forEachRight;
 	    lodash.first = head;
-
+	
 	    mixin(lodash, (function() {
 	      var source = {};
 	      baseForOwn(lodash, function(func, methodName) {
@@ -26784,9 +30148,9 @@
 	      });
 	      return source;
 	    }()), { 'chain': false });
-
+	
 	    /*------------------------------------------------------------------------*/
-
+	
 	    /**
 	     * The semantic version number.
 	     *
@@ -26795,12 +30159,12 @@
 	     * @type {string}
 	     */
 	    lodash.VERSION = VERSION;
-
+	
 	    // Assign default placeholders.
 	    arrayEach(['bind', 'bindKey', 'curry', 'curryRight', 'partial', 'partialRight'], function(methodName) {
 	      lodash[methodName].placeholder = lodash;
 	    });
-
+	
 	    // Add `LazyWrapper` methods for `_.drop` and `_.take` variants.
 	    arrayEach(['drop', 'take'], function(methodName, index) {
 	      LazyWrapper.prototype[methodName] = function(n) {
@@ -26809,7 +30173,7 @@
 	          return new LazyWrapper(this);
 	        }
 	        n = n === undefined ? 1 : nativeMax(toInteger(n), 0);
-
+	
 	        var result = this.clone();
 	        if (filtered) {
 	          result.__takeCount__ = nativeMin(n, result.__takeCount__);
@@ -26821,17 +30185,17 @@
 	        }
 	        return result;
 	      };
-
+	
 	      LazyWrapper.prototype[methodName + 'Right'] = function(n) {
 	        return this.reverse()[methodName](n).reverse();
 	      };
 	    });
-
+	
 	    // Add `LazyWrapper` methods that accept an `iteratee` value.
 	    arrayEach(['filter', 'map', 'takeWhile'], function(methodName, index) {
 	      var type = index + 1,
 	          isFilter = type == LAZY_FILTER_FLAG || type == LAZY_WHILE_FLAG;
-
+	
 	      LazyWrapper.prototype[methodName] = function(iteratee) {
 	        var result = this.clone();
 	        result.__iteratees__.push({
@@ -26842,37 +30206,37 @@
 	        return result;
 	      };
 	    });
-
+	
 	    // Add `LazyWrapper` methods for `_.head` and `_.last`.
 	    arrayEach(['head', 'last'], function(methodName, index) {
 	      var takeName = 'take' + (index ? 'Right' : '');
-
+	
 	      LazyWrapper.prototype[methodName] = function() {
 	        return this[takeName](1).value()[0];
 	      };
 	    });
-
+	
 	    // Add `LazyWrapper` methods for `_.initial` and `_.tail`.
 	    arrayEach(['initial', 'tail'], function(methodName, index) {
 	      var dropName = 'drop' + (index ? '' : 'Right');
-
+	
 	      LazyWrapper.prototype[methodName] = function() {
 	        return this.__filtered__ ? new LazyWrapper(this) : this[dropName](1);
 	      };
 	    });
-
+	
 	    LazyWrapper.prototype.compact = function() {
 	      return this.filter(identity);
 	    };
-
+	
 	    LazyWrapper.prototype.find = function(predicate) {
 	      return this.filter(predicate).head();
 	    };
-
+	
 	    LazyWrapper.prototype.findLast = function(predicate) {
 	      return this.reverse().find(predicate);
 	    };
-
+	
 	    LazyWrapper.prototype.invokeMap = rest(function(path, args) {
 	      if (typeof path == 'function') {
 	        return new LazyWrapper(this);
@@ -26881,17 +30245,17 @@
 	        return baseInvoke(value, path, args);
 	      });
 	    });
-
+	
 	    LazyWrapper.prototype.reject = function(predicate) {
 	      predicate = getIteratee(predicate, 3);
 	      return this.filter(function(value) {
 	        return !predicate(value);
 	      });
 	    };
-
+	
 	    LazyWrapper.prototype.slice = function(start, end) {
 	      start = toInteger(start);
-
+	
 	      var result = this;
 	      if (result.__filtered__ && (start > 0 || end < 0)) {
 	        return new LazyWrapper(result);
@@ -26907,22 +30271,22 @@
 	      }
 	      return result;
 	    };
-
+	
 	    LazyWrapper.prototype.takeRightWhile = function(predicate) {
 	      return this.reverse().takeWhile(predicate).reverse();
 	    };
-
+	
 	    LazyWrapper.prototype.toArray = function() {
 	      return this.take(MAX_ARRAY_LENGTH);
 	    };
-
+	
 	    // Add `LazyWrapper` methods to `lodash.prototype`.
 	    baseForOwn(LazyWrapper.prototype, function(func, methodName) {
 	      var checkIteratee = /^(?:filter|find|map|reject)|While$/.test(methodName),
 	          isTaker = /^(?:head|last)$/.test(methodName),
 	          lodashFunc = lodash[isTaker ? ('take' + (methodName == 'last' ? 'Right' : '')) : methodName],
 	          retUnwrapped = isTaker || /^find/.test(methodName);
-
+	
 	      if (!lodashFunc) {
 	        return;
 	      }
@@ -26932,12 +30296,12 @@
 	            isLazy = value instanceof LazyWrapper,
 	            iteratee = args[0],
 	            useLazy = isLazy || isArray(value);
-
+	
 	        var interceptor = function(value) {
 	          var result = lodashFunc.apply(lodash, arrayPush([value], args));
 	          return (isTaker && chainAll) ? result[0] : result;
 	        };
-
+	
 	        if (useLazy && checkIteratee && typeof iteratee == 'function' && iteratee.length != 1) {
 	          // Avoid lazy use if the iteratee has a "length" value other than `1`.
 	          isLazy = useLazy = false;
@@ -26946,7 +30310,7 @@
 	            isHybrid = !!this.__actions__.length,
 	            isUnwrapped = retUnwrapped && !chainAll,
 	            onlyLazy = isLazy && !isHybrid;
-
+	
 	        if (!retUnwrapped && useLazy) {
 	          value = onlyLazy ? value : new LazyWrapper(this);
 	          var result = func.apply(value, args);
@@ -26960,13 +30324,13 @@
 	        return isUnwrapped ? (isTaker ? result.value()[0] : result.value()) : result;
 	      };
 	    });
-
+	
 	    // Add `Array` methods to `lodash.prototype`.
 	    arrayEach(['pop', 'push', 'shift', 'sort', 'splice', 'unshift'], function(methodName) {
 	      var func = arrayProto[methodName],
 	          chainName = /^(?:push|sort|unshift)$/.test(methodName) ? 'tap' : 'thru',
 	          retUnwrapped = /^(?:pop|shift)$/.test(methodName);
-
+	
 	      lodash.prototype[methodName] = function() {
 	        var args = arguments;
 	        if (retUnwrapped && !this.__chain__) {
@@ -26978,28 +30342,28 @@
 	        });
 	      };
 	    });
-
+	
 	    // Map minified method names to their real names.
 	    baseForOwn(LazyWrapper.prototype, function(func, methodName) {
 	      var lodashFunc = lodash[methodName];
 	      if (lodashFunc) {
 	        var key = (lodashFunc.name + ''),
 	            names = realNames[key] || (realNames[key] = []);
-
+	
 	        names.push({ 'name': methodName, 'func': lodashFunc });
 	      }
 	    });
-
+	
 	    realNames[createHybridWrapper(undefined, BIND_KEY_FLAG).name] = [{
 	      'name': 'wrapper',
 	      'func': undefined
 	    }];
-
+	
 	    // Add methods to `LazyWrapper`.
 	    LazyWrapper.prototype.clone = lazyClone;
 	    LazyWrapper.prototype.reverse = lazyReverse;
 	    LazyWrapper.prototype.value = lazyValue;
-
+	
 	    // Add chain sequence methods to the `lodash` wrapper.
 	    lodash.prototype.at = wrapperAt;
 	    lodash.prototype.chain = wrapperChain;
@@ -27008,25 +30372,25 @@
 	    lodash.prototype.plant = wrapperPlant;
 	    lodash.prototype.reverse = wrapperReverse;
 	    lodash.prototype.toJSON = lodash.prototype.valueOf = lodash.prototype.value = wrapperValue;
-
+	
 	    if (iteratorSymbol) {
 	      lodash.prototype[iteratorSymbol] = wrapperToIterator;
 	    }
 	    return lodash;
 	  }
-
+	
 	  /*--------------------------------------------------------------------------*/
-
+	
 	  // Export lodash.
 	  var _ = runInContext();
-
+	
 	  // Expose Lodash on the free variable `window` or `self` when available so it's
 	  // globally accessible, even when bundled with Browserify, Webpack, etc. This
 	  // also prevents errors in cases where Lodash is loaded by a script tag in the
 	  // presence of an AMD loader. See http://requirejs.org/docs/errors.html#mismatch
 	  // for more details. Use `_.noConflict` to remove Lodash from the global object.
 	  (freeSelf || {})._ = _;
-
+	
 	  // Some AMD build optimizers like r.js check for condition patterns like the following:
 	  if (true) {
 	    // Define as an anonymous module so, through path mapping, it can be
@@ -27047,11 +30411,14 @@
 	    root._ = _;
 	  }
 	}.call(this));
-
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(86)(module), (function() { return this; }())))
+	
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./../webpack/buildin/module.js */ 111)(module), (function() { return this; }())))
 
 /***/ },
-/* 86 */
+/* 111 */
+/*!***********************************!*\
+  !*** (webpack)/buildin/module.js ***!
+  \***********************************/
 /***/ function(module, exports) {
 
 	module.exports = function(module) {
@@ -27067,16 +30434,19 @@
 
 
 /***/ },
-/* 87 */
+/* 112 */
+/*!************************!*\
+  !*** ./src/utils.less ***!
+  \************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
-
+	
 	// load the styles
-	var content = __webpack_require__(88);
+	var content = __webpack_require__(/*! !./../~/css-loader!./../~/less-loader!./utils.less */ 113);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(82)(content, {});
+	var update = __webpack_require__(/*! ./../~/style-loader/addStyles.js */ 95)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -27093,30 +30463,36 @@
 	}
 
 /***/ },
-/* 88 */
+/* 113 */
+/*!*******************************************************!*\
+  !*** ./~/css-loader!./~/less-loader!./src/utils.less ***!
+  \*******************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(76)();
+	exports = module.exports = __webpack_require__(/*! ./../~/css-loader/lib/css-base.js */ 89)();
 	// imports
-
-
+	
+	
 	// module
 	exports.push([module.id, ".p-xxs {\n  padding: 5px !important;\n}\n.p-xs {\n  padding: 10px !important;\n}\n.p-sm {\n  padding: 15px !important;\n}\n.p-m {\n  padding: 20px !important;\n}\n.p-md {\n  padding: 25px !important;\n}\n.p-lg {\n  padding: 30px !important;\n}\n.p-xl {\n  padding: 40px !important;\n}\n.m-xxs {\n  margin: 2px 4px;\n}\n.m-xs {\n  margin: 5px;\n}\n.m-sm {\n  margin: 10px;\n}\n.m {\n  margin: 15px;\n}\n.m-md {\n  margin: 20px;\n}\n.m-lg {\n  margin: 30px;\n}\n.m-xl {\n  margin: 50px;\n}\n.m-n {\n  margin: 0 !important;\n}\n.m-l-none {\n  margin-left: 0;\n}\n.m-l-xs {\n  margin-left: 5px;\n}\n.m-l-sm {\n  margin-left: 10px;\n}\n.m-l {\n  margin-left: 15px;\n}\n.m-l-md {\n  margin-left: 20px;\n}\n.m-l-lg {\n  margin-left: 30px;\n}\n.m-l-xl {\n  margin-left: 40px;\n}\n.m-l-n-xxs {\n  margin-left: -1px;\n}\n.m-l-n-xs {\n  margin-left: -5px;\n}\n.m-l-n-sm {\n  margin-left: -10px;\n}\n.m-l-n {\n  margin-left: -15px;\n}\n.m-l-n-md {\n  margin-left: -20px;\n}\n.m-l-n-lg {\n  margin-left: -30px;\n}\n.m-l-n-xl {\n  margin-left: -40px;\n}\n.m-t-none {\n  margin-top: 0;\n}\n.m-t-xxs {\n  margin-top: 1px;\n}\n.m-t-xs {\n  margin-top: 5px;\n}\n.m-t-sm {\n  margin-top: 10px;\n}\n.m-t {\n  margin-top: 15px;\n}\n.m-t-md {\n  margin-top: 20px;\n}\n.m-t-lg {\n  margin-top: 30px;\n}\n.m-t-xl {\n  margin-top: 40px;\n}\n.m-t-xxl {\n  margin-top: 50px;\n}\n.m-t-xxxl {\n  margin-top: 60px;\n}\n.m-t-n-xxs {\n  margin-top: -1px;\n}\n.m-t-n-xs {\n  margin-top: -5px;\n}\n.m-t-n-sm {\n  margin-top: -10px;\n}\n.m-t-n {\n  margin-top: -15px;\n}\n.m-t-n-md {\n  margin-top: -20px;\n}\n.m-t-n-lg {\n  margin-top: -30px;\n}\n.m-t-n-xl {\n  margin-top: -40px;\n}\n.m-r-none {\n  margin-right: 0;\n}\n.m-r-xxs {\n  margin-right: 1px;\n}\n.m-r-xs {\n  margin-right: 5px;\n}\n.m-r-sm {\n  margin-right: 10px;\n}\n.m-r {\n  margin-right: 15px;\n}\n.m-r-md {\n  margin-right: 20px;\n}\n.m-r-lg {\n  margin-right: 30px;\n}\n.m-r-xl {\n  margin-right: 40px;\n}\n.m-r-n-xxs {\n  margin-right: -1px;\n}\n.m-r-n-xs {\n  margin-right: -5px;\n}\n.m-r-n-sm {\n  margin-right: -10px;\n}\n.m-r-n {\n  margin-right: -15px;\n}\n.m-r-n-md {\n  margin-right: -20px;\n}\n.m-r-n-lg {\n  margin-right: -30px;\n}\n.m-r-n-xl {\n  margin-right: -40px;\n}\n.m-b-none {\n  margin-bottom: 0;\n}\n.m-b-xxs {\n  margin-bottom: 1px;\n}\n.m-b-xs {\n  margin-bottom: 5px;\n}\n.m-b-sm {\n  margin-bottom: 10px;\n}\n.m-b {\n  margin-bottom: 15px;\n}\n.m-b-md {\n  margin-bottom: 20px;\n}\n.m-b-lg {\n  margin-bottom: 30px;\n}\n.m-b-xl {\n  margin-bottom: 40px;\n}\n.m-b-n-xxs {\n  margin-bottom: -1px;\n}\n.m-b-n-xs {\n  margin-bottom: -5px;\n}\n.m-b-n-sm {\n  margin-bottom: -10px;\n}\n.m-b-n {\n  margin-bottom: -15px;\n}\n.m-b-n-md {\n  margin-bottom: -20px;\n}\n.m-b-n-lg {\n  margin-bottom: -30px;\n}\n.m-b-n-xl {\n  margin-bottom: -40px;\n}\n.space-15 {\n  margin: 15px 0;\n}\n.space-20 {\n  margin: 20px 0;\n}\n.space-25 {\n  margin: 25px 0;\n}\n.space-30 {\n  margin: 30px 0;\n}\n", ""]);
-
+	
 	// exports
 
 
 /***/ },
-/* 89 */
+/* 114 */
+/*!************************!*\
+  !*** ./src/style.less ***!
+  \************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
-
+	
 	// load the styles
-	var content = __webpack_require__(90);
+	var content = __webpack_require__(/*! !./../~/css-loader!./../~/less-loader!./style.less */ 115);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(82)(content, {});
+	var update = __webpack_require__(/*! ./../~/style-loader/addStyles.js */ 95)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -27133,176 +30509,135 @@
 	}
 
 /***/ },
-/* 90 */
+/* 115 */
+/*!*******************************************************!*\
+  !*** ./~/css-loader!./~/less-loader!./src/style.less ***!
+  \*******************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(76)();
+	exports = module.exports = __webpack_require__(/*! ./../~/css-loader/lib/css-base.js */ 89)();
 	// imports
-
-
+	
+	
 	// module
-	exports.push([module.id, "html {\n  height: 100%;\n  margin: 0;\n  padding: 0;\n}\nbody {\n  height: 100%;\n  font-family: Roboto, Helvetica, Arial, sans-serif;\n  font-size: 14px;\n  font-weight: 300;\n  padding: 0;\n  margin: 0;\n}\n#app-wrapper {\n  position: absolute;\n  top: 0;\n  bottom: 0;\n  left: 0;\n  right: 0;\n  margin: 20px;\n  background: silver;\n  background-image: linear-gradient(180deg, transparent 60%, rgba(36, 68, 114, 0.9) 90%), linear-gradient(45deg, rgba(0, 87, 128, 0.75), rgba(58, 123, 213, 0.85)), url('http://uploads.webflow.com/56378598f4eee9461ea9a015/5651f2b5f41579825819462f_berlin2.jpg');\n  background-position: 0px 0px, 0px 0px, 50% 100%;\n  background-size: auto, auto, cover;\n  background-repeat: repeat, repeat, no-repeat;\n}\n#chat-wrapper {\n  height: 100%;\n  width: 50%;\n  max-width: 500px;\n  background: grey;\n  margin: 0 auto;\n  background: rgba(255, 255, 255, 0.3);\n  padding-top: 10px;\n  padding-bottom: 50px;\n  position: relative;\n  overflow: hidden;\n}\n#chat-wrapper #messages-container {\n  overflow-y: auto;\n  height: 100%;\n  padding-bottom: 50px;\n}\n#chat-wrapper #messages-container::-webkit-scrollbar {\n  width: 5px;\n}\n#chat-wrapper #messages-container::-webkit-scrollbar-track {\n  -webkit-box-shadow: none;\n  background-color: transparent;\n}\n#chat-wrapper #messages-container::-webkit-scrollbar-thumb {\n  border-radius: 5px;\n  background: rgba(193, 193, 193, 0);\n  transition: background 0.5s ease-out;\n}\n#chat-wrapper #messages-container:hover::-webkit-scrollbar-thumb {\n  background: rgba(193, 193, 193, 0.4);\n}\n#chat-wrapper #message-loading {\n  position: absolute;\n  bottom: 60px;\n  width: 50px;\n  height: 30px;\n  background: #fff url('/public/images/message.gif') no-repeat -4px -13px;\n  border-radius: 8px;\n  right: 20px;\n  background-size: 60px;\n  display: none;\n}\n#chat-wrapper #message-loading:after {\n  content: \"\";\n  display: block;\n  position: absolute;\n  height: 10px;\n  width: 10px;\n  background: #fff;\n  transform: rotate(45deg);\n  top: 7px;\n  right: -5px;\n}\n#chat-wrapper #chat-input {\n  height: 50px;\n  position: absolute;\n  bottom: 0;\n  left: 0;\n  right: 0;\n}\n#chat-wrapper #chat-input input {\n  display: none;\n  height: 50px;\n  border: 0;\n  border-top: 3px solid green;\n  background: rgba(255, 255, 255, 0.6);\n  border-radius: 0;\n}\n#chat-wrapper .message {\n  margin-bottom: 7px;\n}\n#chat-wrapper .message:last-child {\n  margin-bottom: 0;\n}\n#chat-wrapper .message .avatar {\n  border-radius: 4px;\n  width: 40px;\n  height: 40px;\n  overflow: hidden;\n  margin-top: 20px;\n  background-size: cover;\n  background-repeat: no-repeat;\n}\n#chat-wrapper .message .avatar img {\n  width: 40px;\n  height: 40px;\n}\n#chat-wrapper .message .message-bubble {\n  max-width: 70%;\n  display: inline-block;\n}\n#chat-wrapper .message .message-bubble .user {\n  text-align: left;\n  height: 20px;\n  font-size: 80%;\n  opacity: 0.6;\n  font-weight: 300;\n  color: #fff;\n}\n#chat-wrapper .message .message-bubble .text {\n  position: relative;\n  padding: 10px;\n  font-size: 14px;\n  line-height: 20px;\n  font-weight: 400;\n  text-align: left;\n  border-radius: 8px;\n  word-break: break-word;\n}\n#chat-wrapper .message .message-bubble .text:after {\n  content: \"\";\n  display: block;\n  position: absolute;\n  height: 10px;\n  width: 10px;\n  background: #fff;\n  transform: rotate(45deg);\n}\n#chat-wrapper .message.user {\n  margin-left: 20px;\n}\n#chat-wrapper .message.user .message-bubble {\n  float: left;\n}\n#chat-wrapper .message.user .message-bubble .user {\n  margin-left: 3px !important;\n}\n#chat-wrapper .message.user .message-bubble .text {\n  color: #fff;\n  background-color: #244472;\n}\n#chat-wrapper .message.user .message-bubble .text:after {\n  background-color: #244472;\n  left: -4px;\n  top: 7px;\n}\n#chat-wrapper .message.operator {\n  margin-right: 20px;\n}\n#chat-wrapper .message.operator .avatar {\n  float: right;\n  margin-left: 20px;\n}\n#chat-wrapper .message.operator .message-bubble {\n  float: right;\n}\n#chat-wrapper .message.operator .message-bubble .user {\n  text-align: right;\n  margin-right: 3px !important;\n}\n#chat-wrapper .message.operator .message-bubble .text {\n  color: #132047;\n  background-color: #fff;\n}\n#chat-wrapper .message.operator .message-bubble .text:after {\n  right: -4px;\n  top: 7px;\n}\n", ""]);
-
+	exports.push([module.id, "html {\n  height: 100%;\n  margin: 0;\n  padding: 0;\n}\nbody {\n  height: 100%;\n  font-family: Roboto, Helvetica, Arial, sans-serif;\n  font-size: 14px;\n  font-weight: 300;\n  padding: 0;\n  margin: 0;\n}\n#app-wrapper {\n  position: absolute;\n  top: 0;\n  bottom: 0;\n  left: 0;\n  right: 0;\n  margin: 20px;\n  background: silver;\n  background-image: linear-gradient(180deg, transparent 60%, rgba(36, 68, 114, 0.9) 90%), linear-gradient(45deg, rgba(0, 87, 128, 0.75), rgba(58, 123, 213, 0.85)), url('http://uploads.webflow.com/56378598f4eee9461ea9a015/5651f2b5f41579825819462f_berlin2.jpg');\n  background-position: 0px 0px, 0px 0px, 50% 100%;\n  background-size: auto, auto, cover;\n  background-repeat: repeat, repeat, no-repeat;\n}\n#chat-wrapper {\n  height: 100%;\n  width: 50%;\n  max-width: 500px;\n  background: grey;\n  margin: 0 auto;\n  background: rgba(255, 255, 255, 0.3);\n  padding-top: 10px;\n  position: relative;\n  overflow: hidden;\n}\n#chat-wrapper #messages-container {\n  overflow-y: auto;\n  overflow-x: hidden;\n  height: 100%;\n  padding-bottom: 50px;\n}\n#chat-wrapper #messages-container::-webkit-scrollbar {\n  width: 5px;\n}\n#chat-wrapper #messages-container::-webkit-scrollbar-track {\n  -webkit-box-shadow: none;\n  background-color: transparent;\n}\n#chat-wrapper #messages-container::-webkit-scrollbar-thumb {\n  border-radius: 5px;\n  background: rgba(193, 193, 193, 0);\n  transition: background 0.5s ease-out;\n}\n#chat-wrapper #messages-container:hover::-webkit-scrollbar-thumb {\n  background: rgba(193, 193, 193, 0.4);\n}\n#chat-wrapper #message-loading {\n  position: absolute;\n  bottom: 60px;\n  width: 50px;\n  height: 30px;\n  background: #fff url('/public/images/message.gif') no-repeat -4px -13px;\n  border-radius: 8px;\n  right: 20px;\n  background-size: 60px;\n  display: none;\n}\n#chat-wrapper #message-loading:after {\n  content: \"\";\n  display: block;\n  position: absolute;\n  height: 10px;\n  width: 10px;\n  background: #fff;\n  transform: rotate(45deg);\n  top: 7px;\n  right: -5px;\n}\n#chat-wrapper #chat-input {\n  height: 50px;\n  position: absolute;\n  bottom: 0;\n  left: 0;\n  right: 0;\n}\n#chat-wrapper #chat-input input {\n  display: none;\n  height: 50px;\n  border: 0;\n  border-top: 3px solid green;\n  background: rgba(255, 255, 255, 0.6);\n  border-radius: 0;\n}\n#chat-wrapper .message {\n  margin-bottom: 7px;\n}\n#chat-wrapper .message:last-child {\n  margin-bottom: 0;\n}\n#chat-wrapper .message .avatar {\n  border-radius: 4px;\n  width: 40px;\n  height: 40px;\n  overflow: hidden;\n  margin-top: 20px;\n  background-size: cover;\n  background-repeat: no-repeat;\n}\n#chat-wrapper .message .avatar img {\n  width: 40px;\n  height: 40px;\n}\n#chat-wrapper .message .message-bubble {\n  max-width: 70%;\n  display: inline-block;\n}\n#chat-wrapper .message .message-bubble .user {\n  text-align: left;\n  height: 20px;\n  font-size: 80%;\n  opacity: 0.6;\n  font-weight: 300;\n  color: #fff;\n}\n#chat-wrapper .message .message-bubble .text {\n  position: relative;\n  padding: 10px;\n  font-size: 14px;\n  line-height: 20px;\n  font-weight: 400;\n  text-align: left;\n  border-radius: 8px;\n  word-break: break-word;\n}\n#chat-wrapper .message .message-bubble .text:after {\n  content: \"\";\n  display: block;\n  position: absolute;\n  height: 10px;\n  width: 10px;\n  background: #fff;\n  transform: rotate(45deg);\n}\n#chat-wrapper .message.user {\n  margin-left: 20px;\n}\n#chat-wrapper .message.user .message-bubble {\n  float: left;\n}\n#chat-wrapper .message.user .message-bubble .user {\n  margin-left: 3px !important;\n}\n#chat-wrapper .message.user .message-bubble .text {\n  color: #fff;\n  background-color: #244472;\n}\n#chat-wrapper .message.user .message-bubble .text:after {\n  background-color: #244472;\n  left: -4px;\n  top: 7px;\n}\n#chat-wrapper .message.operator {\n  margin-right: 20px;\n}\n#chat-wrapper .message.operator .avatar {\n  float: right;\n  margin-left: 20px;\n}\n#chat-wrapper .message.operator .message-bubble {\n  float: right;\n}\n#chat-wrapper .message.operator .message-bubble .user {\n  text-align: right;\n  margin-right: 3px !important;\n}\n#chat-wrapper .message.operator .message-bubble .text {\n  color: #132047;\n  background-color: #fff;\n}\n#chat-wrapper .message.operator .message-bubble .text:after {\n  right: -4px;\n  top: 7px;\n}\n#chat-wrapper .message.special {\n  margin: 15px 0 15px;\n}\n#rooms-slider {\n  position: relative;\n}\n#rooms-slider .arrow {\n  display: none;\n  position: absolute;\n  color: #fff;\n  font-size: 200%;\n  top: 65px;\n  margin-top: -12px;\n  z-index: 100;\n  font-weight: 100;\n  text-shadow: 1px 1px 5px #000;\n  cursor: pointer;\n}\n#rooms-slider .arrow.left {\n  left: 10px;\n}\n#rooms-slider .arrow.right {\n  right: 10px;\n}\n#rooms-slider:hover .arrow {\n  display: block;\n}\n#rooms-slider .room {\n  float: left;\n  width: 190px;\n  height: 150px;\n  margin-right: 10px;\n}\n#rooms-slider .room .bg-container {\n  height: 120px;\n  background-position: center center;\n  background-size: cover;\n  position: relative;\n}\n#rooms-slider .room .bg-container .title {\n  top: 10px;\n  left: 10px;\n  color: #fff;\n  font-size: 120%;\n  font-weight: 500;\n  position: absolute;\n  text-shadow: 1px 1px 0 black;\n}\n#rooms-slider .room .bg-container .details-container {\n  width: 100%;\n  position: absolute;\n  bottom: 0;\n  padding: 0 10px;\n  line-height: 30px;\n  font-size: 90%;\n  color: #fff;\n  text-shadow: 1px 1px 0 black;\n}\n#rooms-slider .room .bg-container .details-container .description {\n  float: left;\n}\n#rooms-slider .room .bg-container .details-container .price {\n  float: right;\n  font-weight: 600;\n}\n#rooms-slider .room .booking-button .btn {\n  display: block;\n  border-radius: 0;\n  width: 100%;\n  background: #00eed2;\n  border: 0;\n  color: #000;\n}\n#services-slider {\n  position: relative;\n}\n#services-slider .arrow {\n  display: none;\n  position: absolute;\n  color: #fff;\n  font-size: 200%;\n  top: 65px;\n  margin-top: -12px;\n  z-index: 100;\n  font-weight: 100;\n  text-shadow: 1px 1px 5px #000;\n  cursor: pointer;\n}\n#services-slider .arrow.left {\n  left: 10px;\n}\n#services-slider .arrow.right {\n  right: 10px;\n}\n#services-slider:hover .arrow {\n  display: block;\n}\n#services-slider .service {\n  float: left;\n  width: 190px;\n  height: 150px;\n  margin-right: 10px;\n}\n#services-slider .service .bg-container {\n  height: 120px;\n  background-position: center center;\n  background-size: cover;\n  position: relative;\n}\n#services-slider .service .bg-container .title {\n  top: 10px;\n  left: 10px;\n  color: #fff;\n  font-size: 120%;\n  font-weight: 500;\n  position: absolute;\n  text-shadow: 1px 1px 0 black;\n}\n#services-slider .service .bg-container .details-container {\n  width: 100%;\n  position: absolute;\n  bottom: 0;\n  padding: 0 10px;\n  line-height: 30px;\n  font-size: 90%;\n  color: #fff;\n  text-shadow: 1px 1px 0 black;\n}\n#services-slider .service .bg-container .details-container .description {\n  float: left;\n}\n#services-slider .service .bg-container .details-container .price {\n  float: right;\n  font-weight: 600;\n}\n#services-slider .service .booking-button .btn {\n  display: block;\n  border-radius: 0;\n  width: 100%;\n  background: #00eed2;\n  border: 0;\n  color: #000;\n}\n#payment-details {\n  width: 70%;\n  margin: 0 auto;\n  padding: 20px;\n  background: #fff;\n  border-radius: 8px;\n}\n#payment-details .pull-left {\n  width: calc(50% - 7.5px);\n  margin-right: 15px;\n}\n#payment-details .pull-right {\n  width: calc(50% - 7.5px);\n}\n", ""]);
+	
 	// exports
 
 
 /***/ },
-/* 91 */
+/* 116 */
+/*!********************!*\
+  !*** ./src/app.js ***!
+  \********************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
-
-	var _ui = __webpack_require__(92);
-
+	
+	var _ui = __webpack_require__(/*! ./ui */ 117);
+	
 	var _ui2 = _interopRequireDefault(_ui);
-
+	
+	var _lodash = __webpack_require__(/*! lodash */ 110);
+	
+	var _lodash2 = _interopRequireDefault(_lodash);
+	
+	var _bookingSteps = __webpack_require__(/*! ./bookingSteps */ 124);
+	
+	var _bookingSteps2 = _interopRequireDefault(_bookingSteps);
+	
+	var _bookingRequest = __webpack_require__(/*! ./bookingRequest */ 125);
+	
+	var _bookingRequest2 = _interopRequireDefault(_bookingRequest);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
+	
+	/**
+	 * Created by tiberiu on 17/06/16.
+	 */
+	
 	$(document).ready(function () {
 		app.init();
-	}); /**
-	     * Created by tiberiu on 17/06/16.
-	     */
-
-	var request = {
-		checkInDate: null,
-		checkOutDate: null,
-		persons: null,
-		nights: null
-	};
-
-	var appSteps = {
-		1: {
-			input: {
-				show: true,
-				placeholder: 'Any time, like "Next Sunday" or "Tomorrow"'
-			},
-			message: {
-				text: 'Hi! I\'m here to make your trip awesome!<br>Tell me, when would you like to arrive?',
-				delay: 1000
-			},
-			resolveInput: function resolveInput(input) {
-				request.checkInDate = input;
-				console.log('request', request);
-				app.nextStep();
-			}
-		},
-
-		2: {
-			input: {
-				show: true,
-				placeholder: 'A number, like "3" or "5"'
-			},
-			message: {
-				text: 'How many nights would you like to stay?',
-				delay: 1500
-			},
-			resolveInput: function resolveInput(input) {
-				request.checkOutDate = input;
-				console.log('request', request);
-				app.nextStep();
-			}
-		},
-
-		3: {
-			input: {
-				show: true,
-				placeholder: 'A number, like "2" or "4"'
-			},
-			message: {
-				text: 'How many persons?',
-				delay: 1500
-			},
-			resolveInput: function resolveInput(input) {
-				request.persons = input;
-				console.log('request', request);
-				app.nextStep();
-			}
-		},
-
-		4: {
-			input: {
-				show: false
-			},
-			message: {
-				text: 'Ok, this is what we have free for this period:',
-				delay: 2500
-			}
-		}
-	};
-
-	// resolveInput(input) {
-	// 	// request.persons = input;
-	// 	console.log('request', request);
-	// 	app.nextStep();
-	// }
-	var ui = void 0;
-
+	});
+	
 	var app = {
 		currentStep: 0,
-
+	
 		init: function init() {
-			ui = new _ui2.default();
-
-			app.nextStep();
+			_ui2.default.init();
+	
+			$('#app-wrapper').on('nextStep', app.nextStep);
+	
 			$('#chat-input form').submit(function (event) {
 				event.preventDefault();
-
+	
 				var input = $('#chat-input form input').val();
 				$('#chat-input form input').val('');
-
-				ui.addMessage('user', input);
-				var step = appSteps[app.currentStep];
+	
+				_ui2.default.addMessage('user', input);
+				var step = _bookingSteps2.default[app.currentStep];
 				step.resolveInput(input);
 			});
+	
+			$('#app-wrapper').trigger('nextStep');
 		},
-		nextStep: function nextStep() {
+		nextStep: function nextStep(event) {
 			app.currentStep++;
-			var step = appSteps[app.currentStep];
-
+			var step = _bookingSteps2.default[app.currentStep];
+	
 			if (step.input.show) {
-				ui.showInput(step.input.placeholder);
+				_ui2.default.showInput(step.input.placeholder);
 			} else {
-				ui.hideInput();
+				_ui2.default.hideInput();
 			}
-
+	
 			if (step.message) {
-				ui.addMessage('operator', step.message.text, step.message.delay);
+				_ui2.default.addMessage('operator', step.message.text, step.message.delay);
+			}
+	
+			if (step.template) {
+				step.template();
 			}
 		}
 	};
 
 /***/ },
-/* 92 */
+/* 117 */
+/*!*******************!*\
+  !*** ./src/ui.js ***!
+  \*******************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
-
+	
 	Object.defineProperty(exports, "__esModule", {
 		value: true
 	});
-
+	
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
+	
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
+	
 	/**
 	 * Created by tiberiu on 17/06/16.
 	 */
-
+	
 	var UI = function () {
 		function UI() {
 			_classCallCheck(this, UI);
-
-			this.$chatInput = $('#chat-input form input');
-			this.$loadingMessage = $('#message-loading');
-			this.$messages = $('#messages-container');
 		}
-
+	
 		_createClass(UI, [{
+			key: 'init',
+			value: function init() {
+				this.$chatInput = $('#chat-input form input');
+				this.$loadingMessage = $('#message-loading');
+				this.$messages = $('#messages-container');
+			}
+		}, {
 			key: 'render',
 			value: function render(templateName, parent, data) {
-				var template = __webpack_require__(93)("./" + templateName + '.ejs');
+				var template = __webpack_require__(/*! ejs!./templates */ 118)("./" + templateName + '.ejs');
 				$(parent).append(template(data));
 			}
 		}, {
@@ -27310,17 +30645,25 @@
 			value: function addMessage(type, message, delay) {
 				var _this = this;
 				var templateName = type === 'user' ? 'userMessage' : 'operatorMessage';
-
-				if (delay) {
-					this.showLoading();
-					return setTimeout(function () {
-						_this.hideLoading();
-						_this.render(templateName, _this.$messages, { message: message });
-						_this.$messages.scrollTop(_this.$messages.prop('scrollHeight'));
-					}, delay);
-				}
-
+	
+				// if (delay) {
+				// 	this.showLoading();
+				// 	return setTimeout(() => {
+				// 		_this.hideLoading();
+				// 		_this.render(templateName, _this.$messages, { message: message });
+				// 		_this.$messages.scrollTop(_this.$messages.prop('scrollHeight'));
+				// 	}, delay);
+				// }
+	
 				this.render(templateName, this.$messages, { message: message });
+				_this.$messages.scrollTop(_this.$messages.prop('scrollHeight'));
+			}
+		}, {
+			key: 'addSpecialMessage',
+			value: function addSpecialMessage(templateName, data, delay) {
+				var _this = this;
+	
+				this.render(templateName, this.$messages, data);
 				_this.$messages.scrollTop(_this.$messages.prop('scrollHeight'));
 			}
 		}, {
@@ -27329,7 +30672,7 @@
 				if (placeholder) {
 					this.$chatInput.attr('placeholder', placeholder);
 				}
-
+	
 				this.$chatInput.fadeIn('fast');
 			}
 		}, {
@@ -27338,7 +30681,7 @@
 				if (placeholder) {
 					this.$chatInput.attr('placeholder', placeholder);
 				}
-
+	
 				this.$chatInput.fadeOut('fast');
 			}
 		}, {
@@ -27352,19 +30695,27 @@
 				this.$loadingMessage.hide();
 			}
 		}]);
-
+	
 		return UI;
 	}();
-
-	exports.default = UI;
+	
+	var ui = new UI();
+	
+	exports.default = ui;
 
 /***/ },
-/* 93 */
+/* 118 */
+/*!****************************************************!*\
+  !*** ./src/templates ./~/ejs-loader!^\.\/.*\.ejs$ ***!
+  \****************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	var map = {
-		"./operatorMessage.ejs": 94,
-		"./userMessage.ejs": 95
+		"./operatorMessage.ejs": 119,
+		"./paymentDetails.ejs": 120,
+		"./roomsSlider.ejs": 121,
+		"./servicesSlider.ejs": 122,
+		"./userMessage.ejs": 123
 	};
 	function webpackContext(req) {
 		return __webpack_require__(webpackContextResolve(req));
@@ -27377,11 +30728,14 @@
 	};
 	webpackContext.resolve = webpackContextResolve;
 	module.exports = webpackContext;
-	webpackContext.id = 93;
+	webpackContext.id = 118;
 
 
 /***/ },
-/* 94 */
+/* 119 */
+/*!**********************************************************!*\
+  !*** ./~/ejs-loader!./src/templates/operatorMessage.ejs ***!
+  \**********************************************************/
 /***/ function(module, exports) {
 
 	module.exports = function (obj) {
@@ -27391,13 +30745,101 @@
 	__p += '<div class="message operator clearfix">\n	<div class="avatar">\n		<img src="/public/images/sebi.jpg" alt="">\n	</div>\n	<div class="message-bubble">\n		<p class="user m-n">Sebastian</p>\n		<div class="text">\n			<span class="message-text">' +
 	((__t = ( message )) == null ? '' : __t) +
 	'</span>\n		</div>\n	</div>\n</div>\n';
-
+	
 	}
 	return __p
 	}
 
 /***/ },
-/* 95 */
+/* 120 */
+/*!*********************************************************!*\
+  !*** ./~/ejs-loader!./src/templates/paymentDetails.ejs ***!
+  \*********************************************************/
+/***/ function(module, exports) {
+
+	module.exports = function (obj) {
+	obj || (obj = {});
+	var __t, __p = '';
+	with (obj) {
+	__p += '<div class="message special">\n	<div id="payment-details">\n		<form action="" class="form">\n			<div class="form-group">\n				<label for="">Personal details</label>\n				<input type="text" class="form-control name" placeholder="Name">\n			</div>\n			<div class="form-group">\n				<input type="text" class="form-control" placeholder="Email">\n			</div>\n			<hr>\n			<div class="form-group">\n				<label for="">Payment details</label>\n				<input type="text" class="form-control" placeholder="Card number">\n			</div>\n			<div class="form-group clearfix">\n				<div class="pull-left">\n					<input type="text" class="form-control" placeholder="Expiration month">\n				</div>\n				<div class="pull-right">\n					<input type="text" class="form-control" placeholder="Expiration year">\n				</div>\n			</div>\n			<div class="form-group text-center m-t-lg m-b-none">\n				<button type="submit" class="btn btn-primary">Submit</button>\n			</div>\n		</form>\n	</div>\n</div>\n';
+	
+	}
+	return __p
+	}
+
+/***/ },
+/* 121 */
+/*!******************************************************!*\
+  !*** ./~/ejs-loader!./src/templates/roomsSlider.ejs ***!
+  \******************************************************/
+/***/ function(module, exports) {
+
+	module.exports = function (obj) {
+	obj || (obj = {});
+	var __t, __p = '', __j = Array.prototype.join;
+	function print() { __p += __j.call(arguments, '') }
+	with (obj) {
+	__p += '<div class="message special clearfix">\n	<div id="rooms-slider">\n		<!--<span class="arrow left"><i class="fa fa-chevron-left"></i></span>-->\n		<!--<span class="arrow right"><i class="fa fa-chevron-right"></i></span>-->\n		';
+	 for (var i = 0; i < rooms.length; i++) { ;
+	__p += '\n			<div class="room" data-room="' +
+	((__t = ( i )) == null ? '' : __t) +
+	'">\n				<div class="bg-container" style="background-image: url(\'/public/images/rooms/' +
+	((__t = ( rooms[i].images[0] )) == null ? '' : __t) +
+	'.jpg\');">\n					<span class="title">' +
+	((__t = ( rooms[i].title )) == null ? '' : __t) +
+	'</span>\n					<div class="details-container clearfix">\n						<span class="description">' +
+	((__t = ( rooms[i].description )) == null ? '' : __t) +
+	'</span>\n						<span class="price">' +
+	((__t = ( rooms[i].price )) == null ? '' : __t) +
+	'€</span>\n					</div>\n				</div>\n				<div class="booking-button">\n					<button class="btn btn-primary" data-room="' +
+	((__t = ( i )) == null ? '' : __t) +
+	'">Book this room</button>\n				</div>\n			</div>\n		';
+	 } ;
+	__p += '\n	</div>\n</div>\n';
+	
+	}
+	return __p
+	}
+
+/***/ },
+/* 122 */
+/*!*********************************************************!*\
+  !*** ./~/ejs-loader!./src/templates/servicesSlider.ejs ***!
+  \*********************************************************/
+/***/ function(module, exports) {
+
+	module.exports = function (obj) {
+	obj || (obj = {});
+	var __t, __p = '', __j = Array.prototype.join;
+	function print() { __p += __j.call(arguments, '') }
+	with (obj) {
+	__p += '<div class="message special">\n	<div id="services-slider">\n		';
+	 for (var i = 0; i < services.length; i++) { ;
+	__p += '\n		<div class="service" data-service="' +
+	((__t = ( i )) == null ? '' : __t) +
+	'">\n			<div class="bg-container" style="background-image: url(\'/public/images/services/' +
+	((__t = ( services[i].images[0] )) == null ? '' : __t) +
+	'.jpg\');">\n				<span class="title">' +
+	((__t = ( services[i].title )) == null ? '' : __t) +
+	'</span>\n				<div class="details-container clearfix">\n					<span class="description">' +
+	((__t = ( services[i].description )) == null ? '' : __t) +
+	'</span>\n					<span class="price">' +
+	((__t = ( services[i].price )) == null ? '' : __t) +
+	'€</span>\n				</div>\n			</div>\n			<div class="booking-button">\n				<button class="btn btn-primary" data-service="' +
+	((__t = ( i )) == null ? '' : __t) +
+	'">Book this service</button>\n			</div>\n		</div>\n		';
+	 } ;
+	__p += '\n	</div>\n</div>\n';
+	
+	}
+	return __p
+	}
+
+/***/ },
+/* 123 */
+/*!******************************************************!*\
+  !*** ./~/ejs-loader!./src/templates/userMessage.ejs ***!
+  \******************************************************/
 /***/ function(module, exports) {
 
 	module.exports = function (obj) {
@@ -27407,10 +30849,297 @@
 	__p += '<div class="message user clearfix">\n	<div class="message-bubble">\n		<p class="user m-n">You</p>\n		<div class="text">\n			<span class="message-text">' +
 	((__t = ( message )) == null ? '' : __t) +
 	'</span>\n		</div>\n	</div>\n</div>\n';
-
+	
 	}
 	return __p
 	}
 
+/***/ },
+/* 124 */
+/*!*****************************!*\
+  !*** ./src/bookingSteps.js ***!
+  \*****************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	
+	var _ui = __webpack_require__(/*! ./ui */ 117);
+	
+	var _ui2 = _interopRequireDefault(_ui);
+	
+	var _bookingRequest = __webpack_require__(/*! ./bookingRequest */ 125);
+	
+	var _bookingRequest2 = _interopRequireDefault(_bookingRequest);
+	
+	var _roomsData = __webpack_require__(/*! ./roomsData */ 126);
+	
+	var _roomsData2 = _interopRequireDefault(_roomsData);
+	
+	var _servicesData = __webpack_require__(/*! ./servicesData */ 127);
+	
+	var _servicesData2 = _interopRequireDefault(_servicesData);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	/**
+	 * Created by tiberiu on 21/06/16.
+	 */
+	
+	var steps = {
+		1: {
+			input: {
+				show: true,
+				placeholder: 'Any time, like "Next Sunday" or "Tomorrow"'
+			},
+			message: {
+				text: 'Hi! I\'m here to make your trip awesome!<br>Tell me, when would you like to arrive?',
+				delay: 1000
+			},
+			resolveInput: function resolveInput(input) {
+				_bookingRequest2.default.checkInDate = input;
+				console.log('request', _bookingRequest2.default);
+				$('#app-wrapper').trigger('nextStep');
+			}
+		},
+	
+		2: {
+			input: {
+				show: true,
+				placeholder: 'A number, like "3" or "5"'
+			},
+			message: {
+				text: 'How many nights would you like to stay?',
+				delay: 1500
+			},
+			resolveInput: function resolveInput(input) {
+				_bookingRequest2.default.checkOutDate = input;
+				console.log('request', _bookingRequest2.default);
+				$('#app-wrapper').trigger('nextStep');
+			}
+		},
+	
+		3: {
+			input: {
+				show: true,
+				placeholder: 'A number, like "2" or "4"'
+			},
+			message: {
+				text: 'How many persons?',
+				delay: 1500
+			},
+			resolveInput: function resolveInput(input) {
+				_bookingRequest2.default.persons = input;
+				console.log('request', _bookingRequest2.default);
+				$('#app-wrapper').trigger('nextStep');
+			}
+		},
+	
+		4: {
+			input: {
+				show: false
+			},
+			message: {
+				text: 'Ok, this is what we have free for this period:',
+				delay: 2500
+			},
+			template: function template() {
+				_ui2.default.addSpecialMessage('roomsSlider', {
+					rooms: _roomsData2.default
+				});
+	
+				$('#rooms-slider').slick({
+					variableWidth: true,
+					slidesToShow: 2,
+					dots: false,
+					prevArrow: '<span class="arrow left"><i class="fa fa-chevron-left"></i></span>',
+					nextArrow: '<span class="arrow right"><i class="fa fa-chevron-right"></i></span>'
+				});
+	
+				$('#rooms-slider .booking-button .btn').on('click', function (event) {
+					event.preventDefault();
+					_bookingRequest2.default.chosenRoom = $(this).data('room');
+	
+					console.log(_bookingRequest2.default);
+	
+					$('#app-wrapper').trigger('nextStep');
+				});
+			}
+		},
+	
+		5: {
+			input: {
+				show: false
+			},
+			message: {
+				text: 'Nice. Do you want to book other services too?',
+				delay: 2500
+			},
+			template: function template() {
+				_ui2.default.addSpecialMessage('servicesSlider', {
+					services: _servicesData2.default
+				});
+	
+				$('#services-slider').slick({
+					variableWidth: true,
+					slidesToShow: 2,
+					dots: false,
+					prevArrow: '<span class="arrow left"><i class="fa fa-chevron-left"></i></span>',
+					nextArrow: '<span class="arrow right"><i class="fa fa-chevron-right"></i></span>'
+				});
+	
+				$('#services-slider .booking-button .btn').on('click', function (event) {
+					event.preventDefault();
+					if (!_.isArray(_bookingRequest2.default.additionalServices)) {
+						_bookingRequest2.default.additionalServices = [];
+					}
+	
+					_bookingRequest2.default.additionalServices.push($(this).data('service'));
+	
+					console.log(_bookingRequest2.default);
+	
+					$('#app-wrapper').trigger('nextStep');
+				});
+			}
+		},
+	
+		6: {
+			input: {
+				show: false
+			},
+			message: {
+				text: 'Right on! Now all we need is your payment details.',
+				delay: 2500
+			},
+			template: function template() {
+				_ui2.default.addSpecialMessage('paymentDetails');
+	
+				$('#payment-details form').on('submit', function (event) {
+					event.preventDefault();
+	
+					_bookingRequest2.default.name = $(this).find('input.name').val();
+	
+					$('#app-wrapper').trigger('nextStep');
+				});
+			}
+		},
+	
+		7: {
+			input: {
+				show: false
+			},
+			message: {
+				text: 'Your booking is completed!',
+				delay: 2500
+			}
+		}
+	};
+	
+	exports.default = steps;
+
+/***/ },
+/* 125 */
+/*!*******************************!*\
+  !*** ./src/bookingRequest.js ***!
+  \*******************************/
+/***/ function(module, exports) {
+
+	"use strict";
+	
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	/**
+	 * Created by tiberiu on 21/06/16.
+	 */
+	
+	exports.default = {
+		checkInDate: null,
+		checkOutDate: null,
+		persons: null,
+		nights: null,
+		chosenRoom: null,
+		additionalServices: null
+	};
+
+/***/ },
+/* 126 */
+/*!**************************!*\
+  !*** ./src/roomsData.js ***!
+  \**************************/
+/***/ function(module, exports) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	/**
+	 * Created by tiberiu on 21/06/16.
+	 */
+	
+	exports.default = [{
+		title: 'Simple room',
+		description: 'Double bed, nice view',
+		price: 300,
+		images: ['1-1', '1-2']
+	}, {
+		title: 'Double room',
+		description: '2 beds',
+		price: 350,
+		images: ['2-1', '2-2']
+	}, {
+		title: 'Premium room',
+		description: 'Premium service',
+		price: 400,
+		images: ['3-1', '3-2']
+	}, {
+		title: 'Last room',
+		description: 'The shit',
+		price: 400,
+		images: ['4-1', '4-2', '4-3', '4-4']
+	}];
+
+/***/ },
+/* 127 */
+/*!*****************************!*\
+  !*** ./src/servicesData.js ***!
+  \*****************************/
+/***/ function(module, exports) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	/**
+	 * Created by tiberiu on 21/06/16.
+	 */
+	
+	/**
+	 * Created by tiberiu on 21/06/16.
+	 */
+	
+	exports.default = [{
+		title: 'Spa',
+		description: 'Luxurious spa',
+		price: 100,
+		images: ['spa']
+	}, {
+		title: 'Gym',
+		description: 'Modern gym',
+		price: 250,
+		images: ['gym']
+	}, {
+		title: 'Ski classes',
+		description: 'Personal trainer',
+		price: 100,
+		images: ['ski']
+	}];
+
 /***/ }
 /******/ ]);
+//# sourceMappingURL=bundle.js.map
