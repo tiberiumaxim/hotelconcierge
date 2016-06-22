@@ -22,6 +22,15 @@ class UI {
 		if (isSafari || isWindows) {
 			$('body').css('-webkit-text-stroke', '0.5px');
 		}
+
+		$('body').on('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', '.message, .message-loading', (event) => {
+			this.$messages.scrollTop(this.$messages.prop('scrollHeight'));
+		});
+
+		$('body').on('init', '.message.special', (event) => {
+			$(event.target).parent().addClass('fadeInUp');
+			$(event.target).show();
+		});
 	}
 
 	render(templateName, parent, data) {
@@ -34,14 +43,12 @@ class UI {
 		let templateName = type === 'user' ? 'userMessage' : 'operatorMessage';
 
 		this.render(templateName, this.$messages, { message: message });
-		_this.$messages.scrollTop(_this.$messages.prop('scrollHeight'));
 	}
 
 	addSpecialMessage(templateName, data, delay) {
 		let _this = this;
 
 		this.render(templateName, this.$messages, data);
-		_this.$messages.scrollTop(_this.$messages.prop('scrollHeight'));
 	}
 
 	showInput(placeholder) {

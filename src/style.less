@@ -43,8 +43,8 @@ body {
 	#messages-container {
 		overflow-y: auto;
 		overflow-x: hidden;
-		height: 100%;
-		padding-bottom: 70px;
+		height: calc(~"100% - 50px");
+		padding-bottom: 20px;
 
 		&::-webkit-scrollbar {
 			width: 5px;
@@ -71,7 +71,7 @@ body {
 	.message-loading {
 		height: 30px;
 		margin: 20px 20px 0 0;
-		animation-duration: 0.1s;
+		animation-duration: 0.15s;
 
 		.loader {
 			float: right;
@@ -86,11 +86,8 @@ body {
 
 	#chat-input {
 		height: 50px;
-		position: absolute;
-		bottom: 0;
-		left: 0;
-		right: 0;
 		display: none;
+		position: relative;
 
 		input {
 			height: 50px;
@@ -137,7 +134,7 @@ body {
 
 	.message {
 		margin-bottom: 7px;
-		animation-duration: 0.1s;
+		animation-duration: 0.3s;
 
 		&:last-child {
 			margin-bottom: 0;
@@ -245,6 +242,11 @@ body {
 
 		&.special {
 			margin: 15px 0 15px;
+			overflow: hidden;
+
+			.slick-slider {
+				display: none;
+			}
 		}
 	}
 }
@@ -331,6 +333,8 @@ body {
 				background: #00eed2;
 				border: 0;
 				color: #000;
+				height: 30px;
+				line-height: 18px;
 			}
 		}
 	}
