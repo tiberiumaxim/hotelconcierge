@@ -7,9 +7,21 @@ class UI {
 	}
 
 	init() {
-		this.$chatInput = $('#chat-input form input');
-		this.$loadingMessage = $('#message-loading');
+		this.$chatInput = $('#chat-input');
 		this.$messages = $('#messages-container');
+
+		var isChrome = navigator.userAgent.indexOf('Chrome') > -1;
+		var isSafari = navigator.userAgent.indexOf('Safari') > -1;
+		var isMac = (navigator.userAgent.indexOf('Mac OS') != -1);
+		var isWindows = !isMac;
+
+		if (isChrome && isSafari) {
+			isSafari = false;
+		}
+
+		if (isSafari || isWindows) {
+			$('body').css('-webkit-text-stroke', '0.5px');
+		}
 	}
 
 	render(templateName, parent, data) {
@@ -20,15 +32,6 @@ class UI {
 	addMessage(type, message, delay) {
 		let _this = this;
 		let templateName = type === 'user' ? 'userMessage' : 'operatorMessage';
-
-		// if (delay) {
-		// 	this.showLoading();
-		// 	return setTimeout(() => {
-		// 		_this.hideLoading();
-		// 		_this.render(templateName, _this.$messages, { message: message });
-		// 		_this.$messages.scrollTop(_this.$messages.prop('scrollHeight'));
-		// 	}, delay);
-		// }
 
 		this.render(templateName, this.$messages, { message: message });
 		_this.$messages.scrollTop(_this.$messages.prop('scrollHeight'));
@@ -43,26 +46,23 @@ class UI {
 
 	showInput(placeholder) {
 		if (placeholder) {
-			this.$chatInput.attr('placeholder', placeholder);
+			this.$chatInput.find('input[type=text]').attr('placeholder', placeholder);
 		}
 
-		this.$chatInput.fadeIn('fast');
+		this.$chatInput.fadeIn(300);
 	}
 
-	hideInput(placeholder) {
-		if (placeholder) {
-			this.$chatInput.attr('placeholder', placeholder);
-		}
-
-		this.$chatInput.fadeOut('fast');
+	hideInput() {
+		this.$chatInput.fadeOut(300);
 	}
 
 	showLoading() {
-		this.$loadingMessage.show();
+		this.render('loading', this.$messages);
+		this.$messages.scrollTop(this.$messages.prop('scrollHeight'));
 	}
 
 	hideLoading() {
-		this.$loadingMessage.hide();
+		this.$messages.find('.message-loading').remove();
 	}
 }
 
