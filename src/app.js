@@ -25,6 +25,10 @@ let app = {
 			let input = $('#chat-input form input').val();
 			$('#chat-input form input').val('');
 
+			if (input.trim() === '') {
+				return;
+			}
+
 			ui.addMessage('user', input);
 			let step = appSteps[app.currentStep];
 			step.resolveInput(input);
