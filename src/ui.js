@@ -36,9 +36,11 @@ class UI {
 			$(event.target).show();
 		});
 
-		$('body').on('click', '.btn.details', (event) => {
+		$('body').on('click', '.btn.details:not(.disabled)', (event) => {
 			event.preventDefault();
-			let roomData = roomsData[$(event.target).data('room')];
+			let roomIdx = $(event.target).data('room');
+			let roomData = roomsData[roomIdx];
+			roomData.roomIdx = roomIdx;
 
 			_this.hideRoomDetails();
 			_this.render('roomDetails', _this.$messages, roomData);
@@ -48,6 +50,8 @@ class UI {
 				prevArrow: '<span class="arrow left"><i class="fa fa-chevron-left"></i></span>',
 				nextArrow: '<span class="arrow right"><i class="fa fa-chevron-right"></i></span>'
 			});
+
+			this.$messages.scrollTop(this.$messages.prop('scrollHeight'));
 		});
 
 		$('body').on('click', '.btn.hide-details', _this.hideRoomDetails);

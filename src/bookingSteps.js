@@ -71,7 +71,6 @@ const steps = {
 
 			$('#rooms-slider').slick({
 				variableWidth: true,
-				slidesToShow: 2,
 				dots: false,
 				prevArrow: '<span class="arrow left"><i class="fa fa-chevron-left"></i></span>',
 				nextArrow: '<span class="arrow right"><i class="fa fa-chevron-right"></i></span>'
@@ -107,7 +106,6 @@ const steps = {
 
 			$('#services-slider').slick({
 				variableWidth: true,
-				slidesToShow: 2,
 				dots: false,
 				prevArrow: '<span class="arrow left"><i class="fa fa-chevron-left"></i></span>',
 				nextArrow: '<span class="arrow right"><i class="fa fa-chevron-right"></i></span>'
@@ -115,6 +113,11 @@ const steps = {
 
 			$('#services-slider .booking-button .btn').on('click', function (event) {
 				event.preventDefault();
+
+				if ($(event.target).hasClass('disabled') || $(event.target).hasClass('selected')) {
+					return;
+				}
+
 				if (!_.isArray(request.additionalServices)) {
 					request.additionalServices = [];
 				}
