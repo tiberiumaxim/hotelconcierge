@@ -72,6 +72,8 @@ const steps = {
 			$('#rooms-slider').slick({
 				variableWidth: true,
 				dots: false,
+				slidesToShow: 3,
+				slidesToScroll: 1,
 				prevArrow: '<span class="arrow left"><i class="fa fa-chevron-left"></i></span>',
 				nextArrow: '<span class="arrow right"><i class="fa fa-chevron-right"></i></span>'
 			});
@@ -107,6 +109,8 @@ const steps = {
 			$('#services-slider').slick({
 				variableWidth: true,
 				dots: false,
+				slidesToShow: 3,
+				slidesToScroll: 1,
 				prevArrow: '<span class="arrow left"><i class="fa fa-chevron-left"></i></span>',
 				nextArrow: '<span class="arrow right"><i class="fa fa-chevron-right"></i></span>'
 			});
