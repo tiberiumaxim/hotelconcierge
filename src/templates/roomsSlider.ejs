@@ -11,8 +11,8 @@
 						<span class="price"><%= rooms[i].price %>€</span>
 					</div>
 				</div>
-				<div class="booking-button">
-					<button class="btn btn-primary" data-room="<%= i %>">Book this room</button>
+				<div class="buttons-container">
+					<button class="btn btn-primary details" data-room="<%= i %>">Details</button><button class="btn btn-primary book" data-room="<%= i %>">Book</button>
 				</div>
 			</div>
 		<% } %>

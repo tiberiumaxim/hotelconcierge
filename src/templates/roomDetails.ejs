@@ -1,0 +1,22 @@
+<div id="room-details" class="animated fadeIn">
+	<div class="header">
+		<p class="title"><%= title %></p>
+		<p class="description"><%= description %></p>
+		<span class="price"><%= price %>€</span>
+	</div>
+	<div class="images">
+		<% for (var i = 0; i < images.length; i++) { %>
+			<div class="image" style="background-image: url('/public/images/rooms/<%= images[i] %>.jpg');"></div>
+		<% } %>
+	</div>
+	<div class="amenities m-t-md">
+		<ul class="list-unstyled clearfix">
+			<% for (var i = 0; i < amenities.length; i++) { %>
+				<li><i class="fa fa-<%= amenities[i].icon %>"></i> <%= amenities[i].label %></li>
+			<% } %>
+		</ul>
+	</div>
+	<div class="buttons-container m-t-sm m-b-sm">
+		<button class="btn hide-details m-r-sm">Hide</button><button class="btn book">Book</button>
+	</div>
+</div>

@@ -77,9 +77,15 @@ const steps = {
 				nextArrow: '<span class="arrow right"><i class="fa fa-chevron-right"></i></span>'
 			});
 
-			$('#rooms-slider .booking-button .btn').on('click', function (event) {
+			$('body').on('click', '.btn.book:not(.disabled):not(.selected)', (event) => {
 				event.preventDefault();
-				request.chosenRoom = $(this).data('room');
+				let roomIdx = $(event.target).data('room');
+				request.chosenRoom = roomIdx;
+
+				$(`#rooms-slider .btn.details, #rooms-slider .btn.book:not([data-room=${roomIdx}])`).addClass('disabled');
+				$(`#rooms-slider .btn.book[data-room=${roomIdx}]`).addClass('selected');
+
+				ui.hideRoomDetails();
 				$('#app-wrapper').trigger('nextStep');
 			});
 		}
@@ -113,9 +119,11 @@ const steps = {
 					request.additionalServices = [];
 				}
 
-				request.additionalServices.push($(this).data('service'));
+				let serviceIdx = $(this).data('service');
+				request.additionalServices.push(serviceIdx);
 
-				console.log(request);
+				$(`#services-slider .btn:not([data-service=${serviceIdx}])`).addClass('disabled');
+				$(`#services-slider .btn[data-service=${serviceIdx}]`).addClass('selected');
 
 				$('#app-wrapper').trigger('nextStep');
 			});

@@ -325,16 +325,31 @@ body {
 			}
 		}
 
-		.booking-button {
+		.buttons-container {
+			border-bottom-left-radius: 4px;
+			border-bottom-right-radius: 4px;
+			overflow: hidden;
+
 			.btn {
-				display: block;
 				border-radius: 0;
-				width: 100%;
-				background: #00eed2;
+				width: 50%;
 				border: 0;
-				color: #000;
+				color: #393f44;
 				height: 30px;
 				line-height: 18px;
+				background: #bdcede;
+				transition: background 0.2s ease-in-out;
+				outline: 0;
+				box-shadow: none;
+
+				&:hover {
+					background: #00eed2;
+				}
+
+				&.selected {
+					background: #00eed2;
+					opacity: 0.65;
+				}
 			}
 		}
 	}
@@ -415,13 +430,31 @@ body {
 		}
 
 		.booking-button {
+			border-bottom-left-radius: 4px;
+			border-bottom-right-radius: 4px;
+			overflow: hidden;
+
 			.btn {
 				display: block;
 				border-radius: 0;
 				width: 100%;
-				background: #00eed2;
+				background: #bdcede;
 				border: 0;
 				color: #000;
+				height: 30px;
+				line-height: 18px;
+				transition: background 0.2s ease-in-out;
+				outline: 0;
+				box-shadow: none;
+
+				&:hover {
+					background: #00eed2;
+				}
+
+				&.selected {
+					background: #00eed2;
+					opacity: 0.65;
+				}
 			}
 		}
 	}
@@ -441,5 +474,127 @@ body {
 
 	.pull-right {
 		width: calc(~"50% - 7.5px");
+	}
+}
+
+#room-details {
+	background: #fff;
+	padding: 10px;
+	border-top: 2px dashed #98aac2;
+	border-bottom: 2px dashed #98aac2;
+
+	.header {
+		position: relative;
+
+		.title {
+			color: #0088cc;
+			font-size: 150%;
+			margin-bottom: 0;
+		}
+
+		.price {
+			position: absolute;
+			color: #0088cc;
+			font-size: 200%;
+			right: 0;
+			top: 6px;
+		}
+	}
+
+	.images {
+		position: relative;
+		padding: 0 20px;
+		margin: 0 -10px;
+
+		.slick-list {
+			overflow: hidden;
+		}
+
+		.arrow {
+			position: absolute;
+			font-size: 200%;
+			top: 0;
+			margin-top: 0;
+			z-index: 100;
+			font-weight: 100;
+			cursor: pointer;
+			height: 100%;
+			background-color: #e1e8ef;
+			width: 30px;
+			transition: background 0.2s ease-in-out;
+
+
+			&:hover {
+				background: #00eed2;
+			}
+
+			i {
+				position: absolute;
+				width: 30px;
+				height: 30px;
+				top: 50%;
+				margin-top: -14px;
+				left: 5px;
+				color: #a6bdd4;
+			}
+
+			&.left {
+				left: 0px;
+				border-bottom-left-radius: 4px;
+				border-top-left-radius: 4px;
+			}
+
+			&.right {
+				right: 0px;
+				border-bottom-right-radius: 4px;
+				border-top-right-radius: 4px;
+			}
+		}
+
+		&:hover {
+			.arrow {
+				display: block;
+			}
+		}
+
+		.image {
+			display: block;
+			float: left;
+			height: 250px;
+			background-size: cover;
+			margin: 0 10px;
+		}
+	}
+
+	.amenities {
+		li {
+			float: left;
+			width: 33.33333%;
+			margin-bottom: 10px;
+
+			i {
+				color: #8994a2;
+			}
+		}
+	}
+
+	.buttons-container {
+		text-align: right;
+
+		.btn {
+			color: #393f44;
+			background: #bdcede;
+			transition: background 0.2s ease-in-out;
+			outline: 0;
+			box-shadow: none;
+
+			&.book {
+				background: #02c1ab;
+			}
+
+			&:hover {
+				background: #00eed2;
+			}
+		}
 	}
 }

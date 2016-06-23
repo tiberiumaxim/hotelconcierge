@@ -2,11 +2,15 @@
  * Created by tiberiu on 17/06/16.
  */
 
+import roomsData from './roomsData';
+
 class UI {
 	constructor() {
 	}
 
 	init() {
+		let _this = this;
+
 		this.$chatInput = $('#chat-input');
 		this.$messages = $('#messages-container');
 
@@ -31,6 +35,22 @@ class UI {
 			$(event.target).parent().addClass('fadeInUp');
 			$(event.target).show();
 		});
+
+		$('body').on('click', '.btn.details', (event) => {
+			event.preventDefault();
+			let roomData = roomsData[$(event.target).data('room')];
+
+			_this.hideRoomDetails();
+			_this.render('roomDetails', _this.$messages, roomData);
+
+			$('#room-details .images').slick({
+				dots: false,
+				prevArrow: '<span class="arrow left"><i class="fa fa-chevron-left"></i></span>',
+				nextArrow: '<span class="arrow right"><i class="fa fa-chevron-right"></i></span>'
+			});
+		});
+
+		$('body').on('click', '.btn.hide-details', _this.hideRoomDetails);
 	}
 
 	render(templateName, parent, data) {
@@ -38,8 +58,7 @@ class UI {
 		$(parent).append(template(data));
 	}
 
-	addMessage(type, message, delay) {
-		let _this = this;
+	addMessage(type, message) {
 		let templateName = type === 'user' ? 'userMessage' : 'operatorMessage';
 
 		this.render(templateName, this.$messages, { message: message });
@@ -70,6 +89,17 @@ class UI {
 
 	hideLoading() {
 		this.$messages.find('.message-loading').remove();
+	}
+
+	hideRoomDetails() {
+		$('#room-details').remove();
+		// $('#room-details').fadeOut(300, function () {
+		// 	$(this).remove();
+		// });
+	}
+
+	showRoomDetails(callback) {
+		$('#room-details').fadeIn(300, callback);
 	}
 }
 
